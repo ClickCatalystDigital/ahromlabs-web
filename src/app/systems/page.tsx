@@ -3,6 +3,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
+import { getContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Systems",
@@ -25,84 +26,26 @@ export const metadata: Metadata = {
   },
 };
 
-function slugify(term: string) {
-  return term.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const DOMAIN_LABELS: Record<string, string> = {
+  structure: "Structure",
+  governance: "Governance",
+  truth: "Truth",
+};
+const DOMAIN_ORDER = ["structure", "governance", "truth"];
+
+function getGroups() {
+  const terms = getContent("term");
+  return DOMAIN_ORDER.map((domain) => ({
+    label: DOMAIN_LABELS[domain],
+    terms: terms
+      .filter((t) => t.domain?.[0] === domain)
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+      .map((t) => ({ term: t.title, definition: t.answer, slug: t.slug })),
+  }));
 }
 
-const groups = [
-  {
-    label: "Structure",
-    terms: [
-      {
-        term: "Entity",
-        definition:
-          "A distinct thing the business tracks: a customer, an order, an employee, an asset. Entities are the nouns the rest of the system refers to.",
-      },
-      {
-        term: "Relationship",
-        definition:
-          "A defined connection between two entities, such as which customer placed which order. Relationships are modeled directly, not inferred from matching IDs across separate tables.",
-      },
-      {
-        term: "Workflow",
-        definition:
-          "A sequence of steps that moves an entity from one state to another, with a defined owner at each step.",
-      },
-      {
-        term: "Dependency",
-        definition:
-          "A requirement that one step, entity, or workflow places on another before it can proceed.",
-      },
-    ],
-  },
-  {
-    label: "Governance",
-    terms: [
-      {
-        term: "Permission",
-        definition:
-          "A rule defining who can view, change, or act on a given entity or workflow step, defined once and enforced everywhere that entity appears.",
-      },
-      {
-        term: "Business rule",
-        definition:
-          "A constraint the business enforces regardless of which application is being used, such as an approval threshold or an eligibility condition.",
-      },
-      {
-        term: "State transition",
-        definition:
-          "A recorded change in an entity's status, such as an order moving from placed to fulfilled, along with what caused the change.",
-      },
-    ],
-  },
-  {
-    label: "Truth",
-    terms: [
-      {
-        term: "Data",
-        definition:
-          "The recorded facts a business has about its entities and events, structured according to the model rather than scattered across tools.",
-      },
-      {
-        term: "Decision",
-        definition:
-          "A choice made by a person or a system that changes what happens next, tracked as its own record rather than only its downstream effect.",
-      },
-      {
-        term: "Evidence",
-        definition:
-          "The data and events that justified a decision, kept attached to that decision so the reasoning can be reviewed later.",
-      },
-      {
-        term: "Cross-department process",
-        definition:
-          "A workflow that spans more than one team, such as sales handing off to fulfillment, modeled as one continuous process rather than as separate steps in separate tools.",
-      },
-    ],
-  },
-];
-
 export default function SystemsPage() {
+  const groups = getGroups();
   return (
     <>
       <SiteNav />
@@ -126,7 +69,7 @@ export default function SystemsPage() {
                 </h2>
                 <dl className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
                   {group.terms.map((item) => (
-                    <div key={item.term} id={slugify(item.term)} className="scroll-mt-24">
+                    <div key={item.term} id={item.slug} className="scroll-mt-24">
                       <dt className="text-lg font-medium text-foreground">{item.term}</dt>
                       <dd className="mt-2 max-w-[45ch] leading-relaxed text-foreground-secondary">
                         {item.definition}

@@ -14,6 +14,19 @@
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
 
+## Engineering notes
+
+<!-- Kept in sync manually as content/notes and content/patterns grow. -->
+
+- [Posting vouchers into TallyPrime from a cloud app](https://ahromlabs.com/notes/tally-voucher-posting): A local agent, running on the same PC as TallyPrime, polls a cloud app's database every 30 seconds and posts approved invoices into Tally's local XML gateway, syncing voucher status every 15 minutes and master data nightly.
+- [Two companies, one book](https://ahromlabs.com/notes/two-companies-one-book): Savistar and Saag — sister companies, same owners — share one client list and one combined finance ledger in a single app, not a multi-tenant system.
+- [AI extraction with a human in the loop, five document types](https://ahromlabs.com/notes/ai-extraction-human-in-the-loop): Five document types get extracted by an LLM reading the PDF directly, no separate OCR step. Zero-correction rates run 88-95% depending on type. Every extraction still goes through a human review.
+- [Route through a local agent, not a direct API](https://ahromlabs.com/patterns/local-agent-cloud-db): When the target system only exposes a local interface, route through a small agent on the same machine instead of building toward a cloud API that doesn't exist.
+- [AI drafts, a person confirms](https://ahromlabs.com/patterns/human-confirmed-extraction): Never post AI-extracted data automatically — every extraction sits in a review state until a person approves it.
+- [Scope financial visibility at the query layer](https://ahromlabs.com/patterns/role-scoped-finance-views): Enforce role-based data visibility where the data is fetched, not just in the UI.
+- [Classify failures before retrying](https://ahromlabs.com/patterns/failures-flagged-not-lost): Transient errors retry automatically; real rejections wait for a person.
+- [Optional integrations should degrade the specific feature](https://ahromlabs.com/patterns/graceful-degradation-by-env-var): Check each integration's config where it's used, and decide what happens per feature rather than by one shared rule.
+
 ## Notes for automated readers
 
 Ahrom Labs is a services business, not a SaaS product. There is no self-serve

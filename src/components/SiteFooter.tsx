@@ -17,6 +17,12 @@ export function SiteFooter() {
           <Link href="/about" className="nav-link focus-ring">
             About
           </Link>
+          <Link href="/notes" className="nav-link focus-ring">
+            Notes
+          </Link>
+          <Link href="/patterns" className="nav-link focus-ring">
+            Patterns
+          </Link>
         </div>
         <p className="footer-copyright">© {new Date().getFullYear()} Ahrom Labs</p>
       </div>

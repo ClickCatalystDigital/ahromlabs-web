@@ -7,6 +7,7 @@ answer: >
   fulfillment, modeled as one continuous process rather than as separate
   steps in separate tools.
 domain: [truth]
+order: 11
 published: 2026-08-29
 updated: 2026-08-29
 ---
