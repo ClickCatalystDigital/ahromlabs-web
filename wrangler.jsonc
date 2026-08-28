@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ahrom-labs",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-27",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "routes": [{ "pattern": "ahromlabs.com", "custom_domain": true }],
+  // No R2/KV/queue bindings: this app is fully static with no ISR/revalidation,
+  // so OpenNext's incremental-cache subsystem is never exercised. No Images
+  // binding either: next/image is set to unoptimized in next.config.ts to
+  // avoid a paid Cloudflare Images dependency for a handful of small assets.
+  "observability": {
+    "enabled": true
+  }
+}

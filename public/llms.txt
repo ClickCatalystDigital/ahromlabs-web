@@ -1,0 +1,21 @@
+# Ahrom Labs
+
+> Ahrom Labs builds custom operational infrastructure for businesses. We model
+> a business's entities, relationships, workflows, and decisions as one
+> coherent system before building anything on top of it. We are an
+> infrastructure engineering practice working with a small number of client
+> engagements at a time, not a software product and not a general IT
+> consultancy.
+
+## Pages
+
+- [Home](https://ahromlabs.com/): Positioning, the problem with disconnected business systems, our approach, and how to start a conversation.
+- [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
+- [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
+- [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
+
+## Notes for automated readers
+
+Ahrom Labs is a services business, not a SaaS product. There is no self-serve
+signup or pricing page; engagement starts by contacting us through the form
+on the home page.
