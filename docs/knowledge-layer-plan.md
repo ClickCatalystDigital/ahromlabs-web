@@ -11,7 +11,7 @@
 | `pcb-inventory` | PCB / reels inventory system (repo: `ls-inventory`) | LS Technologies |
 | `savistar-ops` | Projects, site visits, workshop orders, combined finance | Savistar (interior design) + Saag (furniture manufacturing), sister companies, same owners |
 
-`ls-crm` and `pcb-inventory` are confirmed the same client, LS Technologies, run as two separate projects/repos. A separate, unrelated client — Shanti Boilers & Pressure Vessels Pvt. Ltd. (boiler manufacturing) — has its own system, **Shanti Boiler-Ops (SB-Ops)**, repo `shanti-ops`. It's not one of the four systems above; its own Tally integration is their Phase 6, not yet built.
+`ls-crm` and `pcb-inventory` are confirmed the same client, LS Technologies, run as two separate projects/repos. A separate, unrelated client — Shanti Boilers & Pressure Vessels Pvt. Ltd. (boiler manufacturing) — has its own system, **Shanti Boiler-Ops (SB-Ops)**, repo `shanti-ops`. It's not one of the four systems above; its own Tally integration is their Phase 6, not yet built. As of Phase 4, 3 of the 9 newly-extracted patterns are sourced from `shanti-ops` — published **anonymized** (no `systems:` field naming it, no client-identifying specifics), since no disclosure-permission conversation has happened with this client the way it has with LS Technologies and Savistar/Saag. This footnote can name it because `docs/` is internal/repo-only, never wired into a live route — the anonymization requirement is for published corpus content (`content/`) only.
 ---
 ## 1. The verdict (read this, then start Phase 0)
 | Option | Verdict | Why |

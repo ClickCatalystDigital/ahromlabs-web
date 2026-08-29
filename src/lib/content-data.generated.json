@@ -258,6 +258,35 @@
   },
   {
     "kind": "pattern",
+    "slug": "derive-balances-dont-store-them",
+    "title": "Compute a balance from source transactions at read time, don't store a running total",
+    "answer": "An outstanding balance — partial deliveries, payroll advances — can be tracked as a running total updated on each transaction, or computed fresh from source records every time. Compute it at read time instead of storing it separately, trading recomputation cost for avoiding drift between the stored total and the transactions that actually produced it.",
+    "domain": [
+      "architecture",
+      "finance"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA figure like \"outstanding balance\" or \"amount still owed\" can be maintained two ways: as a stored value updated whenever a related transaction happens, or computed from those transactions whenever it's needed.\n\n## Decision\n\nCompute it at read time from the underlying transactions — orders, deliveries, returns, advances — rather than maintaining a separately-updated stored total.\n\n## Why\n\nA stored running total can drift from the transactions that produced it the moment an update is missed, applied twice, or applied out of order. A derived value can't drift, because it's recalculated from the same source every time.\n\n## Trade-off\n\nRecomputation cost on every read instead of an O(1) stored read. Fine at the transaction volumes this was built for; a system with a much higher read rate on this figure would need to revisit the trade."
+  },
+  {
+    "kind": "pattern",
+    "slug": "fail-closed-preserve-visibility",
+    "title": "Fail-closed doesn't have to mean fail-invisible — pick the blocking mechanism deliberately",
+    "answer": "A security-critical control needs default-deny, but the naive way to enforce \"blocked\" — disabling the underlying service entirely — can also destroy the ability to detect the thing being blocked. Default to blocked, but enforce it through a mechanism that blocks use without blocking detection, so a blocked resource can still be found and requested.",
+    "domain": [
+      "reliability",
+      "access-control"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA security-critical control needs a default-deny posture. The obvious way to enforce \"blocked\" is to disable the underlying service or device entirely — but that can also destroy the ability to even detect or discover the thing being blocked.\n\n## Decision\n\nDefault to blocked, but enforce it through a mechanism that blocks *use* of the resource without blocking *detection* of it — so a blocked resource can still be found and its access requested, rather than disappearing entirely.\n\n## Why\n\nFail-closed doesn't have to mean fail-invisible. Picking the specific blocking mechanism — not just deciding \"blocked vs. not\" — is the actual decision that determines whether a legitimate access request can even happen afterward.\n\n## Trade-off\n\nRequires a more specific, less obvious enforcement mechanism than the blunt \"turn it off\" option, and more care to confirm it genuinely blocks use while it does."
+  },
+  {
+    "kind": "pattern",
     "slug": "failures-flagged-not-lost",
     "title": "Classify failures before retrying — transient errors retry, real rejections wait for a person",
     "answer": "A voucher push can fail because the target system is briefly unreachable, or because the voucher is genuinely invalid — two different problems needing different responses. Classify the failure first: transient errors retry automatically, structural ones are held with the reason attached for a person to fix.",
@@ -370,6 +399,60 @@
   },
   {
     "kind": "pattern",
+    "slug": "reconcile-against-source-of-truth",
+    "title": "After writing to an external system, verify against it — don't trust your own write",
+    "answer": "After writing to an external system of record, don't trust your own write as fact — read back from the authoritative system and update your own copy to match what's actually there. The external system stays the real source of truth; your copy is a cache of it, verified after every write.",
+    "domain": [
+      "reliability",
+      "accounting-integration"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA write to an external system of record can succeed on the wire but still not mean what you think — the request could be accepted and then rejected downstream, or applied differently than expected.\n\n## Decision\n\nAfter posting, read back from the authoritative system and update your own copy to match what's actually there, not what you believe you sent.\n\n## Why\n\nThe external system is the real source of truth. Your own record of \"what happened\" is only correct once it's been checked against that system, not the moment the write request returns success.\n\n## Trade-off\n\nAdds a read-back step, and a window where your copy is provisionally \"pending confirmation\" rather than settled — cheaper than the alternative of silently drifting from what the source of truth actually holds."
+  },
+  {
+    "kind": "pattern",
+    "slug": "reference-rate-anomaly-detection",
+    "title": "Flag deviations from a known reference rate, don't manually audit every charge",
+    "answer": "Incoming billed amounts can't all be manually audited line by line. Compare each charge against a known reference rate and automatically flag deviations, instead of trusting every incoming number or requiring full manual review. Catches overcharges without a person checking every line — only as good as how current the reference data stays.",
+    "domain": [
+      "reliability",
+      "finance"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nVendor and freight charges arrive as numbers a system has no independent way to verify — trusting them outright risks paying overcharges; auditing every line manually doesn't scale.\n\n## Decision\n\nMaintain a reference rate card for the relevant charge type, and compare each incoming charge against it automatically, flagging anything that deviates.\n\n## Why\n\nThis catches overcharges without requiring a person to check every line, while still surfacing exactly the cases that need a human look — the ones that don't match what's expected.\n\n## Trade-off\n\nThe check is only as good as the reference data. A stale rate card either produces false flags or misses real overcharges — someone has to keep it current for the pattern to keep working."
+  },
+  {
+    "kind": "pattern",
+    "slug": "replay-queued-payload-through-existing-handler",
+    "title": "Queue the original request, replay it through the same handler on approval",
+    "answer": "Some actions need approval before taking effect, but duplicating business logic for \"pending\" vs. \"approved\" versions of the same action doubles the surface area for bugs. Queue non-approved actions as the original request payload, and on approval, replay it through the exact same handler real-time requests use — one code path instead of two.",
+    "domain": [
+      "architecture",
+      "reliability"
+    ],
+    "systems": [
+      "pcb-inventory"
+    ],
+    "evidence": [
+      {
+        "metric": "replay mechanism",
+        "value": "queued request payload replayed through the same handler function real-time requests use, not a separate approval-path implementation"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nSome actions need a manager's approval before they take effect, but writing a separate \"approved version\" of that action's logic means every change to the real handler has to be mirrored in the approval path, or the two quietly drift apart.\n\n## Decision\n\nStore a non-approved action as a generic request record holding the original request payload as-is. On approval, replay that payload through the exact same handler function that processes real-time, non-gated requests.\n\n## Why\n\nThere's one code path for the actual business logic, used whether the action happened immediately or after approval. Nothing to keep in sync between two implementations of the same operation.\n\n## Trade-off\n\nA queued payload is only as valid as it was at queue time — if something else changes state between queuing and approval, the replay can act on stale assumptions. That case needs its own handling; this pattern doesn't solve it by itself."
+  },
+  {
+    "kind": "pattern",
     "slug": "role-scoped-finance-views",
     "title": "Scope financial visibility by role at the query layer, not just the UI",
     "answer": "Don't rely on hiding UI elements to protect financial data from the wrong role — enforce the boundary where the data is fetched. Staff cash visibility is filtered to their own entries at the query level; bank data is rejected outright for staff before any query runs. The trade-off: it's a per-endpoint discipline, not one central gate.",
@@ -393,5 +476,69 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": "## Context\n\nStaff need to log day-to-day cash transactions, but shouldn't see the business's full financial picture. Bank data is for owners only.\n\n## Decision\n\nThe boundary is enforced where the data is fetched, not just in what the interface shows. A staff member's view of cash entries is filtered to only the entries they created, at the point the data is queried. Bank data isn't filtered at all — every bank-related request from a staff account is rejected outright, before any query runs.\n\n## Why\n\nHiding a UI element doesn't stop someone from calling the underlying endpoint directly. Enforcing the boundary at the point requests reach the server means the restriction holds regardless of what client is asking.\n\n## Trade-off\n\nThere's no single central gate doing this for the whole app — no row-level security at the database, just a rule applied at each relevant endpoint. Every new finance-adjacent feature has to remember to apply the same check. It's a discipline the team has to keep, not a guarantee the system enforces on its own."
+  },
+  {
+    "kind": "pattern",
+    "slug": "seeded-credentials-forced-rotation",
+    "title": "Zero-config first run — seed default logins, force rotation through the UI",
+    "answer": "A new client instance needs to be usable immediately, not blocked on manual account provisioning. Auto-create the schema and seed default logins on first run, then force rotation through a UI visible to everyone, rather than leaving default credentials to quietly persist. Zero-friction setup, with a real but narrow exposure window.",
+    "domain": [
+      "reliability",
+      "configuration"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA new client instance needs to be usable immediately. Requiring an admin to manually provision the first real account before anyone can log in adds friction to every new deployment.\n\n## Decision\n\nOn first run, auto-create the schema and seed a small set of default logins. Rotation isn't optional or hidden — a \"Change password\" action is visible to everyone in the navigation, right after first login.\n\n## Why\n\nZero manual setup gets a new instance usable the moment it's deployed, without leaving default credentials live indefinitely — the rotation path is impossible to overlook because it's not buried in a settings page.\n\n## Trade-off\n\nThere's a real, if narrow, window where seeded credentials are live before someone actually rotates them. The trade is accepted deliberately: friction-free first run, in exchange for trusting that rotation actually happens promptly."
+  },
+  {
+    "kind": "pattern",
+    "slug": "self-healing-sequence-counters",
+    "title": "Re-derive a sequence counter from the data itself before trusting it",
+    "answer": "A sequential ID scheme backed by a mutable counter table can desync from manual edits or partial writes. Before incrementing, re-derive the counter as the max of its stored value and the highest numeric suffix already in the table — it heals itself from drift instead of needing a manual fix, at the cost of an extra scan on each allocation.",
+    "domain": [
+      "reliability",
+      "architecture"
+    ],
+    "systems": [
+      "pcb-inventory"
+    ],
+    "evidence": [
+      {
+        "metric": "resync check before each allocation",
+        "value": "max(stored counter, highest numeric suffix already in the table)"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA sequential, human-readable ID scheme (like a reel or box number with an incrementing suffix) is usually backed by a counter stored separately from the records it numbers. Manual edits, partial writes, or a restored backup can leave that counter out of sync with what's actually in the table.\n\n## Decision\n\nBefore incrementing the counter to allocate a new ID, re-derive it as the maximum of its currently stored value and the highest numeric suffix actually present in the table.\n\n## Why\n\nThe scheme heals itself from drift automatically. Nobody has to notice a desync and manually reset a counter — the next allocation just corrects for it.\n\n## Trade-off\n\nEvery allocation now does a scan to find the current maximum, instead of a pure increment. Worth it for the guarantee that IDs never collide even after the counter itself gets out of sync."
+  },
+  {
+    "kind": "pattern",
+    "slug": "separate-machine-from-human-identity",
+    "title": "Make a machine credential structurally unable to pass as a human one",
+    "answer": "A system with both human users and machine/service clients needs a leaked machine credential to be unable to impersonate a human. Machine identity is carried in a token claim that can only come from the token itself, never a request body, and the human-session check explicitly excludes that credential type — structurally impossible, not just policy.",
+    "domain": [
+      "access-control",
+      "architecture"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA system that serves both human users and machine or service clients needs a way to tell the two apart — and a leaked machine credential shouldn't be usable to impersonate a human, even by accident.\n\n## Decision\n\nMachine identity is carried in a token claim that can only originate from the token itself — never accepted from a request body — and the code path that checks for a valid human session explicitly excludes that credential type, rather than treating \"authenticated\" as one undifferentiated bucket.\n\n## Why\n\nA leaked machine token literally cannot be pasted somewhere and pass as a human login. That's not a policy someone has to remember to enforce — it's structurally impossible given how the identity is carried and checked.\n\n## Trade-off\n\nTwo distinct credential-checking code paths to maintain instead of one unified \"is this request authenticated\" check."
+  },
+  {
+    "kind": "pattern",
+    "slug": "unconfirmed-inferences-stay-read-only",
+    "title": "Mark inferred rules unconfirmed, and keep them read-only until a person confirms them",
+    "answer": "A system can infer relationships from existing data — implicit orderings baked into config — that look plausible but were never confirmed by a domain expert. Mark such inferences explicitly unconfirmed and keep any automation that would act on them read-only until a domain expert actually confirms them, rather than letting the inference stand in.",
+    "domain": [
+      "reliability",
+      "data-modeling"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA system can infer relationships or rules from existing data — implicit orderings baked into configuration, patterns that look consistent across records — without those relationships ever having been confirmed by someone who actually knows the business.\n\n## Decision\n\nExplicitly mark such inferences as unconfirmed, and keep any automation that would act on them in a read-only or advisory state until a domain expert actually confirms them. Building the enforcing version of that automation is deliberately deferred.\n\n## Why\n\nAn inferred rule that turns out wrong, and is already gating real users' actions, is worse than having no rule at all — it fails confidently instead of failing obviously.\n\n## Trade-off\n\nSlower to get automated enforcement live, and it requires someone to actually do the confirmation step rather than letting the inference quietly stand in for it indefinitely."
   }
 ]

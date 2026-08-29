@@ -22,6 +22,16 @@ function assertString(value, field, relPath) {
   return value;
 }
 
+// domain/systems/patterns/evidence are optional, but if present must be
+// arrays — catches a frontmatter typo like `domain: structure` (a bare
+// string, missing the brackets) that would otherwise pass through silently
+// and break array-shaped consumers (e.g. `.filter()`/`.map()` on `domain`).
+function assertArrayIfPresent(value, field, relPath) {
+  if (value !== undefined && !Array.isArray(value)) {
+    throw new Error(`content/${relPath}: "${field}" must be an array if present, got ${typeof value}`);
+  }
+}
+
 function loadKind(kind) {
   const dir = path.join(CONTENT_ROOT, KIND_DIRS[kind]);
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
@@ -52,6 +62,10 @@ function loadKind(kind) {
         `content/${relPath}: frontmatter slug "${slug}" does not match filename "${slugFromFilename}"`
       );
     }
+    assertArrayIfPresent(frontmatter.domain, "domain", relPath);
+    assertArrayIfPresent(frontmatter.systems, "systems", relPath);
+    assertArrayIfPresent(frontmatter.patterns, "patterns", relPath);
+    assertArrayIfPresent(frontmatter.evidence, "evidence", relPath);
 
     return { ...frontmatter, answer, body };
   });

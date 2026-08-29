@@ -26,6 +26,15 @@
 - [Scope financial visibility at the query layer](https://ahromlabs.com/patterns/role-scoped-finance-views): Enforce role-based data visibility where the data is fetched, not just in the UI.
 - [Classify failures before retrying](https://ahromlabs.com/patterns/failures-flagged-not-lost): Transient errors retry automatically; real rejections wait for a person.
 - [Optional integrations should degrade the specific feature](https://ahromlabs.com/patterns/graceful-degradation-by-env-var): Check each integration's config where it's used, and decide what happens per feature rather than by one shared rule.
+- [After writing to an external system, verify against it](https://ahromlabs.com/patterns/reconcile-against-source-of-truth): Don't trust your own write as fact — read back from the authoritative system and update your own copy to match what's actually there.
+- [Zero-config first run: seed credentials, force rotation](https://ahromlabs.com/patterns/seeded-credentials-forced-rotation): Auto-create schema and seed default logins on first run, then force rotation through a UI visible to everyone rather than leaving default credentials to quietly persist.
+- [Flag deviations from a known reference rate](https://ahromlabs.com/patterns/reference-rate-anomaly-detection): Compare each charge against a known reference rate and automatically flag deviations, instead of trusting every incoming number or auditing every line by hand.
+- [Compute a balance at read time, don't store it](https://ahromlabs.com/patterns/derive-balances-dont-store-them): Derive an outstanding balance from source transactions every time instead of maintaining a separately-updated running total, avoiding drift at the cost of recomputation.
+- [Re-derive a sequence counter from the data itself](https://ahromlabs.com/patterns/self-healing-sequence-counters): Before incrementing a human-readable ID counter, re-derive it as the max of its stored value and the highest suffix already in the table — heals itself from drift.
+- [Replay a queued payload through the same handler](https://ahromlabs.com/patterns/replay-queued-payload-through-existing-handler): Queue non-approved actions as the original request payload, then replay it through the exact same handler real-time requests use — one code path instead of two.
+- [Make a machine credential structurally unable to pass as human](https://ahromlabs.com/patterns/separate-machine-from-human-identity): Machine identity is carried in a token claim that can only come from the token itself, never a request body — structurally impossible to impersonate, not just policy.
+- [Fail-closed doesn't have to mean fail-invisible](https://ahromlabs.com/patterns/fail-closed-preserve-visibility): Default to blocked, but pick a blocking mechanism that preserves the ability to detect and request access to the blocked resource.
+- [Mark inferred rules unconfirmed until a person confirms them](https://ahromlabs.com/patterns/unconfirmed-inferences-stay-read-only): Keep automation that acts on inferred (not confirmed) relationships in a read-only state until a domain expert actually confirms them.
 
 ## Notes for automated readers
 
