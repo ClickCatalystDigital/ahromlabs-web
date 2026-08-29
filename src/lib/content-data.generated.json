@@ -1,0 +1,397 @@
+[
+  {
+    "kind": "term",
+    "slug": "business-rule",
+    "title": "Business rule",
+    "answer": "A constraint the business enforces regardless of which application is being used, such as an approval threshold or an eligibility condition.",
+    "domain": [
+      "governance"
+    ],
+    "order": 6,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "cross-department-process",
+    "title": "Cross-department process",
+    "answer": "A workflow that spans more than one team, such as sales handing off to fulfillment, modeled as one continuous process rather than as separate steps in separate tools.",
+    "domain": [
+      "truth"
+    ],
+    "order": 11,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "data",
+    "title": "Data",
+    "answer": "The recorded facts a business has about its entities and events, structured according to the model rather than scattered across tools.",
+    "domain": [
+      "truth"
+    ],
+    "order": 8,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "decision",
+    "title": "Decision",
+    "answer": "A choice made by a person or a system that changes what happens next, tracked as its own record rather than only its downstream effect.",
+    "domain": [
+      "truth"
+    ],
+    "order": 9,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "dependency",
+    "title": "Dependency",
+    "answer": "A requirement that one step, entity, or workflow places on another before it can proceed.",
+    "domain": [
+      "structure"
+    ],
+    "order": 4,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "entity",
+    "title": "Entity",
+    "answer": "A distinct thing the business tracks: a customer, an order, an employee, an asset. Entities are the nouns the rest of the system refers to.",
+    "domain": [
+      "structure"
+    ],
+    "order": 1,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "evidence",
+    "title": "Evidence",
+    "answer": "The data and events that justified a decision, kept attached to that decision so the reasoning can be reviewed later.",
+    "domain": [
+      "truth"
+    ],
+    "order": 10,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "permission",
+    "title": "Permission",
+    "answer": "A rule defining who can view, change, or act on a given entity or workflow step, defined once and enforced everywhere that entity appears.",
+    "domain": [
+      "governance"
+    ],
+    "order": 5,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "relationship",
+    "title": "Relationship",
+    "answer": "A defined connection between two entities, such as which customer placed which order. Relationships are modeled directly, not inferred from matching IDs across separate tables.",
+    "domain": [
+      "structure"
+    ],
+    "order": 2,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "state-transition",
+    "title": "State transition",
+    "answer": "A recorded change in an entity's status, such as an order moving from placed to fulfilled, along with what caused the change.",
+    "domain": [
+      "governance"
+    ],
+    "order": 7,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "workflow",
+    "title": "Workflow",
+    "answer": "A sequence of steps that moves an entity from one state to another, with a defined owner at each step.",
+    "domain": [
+      "structure"
+    ],
+    "order": 3,
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": ""
+  },
+  {
+    "kind": "note",
+    "slug": "ai-extraction-human-in-the-loop",
+    "title": "AI extraction with a human in the loop, five document types",
+    "answer": "Five document types — purchase invoices, freight invoices, bills of entry, purchase orders, bank statements — get extracted by an LLM reading the PDF directly, no separate OCR step. Zero-correction rates run 88-95% depending on type, purchase orders highest, bills of entry lowest. Every extraction still goes through a human review before anything is approved or posted.",
+    "domain": [
+      "ai-extraction",
+      "accounting-integration",
+      "trading"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "patterns": [
+      "human-confirmed-extraction"
+    ],
+    "evidence": [
+      {
+        "metric": "purchase invoice zero-correction rate",
+        "value": "94%"
+      },
+      {
+        "metric": "freight invoice zero-correction rate",
+        "value": "91%"
+      },
+      {
+        "metric": "bill of entry zero-correction rate",
+        "value": "88%"
+      },
+      {
+        "metric": "purchase order zero-correction rate",
+        "value": "95%"
+      },
+      {
+        "metric": "bank statement zero-correction rate",
+        "value": "89%"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## What gets extracted\n\nLS Technologies, an electronics-components import/export trading business, runs five kinds of documents through AI extraction before anything reaches Tally: purchase invoices, freight invoices, bills of entry, purchase orders, and bank statements. Each has its own prompt tailored to that document's fields — a purchase invoice and a customs bill of entry don't share a structure, and treating them as one generic \"document\" would lose accuracy on both.\n\n## How it reads a PDF\n\nThere's no separate OCR step. The PDF is sent straight to the model — an LLM with a file-parsing capability reads it directly, rather than running text extraction first and handing the model plain text. Bank statements get special handling: because they can run to many pages, the document is processed in chunks and the results are stitched back together and de-duplicated, rather than trying to reason over one long document in a single pass.\n\n## How accurate it actually is\n\nReviewed against real usage, here's the share of each document type that needs zero correction before it's approved:\n\n- Purchase order: 95%\n- Purchase invoice: 94%\n- Bank statement: 89%\n- Freight invoice: 91%\n- Bill of entry: 88%\n\nBills of entry come in lowest — customs documentation is the least standardized of the five, which tracks with what you'd expect from the least uniform paperwork. Every number here still means a meaningful share of documents need a correction, which is exactly why extraction alone was never the plan.\n\n## What happens to the rest\n\nNothing gets extracted and posted in one step. Every document — regardless of how confident the extraction looked — sits in a review state until a person checks it and approves it. That's not a hedge against a bad model; it's the same decision this practice makes anywhere a model's output could turn into a financial record: draft with AI, confirm with a person, post only after that."
+  },
+  {
+    "kind": "note",
+    "slug": "tally-voucher-posting",
+    "title": "Posting vouchers into TallyPrime from a cloud app",
+    "answer": "A local agent, running on the same PC as TallyPrime, polls a cloud app's database every 30 seconds and posts approved invoices into Tally's local XML gateway, syncing voucher status every 15 minutes and master data nightly. Missing ledgers and real rejections are held for a person; connection failures retry automatically until Tally is reachable again.",
+    "domain": [
+      "accounting-integration",
+      "trading"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "patterns": [
+      "local-agent-cloud-db",
+      "human-confirmed-extraction"
+    ],
+    "evidence": [
+      {
+        "metric": "push poll cadence",
+        "value": "30 seconds"
+      },
+      {
+        "metric": "voucher/outstanding sync",
+        "value": "15 minutes (30 cycles x 30s)"
+      },
+      {
+        "metric": "master data sync (ledgers, stock, voucher types)",
+        "value": "24 hours"
+      },
+      {
+        "metric": "ledger-missing handling",
+        "value": "flagged for manual review, not auto-created; retries stop until fixed"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "Ahrom Labs built the CRM and Tally-accounting layer running underneath LS Technologies, an electronics-components import/export trading business. Every purchase invoice, freight bill, and customs document gets extracted, reviewed, and — once approved — has to land as a real voucher inside TallyPrime. Here's how that actually works.\n\n## Why doesn't the app talk to Tally directly?\n\nTallyPrime's own integration surface is a local HTTP XML gateway that only listens on the machine running Tally itself — there's no cloud endpoint to call. A small agent runs on that same PC and bridges the two systems: the cloud app writes an approved invoice to its own database, and the local agent reads from there and posts it into Tally's gateway.\n\n## How fast does data move between the two systems?\n\nThree different cadences, not one. The agent polls for newly approved invoices every 30 seconds and pushes them into Tally immediately. It syncs voucher status and outstanding-bill data back to the cloud app every 15 minutes. Ledger, stock-item, and voucher-type master data — the slower-moving reference data — syncs once every 24 hours.\n\n## What happens when a ledger doesn't exist yet?\n\nBefore an invoice is even approved, the system checks every ledger name its Tally posting would need against a locally cached snapshot of Tally's own ledgers, and flags anything unrecognized for the reviewer. Nothing gets auto-created in Tally on the system's own authority — a missing ledger is a decision for a person, not the software.\n\n## How are Tally-offline errors handled differently from real rejections?\n\nEvery push failure gets classified before anything else happens. A connection failure — Tally is offline, the network hiccups — is transient: the invoice stays queued, and the same 30-second poll picks it back up automatically on the next cycle. A rejection from Tally itself — a ledger that truly doesn't exist, a duplicate voucher — is structural: the invoice is held with the exact reason attached, and the automatic retry stops until a person fixes it.\n\n## How does the system know a voucher actually landed in Tally?\n\nPosting isn't the end of the story. Each 15-minute sync compares what the app believes it posted against what Tally's own data currently shows. A voucher is marked confirmed only once it's actually visible inside Tally; if a confirmed voucher is later deleted inside Tally itself, the next sync notices and rolls the record back to unconfirmed.\n\n## Boundary\n\nNone of this works as a cloud-to-cloud integration, because it isn't one — it depends on TallyPrime and its local gateway being reachable on the same machine as the agent. If that PC is off, nothing posts until it's back on; the 30-second retry picks up wherever it left off, with no manual restart needed."
+  },
+  {
+    "kind": "note",
+    "slug": "two-companies-one-book",
+    "title": "Two companies, one book",
+    "answer": "Savistar and Saag — sister companies, same owners — share one client list and one combined finance ledger in a single app, not a multi-tenant system. The real structure is in who can see what: staff see only their own cash entries, and bank data is rejected outright for any staff request, enforced at the API, not just hidden in the UI.",
+    "domain": [
+      "access-control",
+      "finance"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "patterns": [
+      "role-scoped-finance-views",
+      "graceful-degradation-by-env-var"
+    ],
+    "evidence": [
+      {
+        "metric": "shared structure",
+        "value": "one client list, one combined finance ledger, no tenant/company table"
+      },
+      {
+        "metric": "staff cash visibility",
+        "value": "own entries only"
+      },
+      {
+        "metric": "staff bank visibility",
+        "value": "none, every bank route rejects staff"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Why one book?\n\nSavistar (interior design) and Saag (furniture manufacturing) are sister companies under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.\n\n## How \"two companies\" actually works\n\nThere's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than \"two companies, one book\" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.\n\n## Where the real structure is: who can see what\n\nThe part that isn't simple is financial visibility. Staff log day-to-day cash transactions, but their view of the cash ledger is scoped to only the entries they personally created — enforced at the point the data is fetched, not just hidden in the interface. Bank data goes further: it isn't scoped, it's excluded entirely. Every request touching bank information from a staff account is rejected before any query even runs. Owners see everything; staff see their own cash activity and nothing from the bank side.\n\n## Why it's built this way\n\nNone of this depends on every integration being perfectly configured. The database, file storage, and AI extraction the app uses elsewhere are each optional at the infrastructure level — the app runs regardless, and each feature behaves according to whether its own configuration is present, rather than the whole system depending on all of them being wired up.\n\n---\n\n> \"They really took the time to understand our concerns and requirements, and the system was built the way we had envisioned it. It has brought much more structure, visibility, and control to the way we operate.\"\n>\n> — Sachi & Haripriya, owners of Savistar and Saag"
+  },
+  {
+    "kind": "pattern",
+    "slug": "failures-flagged-not-lost",
+    "title": "Classify failures before retrying — transient errors retry, real rejections wait for a person",
+    "answer": "A voucher push can fail because the target system is briefly unreachable, or because the voucher is genuinely invalid — two different problems needing different responses. Classify the failure first: transient errors retry automatically, structural ones are held with the reason attached for a person to fix.",
+    "domain": [
+      "reliability",
+      "accounting-integration"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "evidence": [
+      {
+        "metric": "retry behavior for transient errors",
+        "value": "automatic, next 30-second poll cycle"
+      },
+      {
+        "metric": "retry behavior for structural errors",
+        "value": "none — held with reason attached until a person resolves it"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nA voucher push into Tally can fail for two very different reasons: Tally being briefly unreachable, or the voucher itself being genuinely invalid — a ledger that doesn't exist, a duplicate entry.\n\n## Decision\n\nClassify every failure before deciding what happens next. A connection problem is transient — the invoice stays queued and gets picked up automatically on the next poll cycle. A rejection from Tally itself is structural — the invoice is held, with the exact reason attached, and the automatic retry stops until a person fixes the underlying issue.\n\n## Why\n\nTreating every failure the same way breaks in one of two directions: retry forever on a voucher that will never succeed, or give up on a connection blip that would have resolved itself on its own thirty seconds later.\n\n## Trade-off\n\nThe classification depends on parsing the target system's own error messages, which is simple to reason about but brittle if that wording ever changes — a workaround built against one system's specific quirks, not a general error-handling framework."
+  },
+  {
+    "kind": "pattern",
+    "slug": "graceful-degradation-by-env-var",
+    "title": "Optional integrations should degrade the specific feature, not the app",
+    "answer": "Optional integrations shouldn't be a hard requirement at startup — check each one's config where it's actually used, and decide what happens per feature. Here that means three different behaviors for three integrations: a full local fallback, a silent skip, and a hard reject. The trade-off is holding three separate rules in mind instead of one simple story.",
+    "domain": [
+      "reliability",
+      "configuration"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "evidence": [
+      {
+        "metric": "behavior when the database URL is missing",
+        "value": "falls back fully to a local database file"
+      },
+      {
+        "metric": "behavior when object-storage vars are missing",
+        "value": "inconsistent by design — one endpoint skips the upload silently, another rejects the request"
+      },
+      {
+        "metric": "behavior when the AI extraction key is missing",
+        "value": "always rejects just the extraction call"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nThree integrations — a hosted database, object storage, and an LLM API — each unlock a feature, but none of them are required for the app to run at all.\n\n## Decision\n\nEach integration's configuration is checked independently, right where it's used, rather than as one hard requirement at startup. What happens when it's missing is decided per feature rather than by one shared rule: the database falls back to a local file entirely; object storage either skips the upload silently or rejects just that request, depending on which endpoint; the AI integration always rejects just the extraction call.\n\n## Why\n\nA single hard requirement on every optional integration at boot would make local development and partial deployments unnecessarily brittle — the whole app would refuse to start over a feature nobody's using yet.\n\n## Trade-off\n\nThis is deliberately inconsistent, not one uniform mechanism — three integrations, three different behaviors when missing. That's a real cost to hold in your head; it's not something you can describe as \"the app degrades gracefully\" and leave at that. Each integration point needs its own specific answer."
+  },
+  {
+    "kind": "pattern",
+    "slug": "human-confirmed-extraction",
+    "title": "AI drafts, a person confirms — never auto-post extracted data",
+    "answer": "AI-based document extraction is fast but not perfect — even a good system leaves some share of documents needing correction. Post nothing automatically: every extraction sits in a review state until a person approves it. The cost is a manual step on every document; the alternative is trusting unreviewed numbers with real money.",
+    "domain": [
+      "ai-extraction",
+      "human-in-the-loop"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "evidence": [
+      {
+        "metric": "purchase invoice zero-correction rate",
+        "value": "94%"
+      },
+      {
+        "metric": "bank statement zero-correction rate (hardest document type)",
+        "value": "89%"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nLLM-based document extraction is fast — a purchase invoice comes back parsed in seconds — but it isn't perfect. Even a well-tuned pipeline leaves a meaningful share of documents needing a correction before the numbers are right.\n\n## Decision\n\nEvery extracted document sits in a review state. Nothing downstream — a posting, a saved record, anything else — happens until a person looks at it and approves it. The model drafts; it never commits on its own.\n\n## Why\n\nA wrong number in a financial posting is expensive to unwind after the fact — tracing it, reversing it, re-entering it correctly. A short review before it goes anywhere is cheaper than a correction after it's already downstream. Even at a 94% zero-correction rate on the best-performing document type, a meaningful share still needs a human to catch it.\n\n## Trade-off\n\nEvery document gets a manual step and some latency it wouldn't have with straight auto-posting. That's the deliberate cost — the alternative is trusting an unreviewed model with money.\n\nThe same decision has been made independently a second time, in a separate engagement, for a completely different kind of document — not an accounting record at all. Same reasoning, same conclusion: AI drafts, a person confirms."
+  },
+  {
+    "kind": "pattern",
+    "slug": "local-agent-cloud-db",
+    "title": "Route through a local agent, not a direct API, when the target system is local-only",
+    "answer": "When the system you need to integrate with only exposes a local interface — like TallyPrime's local-only XML gateway — route through a small agent running on the same machine instead of building toward a cloud API that doesn't exist. The cost is lag: minutes to a day, depending on how fast that data actually needs to move.",
+    "domain": [
+      "architecture",
+      "accounting-integration"
+    ],
+    "systems": [
+      "ls-crm"
+    ],
+    "evidence": [
+      {
+        "metric": "push poll cadence",
+        "value": "30 seconds"
+      },
+      {
+        "metric": "voucher/outstanding sync",
+        "value": "15 minutes"
+      },
+      {
+        "metric": "master data sync",
+        "value": "24 hours"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nTallyPrime's own integration surface is a local HTTP XML gateway — it only listens on the machine running Tally itself. There's no cloud-reachable endpoint to call from a hosted web app.\n\n## Decision\n\nRun a small agent on the same machine as Tally. The cloud app never talks to Tally directly — it writes to its own database, and the local agent reads from there and posts into Tally's gateway.\n\n## Why\n\nThis isolates everything Tally-specific — the local-only connection, Tally's own XML quirks, the possibility that the PC is simply switched off — inside one small, replaceable process. The cloud app stays a normal web app that only ever talks to its own database.\n\n## Trade-off\n\nThe integration only works while that PC and its agent are running. Data isn't instantly consistent between the two systems — pushes go out every 30 seconds, voucher status syncs back every 15 minutes, and slower-moving reference data (ledgers, stock items, voucher types) syncs once every 24 hours. That lag is the cost of not needing the target system to expose anything it doesn't already have."
+  },
+  {
+    "kind": "pattern",
+    "slug": "role-scoped-finance-views",
+    "title": "Scope financial visibility by role at the query layer, not just the UI",
+    "answer": "Don't rely on hiding UI elements to protect financial data from the wrong role — enforce the boundary where the data is fetched. Staff cash visibility is filtered to their own entries at the query level; bank data is rejected outright for staff before any query runs. The trade-off: it's a per-endpoint discipline, not one central gate.",
+    "domain": [
+      "access-control",
+      "finance"
+    ],
+    "systems": [
+      "savistar-ops"
+    ],
+    "evidence": [
+      {
+        "metric": "cash visibility scope for staff",
+        "value": "own entries only, enforced in the API query"
+      },
+      {
+        "metric": "bank visibility for staff",
+        "value": "none — every bank API route rejects staff requests"
+      }
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "body": "## Context\n\nStaff need to log day-to-day cash transactions, but shouldn't see the business's full financial picture. Bank data is for owners only.\n\n## Decision\n\nThe boundary is enforced where the data is fetched, not just in what the interface shows. A staff member's view of cash entries is filtered to only the entries they created, at the point the data is queried. Bank data isn't filtered at all — every bank-related request from a staff account is rejected outright, before any query runs.\n\n## Why\n\nHiding a UI element doesn't stop someone from calling the underlying endpoint directly. Enforcing the boundary at the point requests reach the server means the restriction holds regardless of what client is asking.\n\n## Trade-off\n\nThere's no single central gate doing this for the whole app — no row-level security at the database, just a rule applied at each relevant endpoint. Every new finance-adjacent feature has to remember to apply the same check. It's a discipline the team has to keep, not a guarantee the system enforces on its own."
+  }
+]
