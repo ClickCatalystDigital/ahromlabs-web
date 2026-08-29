@@ -1,7 +1,7 @@
 import Image from "next/image";
-import logo from "../../public/logo/a12.png";
+import logo from "../../public/logo/a_logo.webp";
 
-/** The nav mark. The ring is baked into the artwork itself, not a CSS border. */
+/** The nav mark. */
 export function LogoBadge({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center justify-center ${className}`}>
