@@ -10,7 +10,7 @@ Tracks what's been built against `docs/knowledge-layer-plan.md`, the decisions m
 | 1 — Corpus scaffolding + first note | **Done** | `content/` stood up, `/systems` ported to `content/terms/`, first note written. |
 | 2 — Fill the corpus | **Done** | 2 more notes, 5 patterns. |
 | 3 — Publish | **Done** | Wired `content/` into live routes + `/knowledge.json`. |
-| 4 — Close the loop | **In progress** — 4.4 done, 4.1/4.2/4.3 next | Point sibling repos at the corpus; internal skill. |
+| 4 — Close the loop | **Done** | Sibling repos wired to the corpus; internal skill created. |
 | 5 — Two moat artifacts | Not started | OSS Tally library or the extraction-accuracy benchmark. |
 | 6 — WebMCP | Not started | Trigger-based, not scheduled. |
 
@@ -60,7 +60,11 @@ Verified against the actual failure mode, not just re-running the old checks: `n
 
 **Found along the way, handled separately:** two real security issues in `ls-inventory` (hardcoded `admin123` password gating destructive undo/delete actions; near-absent per-route role enforcement) — flagged as background task `task_e20367ab`, not corpus material, not fixed here.
 
-**Still open:** 4.1 (wire `ls_crm`/`savistar-ops`/`ls-inventory`/`shanti-ops` — new `CLAUDE.md` + `SYSTEM.md` section in each, pointing at `/knowledge.json`), 4.2/4.3 (the internal `~/.claude/skills/ahrom-pattern-check/SKILL.md` skill, folding in the "every engagement ends with one pattern and one note" discipline). Plan requires redeploying `ahrom-labs` first so `/knowledge.json` reflects all 14 patterns before wiring the other repos to it — not yet done at time of writing.
+**Done:** deployed `ahrom-labs` to production (`https://ahromlabs.com/knowledge.json` confirmed live with all 28 entries, 14 patterns), then wired all 4 repos (`ls_crm`, `savistar-ops`, `ls-inventory`, `shanti-ops`) — each got a new `CLAUDE.md` (`@SYSTEM.md`) and an appended `SYSTEM.md` section stating both halves of the discipline (check before designing, contribute back after). Caught and fixed a real bug mid-execution in `savistar-ops` and `ls-inventory`: an off-by-one in reading each file's true last line caused the new section to insert before a trailing orphaned line instead of at the actual end — fixed by re-reading with `tail` and repositioning correctly, then re-verified across all 4 repos. None of the 4 external repos were committed — left for manual review, per the "only commit when asked" rule. Created `~/.claude/skills/ahrom-pattern-check/SKILL.md` (global, confirmed valid — the harness picked it up as an available skill immediately after creation), scoped to avoid misfiring across the user's many unrelated projects, with concrete contribute-back instructions (exact paths, schema, validation command) rather than a vague reminder.
+
+**Not verified**: whether the `@SYSTEM.md` import in each new `CLAUDE.md` actually auto-loads — needs a fresh session opened in one of those repos to confirm, not yet done.
+
+Also fixed along the way: `.DS_Store` files (`public/.DS_Store`, `public/logo/.DS_Store`) had been deployed as public static assets — gitignore never protected them since Wrangler/OpenNext uploads whatever's physically in `public/` on disk, not what git tracks. Deleted and redeployed; confirmed both now 404 in production.
 
 ## Known gaps / risks as of now
 
