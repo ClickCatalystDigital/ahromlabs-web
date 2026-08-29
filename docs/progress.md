@@ -11,7 +11,7 @@ Tracks what's been built against `docs/knowledge-layer-plan.md`, the decisions m
 | 2 — Fill the corpus | **Done** | 2 more notes, 5 patterns. |
 | 3 — Publish | **Done** | Wired `content/` into live routes + `/knowledge.json`. |
 | 4 — Close the loop | **Done** | Sibling repos wired to the corpus; internal skill created. |
-| 5 — Two moat artifacts | Not started | OSS Tally library or the extraction-accuracy benchmark. |
+| 5 — Two moat artifacts | **In progress** — 5.1 built locally, not yet public; 5.2 methodology documented, deferred | OSS Tally library or the extraction-accuracy benchmark. |
 | 6 — WebMCP | Not started | Trigger-based, not scheduled. |
 
 ## Phase 0 — Foundation
@@ -65,6 +65,14 @@ Verified against the actual failure mode, not just re-running the old checks: `n
 **Not verified**: whether the `@SYSTEM.md` import in each new `CLAUDE.md` actually auto-loads — needs a fresh session opened in one of those repos to confirm, not yet done.
 
 Also fixed along the way: `.DS_Store` files (`public/.DS_Store`, `public/logo/.DS_Store`) had been deployed as public static assets — gitignore never protected them since Wrangler/OpenNext uploads whatever's physically in `public/` on disk, not what git tracks. Deleted and redeployed; confirmed both now 404 in production.
+
+## Phase 5 — Two moat artifacts
+
+Phase 5's own gate ("only start once Phase 0's crawler log has told you what's actually being read") couldn't be satisfied — `proxy.ts` was only committed and first deployed today; there's no meaningful log history yet. Feasibility investigation found a stark gap instead: 5.1's protocol logic already exists in `ls_crm`, working and secret-free (days of packaging work); 5.2 has zero seed data anywhere (no local document corpus, no accuracy data in the schema) and would need a genuine multi-week from-scratch data collection and grading effort. Per your direction, both were planned; only 5.1 was executed.
+
+**5.1 — `tally-voucher-xml`** (local repo at `~/Developer/tally-voucher-xml`, remote confirmed as `https://github.com/ahromlabs/tally-voucher-xml.git`, not yet pushed): genericized voucher-XML building, push-to-Tally, and transient-vs-structural error classification, extracted from `ls_crm`'s production code. Stripped: `EXPENSE_LEDGER_MAP`'s ~25 real ledger names, the "LS Technologies is always the buyer" business rule, all Turso/DB coupling. 32 tests (Node's built-in `node:test`, zero dependencies), all passing — including a caught-and-fixed test bug where I'd assumed case-preservation in the ported error classifier that the original source (which lowercases before matching) never actually had; fixed the test, not the library, to stay faithful to what was verified in production. Confidentiality and secrets greps both clean. One piece of scope creep caught and removed before committing: an `amt()` helper carried over from the source that nothing in the extracted code actually calls. Committed locally; **not pushed to GitHub** — that's a separate explicit-approval step, not yet taken. `ahrom-labs` cross-links (in the `tally-voucher-posting` note and two patterns) are deliberately not added yet either, to avoid a dead link from the already-live production site to a non-public repo.
+
+**5.2 — extraction-accuracy benchmark**: methodology documented in the plan file only (pull a real document sample from `ls_crm`'s R2 bucket, redact, establish ground truth by hand, run multi-model comparisons via OpenRouter, grade every field, publish). No code, no repo. Explicit rule carried forward: never manufacture data, accuracy numbers, or conclusions — this ships only once representative documents, real ground truth, and a defensible evaluation process actually exist.
 
 ## Known gaps / risks as of now
 
