@@ -36,3 +36,7 @@ This isolates everything Tally-specific — the local-only connection, Tally's o
 ## Trade-off
 
 The integration only works while that PC and its agent are running. Data isn't instantly consistent between the two systems — pushes go out every 30 seconds, voucher status syncs back every 15 minutes, and slower-moving reference data (ledgers, stock items, voucher types) syncs once every 24 hours. That lag is the cost of not needing the target system to expose anything it doesn't already have.
+
+## As code
+
+The Tally-facing half of this agent — building and posting voucher XML against the local gateway — is open-sourced as [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml).

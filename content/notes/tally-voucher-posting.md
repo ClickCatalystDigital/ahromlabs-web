@@ -49,3 +49,7 @@ Posting isn't the end of the story. Each 15-minute sync compares what the app be
 ## Boundary
 
 None of this works as a cloud-to-cloud integration, because it isn't one — it depends on TallyPrime and its local gateway being reachable on the same machine as the agent. If that PC is off, nothing posts until it's back on; the 30-second retry picks up wherever it left off, with no manual restart needed.
+
+## Reference implementation
+
+The XML-building and error-classification logic described above is open-sourced as [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml) — the protocol-correct parts, stripped of this business's ledger names and database coupling.

@@ -11,8 +11,10 @@ export const orgGraph = {
       description:
         "Ahrom Labs builds custom operational infrastructure for businesses, modeling entities, relationships, workflows, and decisions as one coherent system.",
       founder: { "@id": `${siteUrl}/#founder` },
-      sameAs: ["https://www.linkedin.com/company/ahromlabs"],
-      // ponytail: GitHub org / Crunchbase still missing from sameAs — add once those exist.
+      sameAs: [
+        "https://www.linkedin.com/company/ahromlabs",
+        "https://github.com/ahromlabs",
+      ],
     },
     {
       "@type": "Person",
@@ -28,8 +30,14 @@ export const orgGraph = {
         "data engineering",
         "churn analysis",
       ],
-      // ponytail: no sameAs (LinkedIn/GitHub) or alumniOf (education) yet —
-      // add both here once you're ready to commit to public bio details.
+      sameAs: [
+        "https://www.linkedin.com/in/pujanmotiwala/",
+        "https://github.com/PujanMotiwala",
+      ],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Stevens Institute of Technology",
+      },
     },
     {
       "@type": "ProfessionalService",

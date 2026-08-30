@@ -34,3 +34,7 @@ Treating every failure the same way breaks in one of two directions: retry forev
 ## Trade-off
 
 The classification depends on parsing the target system's own error messages, which is simple to reason about but brittle if that wording ever changes — a workaround built against one system's specific quirks, not a general error-handling framework.
+
+## As code
+
+The transient-vs-structural classifier is open-sourced as `classifyNetworkError()`/`classifyResponseError()` in [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml).
