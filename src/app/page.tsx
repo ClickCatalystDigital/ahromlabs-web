@@ -72,8 +72,16 @@ export default function Home() {
               <p className="prose-measure mt-6 text-base leading-relaxed text-foreground-secondary">
                 A typical business runs on a CRM, an ERP, a handful of spreadsheets, and a
                 dozen smaller tools, each holding a partial view of how the business works.
-                None of them share a model of the <Link href="/systems#entity" className="text-link focus-ring">entities</Link>, 
-                <Link href="/systems#relationship" className="text-link focus-ring">relationships</Link>, or <Link href="/systems#workflow" className="text-link focus-ring">workflows</Link> 
+                None of them share a model of the{" "}
+                <Link href="/systems#entity" className="text-link focus-ring">
+                  entities
+                </Link>,{" "}
+                <Link href="/systems#relationship" className="text-link focus-ring">
+                  relationships
+                </Link>, or{" "}
+                <Link href="/systems#workflow" className="text-link focus-ring">
+                  workflows
+                </Link>{" "}
                 underneath.
               </p>
               <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
