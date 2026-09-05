@@ -64,7 +64,7 @@ body {
 
 @media (width >= 48rem) {
   .rail {
-    padding-inline: 2rem;
+    padding-inline: 0.5rem;
   }
 }
 

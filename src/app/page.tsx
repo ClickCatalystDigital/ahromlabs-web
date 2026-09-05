@@ -32,13 +32,13 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         {/* 1. Hero */}
-        <section className="rail flex min-h-screen items-center">
-          <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <div className="relative z-10 lg:col-span-6 lg:col-start-1 lg:row-start-1">
-              <h1 className="display text-5xl text-foreground sm:text-6xl lg:text-6xl">
+        <section className="relative flex items-center overflow-hidden py-12 lg:py-0">
+          <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-0">
+            <div className="rail relative z-10 col-span-1 row-start-1 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:translate-x-8">
+              <h1 className="display max-w-[14ch] text-5xl text-foreground sm:text-6xl lg:text-6xl">
                 We build the systems your business runs on.
               </h1>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-foreground-secondary sm:text-xl">
+              <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
                 Ahrom Labs designs and builds custom operational infrastructure. We model
                 your entities, workflows, and decisions as one connected system, not another
                 disconnected app.
@@ -51,12 +51,12 @@ export default function Home() {
                 than sitting in its own column. pointer-events-none keeps it from
                 intercepting the CTA where they overlap; the text column carries
                 z-10 so it stays on top. */}
-            <div className="pointer-events-none hidden lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:block">
+            <div className="pointer-events-none hidden lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:flex lg:items-center lg:justify-end">
               <Image
                 src={heroImage}
                 alt=""
                 priority
-                className="h-auto w-[132%] max-w-none -translate-x-[20%]"
+                className="h-auto w-full max-w-md object-contain lg:max-w-none lg:w-full"
               />
             </div>
           </div>
