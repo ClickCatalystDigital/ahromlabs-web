@@ -4,7 +4,8 @@ import Markdown from "react-markdown";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
-import { getContent } from "@/lib/content";
+import { getContent, formatDate } from "@/lib/content";
+import { articleGraph, jsonLd } from "@/lib/schema";
 
 export function generateStaticParams() {
   return getContent("pattern").map((pattern) => ({ slug: pattern.slug }));
@@ -25,6 +26,9 @@ export async function generateMetadata(props: PageProps<"/patterns/[slug]">): Pr
       siteName: "Ahrom Labs",
       title: pattern.title,
       description: pattern.answer,
+      publishedTime: pattern.published,
+      modifiedTime: pattern.updated,
+      authors: ["Pujan Motiwala"],
     },
     twitter: {
       card: "summary_large_image",
@@ -54,12 +58,27 @@ export default async function PatternPage(props: PageProps<"/patterns/[slug]">) 
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(articleGraph(pattern, `/patterns/${pattern.slug}`)) }}
+      />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">{pattern.title}</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             {pattern.answer}
+          </p>
+          <p className="mt-6 text-sm text-foreground-secondary">
+            Pujan Motiwala
+            {" · "}
+            <time dateTime={pattern.published}>{formatDate(pattern.published)}</time>
+            {pattern.updated !== pattern.published && (
+              <>
+                {" · Updated "}
+                <time dateTime={pattern.updated}>{formatDate(pattern.updated)}</time>
+              </>
+            )}
           </p>
         </section>
 

@@ -69,7 +69,8 @@ export default function AboutPage() {
                 decisions doesn&apos;t need someone to remember how things connect, because
                 the system already knows. New hires read the structure instead of asking
                 around. New tools plug into it instead of becoming another island.
-                Decisions carry their evidence instead of living in someone&apos;s memory.
+                Decisions carry their <Link href="/systems#evidence" className="text-link focus-ring">evidence</Link> instead of living in
+                someone&apos;s memory.
               </p>
             </div>
           </section>
@@ -87,6 +88,11 @@ export default function AboutPage() {
                 modeling a business properly takes real attention. We map how your
                 business actually works before we design or build anything, and that map
                 becomes the foundation the systems are built on.
+              </p>
+              <p className="prose-measure mt-4 leading-relaxed text-foreground-secondary">
+                The practice is run by Pujan Motiwala, Principal — the same person who
+                does the modeling, writes the code, and answers your first message.
+                Ahrom Labs works out of Ahmedabad, Gujarat, with clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">
                 <Link href="/#how-we-work" className="text-link focus-ring">

@@ -19,16 +19,16 @@ evidence:
   - metric: staff bank visibility
     value: none, every bank route rejects staff
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-08-31
 ---
 
 ## Why one book?
 
-Savistar (interior design) and Saag (furniture manufacturing) are sister companies under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.
+Savistar (interior design) and Saag (furniture manufacturing) are sister companies — a sister concern arrangement, in Indian accounting terms — under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.
 
 ## How "two companies" actually works
 
-There's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than "two companies, one book" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.
+There's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, GSTIN, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than "two companies, one book" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.
 
 ## Where the real structure is: who can see what
 

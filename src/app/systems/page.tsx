@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent } from "@/lib/content";
+import { jsonLd, termSetGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Systems",
@@ -48,6 +49,12 @@ export default function SystemsPage() {
   const groups = getGroups();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(termSetGraph(groups.flatMap((g) => g.terms))),
+        }}
+      />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">

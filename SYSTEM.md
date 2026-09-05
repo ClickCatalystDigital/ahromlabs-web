@@ -21,7 +21,7 @@ All under `src/app/`.
 
 ## Knowledge layer (`content/`, `src/lib/content.ts`, `scripts/build-content.mjs`)
 
-A markdown corpus (11 terms, 3 notes, 5 patterns as of this writing) with YAML frontmatter (`kind`, `slug`, `title`, `answer`, `domain`, `systems?`, `patterns?`, `evidence?`, `order?` (terms only), `published`, `updated`), documented in full in `docs/knowledge-layer-plan.md`. `docs/progress.md` tracks what's built against that plan, phase by phase.
+A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML frontmatter (`kind`, `slug`, `title`, `answer`, `domain`, `systems?`, `patterns?`, `evidence?`, `order?` (terms only), `published`, `updated`), documented in full in `docs/knowledge-layer-plan.md`. `docs/progress.md` tracks what's built against that plan, phase by phase.
 
 - **`scripts/build-content.mjs`** — the only place that touches the filesystem. A standalone Node script (plain `.mjs`, not bundled into the app) that reads `content/**/*.md`, parses frontmatter with `js-yaml`, validates it (required fields, slug-matches-filename, kind-matches-directory, and that every note's `patterns:` resolves to a real pattern — throws and fails the build on any violation), and writes the result to `src/lib/content-data.generated.json`.
 - **`src/lib/content-data.generated.json`** — committed (not gitignored) so standalone tooling (`tsc`, editors) resolves it before the build script has ever run; silently overwritten by every real entry point below, so a stale committed copy can't drift for long.

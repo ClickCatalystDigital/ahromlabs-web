@@ -27,3 +27,17 @@ export type ContentEntry = {
 export function getContent(kind: ContentKind): ContentEntry[] {
   return (contentData as ContentEntry[]).filter((entry) => entry.kind === kind);
 }
+
+// Locale and timezone are both pinned. Content dates are date-only strings, which
+// Date parses as UTC midnight — without timeZone:"UTC" a build machine west of
+// Greenwich bakes the previous day into the prerendered HTML.
+const dateFormat = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+
+export function formatDate(iso: string): string {
+  return dateFormat.format(new Date(iso));
+}

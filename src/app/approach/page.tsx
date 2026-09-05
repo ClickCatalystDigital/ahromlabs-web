@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
@@ -28,7 +29,19 @@ export const metadata: Metadata = {
 const sections = [
   {
     heading: "We model your business before automating it",
-    body: "Automation applied to an unmodeled business speeds up whatever is already happening, including the parts that are broken. Before we automate anything, we map the entities involved in your business, the relationships between them, and the workflows and dependencies that move work forward. That map becomes the thing your software is built on, not documentation kept alongside it.",
+    // The one sentence that introduces four glossary terms at once — the only
+    // place on this page worth linking out of. Later uses stay plain text.
+    body: (
+      <>
+        Automation applied to an unmodeled business speeds up whatever is already
+        happening, including the parts that are broken. Before we automate anything, we
+        map the <Link href="/systems#entity" className="text-link focus-ring">entities</Link> involved in your business, the 
+        <Link href="/systems#relationship" className="text-link focus-ring">relationships</Link> between them, and the 
+        <Link href="/systems#workflow" className="text-link focus-ring">workflows</Link> and <Link href="/systems#dependency" className="text-link focus-ring">dependencies</Link> that move work
+        forward. That map becomes the thing your software is built on, not documentation
+        kept alongside it.
+      </>
+    ),
   },
   {
     heading: "Architecture is the unit of value, not the feature",

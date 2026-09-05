@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import { orgGraph, siteUrl } from "@/lib/schema";
+import { jsonLd, orgGraph, siteUrl } from "@/lib/schema";
 import "./globals.css";
 
 // Body/heading typeface for the whole site. Only the weights actually used
@@ -29,7 +29,10 @@ export const metadata: Metadata = {
   },
   description:
     "Ahrom Labs builds custom operational infrastructure for businesses: modeling entities, relationships, workflows, and decisions as one coherent system instead of another disconnected app.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: { "application/json": "/knowledge.json" },
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -69,9 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(orgGraph).replace(/</g, "\\u003c"),
-          }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(orgGraph) }}
         />
         {children}
       </body>

@@ -186,6 +186,38 @@
   },
   {
     "kind": "note",
+    "slug": "same-confidence-different-autonomy",
+    "title": "The same confidence score, two different autonomy rules",
+    "answer": "Two match-suggestion systems in the same manufacturing app score candidates identically — a Laplace-smoothed approval ratio, promoted at 75% confidence with at least 3 prior approvals. One auto-applies its top match. The other never does, no matter how confident the score, because it decides what goes on a statutory quality-control document.",
+    "domain": [
+      "ai-extraction",
+      "human-in-the-loop",
+      "manufacturing"
+    ],
+    "patterns": [
+      "human-confirmed-extraction",
+      "unconfirmed-inferences-stay-read-only"
+    ],
+    "evidence": [
+      {
+        "metric": "promotion threshold",
+        "value": "(approvals+1) / (approvals+rejections+2) ≥ 0.75, minimum 3 approvals"
+      },
+      {
+        "metric": "certificate-matcher autonomy",
+        "value": "never auto-applies — a person always clicks \"use this certificate\""
+      },
+      {
+        "metric": "stock-matcher autonomy",
+        "value": "auto-reserves its top match, same confidence math, same threshold"
+      }
+    ],
+    "published": "2026-08-31",
+    "updated": "2026-08-31",
+    "body": "## Two systems, the same scoring math\n\nA manufacturing operation runs two independent match-suggestion systems that solve the same shape of problem: given a new record, rank the best existing candidates to link it to. Both score confidence the same way — a Laplace-smoothed approval ratio, `(approvals + 1) / (approvals + rejections + 2)`, promoted to \"high confidence\" once it clears 0.75 with at least 3 recorded approvals.\n\n## What each one is actually matching\n\nOne system matches leftover cut material back to bill-of-materials lines still waiting on stock — reserving whichever offcut fits, rotation allowed, so usable material doesn't get set aside as scrap. The other matches incoming test certificates to the bill-of-materials line they belong to, the record that ends up inside a statutory quality-control document.\n\n## Same score, different action\n\nAt the identical confidence threshold, the stock-matching system auto-reserves its top candidate the moment it clears the bar — a database write happens with no person involved. The certificate-matching system never does that. It always returns a ranked list; nothing gets linked until a person clicks \"use this certificate.\" A promoted, high-confidence match just moves to the top of that list — it doesn't get to act on its own.\n\n## Why the same math earns different trust\n\nA wrong stock reservation is a wasted click — someone notices the piece doesn't fit and picks another from the list. A wrong match on a quality certificate becomes part of the paperwork proving a part meets its material specification. The statistics can't tell those two mistakes apart; the decision about which one gets to act unsupervised has to be made separately, by someone who understands what's actually at stake on each side."
+  },
+  {
+    "kind": "note",
     "slug": "tally-voucher-posting",
     "title": "Posting vouchers into TallyPrime from a cloud app",
     "answer": "A local agent, running on the same PC as TallyPrime, polls a cloud app's database every 30 seconds and posts approved invoices into Tally's local XML gateway, syncing voucher status every 15 minutes and master data nightly. Missing ledgers and real rejections are held for a person; connection failures retry automatically until Tally is reachable again.",
@@ -253,8 +285,8 @@
       }
     ],
     "published": "2026-08-29",
-    "updated": "2026-08-29",
-    "body": "## Why one book?\n\nSavistar (interior design) and Saag (furniture manufacturing) are sister companies under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.\n\n## How \"two companies\" actually works\n\nThere's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than \"two companies, one book\" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.\n\n## Where the real structure is: who can see what\n\nThe part that isn't simple is financial visibility. Staff log day-to-day cash transactions, but their view of the cash ledger is scoped to only the entries they personally created — enforced at the point the data is fetched, not just hidden in the interface. Bank data goes further: it isn't scoped, it's excluded entirely. Every request touching bank information from a staff account is rejected before any query even runs. Owners see everything; staff see their own cash activity and nothing from the bank side.\n\n## Why it's built this way\n\nNone of this depends on every integration being perfectly configured. The database, file storage, and AI extraction the app uses elsewhere are each optional at the infrastructure level — the app runs regardless, and each feature behaves according to whether its own configuration is present, rather than the whole system depending on all of them being wired up.\n\n---\n\n> \"They really took the time to understand our concerns and requirements, and the system was built the way we had envisioned it. It has brought much more structure, visibility, and control to the way we operate.\"\n>\n> — Sachi & Haripriya, owners of Savistar and Saag"
+    "updated": "2026-08-31",
+    "body": "## Why one book?\n\nSavistar (interior design) and Saag (furniture manufacturing) are sister companies — a sister concern arrangement, in Indian accounting terms — under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.\n\n## How \"two companies\" actually works\n\nThere's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, GSTIN, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than \"two companies, one book\" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.\n\n## Where the real structure is: who can see what\n\nThe part that isn't simple is financial visibility. Staff log day-to-day cash transactions, but their view of the cash ledger is scoped to only the entries they personally created — enforced at the point the data is fetched, not just hidden in the interface. Bank data goes further: it isn't scoped, it's excluded entirely. Every request touching bank information from a staff account is rejected before any query even runs. Owners see everything; staff see their own cash activity and nothing from the bank side.\n\n## Why it's built this way\n\nNone of this depends on every integration being perfectly configured. The database, file storage, and AI extraction the app uses elsewhere are each optional at the infrastructure level — the app runs regardless, and each feature behaves according to whether its own configuration is present, rather than the whole system depending on all of them being wired up.\n\n---\n\n> \"They really took the time to understand our concerns and requirements, and the system was built the way we had envisioned it. It has brought much more structure, visibility, and control to the way we operate.\"\n>\n> — Sachi & Haripriya, owners of Savistar and Saag"
   },
   {
     "kind": "pattern",

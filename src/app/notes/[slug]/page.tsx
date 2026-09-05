@@ -5,7 +5,8 @@ import Markdown from "react-markdown";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
-import { getContent } from "@/lib/content";
+import { getContent, formatDate } from "@/lib/content";
+import { articleGraph, jsonLd } from "@/lib/schema";
 
 export function generateStaticParams() {
   return getContent("note").map((note) => ({ slug: note.slug }));
@@ -26,6 +27,9 @@ export async function generateMetadata(props: PageProps<"/notes/[slug]">): Promi
       siteName: "Ahrom Labs",
       title: note.title,
       description: note.answer,
+      publishedTime: note.published,
+      modifiedTime: note.updated,
+      authors: ["Pujan Motiwala"],
     },
     twitter: {
       card: "summary_large_image",
@@ -56,12 +60,27 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(articleGraph(note, `/notes/${note.slug}`)) }}
+      />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">{note.title}</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             {note.answer}
+          </p>
+          <p className="mt-6 text-sm text-foreground-secondary">
+            Pujan Motiwala
+            {" · "}
+            <time dateTime={note.published}>{formatDate(note.published)}</time>
+            {note.updated !== note.published && (
+              <>
+                {" · Updated "}
+                <time dateTime={note.updated}>{formatDate(note.updated)}</time>
+              </>
+            )}
           </p>
         </section>
 

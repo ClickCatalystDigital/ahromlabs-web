@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
-import { getContent } from "@/lib/content";
+import { getContent, formatDate } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Patterns",
@@ -51,6 +51,12 @@ export default function PatternsPage() {
                   >
                     <h2 className="text-lg font-medium text-foreground">{pattern.title}</h2>
                     <p className="mt-2 max-w-[45ch] leading-relaxed text-foreground-secondary">{pattern.answer}</p>
+                    <time
+                      dateTime={pattern.published}
+                      className="mt-3 block text-sm text-foreground-secondary"
+                    >
+                      {formatDate(pattern.published)}
+                    </time>
                   </Link>
                 ))}
               </div>
