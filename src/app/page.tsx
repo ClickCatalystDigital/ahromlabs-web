@@ -33,8 +33,8 @@ export default function Home() {
       <main className="flex-1">
         {/* 1. Hero */}
         <section className="rail flex min-h-[72vh] items-center py-16 md:py-20">
-          <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div>
+          <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12">
+            <div className="relative z-10 lg:col-span-6 lg:col-start-1 lg:row-start-1">
               <h1 className="display text-5xl text-foreground sm:text-6xl lg:text-6xl">
                 We build the systems your business runs on.
               </h1>
@@ -47,8 +47,17 @@ export default function Home() {
                 Start a conversation
               </a>
             </div>
-            <div className="hidden lg:block">
-              <Image src={heroImage} alt="" priority className="w-full h-auto" />
+            {/* Oversized and pulled left so it passes behind the headline rather
+                than sitting in its own column. pointer-events-none keeps it from
+                intercepting the CTA where they overlap; the text column carries
+                z-10 so it stays on top. */}
+            <div className="pointer-events-none hidden lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:block">
+              <Image
+                src={heroImage}
+                alt=""
+                priority
+                className="h-auto w-[132%] max-w-none -translate-x-[20%]"
+              />
             </div>
           </div>
         </section>
