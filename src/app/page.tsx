@@ -32,7 +32,7 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         {/* 1. Hero */}
-        <section className="rail flex min-h-[72vh] items-center py-16 md:py-20">
+        <section className="rail flex min-h-[72vh] items-center py-6 md:py-8">
           <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="relative z-10 lg:col-span-6 lg:col-start-1 lg:row-start-1">
               <h1 className="display text-5xl text-foreground sm:text-6xl lg:text-6xl">
