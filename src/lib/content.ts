@@ -41,3 +41,11 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
 export function formatDate(iso: string): string {
   return dateFormat.format(new Date(iso));
 }
+
+// A term earns its own page only once it has body content beyond the one-line
+// `answer` the glossary already shows. Without this gate, 11 near-empty pages
+// would ship as thin content. Write a body in content/terms/<slug>.md and the
+// page, its sitemap entry, its schema and its llms.txt line all appear together.
+export function termHasPage(term: ContentEntry): boolean {
+  return term.body.trim().length > 0;
+}

@@ -6,7 +6,8 @@ produced by a tool that could not fetch `/robots.txt`, `/sitemap.xml`, or `/llms
 that strips `<script>` tags, so it reported existing infrastructure as missing. Only the
 findings that survived verification are recorded here.
 
-Status: **items 1–11 shipped**. Open items are in the last section.
+Status: **items 1–11 shipped and deployed** (commit `381ef33`), plus a second round
+(12–14) from a follow-up gap audit. Open items are in the last section.
 
 ## Decisions taken
 
@@ -85,6 +86,61 @@ reply is a human anyway.
 this work — eslint had no ignore for `.open-next/**` or `.wrangler/**` and was walking ~69MB
 of bundled output. Two lines in `eslint.config.mjs`.
 
+
+## Second round — from a gap audit after the first deploy
+
+**12. Sitemap `lastModified` was dishonest.** All six static routes carried the build
+timestamp, so every deploy told crawlers `/`, `/approach`, `/systems`, `/about`, `/notes`, and
+`/patterns` had changed. `/systems`, `/notes`, `/patterns` now derive it from the newest
+`updated` in the kind they list; `/`, `/approach`, `/about` carry **none** — `lastmod` is
+optional, and omitting it is honest where inventing it is not.
+
+**13. `og:locale` was absent** on every page. Now `en_IN` on the root layout.
+
+**14. Pattern→note links were one-directional.** Notes declare `patterns:` in frontmatter and
+render "Related patterns"; patterns had no route back. A reader landing on a pattern from
+search had no path to the engagement it came out of. Pattern pages now compute the reverse
+(`getContent("note").filter(n => n.patterns?.includes(slug))`) and render "Seen in practice" —
+5 of 14 patterns qualify, and it correctly renders nothing on the other 9.
+
+
+## Third round — edge cases + typography
+
+**15. Glossary term pages, gated on content.** `src/app/systems/[slug]/` renders a full term
+page (definition, date, byline, markdown body, `DefinedTerm` JSON-LD, OG card). It is gated on
+`termHasPage()` — body content beyond the one-line `answer`. **All 11 terms have empty bodies
+today, so zero pages build.** Writing a body in `content/terms/<slug>.md` brings the page, its
+sitemap entry, its schema `url`, its `llms.txt` line and its link from `/systems` all at once.
+Eleven single-sentence pages would have been thin content; the capability without the thin
+content is the useful half.
+
+**16. Term dates.** `DefinedTerm` nodes now carry `datePublished`/`dateModified` — machine-
+readable, no visual change to the glossary. `llms.txt` gained a `## Vocabulary` section.
+
+**17. `ProfessionalService` and `Person` completed.** `address`, `areaServed`, `email`, `image`
+on the service; `url`, `email`, `address` on the person. The shared `postalAddress`/`areaServed`
+/`contactEmail` constants are defined once so the three nodes cannot drift apart.
+
+**18. `SystemDiagram` text serialization.** A naive extractor read
+`STRUCTUREREASONINGBUSINESSENTITIES...`; it now reads
+`STRUCTURE REASONING BUSINESS ENTITIES ...`. The separators are whitespace text nodes placed
+as siblings of `<text>`, inside `<g>` — SVG does not render character data outside a `<text>`
+element, so they cost nothing visually. Verified by measuring `getBBox()` on all 11 labels
+before and after with fonts loaded: **byte-identical**. `aria-hidden`, the `sr-only` equivalent
+and the `figcaption` are untouched.
+
+**19. Typography.** Instrument Serif for hero headlines and major section headings (27
+elements); Geist Sans for body, navigation, buttons, labels, cards and UI; Geist Mono unchanged
+for diagram/technical text. Replaced Pilcrow Rounded. Instrument Serif has one weight, so
+`.display` sets `font-weight: 400` explicitly and drops `tracking-tight` — a `font-semibold`
+utility on it would trigger synthetic bold.
+
+## Gaps found but deliberately left
+
+- ~~Glossary terms second-class~~ — **addressed, see items 15-16.**
+- ~~`ProfessionalService`/`Person` missing fields~~ — **fixed, see item 17.**
+- ~~`SystemDiagram` run-on string~~ — **fixed, see item 18.**
+
 ---
 
 ## Deliberately not doing
@@ -119,14 +175,32 @@ Recorded so no future session re-does the work:
 | No robots.txt / sitemap / llms.txt | All three existed |
 | Brand has no LinkedIn / GitHub | Both exist and are in `sameAs` |
 
+## Settled — do not re-raise
+
+> **Client naming permission: RESOLVED, and settled for all clients.** The founder has
+> obtained naming permission from every client whose work appears in this corpus — LS
+> Technologies, Shanti Boilers, Savistar, and Saag. Named attribution is authorized. This is
+> not an open question, and it is not to be re-raised as a risk in any future audit or
+> review pass. If a new client's work enters the corpus, get permission for that client and
+> add them to this list; the existing four are settled.
+
 ## Open
 
-1. **Fix the LinkedIn HQ field**, currently "Ahmedavad, GJ". The site now says Ahmedabad;
+1. **`systems:` frontmatter is dead data, and public by accident.** 14 entries carry it
+   (`ls-crm`, `savistar-ops`, `pcb-inventory`); nothing in `src/` reads it, but
+   `/knowledge.json` serializes whole entries, so those internal repo identifiers are already
+   live. Decide: render it, strip it from the JSON, or leave it — but decide, rather than
+   leaving it public by default.
+2. **Fix the LinkedIn HQ field**, currently "Ahmedavad, GJ". The site now says Ahmedabad;
    corroboration across `sameAs` targets is the entire point of the link.
-2. **`foundingDate`** omitted from `Organization` — never established. Year-only is valid.
-3. **Google Business Profile** — never considered in any prior pass. Now viable, since a
+3. **`foundingDate`** omitted from `Organization` — never established. Year-only is valid.
+4. **Google Business Profile** — never considered in any prior pass. Now viable, since a
    city-level address exists. Would be a third corroborating `sameAs` node.
-4. **Engagement scope / pricing / risk-to-buyer page** — the one gap a prior competitive pass
+5. **Engagement scope / pricing / risk-to-buyer page** — the one gap a prior competitive pass
    endorsed (`docs/progress.md:105`) and the only page type a buyer looks for that this site
    has no answer for. Still unbuilt.
-5. **Citation baseline** (`docs/citation-baseline-2026-08.md`) — still deliberately deferred.
+6. **OG social cards still render in Pilcrow Rounded.** `src/lib/og-assets.ts` embeds it as
+   base64 for `renderOgImage()`, so every social card is in the old typeface while the site is
+   now Instrument Serif + Geist. Regenerating those assets is the fix. `src/fonts/pilcrow-rounded/`
+   is likewise now unreferenced by the site itself.
+7. **Citation baseline** (`docs/citation-baseline-2026-08.md`) — still deliberately deferred.

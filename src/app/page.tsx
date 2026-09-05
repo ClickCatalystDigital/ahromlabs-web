@@ -35,7 +35,7 @@ export default function Home() {
         <section className="rail flex min-h-[72vh] items-center py-16 md:py-20">
           <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-6xl">
+              <h1 className="display text-5xl text-foreground sm:text-6xl lg:text-6xl">
                 We build the systems your business runs on.
               </h1>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-foreground-secondary sm:text-xl">
@@ -57,7 +57,7 @@ export default function Home() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 Your business runs on disconnected systems.
               </h2>
               <p className="prose-measure mt-6 text-base leading-relaxed text-foreground-secondary">
@@ -80,7 +80,7 @@ export default function Home() {
           <section className="section border-t border-line">
             <div className="rail grid grid-cols-1 gap-12 md:grid-cols-2">
               <div>
-                <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                <h2 className="display text-3xl text-foreground sm:text-4xl">
                   The Ahrom approach
                 </h2>
                 <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-foreground-secondary">
@@ -112,7 +112,7 @@ export default function Home() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 One structure, not a stack of tools.
               </h2>
               <div className="mx-auto mt-16 max-w-xl">
@@ -126,7 +126,7 @@ export default function Home() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 What we believe
               </h2>
               <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
@@ -147,7 +147,7 @@ export default function Home() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 Who this is for
               </h2>
               <p className="prose-measure mt-6 text-base leading-relaxed text-foreground-secondary">
@@ -165,7 +165,7 @@ export default function Home() {
         <Reveal>
           <section id="how-we-work" className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 How we work
               </h2>
               <p className="prose-measure mt-6 text-base leading-relaxed text-foreground-secondary">
@@ -187,7 +187,7 @@ export default function Home() {
         <Reveal>
           <section id="contact" className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 Start a conversation
               </h2>
               <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">

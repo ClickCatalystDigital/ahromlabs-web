@@ -110,6 +110,111 @@ Full ranked list + "needs founder confirmation" items (OpenRouter quota string, 
 
 **Queued, not yet written** (by priority): candidate #5 as a note next (moderate demand, evidence indirect — NetSuite-context practitioner discourse, not Tally-context); candidates #1, #2, #4 as `patterns/` (real, verified, no demand bar to clear — that's not what patterns are for); candidates #3, #6 last (zero buyer-search relevance, pure engineering-credibility/agent-reuse value, still legitimate but lowest urgency). The "needs founder confirmation" items from Pass 1 must be resolved before any of #1/#2 get written, since both lean on numbers that weren't independently verifiable from the repos alone.
 
+## Discoverability / trust pass — 2026-09-05 (not a numbered phase)
+
+Triggered by a production incident, then widened. Recorded here because most of the work was
+verification, and the verification is the part worth not repeating.
+
+**The incident first.** `ahromlabs.com` was returning **Error 1102 (Worker exceeded resource
+limits)** — a spike of 38 errors concentrated on `GET /patterns`, with a companion Workers log
+warning that `waitUntil()` tasks were cancelled after invocation end. Two AI diagnoses were
+offered and both were wrong in the same way: they prescribed `export const dynamic =
+'force-static'` and `output: 'export'`. `force-static` was a no-op (the prerender manifest
+already showed `/patterns` as `"compute": "static"`), and `output: 'export'` would have broken
+the build outright — it is mutually exclusive with the `opennextjs-cloudflare build/deploy`
+pipeline this repo uses.
+
+The actual mechanism, traced through the build output: **no page request in this deployment
+avoids booting the full Next.js server inside the Worker.** `.open-next/worker.js` has no
+static-asset short-circuit for HTML — every non-image request goes through `middlewareHandler`
+then `server-functions/default/handler.mjs`. `.open-next/assets/` contains zero page HTML (not
+even the homepage); prerendered pages live as `.cache` files only the Worker's cache reader can
+reach. With no R2/KV/D1 incremental-cache binding, those reads miss, so a "static" page is
+re-rendered per request. On the Workers **Free** plan (10ms CPU/request) that trips 1102 under
+any real traffic; the `waitUntil()` warning was the isolate being killed mid-request, not a
+separate bug. **Fix: upgraded to Workers Paid** (10ms → 30s CPU). Errors stopped. No code change
+was involved, and none would have helped. An R2-backed incremental cache remains optional — it
+would cut CPU per request, not prevent a crash that no longer happens.
+
+**Then: an external AI audit of the site was handed over.** Verified claim-by-claim against the
+repo before anything was acted on. **Roughly half of it was false** — it was produced by a tool
+that cannot fetch `/robots.txt`, `/sitemap.xml`, or `/llms.txt` and that strips `<script>` tags,
+so it reported existing infrastructure as missing: "no structured data" (the `orgGraph` has been
+site-wide for weeks), "no author attribution" (the `Person` node names the founder on every
+page), "notes pages ship no description" (field-identical to patterns), "no robots.txt /
+sitemap / llms.txt" (all three existed), "no LinkedIn/GitHub" (both in `sameAs`). It also
+recommended several things `docs/knowledge-layer-plan.md:190-196` had already explicitly
+rejected — `llms-full.txt`, markdown mirrors, a public MCP server, `FAQPage` schema.
+
+The lesson worth keeping: **an audit that cannot see `<script>` tags cannot assess a site whose
+structured data lives in one.** Verify before acting; the cost of acting on it unverified would
+have been rebuilding what already ships and breaking what already works.
+
+**Shipped** (commit `381ef33`, deployed and verified live): `jsonLd()` escaper · OG cards for
+`/notes` + `/patterns` (the only two content pages lacking one) · visible `<time>` dates on 18
+detail pages and both index cards · `article:published_time`/`modified_time`/`author` ·
+`TechArticle` JSON-LD on all 18 detail pages with `@id` refs into `orgGraph` · `DefinedTermSet`
+on `/systems` · `Organization` completed with `logo`/`email`/`address`/`areaServed` · `llms.txt`
+converted from a hand-maintained static file to a generated route · `/knowledge.json` made
+discoverable · 8 first-occurrence glossary links into the previously-unlinked `/systems#`
+anchors · footer `mailto` + location · founder named in visible `/about` copy.
+
+A second round after a gap audit: honest sitemap `lastModified` · `og:locale` · reverse
+pattern→note links ("Seen in practice").
+
+**Decisions taken:** publish `hello@ahromlabs.com` (verified live — receives via Cloudflare Email
+Routing, SPF-authorized to send); city + region only, no street address (Ahmedabad, Gujarat);
+name the founder visibly on `/about` and byline all 18 content pages.
+
+**Two verification techniques worth reusing:**
+1. **Timezone pin test.** Content dates are date-only strings, parsed as UTC midnight. Built
+   under `TZ=UTC` and `TZ=Pacific/Honolulu` and diffed the rendered `<time>` output — without
+   `timeZone: "UTC"` in the formatter, a build machine west of Greenwich bakes the *previous
+   day* into static HTML. Silent, and invisible on any machine east of UTC.
+2. **Drift test for generated schema.** Corrupted one term's `domain:` frontmatter, rebuilt, and
+   confirmed `/systems` rendered 10 terms *and* the `DefinedTermSet` emitted 10 — proving the
+   schema cannot claim a term the page doesn't show. This works only because `termSetGraph` is
+   fed the rendered array rather than re-querying `getContent("term")`.
+
+**Deliberately not done, with reasoning:** `Review` schema on the testimonial (first-party
+self-review, ineligible for rich results, five-file optional-field pipeline for one quote —
+revisit at testimonial #2); RSS (`/knowledge.json` already is the machine feed, and this is a
+corpus, not a feed); `BreadcrumbList`; per-crawler `robots.txt` allow rules (a no-op against the
+existing `userAgent: "*", allow: "/"`).
+
+**Fixed in passing, unrelated:** `npm run lint` had been crashing with a V8 out-of-memory —
+eslint had no ignore for `.open-next/**` or `.wrangler/**` and was walking ~69MB of bundled
+output. Two lines in `eslint.config.mjs`.
+
+**Third round — edge cases + typography (same day).** Glossary term pages built but *gated* on
+`termHasPage()`: all 11 terms have empty bodies, so zero pages ship rather than 11 thin
+single-sentence pages — the route, schema `url`, sitemap entry, `llms.txt` line and `/systems`
+link all appear together the moment a body is written. `DefinedTerm` nodes gained dates;
+`llms.txt` gained a `## Vocabulary` section. `ProfessionalService` and `Person` completed
+(`address`/`areaServed`/`email`/`image`/`url`), with the address/email constants defined once so
+the three nodes can't drift. `SystemDiagram` no longer serializes as a run-on string —
+whitespace text nodes as siblings of `<text>`, which SVG does not render, verified by comparing
+`getBBox()` on all 11 labels before and after with fonts loaded (**byte-identical**), with
+`aria-hidden`/`sr-only`/`figcaption` untouched.
+
+**Typography changed deliberately:** Instrument Serif for hero headlines and major section
+headings (27 elements), Geist Sans for body/nav/buttons/labels/cards/UI, Geist Mono unchanged
+for technical text. Replaced Pilcrow Rounded. Instrument Serif has a single weight, so the new
+`.display` class sets `font-weight: 400` explicitly and drops `tracking-tight` — a
+`font-semibold` utility on it would make the browser synthesise a bold. **Open consequence:** OG
+social cards still render in Pilcrow, which `src/lib/og-assets.ts` embeds as base64.
+
+**Client naming: closed permanently.** Permission was confirmed for every client — LS
+Technologies, Shanti Boilers, Savistar, Saag. Recorded in `SYSTEM.md`,
+`docs/knowledge-layer-plan.md` (Phase 2.4), `docs/plans-to-upgrade.md` and here so no future
+audit re-raises it.
+
+**Environment note:** the machine hit 100% disk (302Mi free of 228Gi) mid-session and builds
+started failing with `ENOSPC`. Cleared `~/.npm` (3.2G, regenerable) to unblock. Not a repo
+problem — the disk needs attention.
+
+Full detail, including what was rejected and what remains open: `docs/plans-to-upgrade.md`.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).
@@ -117,3 +222,29 @@ Full ranked list + "needs founder confirmation" items (OpenRouter quota string, 
 3. **0.5 Baseline citation check** — attempted 2026-08-29, blocked (Claude in Chrome not connected; sandboxed browser hit a login wall on the first live query, Perplexity). Rather than fabricate results, this was skipped. The 15 prompts are drafted and saved at `docs/citation-baseline-2026-08.md`. **Not actually time-sensitive right now**: the site launched only days ago, so there's no existing citation footprint to lose — training-data-based answers won't shift for months regardless of when this runs, and live-search-grounded answers have nothing to be "before" yet either. Revisit once the site has enough age/content that a real before/after would mean something. Still open, deliberately deferred.
 4. ~~`Organization.sameAs` still missing GitHub/Crunchbase; `Person` node still missing `sameAs`/`alumniOf`~~ — **resolved 2026-08-30**. `Organization.sameAs` now includes `https://github.com/ahromlabs` (Crunchbase deliberately skipped — no profile exists, not fabricated). `Person` node now has `sameAs` (LinkedIn, GitHub) and `alumniOf` (Stevens Institute of Technology). Both `ponytail:` comments removed. Verified in the rendered JSON-LD after `npm run build`.
 5. **0.4 Consistency sweep — resolved 2026-08-30.** Compared `Organization.description` against the live LinkedIn company page and GitHub org page. Findings: LinkedIn's "About us" text carries the same meaning but different wording than the site (user's call: leave as-is, not reconciled — not a blocker). GitHub org bio was empty; user set it by hand to match the site's description verbatim, confirmed live on `github.com/ahromlabs`. Noticed in passing, not acted on: LinkedIn's HQ field reads "Ahmedavad, GJ" (likely a typo for Ahmedabad); a second public repo `test` exists under the `ahromlabs` org alongside `tally-voucher-xml`, purpose unclear.
+6. **`systems:` frontmatter is dead data, and already public.** 14 entries carry it
+   (`ls-crm`, `savistar-ops`, `pcb-inventory`); nothing in `src/` reads it, but
+   `/knowledge.json` serializes whole entries, so those internal repo identifiers are live on
+   the public endpoint. Decide deliberately: render it, strip it from the JSON, or leave it.
+   It is currently public by accident rather than by choice.
+7. ~~`LS Technologies` named without a record of permission~~ — **RESOLVED 2026-09-05, and
+   permanently closed.** Permission was in fact obtained; it had simply never been logged.
+
+   > **Client naming permission: RESOLVED, and settled for all clients.** The founder has
+   > obtained naming permission from every client whose work appears in this corpus — LS
+   > Technologies, Shanti Boilers, Savistar, and Saag. Named attribution is authorized. This is
+   > not an open question, and it is not to be re-raised as a risk in any future audit or
+   > review pass. If a new client's work enters the corpus, get permission for that client and
+   > add them to this list; the existing four are settled.
+
+   The 2026-09-05 gap audit raised this because the permission was real but unrecorded — the
+   record now exists so no future pass repeats the flag.
+8. **Glossary terms are second-class.** All 11 carry `published`/`updated` that `/systems`
+   discards, there are no per-term pages, and the `DefinedTerm` nodes carry no dates. Fine as
+   long as the glossary stays a single reference page; revisit if terms need to be citable
+   individually.
+9. **LinkedIn HQ field still reads "Ahmedavad, GJ"** (typo). The site's schema now says
+   Ahmedabad — cross-source corroboration is the entire point of the `sameAs` link.
+10. **`foundingDate` omitted** from `Organization` — never established. Year-only is valid.
+11. **Google Business Profile** — never considered in any prior pass. Now viable since a
+    city-level address exists; would be a third corroborating `sameAs` node.

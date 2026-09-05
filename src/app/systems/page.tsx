@@ -3,7 +3,8 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
-import { getContent } from "@/lib/content";
+import { getContent, termHasPage } from "@/lib/content";
+import Link from "next/link";
 import { jsonLd, termSetGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -41,7 +42,14 @@ function getGroups() {
     terms: terms
       .filter((t) => t.domain?.[0] === domain)
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-      .map((t) => ({ term: t.title, definition: t.answer, slug: t.slug })),
+      .map((t) => ({
+        term: t.title,
+        definition: t.answer,
+        slug: t.slug,
+        published: t.published,
+        updated: t.updated,
+        hasPage: termHasPage(t),
+      })),
   }));
 }
 
@@ -58,7 +66,7 @@ export default function SystemsPage() {
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="display text-5xl text-foreground sm:text-6xl">
             Systems
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
@@ -71,13 +79,21 @@ export default function SystemsPage() {
           <Reveal key={group.label}>
             <section className="section border-t border-line">
               <div className="rail">
-                <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                <h2 className="display text-3xl text-foreground sm:text-4xl">
                   {group.label}
                 </h2>
                 <dl className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
                   {group.terms.map((item) => (
                     <div key={item.term} id={item.slug} className="scroll-mt-24">
-                      <dt className="text-lg font-medium text-foreground">{item.term}</dt>
+                      <dt className="text-lg font-medium text-foreground">
+                        {item.hasPage ? (
+                          <Link href={`/systems/${item.slug}`} className="text-link focus-ring">
+                            {item.term}
+                          </Link>
+                        ) : (
+                          item.term
+                        )}
+                      </dt>
                       <dd className="mt-2 max-w-[45ch] leading-relaxed text-foreground-secondary">
                         {item.definition}
                       </dd>

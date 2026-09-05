@@ -63,7 +63,7 @@ export default function ApproachPage() {
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="display text-5xl text-foreground sm:text-6xl">
             Approach
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
@@ -76,7 +76,7 @@ export default function ApproachPage() {
           <Reveal key={s.heading}>
             <section className="section border-t border-line">
               <div className="rail">
-                <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                <h2 className="display text-3xl text-foreground sm:text-4xl">
                   {s.heading}
                 </h2>
                 <p className="prose-measure mt-4 leading-relaxed text-foreground-secondary">{s.body}</p>

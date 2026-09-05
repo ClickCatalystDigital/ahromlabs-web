@@ -2,6 +2,20 @@ import type { ContentEntry } from "./content";
 
 export const siteUrl = "https://ahromlabs.com";
 
+const contactEmail = "mailto:hello@ahromlabs.com";
+
+// City + region only, deliberately no streetAddress: enough to establish a real
+// place for entity resolution without publishing a working address. Shared by
+// Organization, ProfessionalService and Person so they can't drift apart.
+const postalAddress = {
+  "@type": "PostalAddress",
+  addressLocality: "Ahmedabad",
+  addressRegion: "Gujarat",
+  addressCountry: "IN",
+} as const;
+
+const areaServed = { "@type": "Country", name: "India" } as const;
+
 export const orgGraph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -20,16 +34,9 @@ export const orgGraph = {
         height: 2722,
       },
       image: `${siteUrl}/logo/a12.png`,
-      email: "mailto:hello@ahromlabs.com",
-      // City + region only, deliberately no streetAddress: enough to establish a
-      // real place for entity resolution without publishing a working address.
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Ahmedabad",
-        addressRegion: "Gujarat",
-        addressCountry: "IN",
-      },
-      areaServed: { "@type": "Country", name: "India" },
+      email: contactEmail,
+      address: postalAddress,
+      areaServed: areaServed,
       sameAs: [
         "https://www.linkedin.com/company/ahromlabs",
         "https://github.com/ahromlabs",
@@ -57,6 +64,9 @@ export const orgGraph = {
         "@type": "CollegeOrUniversity",
         name: "Stevens Institute of Technology",
       },
+      url: `${siteUrl}/about`,
+      email: contactEmail,
+      address: postalAddress,
     },
     {
       "@type": "ProfessionalService",
@@ -67,6 +77,10 @@ export const orgGraph = {
         "Custom operational infrastructure engineering: modeling a business's entities, workflows, and decisions, then building the systems on top of that model.",
       serviceType: "Custom business systems and infrastructure engineering",
       provider: { "@id": `${siteUrl}/#organization` },
+      address: postalAddress,
+      areaServed: areaServed,
+      email: contactEmail,
+      image: `${siteUrl}/logo/a12.png`,
     },
     {
       "@type": "WebSite",
@@ -110,7 +124,16 @@ export function articleGraph(entry: ContentEntry, path: string) {
 // Takes the already-rendered term list rather than calling getContent("term")
 // again. /systems drops any term whose domain doesn't match a known group, so
 // re-querying here would let the schema claim terms the page never shows.
-export function termSetGraph(terms: { term: string; definition: string; slug: string }[]) {
+export function termSetGraph(
+  terms: {
+    term: string;
+    definition: string;
+    slug: string;
+    published: string;
+    updated: string;
+    hasPage: boolean;
+  }[],
+) {
   const setId = `${siteUrl}/systems#glossary`;
   return {
     "@context": "https://schema.org",
@@ -121,10 +144,33 @@ export function termSetGraph(terms: { term: string; definition: string; slug: st
     publisher: { "@id": `${siteUrl}/#organization` },
     hasDefinedTerm: terms.map((t) => ({
       "@type": "DefinedTerm",
+      // @id stays the on-page anchor, which is stable and already published.
+      // `url` points at the dedicated page only when one actually exists.
       "@id": `${siteUrl}/systems#${t.slug}`,
       name: t.term,
       description: t.definition,
+      datePublished: t.published,
+      dateModified: t.updated,
+      ...(t.hasPage ? { url: `${siteUrl}/systems/${t.slug}` } : {}),
       inDefinedTermSet: { "@id": setId },
     })),
+  };
+}
+
+// Standalone DefinedTerm for a term's own page, pointing back at the set on
+// /systems rather than redefining it.
+export function termGraph(entry: ContentEntry) {
+  const url = `${siteUrl}/systems/${entry.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "@id": `${url}#term`,
+    url,
+    name: entry.title,
+    description: entry.answer,
+    datePublished: entry.published,
+    dateModified: entry.updated,
+    inDefinedTermSet: { "@id": `${siteUrl}/systems#glossary` },
+    publisher: { "@id": `${siteUrl}/#organization` },
   };
 }

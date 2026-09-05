@@ -1,18 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { jsonLd, orgGraph, siteUrl } from "@/lib/schema";
 import "./globals.css";
 
-// Body/heading typeface for the whole site. Only the weights actually used
-// (font-normal/medium/semibold) are loaded.
-const pilcrowRounded = localFont({
-  src: [
-    { path: "../fonts/pilcrow-rounded/PilcrowRounded-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/pilcrow-rounded/PilcrowRounded-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/pilcrow-rounded/PilcrowRounded-Semibold.woff2", weight: "600", style: "normal" },
-  ],
-  variable: "--font-pilcrow-rounded",
+// Body, UI and technical text: navigation, buttons, labels, cards, prose.
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// Display face: hero headlines and major section headings only. Instrument
+// Serif ships a single weight (400) — that is the design, not an omission.
+// Do not apply `font-semibold` to it; the browser would synthesise a bold and
+// the result is exactly the mushy, over-decorative look this face avoids.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -35,6 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_IN",
     url: siteUrl,
     siteName: "Ahrom Labs",
     title: "Ahrom Labs",
@@ -61,7 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${pilcrowRounded.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${instrumentSerif.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {/* Every section below each page's hero ships at opacity:0, revealed

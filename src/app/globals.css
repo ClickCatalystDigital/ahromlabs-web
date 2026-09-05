@@ -20,12 +20,24 @@
   --color-accent: var(--accent);
   --color-danger: var(--danger);
   --radius-brand: var(--radius);
-  --font-sans: var(--font-pilcrow-rounded);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
   --font-mono: var(--font-geist-mono);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Display typeface for hero headlines and major section headings. Body, UI,
+   navigation, buttons, labels and card titles stay on --font-sans.
+   Instrument Serif has one weight (400), so this sets it explicitly rather than
+   relying on a `font-*` utility — and replaces `tracking-tight`, which is cut
+   for a sans and too tight for a serif at display sizes. */
+.display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
 }
 
 body {

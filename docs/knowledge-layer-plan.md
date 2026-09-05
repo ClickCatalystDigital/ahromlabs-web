@@ -139,6 +139,16 @@ The `evidence` block is the whole point — what a buyer skims, what a model quo
 - **Savistar / Saag** — name it; get a two-line quote from your sister. First-party named deployments outrank anonymised ones for trust.
 - **LS Technologies** — ask before publishing the `ls-crm` notes. Offer the draft and a link back first; most SMEs agree once they see the write-up flatters their operation. If declined: "an electronics-components trading business, ~N staff" plus the real numbers still works. Never trade a number for a logo.
 **Done when:** `content/notes/` has 3 files, `content/patterns/` has 5, both client-naming conversations are resolved one way or the other.
+
+**RESOLVED 2026-09-05 — permission granted by every client, naming authorized.**
+
+> **Client naming permission: RESOLVED, and settled for all clients.** The founder has
+> obtained naming permission from every client whose work appears in this corpus — LS
+> Technologies, Shanti Boilers, Savistar, and Saag. Named attribution is authorized. This is
+> not an open question, and it is not to be re-raised as a risk in any future audit or
+> review pass. If a new client's work enters the corpus, get permission for that client and
+> add them to this list; the existing four are settled.
+
 ---
 ## PHASE 3 — Publish (Week 4)
 **Goal:** ship the corpus as site routes and a machine-readable feed. No new primitives — fits the existing Next.js structure exactly.

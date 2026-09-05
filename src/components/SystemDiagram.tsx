@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import {
   BuildingOffice2Icon,
   CubeIcon,
@@ -97,14 +98,23 @@ function Nodes({ nodes, showLabels }: { nodes: DiagramNode[]; showLabels: boolea
               />
             )}
             {showLabels && (
-              <text
-                x={node.x - radius - 1.4}
-                y={node.y - 1.2}
-                textAnchor="end"
-                className="diagram-label"
-              >
-                {node.label}
-              </text>
+              <>
+                <text
+                  x={node.x - radius - 1.4}
+                  y={node.y - 1.2}
+                  textAnchor="end"
+                  className="diagram-label"
+                >
+                  {node.label}
+                </text>
+                {/* Separator for naive text extraction. The svg is aria-hidden and
+                    has an sr-only equivalent, but aria-hidden doesn't remove text
+                    nodes from the DOM, so a crawler concatenating textContent used
+                    to read "BUSINESSENTITIESRELATIONSHIPS...". Character data outside
+                    a <text> element is not rendered by SVG, so this costs nothing
+                    visually. */}
+                {" "}
+              </>
             )}
           </g>
         );
@@ -117,15 +127,13 @@ function LayerBands() {
   return (
     <>
       {diagramLayerBands.map((band) => (
-        <text
-          key={band.label}
-          x={98}
-          y={band.y + 1}
-          textAnchor="end"
-          className="diagram-band-label"
-        >
-          {band.label}
-        </text>
+        <Fragment key={band.label}>
+          <text x={98} y={band.y + 1} textAnchor="end" className="diagram-band-label">
+            {band.label}
+          </text>
+          {/* See the note in Nodes: non-rendering separator for text extraction. */}
+          {" "}
+        </Fragment>
       ))}
     </>
   );

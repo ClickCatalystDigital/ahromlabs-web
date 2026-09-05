@@ -32,7 +32,7 @@ export default function AboutPage() {
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="display text-5xl text-foreground sm:text-6xl">
             About
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 The business you&apos;re running now
               </h2>
               <p className="prose-measure mt-6 leading-relaxed text-foreground-secondary">
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 What changes when there is one structure
               </h2>
               <p className="prose-measure mt-6 leading-relaxed text-foreground-secondary">
@@ -79,7 +79,7 @@ export default function AboutPage() {
         <Reveal>
           <section className="section border-t border-line">
             <div className="rail">
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
                 How we work with you
               </h2>
               <p className="prose-measure mt-6 leading-relaxed text-foreground-secondary">

@@ -1,18 +1,46 @@
 import type { MetadataRoute } from "next";
-import { getContent } from "@/lib/content";
+import { getContent, termHasPage } from "@/lib/content";
 
 const siteUrl = "https://ahromlabs.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+// Newest `updated` across a content kind — the real last-changed date for the
+// index page that lists it.
+function newestUpdate(kind: Parameters<typeof getContent>[0]): Date {
+  return new Date(
+    getContent(kind)
+      .map((entry) => entry.updated)
+      .sort()
+      .at(-1)!,
+  );
+}
 
+export default function sitemap(): MetadataRoute.Sitemap {
+  // Hand-written pages carry no lastModified at all. They have no date source,
+  // and stamping build time made every deploy claim all six static pages had
+  // changed — a signal crawlers learn to ignore. lastmod is optional; omitting
+  // it is honest, inventing it is not.
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
-    { url: `${siteUrl}/approach`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/systems`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/about`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/notes`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/patterns`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: siteUrl, changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/approach`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: `${siteUrl}/systems`,
+      lastModified: newestUpdate("term"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/notes`,
+      lastModified: newestUpdate("note"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/patterns`,
+      lastModified: newestUpdate("pattern"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const contentRoutes: MetadataRoute.Sitemap = [
@@ -28,6 +56,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
+    // Empty until a term has body content — see termHasPage.
+    ...getContent("term")
+      .filter(termHasPage)
+      .map((term) => ({
+        url: `${siteUrl}/systems/${term.slug}`,
+        lastModified: new Date(term.updated),
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+      })),
   ];
 
   return [...staticRoutes, ...contentRoutes];

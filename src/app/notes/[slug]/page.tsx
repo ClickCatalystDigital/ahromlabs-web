@@ -41,7 +41,7 @@ export async function generateMetadata(props: PageProps<"/notes/[slug]">): Promi
 
 const markdownComponents = {
   h2: (props: ComponentProps<"h2">) => (
-    <h2 className="mt-12 text-3xl font-semibold tracking-tight text-foreground first:mt-0 sm:text-4xl" {...props} />
+    <h2 className="display mt-12 text-3xl text-foreground first:mt-0 sm:text-4xl" {...props} />
   ),
   p: (props: ComponentProps<"p">) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
   ul: (props: ComponentProps<"ul">) => (
@@ -67,7 +67,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">{note.title}</h1>
+          <h1 className="display text-5xl text-foreground sm:text-6xl">{note.title}</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             {note.answer}
           </p>

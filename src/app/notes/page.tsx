@@ -31,7 +31,7 @@ export default function NotesPage() {
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="display text-5xl text-foreground sm:text-6xl">
             Notes
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">

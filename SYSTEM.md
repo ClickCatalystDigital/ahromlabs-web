@@ -12,14 +12,21 @@ All under `src/app/`.
 - `/about` — who the practice is for, how an engagement runs.
 - `/notes`, `/notes/[slug]` — engineering case-study notes, generated from `content/notes/`.
 - `/patterns`, `/patterns/[slug]` — reusable ADR-shaped decisions, generated from `content/patterns/`.
-- `/knowledge.json` (`route.ts`, `force-static`) — the entire corpus (terms + notes + patterns) as JSON, for other repos'/agents' consumption. See **Knowledge layer**.
+- `/knowledge.json` (`route.ts`, `force-static`) — the entire corpus (terms + notes + patterns) as JSON, for other repos'/agents' consumption. See **Knowledge layer**. Advertised from `/` via `<link rel="alternate" type="application/json">` (set through `alternates.types` in `layout.tsx`) and from `llms.txt`.
+- `/llms.txt` (`route.ts`, `force-static`) — the AI-crawler-facing summary. **Generated**, not hand-written: prose header/footer are template literals in the route, the note and pattern lists come from `getContent()` sorted newest-first. Replaced `public/llms.txt` (2026-09-05), which had been hand-maintained and had already drifted one note behind. Note the trap: the `ASSETS` binding is served ahead of the Worker, so a leftover `public/llms.txt` would silently shadow this route and keep serving the stale copy — the static file had to be deleted, not merely superseded.
 - `/approach`, `/systems`, `/about`, and every note/pattern detail page end in the shared `ClosingCta` component.
 - `/api/contact` (POST) — see **Contact form** below.
 - `error.tsx`, `not-found.tsx` — error/404 boundaries, same `SiteNav`/`SiteFooter` shell as every page.
-- SEO/meta: `manifest.ts`, `robots.ts`, `sitemap.ts` (dynamically includes every note/pattern URL), root `opengraph-image.tsx`. Each of `about/`, `approach/`, `systems/`, and every `notes/[slug]`/`patterns/[slug]` also has its own `opengraph-image.tsx`, all built on the shared `renderOgImage()` helper (`src/lib/og-image.tsx`).
+- SEO/meta: `manifest.ts`, `robots.ts`, `sitemap.ts`, root `opengraph-image.tsx`. Each of `about/`, `approach/`, `systems/`, `notes/`, `patterns/`, and every `notes/[slug]`/`patterns/[slug]` also has its own `opengraph-image.tsx`, all built on the shared `renderOgImage()` helper (`src/lib/og-image.tsx`).
+  - `sitemap.ts` includes every note/pattern URL with a real per-entry `lastModified` from frontmatter. `/systems`, `/notes`, `/patterns` derive theirs from the newest `updated` in the kind they list. `/`, `/approach`, `/about` deliberately carry **no** `lastModified` — they have no date source, and stamping build time (as this did until 2026-09-05) made every deploy claim all six static pages had changed.
 - `src/proxy.ts` — Next.js 16's replacement for `middleware.ts` (renamed; a stray `middleware.ts` would silently be ignored in this version). Logs AI-crawler hits (GPTBot, ClaudeBot, PerplexityBot, etc. — full list in the file) as structured JSON via `console.log`, captured by Cloudflare Workers Logs (`wrangler.jsonc`'s `observability.enabled`). Pure pass-through (`NextResponse.next()`), never mutates the response. Runs on the Node.js runtime by default in v16 — do not add `export const runtime`, it throws.
 
 ## Knowledge layer (`content/`, `src/lib/content.ts`, `scripts/build-content.mjs`)
+
+**Client naming is authorized.** Permission has been obtained from every client whose work
+appears in this corpus — LS Technologies, Shanti Boilers, Savistar, Saag. Named attribution in
+`content/` is deliberate and cleared. Do not flag it as a confidentiality risk; do not
+anonymize existing entries. New clients need their own permission before being named.
 
 A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML frontmatter (`kind`, `slug`, `title`, `answer`, `domain`, `systems?`, `patterns?`, `evidence?`, `order?` (terms only), `published`, `updated`), documented in full in `docs/knowledge-layer-plan.md`. `docs/progress.md` tracks what's built against that plan, phase by phase.
 
@@ -28,7 +35,12 @@ A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML 
 - **`src/lib/content.ts`** — `getContent(kind)`, a plain `import` of that JSON file, filtered by kind. No filesystem access, no top-level side effects. This matters: an earlier version read `content/` directly via `fs.readdirSync`/`readFileSync` at module load, which OpenNext's bundler couldn't statically trace, so `content/` never made it into the Cloudflare Worker bundle — a production `ENOENT: readdir '/bundle/content/patterns'` on `/notes`/`/patterns` despite `npm run dev` and `npm run build` both working. Fixed by moving all fs access into the build script and making `content.ts` a static JSON import instead — the general lesson: dynamic runtime fs reads are invisible to Worker bundle tracing; static imports aren't.
 - **`content:build`** (`npm run content:build`) runs the script above; wired as a prerequisite into `dev`, `build`, `preview`, and `deploy` in `package.json` (not an npm `pre*` hook — those don't fire for `opennextjs-cloudflare build`, so it's prepended explicitly in each script).
 - Note/pattern detail pages render `body` (markdown) via `react-markdown` (bare, no `remark-gfm` — current content only needs headings/paragraphs/lists/blockquotes) with a `components` map into the site's existing typographic classes.
-- `src/lib/schema.ts` — the JSON-LD graph (`Organization`, `Person`/founder, `ProfessionalService`, `WebSite`) rendered in `layout.tsx`. `Organization.sameAs` includes the LinkedIn company page; still missing GitHub/Crunchbase and the founder's `sameAs`/`alumniOf` (marked with `ponytail:` comments at the exact spot to add them).
+- **Glossary term pages** (`src/app/systems/[slug]/`) — gated on `termHasPage(term)` (`content.ts`), which is `body.trim().length > 0`. All 11 terms currently have an empty body, so **zero term pages build today**; the route, its OG image, its sitemap entries, its `DefinedTerm` schema `url`, its `llms.txt` link and the link from `/systems` all appear together the moment a body is written in `content/terms/<slug>.md`. This is deliberate: 11 pages carrying a single sentence each would be thin content.
+- `src/lib/schema.ts` — all JSON-LD on the site.
+  - `orgGraph` — the site-wide `@graph` (`Organization`, `Person`/founder, `ProfessionalService`, `WebSite`) rendered in `layout.tsx` on every page. `Organization` carries `sameAs` (LinkedIn company + GitHub org), `logo`/`image`, `email`, `address` (Ahmedabad/Gujarat/IN, locality + region only — no street, deliberately), and `areaServed`. `Person` carries `sameAs`, `knowsAbout`, `alumniOf`. Crunchbase is deliberately absent: no profile exists, and it is not to be fabricated.
+  - `jsonLd(data)` — the `</`-escaping serializer. **Every** JSON-LD emitter goes through it; do not hand-roll the regex at a new call site.
+  - `articleGraph(entry, path)` — `TechArticle` for a note or pattern detail page. `author`/`publisher`/`isPartOf` are `@id` references into `orgGraph`, which resolve because the layout puts that graph on every page. That linkage is why the graph carries stable `@id`s.
+  - `termSetGraph(terms)` — `DefinedTermSet` + `DefinedTerm` for `/systems`, whose `@id`s match the anchors the page renders. **Pass it the array the page actually renders** (`groups.flatMap(g => g.terms)`), never a second `getContent("term")` call: `/systems` drops any term whose `domain` doesn't match a known group, so re-querying would let the schema claim terms nobody can see. Verified by corrupting a term's `domain` — page and schema both drop in lockstep.
 
 ## Contact form (`/api/contact`)
 
@@ -70,6 +82,15 @@ Layout primitives live in `src/app/globals.css`:
 
 Colors, accent, and radius are CSS custom properties on `:root` (`--background`, `--foreground`, `--foreground-secondary`, `--line`, `--line-strong`, `--accent`, `--danger`, `--radius`), re-exposed to Tailwind via `@theme inline` in the same file.
 
+## Typography
+
+Two faces, one rule: **Instrument Serif displays, Geist Sans does everything else.**
+
+- **`.display`** (`globals.css`) — `--font-serif` + `font-weight: 400` + `letter-spacing: -0.015em`. Applied to every `h1` and every major section `h2` (27 of them). It **replaces** `font-semibold tracking-tight`, which was tuned for a sans: Instrument Serif ships a single weight, so `font-semibold` would make the browser synthesise a bold, and `tracking-tight` is too tight for a serif at display sizes. **Never put a `font-*` weight utility on `.display`.**
+- **`--font-sans` (Geist)** — body copy, navigation, buttons, labels, form fields, and card titles. Index-card `h2`s (`text-lg font-medium`) deliberately stay sans: they are cards, not display text.
+- **`--font-mono` (Geist Mono)** — diagram labels and technical text.
+- Replaced Pilcrow Rounded (2026-09-05). **`src/fonts/pilcrow-rounded/` and `src/lib/og-assets.ts` still contain it** — `og-assets.ts` embeds Pilcrow as base64 for OG card rendering, so social cards still render in the old face until those assets are regenerated. Known gap, tracked in `docs/plans-to-upgrade.md`.
+
 ## Fonts
 
 - **Pilcrow Rounded** — self-hosted (`src/fonts/pilcrow-rounded/`, `next/font/local`), body/heading typeface. Only weights actually used (400/500/600) are loaded. ITF Free Font License (Fontshare); `LICENSE.txt` sits alongside the font files.
@@ -81,7 +102,7 @@ Colors, accent, and radius are CSS custom properties on `:root` (`--background`,
   - `open-next.config.ts` — no incremental-cache override; correct because the app has no ISR/revalidation (fully static).
   - `wrangler.jsonc` — worker name `ahrom-labs`, entry `.open-next/worker.js`, custom domain `ahromlabs.com`, static assets served via the `ASSETS` binding, `nodejs_compat` + `global_fetch_strictly_public` compat flags, observability enabled. No KV/R2/queue bindings (no incremental cache to back) and no Images binding.
   - `next.config.ts` — `images.unoptimized: true` (avoids a paid Cloudflare Images binding for a handful of small, already-sized static assets; revisit if user-uploaded/variable imagery is added).
-  - `public/_headers` — sets `Cache-Control: public,max-age=31536000,immutable` on `/_next/static/*` only. Routes served through the Worker function rather than the `ASSETS` binding (`sitemap.xml`, `robots.txt`, `/knowledge.json` — confirmed by checking where their build output actually lands, `.next/server/app/...` vs `.open-next/assets`) can't be cached via `_headers`; `/knowledge.json` sets `Cache-Control: public, max-age=3600` directly on its `NextResponse` instead, which is what actually reaches the client for a Worker-served route.
+  - `public/_headers` — sets `Cache-Control: public,max-age=31536000,immutable` on `/_next/static/*` only. Routes served through the Worker function rather than the `ASSETS` binding (`sitemap.xml`, `robots.txt`, `/knowledge.json` — confirmed by checking where their build output actually lands, `.next/server/app/...` vs `.open-next/assets`) can't be cached via `_headers`; `/knowledge.json` and `/llms.txt` set `Cache-Control: public, max-age=3600` directly on their response instead, which is what actually reaches the client for a Worker-served route.
 - **Scripts** (`package.json`): `content:build` (runs `scripts/build-content.mjs`, see **Knowledge layer**), `dev`/`build`/`preview`/`deploy` all run `content:build` first, `start` (`next start`, unused by the actual Cloudflare deploy path), `lint` (`eslint`), `cf-typegen` (`wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts`).
 - All routes prerender statically except `/api/contact`. Dynamic-segment `opengraph-image.tsx` files (`notes/[slug]/opengraph-image.tsx`, `patterns/[slug]/opengraph-image.tsx`) need their own explicit `generateStaticParams` to actually build static in this pipeline — confirmed empirically (the build output showed `ƒ Dynamic` without it, contradicting what the Next.js docs implied about inheriting params from the sibling `page.tsx` automatically).
 
@@ -102,5 +123,6 @@ Colors, accent, and radius are CSS custom properties on `:root` (`--background`,
 - `AGENTS.md` — auto-regenerated by `next dev` on every run (per its own header). Never hand-edit; never put project content there.
 - `CLAUDE.md` — one line, `@AGENTS.md` import only.
 - `README.md` — human quick-start doc (dev command, routes list, design-system summary). Predates the knowledge layer; may be stale on routes/scripts — this file is the current source of truth.
-- `public/llms.txt` — public-facing file served to AI crawlers visiting the live site (business positioning, page list, an `## Engineering notes` section listing current notes/patterns — hand-maintained, not auto-generated; keep in sync manually as content grows). Unrelated purpose to this file; not a technical reference.
+- `docs/plans-to-upgrade.md` — the 2026-09-05 discoverability/trust pass: which findings from an external audit survived verification, what shipped, what was rejected and why, and what is still open.
+- `llms.txt` is no longer a file — it is a generated route (`src/app/llms.txt/route.ts`). See **Routes**.
 - `docs/knowledge-layer-plan.md` — the full phased plan (7 phases, 0-6) the knowledge layer is built against. `docs/progress.md` tracks status per phase. `docs/citation-baseline-2026-08.md` — drafted prompts for Phase 0.5's citation check, not yet run.

@@ -4,7 +4,7 @@ export function ClosingCta() {
   return (
     <section className="section border-t border-line">
       <div className="rail">
-        <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="display text-3xl text-foreground sm:text-4xl">
           Talk to us about your systems.
         </h2>
         <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">

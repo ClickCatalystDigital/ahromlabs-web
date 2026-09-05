@@ -1,4 +1,4 @@
-import { getContent, type ContentEntry } from "@/lib/content";
+import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 
 // Same shape as knowledge.json/route.ts: force-static keeps this prerendered at
 // build time rather than falling back to dynamic rendering.
@@ -46,10 +46,20 @@ export function GET() {
   const section = (heading: string, kind: "note" | "pattern", segment: string) =>
     `\n## ${heading}\n\n${[...getContent(kind)].sort(newestFirst).map(line(segment)).join("\n")}\n`;
 
+  // Terms link to their own page when they have one, otherwise to their anchor
+  // on /systems — the glossary entry is reachable either way.
+  const vocabulary = getContent("term")
+    .map(
+      (t) =>
+        `- [${t.title}](https://ahromlabs.com/systems${termHasPage(t) ? `/${t.slug}` : `#${t.slug}`}): ${t.answer.replace(/\s+/g, " ").trim()}`,
+    )
+    .join("\n");
+
   const body =
     HEADER +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
+    `\n## Vocabulary\n\n${vocabulary}\n` +
     FOOTER;
 
   return new Response(body, {
