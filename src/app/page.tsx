@@ -48,7 +48,7 @@ export default function Home() {
               </a>
             </div>
             {/* Oversized and pulled left so it passes behind the headline rather
-                than sitting in its own column. pointer-events-none keeps it from
+                than sitting in its own column.. pointer-events-none keeps it from
                 intercepting the CTA where they overlap; the text column carries
                 z-10 so it stays on top. */}
             <div className="pointer-events-none hidden lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:flex lg:items-center lg:justify-end">
