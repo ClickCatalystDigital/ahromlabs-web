@@ -31,8 +31,8 @@ export type Layer = { slug: "records" | "operations" | "analytics" | "ai"; name:
 export const layers: Layer[] = [
   {
     slug: "records",
-    name: "Records and compliance",
-    summary: "Clients, vendors, orders, invoices and stock kept once, correctly — GST-ready invoicing, statutory documents and books that reconcile with TallyPrime.",
+    name: "Accounting and compliance core",
+    summary: "One accounting and compliance layer shared across the systems we build: GST, TDS and tax rates from a single human-verified registry, GST returns, e-way bills, and TallyPrime connected four ways — or made optional.",
   },
   {
     slug: "operations",
@@ -55,7 +55,7 @@ export const services: Service[] = [
   {
     slug: "custom-erp-crm",
     name: "Custom ERP, CRM and operations systems",
-    layer: "records",
+    layer: "operations",
     answer:
       "We build the operational system a business runs on — clients, vendors, workers, orders, projects, purchasing, inventory, production, freight and finance — on one data model instead of a stack of disconnected tools. We model the business first; that model becomes the specification. Built so far for boiler manufacturing, PCB and electronics trading, and interior design.",
     forWhom:
@@ -87,8 +87,11 @@ export const services: Service[] = [
       { metric: "GST returns", value: "GSTR-1 (B2B and HSN) and GSTR-3B" },
       { metric: "Bank reconciliation", value: "Auto-matched only when mutually unique; the rest go to a person" },
       { metric: "Industry filings", value: "IBR Forms II(1), III, III A and IV A, from the BOM and test certificates" },
+      { metric: "Statutory rates", value: "GST by HSN, vendor TDS, income-tax and professional-tax slabs, PF/ESI — one verified registry, pulled daily" },
+      { metric: "E-way bills", value: "Direct NIC client built to the official v1.03 spec; live once the NIC account is set up" },
     ],
     proof: [
+      { kind: "note", slug: "statutory-rates-across-systems" },
       { kind: "note", slug: "accounting-inside-the-manufacturing-erp" },
       { kind: "note", slug: "ibr-statutory-folder-from-bom" },
       { kind: "pattern", slug: "human-verified-statutory-rates" },
@@ -101,16 +104,18 @@ export const services: Service[] = [
     name: "TallyPrime integration for cloud apps",
     layer: "records",
     answer:
-      "We connect cloud business apps to TallyPrime through a small agent on the PC that runs Tally, because Tally's XML gateway only listens locally. Approved invoices post as vouchers within 30 seconds, status syncs every 15 minutes, and masters nightly. Missing ledgers and Tally rejections are held for a person, never auto-created.",
+      "We connect business systems to TallyPrime four ways, because Tally's gateway only listens on its own PC: a local agent that posts approved vouchers within 30 seconds, the same agent hardened for unreliable office internet, an MCP server giving apps and AI agents one set of Tally tools, and CSV or JSON export and import. Missing ledgers and rejections are held for a person.",
     forWhom:
       "Indian businesses whose accounts live in TallyPrime but whose sales, purchase or operations work has moved to a web app — and who are tired of re-keying the same invoice twice.",
     evidence: [
+      { metric: "Ways to connect", value: "4 — local agent, hardened agent, MCP server, CSV/JSON files" },
       { metric: "Push cadence", value: "30 seconds" },
       { metric: "Voucher and outstanding sync", value: "15 minutes" },
       { metric: "Ledger, stock-item and voucher-type masters", value: "24 hours" },
       { metric: "Open-source reference library", value: "tally-voucher-xml, 32 tests" },
     ],
     proof: [
+      { kind: "note", slug: "connecting-tallyprime-four-ways" },
       { kind: "note", slug: "tally-voucher-posting" },
       { kind: "note", slug: "outgrown-tally-signs" },
       { kind: "pattern", slug: "local-agent-cloud-db" },

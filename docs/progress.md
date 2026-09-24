@@ -437,6 +437,33 @@ checked against ShantiOps SYSTEM.md before anything was written.
   - stable `id`s on every question heading, so each answer can be linked and cited.
 - Research summary: `docs/research/competitive-analysis-2026-09.md` §8.
 
+## Accounting and compliance core + two notes (2026-09-24)
+
+- The `records` layer becomes **"Accounting and compliance core"** (the slug is unchanged, so
+  anchors and @ids stay stable). It is shared across builds, not claimed to power every
+  system: today the rates hub serves ShantiOps only, the Tally connection serves LS
+  Technologies, and Savistar uses neither. `custom-erp-crm` moves to the operations layer.
+- **New note `connecting-tallyprime-four-ways`:**
+  - local agent (verified: LS note and patterns);
+  - hardened agent;
+  - MCP server;
+  - CSV/JSON export and import.
+  - Hardening, MCP and file modes are **founder-stated**; their code isn't in any repo we
+    can read. The note describes them without tool names or implementation detail. Add
+    specifics once the code is available.
+- **New note `statutory-rates-across-systems`**, from `statutory-rates-hub` README and
+  SYSTEM.md §5y/§5ax/§5r:
+  - the 5 rate categories;
+  - draft, approve, pull daily at 02:00 IST;
+  - retract, never edit;
+  - heartbeat plus an external check;
+  - GSTIN lookup;
+  - GSTR-2B with IMS status;
+  - the NIC e-way bill client, stated as built but **not yet live** (no NIC account).
+- Wired into: `compliance-accounting` and `tally-integration` proof and evidence, the boiler
+  page (rates, GSTR-2B, e-way bill paragraph), and the electronics page (a link to the
+  four-ways note). Graph: 68 nodes, 0 dangling.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

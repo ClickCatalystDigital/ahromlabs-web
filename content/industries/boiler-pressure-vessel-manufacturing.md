@@ -22,6 +22,7 @@ notes:
   - accounting-inside-the-manufacturing-erp
   - same-confidence-different-autonomy
   - tally-vs-erpnext-vs-custom-erp
+  - statutory-rates-across-systems
 patterns:
   - compute-blockers-on-read
   - one-confirmation-teaches-the-system
@@ -115,6 +116,8 @@ They go back into stock as real pieces with dimensions, and every weight is deri
 ## Can GST, TDS and accounts live in the same system?
 
 They do here. The system is the book of record — ledger, GSTR-1 and GSTR-3B, input-tax-credit reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, a books lock and an audit log — with Tally available as an optional sync target. The original plan left regulated accounting to a separate ERP package; in August 2026 that was reversed, and the operations system became the book of record. See [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).
+
+GST, TDS, income-tax, professional-tax and PF/ESI rates aren't typed in per company: the system pulls them daily from a central registry where each change is checked against the actual notification and approved by a person before it goes live — see [Keeping GST, TDS and income-tax rates current across every system](/notes/statutory-rates-across-systems). The government's GSTR-2B is imported from the portal's download, with each line's accept or reject status recorded. For dispatch, an e-way bill client that talks directly to the government's NIC system is built to the official specification and goes live once the company's NIC account is set up.
 
 ## What does the customer see?
 

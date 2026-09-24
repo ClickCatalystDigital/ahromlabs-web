@@ -18,6 +18,7 @@ clients: [ls-technologies]
 services: [tally-integration, document-extraction, custom-erp-crm]
 notes:
   - tally-voucher-posting
+  - connecting-tallyprime-four-ways
   - ai-extraction-human-in-the-loop
   - outgrown-tally-signs
 patterns:
@@ -65,7 +66,7 @@ Because operations and accounts live in different places. Purchase orders, suppl
 
 ## Can a cloud app post directly into TallyPrime?
 
-Not directly — TallyPrime's integration gateway only listens on the machine that runs Tally. A small agent on that PC bridges the two: it picks up approved invoices every 30 seconds and posts them as vouchers, syncs voucher status and outstanding bills back every 15 minutes, and refreshes ledgers, stock items and voucher types nightly. A ledger that doesn't exist yet in Tally is flagged for a person, never created by the software. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting); the protocol code is open-sourced as [tally-voucher-xml](https://github.com/ahromlabs/tally-voucher-xml).
+Not directly — TallyPrime's integration gateway only listens on the machine that runs Tally. A small agent on that PC bridges the two: it picks up approved invoices every 30 seconds and posts them as vouchers, syncs voucher status and outstanding bills back every 15 minutes, and refreshes ledgers, stock items and voucher types nightly. A ledger that doesn't exist yet in Tally is flagged for a person, never created by the software. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting); the protocol code is open-sourced as [tally-voucher-xml](https://github.com/ahromlabs/tally-voucher-xml). The agent is one of four ways Ahrom Labs connects to Tally — alongside an MCP server and a CSV or JSON file route — compared in [Four ways to connect a business system to TallyPrime](/notes/connecting-tallyprime-four-ways).
 
 ## How accurate is AI extraction on import documents?
 
