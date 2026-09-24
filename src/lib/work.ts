@@ -65,14 +65,19 @@ export const engagements: Engagement[] = [
     industry: "Boiler and pressure-vessel manufacturing",
     built:
       "A custom ERP, CRM and operational-intelligence system for a boiler and pressure-vessel manufacturer — from bills of materials and material stock to the test certificates that go into statutory quality-control documents.",
-    services: ["custom-erp-crm", "operational-intelligence", "document-extraction"],
+    services: ["custom-erp-crm", "compliance-accounting", "operational-intelligence", "document-extraction"],
     highlights: [
-      "Leftover cut material is matched back to bill-of-materials lines still waiting on stock, so usable offcuts aren't scrapped.",
-      "Test certificates are matched to the lines they belong to — ranked by confidence, but never linked without a person confirming, because they end up in statutory paperwork.",
+      "Each boiler's IBR statutory folder — cover letter and Forms II(1), III, III A and IV A — generated from its bill of materials and a bank of material test certificates.",
+      "Plate and section offcuts go back into stock with weight derived from geometry: a 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and 14.13 kg scrap, conserved exactly.",
+      "The system is also the book of record: GSTR-1, GSTR-3B, TDS, reverse charge, fixed assets and bank reconciliation, with 23 reports — Tally optional.",
+      "Test certificates are matched to the lines they belong to by confidence, but never linked without a person confirming, because they end up in statutory paperwork.",
     ],
     proof: [
+      { kind: "note", slug: "ibr-statutory-folder-from-bom" },
+      { kind: "note", slug: "plate-remnants-back-into-stock" },
+      { kind: "note", slug: "accounting-inside-the-manufacturing-erp" },
       { kind: "note", slug: "same-confidence-different-autonomy" },
-      { kind: "pattern", slug: "unconfirmed-inferences-stay-read-only" },
+      { kind: "pattern", slug: "compute-blockers-on-read" },
     ],
   },
 ];

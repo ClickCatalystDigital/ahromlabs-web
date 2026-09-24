@@ -40,7 +40,7 @@ furniture business (Savistar & Saag).
 
 ## Machine-readable corpus
 
-- [knowledge.json](https://ahromlabs.com/knowledge.json): Every term, note, and pattern with its full frontmatter and body, as one JSON array.
+- [knowledge.json](https://ahromlabs.com/knowledge.json): The whole knowledge graph as one JSON array — every term, note, and pattern with its full frontmatter and body, plus every service and client with proof edges to the notes and patterns behind it. Each node carries its public url.
 `;
 
 const FOOTER = `

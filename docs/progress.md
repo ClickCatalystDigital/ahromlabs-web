@@ -249,6 +249,31 @@ as custom ERP + CRM + operational intelligence, per the founder. `Organization.d
 `schema.ts` was deliberately left unchanged — it matches the GitHub org bio verbatim, and
 changing one without the other breaks the cross-source agreement `sameAs` exists for.
 
+## ShantiOps corpus pass + playbook + graph edges — 2026-09-24
+
+First pass run under `docs/corpus-playbook.md` (written the same day — the operating procedure
+for every future addition). Source: `shanti-ops` `SYSTEM.md` as of 2026-09-22 (~12k lines, as-built
+sections only; §5m and anything marked planned/deferred/not live-tested excluded; demo logins, job
+numbers and the client's own customers kept out).
+
+- **Notes (3):** `ibr-statutory-folder-from-bom` (§5d, §5bk–§5bp), `plate-remnants-back-into-stock`
+  (§5k, §5cg — 157.00 → 127.17 + 15.70 + 14.13 kg live test), `accounting-inside-the-manufacturing-erp`
+  (§5q–§5ai, §5x).
+- **Patterns (5):** `auto-match-only-when-mutually-unique` (§5ab), `human-verified-statutory-rates`
+  (§5y/§5af), `compute-once-render-many` (§5x), `one-confirmation-teaches-the-system` (§5cd),
+  `compute-blockers-on-read` (§5j).
+- **Service:** `compliance-accounting` on the records rung. Shanti's `/work` entry rewritten around
+  the three notes.
+- **Graph edges:** TechArticle JSON-LD gains `about` (service `@id`s, resolving against the offer
+  catalog on the same page) and `mentions` (client Organizations), derived from the `proof` lists.
+  `/knowledge.json` now carries `service` and `client` nodes with `proof` edges and a `url` on every
+  node — 47 nodes, 54 edges, 0 dangling at build. Client-repo agents filter `kind === "pattern"`, so
+  the new kinds don't affect them.
+
+Not mined yet from the same document, candidates for the next pass: the device-security platform
+(Part B), multi-unit BOM split (§5bc–§5bj), procurement redesign (§5c), Customer Portal (§6),
+structured e-way bill against the NIC spec (§5ax — publish only once live-tested).
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

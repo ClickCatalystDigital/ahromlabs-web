@@ -66,10 +66,33 @@ export const services: Service[] = [
       { metric: "Outstanding balances", value: "Computed from source transactions at read time, not stored as a running total" },
     ],
     proof: [
+      { kind: "note", slug: "plate-remnants-back-into-stock" },
       { kind: "note", slug: "two-companies-one-book" },
       { kind: "pattern", slug: "derive-balances-dont-store-them" },
       { kind: "pattern", slug: "replay-queued-payload-through-existing-handler" },
       { kind: "pattern", slug: "self-healing-sequence-counters" },
+    ],
+  },
+  {
+    slug: "compliance-accounting",
+    name: "GST, TDS and statutory compliance, built in",
+    layer: "records",
+    answer:
+      "We build accounting and statutory compliance into the operations system itself: ledger, GSTR-1, GSTR-3B, ITC reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, audit log and books lock — and industry filings such as a boiler's IBR forms, generated from the BOM. Tally becomes optional. Rates come from a human-verified registry.",
+    forWhom:
+      "Manufacturers and traders who enter every purchase and sale twice — once in operations, once in Tally — and reconcile the two every month.",
+    evidence: [
+      { metric: "Reports and documents from one computation each", value: "23" },
+      { metric: "GST returns", value: "GSTR-1 (B2B and HSN) and GSTR-3B" },
+      { metric: "Bank reconciliation", value: "Auto-matched only when mutually unique; the rest go to a person" },
+      { metric: "Industry filings", value: "IBR Forms II(1), III, III A and IV A, from the BOM and test certificates" },
+    ],
+    proof: [
+      { kind: "note", slug: "accounting-inside-the-manufacturing-erp" },
+      { kind: "note", slug: "ibr-statutory-folder-from-bom" },
+      { kind: "pattern", slug: "human-verified-statutory-rates" },
+      { kind: "pattern", slug: "auto-match-only-when-mutually-unique" },
+      { kind: "pattern", slug: "compute-once-render-many" },
     ],
   },
   {
@@ -124,10 +147,14 @@ export const services: Service[] = [
     evidence: [
       { metric: "Overcharge detection", value: "Every vendor and freight charge compared against a reference rate; deviations flagged" },
       { metric: "Confidence scoring", value: "(approvals+1) / (approvals+rejections+2) ≥ 0.75, minimum 3 approvals" },
+      { metric: "Workflow blockers", value: "What each milestone is waiting on, computed fresh on every read" },
+      { metric: "Material yield", value: "Every cut conserved: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap" },
       { metric: "Built for", value: "Boiler manufacturing (Shanti Boilers), interior design and furniture (Savistar & Saag)" },
     ],
     proof: [
+      { kind: "note", slug: "plate-remnants-back-into-stock" },
       { kind: "note", slug: "same-confidence-different-autonomy" },
+      { kind: "pattern", slug: "compute-blockers-on-read" },
       { kind: "pattern", slug: "reference-rate-anomaly-detection" },
       { kind: "pattern", slug: "derive-balances-dont-store-them" },
     ],
@@ -151,7 +178,9 @@ export const services: Service[] = [
     proof: [
       { kind: "note", slug: "ai-extraction-human-in-the-loop" },
       { kind: "note", slug: "same-confidence-different-autonomy" },
+      { kind: "note", slug: "ibr-statutory-folder-from-bom" },
       { kind: "pattern", slug: "human-confirmed-extraction" },
+      { kind: "pattern", slug: "one-confirmation-teaches-the-system" },
     ],
   },
   {

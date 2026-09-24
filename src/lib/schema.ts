@@ -1,5 +1,6 @@
 import type { ContentEntry } from "./content";
 import { services } from "./services";
+import { engagements } from "./work";
 
 export const siteUrl = "https://ahromlabs.com";
 
@@ -147,8 +148,24 @@ export function jsonLd(data: unknown) {
 // author/publisher/isPartOf are @id references, not inline copies: orgGraph is on
 // every page via the root layout, so they resolve there. That linkage is the whole
 // reason the site-wide graph carries stable @ids.
+//
+// about/mentions are the graph edges: the services this entry is evidence for
+// and the client businesses it was built for, both derived from the `proof`
+// lists in services.ts/work.ts — the same edges the page's "Part of" links
+// render, so the schema can't claim a relationship the page doesn't show.
+// Service @ids resolve against the offer catalog in orgGraph on the same page.
 export function articleGraph(entry: ContentEntry, path: string) {
   const url = `${siteUrl}${path}`;
+  const cites = (p: { kind: string; slug: string }) => p.kind === entry.kind && p.slug === entry.slug;
+  const about = services.filter((s) => s.proof.some(cites)).map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` }));
+  const mentions = engagements
+    .filter((e) => e.proof.some(cites))
+    .map((e) => ({
+      "@type": "Organization",
+      "@id": `${siteUrl}/work#${e.slug}`,
+      name: e.client,
+      url: `${siteUrl}/work#${e.slug}`,
+    }));
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -163,6 +180,8 @@ export function articleGraph(entry: ContentEntry, path: string) {
     publisher: { "@id": `${siteUrl}/#organization` },
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntityOfPage: url,
+    ...(about.length > 0 ? { about } : {}),
+    ...(mentions.length > 0 ? { mentions } : {}),
   };
 }
 

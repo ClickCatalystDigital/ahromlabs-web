@@ -144,6 +144,48 @@
   },
   {
     "kind": "note",
+    "slug": "accounting-inside-the-manufacturing-erp",
+    "title": "GST, TDS and the general ledger inside a manufacturing ERP, with Tally optional",
+    "answer": "Shanti Boilers' operations system is also its book of record: chart of accounts, journal posting, GSTR-1, GSTR-3B, ITC reconciliation, TDS, reverse charge, fixed assets and bank reconciliation, with 23 reports and documents generated from the same data. Tally is an optional sync target, not the books. Statutory rates arrive daily from a human-verified registry.",
+    "domain": [
+      "accounting-integration",
+      "compliance",
+      "manufacturing"
+    ],
+    "patterns": [
+      "auto-match-only-when-mutually-unique",
+      "human-verified-statutory-rates",
+      "compute-once-render-many",
+      "derive-balances-dont-store-them"
+    ],
+    "evidence": [
+      {
+        "metric": "reports and documents",
+        "value": "23 — 19 catalog reports plus 4 per-record PDFs"
+      },
+      {
+        "metric": "GST returns",
+        "value": "GSTR-1 (B2B and HSN, matching the GST portal's split) and GSTR-3B"
+      },
+      {
+        "metric": "bank reconciliation auto-match",
+        "value": "exact amount within ±3 days, and only when the match is mutually unique"
+      },
+      {
+        "metric": "statutory rate updates",
+        "value": "pulled daily from a human-approved registry; no scraping"
+      },
+      {
+        "metric": "books lock",
+        "value": "enforced at the single point every journal posting passes through"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At Shanti Boilers & Pressure Vessels, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and why.\n\n## Why put the ledger inside the operations system?\n\nEvery accounting entry in a manufacturer starts as an operational event: a purchase order, a goods receipt, a vendor bill, a dispatch, a sales invoice. When operations and accounts live in different systems, each event is entered twice and the two copies drift. With the ledger in the same system, a vendor bill posts its own journal entry from the purchase it belongs to, and a dispatch carries its freight cost and invoice link into the books directly. Tally remains available as a sync target for the accountant who wants it — it just isn't where the truth lives.\n\n## What compliance is covered?\n\nPer legal entity: a chart of accounts and a posting engine; sales invoices, credit notes, vendor bills and debit notes; GSTR-1 (split into B2B and HSN tables the way the GST portal expects) and GSTR-3B; input-tax-credit reconciliation; TDS deduction with a TDS register; reverse charge on both the purchase and sales side; a fixed-asset register with depreciation; payroll exported into accounting; and trial balance, profit and loss, balance sheet and cash flow. Changes are written to an audit log with a searchable viewer, and a books lock stops postings into a closed period at the one function every journal entry passes through — so no document type can slip around it.\n\n## Where do GST and TDS rates come from?\n\nFrom a separate registry of Indian statutory rates — GST, TDS, PF, ESI, income-tax and professional-tax slabs — where a person enters and approves each change, and every deployment pulls approved changes on a daily schedule. Nothing scrapes government websites: no reliable official rates API exists, and a wrong compliance rate applied unattended costs more than a person checking around Budget day and GST Council meetings.\n\n## How does bank reconciliation decide what to match?\n\nA bank statement is imported from the bank's own export, and each line is matched against unreconciled ledger entries by exact amount within three days either side. A match is applied automatically only when it's mutually unique — exactly one candidate on each side. Anything ambiguous is shown as a suggestion for a person to confirm, and a statement line with no ledger entry at all — a bank charge, interest — becomes a one-click journal entry instead of a dead end.\n\n## How was it tested?\n\nWith real transactions, not only unit tests. A reverse-charge test that posted real documents through the ledger found and fixed two posting bugs. A single order was then run through every department end to end, which found that sales invoices weren't carrying their project link — fixed before any real invoice depended on it.\n\n## Boundary\n\nE-invoicing has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built."
+  },
+  {
+    "kind": "note",
     "slug": "ai-extraction-human-in-the-loop",
     "title": "AI extraction with a human in the loop, five document types",
     "answer": "Five document types — purchase invoices, freight invoices, bills of entry, purchase orders, bank statements — get extracted by an LLM reading the PDF directly, no separate OCR step. Zero-correction rates run 88-95% depending on type, purchase orders highest, bills of entry lowest. Every extraction still goes through a human review before anything is approved or posted.",
@@ -183,6 +225,81 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": "## What gets extracted\n\nLS Technologies, an electronics-components import/export trading business, runs five kinds of documents through AI extraction before anything reaches Tally: purchase invoices, freight invoices, bills of entry, purchase orders, and bank statements. Each has its own prompt tailored to that document's fields — a purchase invoice and a customs bill of entry don't share a structure, and treating them as one generic \"document\" would lose accuracy on both.\n\n## How it reads a PDF\n\nThere's no separate OCR step. The PDF is sent straight to the model — an LLM with a file-parsing capability reads it directly, rather than running text extraction first and handing the model plain text. Bank statements get special handling: because they can run to many pages, the document is processed in chunks and the results are stitched back together and de-duplicated, rather than trying to reason over one long document in a single pass.\n\n## How accurate it actually is\n\nReviewed against real usage, here's the share of each document type that needs zero correction before it's approved:\n\n- Purchase order: 95%\n- Purchase invoice: 94%\n- Bank statement: 89%\n- Freight invoice: 91%\n- Bill of entry: 88%\n\nBills of entry come in lowest — customs documentation is the least standardized of the five, which tracks with what you'd expect from the least uniform paperwork. Every number here still means a meaningful share of documents need a correction, which is exactly why extraction alone was never the plan.\n\n## What happens to the rest\n\nNothing gets extracted and posted in one step. Every document — regardless of how confident the extraction looked — sits in a review state until a person checks it and approves it. That's not a hedge against a bad model; it's the same decision this practice makes anywhere a model's output could turn into a financial record: draft with AI, confirm with a person, post only after that."
+  },
+  {
+    "kind": "note",
+    "slug": "ibr-statutory-folder-from-bom",
+    "title": "Generating a boiler's IBR statutory folder from its BOM and test certificates",
+    "answer": "Shanti Boilers ships every boiler with an IBR statutory folder for the Directorate of Boilers. The system builds it — cover letter, Forms II(1), III, III A and IV A — from the project's bill-of-materials tree and a bank of material test certificates, each unique on cert, cast and plate number and reused across about 3.2 boilers in the sample.",
+    "domain": [
+      "compliance",
+      "manufacturing",
+      "quality-control"
+    ],
+    "patterns": [
+      "unconfirmed-inferences-stay-read-only",
+      "human-confirmed-extraction"
+    ],
+    "evidence": [
+      {
+        "metric": "test certificate identity",
+        "value": "cert no. + cast no. + plate no. together — one cert number covered 4 casts in the sample"
+      },
+      {
+        "metric": "certificate reuse",
+        "value": "about 3.2 boilers per certificate in the real sample"
+      },
+      {
+        "metric": "form set",
+        "value": "chosen by boiler model — 8 models, each with its own set"
+      },
+      {
+        "metric": "Form IV A sections",
+        "value": "derived from the BOM tree, no hardcoded section names"
+      },
+      {
+        "metric": "certificate-to-part linking",
+        "value": "suggested by confidence, never applied without a person"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "Shanti Boilers & Pressure Vessels manufactures boilers, pressure-reducing stations and steam headers. Every unit it ships needs a statutory folder for the Directorate of Boilers, under the Indian Boiler Regulations (IBR): the forms that prove each plate, tube and forging came from certified material. Ahrom Labs built the operations system that now assembles that folder from data the plant already records.\n\n## What goes into the folder?\n\nA complete folder is filed in a fixed order: a covering letter listing its contents, a documentation label, the forms, the list of mountings and fittings, a stage-wise inspection report, and copies of the material test certificates themselves. Which forms are needed depends on the boiler model — a standard shell boiler needs Form II(1), III, III A and IV A; a small industrial boiler swaps II(1) and III for Form XVII; a pressure-reducing station or steam header needs only III and IV A. The system picks the form set from the model set on the project, not from a person remembering which applies.\n\n## Why is a test certificate harder to key than it looks?\n\nA certificate number alone isn't unique — in the client's own sample, one certificate number covered four different casts. So each certificate in the bank is identified by certificate number, cast number and plate number together. And one certificate isn't used once: a single plate gets cut into parts for several boilers, and the sample showed each certificate reused across about 3.2 of them. Certificates and projects are therefore many-to-many — a certificate can be uploaded before any project claims it, and using it on a project's folder is what allocates it.\n\n## How does the BOM become Form IV A?\n\nForm IV A lists every material part with its certificate, grouped into lettered sections — A. Shell, B. Water Wall Assembly, and so on. The system doesn't store those section names. It walks the project's bill-of-materials tree, takes each part's ancestor one level below the root as its section, and letters only the sections that actually contain parts. A boiler with a different structure gets different sections automatically; anything not yet placed in the tree lands on a clearly labelled \"Ungrouped Materials\" page rather than disappearing.\n\n## Where does AI help, and where does it stop?\n\nCertificate PDFs are read by AI on upload, so the certificate's fields don't have to be typed. Matching a certificate to the BOM line it belongs to is suggested by a confidence score learned from past approvals — but on this document, a suggestion never links itself. A person clicks to use it, because a wrong link here ends up in paperwork a boiler inspector relies on. The [same-confidence note](/notes/same-confidence-different-autonomy) explains why the identical score is allowed to act on its own elsewhere in the same system.\n\n## Boundary\n\nThe generated folder has been compared against real filed documents the client provided. That comparison found formatting gaps in individual forms — wording and field-layout differences — which are tracked and being closed form by form. Bulk import of historical certificates from spreadsheets isn't built yet; certificates are added one at a time, with AI filling the fields."
+  },
+  {
+    "kind": "note",
+    "slug": "plate-remnants-back-into-stock",
+    "title": "Putting steel plate offcuts back into stock, by weight derived from geometry",
+    "answer": "At Shanti Boilers, every cut of a plate or section records what was used and what usable remnant was kept; the system derives every weight from dimensions and density, returns the remnant to stock for a later project, and books the rest as scrap. A 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and 14.13 kg scrap — conserved exactly.",
+    "domain": [
+      "manufacturing",
+      "inventory",
+      "cost-accounting"
+    ],
+    "patterns": [
+      "derive-balances-dont-store-them"
+    ],
+    "evidence": [
+      {
+        "metric": "live cut test",
+        "value": "157.00 kg source → 127.17 kg used + 15.70 kg remnant + 14.13 kg scrap"
+      },
+      {
+        "metric": "weights typed by the operator",
+        "value": "none — plate L×W×T×density, sections length×kg/m"
+      },
+      {
+        "metric": "piece traceability",
+        "value": "every cut output chained to its source piece (used, remnant, scrap)"
+      },
+      {
+        "metric": "cost of a used piece",
+        "value": "by weight fraction — 100 kg used of a 157 kg, ₹1,000 plate → ₹636.94"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "A boiler maker buys steel plate in standard sizes and cuts it to the parts a design needs. The leftover is often big enough to use on the next job — if anyone knows it exists. At Shanti Boilers & Pressure Vessels, it used to be re-bought or scrapped blindly. This is how the operations system Ahrom Labs built now keeps it.\n\n## Why couldn't the old stock record hold an offcut?\n\nInventory was a single number per item — how many plates of a grade and size were on hand. An offcut isn't one of those plates; it's a specific piece with its own dimensions. With nowhere to record a piece, a remnant sitting in the stores could never be matched to a future bill of materials, even when it was exactly the right size.\n\n## What gets recorded at the moment of cutting?\n\nEach physical piece carries its own dimensions: length, width and thickness for a plate; length and weight-per-metre for an angle, channel, beam, pipe or bar. At the cut, the operator enters only what was used and what usable remnant they kept. The source piece is closed, each used piece is linked to the project it went into, each remnant goes back into stock as an available piece, and whatever weight is left over is booked as scrap automatically. Every output is chained to the piece it came from, so a part on a finished boiler traces back to the plate it was cut from.\n\n## Why derive weight instead of weighing or typing it?\n\nWeight is computed from geometry and density — never typed. That makes the arithmetic self-checking: used plus remnant plus scrap must equal the source. In the live test, a 2000 × 1000 × 10 mm plate (157.00 kg) was cut into a 127.17 kg part and a 15.70 kg remnant, leaving 14.13 kg of scrap — summing exactly back to the source. A typed weight can't be held to that standard; a derived one can't fail it.\n\n## How does a remnant get reused?\n\nBecause a remnant is stored as a real piece with real dimensions, it's matched against bill-of-materials lines still waiting for material, exactly like a newly purchased plate. When a BOM is released, a fitting piece is reserved automatically — the least-waste piece first, a thickness mismatch rejected, rotation allowed so an offcut that fits sideways still counts — and only the shortfall goes to Procurement to buy. In the live test, a line needing two pieces with one matching remnant in stock reserved that remnant and sent only the second piece to purchasing.\n\n## What does a cut piece cost?\n\nCost follows weight. A used piece carries the fraction of its source's cost that its weight represents: 100 kg used from a 157 kg plate that cost ₹1,000 is booked at ₹636.94. Building this surfaced a real, pre-existing error in how average cost was being recalculated for piece-tracked stock — fixed at the root rather than patched in the report.\n\n## Boundary\n\nPiece tracking is switched on per item and applies to plate and section stock that's actually cut. Matching looks for one sufficient piece per requirement; nesting — planning the most economical 2D layout of several parts on one plate before cutting — is not part of this system."
   },
   {
     "kind": "note",
@@ -287,6 +404,85 @@
     "published": "2026-08-29",
     "updated": "2026-08-31",
     "body": "## Why one book?\n\nSavistar (interior design) and Saag (furniture manufacturing) are sister companies — a sister concern arrangement, in Indian accounting terms — under the same owners, sharing a single client list. Rather than running two separate systems that need to be kept in sync, both businesses operate out of one app with one combined finance ledger.\n\n## How \"two companies\" actually works\n\nThere's no tenant or company table underneath this — it's a single shared database with one client table. What distinguishes a Savistar job from a Saag order is mostly a matter of which tab it lives in (Projects for Savistar's design work, Orders for Saag's furniture orders), plus a single field on each invoice that picks the right letterhead, logo, GSTIN, and registration details when a PDF is generated. It's a shared single-tenant app modeling two business lines, not a multi-tenant system — simpler than \"two companies, one book\" might suggest, and that simplicity is the point: nobody has to maintain a heavier structure than the business actually needs.\n\n## Where the real structure is: who can see what\n\nThe part that isn't simple is financial visibility. Staff log day-to-day cash transactions, but their view of the cash ledger is scoped to only the entries they personally created — enforced at the point the data is fetched, not just hidden in the interface. Bank data goes further: it isn't scoped, it's excluded entirely. Every request touching bank information from a staff account is rejected before any query even runs. Owners see everything; staff see their own cash activity and nothing from the bank side.\n\n## Why it's built this way\n\nNone of this depends on every integration being perfectly configured. The database, file storage, and AI extraction the app uses elsewhere are each optional at the infrastructure level — the app runs regardless, and each feature behaves according to whether its own configuration is present, rather than the whole system depending on all of them being wired up.\n\n---\n\n> \"They really took the time to understand our concerns and requirements, and the system was built the way we had envisioned it. It has brought much more structure, visibility, and control to the way we operate.\"\n>\n> — Sachi & Haripriya, owners of Savistar and Saag"
+  },
+  {
+    "kind": "pattern",
+    "slug": "auto-match-only-when-mutually-unique",
+    "title": "Auto-apply a match only when it's mutually unique — everything else goes to a person",
+    "answer": "When matching two lists — bank statement lines to ledger entries — apply a match automatically only if exactly one candidate exists on each side within tolerance (exact amount, ±3 days). Any ambiguity becomes a suggestion for a person, and an unmatched line gets a one-click fix. Fewer auto-matches, but none of them are guesses.",
+    "domain": [
+      "reliability",
+      "finance",
+      "human-in-the-loop"
+    ],
+    "evidence": [
+      {
+        "metric": "tolerance",
+        "value": "exact amount, ±3 days for clearing lag"
+      },
+      {
+        "metric": "auto-applied when",
+        "value": "exactly one eligible candidate on each side"
+      },
+      {
+        "metric": "self-check assertions",
+        "value": "8, including \"ambiguous candidates stay low confidence\""
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Context\n\nBank reconciliation pairs each bank statement line with the ledger entry it corresponds to. Most pairs are obvious. Some aren't: two payments of the same amount a day apart, or a cheque that cleared three days after it was booked. A matcher that picks \"the closest\" in those cases will sometimes pick wrong — and a wrong reconciliation is harder to find than an unreconciled line.\n\n## Decision\n\nA match is applied automatically only when it is mutually unique: the statement line has exactly one eligible ledger candidate within tolerance, and that ledger entry has exactly one eligible statement line. Tolerance is the exact amount within a few days either side. Anything else is shown as a low-confidence suggestion — closest by date — for a person to confirm. Only unreconciled entries are ever candidates. A statement line with no ledger entry at all (a bank charge, interest) offers a one-click journal entry.\n\n## Why\n\nMutual uniqueness is a condition the matcher can prove, not a score it has to trust. When it holds, there is no second interpretation to get wrong. When it doesn't, the ambiguity is real information a person should see, not noise to be resolved by a tie-break rule.\n\n## Trade-off\n\nA month with many identical amounts — standing instructions, equal instalments — auto-matches less and leaves more for a person to click through. That's the intended cost: the manual queue grows exactly where a guess would have been riskiest."
+  },
+  {
+    "kind": "pattern",
+    "slug": "compute-blockers-on-read",
+    "title": "Compute \"what's blocking this\" on every read, and observe before you enforce",
+    "answer": "To show why a workflow step is blocked and by what, compute the blocker fresh on every read from the step's declared predecessor and live signals — never store it. Ship it read-only first: surface the signal everywhere the step appears, enforce nothing, and flag steps marked done while their predecessor isn't. Enforcement comes after the signal is trusted.",
+    "domain": [
+      "operational-intelligence",
+      "architecture",
+      "workflow"
+    ],
+    "evidence": [
+      {
+        "metric": "blocker storage",
+        "value": "none — computed on every read, so it can't go stale"
+      },
+      {
+        "metric": "v1 enforcement",
+        "value": "none — observational signal only"
+      },
+      {
+        "metric": "consistency check",
+        "value": "flags a step marked done while its own predecessor isn't"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Context\n\nA manufacturing order moves through dozens of milestones across departments — design, procurement, production, QC, dispatch. When one stalls, the useful question is not \"is it late\" but \"what is it waiting for, and who can unblock it\". Answering that with a hand-written check inside each feature produces as many definitions of \"blocked\" as there are screens.\n\n## Decision\n\nEach milestone declares its structural predecessor, configurable system-wide. One pure function takes a milestone and returns whether it's ready and, if not, what it's blocked by — an unfinished predecessor, or a live signal such as materials not yet received. The result is computed on every read and attached to the milestone wherever it renders; it is never written to the database. The first version enforces nothing: it only shows the signal, alongside — not merged into — the existing late/at-risk status. It also flags the reverse inconsistency: a milestone marked done while the thing it depends on isn't.\n\n## Why\n\nA stored \"blocked\" flag is a second copy of facts that already exist, and it goes stale the moment one of them changes. Computing on read removes that failure mode entirely. Shipping read-only first means the signal is checked against how the plant actually works before it's allowed to stop anyone — an enforced rule that's wrong halts real work; an observed one that's wrong just gets corrected.\n\n## Trade-off\n\nEvery read pays for the computation, and a signal nobody is forced to act on can be ignored. Both are accepted for the first version: the computation is small, and the point of observing first is to learn which blockers deserve enforcement before any of them get it."
+  },
+  {
+    "kind": "pattern",
+    "slug": "compute-once-render-many",
+    "title": "One computed result, several renderers — never recalculate a report per format",
+    "answer": "A report shown on screen, returned as JSON and exported as PDF should come from one computation, with each format only rendering its result. Register each report once with the exact function that computes it; on-screen table, API and PDF all call that function. Across 23 reports and documents, the three formats cannot disagree.",
+    "domain": [
+      "architecture",
+      "reporting"
+    ],
+    "evidence": [
+      {
+        "metric": "reports built this way",
+        "value": "19 catalog reports + 4 per-record PDFs"
+      },
+      {
+        "metric": "calculations per report",
+        "value": "1, shared by the JSON route, the screen and the PDF"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Context\n\nBusiness reports get asked for in more than one form: a table on screen, a PDF to email to the auditor, sometimes raw data for another system. The quick way to add a PDF is to write a PDF generator that queries the data again. Now there are two calculations of the same trial balance, and the day one of them changes, the screen and the printout disagree.\n\n## Decision\n\nEach report is registered once in a catalog, and its entry points at the same `compute` function the report's JSON route already uses. The screen and the PDF don't compute anything; they take that result and render it, with a small hand-written function per report to shape it into a table. A shared PDF frame supplies the identity header, page numbers and a table header that repeats across pages, so every report looks like it came from the same company.\n\n## Why\n\nWhen there is only one calculation, \"the numbers don't match\" stops being a possible bug class. It also makes adding a format cheap: a new renderer reuses every report's existing, already-tested computation.\n\n## Trade-off\n\nThe per-report shaping functions are hand-written rather than generated from a generic report definition. Report results differ too much — a trial balance is a flat table, GSTR-1 is two tables matching the GST portal's split, GSTR-3B is only totals — for one generic template to render them all well, so a little repetition was chosen over a configuration language nobody would want to maintain."
   },
   {
     "kind": "pattern",
@@ -401,6 +597,34 @@
   },
   {
     "kind": "pattern",
+    "slug": "human-verified-statutory-rates",
+    "title": "Keep statutory rates in one human-approved registry that deployments pull from — don't scrape them",
+    "answer": "GST, TDS, PF, ESI, income-tax and professional-tax rates change a few times a year and must be right. Keep them in one central registry where a person enters and approves each change, and have every deployment pull approved changes daily through the same validation as a hand-entered rate. No scraping of government sites.",
+    "domain": [
+      "compliance",
+      "architecture",
+      "reliability"
+    ],
+    "evidence": [
+      {
+        "metric": "rate categories",
+        "value": "GST, TDS, PF, ESI, income-tax slabs, professional-tax slabs"
+      },
+      {
+        "metric": "update path",
+        "value": "draft → approved in the registry → pulled by each deployment on a daily cron"
+      },
+      {
+        "metric": "automated scraping",
+        "value": "none — no reliable official rates API exists"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Context\n\nEvery Indian business system that computes tax needs current statutory rates, and they change on known occasions — the Union Budget, GST Council meetings, state notifications. Typing them into each client's system separately means the same change is made several times, with several chances to get it wrong. Automating it by scraping government websites fails silently when a page changes shape.\n\n## Decision\n\nRun one registry of statutory rates, separate from any client system. A change is entered as a draft and becomes visible only once a person approves it, with its effective dates. Each deployment pulls approved changes on a daily schedule using a cursor, and applies them through exactly the same insert and validation functions its own admin screens use — a pulled rate and a hand-typed rate cannot behave differently. The registry is multi-tenant from the start, with a key per deployment.\n\n## Why\n\nA compliance rate is the kind of number where being wrong unattended costs more than being late. A person checking around known trigger dates is cheap and reliable; a scraper is cheap until the day it quietly isn't. Centralising the approval means that person does the work once for every client, and routing the pull through the existing validation means the sync adds no second set of rules to trust.\n\n## Trade-off\n\nRates are only as current as the person maintaining the registry. The design relies on the change dates being predictable — which they mostly are — and accepts a short lag after an unscheduled notification in exchange for never applying an unverified rate."
+  },
+  {
+    "kind": "pattern",
     "slug": "local-agent-cloud-db",
     "title": "Route through a local agent, not a direct API, when the target system is local-only",
     "answer": "When the system you need to integrate with only exposes a local interface — like TallyPrime's local-only XML gateway — route through a small agent running on the same machine instead of building toward a cloud API that doesn't exist. The cost is lag: minutes to a day, depending on how fast that data actually needs to move.",
@@ -428,6 +652,34 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": "## Context\n\nTallyPrime's own integration surface is a local HTTP XML gateway — it only listens on the machine running Tally itself. There's no cloud-reachable endpoint to call from a hosted web app.\n\n## Decision\n\nRun a small agent on the same machine as Tally. The cloud app never talks to Tally directly — it writes to its own database, and the local agent reads from there and posts into Tally's gateway.\n\n## Why\n\nThis isolates everything Tally-specific — the local-only connection, Tally's own XML quirks, the possibility that the PC is simply switched off — inside one small, replaceable process. The cloud app stays a normal web app that only ever talks to its own database.\n\n## Trade-off\n\nThe integration only works while that PC and its agent are running. Data isn't instantly consistent between the two systems — pushes go out every 30 seconds, voucher status syncs back every 15 minutes, and slower-moving reference data (ledgers, stock items, voucher types) syncs once every 24 hours. That lag is the cost of not needing the target system to expose anything it doesn't already have.\n\n## As code\n\nThe Tally-facing half of this agent — building and posting voucher XML against the local gateway — is open-sourced as [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml)."
+  },
+  {
+    "kind": "pattern",
+    "slug": "one-confirmation-teaches-the-system",
+    "title": "Let one deliberate human correction teach the system — but only for narrowly trusted error shapes",
+    "answer": "When imported data carries typos — TINNER for THINNER, PALTE for PLATE — suggest a correction only for two trusted shapes, one-character edits and adjacent swaps, and remember the answer after a single human confirmation. A looser \"edit distance ≤ 2\" rule matched PALTE to VALVE as readily as to PLATE, and was rejected.",
+    "domain": [
+      "human-in-the-loop",
+      "data-quality",
+      "manufacturing"
+    ],
+    "evidence": [
+      {
+        "metric": "trusted typo shapes",
+        "value": "edit distance exactly 1, or a single adjacent transposition"
+      },
+      {
+        "metric": "confirmations needed to learn a word",
+        "value": 1
+      },
+      {
+        "metric": "false positive caught before shipping",
+        "value": "PALTE ≈ VALVE at the same plain edit distance as PALTE ≈ PLATE"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Context\n\nBills of materials arrive as spreadsheets typed by people, and the system categorises each line from its description. Misspellings — a missing letter, two letters swapped — land lines in the wrong category or none. Hand-adding each known misspelling as a rule fixes yesterday's typos, never tomorrow's.\n\n## Decision\n\nDuring the import review a person already does, the system suggests a spelling correction next to the category dropdown — never instead of it. It trusts only two typo shapes against a short, curated list of real keywords: a single inserted, deleted or substituted character, or a genuine swap of two adjacent letters. When a person confirms a suggestion, that word is stored and applied automatically on every future import. One confirmation is enough, because this is a direct yes-or-no answer from someone looking at the line, not an inference that needs repeated evidence.\n\n## Why\n\nA looser rule looked simpler: accept anything within an edit distance of two, which a transposition costs. Checked before shipping, it matched PALTE to VALVE exactly as closely as to PLATE — two unrelated substitutions scoring the same as one swap — which would have made the right suggestion ambiguous. Narrow shapes keep suggestions rare and right, which is what makes a single confirmation safe to learn from.\n\n## Trade-off\n\nTypos outside the two shapes — two unrelated wrong letters, a missing syllable — get no suggestion and still need a person to pick the category by hand. The system learns less per import, in exchange for almost never proposing a wrong word."
   },
   {
     "kind": "pattern",
