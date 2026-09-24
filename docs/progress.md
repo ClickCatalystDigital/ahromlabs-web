@@ -217,11 +217,16 @@ Full detail, including what was rejected and what remains open: `docs/plans-to-u
 
 ## Indexing + buyer-vocabulary pass — 2026-09-24 (not a numbered phase)
 
-**Trigger:** Search Console export (2026-06-26 → 09-21): indexed pages fell 27 → 13; 176 not
-indexed (105 "Discovered", 65 "Crawled — currently not indexed", 3 page-with-redirect, 2
-redirect errors, 1 404). The property already knew ~198 URLs on 2026-07-01, before this repo
-existed (first commit 2026-08-27), so most of the 176 are not URLs this site generates —
-the per-reason URL examples in Search Console are needed to say which.
+**Trigger — corrected.** The first Search Console export analysed (27 → 13 indexed, 176 not
+indexed, URLs known before this repo existed) turned out to belong to a **different website**
+of the founder's; its conclusions about unknown legacy URLs don't apply here. ahromlabs.com's
+own export (2026-08-26 → 09-21): first indexed 2026-08-28; **7 indexed, 21 not indexed** of 28
+known; 18 "Discovered — currently not indexed" (validation started), 1 "Crawled — currently not
+indexed", 1 "Page with redirect" (www → apex, expected), 1 "Alternate page with proper
+canonical" (expected), 5xx 0 (passed — the 2026-09-05 Error 1102 incident). Reading: a
+four-week-old site whose pages Google has found but not yet prioritised — a crawl-priority
+problem, not a technical block. The code fixes below were found by reading the code, not
+inferred from that export, and stand on their own.
 
 **Fixed in code, verified in `opennextjs-cloudflare preview`:**
 - Unknown slugs under `/notes`, `/patterns`, `/systems` returned **500** (`find(...)!` on
@@ -338,6 +343,14 @@ HTML for browsers and for no Accept header, 404 preserved for unknown slugs.
 Cloudflare's built-in "Markdown for Agents" needs a Pro plan; this does it at build time.
 
 **Deliberately skipped:** all of Level 3 and Commerce — see `docs/site-architecture.md`.
+
+**Deployed and rescanned the same day: Level 1 5/5, Level 2 2/3.** The one Level 2 miss,
+Auth.md, fails by design: the check validates OAuth protected-resource metadata with an
+`agent_auth` registration block (WorkOS auth.md spec) — i.e. a real agent sign-up system. This
+site has no accounts, so passing would mean faking one. `/auth.md` stays, as plain guidance.
+Live checks by founder: robots Content-Signal present, markdown served for `Accept:
+text/markdown`, Link header present; sitemap https 200, www 301, http 200 (recommend
+Cloudflare "Always Use HTTPS").
 
 **Search Console sitemap HTTP 525** (reported by founder): an SSL handshake failure between
 Cloudflare and an *origin*, which a Workers-only site doesn't have — so the fetch went to a

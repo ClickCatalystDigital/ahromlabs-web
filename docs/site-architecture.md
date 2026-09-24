@@ -67,6 +67,8 @@ clients), a pattern's "Seen in practice" and "Part of", a client's industry link
   ai-input=yes, ai-train=yes` — all yes, deliberately: the site exists to be learned from.
 - **`/.well-known/api-catalog`** (RFC 9727) — lists knowledge.json, llms.txt and the sitemap.
 - **`/auth.md`** — states plainly that no authentication exists and everything is public.
+  Cloudflare's Auth.md check will keep failing, correctly: it requires an OAuth agent-registration
+  system (`/.well-known/oauth-protected-resource` with `agent_auth`), which this site doesn't have.
 - **Not built, deliberately** (Cloudflare Agent Readiness Level 3 and Commerce): OAuth
   discovery/protected resource, A2A agent card, skills index, MCP server card, Web Bot Auth,
   WebMCP, DNS-AID, and all commerce protocols. There is no login, no API, no agent and nothing
