@@ -355,14 +355,51 @@ body {
   white-space: nowrap;
 }
 
-/* Cloudflare AI Search widgets (src/components/SiteSearch.tsx), themed with
-   the site's own tokens so they read as part of the site, not a plug-in. */
+/* Cloudflare AI Search widgets (src/components/SiteSearch.tsx), restyled in
+   the site's own language — navy accent, 2px corners like every button here,
+   hairline borders, Geist, quiet shadows — so they read as part of the site,
+   not a plug-in. Only the package's documented custom properties are used. */
 search-modal-snippet,
 chat-bubble-snippet {
   --search-snippet-primary-color: var(--accent);
+  --search-snippet-primary-hover: #27457c;
   --search-snippet-background: var(--background);
+  --search-snippet-surface: #f4f4f6;
+  --search-snippet-hover-background: #f1f1f4;
   --search-snippet-text-color: var(--foreground);
+  --search-snippet-text-secondary: var(--foreground-secondary);
+  --search-snippet-text-description: var(--foreground-secondary);
+  --search-snippet-border-color: var(--line);
+  --search-snippet-border-width: 1px;
   --search-snippet-border-radius: var(--radius);
+  --search-snippet-focus-ring: 0 0 0 2px rgb(29 52 97 / 0.25);
   --search-snippet-font-family: var(--font-geist-sans), system-ui, sans-serif;
+  --search-snippet-font-size-base: 15px;
+  --search-snippet-shadow: 0 1px 2px rgb(24 24 27 / 0.06);
+  --search-snippet-shadow-lg: 0 0 0 1px var(--line), 0 24px 48px -12px rgb(24 24 27 / 0.18);
+  --search-snippet-user-message-bg: var(--accent);
+  --search-snippet-user-message-text: var(--background);
+  --search-snippet-assistant-message-bg: #f1f1f4;
+  --search-snippet-assistant-message-text: var(--foreground);
+  --search-snippet-transition: 160ms ease;
   --search-snippet-z-modal: 60;
+}
+
+chat-bubble-snippet {
+  --chat-bubble-button-size: 48px;
+  --chat-bubble-button-radius: var(--radius);
+  --chat-bubble-button-icon-size: 20px;
+  --chat-bubble-button-icon-color: var(--background);
+  --chat-bubble-button-bottom: 24px;
+  --chat-bubble-button-right: 24px;
+  --chat-bubble-button-z-index: 50;
+  --chat-bubble-button-shadow: 0 1px 2px rgb(24 24 27 / 0.1), 0 8px 20px -6px rgb(29 52 97 / 0.35);
+  --chat-bubble-window-shadow: 0 0 0 1px var(--line), 0 24px 48px -12px rgb(24 24 27 / 0.2);
+}
+
+/* Long identifiers in inline code (e.g. `classifyResponseError()`) have no
+   break points and pushed pattern pages 92px past a phone screen. Let them
+   wrap only when they must. */
+main :not(pre) > code {
+  overflow-wrap: anywhere;
 }

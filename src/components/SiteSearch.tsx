@@ -23,13 +23,51 @@ declare module "react" {
 // browser, as its own chunk.
 const loadSnippets = () => import("@cloudflare/ai-search-snippet");
 
+// The components' own copy ("Chat", "Start a Conversation", …) replaced with
+// the site's voice. Keys are the package's translation keys; anything not
+// listed keeps its default. Set as the `translations` *property* once the
+// elements are defined: the bubble only forwards a property override to its
+// inner chat view — the JSON attribute alone leaves the empty state generic.
+const MODAL_COPY = {
+  modalEmptyStateDescription: "Try “IBR forms”, “Tally integration” or “custom ERP cost”",
+};
+const CHAT_COPY = {
+  chatTitle: "Ask Ahrom Labs",
+  chatEmptyTitle: "Ask about our work",
+  chatEmptyDescription:
+    "Answers come from our published notes, industry pages and pricing, with links. Try “Can you generate IBR forms?” or “Who owns the code?”",
+  chatPlaceholder: "Ask a question…",
+  openChatAriaLabel: "Ask Ahrom Labs",
+  assistantAvatar: "A",
+  userAvatar: "You",
+};
+
+type WithCopy = HTMLElement & { translations?: Record<string, string> };
+
+// Once per page load: the idle load and a Search click share one promise, so
+// the copy is applied (and the elements re-rendered) exactly once.
+let ready: Promise<void> | null = null;
+const loadAndApplyCopy = () => (ready ??= applyCopy());
+
+async function applyCopy() {
+  await loadSnippets();
+  await Promise.all([
+    customElements.whenDefined("search-modal-snippet"),
+    customElements.whenDefined("chat-bubble-snippet"),
+  ]);
+  const modal = document.querySelector<WithCopy>("search-modal-snippet");
+  const bubble = document.querySelector<WithCopy>("chat-bubble-snippet");
+  if (modal) modal.translations = MODAL_COPY;
+  if (bubble) bubble.translations = CHAT_COPY;
+}
+
 // Site search (Cmd/Ctrl+K, and the "Search" item in the nav) on every page,
 // plus an "ask" chat bubble on desktop only — on a phone a floating bubble
 // covers the content people came to read. Loaded at browser idle, so it never
 // delays the page; without JS the site is unchanged.
 export function SiteSearch() {
   useEffect(() => {
-    const load = () => void loadSnippets();
+    const load = () => void loadAndApplyCopy();
     if ("requestIdleCallback" in window) {
       const id = window.requestIdleCallback(load);
       return () => window.cancelIdleCallback(id);
@@ -46,12 +84,14 @@ export function SiteSearch() {
         theme="light"
         show-url="true"
         max-render-results="8"
+        hide-branding="true"
       />
       <div className="hidden lg:block">
         <chat-bubble-snippet
           api-url={AI_SEARCH_URL}
-          placeholder="Ask about our systems, pricing or process…"
+          placeholder="Ask a question…"
           theme="light"
+          hide-branding="true"
         />
       </div>
     </>
@@ -69,8 +109,7 @@ export function SearchButton({ className }: { className?: string }) {
   if (!hydrated) return null;
 
   const open = async () => {
-    await loadSnippets();
-    await customElements.whenDefined("search-modal-snippet");
+    await loadAndApplyCopy();
     (document.querySelector("search-modal-snippet") as (HTMLElement & { open?: () => void }) | null)?.open?.();
   };
 
