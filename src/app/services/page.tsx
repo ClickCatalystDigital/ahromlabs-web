@@ -4,14 +4,14 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
-import { services, resolveProof, proofHref } from "@/lib/services";
+import { services, layers, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
 
 const description =
-  "Custom ERP and CRM, TallyPrime integration, AI extraction of GST invoices and customs documents with human review, and multi-company finance with role-scoped access — built for Indian businesses.";
+  "A software factory for operational systems: custom ERP and CRM, TallyPrime integration, multi-company finance, analytics and operational intelligence, AI document extraction, RAG and knowledge graphs — on one data model.";
 
 export const metadata: Metadata = {
-  title: "Services: ERP, CRM, TallyPrime integration and AI document extraction",
+  title: "Services: custom ERP, CRM, analytics, RAG and AI systems",
   description,
   alternates: { canonical: "/services" },
   openGraph: {
@@ -36,20 +36,41 @@ export default function ServicesPage() {
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">What we build</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            Ahrom Labs builds custom operational systems for Indian businesses: ERP and CRM,
-            TallyPrime integration, AI document extraction with human review, and
-            multi-company finance. Every one of them starts from a model of how your business
-            actually works, and every claim below links to the engineering note it comes from.
+            Ahrom Labs is a software factory for operational systems. We take a business from
+            basic, compliant record-keeping to analytics and AI — ERP and CRM, TallyPrime
+            integration, operational intelligence, document extraction, RAG and knowledge
+            graphs — all on one model of how the business actually works. Every client claim
+            below links to the engineering note it comes from.
           </p>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <a href={`#${s.slug}`} className="text-link focus-ring">
-                  {s.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+        </section>
+
+        {/* The ladder: each rung builds on the model the one below it created. */}
+        <section className="section border-t border-line">
+          <div className="rail">
+            <h2 className="display text-3xl text-foreground sm:text-4xl">
+              From compliant records to AI, on one model
+            </h2>
+            <ol className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+              {layers.map((layer, i) => (
+                <li key={layer.slug} className="border-t border-line pt-6">
+                  <p className="text-sm font-medium text-foreground-secondary">{String(i + 1).padStart(2, "0")}</p>
+                  <h3 className="mt-2 text-lg font-medium text-foreground">{layer.name}</h3>
+                  <p className="mt-2 leading-relaxed text-foreground-secondary">{layer.summary}</p>
+                  <ul className="mt-4 space-y-1">
+                    {services
+                      .filter((s) => s.layer === layer.slug)
+                      .map((s) => (
+                        <li key={s.slug}>
+                          <a href={`#${s.slug}`} className="text-link focus-ring text-sm">
+                            {s.name}
+                          </a>
+                        </li>
+                      ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         {services.map((service) => {
@@ -83,6 +104,13 @@ export default function ServicesPage() {
                             <Link href={proofHref(ref)} className="text-link focus-ring">
                               {resolveProof(ref).title}
                             </Link>
+                          </li>
+                        ))}
+                        {service.links?.map((l) => (
+                          <li key={l.href}>
+                            <a href={l.href} className="text-link focus-ring">
+                              {l.label}
+                            </a>
                           </li>
                         ))}
                       </ul>

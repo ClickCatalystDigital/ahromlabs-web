@@ -11,12 +11,12 @@ import { services } from "@/lib/services";
 import { engagements } from "@/lib/work";
 
 const description =
-  "Ahrom Labs builds custom operational systems for Indian businesses — ERP and CRM, TallyPrime integration, AI extraction of GST invoices with human review, and multi-company finance — modeled as one connected system.";
+  "Ahrom Labs is a software factory for operational systems: custom ERP and CRM, TallyPrime integration, analytics and operational intelligence, AI document extraction, RAG and knowledge graphs — built on one model of your business.";
 
 export const metadata: Metadata = {
   // The homepage <title> is the single strongest signal of what this site is
   // about. "Ahrom Labs" alone told Google and every model nothing.
-  title: { absolute: "Ahrom Labs | Custom ERP, CRM and TallyPrime integration for Indian businesses" },
+  title: { absolute: "Ahrom Labs | Custom ERP, CRM, analytics and AI systems — software factory" },
   description,
   alternates: {
     canonical: "/",
@@ -56,10 +56,10 @@ export default function Home() {
                 We build the systems your business runs on.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-                Ahrom Labs designs and builds custom operational systems for Indian
-                businesses: ERP and CRM, TallyPrime integration, and AI document extraction.
-                We model your entities, workflows, and decisions as one connected system, not
-                another disconnected app.
+                Ahrom Labs is a software factory for operational systems — from compliant
+                ERP and CRM to analytics, RAG and knowledge graphs. We model your entities,
+                workflows, and decisions as one connected system, not another disconnected
+                app.
               </p>
               <a href="#contact" className="subscribe-submit focus-ring mt-8 inline-block">
                 Start a conversation
@@ -116,7 +116,12 @@ export default function Home() {
           <section className="section border-t border-line">
             <div className="rail">
               <h2 className="display text-3xl text-foreground sm:text-4xl">What we build</h2>
-              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
+              <p className="prose-measure mt-6 text-base leading-relaxed text-foreground-secondary">
+                Start with records that are correct and compliant. Add the workflows your
+                people run every day. Then analytics, then AI — each layer built on the same
+                model, so nothing has to be rebuilt to climb to the next one.
+              </p>
+              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
@@ -256,10 +261,10 @@ export default function Home() {
                 before anyone writes a line of code.
               </p>
               <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
-                Typically that&apos;s an established Indian business — a trading or
-                import-export house, a manufacturer, a design-and-build firm, or two sister
-                concerns sharing one office — with its accounts in TallyPrime and its
-                operations spread across spreadsheets and chat.
+                Industry doesn&apos;t decide the fit; the shape of the problem does. So far
+                that has meant a boiler manufacturer, a PCB trading company, and an interior
+                design firm with a sister furniture workshop — each with its accounts in
+                TallyPrime and its operations spread across spreadsheets and chat.
               </p>
             </div>
           </section>

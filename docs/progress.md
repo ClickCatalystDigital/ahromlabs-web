@@ -239,6 +239,16 @@ Services/Clients sections, and the `OfferCatalog` on `ProfessionalService`. Ever
 restates published content; `resolveProof()` fails the build on a dead proof link. Notes and
 patterns link back to the services/clients that cite them.
 
+**Repositioned the same day as a software factory** (founder's direction): a four-rung ladder
+in `services.ts` — records & compliance → operations → analytics & operational intelligence →
+AI (extraction, RAG, knowledge graphs) — rendered on `/services`, summarised on the homepage and
+in `llms.txt`. Two services added: `operational-intelligence` and `rag-knowledge-graphs`. The
+RAG service claims no client deployment; its only "running today" evidence is Ahrom's own
+corpus that the 4 client repos' agents are instructed to check. Shanti Boilers is now described
+as custom ERP + CRM + operational intelligence, per the founder. `Organization.description` in
+`schema.ts` was deliberately left unchanged — it matches the GitHub org bio verbatim, and
+changing one without the other breaks the cross-source agreement `sameAs` exists for.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

@@ -24,7 +24,7 @@ export const engagements: Engagement[] = [
     client: "LS Technologies",
     industry: "Electronics-components import/export trading",
     built:
-      "An ERP and CRM with TallyPrime accounting automation, plus a separate inventory system for PCB components and reels.",
+      "An ERP and CRM with TallyPrime accounting automation and AI document extraction, plus a separate inventory management system for PCB components and reels.",
     services: ["tally-integration", "document-extraction", "custom-erp-crm"],
     highlights: [
       "Approved invoices post into TallyPrime as vouchers within 30 seconds, through a local agent on the Tally PC.",
@@ -42,8 +42,8 @@ export const engagements: Engagement[] = [
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:
-      "One operations and finance system for two related businesses: projects and site visits for Savistar, workshop orders for Saag, a shared client list and one combined ledger.",
-    services: ["custom-erp-crm", "multi-company-finance"],
+      "The backend both businesses run on: workers, clients, vendors and freight, projects and site visits for Savistar, workshop orders for Saag, and one combined finance ledger.",
+    services: ["custom-erp-crm", "multi-company-finance", "operational-intelligence"],
     highlights: [
       "Each invoice picks its own company's letterhead, logo and GSTIN from a single shared app.",
       "Staff see only their own cash entries; bank data is refused to staff at the API.",
@@ -64,8 +64,8 @@ export const engagements: Engagement[] = [
     client: "Shanti Boilers & Pressure Vessels",
     industry: "Boiler and pressure-vessel manufacturing",
     built:
-      "A manufacturing operations system covering bills of materials, material stock and the test certificates that go into statutory quality-control documents.",
-    services: ["custom-erp-crm", "document-extraction"],
+      "A custom ERP, CRM and operational-intelligence system for a boiler and pressure-vessel manufacturer — from bills of materials and material stock to the test certificates that go into statutory quality-control documents.",
+    services: ["custom-erp-crm", "operational-intelligence", "document-extraction"],
     highlights: [
       "Leftover cut material is matched back to bill-of-materials lines still waiting on stock, so usable offcuts aren't scrapped.",
       "Test certificates are matched to the lines they belong to — ranked by confidence, but never linked without a person confirming, because they end up in statutory paperwork.",

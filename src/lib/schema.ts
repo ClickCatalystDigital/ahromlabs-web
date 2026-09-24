@@ -74,6 +74,11 @@ export const orgGraph = {
         "Multi-company accounting",
         "Inventory management systems",
         "Manufacturing operations software",
+        "Operational intelligence",
+        "Business analytics",
+        "Anomaly detection",
+        "Retrieval-augmented generation",
+        "Knowledge graphs",
         "Business process modeling",
       ],
       sameAs: [

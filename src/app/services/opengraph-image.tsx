@@ -6,8 +6,8 @@ export const contentType = "image/png";
 
 export default function Image() {
   return renderOgImage({
-    title: "ERP, CRM, TallyPrime integration and AI document extraction.",
+    title: "From compliant ERP and CRM to analytics, RAG and knowledge graphs.",
     description:
-      "Custom operational systems for Indian businesses, modeled as one connected system.",
+      "A software factory for operational systems, every layer built on one model of your business.",
   });
 }

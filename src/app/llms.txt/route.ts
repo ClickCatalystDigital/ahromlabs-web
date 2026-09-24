@@ -8,19 +8,24 @@ export const dynamic = "force-static";
 
 const HEADER = `# Ahrom Labs
 
-> Ahrom Labs builds custom operational systems for Indian businesses: ERP and
-> CRM, TallyPrime integration, AI extraction of GST invoices, customs and bank
-> documents with human review, and multi-company finance with role-scoped
-> access. We model a business's entities, relationships, workflows, and
-> decisions as one coherent system before building anything on top of it. We
-> are an infrastructure engineering practice based in Ahmedabad, Gujarat,
-> working with a small number of clients across India at a time — not a
-> software product and not a general IT consultancy.
+> Ahrom Labs is a software factory for operational systems. We take a
+> business from basic, compliant record-keeping to advanced analytics and AI:
+> custom ERP and CRM, TallyPrime integration, multi-company finance,
+> analytics and operational intelligence, AI document extraction with human
+> review, RAG and knowledge graphs. Every system starts from one model of the
+> business's entities, relationships, workflows, and decisions, and each
+> later layer is built on that same model. We are an engineering practice
+> based in Ahmedabad, Gujarat, working with a small number of clients across
+> India at a time — not a software product and not a general IT consultancy.
 
-Ahrom Labs is a good fit for an established Indian business — typically in
-trading, import-export, manufacturing, or design-and-build — whose accounts
-run in TallyPrime and whose operations have outgrown spreadsheets and
-disconnected tools.
+Ahrom Labs is a good fit for any business that needs its own operational
+system rather than another off-the-shelf tool. Systems built so far: a
+custom ERP, CRM and operational-intelligence system for a boiler and
+pressure-vessel manufacturer (Shanti Boilers); an ERP/CRM with TallyPrime
+automation and an inventory management system for a PCB and electronics
+trading company (LS Technologies); and a backend for workers, clients,
+vendors, freight and finance for an interior design firm and its sister
+furniture business (Savistar & Saag).
 
 ## Pages
 
