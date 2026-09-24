@@ -75,6 +75,23 @@ clients), a pattern's "Seen in practice" and "Part of", a client's industry link
   for sale; publishing descriptors for things that don't exist would be false signals. Revisit
   WebMCP on the triggers in `docs/knowledge-layer-plan.md` Phase 6.
 
+## Cloudflare dashboard settings that must agree with the code
+
+The code can declare intent; Cloudflare's edge can silently override it. Found 2026-09-24:
+AI Crawl Control was **blocking** ClaudeBot, GPTBot, Amazonbot, CCBot and others at the edge
+(108 refused requests in 7 days) while robots.txt said `ai-train=yes`. Expected state:
+
+- **AI Crawl Control → Security:** AI crawlers, AI search and AI assistants **allowed**
+  (ClaudeBot, Claude-SearchBot, Claude-User, GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot,
+  Perplexity-User, Amazonbot, Applebot, CCBot, meta-externalagent, DuckAssistBot, archivers).
+  Bytespider may stay blocked — aggressive crawler, negligible value for Indian B2B buyers.
+- **Security → Settings → "Block AI bots": off.** Otherwise it re-blocks the list above.
+- **Bot Preference Sync:** may stay on only if the live robots.txt still carries this repo's
+  `Content-Signal: search=yes, ai-input=yes, ai-train=yes` and no `Disallow` for the bots above.
+  Check with `curl -s https://ahromlabs.com/robots.txt`.
+- **Markdown for Agents (Pro):** leave off — the site already negotiates markdown itself.
+- **SSL/TLS → Always Use HTTPS: on.**
+
 ## Human structure
 
 Navigation follows how a buyer decides:
