@@ -330,7 +330,7 @@ whether a past client is willing").
 2. ~~0.4 Consistency sweep~~ — see resolved item below (superseded, this line was stale).
 3. **0.5 Baseline citation check** — attempted 2026-08-29, blocked (Claude in Chrome not connected; sandboxed browser hit a login wall on the first live query, Perplexity). Rather than fabricate results, this was skipped. The 15 prompts are drafted and saved at `docs/citation-baseline-2026-08.md`. **Not actually time-sensitive right now**: the site launched only days ago, so there's no existing citation footprint to lose — training-data-based answers won't shift for months regardless of when this runs, and live-search-grounded answers have nothing to be "before" yet either. Revisit once the site has enough age/content that a real before/after would mean something. Still open, deliberately deferred.
 4. ~~`Organization.sameAs` still missing GitHub/Crunchbase; `Person` node still missing `sameAs`/`alumniOf`~~ — **resolved 2026-08-30**. `Organization.sameAs` now includes `https://github.com/ahromlabs` (Crunchbase deliberately skipped — no profile exists, not fabricated). `Person` node now has `sameAs` (LinkedIn, GitHub) and `alumniOf` (Stevens Institute of Technology). Both `ponytail:` comments removed. Verified in the rendered JSON-LD after `npm run build`.
-5. **0.4 Consistency sweep — resolved 2026-08-30.** Compared `Organization.description` against the live LinkedIn company page and GitHub org page. Findings: LinkedIn's "About us" text carries the same meaning but different wording than the site (user's call: leave as-is, not reconciled — not a blocker). GitHub org bio was empty; user set it by hand to match the site's description verbatim, confirmed live on `github.com/ahromlabs`. Noticed in passing, not acted on: LinkedIn's HQ field reads "Ahmedavad, GJ" (likely a typo for Ahmedabad); a second public repo `test` exists under the `ahromlabs` org alongside `tally-voucher-xml`, purpose unclear.
+5. **0.4 Consistency sweep — resolved 2026-08-30.** Compared `Organization.description` against the live LinkedIn company page and GitHub org page. Findings: LinkedIn's "About us" text carries the same meaning but different wording than the site (user's call: leave as-is, not reconciled — not a blocker). GitHub org bio was empty; user set it by hand to match the site's description verbatim, confirmed live on `github.com/ahromlabs`. Noticed in passing, not acted on: a second public repo `test` exists under the `ahromlabs` org alongside `tally-voucher-xml`, purpose unclear.
 6. **`systems:` frontmatter is dead data, and already public.** 14 entries carry it
    (`ls-crm`, `savistar-ops`, `pcb-inventory`); nothing in `src/` reads it, but
    `/knowledge.json` serializes whole entries, so those internal repo identifiers are live on
@@ -352,8 +352,6 @@ whether a past client is willing").
    discards, there are no per-term pages, and the `DefinedTerm` nodes carry no dates. Fine as
    long as the glossary stays a single reference page; revisit if terms need to be citable
    individually.
-9. **LinkedIn HQ field still reads "Ahmedavad, GJ"** (typo). The site's schema now says
-   Ahmedabad — cross-source corroboration is the entire point of the `sameAs` link.
-10. **`foundingDate` omitted** from `Organization` — never established. Year-only is valid.
-11. **Google Business Profile** — never considered in any prior pass. Now viable since a
+9. **`foundingDate` omitted** from `Organization` — never established. Year-only is valid.
+10. **Google Business Profile** — never considered in any prior pass. Now viable since a
     city-level address exists; would be a third corroborating `sameAs` node.

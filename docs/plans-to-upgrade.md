@@ -191,16 +191,13 @@ Recorded so no future session re-does the work:
    `/knowledge.json` serializes whole entries, so those internal repo identifiers are already
    live. Decide: render it, strip it from the JSON, or leave it — but decide, rather than
    leaving it public by default.
-2. **Fix the LinkedIn HQ field**, currently "Ahmedavad, GJ". The site now says Ahmedabad;
-   corroboration across `sameAs` targets is the entire point of the link.
-3. **`foundingDate`** omitted from `Organization` — never established. Year-only is valid.
-4. **Google Business Profile** — never considered in any prior pass. Now viable, since a
+2. **`foundingDate`** omitted from `Organization` — never established. Year-only is valid.
+3. **Google Business Profile** — never considered in any prior pass. Now viable, since a
    city-level address exists. Would be a third corroborating `sameAs` node.
-5. **Engagement scope / pricing / risk-to-buyer page** — the one gap a prior competitive pass
-   endorsed (`docs/progress.md:105`) and the only page type a buyer looks for that this site
-   has no answer for. Still unbuilt.
-6. **OG social cards still render in Pilcrow Rounded.** `src/lib/og-assets.ts` embeds it as
+4. ~~**Engagement scope / pricing / risk-to-buyer page**~~ — **built 2026-09-24** as `/engagement`
+   (terms in `src/lib/engagement.ts`; decisions in `docs/progress.md`).
+5. **OG social cards still render in Pilcrow Rounded.** `src/lib/og-assets.ts` embeds it as
    base64 for `renderOgImage()`, so every social card is in the old typeface while the site is
    now Instrument Serif + Geist. Regenerating those assets is the fix. `src/fonts/pilcrow-rounded/`
    is likewise now unreferenced by the site itself.
-7. **Citation baseline** (`docs/citation-baseline-2026-08.md`) — still deliberately deferred.
+6. **Citation baseline** (`docs/citation-baseline-2026-08.md`) — still deliberately deferred.
