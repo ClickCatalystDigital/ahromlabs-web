@@ -8,6 +8,9 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
 
+// Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getContent("pattern").map((pattern) => ({ slug: pattern.slug }));
 }

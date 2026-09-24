@@ -14,6 +14,11 @@ function pagedTerms() {
   return getContent("term").filter(termHasPage);
 }
 
+// Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
+// This matters most here: every term slug is also a /systems#anchor, so
+// /systems/entity is a guessable URL that returned a 500 while it had no body.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return pagedTerms().map((term) => ({ slug: term.slug }));
 }

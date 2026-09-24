@@ -34,10 +34,11 @@ export const metadata: Metadata = {
   },
   description:
     "Ahrom Labs builds custom operational infrastructure for businesses: modeling entities, relationships, workflows, and decisions as one coherent system instead of another disconnected app.",
-  alternates: {
-    canonical: "/",
-    types: { "application/json": "/knowledge.json" },
-  },
+  // No `alternates` here. A canonical set in the root layout is inherited by
+  // every route that doesn't override it — the 404 page shipped
+  // `canonical: https://ahromlabs.com` next to `noindex`, and any page added
+  // later without its own canonical would silently declare itself a duplicate
+  // of the homepage. The homepage sets its own in app/page.tsx.
   openGraph: {
     type: "website",
     locale: "en_IN",

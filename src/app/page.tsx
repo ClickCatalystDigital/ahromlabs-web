@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteNav } from "@/components/SiteNav";
@@ -6,6 +7,13 @@ import { Reveal } from "@/components/Reveal";
 import { SystemDiagram } from "@/components/SystemDiagram";
 import { ContactForm } from "@/components/ContactForm";
 import heroImage from "../../public/hero.webp";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    types: { "application/json": "/knowledge.json" },
+  },
+};
 
 const principles = [
   {

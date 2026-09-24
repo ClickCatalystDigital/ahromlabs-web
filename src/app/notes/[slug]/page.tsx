@@ -8,6 +8,11 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
 
+// Any slug outside generateStaticParams 404s. Left at the default (true), an
+// unknown slug rendered on demand, hit `find(...)!` on undefined and returned a
+// 500 — which Search Console reports as a server error against the whole site.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getContent("note").map((note) => ({ slug: note.slug }));
 }
