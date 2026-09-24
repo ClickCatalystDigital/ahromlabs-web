@@ -288,6 +288,13 @@ export default function Home() {
                 Modeling a business properly takes real attention, and we protect the time
                 that takes.
               </p>
+              <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
+                Every project is priced in fixed phases, and the code, the data and the
+                server end up in your name.{" "}
+                <Link href="/engagement" className="text-link focus-ring">
+                  How pricing, ownership and support work
+                </Link>
+              </p>
             </div>
           </section>
         </Reveal>

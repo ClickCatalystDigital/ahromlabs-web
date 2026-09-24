@@ -95,8 +95,8 @@ export default function AboutPage() {
                 Ahrom Labs works out of Ahmedabad, Gujarat, with clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">
-                <Link href="/#how-we-work" className="text-link focus-ring">
-                  See how an engagement runs
+                <Link href="/engagement" className="text-link focus-ring">
+                  See how an engagement runs: pricing, ownership and support
                 </Link>
               </p>
             </div>

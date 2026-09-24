@@ -1,6 +1,7 @@
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { services } from "@/lib/services";
 import { engagements } from "@/lib/work";
+import { engagementAnswers } from "@/lib/engagement";
 
 // Same shape as knowledge.json/route.ts: force-static keeps this prerendered at
 // build time rather than falling back to dynamic rendering.
@@ -32,6 +33,7 @@ furniture business (Savistar & Saag).
 - [Home](https://ahromlabs.com/): Positioning, the problem with disconnected business systems, our approach, and how to start a conversation.
 - [Services](https://ahromlabs.com/services): What we build, who each service is for, the measured results, and how an engagement runs.
 - [Work](https://ahromlabs.com/work): The client businesses we have built systems for, named with permission, and what each system does.
+- [Working with us](https://ahromlabs.com/engagement): Pricing model, what drives cost, timelines, code and data ownership, hosting, support (AMC), and continuity.
 - [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
@@ -47,7 +49,8 @@ const FOOTER = `
 ## Notes for automated readers
 
 Ahrom Labs is a services business, not a SaaS product. There is no self-serve
-signup or pricing page; engagement starts by contacting us through the form
+signup or rate card: work is quoted as fixed-price phases after a modeling
+phase (see /engagement). Engagement starts by contacting us through the form
 on the home page or at hello@ahromlabs.com.
 `;
 
@@ -79,10 +82,15 @@ export function GET() {
     .map((e) => `- [${e.client}](https://ahromlabs.com/work#${e.slug}) (${e.industry}): ${e.built}`)
     .join("\n");
 
+  const working = engagementAnswers
+    .map((a) => `- [${a.question}](https://ahromlabs.com/engagement#${a.id}) ${a.answer}`)
+    .join("\n");
+
   const body =
     HEADER +
     `\n## Services\n\n${offered}\n` +
     `\n## Clients\n\n${clients}\n` +
+    `\n## Working with Ahrom Labs\n\n${working}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

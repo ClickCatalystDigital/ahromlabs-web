@@ -21,6 +21,9 @@ export function SiteFooter() {
           <Link href="/work" className="nav-link focus-ring">
             Work
           </Link>
+          <Link href="/engagement" className="nav-link focus-ring">
+            Working with us
+          </Link>
           <Link href="/approach" className="nav-link focus-ring">
             Approach
           </Link>

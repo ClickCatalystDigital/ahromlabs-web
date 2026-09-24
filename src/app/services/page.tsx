@@ -158,9 +158,11 @@ export default function ServicesPage() {
                 clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">
-                Ahrom Labs is a services practice, not a software product: there is no
-                self-serve signup and no published price list. Tell us what your business runs
-                on today and we&apos;ll reply ourselves.
+                Work is priced in fixed phases after the modeling phase, the code and data
+                become yours, and support runs under an annual maintenance contract.{" "}
+                <Link href="/engagement" className="text-link focus-ring">
+                  Pricing, timelines, ownership and support in full
+                </Link>
               </p>
             </div>
           </section>

@@ -11,9 +11,14 @@ export function ClosingCta() {
           Tell us what&apos;s held together with workarounds right now. We reply to every
           message ourselves.
         </p>
-        <Link href="/#contact" className="subscribe-submit focus-ring mt-8 inline-block">
-          Start a conversation
-        </Link>
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <Link href="/#contact" className="subscribe-submit focus-ring inline-block">
+            Start a conversation
+          </Link>
+          <Link href="/engagement" className="text-link focus-ring">
+            Pricing, ownership and support
+          </Link>
+        </div>
       </div>
     </section>
   );

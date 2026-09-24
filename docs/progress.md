@@ -274,6 +274,26 @@ Not mined yet from the same document, candidates for the next pass: the device-s
 (Part B), multi-unit BOM split (§5bc–§5bj), procurement redesign (§5c), Customer Portal (§6),
 structured e-way bill against the NIC spec (§5ax — publish only once live-tested).
 
+## Commercial terms + /engagement — 2026-09-24
+
+Founder decisions, now the single source in `src/lib/engagement.ts` (feeds `/engagement` and
+`llms.txt`; don't restate terms elsewhere):
+
+| Term | Decision |
+|---|---|
+| Pricing model | Fixed-price phases. A short fixed-fee modeling phase first; the client keeps its output; fee credited against build phase 1 if they continue. No rate card. (Chosen by Claude at the founder's request — revisit freely.) |
+| Timeline | Stated as "depends on how new the problem is": reuse from the pattern library → days/weeks; new ground → a couple of months, phased. |
+| IP | Client owns custom code + data on full payment, via a written (stamped) assignment; Ahrom keeps pre-existing reusable components under a perpetual licence to the client. Contract template still to be checked by a lawyer. |
+| Hosting | Free dev server during the build; production server in the client's name at go-live; client pays provider/domain directly. |
+| AMC | 15–21% of project value per year, higher % for smaller projects (market-aligned; founder moved from 10–15%). |
+| Support channel | Email, ≤48 h response, live now. Ticketing system: coming — don't claim it until it ships. |
+| Continuity | Team of developers + AI agents; every system ships with a canonical SYSTEM.md. |
+
+Research behind the page (2026-09-24): FAQ rich results retired by Google 2026-05-07 and no
+citation lift from FAQPage schema in a 1,885-page Ahrefs test — so plain Q&A content, no
+schema. Only ~1 in 4 B2B agencies publish pricing, but 81% of buyers want to self-serve it —
+hence "how we price" rather than a rate card.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).
