@@ -70,6 +70,20 @@ function loadKind(kind) {
     assertArrayIfPresent(frontmatter.clients, "clients", relPath);
     assertArrayIfPresent(frontmatter.services, "services", relPath);
     if (kind === "industry") assertString(frontmatter.audience, "audience", relPath);
+    assertArrayIfPresent(frontmatter.flow, "flow", relPath);
+    for (const [i, step] of (frontmatter.flow ?? []).entries()) {
+      assertString(step?.step, `flow[${i}].step`, relPath);
+      assertString(step?.detail, `flow[${i}].detail`, relPath);
+    }
+    // A real photo, when there is one: src under /public plus alt text that
+    // describes it. Both required — an image without alt text doesn't ship.
+    if (frontmatter.image !== undefined) {
+      assertString(frontmatter.image?.src, "image.src", relPath);
+      assertString(frontmatter.image?.alt, "image.alt", relPath);
+      if (!fs.existsSync(path.join(process.cwd(), "public", frontmatter.image.src))) {
+        throw new Error(`content/${relPath}: image.src "${frontmatter.image.src}" not found under public/`);
+      }
+    }
 
     return { ...frontmatter, answer, body };
   });

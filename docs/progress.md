@@ -378,6 +378,24 @@ needed. The guessed script URL returned 405, so the widget now bundles the npm p
 versioned path on Cloudflare's host. Browser-tested: both elements register, the nav Search
 button opens the modal, the chat bubble is 0×0 on mobile, no page errors.
 
+## Mobile chat, industry flow figures, boiler page depth — 2026-09-24
+
+- Chat bubble on every screen size; the chat window fitted to the viewport through an adopted
+  stylesheet on the component's shadow root (tested 375×667, 390×844, 1280×700).
+- Industry pages gain an optional `flow` (numbered steps, drawn by `FlowFigure` as text in the
+  site's diagram language) and an optional `image` for real photos (build-validated). Flows
+  written for all three industries from already-published facts.
+- Boiler page retitled "ERP software for boiler and pressure-vessel manufacturers" and expanded:
+  modules by department, Excel migration, package-vs-custom, and an IBR terms glossary — every
+  item from as-built ShantiOps sections (§5c, 5k, 5l, 5n, 5o, 5p, 5x, 5br, 5cb–5cd, 5cf, 5ct).
+  Business-volume figures (order counts) deliberately left out.
+- Competitive note: STERP (formerly Shanti Technology) and SourcePro are engineering/
+  manufacturing ERP *product* companies winning broad and city-page keywords. City pages were
+  deliberately not copied (doorway-page risk); depth on IBR/boiler is the gap neither covers.
+- **Photos:** none added — no generated or stock imagery. Waiting on real, client-cleared photos
+  (Shanti shop floor, LS reels, Savistar/Saag interiors); drop into `public/industries/` and set
+  `image:` in the industry's frontmatter.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

@@ -20,6 +20,19 @@ patterns:
   - reference-rate-anomaly-detection
   - derive-balances-dont-store-them
   - graceful-degradation-by-env-var
+flow:
+  - step: Client and job
+    detail: One shared client list; a design job under Projects, a furniture order under Orders.
+  - step: Site visits and people
+    detail: Site visits, workers, vendors and freight recorded against the job they belong to.
+  - step: Charges checked
+    detail: Every vendor and freight charge compared with a reference rate; deviations flagged.
+  - step: Invoices
+    detail: Each invoice carries its own company's letterhead, logo and GSTIN.
+  - step: Cash and bank
+    detail: Staff record cash and see only their own entries; bank data is owners-only, refused at the server.
+  - step: Balances
+    detail: Outstanding amounts and advances computed from the transactions, never kept as a running total.
 evidence:
   - metric: Companies on one book
     value: "2 sister concerns, one client list"

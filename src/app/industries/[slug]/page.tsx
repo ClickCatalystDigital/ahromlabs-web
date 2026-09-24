@@ -8,6 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 import { industryGraph, jsonLd } from "@/lib/schema";
+import { FlowFigure } from "@/components/FlowFigure";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -99,6 +100,26 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                   </div>
                 ))}
               </dl>
+            </div>
+          </section>
+        )}
+
+        {(industry.image || (industry.flow && industry.flow.length > 0)) && (
+          <section className="section border-t border-line">
+            <div className="rail">
+              {industry.image && (
+                // A real photo from the engagement, when the client has cleared one.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={industry.image.src}
+                  alt={industry.image.alt}
+                  loading="lazy"
+                  className="mb-12 w-full border border-line object-cover grayscale-[15%]"
+                />
+              )}
+              {industry.flow && industry.flow.length > 0 && (
+                <FlowFigure title="How an order moves through the system" steps={industry.flow} />
+              )}
             </div>
           </section>
         )}

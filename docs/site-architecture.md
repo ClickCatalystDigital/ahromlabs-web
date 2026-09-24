@@ -22,7 +22,7 @@ If a claim appears in one surface and not the others, something bypassed the gra
 | `term` | `content/terms/*.md` | `/systems#slug` (page at `/systems/slug` once it has a body) | `DefinedTerm` in `DefinedTermSet`; knowledge.json |
 | `note` | `content/notes/*.md` | `/notes/slug` | `TechArticle` (`about` services, `mentions` clients); knowledge.json |
 | `pattern` | `content/patterns/*.md` | `/patterns/slug` | `TechArticle`; knowledge.json |
-| `industry` | `content/industries/*.md` | `/industries/slug` | `WebPage` (`audience`, `about`, `mentions`, `hasPart`); knowledge.json; llms.txt |
+| `industry` | `content/industries/*.md` | `/industries/slug` | `WebPage` (`audience`, `about`, `mentions`, `hasPart`, `primaryImageOfPage` when a photo exists); knowledge.json; llms.txt. Optional `flow` (rendered by `FlowFigure` as real text) and `image` (a real, client-cleared photo under `public/`, alt text required — build fails otherwise) |
 | `service` | `src/lib/services.ts` | `/services#slug` | `Service` in the `OfferCatalog` on every page; knowledge.json; llms.txt |
 | `client` | `src/lib/work.ts` | `/work#slug` | `Organization` in `mentions`; knowledge.json; llms.txt |
 | `question` | `src/lib/engagement.ts` | `/engagement#id` | knowledge.json; llms.txt (plain Q&A — no FAQPage schema, see progress log) |

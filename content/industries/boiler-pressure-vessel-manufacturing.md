@@ -1,7 +1,7 @@
 ---
 kind: industry
 slug: boiler-pressure-vessel-manufacturing
-title: Software for boiler and pressure-vessel manufacturers
+title: ERP software for boiler and pressure-vessel manufacturers
 audience: Boiler and pressure-vessel manufacturers
 answer: >
   Ahrom Labs built the operations system Shanti Boilers & Pressure Vessels runs
@@ -25,6 +25,27 @@ patterns:
   - human-verified-statutory-rates
   - auto-match-only-when-mutually-unique
   - compute-once-render-many
+flow:
+  - step: Enquiry to sale order
+    detail: CRM lead, quotation and sale order, with payment stages tracked per order.
+  - step: Project and model
+    detail: The boiler model sets the IBR form set; the maker-number prefix sets the legal entity.
+  - step: Design and BOM
+    detail: Role-approved drawings, calculation sheets, and a multi-level BOM tree with reusable structure templates.
+  - step: BOM release
+    detail: Remnants already in stock are reserved first; only the shortfall goes to Procurement.
+  - step: Procurement
+    detail: Requests, sourcing, supplier quotes, selection and purchase orders, with delivery lots per PO.
+  - step: Receiving
+    detail: Inward QC approval on each delivery; test-certificate PDFs read by AI into the certificate bank.
+  - step: Cutting and production
+    detail: Plates cut into parts, remnant and scrap by weight; work orders and job cards on the shop floor.
+  - step: Quality
+    detail: Incoming and finished-goods inspection, hold points, NCRs, calibration; certificates matched to parts.
+  - step: IBR folder and dispatch
+    detail: Statutory folder generated; packing list approved by QC and Production; e-way bill and freight captured.
+  - step: Accounts and after-sales
+    detail: Invoice, GST and TDS in the same ledger; service calls, contracts and service reports after commissioning.
 evidence:
   - metric: IBR forms generated
     value: Cover letter, Forms II(1), III, III A and IV A
@@ -69,6 +90,39 @@ A read-only portal: each order as a stepper from order received to commissioning
 ## Can it stop drawings leaving the office on a USB drive?
 
 The same system runs a device-control layer on office PCs. USB drives, CDs and DVDs, phones and chosen websites are blocked by default; an employee's attempt to use one files a request, a manager approves it with a one-time code, and access opens for a time-boxed window — 15 minutes by default. Every step is audited.
+
+## What modules does a boiler manufacturer's ERP need?
+
+One per department, sharing the same records rather than handing spreadsheets between them. In the system built for Shanti Boilers:
+
+- **Sales and CRM** — leads, quotations, sale orders and a payment tracker with stages per order.
+- **Engineering** — a multi-level bill of materials with where-used and common/uncommon views, engineering change notes, reusable structure templates, drawings approved by role, and calculation sheets linked to the drawings they substantiate.
+- **Procurement** — requests from engineering accepted into a sourcing pipeline, supplier quotes compared side by side, purchase orders with delivery lots, and purchase returns.
+- **Stores** — delivery-by-delivery receiving, piece-level plate and section stock with remnants, material indents and gate passes.
+- **Production** — work orders above job cards, routed per unit when one order covers several boilers.
+- **Quality** — incoming, finished-goods, sub-assembly and job-work inspection, instrument calibration, non-conformance reports with disposition, hold points, and the test-certificate bank behind the IBR folder.
+- **Dispatch** — packing lists that need both QC and Production sign-off, freight cost and e-way bill details captured against the invoice.
+- **Accounts** — ledger, GST returns, TDS, reverse charge, fixed assets and bank reconciliation, with 23 reports.
+- **Installation** — service calls with priorities and response times, service contracts, and service reports.
+
+## Can existing Excel records come across?
+
+Yes, and they were. Bills of materials are imported from the plant's own spreadsheets into the BOM tree, with each line categorised automatically — and when a person corrects a misspelled item once, the import remembers it. Five years of order and payment history came across from the existing Excel tracker and were checked field by field against the sheet, with zero mismatches, before anyone relied on them.
+
+## Should a boiler maker buy an engineering ERP package or build custom?
+
+Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder generated from the BOM, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
+
+## IBR terms, in one place
+
+- **Form II(1)** — the inspection certificate: inspecting authority, working pressure, hydraulic test pressure and date, drawing numbers and signatories.
+- **Form III** — the boiler's description: dimensions, pressures, heating surface, evaporation, parts manufactured, construction and seams.
+- **Form III A** — a material table for one named part, such as the feed pipeline, including steel-making process and heat treatment.
+- **Form IV A** — the material table for the boiler, each part with its test certificate, grouped into lettered sections.
+- **Form XVII** — used for a small industrial boiler in place of Forms II(1) and III.
+- **Material test certificate (MTC)** — the mill's certificate for a plate, tube or forging, identified here by certificate, cast and plate number together.
+- **Hold point** — a stage production can't pass until QC clears it.
+- **NCR** — a non-conformance report, closed only after a disposition and a separate QC verification.
 
 ## Boundary
 

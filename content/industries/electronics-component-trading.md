@@ -23,6 +23,23 @@ patterns:
   - human-confirmed-extraction
   - replay-queued-payload-through-existing-handler
   - self-healing-sequence-counters
+flow:
+  - step: Documents arrive
+    detail: Purchase orders, purchase and freight invoices, bills of entry and bank statements, as PDFs.
+  - step: AI extraction
+    detail: Each document type read by its own prompt, straight from the PDF; long bank statements in chunks.
+  - step: Human review
+    detail: Every extraction approved by a person; ledger names checked against a snapshot of Tally's own.
+  - step: Posted to Tally
+    detail: A local agent on the Tally PC posts approved vouchers within 30 seconds.
+  - step: Synced back
+    detail: Voucher status and outstanding bills every 15 minutes; ledgers, stock items and voucher types nightly.
+  - step: Reconciled
+    detail: What the app posted is checked against what Tally holds; a voucher deleted in Tally is flagged again.
+  - step: Held, not lost
+    detail: Tally offline means retry on the next cycle; a real rejection is held with its reason for a person.
+  - step: Components and reels
+    detail: A separate inventory system; transfers safe under simultaneous moves, approvals replayed through one code path.
 evidence:
   - metric: Approved invoice to Tally voucher
     value: within 30 seconds

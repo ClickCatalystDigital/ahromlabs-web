@@ -204,6 +204,9 @@ export function industryGraph(
     datePublished: entry.published,
     dateModified: entry.updated,
     audience: { "@type": "BusinessAudience", audienceType: entry.audience },
+    ...(entry.image
+      ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${entry.image.src}`, caption: entry.image.alt } }
+      : {}),
     about: edges.services.map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` })),
     mentions: edges.clients.map((c) => ({
       "@type": "Organization",

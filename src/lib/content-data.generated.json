@@ -898,7 +898,7 @@
   {
     "kind": "industry",
     "slug": "boiler-pressure-vessel-manufacturing",
-    "title": "Software for boiler and pressure-vessel manufacturers",
+    "title": "ERP software for boiler and pressure-vessel manufacturers",
     "audience": "Boiler and pressure-vessel manufacturers",
     "answer": "Ahrom Labs built the operations system Shanti Boilers & Pressure Vessels runs on — BOM, procurement, stores, plate cutting, production, QC, IBR statutory folders, GST and TDS accounting, and a customer portal, in one system. Each boiler's IBR folder is generated from its bill of materials and a bank of material test certificates.",
     "domain": [
@@ -930,6 +930,48 @@
       "auto-match-only-when-mutually-unique",
       "compute-once-render-many"
     ],
+    "flow": [
+      {
+        "step": "Enquiry to sale order",
+        "detail": "CRM lead, quotation and sale order, with payment stages tracked per order."
+      },
+      {
+        "step": "Project and model",
+        "detail": "The boiler model sets the IBR form set; the maker-number prefix sets the legal entity."
+      },
+      {
+        "step": "Design and BOM",
+        "detail": "Role-approved drawings, calculation sheets, and a multi-level BOM tree with reusable structure templates."
+      },
+      {
+        "step": "BOM release",
+        "detail": "Remnants already in stock are reserved first; only the shortfall goes to Procurement."
+      },
+      {
+        "step": "Procurement",
+        "detail": "Requests, sourcing, supplier quotes, selection and purchase orders, with delivery lots per PO."
+      },
+      {
+        "step": "Receiving",
+        "detail": "Inward QC approval on each delivery; test-certificate PDFs read by AI into the certificate bank."
+      },
+      {
+        "step": "Cutting and production",
+        "detail": "Plates cut into parts, remnant and scrap by weight; work orders and job cards on the shop floor."
+      },
+      {
+        "step": "Quality",
+        "detail": "Incoming and finished-goods inspection, hold points, NCRs, calibration; certificates matched to parts."
+      },
+      {
+        "step": "IBR folder and dispatch",
+        "detail": "Statutory folder generated; packing list approved by QC and Production; e-way bill and freight captured."
+      },
+      {
+        "step": "Accounts and after-sales",
+        "detail": "Invoice, GST and TDS in the same ledger; service calls, contracts and service reports after commissioning."
+      }
+    ],
     "evidence": [
       {
         "metric": "IBR forms generated",
@@ -950,7 +992,7 @@
     ],
     "published": "2026-09-24",
     "updated": "2026-09-24",
-    "body": "## What does a boiler manufacturer need that a generic ERP doesn't give?\n\nFour things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [Shanti Boilers & Pressure Vessels](/work#shanti-boilers) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.\n\n## Can the IBR statutory folder be generated instead of typed?\n\nYes. The folder — covering letter, Forms II(1), III, III A and IV A — is generated from the project's bill-of-materials tree and a bank of material test certificates. The form set is chosen by boiler model, Form IV A's lettered sections come from the BOM's own structure, and certificate PDFs are read by AI on upload. Matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## How is material traced from test certificate to finished boiler?\n\nEach test certificate is identified by certificate, cast and plate number together — one certificate number covered four casts in the client's own sample — and one certificate is typically used across several boilers. When a plate is cut, every used piece, remnant and scrap piece is chained to the plate it came from. QC records heat and lot numbers, non-conformance reports with a disposition and a verification step before closing, and hold points that stop a job until inspection clears it.\n\n## How does work move between departments without chasing people?\n\nEach project's milestones declare what they depend on, and the system shows what each one is waiting for, computed fresh every time the page is opened. Procurement runs as a visible pipeline — requests, sourcing, supplier selection, purchase order issued, closed — with new-item requests from engineering accepted into procurement rather than appearing unannounced. On the shop floor, work orders and job cards carry production; engineering has its own calculation sheets linked to the drawings they substantiate.\n\n## What happens to plate offcuts?\n\nThey go back into stock as real pieces with dimensions, and every weight is derived from geometry rather than typed. In a live test, a 157.00 kg plate became 127.17 kg of parts, a 15.70 kg remnant returned to stock, and 14.13 kg of scrap — summing exactly to the source. When a BOM is released, a fitting remnant is reserved before anything is bought. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## Can GST, TDS and accounts live in the same system?\n\nThey do here. The system is the book of record — ledger, GSTR-1 and GSTR-3B, input-tax-credit reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, a books lock and an audit log — with Tally available as an optional sync target. The original plan left regulated accounting to a separate ERP package; in August 2026 that was reversed, and the operations system became the book of record. See [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\n## What does the customer see?\n\nA read-only portal: each order as a stepper from order received to commissioning, with overall progress, estimated dispatch, and the QC certificates and packing lists filed under the stage they belong to. A customer only ever sees their own orders.\n\n## Can it stop drawings leaving the office on a USB drive?\n\nThe same system runs a device-control layer on office PCs. USB drives, CDs and DVDs, phones and chosen websites are blocked by default; an employee's attempt to use one files a request, a manager approves it with a one-time code, and access opens for a time-boxed window — 15 minutes by default. Every step is audited.\n\n## Boundary\n\nNesting — planning the layout of several parts on one plate — is not part of the system. E-invoicing is researched and deferred. The generated IBR forms have been checked against the client's real filed documents; the remaining gaps are formatting, and are being closed form by form."
+    "body": "## What does a boiler manufacturer need that a generic ERP doesn't give?\n\nFour things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [Shanti Boilers & Pressure Vessels](/work#shanti-boilers) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.\n\n## Can the IBR statutory folder be generated instead of typed?\n\nYes. The folder — covering letter, Forms II(1), III, III A and IV A — is generated from the project's bill-of-materials tree and a bank of material test certificates. The form set is chosen by boiler model, Form IV A's lettered sections come from the BOM's own structure, and certificate PDFs are read by AI on upload. Matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## How is material traced from test certificate to finished boiler?\n\nEach test certificate is identified by certificate, cast and plate number together — one certificate number covered four casts in the client's own sample — and one certificate is typically used across several boilers. When a plate is cut, every used piece, remnant and scrap piece is chained to the plate it came from. QC records heat and lot numbers, non-conformance reports with a disposition and a verification step before closing, and hold points that stop a job until inspection clears it.\n\n## How does work move between departments without chasing people?\n\nEach project's milestones declare what they depend on, and the system shows what each one is waiting for, computed fresh every time the page is opened. Procurement runs as a visible pipeline — requests, sourcing, supplier selection, purchase order issued, closed — with new-item requests from engineering accepted into procurement rather than appearing unannounced. On the shop floor, work orders and job cards carry production; engineering has its own calculation sheets linked to the drawings they substantiate.\n\n## What happens to plate offcuts?\n\nThey go back into stock as real pieces with dimensions, and every weight is derived from geometry rather than typed. In a live test, a 157.00 kg plate became 127.17 kg of parts, a 15.70 kg remnant returned to stock, and 14.13 kg of scrap — summing exactly to the source. When a BOM is released, a fitting remnant is reserved before anything is bought. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## Can GST, TDS and accounts live in the same system?\n\nThey do here. The system is the book of record — ledger, GSTR-1 and GSTR-3B, input-tax-credit reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, a books lock and an audit log — with Tally available as an optional sync target. The original plan left regulated accounting to a separate ERP package; in August 2026 that was reversed, and the operations system became the book of record. See [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\n## What does the customer see?\n\nA read-only portal: each order as a stepper from order received to commissioning, with overall progress, estimated dispatch, and the QC certificates and packing lists filed under the stage they belong to. A customer only ever sees their own orders.\n\n## Can it stop drawings leaving the office on a USB drive?\n\nThe same system runs a device-control layer on office PCs. USB drives, CDs and DVDs, phones and chosen websites are blocked by default; an employee's attempt to use one files a request, a manager approves it with a one-time code, and access opens for a time-boxed window — 15 minutes by default. Every step is audited.\n\n## What modules does a boiler manufacturer's ERP need?\n\nOne per department, sharing the same records rather than handing spreadsheets between them. In the system built for Shanti Boilers:\n\n- **Sales and CRM** — leads, quotations, sale orders and a payment tracker with stages per order.\n- **Engineering** — a multi-level bill of materials with where-used and common/uncommon views, engineering change notes, reusable structure templates, drawings approved by role, and calculation sheets linked to the drawings they substantiate.\n- **Procurement** — requests from engineering accepted into a sourcing pipeline, supplier quotes compared side by side, purchase orders with delivery lots, and purchase returns.\n- **Stores** — delivery-by-delivery receiving, piece-level plate and section stock with remnants, material indents and gate passes.\n- **Production** — work orders above job cards, routed per unit when one order covers several boilers.\n- **Quality** — incoming, finished-goods, sub-assembly and job-work inspection, instrument calibration, non-conformance reports with disposition, hold points, and the test-certificate bank behind the IBR folder.\n- **Dispatch** — packing lists that need both QC and Production sign-off, freight cost and e-way bill details captured against the invoice.\n- **Accounts** — ledger, GST returns, TDS, reverse charge, fixed assets and bank reconciliation, with 23 reports.\n- **Installation** — service calls with priorities and response times, service contracts, and service reports.\n\n## Can existing Excel records come across?\n\nYes, and they were. Bills of materials are imported from the plant's own spreadsheets into the BOM tree, with each line categorised automatically — and when a person corrects a misspelled item once, the import remembers it. Five years of order and payment history came across from the existing Excel tracker and were checked field by field against the sheet, with zero mismatches, before anyone relied on them.\n\n## Should a boiler maker buy an engineering ERP package or build custom?\n\nEngineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder generated from the BOM, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).\n\n## IBR terms, in one place\n\n- **Form II(1)** — the inspection certificate: inspecting authority, working pressure, hydraulic test pressure and date, drawing numbers and signatories.\n- **Form III** — the boiler's description: dimensions, pressures, heating surface, evaporation, parts manufactured, construction and seams.\n- **Form III A** — a material table for one named part, such as the feed pipeline, including steel-making process and heat treatment.\n- **Form IV A** — the material table for the boiler, each part with its test certificate, grouped into lettered sections.\n- **Form XVII** — used for a small industrial boiler in place of Forms II(1) and III.\n- **Material test certificate (MTC)** — the mill's certificate for a plate, tube or forging, identified here by certificate, cast and plate number together.\n- **Hold point** — a stage production can't pass until QC clears it.\n- **NCR** — a non-conformance report, closed only after a disposition and a separate QC verification.\n\n## Boundary\n\nNesting — planning the layout of several parts on one plate — is not part of the system. E-invoicing is researched and deferred. The generated IBR forms have been checked against the client's real filed documents; the remaining gaps are formatting, and are being closed form by form."
   },
   {
     "kind": "industry",
@@ -984,6 +1026,40 @@
       "human-confirmed-extraction",
       "replay-queued-payload-through-existing-handler",
       "self-healing-sequence-counters"
+    ],
+    "flow": [
+      {
+        "step": "Documents arrive",
+        "detail": "Purchase orders, purchase and freight invoices, bills of entry and bank statements, as PDFs."
+      },
+      {
+        "step": "AI extraction",
+        "detail": "Each document type read by its own prompt, straight from the PDF; long bank statements in chunks."
+      },
+      {
+        "step": "Human review",
+        "detail": "Every extraction approved by a person; ledger names checked against a snapshot of Tally's own."
+      },
+      {
+        "step": "Posted to Tally",
+        "detail": "A local agent on the Tally PC posts approved vouchers within 30 seconds."
+      },
+      {
+        "step": "Synced back",
+        "detail": "Voucher status and outstanding bills every 15 minutes; ledgers, stock items and voucher types nightly."
+      },
+      {
+        "step": "Reconciled",
+        "detail": "What the app posted is checked against what Tally holds; a voucher deleted in Tally is flagged again."
+      },
+      {
+        "step": "Held, not lost",
+        "detail": "Tally offline means retry on the next cycle; a real rejection is held with its reason for a person."
+      },
+      {
+        "step": "Components and reels",
+        "detail": "A separate inventory system; transfers safe under simultaneous moves, approvals replayed through one code path."
+      }
     ],
     "evidence": [
       {
@@ -1036,6 +1112,32 @@
       "reference-rate-anomaly-detection",
       "derive-balances-dont-store-them",
       "graceful-degradation-by-env-var"
+    ],
+    "flow": [
+      {
+        "step": "Client and job",
+        "detail": "One shared client list; a design job under Projects, a furniture order under Orders."
+      },
+      {
+        "step": "Site visits and people",
+        "detail": "Site visits, workers, vendors and freight recorded against the job they belong to."
+      },
+      {
+        "step": "Charges checked",
+        "detail": "Every vendor and freight charge compared with a reference rate; deviations flagged."
+      },
+      {
+        "step": "Invoices",
+        "detail": "Each invoice carries its own company's letterhead, logo and GSTIN."
+      },
+      {
+        "step": "Cash and bank",
+        "detail": "Staff record cash and see only their own entries; bank data is owners-only, refused at the server."
+      },
+      {
+        "step": "Balances",
+        "detail": "Outstanding amounts and advances computed from the transactions, never kept as a running total."
+      }
     ],
     "evidence": [
       {

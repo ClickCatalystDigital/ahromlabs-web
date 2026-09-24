@@ -415,3 +415,93 @@ chat-bubble-snippet {
 main :not(pre) > code {
   overflow-wrap: anywhere;
 }
+
+/* ---------- Flow figure (industry pages) ---------- */
+.flow-figure {
+  margin: 0;
+}
+
+.flow-caption {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--foreground-secondary);
+}
+
+.flow-steps {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  padding: 0;
+}
+
+/* Phones: a vertical rail — marker on a hairline, text to its right. */
+.flow-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  padding: 0 0 1.5rem 1.5rem;
+  border-left: 1px solid var(--line-strong);
+}
+
+.flow-step:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.flow-marker {
+  position: absolute;
+  left: -4.5px;
+  top: 0.35rem;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+.flow-index {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  color: var(--foreground-secondary);
+  padding-top: 0.2rem;
+}
+
+.flow-title {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.flow-detail {
+  grid-column: 2;
+  margin-top: 0.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--foreground-secondary);
+}
+
+/* Wider screens: a numbered grid, the hairline running along the top. */
+@media (min-width: 768px) {
+  .flow-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    row-gap: 2rem;
+  }
+  .flow-step,
+  .flow-step:last-child {
+    border-left: none;
+    border-top: 1px solid var(--line-strong);
+    padding: 1.25rem 0 0 0;
+  }
+  .flow-marker {
+    left: 0;
+    top: -4.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flow-steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

@@ -17,6 +17,10 @@ export type ContentEntry = {
   services?: string[];
   // Industry-only: who the page is for, in the buyer's own words.
   audience?: string;
+  // Industry-only: how work moves through the system, step by step (FlowFigure).
+  flow?: { step: string; detail: string }[];
+  // Industry-only: a real photo from the engagement, under public/.
+  image?: { src: string; alt: string };
   evidence?: { metric: string; value: string }[];
   order?: number;
   published: string;
