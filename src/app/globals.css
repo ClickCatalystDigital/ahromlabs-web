@@ -354,3 +354,15 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
+
+/* Cloudflare AI Search widgets (src/components/SiteSearch.tsx), themed with
+   the site's own tokens so they read as part of the site, not a plug-in. */
+search-modal-snippet,
+chat-bubble-snippet {
+  --search-snippet-primary-color: var(--accent);
+  --search-snippet-background: var(--background);
+  --search-snippet-text-color: var(--foreground);
+  --search-snippet-border-radius: var(--radius);
+  --search-snippet-font-family: var(--font-geist-sans), system-ui, sans-serif;
+  --search-snippet-z-modal: 60;
+}

@@ -357,6 +357,20 @@ Cloudflare and an *origin*, which a Workers-only site doesn't have — so the fe
 hostname still pointing at an old origin (likely `www`), or was a transient failure during the
 deploy. Founder to check DNS for `www` and the exact sitemap URL submitted.
 
+## AI Search widget + MCP server card — 2026-09-24
+
+Founder created Cloudflare AI Search `ahromlabs-search` with a public endpoint (search, chat,
+MCP). First sync indexed **0 pages** (`Sitemap collection complete: 0 processed, 1 errors`).
+Security → Events showed the managed rule "Block AI bots on ad pages" still blocking AI
+crawlers on `/sitemap.xml` — the zone-wide "Block AI bots" setting, separate from AI Crawl
+Control's toggles. Founder to set it to "Do not block", confirm the sitemap URL, re-sync.
+
+Built: search modal (all pages, nav "Search", Cmd/Ctrl+K) + desktop-only chat bubble,
+MCP server card, API-catalog and llms.txt entries, and "Running on this site" evidence on the
+RAG service. **Deploy only after the index shows ~41 pages** — before that the widget answers
+from nothing. The snippet bundle URL (`${AI_SEARCH_URL}/search-snippet.es.js`) is inferred from
+the open-source repo, not read from the dashboard; confirm with the "Browse components" snippet.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

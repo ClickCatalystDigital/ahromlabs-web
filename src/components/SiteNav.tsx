@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoBadge } from "./Wordmark";
+import { SearchButton } from "./SiteSearch";
 
 // Ordered the way a buyer decides: what do you build, for businesses like
 // mine?, for whom already?, what does it cost?, prove it, who are you.
@@ -31,6 +32,9 @@ export function SiteNav() {
             </li>
           ))}
           <li>
+            <SearchButton className="nav-link focus-ring cursor-pointer" />
+          </li>
+          <li>
             <Link href="/#contact" className="nav-link nav-link-cta focus-ring">
               Start a conversation
             </Link>
@@ -47,6 +51,7 @@ export function SiteNav() {
                 {link.label}
               </Link>
             ))}
+            <SearchButton className="nav-link focus-ring cursor-pointer text-left" />
             <Link href="/#contact" className="nav-link nav-link-cta focus-ring">
               Start a conversation
             </Link>

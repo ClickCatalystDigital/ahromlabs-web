@@ -194,6 +194,7 @@ export const services: Service[] = [
     forWhom:
       "Businesses whose know-how lives in documents, inboxes and a few senior people's heads, and who want an assistant that answers from their own data rather than the internet.",
     evidence: [
+      { metric: "Running on this site", value: "Search and chat over every published page (Ctrl/Cmd+K), and the same index as an MCP server for AI agents" },
       { metric: "Running today", value: "Ahrom Labs' own decision corpus, which the AI coding agents in 4 client codebases are instructed to check before any new design" },
       { metric: "Inferred relationships", value: "Marked unconfirmed and kept read-only until a person confirms them" },
       { metric: "Answers", value: "Cite the record or document they came from" },
@@ -203,6 +204,7 @@ export const services: Service[] = [
       { kind: "pattern", slug: "human-confirmed-extraction" },
     ],
     links: [
+      { href: "/.well-known/mcp/server-card.json", label: "This site's MCP server card" },
       { href: "/knowledge.json", label: "Our own corpus, as machine-readable JSON" },
       { href: "/systems", label: "The modeling vocabulary: entities, relationships, decisions" },
     ],

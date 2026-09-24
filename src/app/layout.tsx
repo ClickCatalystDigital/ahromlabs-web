@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { jsonLd, orgGraph, siteUrl } from "@/lib/schema";
+import { SiteSearch } from "@/components/SiteSearch";
 import "./globals.css";
 
 // Body, UI and technical text: navigation, buttons, labels, cards, prose.
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: jsonLd(orgGraph) }}
         />
         {children}
+        <SiteSearch />
       </body>
     </html>
   );

@@ -85,12 +85,32 @@ AI Crawl Control was **blocking** ClaudeBot, GPTBot, Amazonbot, CCBot and others
   (ClaudeBot, Claude-SearchBot, Claude-User, GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot,
   Perplexity-User, Amazonbot, Applebot, CCBot, meta-externalagent, DuckAssistBot, archivers).
   Bytespider may stay blocked — aggressive crawler, negligible value for Indian B2B buyers.
-- **Security → Settings → "Block AI bots": off.** Otherwise it re-blocks the list above.
+- **Security → Settings → "Block AI bots": off / "Do not block".** Otherwise it re-blocks the
+  list above. It shows in Security → Events as *Managed rules → Cloudflare Bot Management rules
+  for all plans → "Block AI bots on ad pages"* — seen blocking ClaudeBot on `/sitemap.xml` on
+  2026-09-24 after the AI Crawl Control toggles were already off. It likely also broke AI
+  Search's sitemap fetch.
 - **Bot Preference Sync:** may stay on only if the live robots.txt still carries this repo's
   `Content-Signal: search=yes, ai-input=yes, ai-train=yes` and no `Disallow` for the bots above.
   Check with `curl -s https://ahromlabs.com/robots.txt`.
 - **Markdown for Agents (Pro):** leave off — the site already negotiates markdown itself.
 - **SSL/TLS → Always Use HTTPS: on.**
+
+## AI Search (on-site search, chat and MCP)
+
+Cloudflare AI Search instance `ahromlabs-search` crawls the site (sitemap
+`https://ahromlabs.com/sitemap.xml`, crawler UA `Cloudflare-AI-Search`) and serves search,
+chat completions and an MCP server from its public endpoint. All URLs live in
+`src/lib/ai-search.ts`.
+
+- **Humans:** `<search-modal-snippet>` on every page (Cmd/Ctrl+K and a nav "Search" item) and
+  a `<chat-bubble-snippet>` on desktop only (`hidden lg:block`), in `src/components/SiteSearch.tsx`,
+  loaded at browser idle, themed with the site's CSS tokens.
+- **Agents:** `/.well-known/mcp/server-card.json` (SEP-1649 draft; no tool list — Cloudflare
+  defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
+- **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host
+  `ahromlabs.com`, and an AI Gateway rate limit + spend alert. Re-sync after each deploy that
+  adds pages (or schedule it).
 
 ## Human structure
 
