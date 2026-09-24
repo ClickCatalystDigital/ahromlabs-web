@@ -84,6 +84,15 @@ function loadKind(kind) {
         throw new Error(`content/${relPath}: image.src "${frontmatter.image.src}" not found under public/`);
       }
     }
+    // Optional search-result snippet. `answer` stays the on-page lead and the
+    // schema description; this is only the <meta> text, so it has to fit.
+    if (frontmatter.description !== undefined) {
+      const description = assertString(frontmatter.description, "description", relPath).trim();
+      if (description.length > 160) {
+        throw new Error(`content/${relPath}: description is ${description.length} chars; keep it to 160`);
+      }
+      frontmatter.description = description;
+    }
 
     return { ...frontmatter, answer, body };
   });

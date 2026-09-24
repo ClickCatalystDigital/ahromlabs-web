@@ -10,6 +10,9 @@ answer: >
   customer portal, in one system. Each
   boiler's IBR folder is generated from its bill of materials and a bank of
   material test certificates.
+description: >
+  Custom ERP for boiler makers: BOM, plate traceability, IBR forms generated
+  from test certificates, job costing, QC, GST and after-sales service.
 domain: [manufacturing, compliance, quality-control]
 clients: [shanti-boilers]
 services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction]

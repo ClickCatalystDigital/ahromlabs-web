@@ -415,6 +415,28 @@ checked against ShantiOps SYSTEM.md before anything was written.
 - **Open:** writing IoT/remote monitoring or CPQ as a *capability* (as RAG is) needs the
   founder's go-ahead; nothing on the site claims either today.
 
+## Industry pages: electronics and interiors depth, meta descriptions, contents list (2026-09-24)
+
+- **Electronics page, about 500 to 1,390 words.** New sections: import duty/IGST/clearing
+  ledgers, reel labelling and search, PO-checked dispatch, two-store transfers, approvals,
+  owner reports, a buyer checklist, and a wider boundary. Sources: `reel-inventory` SYSTEM.md
+  §2–5 and code, `ls_crm` `routes/invoices.js`.
+- **Interiors page, about 430 to 1,120 words.** New sections: project tracking and calendar,
+  the workshop worksheet, wages/payroll, the per-route freight rate card, vendor PO deliveries
+  and returns, bank-statement extraction and invoices, a buyer checklist, and a wider boundary.
+  Source: `savistar-ops` README, `lib/db.js`, and the payroll and freight routes.
+- **Left out on purpose:**
+  - seeded logins and passwords in both repos;
+  - the second store's name and a client's customer's name;
+  - reel counts;
+  - GSTIN and address in `savistar-ops/lib/companies.js`.
+- **Industry template:**
+  - optional `description` frontmatter, 160 characters or fewer, checked at build and used
+    for meta, OG and Twitter; `answer` stays the lead and the schema description;
+  - an "On this page" contents list;
+  - stable `id`s on every question heading, so each answer can be linked and cited.
+- Research summary: `docs/research/competitive-analysis-2026-09.md` §8.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

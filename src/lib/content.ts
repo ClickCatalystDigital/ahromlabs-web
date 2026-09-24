@@ -19,6 +19,8 @@ export type ContentEntry = {
   audience?: string;
   // Industry-only: how work moves through the system, step by step (FlowFigure).
   flow?: { step: string; detail: string }[];
+  // Optional <meta> description (≤160 chars, checked at build); falls back to `answer`.
+  description?: string;
   // Industry-only: a real photo from the engagement, under public/.
   image?: { src: string; alt: string };
   evidence?: { metric: string; value: string }[];

@@ -121,3 +121,36 @@ Scored on: competition (open wins), buyer intent, and whether we already have th
 Turn ranks 1–6 into a concrete rewrite plan: exact page titles and question headings in buyer
 language, which existing notes/patterns each links to, and what's needed from the founder —
 then build through `docs/corpus-playbook.md`.
+
+## 8. Industry-page competition — electronics components and interiors (2026-09-24)
+
+Web fetches were blocked in the research session, so this comes from search-result snippets only.
+Treat competitor claims as unverified, and cite no third-party figure from this pass.
+
+**Electronics-component inventory.** Ranking pages split three ways:
+- global component tools: PartsBox, Acctivate, Rz ERP / recognin, Dashing;
+- Indian GST and EXIM ERPs: Vyapar, Marg, LightHouse, Eximly, Softweb;
+- SMT reel-storage hardware: Inovaxe, Seratel.
+
+None combines reel-level stock with TallyPrime posting of import paperwork. None shows a
+shipment checked against the customer's PO, or publishes extraction accuracy by document
+type. Buyer topics: MPN/alternates, lot and date code, partial reels, MSL, bins/labels,
+landed cost, bill of entry and IGST credit (GSTR-2B mismatches), multi-currency.
+
+**Interior design and furniture.** Ranking pages:
+- Indian interiors SaaS: RDash, Project Studio, Potlu, zygn, Dzylo, Interio/Kanix;
+- global tools: Foyr, Houzz Pro, Studio Designer, Programa;
+- site and labour apps: Onsite, Powerplay, Yojo;
+- furniture ERPs: Udyog, Sparta.
+
+RDash and zygn win with "Top N" listicles and how-to-BOQ guides. Nobody ranks for a design
+studio together with its own workshop, sister concerns on one book, server-enforced staff
+cash visibility, or freight checked against a rate card. Buyer topics: BOQ/quotes, vendor
+chasing, payment milestones versus spend, labour attendance and wages, petty cash, site
+photos, change orders, GST, mark-up trust.
+
+**What we did with it.** Both industry pages were expanded only with facts verified in the
+client repos (`reel-inventory` SYSTEM.md, `ls_crm` extraction code, `savistar-ops` schema and
+routes). Buyer topics the systems don't cover are written as boundaries, not claimed:
+- electronics: MPN/alternates, date codes as fields, MSL, bins, landed cost;
+- interiors: BOQ/quotes, 3D/mood boards, client portal, IGST.

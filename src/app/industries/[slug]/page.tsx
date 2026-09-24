@@ -21,29 +21,50 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
   const { slug } = await props.params;
   const industry = getContent("industry").find((i) => i.slug === slug)!;
   const url = `https://ahromlabs.com/industries/${industry.slug}`;
+  const description = industry.description ?? industry.answer;
 
   return {
     title: industry.title,
-    description: industry.answer,
+    description,
     alternates: { canonical: `/industries/${industry.slug}` },
     openGraph: {
       type: "website",
       url,
       siteName: "Ahrom Labs",
       title: industry.title,
-      description: industry.answer,
+      description,
     },
     twitter: {
       card: "summary_large_image",
       title: industry.title,
-      description: industry.answer,
+      description,
     },
   };
 }
 
+// Stable anchor for a question heading, so each answer can be linked to (and
+// cited) on its own. The contents list and the rendered <h2> both derive it
+// from the same text, so they can't disagree.
+function headingId(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function textOf(node: React.ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join("");
+  return "";
+}
+
 const markdownComponents = {
   h2: (props: ComponentProps<"h2">) => (
-    <h2 className="display mt-12 text-3xl text-foreground first:mt-0 sm:text-4xl" {...props} />
+    <h2
+      id={headingId(textOf(props.children))}
+      className="display mt-12 scroll-mt-24 text-3xl text-foreground first:mt-0 sm:text-4xl"
+      {...props}
+    />
   ),
   p: (props: ComponentProps<"p">) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
   ul: (props: ComponentProps<"ul">) => (
@@ -60,6 +81,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const { slug } = await props.params;
   const industry = getContent("industry").find((i) => i.slug === slug)!;
   const edges = resolveIndustryEdges(industry);
+  const headings = [...industry.body.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
 
   return (
     <>
@@ -129,6 +151,20 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
 
         <section className="section border-t border-line">
           <div className="rail prose-measure">
+            {headings.length > 3 && (
+              <nav aria-label="On this page" className="mb-12 border-b border-line pb-8">
+                <p className="text-sm font-medium text-foreground-secondary">On this page</p>
+                <ol className="mt-3 space-y-2 text-sm">
+                  {headings.map((h) => (
+                    <li key={h}>
+                      <a href={`#${headingId(h)}`} className="text-link focus-ring">
+                        {h}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
             <Markdown components={markdownComponents}>{industry.body}</Markdown>
 
             <div className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
