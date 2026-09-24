@@ -397,6 +397,18 @@ chat-bubble-snippet {
   --chat-bubble-window-shadow: 0 0 0 1px var(--line), 0 24px 48px -12px rgb(24 24 27 / 0.2);
 }
 
+/* Phones: a smaller button tucked closer to the corner, so it covers as
+   little of the page as possible. The open window is fitted to the screen
+   in SiteSearch.tsx. */
+@media (max-width: 640px) {
+  chat-bubble-snippet {
+    --chat-bubble-button-size: 44px;
+    --chat-bubble-button-icon-size: 18px;
+    --chat-bubble-button-bottom: 16px;
+    --chat-bubble-button-right: 12px;
+  }
+}
+
 /* Long identifiers in inline code (e.g. `classifyResponseError()`) have no
    break points and pushed pattern pages 92px past a phone screen. Let them
    wrap only when they must. */

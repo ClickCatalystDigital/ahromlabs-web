@@ -58,13 +58,50 @@ async function applyCopy() {
   const modal = document.querySelector<WithCopy>("search-modal-snippet");
   const bubble = document.querySelector<WithCopy>("chat-bubble-snippet");
   if (modal) modal.translations = MODAL_COPY;
-  if (bubble) bubble.translations = CHAT_COPY;
+  if (bubble) {
+    bubble.translations = CHAT_COPY;
+    fitChatWindow(bubble);
+  }
 }
 
-// Site search (Cmd/Ctrl+K, and the "Search" item in the nav) on every page,
-// plus an "ask" chat bubble on desktop only — on a phone a floating bubble
-// covers the content people came to read. Loaded at browser idle, so it never
-// delays the page; without JS the site is unchanged.
+// The chat window lives in the component's shadow DOM with a fixed 500px
+// height and a bouncy overshoot animation — on a short phone, or with the
+// keyboard open, its header and close button would sit off-screen. Page CSS
+// can't reach inside, and the component rebuilds its shadow root on every
+// render, so this is an *adopted* stylesheet: attached to the shadow root
+// itself, it survives those rebuilds.
+const CHAT_WINDOW_CSS = `
+  .chat-window {
+    height: min(520px, calc(100dvh - 48px));
+    transition: opacity 180ms ease, transform 180ms ease;
+    transform: translateY(8px);
+  }
+  .chat-window.expanded { transform: none; }
+  @media (max-width: 640px) {
+    .chat-window {
+      width: calc(100vw - 24px);
+      max-width: none;
+      height: min(560px, calc(100dvh - 24px));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .chat-window, .bubble-button { transition: none; }
+  }
+`;
+
+function fitChatWindow(bubble: HTMLElement) {
+  const root = bubble.shadowRoot;
+  if (!root || !("adoptedStyleSheets" in root)) return;
+  const sheet = new CSSStyleSheet();
+  sheet.replaceSync(CHAT_WINDOW_CSS);
+  root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
+}
+
+// Site search (Cmd/Ctrl+K, and the "Search" item in the nav) and an "ask"
+// chat bubble on every page and every screen size — sized down on phones in
+// globals.css, with the chat window fitted to the viewport by fitChatWindow().
+// Loaded at browser idle, so it never delays the page; without JS the site is
+// unchanged.
 export function SiteSearch() {
   useEffect(() => {
     const load = () => void loadAndApplyCopy();
@@ -86,14 +123,12 @@ export function SiteSearch() {
         max-render-results="8"
         hide-branding="true"
       />
-      <div className="hidden lg:block">
-        <chat-bubble-snippet
-          api-url={AI_SEARCH_URL}
-          placeholder="Ask a question…"
-          theme="light"
-          hide-branding="true"
-        />
-      </div>
+      <chat-bubble-snippet
+        api-url={AI_SEARCH_URL}
+        placeholder="Ask a question…"
+        theme="light"
+        hide-branding="true"
+      />
     </>
   );
 }
