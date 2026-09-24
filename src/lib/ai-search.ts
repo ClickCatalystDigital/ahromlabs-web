@@ -9,9 +9,7 @@
 // limits, not this file, are what cap cost — keep them set.
 export const AI_SEARCH_URL = "https://f4174b88-0589-496b-b82e-864b8a1a4501.search.ai.cloudflare.com";
 
-// The web-component bundle the instance serves (github.com/cloudflare/ai-search-snippet).
-// If the dashboard's "Browse components" snippet shows a different src, it wins:
-// replace this one line.
-export const AI_SEARCH_SNIPPET_SRC = `${AI_SEARCH_URL}/search-snippet.es.js`;
+// The widget code itself is the npm package @cloudflare/ai-search-snippet
+// (pinned in package.json), bundled with the site — see SiteSearch.tsx.
 
 export const AI_SEARCH_MCP_URL = `${AI_SEARCH_URL}/mcp`;

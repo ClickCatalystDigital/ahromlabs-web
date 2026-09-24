@@ -368,8 +368,15 @@ Control's toggles. Founder to set it to "Do not block", confirm the sitemap URL,
 Built: search modal (all pages, nav "Search", Cmd/Ctrl+K) + desktop-only chat bubble,
 MCP server card, API-catalog and llms.txt entries, and "Running on this site" evidence on the
 RAG service. **Deploy only after the index shows ~41 pages** — before that the widget answers
-from nothing. The snippet bundle URL (`${AI_SEARCH_URL}/search-snippet.es.js`) is inferred from
-the open-source repo, not read from the dashboard; confirm with the "Browse components" snippet.
+from nothing.
+
+**Resolved the same day:** first sync failed with "Browser Run timed out" on every page (the
+Rendered parse type drives a headless browser, which never finished); switching the web-crawler
+source to **Static** indexed every page — the site is fully prerendered, so no browser is
+needed. The guessed script URL returned 405, so the widget now bundles the npm package
+`@cloudflare/ai-search-snippet@0.0.43` (pinned, loaded at idle) instead of a script tag to a
+versioned path on Cloudflare's host. Browser-tested: both elements register, the nav Search
+button opens the modal, the chat bubble is 0×0 on mobile, no page errors.
 
 ## Known gaps / risks as of now
 

@@ -99,13 +99,14 @@ AI Crawl Control was **blocking** ClaudeBot, GPTBot, Amazonbot, CCBot and others
 ## AI Search (on-site search, chat and MCP)
 
 Cloudflare AI Search instance `ahromlabs-search` crawls the site (sitemap
-`https://ahromlabs.com/sitemap.xml`, crawler UA `Cloudflare-AI-Search`) and serves search,
+`https://ahromlabs.com/sitemap.xml`, crawler UA `Cloudflare-AI-Search`, parse type **Static** —
+**Rendered** times out) and serves search,
 chat completions and an MCP server from its public endpoint. All URLs live in
 `src/lib/ai-search.ts`.
 
 - **Humans:** `<search-modal-snippet>` on every page (Cmd/Ctrl+K and a nav "Search" item) and
-  a `<chat-bubble-snippet>` on desktop only (`hidden lg:block`), in `src/components/SiteSearch.tsx`,
-  loaded at browser idle, themed with the site's CSS tokens.
+  a `<chat-bubble-snippet>` on desktop only (`hidden lg:block`), in `src/components/SiteSearch.tsx`, from the pinned npm package
+  `@cloudflare/ai-search-snippet`, loaded at browser idle, themed with the site's CSS tokens.
 - **Agents:** `/.well-known/mcp/server-card.json` (SEP-1649 draft; no tool list — Cloudflare
   defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
 - **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host
