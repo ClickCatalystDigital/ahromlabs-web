@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { services, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
+import { industryForClient } from "@/lib/industries";
 
 const description =
   "Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and Shanti Boilers & Pressure Vessels — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.";
@@ -43,60 +44,70 @@ export default function WorkPage() {
           </p>
         </section>
 
-        {engagements.map((e) => (
-          <Reveal key={e.slug}>
-            <section id={e.slug} className="section scroll-mt-16 border-t border-line">
-              <div className="rail prose-measure">
-                <p className="text-sm font-medium text-foreground-secondary">{e.industry}</p>
-                <h2 className="display mt-2 text-3xl text-foreground sm:text-4xl">{e.client}</h2>
-                <p className="mt-6 text-lg leading-relaxed text-foreground">{e.built}</p>
-                <ul className="mt-6 list-disc space-y-2 pl-5 text-foreground-secondary">
-                  {e.highlights.map((h) => (
-                    <li key={h} className="leading-relaxed">
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+        {engagements.map((e) => {
+          const industry = industryForClient(e.slug);
+          return (
+            <Reveal key={e.slug}>
+              <section id={e.slug} className="section scroll-mt-16 border-t border-line">
+                <div className="rail prose-measure">
+                  <p className="text-sm font-medium text-foreground-secondary">{e.industry}</p>
+                  <h2 className="display mt-2 text-3xl text-foreground sm:text-4xl">{e.client}</h2>
+                  <p className="mt-6 text-lg leading-relaxed text-foreground">{e.built}</p>
+                  {industry && (
+                    <p className="mt-3">
+                      <Link href={`/industries/${industry.slug}`} className="text-link focus-ring">
+                        {industry.title}
+                      </Link>
+                    </p>
+                  )}
+                  <ul className="mt-6 list-disc space-y-2 pl-5 text-foreground-secondary">
+                    {e.highlights.map((h) => (
+                      <li key={h} className="leading-relaxed">
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
 
-                {e.quote && (
-                  <blockquote className="mt-8 border-l-2 border-line pl-6 text-foreground">
-                    <p className="italic leading-relaxed">&ldquo;{e.quote.text}&rdquo;</p>
-                    <footer className="mt-3 text-sm not-italic text-foreground-secondary">
-                      — {e.quote.attribution}
-                    </footer>
-                  </blockquote>
-                )}
+                  {e.quote && (
+                    <blockquote className="mt-8 border-l-2 border-line pl-6 text-foreground">
+                      <p className="italic leading-relaxed">&ldquo;{e.quote.text}&rdquo;</p>
+                      <footer className="mt-3 text-sm not-italic text-foreground-secondary">
+                        — {e.quote.attribution}
+                      </footer>
+                    </blockquote>
+                  )}
 
-                <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
-                  <div>
-                    <p className="text-sm font-medium text-foreground-secondary">Read the detail</p>
-                    <ul className="mt-3 space-y-2">
-                      {e.proof.map((ref) => (
-                        <li key={ref.slug}>
-                          <Link href={proofHref(ref)} className="text-link focus-ring">
-                            {resolveProof(ref).title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground-secondary">Services</p>
-                    <ul className="mt-3 space-y-2">
-                      {e.services.map((slug) => (
-                        <li key={slug}>
-                          <Link href={`/services#${slug}`} className="text-link focus-ring">
-                            {serviceName(slug)}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
+                    <div>
+                      <p className="text-sm font-medium text-foreground-secondary">Read the detail</p>
+                      <ul className="mt-3 space-y-2">
+                        {e.proof.map((ref) => (
+                          <li key={ref.slug}>
+                            <Link href={proofHref(ref)} className="text-link focus-ring">
+                              {resolveProof(ref).title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-foreground-secondary">Services</p>
+                      <ul className="mt-3 space-y-2">
+                        {e.services.map((slug) => (
+                          <li key={slug}>
+                            <Link href={`/services#${slug}`} className="text-link focus-ring">
+                              {serviceName(slug)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
-          </Reveal>
-        ))}
+              </section>
+            </Reveal>
+          );
+        })}
 
         <Reveal>
           <section id="open-source" className="section scroll-mt-16 border-t border-line">

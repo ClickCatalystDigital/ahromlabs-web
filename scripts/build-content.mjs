@@ -13,7 +13,7 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries" };
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -66,6 +66,10 @@ function loadKind(kind) {
     assertArrayIfPresent(frontmatter.systems, "systems", relPath);
     assertArrayIfPresent(frontmatter.patterns, "patterns", relPath);
     assertArrayIfPresent(frontmatter.evidence, "evidence", relPath);
+    assertArrayIfPresent(frontmatter.notes, "notes", relPath);
+    assertArrayIfPresent(frontmatter.clients, "clients", relPath);
+    assertArrayIfPresent(frontmatter.services, "services", relPath);
+    if (kind === "industry") assertString(frontmatter.audience, "audience", relPath);
 
     return { ...frontmatter, answer, body };
   });
@@ -74,21 +78,31 @@ function loadKind(kind) {
 const terms = loadKind("term");
 const notes = loadKind("note");
 const patterns = loadKind("pattern");
+const industries = loadKind("industry");
 
-// Cross-reference check: every note's `patterns` list must point at a real
-// pattern. Runs here, at script time, so a broken reference fails the build
-// loudly instead of shipping a dead link.
+// Cross-reference check: every `patterns`/`notes` edge in a note or industry
+// must point at a real entry. Runs here, at script time, so a broken reference
+// fails the build loudly instead of shipping a dead link. `clients` and
+// `services` point into src/lib/work.ts and services.ts, which this plain-Node
+// script can't import — those are checked at prerender by resolveIndustryEdges().
 const patternSlugs = new Set(patterns.map((p) => p.slug));
-for (const note of notes) {
-  for (const patternSlug of note.patterns ?? []) {
+const noteSlugs = new Set(notes.map((n) => n.slug));
+for (const entry of [...notes, ...industries]) {
+  const where = `content/${KIND_DIRS[entry.kind]}/${entry.slug}.md`;
+  for (const patternSlug of entry.patterns ?? []) {
     if (!patternSlugs.has(patternSlug)) {
-      throw new Error(`content/notes/${note.slug}.md references unknown pattern "${patternSlug}"`);
+      throw new Error(`${where} references unknown pattern "${patternSlug}"`);
+    }
+  }
+  for (const noteSlug of entry.notes ?? []) {
+    if (!noteSlugs.has(noteSlug)) {
+      throw new Error(`${where} references unknown note "${noteSlug}"`);
     }
   }
 }
 
-const all = [...terms, ...notes, ...patterns];
+const all = [...terms, ...notes, ...patterns, ...industries];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );

@@ -23,7 +23,7 @@ evidence:
   - metric: bank statement zero-correction rate
     value: 89%
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-24
 ---
 
 ## What gets extracted
@@ -45,6 +45,10 @@ Reviewed against real usage, here's the share of each document type that needs z
 - Bill of entry: 88%
 
 Bills of entry come in lowest — customs documentation is the least standardized of the five, which tracks with what you'd expect from the least uniform paperwork. Every number here still means a meaningful share of documents need a correction, which is exactly why extraction alone was never the plan.
+
+## How do these numbers compare with advertised accuracy?
+
+Invoice-automation tools commonly advertise 95–99% accuracy. A 2026 benchmark review found those claims have converged in that range while being measured under conditions each vendor chooses, with no independent benchmark behind them ([Parseur](https://parseur.com/blog/ai-invoice-processing-benchmarks)). The figures above are lower, and deliberately so: they're per document type, from real usage, and they count any document a person had to correct — including customs paperwork such as bills of entry. A lower number measured honestly is more useful for planning than a higher one measured on a vendor's own samples.
 
 ## What happens to the rest
 

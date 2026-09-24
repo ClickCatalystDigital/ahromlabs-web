@@ -69,6 +69,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
   const cites = (p: { kind: string; slug: string }) => p.kind === "note" && p.slug === note.slug;
   const usedBy = services.filter((s) => s.proof.some(cites));
   const builtFor = engagements.filter((e) => e.proof.some(cites));
+  const inIndustries = getContent("industry").filter((i) => i.notes?.includes(note.slug));
 
   return (
     <>
@@ -129,7 +130,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
               </div>
             )}
 
-            {(usedBy.length > 0 || builtFor.length > 0) && (
+            {(usedBy.length > 0 || builtFor.length > 0 || inIndustries.length > 0) && (
               <div className="mt-12 border-t border-line pt-8">
                 <p className="text-sm font-medium text-foreground-secondary">Part of</p>
                 <ul className="mt-3 space-y-2">
@@ -137,6 +138,13 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
                     <li key={s.slug}>
                       <Link href={`/services#${s.slug}`} className="text-link focus-ring">
                         {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                  {inIndustries.map((i) => (
+                    <li key={i.slug}>
+                      <Link href={`/industries/${i.slug}`} className="text-link focus-ring">
+                        {i.title}
                       </Link>
                     </li>
                   ))}

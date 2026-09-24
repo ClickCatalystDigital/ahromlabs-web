@@ -294,6 +294,36 @@ citation lift from FAQPage schema in a 1,885-page Ahrefs test — so plain Q&A c
 schema. Only ~1 in 4 B2B agencies publish pricing, but 81% of buyers want to self-serve it —
 hence "how we price" rather than a rate card.
 
+## Research-driven build — industries, comparisons, buyer-language Q&A — 2026-09-24
+
+Built from `docs/research/competitive-analysis-2026-09.md` (ranks 1–6), structure documented in
+the new `docs/site-architecture.md`.
+
+- **New node type `industry`** (`content/industries/`, `/industries`, `/industries/[slug]`),
+  edges validated in `build-content.mjs` + `resolveIndustryEdges()`; `WebPage` JSON-LD with
+  `audience`/`about`/`mentions`/`hasPart`. Three pages, one per real system: boiler &
+  pressure-vessel (Shanti — the open niche), electronics-component trading (LS), interior design
+  & furniture (Savistar/Saag).
+- **Notes:** `tally-vs-erpnext-vs-custom-erp` (says when *not* to go custom; tells the ShantiOps
+  ERPNext → own-ledger decision), `outgrown-tally-signs`. `ai-extraction-human-in-the-loop` now
+  sets its 88–95% against the market's unbenchmarked 95–99% claims (Parseur).
+- **`/engagement` rewritten in buyer language**: 14 questions incl. cost in ₹ (market ranges,
+  cited — ProftCode ₹3–15 L, NGD Technolab ₹15–40 L — explicitly not our prices), Tally,
+  scope changes, what goes wrong, why ERP fails, references.
+- **Machine surfaces:** knowledge.json gains `industry` and `question` nodes — 66 nodes,
+  110 edges, 0 dangling. llms.txt gains Industries. Footer links llms.txt + knowledge.json.
+- **Navigation** reordered for buyers: Services, Industries, Work, Pricing, Notes, About;
+  Approach/Systems/Patterns moved to the footer.
+
+**Corrected along the way:** the boiler page and the accounting note had stated a *reason* for
+the ERPNext reversal that the ShantiOps SYSTEM.md doesn't record (it records the decision only).
+Both now state just the decision. **Founder to supply the real reason** — it would strengthen
+the comparison note.
+
+**Terms written on the founder's behalf, to confirm:** scope changes ("written down, priced and
+agreed before built; small changes absorbed in-phase") and references ("ask, and we'll check
+whether a past client is willing").
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

@@ -1,7 +1,7 @@
 # Competitive analysis — buyer intents, who ranks, where we can win
 
-Run 2026-09-24. Step 1 of 3 (research → rewrite plan → build). Nothing on the site changed as a
-result of this document yet.
+Run 2026-09-24. Step 1 of 3 (research → rewrite plan → build). **Ranks 1–6 were built the same
+day** — see docs/progress.md; rank 7 (off-site) is the founder's.
 
 ## Method and limits
 

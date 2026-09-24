@@ -185,6 +185,44 @@ export function articleGraph(entry: ContentEntry, path: string) {
   };
 }
 
+// An industry page is a WebPage *about* the services it describes, for a named
+// business audience, mentioning the clients it was built for. Service @ids
+// resolve against the offer catalog in orgGraph on the same page; the notes
+// are listed as `hasPart` so the page's evidence is machine-visible too.
+export function industryGraph(
+  entry: ContentEntry,
+  edges: { services: { slug: string }[]; clients: { slug: string; client: string }[]; notes: ContentEntry[] },
+) {
+  const url = `${siteUrl}/industries/${entry.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#page`,
+    url,
+    name: entry.title,
+    description: entry.answer,
+    datePublished: entry.published,
+    dateModified: entry.updated,
+    audience: { "@type": "BusinessAudience", audienceType: entry.audience },
+    about: edges.services.map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` })),
+    mentions: edges.clients.map((c) => ({
+      "@type": "Organization",
+      "@id": `${siteUrl}/work#${c.slug}`,
+      name: c.client,
+      url: `${siteUrl}/work#${c.slug}`,
+    })),
+    hasPart: edges.notes.map((n) => ({
+      "@type": "TechArticle",
+      "@id": `${siteUrl}/notes/${n.slug}#article`,
+      headline: n.title,
+      url: `${siteUrl}/notes/${n.slug}`,
+    })),
+    author: { "@id": `${siteUrl}/#founder` },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    isPartOf: { "@id": `${siteUrl}/#website` },
+  };
+}
+
 // Takes the already-rendered term list rather than calling getContent("term")
 // again. /systems drops any term whose domain doesn't match a known group, so
 // re-querying here would let the schema claim terms the page never shows.

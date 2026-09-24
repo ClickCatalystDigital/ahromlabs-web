@@ -182,7 +182,7 @@
     ],
     "published": "2026-09-24",
     "updated": "2026-09-24",
-    "body": "Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At Shanti Boilers & Pressure Vessels, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and why.\n\n## Why put the ledger inside the operations system?\n\nEvery accounting entry in a manufacturer starts as an operational event: a purchase order, a goods receipt, a vendor bill, a dispatch, a sales invoice. When operations and accounts live in different systems, each event is entered twice and the two copies drift. With the ledger in the same system, a vendor bill posts its own journal entry from the purchase it belongs to, and a dispatch carries its freight cost and invoice link into the books directly. Tally remains available as a sync target for the accountant who wants it — it just isn't where the truth lives.\n\n## What compliance is covered?\n\nPer legal entity: a chart of accounts and a posting engine; sales invoices, credit notes, vendor bills and debit notes; GSTR-1 (split into B2B and HSN tables the way the GST portal expects) and GSTR-3B; input-tax-credit reconciliation; TDS deduction with a TDS register; reverse charge on both the purchase and sales side; a fixed-asset register with depreciation; payroll exported into accounting; and trial balance, profit and loss, balance sheet and cash flow. Changes are written to an audit log with a searchable viewer, and a books lock stops postings into a closed period at the one function every journal entry passes through — so no document type can slip around it.\n\n## Where do GST and TDS rates come from?\n\nFrom a separate registry of Indian statutory rates — GST, TDS, PF, ESI, income-tax and professional-tax slabs — where a person enters and approves each change, and every deployment pulls approved changes on a daily schedule. Nothing scrapes government websites: no reliable official rates API exists, and a wrong compliance rate applied unattended costs more than a person checking around Budget day and GST Council meetings.\n\n## How does bank reconciliation decide what to match?\n\nA bank statement is imported from the bank's own export, and each line is matched against unreconciled ledger entries by exact amount within three days either side. A match is applied automatically only when it's mutually unique — exactly one candidate on each side. Anything ambiguous is shown as a suggestion for a person to confirm, and a statement line with no ledger entry at all — a bank charge, interest — becomes a one-click journal entry instead of a dead end.\n\n## How was it tested?\n\nWith real transactions, not only unit tests. A reverse-charge test that posted real documents through the ledger found and fixed two posting bugs. A single order was then run through every department end to end, which found that sales invoices weren't carrying their project link — fixed before any real invoice depended on it.\n\n## Boundary\n\nE-invoicing has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built."
+    "body": "Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At Shanti Boilers & Pressure Vessels, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.\n\n## Why put the ledger inside the operations system?\n\nEvery accounting entry in a manufacturer starts as an operational event: a purchase order, a goods receipt, a vendor bill, a dispatch, a sales invoice. When operations and accounts live in different systems, each event is entered twice and the two copies drift. With the ledger in the same system, a vendor bill posts its own journal entry from the purchase it belongs to, and a dispatch carries its freight cost and invoice link into the books directly. Tally remains available as a sync target for the accountant who wants it — it just isn't where the truth lives.\n\n## What compliance is covered?\n\nPer legal entity: a chart of accounts and a posting engine; sales invoices, credit notes, vendor bills and debit notes; GSTR-1 (split into B2B and HSN tables the way the GST portal expects) and GSTR-3B; input-tax-credit reconciliation; TDS deduction with a TDS register; reverse charge on both the purchase and sales side; a fixed-asset register with depreciation; payroll exported into accounting; and trial balance, profit and loss, balance sheet and cash flow. Changes are written to an audit log with a searchable viewer, and a books lock stops postings into a closed period at the one function every journal entry passes through — so no document type can slip around it.\n\n## Where do GST and TDS rates come from?\n\nFrom a separate registry of Indian statutory rates — GST, TDS, PF, ESI, income-tax and professional-tax slabs — where a person enters and approves each change, and every deployment pulls approved changes on a daily schedule. Nothing scrapes government websites: no reliable official rates API exists, and a wrong compliance rate applied unattended costs more than a person checking around Budget day and GST Council meetings.\n\n## How does bank reconciliation decide what to match?\n\nA bank statement is imported from the bank's own export, and each line is matched against unreconciled ledger entries by exact amount within three days either side. A match is applied automatically only when it's mutually unique — exactly one candidate on each side. Anything ambiguous is shown as a suggestion for a person to confirm, and a statement line with no ledger entry at all — a bank charge, interest — becomes a one-click journal entry instead of a dead end.\n\n## How was it tested?\n\nWith real transactions, not only unit tests. A reverse-charge test that posted real documents through the ledger found and fixed two posting bugs. A single order was then run through every department end to end, which found that sales invoices weren't carrying their project link — fixed before any real invoice depended on it.\n\n## Boundary\n\nE-invoicing has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built."
   },
   {
     "kind": "note",
@@ -223,8 +223,8 @@
       }
     ],
     "published": "2026-08-29",
-    "updated": "2026-08-29",
-    "body": "## What gets extracted\n\nLS Technologies, an electronics-components import/export trading business, runs five kinds of documents through AI extraction before anything reaches Tally: purchase invoices, freight invoices, bills of entry, purchase orders, and bank statements. Each has its own prompt tailored to that document's fields — a purchase invoice and a customs bill of entry don't share a structure, and treating them as one generic \"document\" would lose accuracy on both.\n\n## How it reads a PDF\n\nThere's no separate OCR step. The PDF is sent straight to the model — an LLM with a file-parsing capability reads it directly, rather than running text extraction first and handing the model plain text. Bank statements get special handling: because they can run to many pages, the document is processed in chunks and the results are stitched back together and de-duplicated, rather than trying to reason over one long document in a single pass.\n\n## How accurate it actually is\n\nReviewed against real usage, here's the share of each document type that needs zero correction before it's approved:\n\n- Purchase order: 95%\n- Purchase invoice: 94%\n- Bank statement: 89%\n- Freight invoice: 91%\n- Bill of entry: 88%\n\nBills of entry come in lowest — customs documentation is the least standardized of the five, which tracks with what you'd expect from the least uniform paperwork. Every number here still means a meaningful share of documents need a correction, which is exactly why extraction alone was never the plan.\n\n## What happens to the rest\n\nNothing gets extracted and posted in one step. Every document — regardless of how confident the extraction looked — sits in a review state until a person checks it and approves it. That's not a hedge against a bad model; it's the same decision this practice makes anywhere a model's output could turn into a financial record: draft with AI, confirm with a person, post only after that."
+    "updated": "2026-09-24",
+    "body": "## What gets extracted\n\nLS Technologies, an electronics-components import/export trading business, runs five kinds of documents through AI extraction before anything reaches Tally: purchase invoices, freight invoices, bills of entry, purchase orders, and bank statements. Each has its own prompt tailored to that document's fields — a purchase invoice and a customs bill of entry don't share a structure, and treating them as one generic \"document\" would lose accuracy on both.\n\n## How it reads a PDF\n\nThere's no separate OCR step. The PDF is sent straight to the model — an LLM with a file-parsing capability reads it directly, rather than running text extraction first and handing the model plain text. Bank statements get special handling: because they can run to many pages, the document is processed in chunks and the results are stitched back together and de-duplicated, rather than trying to reason over one long document in a single pass.\n\n## How accurate it actually is\n\nReviewed against real usage, here's the share of each document type that needs zero correction before it's approved:\n\n- Purchase order: 95%\n- Purchase invoice: 94%\n- Bank statement: 89%\n- Freight invoice: 91%\n- Bill of entry: 88%\n\nBills of entry come in lowest — customs documentation is the least standardized of the five, which tracks with what you'd expect from the least uniform paperwork. Every number here still means a meaningful share of documents need a correction, which is exactly why extraction alone was never the plan.\n\n## How do these numbers compare with advertised accuracy?\n\nInvoice-automation tools commonly advertise 95–99% accuracy. A 2026 benchmark review found those claims have converged in that range while being measured under conditions each vendor chooses, with no independent benchmark behind them ([Parseur](https://parseur.com/blog/ai-invoice-processing-benchmarks)). The figures above are lower, and deliberately so: they're per document type, from real usage, and they count any document a person had to correct — including customs paperwork such as bills of entry. A lower number measured honestly is more useful for planning than a higher one measured on a vendor's own samples.\n\n## What happens to the rest\n\nNothing gets extracted and posted in one step. Every document — regardless of how confident the extraction looked — sits in a review state until a person checks it and approves it. That's not a hedge against a bad model; it's the same decision this practice makes anywhere a model's output could turn into a financial record: draft with AI, confirm with a person, post only after that."
   },
   {
     "kind": "note",
@@ -265,6 +265,40 @@
     "published": "2026-09-24",
     "updated": "2026-09-24",
     "body": "Shanti Boilers & Pressure Vessels manufactures boilers, pressure-reducing stations and steam headers. Every unit it ships needs a statutory folder for the Directorate of Boilers, under the Indian Boiler Regulations (IBR): the forms that prove each plate, tube and forging came from certified material. Ahrom Labs built the operations system that now assembles that folder from data the plant already records.\n\n## What goes into the folder?\n\nA complete folder is filed in a fixed order: a covering letter listing its contents, a documentation label, the forms, the list of mountings and fittings, a stage-wise inspection report, and copies of the material test certificates themselves. Which forms are needed depends on the boiler model — a standard shell boiler needs Form II(1), III, III A and IV A; a small industrial boiler swaps II(1) and III for Form XVII; a pressure-reducing station or steam header needs only III and IV A. The system picks the form set from the model set on the project, not from a person remembering which applies.\n\n## Why is a test certificate harder to key than it looks?\n\nA certificate number alone isn't unique — in the client's own sample, one certificate number covered four different casts. So each certificate in the bank is identified by certificate number, cast number and plate number together. And one certificate isn't used once: a single plate gets cut into parts for several boilers, and the sample showed each certificate reused across about 3.2 of them. Certificates and projects are therefore many-to-many — a certificate can be uploaded before any project claims it, and using it on a project's folder is what allocates it.\n\n## How does the BOM become Form IV A?\n\nForm IV A lists every material part with its certificate, grouped into lettered sections — A. Shell, B. Water Wall Assembly, and so on. The system doesn't store those section names. It walks the project's bill-of-materials tree, takes each part's ancestor one level below the root as its section, and letters only the sections that actually contain parts. A boiler with a different structure gets different sections automatically; anything not yet placed in the tree lands on a clearly labelled \"Ungrouped Materials\" page rather than disappearing.\n\n## Where does AI help, and where does it stop?\n\nCertificate PDFs are read by AI on upload, so the certificate's fields don't have to be typed. Matching a certificate to the BOM line it belongs to is suggested by a confidence score learned from past approvals — but on this document, a suggestion never links itself. A person clicks to use it, because a wrong link here ends up in paperwork a boiler inspector relies on. The [same-confidence note](/notes/same-confidence-different-autonomy) explains why the identical score is allowed to act on its own elsewhere in the same system.\n\n## Boundary\n\nThe generated folder has been compared against real filed documents the client provided. That comparison found formatting gaps in individual forms — wording and field-layout differences — which are tracked and being closed form by form. Bulk import of historical certificates from spreadsheets isn't built yet; certificates are added one at a time, with AI filling the fields."
+  },
+  {
+    "kind": "note",
+    "slug": "outgrown-tally-signs",
+    "title": "Seven signs your business has outgrown Tally — and what fixed each one",
+    "answer": "You've outgrown Tally when the work happens outside it: invoices typed twice, a parallel Excel for production, sales asking accounts for outstanding balances, stock Tally can't describe. Replacing Tally is rarely the fix — in one system we built, Tally stays as the books and approved invoices post into it within 30 seconds.",
+    "domain": [
+      "erp-selection",
+      "accounting-integration",
+      "trading",
+      "manufacturing"
+    ],
+    "patterns": [
+      "local-agent-cloud-db",
+      "role-scoped-finance-views",
+      "human-confirmed-extraction"
+    ],
+    "evidence": [
+      {
+        "metric": "Approved invoice to Tally voucher",
+        "value": "within 30 seconds, through a local agent"
+      },
+      {
+        "metric": "Outstanding balances back to the sales side",
+        "value": "every 15 minutes"
+      },
+      {
+        "metric": "Import documents read by AI instead of typed",
+        "value": "5 types, 88–95% needing no correction"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "TallyPrime is excellent at what it's for: the books. Businesses outgrow it not because it gets worse, but because more of their work happens somewhere Tally can't see. Here are the seven signs we see most — each one drawn from a business we've built for, with what fixed it.\n\n## 1. The same invoice is typed twice\n\nOnce into a spreadsheet or web app for operations, once into Tally for accounts. At [LS Technologies](/industries/electronics-component-trading), an electronics importer, approved invoices now post into Tally as vouchers within 30 seconds through a small agent on the Tally PC — no second typing. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting).\n\n## 2. Someone reads every PDF and keys it in\n\nPurchase invoices, freight bills, bills of entry, bank statements. At the same business, AI reads five document types directly from the PDF, and 88–95% need no correction depending on type — but every one is still approved by a person before it posts. See [AI extraction with a human in the loop](/notes/ai-extraction-human-in-the-loop).\n\n## 3. Sales keeps asking accounts what a customer owes\n\nOutstanding balances live in Tally; the sales team doesn't. The fix is syncing them back: in the same system, voucher status and outstanding bills flow from Tally to the sales side every 15 minutes.\n\n## 4. Production runs on a parallel Excel\n\nWork orders, job cards, material issues, what's waiting on what — none of it fits vouchers. At [Shanti Boilers](/industries/boiler-pressure-vessel-manufacturing), each boiler is a project with its own bill of materials and milestones across design, procurement, stores, production, QC and dispatch, and the system shows what each step is waiting on.\n\n## 5. Your stock isn't really a count\n\nSteel plate gets cut; the offcut is a specific piece, not \"one more plate\". Reels of components move between locations. Tally stores quantities. At Shanti Boilers, every plate is a piece with dimensions and every cut is recorded, so a 15.70 kg remnant goes back into stock instead of being scrapped. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## 6. Two companies, one owner, one office\n\nA design firm and its furniture workshop; a trading firm and its sister concern. Two sets of books, one client list, and staff who need to record cash without seeing the bank. At [Savistar and Saag](/industries/interior-design-and-furniture), both run on one system: each invoice carries its own company's GSTIN, and staff see only their own cash entries. See [Two companies, one book](/notes/two-companies-one-book).\n\n## 7. Industry paperwork is assembled by hand\n\nA boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as Shanti Boilers' IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## Do you have to replace Tally?\n\nUsually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as Shanti Boilers did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.\n\n## Boundary\n\nThese signs come from three businesses — trading, manufacturing, interior design. If only one or two apply, a smaller fix (an integration, a report) may be enough; that's worth finding out before building anything."
   },
   {
     "kind": "note",
@@ -370,6 +404,42 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": "Ahrom Labs built the CRM and Tally-accounting layer running underneath LS Technologies, an electronics-components import/export trading business. Every purchase invoice, freight bill, and customs document gets extracted, reviewed, and — once approved — has to land as a real voucher inside TallyPrime. Here's how that actually works.\n\n## Why doesn't the app talk to Tally directly?\n\nTallyPrime's own integration surface is a local HTTP XML gateway that only listens on the machine running Tally itself — there's no cloud endpoint to call. A small agent runs on that same PC and bridges the two systems: the cloud app writes an approved invoice to its own database, and the local agent reads from there and posts it into Tally's gateway.\n\n## How fast does data move between the two systems?\n\nThree different cadences, not one. The agent polls for newly approved invoices every 30 seconds and pushes them into Tally immediately. It syncs voucher status and outstanding-bill data back to the cloud app every 15 minutes. Ledger, stock-item, and voucher-type master data — the slower-moving reference data — syncs once every 24 hours.\n\n## What happens when a ledger doesn't exist yet?\n\nBefore an invoice is even approved, the system checks every ledger name its Tally posting would need against a locally cached snapshot of Tally's own ledgers, and flags anything unrecognized for the reviewer. Nothing gets auto-created in Tally on the system's own authority — a missing ledger is a decision for a person, not the software.\n\n## How are Tally-offline errors handled differently from real rejections?\n\nEvery push failure gets classified before anything else happens. A connection failure — Tally is offline, the network hiccups — is transient: the invoice stays queued, and the same 30-second poll picks it back up automatically on the next cycle. A rejection from Tally itself — a ledger that truly doesn't exist, a duplicate voucher — is structural: the invoice is held with the exact reason attached, and the automatic retry stops until a person fixes it.\n\n## How does the system know a voucher actually landed in Tally?\n\nPosting isn't the end of the story. Each 15-minute sync compares what the app believes it posted against what Tally's own data currently shows. A voucher is marked confirmed only once it's actually visible inside Tally; if a confirmed voucher is later deleted inside Tally itself, the next sync notices and rolls the record back to unconfirmed.\n\n## Boundary\n\nNone of this works as a cloud-to-cloud integration, because it isn't one — it depends on TallyPrime and its local gateway being reachable on the same machine as the agent. If that PC is off, nothing posts until it's back on; the 30-second retry picks up wherever it left off, with no manual restart needed.\n\n## Reference implementation\n\nThe XML-building and error-classification logic described above is open-sourced as [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml) — the protocol-correct parts, stripped of this business's ledger names and database coupling."
+  },
+  {
+    "kind": "note",
+    "slug": "tally-vs-erpnext-vs-custom-erp",
+    "title": "Tally, ERPNext, Odoo or a custom ERP: how a manufacturer should choose",
+    "answer": "Stay on TallyPrime if the need is accounting with simple stock. Choose ERPNext or Odoo when your processes match what they ship. Build custom when the workflow is the business — IBR paperwork, piece-level plate traceability, two companies on one book. Shanti Boilers planned an ERPNext integration for accounting, then built its own ledger instead.",
+    "domain": [
+      "erp-selection",
+      "manufacturing",
+      "accounting-integration"
+    ],
+    "patterns": [
+      "local-agent-cloud-db",
+      "human-verified-statutory-rates"
+    ],
+    "evidence": [
+      {
+        "metric": "Tally is enough when",
+        "value": "the need is accounting, GST and simple stock"
+      },
+      {
+        "metric": "ERPNext or Odoo fit when",
+        "value": "your processes match what the package ships"
+      },
+      {
+        "metric": "Custom fits when",
+        "value": "the workflow or the regulation is specific to your business"
+      },
+      {
+        "metric": "Shanti Boilers' accounting decision",
+        "value": "ERPNext integration planned → own ledger built, Tally kept as optional sync"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely \"which software is best\"; it's which one matches how much of your business is standard.\n\n## When is TallyPrime enough?\n\nWhen what you need is accounting: double-entry books, vouchers, GST returns, and stock as quantities on invoices. Every CA in India knows it, and for a small company whose problem is the books, it's hard to beat on cost. It stops being enough when work starts happening outside it — the widely quoted sign is a production manager keeping a parallel Excel for work orders, because in Tally stock is an attribute of a voucher rather than something that moves through a factory ([ERPDrive](https://erpdrive.in/blog/erp-vs-tally-for-manufacturing.html)). Multi-level bills of materials — assemblies inside assemblies — are where most manufacturers feel it first.\n\n## When are ERPNext or Odoo the better choice?\n\nWhen your processes look like the ones they ship. ERPNext is open source, built in India, with no per-user licence fees and strong GST, e-way bill and e-invoicing support; Odoo's community edition is free, with enterprise features and many modules paid ([Ksolves](https://www.ksolves.com/blog/odoo/compare-odoo-vs-erpnext), [Cudio](https://www.cudio.com/blog/erpnext-vs-odoo)). If an implementation partner can configure one to fit your business without writing much code, it will be faster and cheaper than a custom build — take that option.\n\n## When does a custom system make sense?\n\nWhen the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder generated from its bill of materials and test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.\n\n## What did a boiler manufacturer actually decide?\n\n[Shanti Boilers & Pressure Vessels](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\nThe cost is real, and worth stating: owning the ledger meant building GST returns, TDS, reverse charge, fixed assets and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.\n\n## A quick way to decide\n\n- Is your problem mostly the books and GST? **Stay on TallyPrime**, and connect your other tools to it if needed.\n- Do your processes match a standard manufacturing ERP, with little customisation? **ERPNext or Odoo**, through a good implementation partner.\n- Is there industry paperwork, traceability or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.\n- Not sure? That's what a modeling phase is for: [map the business first](/engagement#pricing), then choose.\n\n## Boundary\n\nThe package descriptions above summarise the cited comparisons as of September 2026; licences and editions change, so check current terms before deciding. We have not implemented ERPNext or Odoo for a client — this guide compares them from the outside."
   },
   {
     "kind": "note",
@@ -824,5 +894,169 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": "## Context\n\nA system can infer relationships or rules from existing data — implicit orderings baked into configuration, patterns that look consistent across records — without those relationships ever having been confirmed by someone who actually knows the business.\n\n## Decision\n\nExplicitly mark such inferences as unconfirmed, and keep any automation that would act on them in a read-only or advisory state until a domain expert actually confirms them. Building the enforcing version of that automation is deliberately deferred.\n\n## Why\n\nAn inferred rule that turns out wrong, and is already gating real users' actions, is worse than having no rule at all — it fails confidently instead of failing obviously.\n\n## Trade-off\n\nSlower to get automated enforcement live, and it requires someone to actually do the confirmation step rather than letting the inference quietly stand in for it indefinitely."
+  },
+  {
+    "kind": "industry",
+    "slug": "boiler-pressure-vessel-manufacturing",
+    "title": "Software for boiler and pressure-vessel manufacturers",
+    "audience": "Boiler and pressure-vessel manufacturers",
+    "answer": "Ahrom Labs built the operations system Shanti Boilers & Pressure Vessels runs on — BOM, procurement, stores, plate cutting, production, QC, IBR statutory folders, GST and TDS accounting, and a customer portal, in one system. Each boiler's IBR folder is generated from its bill of materials and a bank of material test certificates.",
+    "domain": [
+      "manufacturing",
+      "compliance",
+      "quality-control"
+    ],
+    "clients": [
+      "shanti-boilers"
+    ],
+    "services": [
+      "custom-erp-crm",
+      "compliance-accounting",
+      "operational-intelligence",
+      "document-extraction"
+    ],
+    "notes": [
+      "ibr-statutory-folder-from-bom",
+      "plate-remnants-back-into-stock",
+      "accounting-inside-the-manufacturing-erp",
+      "same-confidence-different-autonomy",
+      "tally-vs-erpnext-vs-custom-erp"
+    ],
+    "patterns": [
+      "compute-blockers-on-read",
+      "one-confirmation-teaches-the-system",
+      "unconfirmed-inferences-stay-read-only",
+      "human-verified-statutory-rates",
+      "auto-match-only-when-mutually-unique",
+      "compute-once-render-many"
+    ],
+    "evidence": [
+      {
+        "metric": "IBR forms generated",
+        "value": "Cover letter, Forms II(1), III, III A and IV A"
+      },
+      {
+        "metric": "Boiler models, each with its own form set",
+        "value": "8"
+      },
+      {
+        "metric": "Reports and documents",
+        "value": "23, one computation each"
+      },
+      {
+        "metric": "Live plate-cut test",
+        "value": "157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## What does a boiler manufacturer need that a generic ERP doesn't give?\n\nFour things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [Shanti Boilers & Pressure Vessels](/work#shanti-boilers) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.\n\n## Can the IBR statutory folder be generated instead of typed?\n\nYes. The folder — covering letter, Forms II(1), III, III A and IV A — is generated from the project's bill-of-materials tree and a bank of material test certificates. The form set is chosen by boiler model, Form IV A's lettered sections come from the BOM's own structure, and certificate PDFs are read by AI on upload. Matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## How is material traced from test certificate to finished boiler?\n\nEach test certificate is identified by certificate, cast and plate number together — one certificate number covered four casts in the client's own sample — and one certificate is typically used across several boilers. When a plate is cut, every used piece, remnant and scrap piece is chained to the plate it came from. QC records heat and lot numbers, non-conformance reports with a disposition and a verification step before closing, and hold points that stop a job until inspection clears it.\n\n## How does work move between departments without chasing people?\n\nEach project's milestones declare what they depend on, and the system shows what each one is waiting for, computed fresh every time the page is opened. Procurement runs as a visible pipeline — requests, sourcing, supplier selection, purchase order issued, closed — with new-item requests from engineering accepted into procurement rather than appearing unannounced. On the shop floor, work orders and job cards carry production; engineering has its own calculation sheets linked to the drawings they substantiate.\n\n## What happens to plate offcuts?\n\nThey go back into stock as real pieces with dimensions, and every weight is derived from geometry rather than typed. In a live test, a 157.00 kg plate became 127.17 kg of parts, a 15.70 kg remnant returned to stock, and 14.13 kg of scrap — summing exactly to the source. When a BOM is released, a fitting remnant is reserved before anything is bought. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## Can GST, TDS and accounts live in the same system?\n\nThey do here. The system is the book of record — ledger, GSTR-1 and GSTR-3B, input-tax-credit reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, a books lock and an audit log — with Tally available as an optional sync target. The original plan left regulated accounting to a separate ERP package; in August 2026 that was reversed, and the operations system became the book of record. See [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\n## What does the customer see?\n\nA read-only portal: each order as a stepper from order received to commissioning, with overall progress, estimated dispatch, and the QC certificates and packing lists filed under the stage they belong to. A customer only ever sees their own orders.\n\n## Can it stop drawings leaving the office on a USB drive?\n\nThe same system runs a device-control layer on office PCs. USB drives, CDs and DVDs, phones and chosen websites are blocked by default; an employee's attempt to use one files a request, a manager approves it with a one-time code, and access opens for a time-boxed window — 15 minutes by default. Every step is audited.\n\n## Boundary\n\nNesting — planning the layout of several parts on one plate — is not part of the system. E-invoicing is researched and deferred. The generated IBR forms have been checked against the client's real filed documents; the remaining gaps are formatting, and are being closed form by form."
+  },
+  {
+    "kind": "industry",
+    "slug": "electronics-component-trading",
+    "title": "Software for electronics-component importers and traders",
+    "audience": "Electronics-component importers, traders and distributors",
+    "answer": "Ahrom Labs built LS Technologies' ERP and CRM with TallyPrime automation, AI extraction of purchase and import paperwork, and a separate inventory system for PCB components and reels. Approved invoices post into Tally within 30 seconds, and five document types — bills of entry included — are extracted at 88–95% zero-correction, each approved by a person.",
+    "domain": [
+      "trading",
+      "accounting-integration",
+      "ai-extraction",
+      "inventory"
+    ],
+    "clients": [
+      "ls-technologies"
+    ],
+    "services": [
+      "tally-integration",
+      "document-extraction",
+      "custom-erp-crm"
+    ],
+    "notes": [
+      "tally-voucher-posting",
+      "ai-extraction-human-in-the-loop",
+      "outgrown-tally-signs"
+    ],
+    "patterns": [
+      "local-agent-cloud-db",
+      "failures-flagged-not-lost",
+      "reconcile-against-source-of-truth",
+      "human-confirmed-extraction",
+      "replay-queued-payload-through-existing-handler",
+      "self-healing-sequence-counters"
+    ],
+    "evidence": [
+      {
+        "metric": "Approved invoice to Tally voucher",
+        "value": "within 30 seconds"
+      },
+      {
+        "metric": "Document types extracted by AI",
+        "value": "5, including bills of entry"
+      },
+      {
+        "metric": "Zero-correction rate",
+        "value": "88–95% depending on document type"
+      },
+      {
+        "metric": "Documents posted without a person's approval",
+        "value": "None"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Why does an import-trading business end up typing the same invoice twice?\n\nBecause operations and accounts live in different places. Purchase orders, supplier invoices, freight bills and customs paperwork arrive as PDFs; the team reads them, works in spreadsheets or a web app, and then someone types the same figures into TallyPrime. [LS Technologies](/work#ls-technologies), an electronics-components import and export business, had exactly that shape. The system Ahrom Labs built reads the documents, keeps the operational record, and posts the accounting entry into Tally itself.\n\n## Can a cloud app post directly into TallyPrime?\n\nNot directly — TallyPrime's integration gateway only listens on the machine that runs Tally. A small agent on that PC bridges the two: it picks up approved invoices every 30 seconds and posts them as vouchers, syncs voucher status and outstanding bills back every 15 minutes, and refreshes ledgers, stock items and voucher types nightly. A ledger that doesn't exist yet in Tally is flagged for a person, never created by the software. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting); the protocol code is open-sourced as [tally-voucher-xml](https://github.com/ahromlabs/tally-voucher-xml).\n\n## How accurate is AI extraction on import documents?\n\nMeasured on real usage, the share of documents needing no correction is 95% for purchase orders, 94% for purchase invoices, 91% for freight invoices, 89% for bank statements and 88% for bills of entry. Those are lower than the 95–99% many invoice-automation tools advertise — but a 2026 benchmark review found those claims are measured under vendor-chosen conditions, with no independent benchmark ([Parseur](https://parseur.com/blog/ai-invoice-processing-benchmarks)). These are per-document-type numbers from a live system, and every document still waits for a person's approval before anything reaches the books. See [AI extraction with a human in the loop](/notes/ai-extraction-human-in-the-loop).\n\n## What happens when Tally rejects a voucher?\n\nThe failure is classified before anything else happens. If Tally is simply offline, the voucher stays queued and posts on the next 30-second cycle, with no restart. If Tally rejects it — a missing ledger, a duplicate — it's held with the exact reason attached until a person fixes it. After every sync, the system checks what Tally actually holds; a voucher deleted inside Tally is marked unconfirmed again.\n\n## How are components and reels tracked?\n\nIn a separate inventory system built for PCB components and reels. Actions that need approval are queued as the original request and replayed through exactly the same code path once approved, so a pending action can't behave differently from an immediate one. Sequential IDs re-derive their counter from the data before each allocation, healing any drift from manual edits. Moving a reel is written so that two people moving the same reel at the same moment can't both succeed — verified by forcing exactly that race.\n\n## Boundary\n\nThe Tally link depends on the office PC running Tally being switched on; if it's off, nothing posts until it's back, and the queue resumes on its own. This is not a cloud-to-cloud integration, because Tally doesn't offer one."
+  },
+  {
+    "kind": "industry",
+    "slug": "interior-design-and-furniture",
+    "title": "Software for interior design firms and furniture workshops",
+    "audience": "Interior design firms, design-and-build studios and furniture manufacturers",
+    "answer": "Ahrom Labs built the backend Savistar (interior design) and Saag (furniture manufacturing) run on: workers, clients, vendors and freight, projects and site visits, workshop orders, and one finance ledger for two sister companies. Each invoice carries the right company's GSTIN, and staff see only their own cash entries — enforced at the server, not hidden in the screen.",
+    "domain": [
+      "interior-design",
+      "manufacturing",
+      "finance",
+      "access-control"
+    ],
+    "clients": [
+      "savistar-saag"
+    ],
+    "services": [
+      "custom-erp-crm",
+      "multi-company-finance",
+      "operational-intelligence"
+    ],
+    "notes": [
+      "two-companies-one-book",
+      "outgrown-tally-signs"
+    ],
+    "patterns": [
+      "role-scoped-finance-views",
+      "reference-rate-anomaly-detection",
+      "derive-balances-dont-store-them",
+      "graceful-degradation-by-env-var"
+    ],
+    "evidence": [
+      {
+        "metric": "Companies on one book",
+        "value": "2 sister concerns, one client list"
+      },
+      {
+        "metric": "Staff view of the cash ledger",
+        "value": "Own entries only"
+      },
+      {
+        "metric": "Staff access to bank data",
+        "value": "None, refused at the server"
+      },
+      {
+        "metric": "Vendor and freight charges",
+        "value": "Checked against reference rates; deviations flagged"
+      }
+    ],
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "body": "## Why do design firms outgrow spreadsheets and chat?\n\nA design-and-build job touches clients, site visits, vendors, labour, freight and payments at once, usually spread across a spreadsheet per project and a chat group per site. The owners know how it all connects; nobody else does. [Savistar and Saag](/work#savistar-saag) — an interior design firm and a furniture workshop under the same owners — moved all of it into one system: workers, clients, vendors and freight, projects and site visits on the design side, workshop orders on the furniture side.\n\n## Can a design studio and its furniture workshop share one system?\n\nYes, and without the weight of a multi-company ERP. Both businesses share one client list and one combined ledger; a design job lives under Projects and a furniture order under Orders, and each invoice carries its own company's letterhead, logo and GSTIN when the PDF is generated. It's a single app modeling two business lines — a sister-concern arrangement, in Indian accounting terms — which is exactly as much structure as the business needs. See [Two companies, one book](/notes/two-companies-one-book).\n\n## How do you stop staff seeing the whole cash book?\n\nBy filtering at the point the data is fetched, not by hiding buttons. Staff log day-to-day cash, but their view of the cash ledger contains only the entries they created. Bank data isn't scoped for staff at all — every request for it from a staff account is refused before any query runs. Owners see everything.\n\n## How are vendor and freight overcharges caught?\n\nEvery incoming charge is compared against a known reference rate, and anything that deviates is flagged automatically — instead of trusting every bill or asking someone to audit each line by hand. It catches overcharges as long as the reference rates are kept current.\n\n## How are partial deliveries and advances tracked?\n\nOutstanding amounts — a partial delivery, an advance against pay — are computed from the underlying transactions every time they're shown, rather than kept as a running total that can drift from the records that produced it.\n\n## What did the owners say?\n\n> \"They really took the time to understand our concerns and requirements, and the system was built the way we had envisioned it. It has brought much more structure, visibility, and control to the way we operate.\"\n>\n> — Sachi & Haripriya, owners of Savistar and Saag\n\n## Boundary\n\nThis is one shared app for two related businesses, not a multi-tenant platform: adding an unrelated third company would mean a different design, not a new setting."
   }
 ]

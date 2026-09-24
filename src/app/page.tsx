@@ -9,6 +9,7 @@ import { ContactForm } from "@/components/ContactForm";
 import heroImage from "../../public/hero.webp";
 import { services } from "@/lib/services";
 import { engagements } from "@/lib/work";
+import { industryForClient } from "@/lib/industries";
 
 const description =
   "Ahrom Labs is a software factory for operational systems: custom ERP and CRM, TallyPrime integration, analytics and operational intelligence, AI document extraction, RAG and knowledge graphs — built on one model of your business.";
@@ -221,19 +222,27 @@ export default function Home() {
                 Systems we&apos;ve built
               </h2>
               <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-3">
-                {engagements.map((e) => (
-                  <Link
-                    key={e.slug}
-                    href={`/work#${e.slug}`}
-                    className="focus-ring block border-t border-line pt-6"
-                  >
-                    <h3 className="text-lg font-medium text-foreground">{e.client}</h3>
-                    <p className="mt-1 text-sm text-foreground-secondary">{e.industry}</p>
-                    <p className="mt-3 leading-relaxed text-foreground-secondary">{e.highlights[0]}</p>
-                  </Link>
-                ))}
+                {engagements.map((e) => {
+                  // The industry page is the richer destination; fall back to /work.
+                  const industry = industryForClient(e.slug);
+                  return (
+                    <Link
+                      key={e.slug}
+                      href={industry ? `/industries/${industry.slug}` : `/work#${e.slug}`}
+                      className="focus-ring block border-t border-line pt-6"
+                    >
+                      <h3 className="text-lg font-medium text-foreground">{e.client}</h3>
+                      <p className="mt-1 text-sm text-foreground-secondary">{e.industry}</p>
+                      <p className="mt-3 leading-relaxed text-foreground-secondary">{e.highlights[0]}</p>
+                    </Link>
+                  );
+                })}
               </div>
               <p className="mt-10">
+                <Link href="/industries" className="text-link focus-ring">
+                  Browse by industry
+                </Link>
+                <span className="text-foreground-secondary"> · </span>
                 <Link href="/work" className="text-link focus-ring">
                   See all work
                 </Link>

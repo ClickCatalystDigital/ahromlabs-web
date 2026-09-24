@@ -13,10 +13,21 @@ export function SiteFooter() {
           <a href="mailto:hello@ahromlabs.com" className="footer-copyright focus-ring">
             hello@ahromlabs.com
           </a>
+          {/* The machine-readable surfaces, linked from every page so an agent
+              that lands anywhere can find the whole graph in one hop. */}
+          <p className="footer-copyright">
+            For AI agents:{" "}
+            <a href="/llms.txt" className="focus-ring hover:underline">llms.txt</a>
+            {" · "}
+            <a href="/knowledge.json" className="focus-ring hover:underline">knowledge.json</a>
+          </p>
         </div>
         <div className="flex flex-wrap items-center gap-8">
           <Link href="/services" className="nav-link focus-ring">
             Services
+          </Link>
+          <Link href="/industries" className="nav-link focus-ring">
+            Industries
           </Link>
           <Link href="/work" className="nav-link focus-ring">
             Work

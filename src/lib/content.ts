@@ -1,6 +1,6 @@
 import contentData from "./content-data.generated.json";
 
-export type ContentKind = "term" | "note" | "pattern";
+export type ContentKind = "term" | "note" | "pattern" | "industry";
 
 export type ContentEntry = {
   kind: ContentKind;
@@ -10,6 +10,13 @@ export type ContentEntry = {
   domain?: string[];
   systems?: string[];
   patterns?: string[];
+  // Industry-only edges. notes/patterns are checked by build-content.mjs;
+  // clients/services by resolveIndustryEdges() in src/lib/industries.ts.
+  notes?: string[];
+  clients?: string[];
+  services?: string[];
+  // Industry-only: who the page is for, in the buyer's own words.
+  audience?: string;
   evidence?: { metric: string; value: string }[];
   order?: number;
   published: string;

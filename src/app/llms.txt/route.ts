@@ -32,8 +32,9 @@ furniture business (Savistar & Saag).
 
 - [Home](https://ahromlabs.com/): Positioning, the problem with disconnected business systems, our approach, and how to start a conversation.
 - [Services](https://ahromlabs.com/services): What we build, who each service is for, the measured results, and how an engagement runs.
+- [Industries](https://ahromlabs.com/industries): One page per industry we have built a real system for, with the problems, what was built, and the engineering notes behind it.
 - [Work](https://ahromlabs.com/work): The client businesses we have built systems for, named with permission, and what each system does.
-- [Working with us](https://ahromlabs.com/engagement): Pricing model, what drives cost, timelines, code and data ownership, hosting, support (AMC), and continuity.
+- [Working with us](https://ahromlabs.com/engagement): Custom ERP cost in India (market ranges, cited), our pricing model, timelines, Tally, code and data ownership, hosting, AMC, scope changes, and continuity.
 - [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
@@ -42,7 +43,7 @@ furniture business (Savistar & Saag).
 
 ## Machine-readable corpus
 
-- [knowledge.json](https://ahromlabs.com/knowledge.json): The whole knowledge graph as one JSON array — every term, note, and pattern with its full frontmatter and body, plus every service and client with proof edges to the notes and patterns behind it. Each node carries its public url.
+- [knowledge.json](https://ahromlabs.com/knowledge.json): The whole knowledge graph as one JSON array — every term, note, pattern and industry with its full frontmatter and body, every service and client with proof edges to the notes and patterns behind it, and every buyer question with its answer. Each node carries its public url.
 `;
 
 const FOOTER = `
@@ -86,8 +87,13 @@ export function GET() {
     .map((a) => `- [${a.question}](https://ahromlabs.com/engagement#${a.id}) ${a.answer}`)
     .join("\n");
 
+  const industries = getContent("industry")
+    .map((i) => `- [${i.title}](https://ahromlabs.com/industries/${i.slug}): ${i.answer.replace(/\s+/g, " ").trim()}`)
+    .join("\n");
+
   const body =
     HEADER +
+    `\n## Industries\n\n${industries}\n` +
     `\n## Services\n\n${offered}\n` +
     `\n## Clients\n\n${clients}\n` +
     `\n## Working with Ahrom Labs\n\n${working}\n` +

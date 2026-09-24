@@ -7,10 +7,10 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { engagementAnswers } from "@/lib/engagement";
 
 const description =
-  "How Ahrom Labs prices, delivers and supports custom software: fixed-price phases after a modeling phase, client-owned code and data, hosting in your name, and an AMC of 15–21% a year.";
+  "What a custom ERP costs in India, how long it takes, whether it works with Tally, who owns the code, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.";
 
 export const metadata: Metadata = {
-  title: "Working with us: pricing, timelines, ownership and support",
+  title: "Custom ERP cost, timelines, Tally, ownership and AMC — working with us",
   description,
   alternates: { canonical: "/engagement" },
   openGraph: {
@@ -35,8 +35,9 @@ export default function EngagementPage() {
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">Working with us</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            The questions every business asks before hiring a software firm — what it costs, how
-            long it takes, who owns what, and what happens after launch — answered plainly.
+            The questions every business asks before hiring a software firm — what a custom ERP
+            costs, how long it takes, whether it works with Tally, who owns what, and what happens
+            after launch — answered plainly, with sources for every market figure.
           </p>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
             {engagementAnswers.map((a) => (
@@ -60,6 +61,32 @@ export default function EngagementPage() {
                     {d}
                   </p>
                 ))}
+                {a.see && a.see.length > 0 && (
+                  <p className="mt-6 text-sm leading-relaxed text-foreground-secondary">
+                    See:{" "}
+                    {a.see.map((s, i) => (
+                      <span key={s.href}>
+                        {i > 0 && " · "}
+                        <Link href={s.href} className="text-link focus-ring">
+                          {s.label}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
+                )}
+                {a.sources && a.sources.length > 0 && (
+                  <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
+                    Sources:{" "}
+                    {a.sources.map((s, i) => (
+                      <span key={s.href}>
+                        {i > 0 && " · "}
+                        <a href={s.href} className="text-link focus-ring" rel="noopener">
+                          {s.label}
+                        </a>
+                      </span>
+                    ))}
+                  </p>
+                )}
               </div>
             </section>
           </Reveal>

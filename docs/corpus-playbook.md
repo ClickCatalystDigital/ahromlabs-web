@@ -8,8 +8,9 @@ procedure.
 ## The strategy in one paragraph
 
 The site is a knowledge graph, not a brochure. Nodes are **terms** (vocabulary), **patterns**
-(reusable decisions), **notes** (engagement stories with numbers), **services** (what we sell)
-and **clients** (who it was built for). Edges are explicit and build-checked: a note cites its
+(reusable decisions), **notes** (engagement stories with numbers), **industries** (one per
+industry with a real system), **services** (what we sell), **clients** (who it was built for)
+and **questions** (what buyers ask before hiring). Edges are explicit and build-checked: a note cites its
 patterns; a service and a client cite the notes and patterns that prove them; every page's
 JSON-LD links back to the organization, founder and services by `@id`; `/knowledge.json`
 publishes every node and edge for machines; `/llms.txt` summarises it for models. Growth means
@@ -62,6 +63,10 @@ or result in one sentence, and every number with where it came from.
 | A word we use with a specific meaning | **term** | `content/terms/` | Definition in `answer`; body only when there's more than one sentence to say |
 | A new capability we now sell | **service** | `src/lib/services.ts` | Must cite ≥1 note or pattern in `proof`, or say plainly there's no client deployment yet |
 | A new client, or new work for one | **client** | `src/lib/work.ts` | Highlights restate published notes; `proof` links them |
+| A new industry we've built a real system for | **industry** | `content/industries/` | Headings are the questions that industry's owners ask; `clients`, `services`, `notes`, `patterns` edges; a Boundary section |
+| A question buyers ask before hiring | **question** | `src/lib/engagement.ts` | Buyer's own wording; first sentence answers it; third-party figures carry `sources` |
+
+Structure and edge rules for every type: `docs/site-architecture.md`.
 
 ## 4. Write — the rules from Appendix B of the plan
 

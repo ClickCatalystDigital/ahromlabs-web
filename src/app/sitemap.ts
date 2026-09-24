@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, changeFrequency: "monthly", priority: 1 },
     { url: `${siteUrl}/services`, changeFrequency: "monthly", priority: 0.9 },
+    {
+      url: `${siteUrl}/industries`,
+      lastModified: newestUpdate("industry"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     { url: `${siteUrl}/work`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/engagement`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/approach`, changeFrequency: "monthly", priority: 0.8 },
@@ -48,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const contentRoutes: MetadataRoute.Sitemap = [
+    ...getContent("industry").map((industry) => ({
+      url: `${siteUrl}/industries/${industry.slug}`,
+      lastModified: new Date(industry.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...getContent("note").map((note) => ({
       url: `${siteUrl}/notes/${note.slug}`,
       lastModified: new Date(note.updated),

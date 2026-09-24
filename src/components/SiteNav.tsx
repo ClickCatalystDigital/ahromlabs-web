@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { LogoBadge } from "./Wordmark";
 
+// Ordered the way a buyer decides: what do you build, for businesses like
+// mine?, for whom already?, what does it cost?, prove it, who are you.
+// Approach, Systems and Patterns stay one click away in the footer.
 const links = [
   { href: "/services", label: "Services" },
+  { href: "/industries", label: "Industries" },
   { href: "/work", label: "Work" },
-  { href: "/approach", label: "Approach" },
-  { href: "/systems", label: "Systems" },
-  { href: "/about", label: "About" },
+  { href: "/engagement", label: "Pricing" },
   { href: "/notes", label: "Notes" },
-  { href: "/patterns", label: "Patterns" },
+  { href: "/about", label: "About" },
 ];
 
 export function SiteNav() {
@@ -19,7 +21,7 @@ export function SiteNav() {
           <LogoBadge />
         </Link>
 
-        {/* Seven links plus the CTA don't fit before lg; below it the menu takes over. */}
+        {/* Six links plus the CTA don't fit before lg; below it the menu takes over. */}
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <li key={link.href}>

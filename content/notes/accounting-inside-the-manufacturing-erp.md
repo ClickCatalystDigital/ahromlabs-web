@@ -25,7 +25,7 @@ published: 2026-09-24
 updated: 2026-09-24
 ---
 
-Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At Shanti Boilers & Pressure Vessels, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and why.
+Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At Shanti Boilers & Pressure Vessels, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.
 
 ## Why put the ledger inside the operations system?
 

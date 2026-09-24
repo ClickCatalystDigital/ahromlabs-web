@@ -66,6 +66,7 @@ export const services: Service[] = [
       { metric: "Outstanding balances", value: "Computed from source transactions at read time, not stored as a running total" },
     ],
     proof: [
+      { kind: "note", slug: "tally-vs-erpnext-vs-custom-erp" },
       { kind: "note", slug: "plate-remnants-back-into-stock" },
       { kind: "note", slug: "two-companies-one-book" },
       { kind: "pattern", slug: "derive-balances-dont-store-them" },
@@ -111,6 +112,7 @@ export const services: Service[] = [
     ],
     proof: [
       { kind: "note", slug: "tally-voucher-posting" },
+      { kind: "note", slug: "outgrown-tally-signs" },
       { kind: "pattern", slug: "local-agent-cloud-db" },
       { kind: "pattern", slug: "failures-flagged-not-lost" },
       { kind: "pattern", slug: "reconcile-against-source-of-truth" },
