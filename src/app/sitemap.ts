@@ -18,9 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Hand-written pages carry no lastModified at all. They have no date source,
   // and stamping build time made every deploy claim all six static pages had
   // changed — a signal crawlers learn to ignore. lastmod is optional; omitting
-  // it is honest, inventing it is not.
+  // it is honest, inventing it is not. /services and /work are hand-written
+  // too (src/lib/services.ts, src/lib/work.ts), so the same applies.
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/services`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${siteUrl}/work`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/approach`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
     {

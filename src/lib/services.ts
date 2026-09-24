@@ -1,0 +1,117 @@
+import { getContent, type ContentEntry } from "./content";
+
+// What Ahrom Labs builds, in the words a buyer (or a model answering a buyer)
+// actually uses. One array feeds /services, the homepage summary, llms.txt and
+// the ProfessionalService offer catalog, so the four can't describe different
+// businesses. Every claim here restates something already published in
+// content/ — the `proof` slugs are the receipts, and resolveProof() fails the
+// build if one stops existing.
+
+export type Service = {
+  // Stable anchor on /services and fragment in schema @ids. Don't rename.
+  slug: string;
+  name: string;
+  // Answer-first, 40-60 words: the chunk a retrieval system lifts.
+  answer: string;
+  // The buyer this is for, stated plainly.
+  forWhom: string;
+  evidence: { metric: string; value: string }[];
+  proof: { kind: "note" | "pattern"; slug: string }[];
+};
+
+export const services: Service[] = [
+  {
+    slug: "tally-integration",
+    name: "TallyPrime integration for cloud apps",
+    answer:
+      "We connect cloud business apps to TallyPrime through a small agent on the PC that runs Tally, because Tally's XML gateway only listens locally. Approved invoices post as vouchers within 30 seconds, status syncs every 15 minutes, and masters nightly. Missing ledgers and Tally rejections are held for a person, never auto-created.",
+    forWhom:
+      "Indian businesses whose accounts live in TallyPrime but whose sales, purchase or operations work has moved to a web app — and who are tired of re-keying the same invoice twice.",
+    evidence: [
+      { metric: "Push cadence", value: "30 seconds" },
+      { metric: "Voucher and outstanding sync", value: "15 minutes" },
+      { metric: "Ledger, stock-item and voucher-type masters", value: "24 hours" },
+      { metric: "Open-source reference library", value: "tally-voucher-xml, 32 tests" },
+    ],
+    proof: [
+      { kind: "note", slug: "tally-voucher-posting" },
+      { kind: "pattern", slug: "local-agent-cloud-db" },
+      { kind: "pattern", slug: "failures-flagged-not-lost" },
+      { kind: "pattern", slug: "reconcile-against-source-of-truth" },
+    ],
+  },
+  {
+    slug: "document-extraction",
+    name: "AI document extraction with human review",
+    answer:
+      "We build AI extraction for purchase invoices, freight invoices, bills of entry, purchase orders and bank statements. An LLM reads the PDF directly, with a prompt per document type. 88–95% of documents need zero correction, and every one still waits for a person to approve it before anything is posted to the books.",
+    forWhom:
+      "Trading, import-export and manufacturing businesses whose accounts team spends its day typing GST invoices, customs paperwork and bank statements into Tally.",
+    evidence: [
+      { metric: "Purchase order, zero-correction rate", value: "95%" },
+      { metric: "Purchase invoice, zero-correction rate", value: "94%" },
+      { metric: "Freight invoice, zero-correction rate", value: "91%" },
+      { metric: "Bank statement, zero-correction rate", value: "89%" },
+      { metric: "Bill of entry, zero-correction rate", value: "88%" },
+      { metric: "Documents posted without human approval", value: "None" },
+    ],
+    proof: [
+      { kind: "note", slug: "ai-extraction-human-in-the-loop" },
+      { kind: "note", slug: "same-confidence-different-autonomy" },
+      { kind: "pattern", slug: "human-confirmed-extraction" },
+      { kind: "pattern", slug: "unconfirmed-inferences-stay-read-only" },
+    ],
+  },
+  {
+    slug: "custom-erp-crm",
+    name: "Custom ERP, CRM and operations systems",
+    answer:
+      "We build the operational system a business runs on — clients, orders, projects, purchasing, inventory, production and finance — on one data model instead of a stack of disconnected tools. We model the business first; that model becomes the specification. Built so far for trading, electronics inventory, interior design, furniture and pressure-vessel manufacturing.",
+    forWhom:
+      "Owner-led businesses that have outgrown spreadsheets and off-the-shelf software, where a few people are the only ones who know how everything connects.",
+    evidence: [
+      { metric: "Systems built", value: "4, for 4 client businesses" },
+      { metric: "Industries", value: "Electronics trading and inventory, interior design, furniture and boiler manufacturing" },
+      { metric: "Outstanding balances", value: "Computed from source transactions at read time, not stored as a running total" },
+    ],
+    proof: [
+      { kind: "note", slug: "two-companies-one-book" },
+      { kind: "pattern", slug: "derive-balances-dont-store-them" },
+      { kind: "pattern", slug: "replay-queued-payload-through-existing-handler" },
+      { kind: "pattern", slug: "self-healing-sequence-counters" },
+      { kind: "pattern", slug: "reference-rate-anomaly-detection" },
+    ],
+  },
+  {
+    slug: "multi-company-finance",
+    name: "Multi-company finance and role-scoped access",
+    answer:
+      "We build finance systems for sister concerns and group companies: one shared client list and ledger, with each invoice carrying the right company's letterhead and GSTIN. Who can see what is enforced where the data is fetched, not hidden in the screen — staff see only their own cash entries, and bank data is refused to them outright.",
+    forWhom:
+      "Families and partners running two or more related businesses out of one office, who need one view of the money without every employee seeing all of it.",
+    evidence: [
+      { metric: "Staff view of the cash ledger", value: "Own entries only, enforced in the API query" },
+      { metric: "Staff access to bank data", value: "None — every bank route rejects staff" },
+      { metric: "Companies per invoice", value: "Chosen per invoice: letterhead, logo, GSTIN" },
+    ],
+    proof: [
+      { kind: "note", slug: "two-companies-one-book" },
+      { kind: "pattern", slug: "role-scoped-finance-views" },
+      { kind: "pattern", slug: "separate-machine-from-human-identity" },
+    ],
+  },
+];
+
+// Resolve a proof reference to its published entry. Throws rather than
+// rendering a dead link: this runs during prerender, so a renamed or deleted
+// note fails the build instead of shipping.
+export function resolveProof(ref: Service["proof"][number]): ContentEntry {
+  const entry = getContent(ref.kind).find((e) => e.slug === ref.slug);
+  if (!entry) {
+    throw new Error(`services.ts references unknown ${ref.kind} "${ref.slug}"`);
+  }
+  return entry;
+}
+
+export const proofHref = (ref: Service["proof"][number]) =>
+  `/${ref.kind === "note" ? "notes" : "patterns"}/${ref.slug}`;

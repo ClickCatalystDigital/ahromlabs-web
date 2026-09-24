@@ -2,6 +2,8 @@ import Link from "next/link";
 import { LogoBadge } from "./Wordmark";
 
 const links = [
+  { href: "/services", label: "Services" },
+  { href: "/work", label: "Work" },
   { href: "/approach", label: "Approach" },
   { href: "/systems", label: "Systems" },
   { href: "/about", label: "About" },
@@ -17,7 +19,8 @@ export function SiteNav() {
           <LogoBadge />
         </Link>
 
-        <ul className="hidden items-center gap-8 sm:flex">
+        {/* Seven links plus the CTA don't fit before lg; below it the menu takes over. */}
+        <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link href={link.href} className="nav-link focus-ring">
@@ -32,7 +35,7 @@ export function SiteNav() {
           </li>
         </ul>
 
-        <details className="nav-menu relative sm:hidden">
+        <details className="nav-menu relative lg:hidden">
           <summary className="nav-link focus-ring cursor-pointer select-none list-none">
             Menu
           </summary>

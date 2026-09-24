@@ -7,8 +7,17 @@ import { Reveal } from "@/components/Reveal";
 import { SystemDiagram } from "@/components/SystemDiagram";
 import { ContactForm } from "@/components/ContactForm";
 import heroImage from "../../public/hero.webp";
+import { services } from "@/lib/services";
+import { engagements } from "@/lib/work";
+
+const description =
+  "Ahrom Labs builds custom operational systems for Indian businesses — ERP and CRM, TallyPrime integration, AI extraction of GST invoices with human review, and multi-company finance — modeled as one connected system.";
 
 export const metadata: Metadata = {
+  // The homepage <title> is the single strongest signal of what this site is
+  // about. "Ahrom Labs" alone told Google and every model nothing.
+  title: { absolute: "Ahrom Labs | Custom ERP, CRM and TallyPrime integration for Indian businesses" },
+  description,
   alternates: {
     canonical: "/",
     types: { "application/json": "/knowledge.json" },
@@ -47,9 +56,10 @@ export default function Home() {
                 We build the systems your business runs on.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-                Ahrom Labs designs and builds custom operational infrastructure. We model
-                your entities, workflows, and decisions as one connected system, not another
-                disconnected app.
+                Ahrom Labs designs and builds custom operational systems for Indian
+                businesses: ERP and CRM, TallyPrime integration, and AI document extraction.
+                We model your entities, workflows, and decisions as one connected system, not
+                another disconnected app.
               </p>
               <a href="#contact" className="subscribe-submit focus-ring mt-8 inline-block">
                 Start a conversation
@@ -95,6 +105,35 @@ export default function Home() {
               <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
                 Every integration between them is a workaround. Every new tool adds another
                 place the truth can diverge from what actually happened.
+              </p>
+            </div>
+          </section>
+        </Reveal>
+
+        {/* What we build. Plain buyer vocabulary on the page every crawler
+            reads first, each card pointing at its evidence on /services. */}
+        <Reveal>
+          <section className="section border-t border-line">
+            <div className="rail">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">What we build</h2>
+              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
+                {services.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/services#${s.slug}`}
+                    className="focus-ring block border-t border-line pt-6"
+                  >
+                    <h3 className="text-lg font-medium text-foreground">{s.name}</h3>
+                    <p className="mt-2 max-w-[48ch] leading-relaxed text-foreground-secondary">
+                      {s.forWhom}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <p className="mt-10">
+                <Link href="/services" className="text-link focus-ring">
+                  How each one works, with the numbers
+                </Link>
               </p>
             </div>
           </section>
@@ -168,6 +207,40 @@ export default function Home() {
           </section>
         </Reveal>
 
+        {/* Named clients, one concrete line each, linking into /work and the
+            notes — the homepage previously had no path to either. */}
+        <Reveal>
+          <section className="section border-t border-line">
+            <div className="rail">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
+                Systems we&apos;ve built
+              </h2>
+              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-3">
+                {engagements.map((e) => (
+                  <Link
+                    key={e.slug}
+                    href={`/work#${e.slug}`}
+                    className="focus-ring block border-t border-line pt-6"
+                  >
+                    <h3 className="text-lg font-medium text-foreground">{e.client}</h3>
+                    <p className="mt-1 text-sm text-foreground-secondary">{e.industry}</p>
+                    <p className="mt-3 leading-relaxed text-foreground-secondary">{e.highlights[0]}</p>
+                  </Link>
+                ))}
+              </div>
+              <p className="mt-10">
+                <Link href="/work" className="text-link focus-ring">
+                  See all work
+                </Link>
+                <span className="text-foreground-secondary"> · </span>
+                <Link href="/notes" className="text-link focus-ring">
+                  Read the engineering notes
+                </Link>
+              </p>
+            </div>
+          </section>
+        </Reveal>
+
         {/* 6. Who we're for */}
         <Reveal>
           <section className="section border-t border-line">
@@ -181,6 +254,12 @@ export default function Home() {
                 connects. You don&apos;t need another application bolted onto the pile. You
                 need the structure your business can finally stand on, modeled properly
                 before anyone writes a line of code.
+              </p>
+              <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
+                Typically that&apos;s an established Indian business — a trading or
+                import-export house, a manufacturer, a design-and-build firm, or two sister
+                concerns sharing one office — with its accounts in TallyPrime and its
+                operations spread across spreadsheets and chat.
               </p>
             </div>
           </section>

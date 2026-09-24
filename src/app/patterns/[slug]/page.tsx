@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
+import { services } from "@/lib/services";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -60,6 +61,8 @@ export default async function PatternPage(props: PageProps<"/patterns/[slug]">) 
   const { slug } = await props.params;
   const pattern = getContent("pattern").find((p) => p.slug === slug)!;
   const citingNotes = getContent("note").filter((n) => n.patterns?.includes(pattern.slug));
+  // Reverse of services.ts `proof`: the services this pattern is evidence for.
+  const usedBy = services.filter((s) => s.proof.some((p) => p.kind === "pattern" && p.slug === pattern.slug));
 
   return (
     <>
@@ -110,6 +113,21 @@ export default async function PatternPage(props: PageProps<"/patterns/[slug]">) 
                     <li key={note.slug}>
                       <Link href={`/notes/${note.slug}`} className="text-link focus-ring">
                         {note.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {usedBy.length > 0 && (
+              <div className="mt-12 border-t border-line pt-8">
+                <p className="text-sm font-medium text-foreground-secondary">Part of</p>
+                <ul className="mt-3 space-y-2">
+                  {usedBy.map((s) => (
+                    <li key={s.slug}>
+                      <Link href={`/services#${s.slug}`} className="text-link focus-ring">
+                        {s.name}
                       </Link>
                     </li>
                   ))}

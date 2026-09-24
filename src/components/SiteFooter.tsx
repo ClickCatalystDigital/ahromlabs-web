@@ -15,6 +15,12 @@ export function SiteFooter() {
           </a>
         </div>
         <div className="flex flex-wrap items-center gap-8">
+          <Link href="/services" className="nav-link focus-ring">
+            Services
+          </Link>
+          <Link href="/work" className="nav-link focus-ring">
+            Work
+          </Link>
           <Link href="/approach" className="nav-link focus-ring">
             Approach
           </Link>

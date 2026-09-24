@@ -215,6 +215,30 @@ problem — the disk needs attention.
 
 Full detail, including what was rejected and what remains open: `docs/plans-to-upgrade.md`.
 
+## Indexing + buyer-vocabulary pass — 2026-09-24 (not a numbered phase)
+
+**Trigger:** Search Console export (2026-06-26 → 09-21): indexed pages fell 27 → 13; 176 not
+indexed (105 "Discovered", 65 "Crawled — currently not indexed", 3 page-with-redirect, 2
+redirect errors, 1 404). The property already knew ~198 URLs on 2026-07-01, before this repo
+existed (first commit 2026-08-27), so most of the 176 are not URLs this site generates —
+the per-reason URL examples in Search Console are needed to say which.
+
+**Fixed in code, verified in `opennextjs-cloudflare preview`:**
+- Unknown slugs under `/notes`, `/patterns`, `/systems` returned **500** (`find(...)!` on
+  undefined during on-demand render) — `dynamicParams = false` on all three; now 404.
+- Static-assets incremental cache + cache interception (`open-next.config.ts`): prerendered
+  HTML is served from the ASSETS binding — `x-opennext-cache: HIT`, 7–25ms locally —
+  instead of booting Next and re-rendering per request. No new binding.
+- Root-layout `canonical: "/"` was inherited by the 404 page (canonical=home + noindex).
+  Moved to `app/page.tsx`.
+
+**Buyer vocabulary:** the homepage, its `<title>` and `llms.txt` never said ERP, CRM,
+TallyPrime, GST or India. Added `src/lib/services.ts` + `src/lib/work.ts` as the single
+source for `/services`, `/work`, homepage "What we build"/"Systems we've built", `llms.txt`
+Services/Clients sections, and the `OfferCatalog` on `ProfessionalService`. Every claim
+restates published content; `resolveProof()` fails the build on a dead proof link. Notes and
+patterns link back to the services/clients that cite them.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

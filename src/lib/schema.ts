@@ -1,4 +1,5 @@
 import type { ContentEntry } from "./content";
+import { services } from "./services";
 
 export const siteUrl = "https://ahromlabs.com";
 
@@ -15,6 +16,26 @@ const postalAddress = {
 } as const;
 
 const areaServed = { "@type": "Country", name: "India" } as const;
+
+// Built from the same array /services renders, so the catalog can't list a
+// service the page doesn't show. Each Service's @id is its /services anchor.
+const offerCatalog = {
+  "@type": "OfferCatalog",
+  name: "Ahrom Labs services",
+  url: `${siteUrl}/services`,
+  itemListElement: services.map((s) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      "@id": `${siteUrl}/services#${s.slug}`,
+      name: s.name,
+      description: s.answer,
+      url: `${siteUrl}/services#${s.slug}`,
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed,
+    },
+  })),
+};
 
 export const orgGraph = {
   "@context": "https://schema.org",
@@ -37,6 +58,24 @@ export const orgGraph = {
       email: contactEmail,
       address: postalAddress,
       areaServed: areaServed,
+      // The organization's topic vector — what an engine should associate the
+      // name with. Every item is something /services or a note demonstrates.
+      knowsAbout: [
+        "Custom ERP development",
+        "CRM development",
+        "TallyPrime integration",
+        "Tally XML voucher posting",
+        "AI document extraction",
+        "GST invoice processing",
+        "Bill of entry processing",
+        "Bank statement extraction",
+        "Human-in-the-loop automation",
+        "Role-based access control",
+        "Multi-company accounting",
+        "Inventory management systems",
+        "Manufacturing operations software",
+        "Business process modeling",
+      ],
       sameAs: [
         "https://www.linkedin.com/company/ahromlabs",
         "https://github.com/ahromlabs",
@@ -77,6 +116,7 @@ export const orgGraph = {
         "Custom operational infrastructure engineering: modeling a business's entities, workflows, and decisions, then building the systems on top of that model.",
       serviceType: "Custom business systems and infrastructure engineering",
       provider: { "@id": `${siteUrl}/#organization` },
+      hasOfferCatalog: offerCatalog,
       address: postalAddress,
       areaServed: areaServed,
       email: contactEmail,

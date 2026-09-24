@@ -7,6 +7,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
+import { services } from "@/lib/services";
+import { engagements } from "@/lib/work";
 
 // Any slug outside generateStaticParams 404s. Left at the default (true), an
 // unknown slug rendered on demand, hit `find(...)!` on undefined and returned a
@@ -62,6 +64,11 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
   const { slug } = await props.params;
   const note = getContent("note").find((n) => n.slug === slug)!;
   const allPatterns = getContent("pattern");
+  // Reverse of the `proof` lists in services.ts and work.ts, so a reader landing
+  // here from search has a path to what we sell and who it was built for.
+  const cites = (p: { kind: string; slug: string }) => p.kind === "note" && p.slug === note.slug;
+  const usedBy = services.filter((s) => s.proof.some(cites));
+  const builtFor = engagements.filter((e) => e.proof.some(cites));
 
   return (
     <>
@@ -118,6 +125,28 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
                       </li>
                     );
                   })}
+                </ul>
+              </div>
+            )}
+
+            {(usedBy.length > 0 || builtFor.length > 0) && (
+              <div className="mt-12 border-t border-line pt-8">
+                <p className="text-sm font-medium text-foreground-secondary">Part of</p>
+                <ul className="mt-3 space-y-2">
+                  {usedBy.map((s) => (
+                    <li key={s.slug}>
+                      <Link href={`/services#${s.slug}`} className="text-link focus-ring">
+                        {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                  {builtFor.map((e) => (
+                    <li key={e.slug}>
+                      <Link href={`/work#${e.slug}`} className="text-link focus-ring">
+                        Our work for {e.client}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
