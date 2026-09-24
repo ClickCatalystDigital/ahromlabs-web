@@ -49,6 +49,9 @@ const markdownComponents = {
   ul: (props: ComponentProps<"ul">) => (
     <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />
   ),
+  ol: (props: ComponentProps<"ol">) => (
+    <ol className="mt-4 list-decimal space-y-2 pl-5 text-foreground-secondary" {...props} />
+  ),
   li: (props: ComponentProps<"li">) => <li {...props} />,
   a: (props: ComponentProps<"a">) => <a className="text-link focus-ring" {...props} />,
 };

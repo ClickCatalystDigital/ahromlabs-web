@@ -6,7 +6,8 @@ audience: Boiler and pressure-vessel manufacturers
 answer: >
   Ahrom Labs built the operations system Shanti Boilers & Pressure Vessels runs
   on — BOM, procurement, stores, plate cutting, production, QC, IBR statutory
-  folders, GST and TDS accounting, and a customer portal, in one system. Each
+  folders, job costing, GST and TDS accounting, service contracts and a
+  customer portal, in one system. Each
   boiler's IBR folder is generated from its bill of materials and a bank of
   material test certificates.
 domain: [manufacturing, compliance, quality-control]
@@ -71,9 +72,38 @@ Yes. The folder — covering letter, Forms II(1), III, III A and IV A — is gen
 
 Each test certificate is identified by certificate, cast and plate number together — one certificate number covered four casts in the client's own sample — and one certificate is typically used across several boilers. When a plate is cut, every used piece, remnant and scrap piece is chained to the plate it came from. QC records heat and lot numbers, non-conformance reports with a disposition and a verification step before closing, and hold points that stop a job until inspection clears it.
 
+The heat number and certificate are captured once, when a plate is received, and every piece cut from it inherits them automatically — nobody re-types them at the cutting table. A non-conformance can be dispositioned as rework, repair, scrap or use-as-is: rework and repair open a new job card that carries the lineage of the original, and scrap or use-as-is can't be saved without a written justification. Hold points come from the work order's own route — a step marked as a quality checkpoint holds the job until QC releases it — so there is no separate inspection plan to keep in step with production.
+
 ## How does work move between departments without chasing people?
 
 Each project's milestones declare what they depend on, and the system shows what each one is waiting for, computed fresh every time the page is opened. Procurement runs as a visible pipeline — requests, sourcing, supplier selection, purchase order issued, closed — with new-item requests from engineering accepted into procurement rather than appearing unannounced. On the shop floor, work orders and job cards carry production; engineering has its own calculation sheets linked to the drawings they substantiate.
+
+## What did each boiler actually cost, and what did we make on it?
+
+Once a sale order has its project, the system shows its actual cost against its selling price. Material cost is the sum of purchase orders actually issued against that project — drafts and cancelled orders don't count as spend. Labour cost is the time logged on the project's job cards multiplied by each employee's cost rate. Margin is the sale order value minus both. When nothing has been bought or logged yet, material and labour show as empty rather than as an estimate.
+
+Work orders carry a planned cost as well as an actual one: planned material from the quantities and unit costs on the work order, planned labour from each route step's planned minutes and the workstation's machine-hour rate. The gap between the two is the Production Cost Variance report. For management, Project Profitability and Customer Profitability run the same costing across every order in a period, so there is one calculation of margin, not three that disagree.
+
+Costing is only as complete as its inputs. Purchase orders and job-card time are counted; outside job work is listed but not priced, overheads aren't allocated yet, and a margin is only real once purchasing and time logging are actually happening in the system.
+
+## What can the owner see across all orders?
+
+Each department has its own reports, and the management reports reuse those numbers rather than recalculating them:
+
+- **Project and customer profitability** — material and labour against selling value, per order and per customer.
+- **Manufacturing performance** — work-order throughput, rejection rate, material yield and cost variance.
+- **Procurement spend** — by supplier, with a six-month spend trend and each supplier's win rate on quotes.
+- **Working capital** — cash plus receivables plus inventory, minus payables.
+- **Production** — work order register, rework and rejection, material and labour utilisation, and material shortage against open work orders.
+- **Sales** — leads, conversion rate and follow-up completion per salesperson.
+
+The management reports export to PDF from the same computation the screen shows. Machine downtime and OEE are deliberately left out: no machine data is collected, so there would be nothing honest to report.
+
+## Which installed boilers are due for service, and are contracts being renewed?
+
+After commissioning, each boiler stays in the system as the equipment its service calls and contracts attach to. A service call carries a priority and a response time in hours, and moves from open to assigned, in progress, resolved and closed; the resolved and closed times are stamped by the system at the moment the status changes, so response times can't be edited after the fact. Every site visit is logged against its call.
+
+A service contract records its coverage window, visit frequency and what is covered. Renewing one creates a new contract linked to the old one rather than overwriting it, so the history of what was covered, and when, survives. Four reports come off that data: commissioning progress and delay reasons; service calls by priority with response-time compliance; each technician's calls and average resolution time; and active contracts, contracts expiring in the next 30 days, and the renewal rate.
 
 ## What happens to plate offcuts?
 
@@ -113,6 +143,16 @@ Yes, and they were. Bills of materials are imported from the plant's own spreads
 
 Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder generated from the BOM, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
 
+## What should a boiler maker ask any software vendor?
+
+Whoever builds or sells it, these five questions separate a system that fits from one that gets worked around:
+
+1. **Where does money leak today?** Late quotations, cost overruns, slow collections or unbilled service work — the system should be designed around the biggest one first.
+2. **Can it show the real cost of one boiler?** Material and labour against selling price, per order, from the purchase orders and job cards themselves — not from a spreadsheet kept on the side.
+3. **Can it produce the statutory and quality paperwork from its own records?** The IBR forms, test certificates, inspection results and non-conformances, traced to the parts they cover.
+4. **What happens after dispatch?** Service calls, visits and contracts against the specific boiler, with renewals that keep their history.
+5. **Who owns the system and the data?** The code, the server and the records — and what it takes to change something next year. Our answer is in [Working with Ahrom Labs](/engagement).
+
 ## IBR terms, in one place
 
 - **Form II(1)** — the inspection certificate: inspecting authority, working pressure, hydraulic test pressure and date, drawing numbers and signatories.
@@ -126,4 +166,4 @@ Engineering ERP packages exist with hundreds of installations, and if one fits y
 
 ## Boundary
 
-Nesting — planning the layout of several parts on one plate — is not part of the system. E-invoicing is researched and deferred. The generated IBR forms have been checked against the client's real filed documents; the remaining gaps are formatting, and are being closed form by form.
+Nesting — planning the layout of several parts on one plate — is not part of the system. E-invoicing is researched and deferred. Quotations are priced from default and customer price lists; there is no configurator that builds a price from a boiler's specification, and a pre-sale cost estimate was deliberately left out, because nothing real exists to cost before an order becomes a project. Welding is tracked as a job-card operation, not joint by joint — there is no weld map, WPS or welder-qualification record, or NDT result linked to a joint yet. Remote monitoring of installed boilers (sensors, IoT, SCADA) is not part of this system. The generated IBR forms have been checked against the client's real filed documents; the remaining gaps are formatting, and are being closed form by form.

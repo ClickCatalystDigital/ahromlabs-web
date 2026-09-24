@@ -396,6 +396,25 @@ button opens the modal, the chat bubble is 0×0 on mobile, no page errors.
   (Shanti shop floor, LS reels, Savistar/Saag interiors); drop into `public/industries/` and set
   `image:` in the industry's frontmatter.
 
+## Boiler buyer-intent questions — 2026-09-24
+
+Input: a researched list of high-intent boiler-manufacturer questions (costing, traceability,
+quality dossier, installed-base service, CPQ, IoT monitoring, management analytics). Each was
+checked against ShantiOps SYSTEM.md before anything was written.
+
+- **Answered on the boiler page (as-built):** job and work-order costing, and profitability
+  (§5e, item 29, management reports); owner-level reports (§5 management and production
+  reports, CRM agent report, supplier analysis); installed-base service calls, contracts and
+  renewals (§5n Installation); heat-number inheritance, NCR dispositions and route-derived hold
+  points (§5ao); a five-question vendor checklist adapted from the research's qualification
+  sequence (no third-party figures used, so no citations needed).
+- **Stated as boundaries, not claimed:** CPQ/configurator and pre-sale cost estimate
+  (deliberately deferred), per-joint weld traceability/WPS/NDT linkage (§8 gap 5), remote
+  monitoring/IoT/SCADA (never built), overhead and subcontract costing, OEE/downtime.
+- `knowsAbout` gains four topics the page now evidences. Industry markdown gets an `ol` style.
+- **Open:** writing IoT/remote monitoring or CPQ as a *capability* (as RAG is) needs the
+  founder's go-ahead; nothing on the site claims either today.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).
