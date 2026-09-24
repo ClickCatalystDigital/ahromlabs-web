@@ -57,6 +57,21 @@ clients), a pattern's "Seen in practice" and "Part of", a client's industry link
 - **`/sitemap.xml`** — every HTML node; `lastModified` only where a real `updated` date exists.
 - **Discoverability** — the footer links `llms.txt` and `knowledge.json` on every page; the
   homepage declares `knowledge.json` as `<link rel="alternate" type="application/json">`.
+- **Markdown negotiation** — any page requested with `Accept: text/markdown` returns markdown
+  from the same URL. `scripts/build-markdown.mjs` converts each prerendered page's `<main>` into
+  `public/md/<route>.md` after `next build`; `src/proxy.ts` serves it from the ASSETS binding.
+  Browsers never see it; `/md/*` is `noindex`.
+- **Link headers (RFC 8288)** — every page response carries `Link` to llms.txt, knowledge.json,
+  the sitemap, the API catalog and its own canonical, plus `Vary: Accept`.
+- **`/robots.txt`** — static file (`src/app/robots.txt`) with `Content-Signal: search=yes,
+  ai-input=yes, ai-train=yes` — all yes, deliberately: the site exists to be learned from.
+- **`/.well-known/api-catalog`** (RFC 9727) — lists knowledge.json, llms.txt and the sitemap.
+- **`/auth.md`** — states plainly that no authentication exists and everything is public.
+- **Not built, deliberately** (Cloudflare Agent Readiness Level 3 and Commerce): OAuth
+  discovery/protected resource, A2A agent card, skills index, MCP server card, Web Bot Auth,
+  WebMCP, DNS-AID, and all commerce protocols. There is no login, no API, no agent and nothing
+  for sale; publishing descriptors for things that don't exist would be false signals. Revisit
+  WebMCP on the triggers in `docs/knowledge-layer-plan.md` Phase 6.
 
 ## Human structure
 

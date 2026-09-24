@@ -324,6 +324,26 @@ the comparison note.
 agreed before built; small changes absorbed in-phase") and references ("ask, and we'll check
 whether a past client is willing").
 
+## Cloudflare Agent Readiness pass — 2026-09-24
+
+Driven by Cloudflare's Agent Readiness diagnostics (Level 1: 3/5 before). Built: Content
+Signals in robots.txt (all `yes`), markdown content negotiation, RFC 8288 Link headers, RFC 9727
+API catalog, `/auth.md`. Verified in `opennextjs-cloudflare preview`: markdown served from the
+same URL for `Accept: text/markdown` (and for Claude Code's `text/markdown, text/html;q=0.9`),
+HTML for browsers and for no Accept header, 404 preserved for unknown slugs.
+
+**Reverses an earlier "not doing":** `knowledge-layer-plan.md` rejected per-page markdown
+*mirrors* as duplicate content. This is content *negotiation* — one URL, two representations,
+`/md/*` noindexed — and it's a check Cloudflare now scores and coding agents already use.
+Cloudflare's built-in "Markdown for Agents" needs a Pro plan; this does it at build time.
+
+**Deliberately skipped:** all of Level 3 and Commerce — see `docs/site-architecture.md`.
+
+**Search Console sitemap HTTP 525** (reported by founder): an SSL handshake failure between
+Cloudflare and an *origin*, which a Workers-only site doesn't have — so the fetch went to a
+hostname still pointing at an old origin (likely `www`), or was a transient failure during the
+deploy. Founder to check DNS for `www` and the exact sitemap URL submitted.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).

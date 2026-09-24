@@ -1,0 +1,18 @@
+# Ahrom Labs — https://ahromlabs.com
+#
+# Content signals (https://contentsignals.org). As a condition of accessing
+# this website, you agree to these content signals:
+#   yes = allowed for that use, no = not allowed for that use.
+#   search   - build a search index and show links and snippets.
+#   ai-input - use content as live input to AI answers (retrieval, summaries).
+#   ai-train - train or fine-tune AI models.
+#
+# Every signal is yes, deliberately: this site exists to be found, quoted and
+# learned from. Machine-readable versions: /llms.txt and /knowledge.json.
+
+User-Agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Disallow: /api/
+
+Sitemap: https://ahromlabs.com/sitemap.xml

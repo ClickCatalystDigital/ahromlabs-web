@@ -1,2 +1,13 @@
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# Markdown twins of each page (scripts/build-markdown.mjs), served to agents
+# that ask for text/markdown on the page's own URL. Never index them — the
+# HTML page is the canonical document.
+/md/*
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=3600
+
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
