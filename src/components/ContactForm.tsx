@@ -2,6 +2,15 @@
 
 import { useId, useState, type FormEvent } from "react";
 
+// Declarative WebMCP: a browser agent can fill this form as a tool. No toolautosubmit,
+// so the person still has to press Send.
+const webMcpForm = {
+  toolname: "contact-ahrom-labs",
+  tooldescription:
+    "Send Ahrom Labs a message about building or changing an operational system (ERP, CRM, Tally integration, document extraction). They reply by email.",
+} as Record<string, string>;
+const param = (d: string) => ({ toolparamdescription: d }) as Record<string, string>;
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
@@ -56,7 +65,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="subscribe-form">
+    <form onSubmit={handleSubmit} noValidate className="subscribe-form" {...webMcpForm}>
       <div className="subscribe-field">
         <label htmlFor={emailId} className="subscribe-label">
           Email address
@@ -66,6 +75,7 @@ export function ContactForm() {
           name="email"
           type="email"
           autoComplete="email"
+          {...param("Email address the reply should go to")}
           required
           className="subscribe-input"
           aria-describedby={status === "error" ? `${emailId}-error` : undefined}
@@ -81,6 +91,7 @@ export function ContactForm() {
           id={messageId}
           name="message"
           rows={5}
+          {...param("What the business is trying to solve, in plain words")}
           required
           className="subscribe-input subscribe-textarea"
           aria-describedby={status === "error" ? `${emailId}-error` : undefined}

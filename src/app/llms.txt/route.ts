@@ -39,6 +39,7 @@ furniture business (Savistar & Saag).
 - [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
+- [Boiler ERP live demo](https://boiler-erp.ahromlabs.com/demo): A working copy of the boiler and pressure-vessel ERP with a sample company. Leave a name and email, pick a department head, and use the real screens; data resets nightly.
 - [Notes](https://ahromlabs.com/notes): Engineering notes from real client work.
 - [Patterns](https://ahromlabs.com/patterns): Reusable decisions extracted from real engagements.
 

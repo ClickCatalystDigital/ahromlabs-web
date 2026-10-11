@@ -495,3 +495,5 @@ checked against ShantiOps SYSTEM.md before anything was written.
 9. **`foundingDate` omitted** from `Organization` — never established. Year-only is valid.
 10. **Google Business Profile** — never considered in any prior pass. Now viable since a
     city-level address exists; would be a third corroborating `sameAs` node.
+
+**2026-10-11 — shipped ahead of the triggers, on request.** Read-only tools only: `src/components/WebMcpTools.tsx` registers `search-ahrom-knowledge` (word match over `/knowledge.json`) and `list-live-demos`, feature-detecting `document.modelContext ?? navigator.modelContext`, no-op elsewhere. The contact form is declarative (`toolname="contact-ahrom-labs"`, no `toolautosubmit`), so a send still needs the person to press Send. Not tested in a WebMCP-enabled browser.

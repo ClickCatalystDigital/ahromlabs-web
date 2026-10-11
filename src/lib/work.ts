@@ -16,6 +16,8 @@ export type Engagement = {
   highlights: string[];
   proof: Service["proof"];
   quote?: { text: string; attribution: string };
+  // A public demo of the system, when one exists.
+  demo?: { url: string; label: string };
 };
 
 export const engagements: Engagement[] = [
@@ -61,6 +63,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "shanti-boilers",
+    demo: { url: "https://boiler-erp.ahromlabs.com/demo", label: "Try the live demo" },
     client: "Shanti Boilers & Pressure Vessels",
     industry: "Boiler and pressure-vessel manufacturing",
     built:

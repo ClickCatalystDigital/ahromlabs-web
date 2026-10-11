@@ -23,6 +23,8 @@ export type ContentEntry = {
   description?: string;
   // Industry-only: a real photo from the engagement, under public/.
   image?: { src: string; alt: string };
+  // Industry-only: a public, hands-on demo of the system this page describes.
+  demo?: { url: string; label: string };
   evidence?: { metric: string; value: string }[];
   order?: number;
   published: string;

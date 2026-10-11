@@ -51,6 +51,9 @@ flow:
     detail: Statutory folder generated; packing list approved by QC and Production; e-way bill and freight captured.
   - step: Accounts and after-sales
     detail: Invoice, GST and TDS in the same ledger; service calls, contracts and service reports after commissioning.
+demo:
+  url: https://boiler-erp.ahromlabs.com/demo
+  label: Try the live demo
 evidence:
   - metric: IBR forms generated
     value: Cover letter, Forms II(1), III, III A and IV A
@@ -61,8 +64,12 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-11
 ---
+
+## Can I try it before talking to anyone?
+
+Yes. A live demo runs at [boiler-erp.ahromlabs.com](https://boiler-erp.ahromlabs.com/demo) with a made-up company, Acme Boilers, and sample orders already moving through design, procurement, stores, production, QC and dispatch. Leave a name and email, pick a department head to log in as, and use the real screens: open a project, raise a purchase request, download a purchase order or packing list PDF. Emails and WhatsApp are switched off, and the data resets every night, so nothing you do there reaches anyone.
 
 ## What does a boiler manufacturer need that a generic ERP doesn't give?
 

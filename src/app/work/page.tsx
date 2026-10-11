@@ -60,6 +60,11 @@ export default function WorkPage() {
                       </Link>
                     </p>
                   )}
+                  {e.demo && (
+                    <p className="mt-3">
+                      <a href={e.demo.url} className="text-link focus-ring">{e.demo.label} →</a>
+                    </p>
+                  )}
                   <ul className="mt-6 list-disc space-y-2 pl-5 text-foreground-secondary">
                     {e.highlights.map((h) => (
                       <li key={h} className="leading-relaxed">

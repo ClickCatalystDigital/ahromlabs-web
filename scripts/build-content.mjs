@@ -77,6 +77,11 @@ function loadKind(kind) {
     }
     // A real photo, when there is one: src under /public plus alt text that
     // describes it. Both required — an image without alt text doesn't ship.
+    if (frontmatter.demo !== undefined) {
+      assertString(frontmatter.demo?.url, "demo.url", relPath);
+      assertString(frontmatter.demo?.label, "demo.label", relPath);
+      if (!/^https:\/\//.test(frontmatter.demo.url)) throw new Error(`content/${relPath}: demo.url must be https`);
+    }
     if (frontmatter.image !== undefined) {
       assertString(frontmatter.image?.src, "image.src", relPath);
       assertString(frontmatter.image?.alt, "image.alt", relPath);

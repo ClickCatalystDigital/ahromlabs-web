@@ -212,6 +212,22 @@ export function industryGraph(
       ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${entry.image.src}`, caption: entry.image.alt } }
       : {}),
     about: edges.services.map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` })),
+    ...(entry.demo
+      ? {
+          // The hands-on demo of the system this page describes.
+          significantLink: entry.demo.url,
+          mainEntity: {
+            "@type": "SoftwareApplication",
+            name: "SB Ops",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            url: entry.demo.url,
+            description: entry.description ?? entry.answer,
+            creator: { "@id": `${siteUrl}/#organization` },
+            offers: { "@type": "Offer", price: "0", priceCurrency: "INR", description: "Free live demo with sample data" },
+          },
+        }
+      : {}),
     mentions: edges.clients.map((c) => ({
       "@type": "Organization",
       "@id": `${siteUrl}/work#${c.slug}`,

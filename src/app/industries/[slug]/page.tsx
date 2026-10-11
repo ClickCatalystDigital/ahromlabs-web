@@ -101,6 +101,14 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             {industry.answer}
           </p>
+          {industry.demo && (
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
+                {industry.demo.label}
+              </a>
+              <span className="text-sm text-foreground-secondary">Sample company. Free. Resets every night.</span>
+            </div>
+          )}
           <p className="mt-6 text-sm text-foreground-secondary">
             Pujan Motiwala
             {" · "}
