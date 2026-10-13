@@ -63,11 +63,11 @@ A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML 
 
 Every form lead (contact form and all three demos) is a row in the D1 table `leads` (binding `CRM`, schema `migrations/0001_leads.sql`), saved before the email goes out, so nothing is lost when an email fails. Columns: source, name, company, email, phone, about, message, page, `email_status` (pending, sent, failed), `status` (new, contacted, qualified, won, lost, spam), notes.
 
-- **View and update:** https://ahromlabs.com/api/crm, HTTP Basic auth, any username, password = the `CRM_PASSWORD` Worker secret (`npx wrangler secret put CRM_PASSWORD`). Without that secret the page answers 404. Wrong passwords are rate-limited (5 a minute per IP). Each lead has a status and notes; the top line shows how many are still `new` and flags any lead whose email did not go out.
-- **Safety:** `noindex`, `no-store`, no framing, and updates only from the page itself (Origin check), since browsers resend Basic auth on cross-site posts.
+- **View and update:** https://ahromlabs.com/api/crm. Sign-in form: username `CRM_USER` (`pujan`, in `wrangler.jsonc` vars), password = the `CRM_PASSWORD` Worker secret (`npx wrangler secret put CRM_PASSWORD`). Without that secret the page answers 404. Sign-in tries are rate-limited (5 a minute per IP). A signed cookie (`crm_session`: expiry + HMAC keyed by the password; HttpOnly, Secure, SameSite=Strict, path `/api/crm`) keeps the browser signed in for 30 days; changing the password signs every browser out. Each lead has a status and notes, with search and status tabs; the top line shows how many are still `new` and flags any lead whose email did not go out.
+- **Safety:** `noindex`, `no-store`, no framing, and form posts only from the page itself (Origin check plus the SameSite cookie).
 - **Query directly:** `npx wrangler d1 execute ahrom-crm --remote --command "SELECT * FROM leads ORDER BY id DESC LIMIT 20"`.
 - **Schema changes:** add `migrations/000N_*.sql`, then `npx wrangler d1 migrations apply ahrom-crm --remote` before deploying.
-- **Testing locally:** `npx wrangler d1 migrations apply ahrom-crm --local`, build, `wrangler dev --local` (emails are simulated and written under `.wrangler/tmp/email`), `CRM_PASSWORD` in `.dev.vars`.
+- **Testing locally:** `npx wrangler d1 migrations apply ahrom-crm --local`, build, `wrangler dev --local` (emails are simulated and written under `.wrangler/tmp/email`), `CRM_PASSWORD` in `.dev.vars` (username `pujan`).
 - **Cost:** D1 is within the Workers Paid allowance (5 GB, 25 billion row reads a month); form leads use a tiny fraction.
 
 Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`idle`/`submitting`/`success`/`error`) form with a `useId`-based accessible label/error wiring and the same honeypot field, tab-indexed out (`tabIndex={-1}`) and visually hidden.

@@ -4,7 +4,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 ## Open
 
-- [ ] **CRM password, then deploy:** run `npx wrangler secret put CRM_PASSWORD` in ahrom-labs (choose a long password; keep it in your password manager), then `npm run deploy`. Then open https://ahromlabs.com/api/crm (any username). Until the secret exists the page answers 404.
+- [ ] **CRM password, then deploy:** run `npx wrangler secret put CRM_PASSWORD` in ahrom-labs (choose a long password; keep it in your password manager), then `npm run deploy`. Then open https://ahromlabs.com/api/crm and sign in with username `pujan` and that password; let the browser save it. It stays signed in for 30 days. Until the secret exists the page answers 404.
 - [ ] **Savistar live check after the Next 15 upgrade** (merged 13 Oct 2026, PR #1): once Render shows the deploy finished, open the live app and check sign-in, a client page and an invoice PDF.
 - [ ] **Savistar: confirm `SESSION_SECRET` is set on Render.** `lib/auth.js` falls back to a fixed string when it's missing, which would let anyone forge a login. Once confirmed, the fallback can be removed.
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.

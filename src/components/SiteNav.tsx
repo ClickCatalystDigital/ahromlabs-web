@@ -18,7 +18,9 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/70 backdrop-blur-md">
       <nav className="rail flex h-16 items-center justify-between">
-        <Link href="/" className="focus-ring" aria-label="Ahrom Labs">
+        {/* flex: no inline-image baseline gap, so the mark centres on the nav text. -ml-1.5: the logo file has
+            ~17% empty space left of the "A", so this puts the glyph itself on the rail's edge. */}
+        <Link href="/" className="focus-ring -ml-1.5 flex items-center" aria-label="Ahrom Labs">
           <LogoBadge />
         </Link>
 

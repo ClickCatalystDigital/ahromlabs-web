@@ -57,14 +57,16 @@ body {
  */
 
 .rail {
-  max-width: 90rem; /* 1152px */
+  max-width: 90rem; /* 1440px */
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
+/* Wider screens: 2.5rem, so the nav logo, the hero and every section share one comfortable left edge
+   (at 0.5rem the logo sat in the corner, 32px left of the hero headline). */
 @media (width >= 48rem) {
   .rail {
-    padding-inline: 0.5rem;
+    padding-inline: 2.5rem;
   }
 }
 

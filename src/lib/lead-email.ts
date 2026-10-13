@@ -13,7 +13,7 @@ const FROM = { email: "website@notify.ahromlabs.com", name: "Ahrom Labs website"
 type SendEmail = { send(message: Record<string, unknown>): Promise<{ messageId: string }> };
 type RateLimit = { limit(options: { key: string }): Promise<{ success: boolean }> };
 type D1 = { prepare(sql: string): { bind(...v: unknown[]): { run(): Promise<{ meta: { last_row_id: number } }>; all<T>(): Promise<{ results: T[] }> } } };
-type Env = { EMAIL?: SendEmail; LEADS_TO?: string; FORM_LIMITER?: RateLimit; CRM?: D1; CRM_PASSWORD?: string };
+type Env = { EMAIL?: SendEmail; LEADS_TO?: string; FORM_LIMITER?: RateLimit; CRM?: D1; CRM_USER?: string; CRM_PASSWORD?: string };
 
 export async function env(): Promise<Env> {
   return (await getCloudflareContext({ async: true })).env as unknown as Env;

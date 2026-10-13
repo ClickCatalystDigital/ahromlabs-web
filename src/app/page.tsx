@@ -52,7 +52,7 @@ export default function Home() {
         {/* 1. Hero */}
         <section className="relative flex items-center overflow-hidden py-12 lg:py-0">
           <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-0">
-            <div className="rail relative z-10 col-span-1 row-start-1 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:translate-x-8">
+            <div className="rail relative z-10 col-span-1 row-start-1 lg:col-span-6 lg:col-start-1 lg:row-start-1">
               <h1 className="display max-w-[14ch] text-5xl text-foreground sm:text-6xl lg:text-6xl">
                 We build the systems your business runs on.
               </h1>
