@@ -44,13 +44,19 @@ A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML 
 
 ## Contact form (`/api/contact`)
 
-`src/app/api/contact/route.ts`. Actual behavior, not to be confused with older docs mentioning nodemailer/SMTP — **that's stale; this project sends mail via the Resend HTTP API and has no nodemailer dependency**:
+`src/app/api/contact/route.ts`. Mail goes out through **Cloudflare Email Sending** (the `EMAIL` binding), not Resend, SMTP or an API key (switched 13 Oct 2026).
 
 1. Parses JSON body; requires `email` and `message` strings.
 2. Honeypot: a hidden `company` field. If filled, silently returns `{ ok: true }` without sending anything (bot never gets a signal to keep trying).
-3. Validates email format (regex) and non-empty message.
-4. Sends through `src/lib/lead-email.ts`, which reads `RESEND_API_KEY`, `RESEND_FROM` (secrets) and `LEADS_TO` (`wrangler.jsonc` vars, pujan@ahromlabs.com) from env. The three live demos' entry forms use the same helper through `src/app/api/demo-lead/route.ts` (shared `DEMO_LEAD_KEY`). The Resend account belongs to pujan@ahromlabs.com, and the `ahromlabs.com` domain must be verified there or Resend refuses to send. If any are missing, logs an error server-side and returns a generic 500 to the client.
-5. POSTs to `https://api.resend.com/emails` with `Authorization: Bearer ${RESEND_API_KEY}`, `reply_to` set to the visitor's email. On failure, logs and returns a generic 500 — never throws to the client, never leaks provider error detail.
+3. Validates the email (format, at most 254 characters) and the message (not empty, at most 5,000 characters).
+4. Rate limit: `FORM_LIMITER` (Workers rate-limit binding, 5 per minute) keyed on the visitor's IP, checked after validation.
+5. Sends through `src/lib/lead-email.ts`: `env.EMAIL.send()` from `website@notify.ahromlabs.com` to `LEADS_TO` (pujan@ahromlabs.com), Reply-To the visitor, plain text plus HTML. On failure it logs `lead_email_failed` (form and error code only, addresses masked) and returns 502 with a message telling the visitor to email pujan@ahromlabs.com: it never reports success when sending failed. A success logs `lead_email_sent` with Cloudflare's message id.
+
+**Email Sending setup.** Only the subdomain `notify.ahromlabs.com` is onboarded (`wrangler email sending enable notify.ahromlabs.com`). Its records: MX, SPF TXT on `cf-bounce.notify`, DKIM on `cf-bounce._domainkey.notify`, and `_dmarc.notify` (`p=reject`). The root domain's Google Workspace records (MX, SPF, `google._domainkey`, `_dmarc` with `p=none`) are untouched, which is why the root domain was not onboarded: onboarding writes its own `_dmarc`. The binding only allows that sender and that one destination. Workers Paid includes 3,000 sends a month, then $0.35 per 1,000.
+
+**Demo leads.** `src/app/api/demo-lead/route.ts` uses the same helper for the three live demos' entry forms (shared `DEMO_LEAD_KEY`; rate-limited per demo and per visitor email).
+
+**Testing locally.** `next dev` has no `EMAIL` binding, so a send fails there (by design, it says so). To send real mail, build (`opennextjs-cloudflare build`) and run `wrangler dev` with a copy of `wrangler.jsonc` that adds `"remote": true` to the `EMAIL` binding and drops `routes`. Point `LEADS_TO` at a forbidden address (`--var LEADS_TO:x@example.com`) to test the failure path and the rate limit without sending anything.
 
 Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`idle`/`submitting`/`success`/`error`) form with a `useId`-based accessible label/error wiring and the same honeypot field, tab-indexed out (`tabIndex={-1}`) and visually hidden.
 
@@ -108,7 +114,7 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
 
 ## Env vars / config
 
-- `.env.example` — template for local `.env.local`: `RESEND_API_KEY`, `RESEND_FROM` (the recipient is `LEADS_TO` in `wrangler.jsonc`).
+- `.env.example` — notes only: form mail needs no API key (Cloudflare Email Sending binding; recipient `LEADS_TO` in `wrangler.jsonc`).
 - `.dev.vars` — same three vars, used by `wrangler`/OpenNext for local `npm run preview`; gitignored, holds real local secrets. Production secrets are set via `wrangler secret put`, not this file.
 - `tsconfig.json` — `@/*` path alias maps to `./src/*` (source of every `@/components/...`, `@/lib/...` import).
 

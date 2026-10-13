@@ -16,7 +16,21 @@
   "observability": {
     "enabled": true
   },
-  // Where form leads are emailed (src/lib/lead-email.ts). Not secret. Secrets: RESEND_API_KEY, RESEND_FROM,
-  // DEMO_LEAD_KEY (shared with the three demo Workers).
+  // Form leads (src/lib/lead-email.ts): Cloudflare Email Sending, onboarded for notify.ahromlabs.com only
+  // (records under that subdomain; the root domain's Google Workspace mail records are untouched). The binding
+  // may only send from website@notify.ahromlabs.com to pujan@ahromlabs.com. Secret: DEMO_LEAD_KEY (shared with
+  // the three demo Workers).
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "pujan@ahromlabs.com",
+      "allowed_sender_addresses": ["website@notify.ahromlabs.com"]
+    }
+  ],
+  // 5 form submissions per minute per key (per visitor IP for the contact form; per demo and per visitor email
+  // for demo leads). Rate-limit namespace ids are per account; 1002 is unused there (the LS demo uses 1001).
+  "ratelimits": [
+    { "name": "FORM_LIMITER", "namespace_id": "1002", "simple": { "limit": 5, "period": 60 } }
+  ],
   "vars": { "LEADS_TO": "pujan@ahromlabs.com" }
 }
