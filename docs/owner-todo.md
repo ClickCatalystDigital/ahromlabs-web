@@ -13,6 +13,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
 - [ ] **Disk space:** about 1.2 GB was free on 13 Oct 2026; local demo testing needs about 5 GB.
 
+- [ ] **AI assistant in the demos: decide.** It is switched off in all three demos (it calls OpenRouter on a paid key). To turn it on: create a separate OpenRouter key with a hard monthly limit (for example $5), and Claude wires it in with a per-visitor rate limit, chat only (never the settings).
+
 ## Done
 
 - [x] GA4 property, Measurement ID, `GA_API_SECRET`, custom dimensions, Search Console link (13 Oct 2026). See `docs/analytics-strategy.md`.
