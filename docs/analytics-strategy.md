@@ -13,7 +13,7 @@ Living document. Update it when the funnel, events or tools change, and note wha
 | Tool | Use | Status |
 |---|---|---|
 | Google Analytics 4, property "Ahrom Labs", `G-BC080TXMMZ` | People on ahromlabs.com and boiler-erp.ahromlabs.com | ahromlabs.com and the demo |
-| GA4 Measurement Protocol (server-side) | AI agent visits and `llms.txt` / `knowledge.json` fetches, logged from `proxy.ts` | Built; sends once `GA_API_SECRET` is set |
+| GA4 Measurement Protocol (server-side) | AI agent visits and `llms.txt` / `knowledge.json` fetches, logged from `proxy.ts` | Live (`GA_API_SECRET` set) |
 | PostHog | Session replay and in-product paths inside the demo | Not yet. Add if GA4 can't explain where demo users drop off |
 
 One GA4 property covers both sites. They share the registrable domain `ahromlabs.com`, so one visitor is one user across them with no cross-domain setup.
@@ -56,11 +56,11 @@ Agents such as GPTBot, ClaudeBot and PerplexityBot don't run JavaScript, so the 
 - [x] GA4 property "Ahrom Labs" created, web stream for `https://ahromlabs.com`
 - [x] Measurement ID in `src/lib/analytics.ts` (public value)
 - [x] Tag, consent bar and funnel events on the demo (shanti-ops `components/DemoAnalytics.jsx`, demo mode only); `trial_start` waits for the trial button
-- [ ] Measurement Protocol API secret stored as a Cloudflare secret (`GA_API_SECRET`), never committed
-- [ ] Key events marked: `generate_lead`, `trial_start`
-- [ ] Custom dimensions registered: `agent`, `path`, `demo`, `from`, `form`, `tool`, `role`
+- [x] Measurement Protocol API secret stored as a Cloudflare secret (`GA_API_SECRET`), never committed
+- [ ] Key events: star `generate_lead` (and later `trial_start`) under Admin → Events once each has arrived; GA no longer lets you mark an event before it has been seen
+- [x] Custom dimensions registered: `agent`, `path`, `demo`, `from`, `form`, `tool`, `role`
 - [ ] Internal traffic filter for our own IPs
-- [ ] Google Search Console linked to the property
+- [x] Google Search Console linked (domain property ahromlabs.com → stream "Ahrom Labs Web")
 
 ## Findings
 
