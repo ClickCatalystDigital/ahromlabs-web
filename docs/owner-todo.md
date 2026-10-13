@@ -13,7 +13,14 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
 - [ ] **Disk space:** about 1.2 GB was free on 13 Oct 2026; local demo testing needs about 5 GB.
 
-- [ ] **AI assistant in the demos: decide.** It is switched off in all three demos (it calls OpenRouter on a paid key). To turn it on: create a separate OpenRouter key with a hard monthly limit (for example $5), and Claude wires it in with a per-visitor rate limit, chat only (never the settings).
+- [ ] **AI in the demos: add the key.** Built: two free questions per visitor, then a lock and a "set it up for your business" overlay; data answers on. The button stays hidden until a key exists. Create one OpenRouter key with a hard monthly limit (e.g. $5) and store it in both demo Workers:
+  - SB Ops (in shanti-ops): `npx wrangler secret put DEMO_OPENROUTER_KEY`
+  - LS Inventory (in ls-inventory): `npx wrangler secret put OPEN_ROUTER_KEY -c wrangler.demo.jsonc`
+- [ ] **LS Inventory pipeline secrets** (GitHub repo ClickCatalystDigital/reel-inventory → Settings → Secrets → Actions). Until they exist, a push runs the checks and stops before deploying.
+  - `CLOUDFLARE_API_TOKEN`: the same value as in the shanti-ops repo (Ahrom Labs account).
+  - `CLIENT_CLOUDFLARE_API_TOKEN`: a token with "Edit Cloudflare Workers" on LS Technologies' Cloudflare account (the one serving lstechnologies.in).
+  - `DEMO_DB_TOKEN`: from ls-inventory, run `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`
+- [ ] **Savistar pipeline** (after merging `workers-demo`): secrets `CLOUDFLARE_API_TOKEN` (same as shanti-ops) and `DEMO_DB_TOKEN` (from savistar-ops, `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`), and the variable `CLIENT_URL` = the live app's Render address.
 
 ## Done
 
