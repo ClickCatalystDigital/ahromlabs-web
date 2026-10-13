@@ -12,10 +12,11 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **GA internal traffic:** send Claude the office IP (`curl -s https://api.ipify.org`) so the internal-traffic filter can be set up.
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
 - [ ] **Disk space:** about 1.2 GB was free on 13 Oct 2026; local demo testing needs about 5 GB.
-- [ ] **Savistar pipeline secrets** (repo ClickCatalystDigital/savistar-ops): secrets `CLOUDFLARE_API_TOKEN` (same as shanti-ops) and `DEMO_DB_TOKEN` (from the savistar-ops folder, `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`), and the variable `CLIENT_URL` = the live app's Render address.
+
+- [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
 
 ## Done
 
 - [x] Demo AI keys added (SB Ops, LS Inventory) and tested live; LS pipeline secrets added (13 Oct 2026).
-- [x] Savistar merged to Next 15 + React 19 (PR #1, 13 Oct 2026).
+- [x] Savistar merged to Next 15 + React 19 (PR #1, 13 Oct 2026); live on Render (commit b83ae09); pipeline secrets and CLIENT_URL set.
 - [x] GA4 property, Measurement ID, `GA_API_SECRET`, custom dimensions, Search Console link (13 Oct 2026). See `docs/analytics-strategy.md`.
