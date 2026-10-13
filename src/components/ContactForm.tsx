@@ -50,7 +50,7 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      track("generate_lead", { form: "contact" });
+      track("contact_form_sent");
       form.reset();
     } catch (err) {
       setStatus("error");

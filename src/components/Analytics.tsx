@@ -49,7 +49,8 @@ export function Analytics() {
     const onClick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.("a");
       if (a && /\.ahromlabs\.com$/.test(a.hostname) && a.hostname !== "ahromlabs.com") {
-        track("demo_click", { demo: a.hostname, from: location.pathname });
+        // One event per demo: boiler-erp.ahromlabs.com -> boiler_demo_click (docs/analytics-strategy.md).
+        track(`${a.hostname.split(".")[0].replace(/-erp$/, "").replace(/\W/g, "_")}_demo_click`, { from: location.pathname });
       }
     };
     document.addEventListener("click", onClick);

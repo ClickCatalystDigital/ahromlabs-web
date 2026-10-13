@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendLeadEmail } from "@/lib/lead-email";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -28,33 +29,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Enter a message." }, { status: 400 });
   }
 
-  const { RESEND_API_KEY, RESEND_FROM, CONTACT_TO } = process.env;
-
-  if (!RESEND_API_KEY || !RESEND_FROM || !CONTACT_TO) {
-    console.error("Missing Resend environment configuration.");
-    return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
-  }
-
   try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: RESEND_FROM,
-        to: CONTACT_TO,
-        reply_to: email,
-        subject: "Ahrom Labs: new contact form message",
-        text: `From: ${email}\n\n${message}`,
-      }),
-    });
-
-    if (!response.ok) {
-      const detail = await response.text().catch(() => "");
-      throw new Error(`Resend API error ${response.status}: ${detail}`);
-    }
+    await sendLeadEmail({ subject: "Ahrom Labs: new contact form message", text: `From: ${email}\n\n${message}`, replyTo: email });
   } catch (err) {
     console.error("Failed to send contact email", err);
     return NextResponse.json({ error: "Something went wrong." }, { status: 500 });

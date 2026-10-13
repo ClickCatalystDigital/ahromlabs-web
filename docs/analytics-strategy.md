@@ -22,16 +22,22 @@ The tag loads only on ahromlabs.com and the demo. It never loads on a client's o
 
 ## Funnel
 
+Each demo has its own event names, so GA reports them apart without filters. Prefix: `boiler` (SB Ops, boiler-erp), `electronics` (Inventory Ops, electronics-erp), `interiors` (Designer Ops, interiors-erp).
+
 | Step | Where | GA4 event |
 |---|---|---|
 | 1. Product or industry page viewed | ahromlabs.com | `page_view` (automatic) |
-| 2. "Try the demo" clicked | ahromlabs.com, any link to a `*.ahromlabs.com` demo | `demo_click` { demo, from } |
-| 3. Demo form sent | boiler-erp.ahromlabs.com/demo | `generate_lead` (mark as key event) |
-| 4. Role chosen inside the demo | demo | `demo_role_selected` { role } |
+| 2. Link into a demo clicked | ahromlabs.com, any link to a `*.ahromlabs.com` demo | `<prefix>_demo_click` { from } |
+| 3. Demo form sent | `<demo>/demo` | `<prefix>_demo_form_sent` (mark as key event) |
+| 4. Login chosen inside the demo | demo | `<prefix>_demo_login` { role } |
 | 5. Pages used in the demo | demo | `page_view` (automatic) |
-| 6. "Start your own trial" clicked | demo, then ahromlabs.com/start | `trial_start` (mark as key event) |
+| 6. AI question answered (2 free per visitor) | SB Ops and Inventory Ops demos | `<prefix>_demo_ai_question` |
+| 7. AI limit reached, overlay shown | SB Ops and Inventory Ops demos | `<prefix>_demo_ai_limit` (strong interest) |
+| 8. "Start your own trial" clicked | demo, then ahromlabs.com/start | `trial_start` (not built yet) |
 
-Also tracked on ahromlabs.com: contact form sent (`generate_lead` { form: "contact" }), WebMCP tool used (`webmcp_tool` { tool }).
+Also tracked on ahromlabs.com: contact form sent (`contact_form_sent`, mark as key event), WebMCP tool used (`webmcp_tool` { tool }).
+
+Every demo form and the contact form are also emailed to `LEADS_TO` (ahromlabs@gmail.com, `wrangler.jsonc`): the demos call `ahromlabs.com/api/demo-lead` with the shared `DEMO_LEAD_KEY`.
 
 ## AI agents
 

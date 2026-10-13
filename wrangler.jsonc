@@ -15,5 +15,8 @@
   // avoid a paid Cloudflare Images dependency for a handful of small assets.
   "observability": {
     "enabled": true
-  }
+  },
+  // Where form leads are emailed (src/lib/lead-email.ts). Not secret. Secrets: RESEND_API_KEY, RESEND_FROM,
+  // DEMO_LEAD_KEY (shared with the three demo Workers).
+  "vars": { "LEADS_TO": "ahromlabs@gmail.com" }
 }
