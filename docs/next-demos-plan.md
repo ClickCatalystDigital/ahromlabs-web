@@ -6,7 +6,8 @@ Decided 13 Oct 2026.
 
 - **Done:** SB Ops logo strip (live), Shanti Ops → SB Ops text rename, SB cron Workers moved to `wrangler.jsonc`.
 - **Done:** LS Inventory demo live at electronics-erp.ahromlabs.com (`ls-inventory` SYSTEM.md §6d), with its nightly reset Worker; linked from the electronics industry page, /work and llms.txt.
-- **Next:** Savistar Ops demo at interiors-erp.ahromlabs.com. Pujan chose to port the app to Cloudflare Workers (Next 15 + OpenNext, like SB Ops) rather than a second Render service. Do the port on a branch and keep the live Render deploy untouched until it is proven.
+- **Done:** Savistar Ops demo live at interiors-erp.ahromlabs.com, from the `workers-demo` branch of savistar-ops (Next 15 + React 19, Workers via OpenNext, nightly reset). Details: savistar-ops `DEMO.md` on that branch. The live Render app still runs `main` (Next 14) until the branch is merged.
+- **Done:** all three demos linked from their industry pages, /work and llms.txt.
 - **Later:** golden demo data is dated when seeded, so "today" views empty out over weeks; re-seed each demo every month or two, or teach the reset Workers to shift dates.
 
 

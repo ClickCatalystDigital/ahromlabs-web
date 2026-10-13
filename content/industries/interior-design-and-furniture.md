@@ -48,8 +48,15 @@ evidence:
   - metric: Vendor and freight charges
     value: Checked against reference rates; deviations flagged
 published: 2026-09-24
-updated: 2026-09-24
+demo:
+  url: https://interiors-erp.ahromlabs.com/demo
+  label: Try the live demo
+updated: 2026-10-13
 ---
+
+## Can I try it before talking to anyone?
+
+Yes. A live demo runs at [interiors-erp.ahromlabs.com](https://interiors-erp.ahromlabs.com/demo) with two made-up sister companies, Acme Interiors and Acme Furniture: projects on site with milestones and site visits, workshop orders with three weeks of worksheet history, vendor POs with deliveries, freight checked against a rate card, GST invoices and a shared cash book. Leave a name and email, pick a login (owner, manager or office staff) and use the real screens. File uploads are switched off there, and the data resets every night, so nothing you do reaches anyone.
 
 ## Why do design firms outgrow spreadsheets and chat?
 

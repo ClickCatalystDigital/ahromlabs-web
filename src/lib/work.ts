@@ -42,6 +42,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "savistar-saag",
+    demo: { url: "https://interiors-erp.ahromlabs.com/demo", label: "Try the live demo" },
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:
