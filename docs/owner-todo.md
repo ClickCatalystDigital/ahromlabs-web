@@ -4,7 +4,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 ## Open
 
-- [ ] **Form email (Cloudflare Email Sending), finish:** (1) confirm the two test emails from 13 Oct 2026 arrived at pujan@ahromlabs.com (subjects "Website enquiry from zz-test@example.com" and "Demo lead: ZZ Test Co (please ignore) (Inventory Ops (electronics-erp))"), including in spam, and that the headers show SPF and DKIM pass; (2) run `npm run deploy` in ahrom-labs; (3) tell Claude, who sends one production test and then deletes the unused `RESEND_API_KEY`, `RESEND_FROM` and `CONTACT_TO` secrets. Resend is no longer used and needs no account.
+- [ ] **CRM password, then deploy:** run `npx wrangler secret put CRM_PASSWORD` in ahrom-labs (choose a long password; keep it in your password manager), then `npm run deploy`. Then open https://ahromlabs.com/api/crm (any username). Until the secret exists the page answers 404.
 - [ ] **Savistar live check after the Next 15 upgrade** (merged 13 Oct 2026, PR #1): once Render shows the deploy finished, open the live app and check sign-in, a client page and an invoice PDF.
 - [ ] **Savistar: confirm `SESSION_SECRET` is set on Render.** `lib/auth.js` falls back to a fixed string when it's missing, which would let anyone forge a login. Once confirmed, the fallback can be removed.
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.
@@ -17,6 +17,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 ## Done
 
+- [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).
 - [x] Demo AI keys added (SB Ops, LS Inventory) and tested live; LS pipeline secrets added (13 Oct 2026).
 - [x] Savistar merged to Next 15 + React 19 (PR #1, 13 Oct 2026); live on Render (commit b83ae09); pipeline secrets and CLIENT_URL set.
 - [x] GA4 property, Measurement ID, `GA_API_SECRET`, custom dimensions, Search Console link (13 Oct 2026). See `docs/analytics-strategy.md`.

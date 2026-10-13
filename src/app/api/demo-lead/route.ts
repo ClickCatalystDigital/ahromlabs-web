@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { sendLeadEmail, logSendFailure, underRateLimit } from "@/lib/lead-email";
+import { captureLead, underRateLimit } from "@/lib/lead-email";
 
 // Called by the three live demos (boiler-erp, electronics-erp, interiors-erp .ahromlabs.com) when a visitor
-// fills in the demo entry form, so each lead arrives by email as well as in that demo's leads database.
+// fills in the demo entry form, so each lead lands in our CRM and inbox as well as in that demo's leads database.
 // Server to server only: the demos send the shared DEMO_LEAD_KEY (a Worker secret on all four). The demo has
 // already saved the lead, so a failure here is logged by the demo and never blocks the visitor.
 const DEMOS: Record<string, string> = { boiler: "SB Ops (boiler-erp)", electronics: "Inventory Ops (electronics-erp)", interiors: "Designer Ops (interiors-erp)" };
@@ -21,17 +21,13 @@ export async function POST(request: Request) {
   if (!(await underRateLimit(`demo-lead:${demoKey}`)) || !(await underRateLimit(`demo-lead:${lead.email.toLowerCase()}`))) {
     return NextResponse.json({ error: "Rate limited" }, { status: 429 });
   }
-  try {
-    await sendLeadEmail({
-      form: `demo-lead:${demoKey}`,
-      subject: `Demo lead: ${lead.company} (${demo})`,
-      replyTo: lead.email,
-      intro: `New visitor on the ${demo} live demo.`,
-      fields: [["Name", lead.name], ["Company", lead.company], ["Email", lead.email], ["Phone", lead.phone], ["About their business", lead.about]],
-    });
-  } catch (err) {
-    logSendFailure(`demo-lead:${demoKey}`, err);
-    return NextResponse.json({ error: "Could not send" }, { status: 502 });
-  }
+  const kept = await captureLead({ source: `demo:${demoKey}`, ...lead }, {
+    form: `demo-lead:${demoKey}`,
+    subject: `Demo lead: ${lead.company} (${demo})`,
+    replyTo: lead.email,
+    intro: `New visitor on the ${demo} live demo.`,
+    fields: [["Name", lead.name], ["Company", lead.company], ["Email", lead.email], ["Phone", lead.phone], ["About their business", lead.about]],
+  });
+  if (!kept) return NextResponse.json({ error: "Could not save or send" }, { status: 502 });
   return NextResponse.json({ ok: true });
 }

@@ -16,6 +16,7 @@ All under `src/app/`.
 - `/llms.txt` (`route.ts`, `force-static`) — the AI-crawler-facing summary. **Generated**, not hand-written: prose header/footer are template literals in the route, the note and pattern lists come from `getContent()` sorted newest-first. Replaced `public/llms.txt` (2026-09-05), which had been hand-maintained and had already drifted one note behind. Note the trap: the `ASSETS` binding is served ahead of the Worker, so a leftover `public/llms.txt` would silently shadow this route and keep serving the stale copy — the static file had to be deleted, not merely superseded.
 - `/approach`, `/systems`, `/about`, and every note/pattern detail page end in the shared `ClosingCta` component.
 - `/api/contact` (POST) — see **Contact form** below.
+- `/api/crm` — the CRM (every lead, status and notes). See **CRM** below.
 - `error.tsx`, `not-found.tsx` — error/404 boundaries, same `SiteNav`/`SiteFooter` shell as every page.
 - SEO/meta: `manifest.ts`, `robots.ts`, `sitemap.ts`, root `opengraph-image.tsx`. Each of `about/`, `approach/`, `systems/`, `notes/`, `patterns/`, and every `notes/[slug]`/`patterns/[slug]` also has its own `opengraph-image.tsx`, all built on the shared `renderOgImage()` helper (`src/lib/og-image.tsx`).
   - `sitemap.ts` includes every note/pattern URL with a real per-entry `lastModified` from frontmatter. `/systems`, `/notes`, `/patterns` derive theirs from the newest `updated` in the kind they list. `/`, `/approach`, `/about` deliberately carry **no** `lastModified` — they have no date source, and stamping build time (as this did until 2026-09-05) made every deploy claim all six static pages had changed.
@@ -50,13 +51,24 @@ A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML 
 2. Honeypot: a hidden `company` field. If filled, silently returns `{ ok: true }` without sending anything (bot never gets a signal to keep trying).
 3. Validates the email (format, at most 254 characters) and the message (not empty, at most 5,000 characters).
 4. Rate limit: `FORM_LIMITER` (Workers rate-limit binding, 5 per minute) keyed on the visitor's IP, checked after validation.
-5. Sends through `src/lib/lead-email.ts`: `env.EMAIL.send()` from `website@notify.ahromlabs.com` to `LEADS_TO` (pujan@ahromlabs.com), Reply-To the visitor, plain text plus HTML. On failure it logs `lead_email_failed` (form and error code only, addresses masked) and returns 502 with a message telling the visitor to email pujan@ahromlabs.com: it never reports success when sending failed. A success logs `lead_email_sent` with Cloudflare's message id.
+5. `captureLead()` in `src/lib/lead-email.ts` first saves the lead to the CRM database (see **CRM**), then sends: `env.EMAIL.send()` from `website@notify.ahromlabs.com` to `LEADS_TO` (pujan@ahromlabs.com), Reply-To the visitor, plain text plus HTML. A failed send logs `lead_email_failed` (form and error code only, addresses masked) and marks the CRM row `email_status = failed`; the visitor is still told "received", because the lead is kept. Only when both the save and the email fail does it return 502, with a message telling the visitor to email pujan@ahromlabs.com: it never reports success when the lead was lost. A success logs `lead_email_sent` with Cloudflare's message id; a failed save logs `lead_save_failed`.
 
 **Email Sending setup.** Only the subdomain `notify.ahromlabs.com` is onboarded (`wrangler email sending enable notify.ahromlabs.com`). Its records: MX, SPF TXT on `cf-bounce.notify`, DKIM on `cf-bounce._domainkey.notify`, and `_dmarc.notify` (`p=reject`). The root domain's Google Workspace records (MX, SPF, `google._domainkey`, `_dmarc` with `p=none`) are untouched, which is why the root domain was not onboarded: onboarding writes its own `_dmarc`. The binding only allows that sender and that one destination. Workers Paid includes 3,000 sends a month, then $0.35 per 1,000.
 
 **Demo leads.** `src/app/api/demo-lead/route.ts` uses the same helper for the three live demos' entry forms (shared `DEMO_LEAD_KEY`; rate-limited per demo and per visitor email).
 
 **Testing locally.** `next dev` has no `EMAIL` binding, so a send fails there (by design, it says so). To send real mail, build (`opennextjs-cloudflare build`) and run `wrangler dev` with a copy of `wrangler.jsonc` that adds `"remote": true` to the `EMAIL` binding and drops `routes`. Point `LEADS_TO` at a forbidden address (`--var LEADS_TO:x@example.com`) to test the failure path and the rate limit without sending anything.
+
+## CRM (`/api/crm`, D1 `ahrom-crm`)
+
+Every form lead (contact form and all three demos) is a row in the D1 table `leads` (binding `CRM`, schema `migrations/0001_leads.sql`), saved before the email goes out, so nothing is lost when an email fails. Columns: source, name, company, email, phone, about, message, page, `email_status` (pending, sent, failed), `status` (new, contacted, qualified, won, lost, spam), notes.
+
+- **View and update:** https://ahromlabs.com/api/crm, HTTP Basic auth, any username, password = the `CRM_PASSWORD` Worker secret (`npx wrangler secret put CRM_PASSWORD`). Without that secret the page answers 404. Wrong passwords are rate-limited (5 a minute per IP). Each lead has a status and notes; the top line shows how many are still `new` and flags any lead whose email did not go out.
+- **Safety:** `noindex`, `no-store`, no framing, and updates only from the page itself (Origin check), since browsers resend Basic auth on cross-site posts.
+- **Query directly:** `npx wrangler d1 execute ahrom-crm --remote --command "SELECT * FROM leads ORDER BY id DESC LIMIT 20"`.
+- **Schema changes:** add `migrations/000N_*.sql`, then `npx wrangler d1 migrations apply ahrom-crm --remote` before deploying.
+- **Testing locally:** `npx wrangler d1 migrations apply ahrom-crm --local`, build, `wrangler dev --local` (emails are simulated and written under `.wrangler/tmp/email`), `CRM_PASSWORD` in `.dev.vars`.
+- **Cost:** D1 is within the Workers Paid allowance (5 GB, 25 billion row reads a month); form leads use a tiny fraction.
 
 Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`idle`/`submitting`/`success`/`error`) form with a `useId`-based accessible label/error wiring and the same honeypot field, tab-indexed out (`tabIndex={-1}`) and visually hidden.
 
@@ -115,6 +127,7 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
 ## Env vars / config
 
 - `.env.example` — notes only: form mail needs no API key (Cloudflare Email Sending binding; recipient `LEADS_TO` in `wrangler.jsonc`).
+- Worker secrets: `DEMO_LEAD_KEY`, `GA_API_SECRET`, `CRM_PASSWORD`. The Resend secrets were deleted on 13 Oct 2026.
 - `.dev.vars` — same three vars, used by `wrangler`/OpenNext for local `npm run preview`; gitignored, holds real local secrets. Production secrets are set via `wrangler secret put`, not this file.
 - `tsconfig.json` — `@/*` path alias maps to `./src/*` (source of every `@/components/...`, `@/lib/...` import).
 

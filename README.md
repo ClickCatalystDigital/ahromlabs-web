@@ -17,19 +17,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Contact form
+## Contact form and CRM
 
-`/api/contact` sends mail via SMTP using `nodemailer`. Requires these environment variables (see `.env.example`):
-
-```
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
-CONTACT_TO=
-```
-
-Without them set, the route logs an error and returns a generic failure to the client rather than throwing.
+`/api/contact` and `/api/demo-lead` save each lead to the D1 CRM database and email it with Cloudflare Email Sending; no API keys. Leads are viewed at `/api/crm`. Details in `SYSTEM.md` (**Contact form**, **CRM**).
 
 ## Design system
 

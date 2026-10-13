@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { sendLeadEmail, logSendFailure, underRateLimit } from "@/lib/lead-email";
+import { captureLead, underRateLimit } from "@/lib/lead-email";
 
-// Contact form (components/ContactForm.tsx) -> email to LEADS_TO via Cloudflare Email Sending (lib/lead-email.ts).
+// Contact form (components/ContactForm.tsx) -> CRM database + email to LEADS_TO (lib/lead-email.ts).
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_EMAIL = 254;
 const MAX_MESSAGE = 5000;
@@ -41,19 +41,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Too many messages from here. Please wait a minute and try again." }, { status: 429 });
   }
 
-  try {
-    await sendLeadEmail({
-      form: "contact",
-      subject: `Website enquiry from ${email}`,
-      replyTo: email,
-      intro: "New message from the contact form on ahromlabs.com.",
-      fields: [["Email", email], ["Page", request.headers.get("referer") || "-"]],
-      message,
-    });
-  } catch (err) {
-    logSendFailure("contact", err);
-    return NextResponse.json({ error: SEND_FAILED }, { status: 502 });
-  }
+  const page = request.headers.get("referer") || "";
+  const kept = await captureLead({ source: "contact", email, message, page }, {
+    form: "contact",
+    subject: `Website enquiry from ${email}`,
+    replyTo: email,
+    intro: "New message from the contact form on ahromlabs.com.",
+    fields: [["Email", email], ["Page", page || "-"]],
+    message,
+  });
+  if (!kept) return NextResponse.json({ error: SEND_FAILED }, { status: 502 });
 
   return NextResponse.json({ ok: true });
 }

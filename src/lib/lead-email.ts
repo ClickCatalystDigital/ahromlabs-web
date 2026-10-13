@@ -1,5 +1,6 @@
-// Emails a lead to our inbox with Cloudflare Email Sending (the EMAIL binding in wrangler.jsonc): the contact
-// form (api/contact) and the three live demos' entry forms (api/demo-lead).
+// Keeps every lead: saved to the CRM database (D1 binding CRM, schema in migrations/) and then emailed to our
+// inbox with Cloudflare Email Sending (the EMAIL binding in wrangler.jsonc). Used by the contact form
+// (api/contact) and the three live demos' entry forms (api/demo-lead). The CRM is read at /api/crm.
 //
 // Sent from website@notify.ahromlabs.com. Only that subdomain is onboarded to Email Sending (its records sit
 // under notify.ahromlabs.com), so the root domain's Google Workspace MX, SPF, DKIM and DMARC are untouched.
@@ -11,9 +12,10 @@ const FROM = { email: "website@notify.ahromlabs.com", name: "Ahrom Labs website"
 
 type SendEmail = { send(message: Record<string, unknown>): Promise<{ messageId: string }> };
 type RateLimit = { limit(options: { key: string }): Promise<{ success: boolean }> };
-type Env = { EMAIL?: SendEmail; LEADS_TO?: string; FORM_LIMITER?: RateLimit };
+type D1 = { prepare(sql: string): { bind(...v: unknown[]): { run(): Promise<{ meta: { last_row_id: number } }>; all<T>(): Promise<{ results: T[] }> } } };
+type Env = { EMAIL?: SendEmail; LEADS_TO?: string; FORM_LIMITER?: RateLimit; CRM?: D1; CRM_PASSWORD?: string };
 
-async function env(): Promise<Env> {
+export async function env(): Promise<Env> {
   return (await getCloudflareContext({ async: true })).env as unknown as Env;
 }
 
@@ -46,4 +48,31 @@ export async function sendLeadEmail({ form, subject, replyTo, intro, fields, mes
 export function logSendFailure(form: string, err: unknown) {
   const e = err as { code?: string; message?: string };
   console.error(JSON.stringify({ event: "lead_email_failed", form, code: e?.code ?? null, error: String(e?.message ?? err).replace(/[^\s@<>]+@[^\s@<>]+/g, "<email>").slice(0, 200) }));
+}
+
+export type Lead = { source: string; email: string; name?: string; company?: string; phone?: string; about?: string; message?: string; page?: string };
+
+// Saves the lead, then emails it. Returns true when the lead was kept by at least one of the two, so the
+// visitor is told "received" only when that is true. Each failure is logged (without visitor details) and the
+// CRM row shows whether the email went out.
+export async function captureLead(lead: Lead, email: Parameters<typeof sendLeadEmail>[0]): Promise<boolean> {
+  const { CRM } = await env();
+  let id: number | null = null;
+  try {
+    if (!CRM) throw new Error("CRM binding is not configured");
+    const r = await CRM.prepare("INSERT INTO leads (source, name, company, email, phone, about, message, page) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+      .bind(lead.source, lead.name || null, lead.company || null, lead.email, lead.phone || null, lead.about || null, lead.message || null, lead.page || null).run();
+    id = r.meta.last_row_id;
+  } catch (err) {
+    console.error(JSON.stringify({ event: "lead_save_failed", form: lead.source, error: String((err as Error)?.message ?? err).slice(0, 200) }));
+  }
+  let sent = false;
+  try {
+    await sendLeadEmail(email);
+    sent = true;
+  } catch (err) {
+    logSendFailure(email.form, err);
+  }
+  if (id && CRM) await CRM.prepare("UPDATE leads SET email_status = ? WHERE id = ?").bind(sent ? "sent" : "failed", id).run().catch(() => {});
+  return sent || id !== null;
 }
