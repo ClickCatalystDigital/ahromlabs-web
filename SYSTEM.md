@@ -94,7 +94,7 @@ Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`i
 
 Layout primitives live in `src/app/globals.css`:
 
-- `.rail` — max-width (72rem) + horizontal padding, shared by every section, nav, and footer, so headings share one left edge across routes.
+- `.rail` — max-width (90rem) + horizontal padding (1.5rem on phones, 2.5rem from 48rem), shared by every section, nav, and footer, so headings share one left edge across routes.
 - `.prose-measure` — 65ch reading width.
 - `.section` — vertical rhythm (padding-block).
 
