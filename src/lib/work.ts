@@ -23,6 +23,7 @@ export type Engagement = {
 export const engagements: Engagement[] = [
   {
     slug: "ls-technologies",
+    demo: { url: "https://electronics-erp.ahromlabs.com/demo", label: "Try the live demo" },
     client: "LS Technologies",
     industry: "Electronics-components import/export trading",
     built:
