@@ -12,7 +12,7 @@ Living document. Update it when the funnel, events or tools change, and note wha
 
 | Tool | Use | Status |
 |---|---|---|
-| Google Analytics 4, property "Ahrom Labs", `G-BC080TXMMZ` | People on ahromlabs.com and boiler-erp.ahromlabs.com | Live on ahromlabs.com; demo to do |
+| Google Analytics 4, property "Ahrom Labs", `G-BC080TXMMZ` | People on ahromlabs.com and boiler-erp.ahromlabs.com | ahromlabs.com and the demo |
 | GA4 Measurement Protocol (server-side) | AI agent visits and `llms.txt` / `knowledge.json` fetches, logged from `proxy.ts` | Built; sends once `GA_API_SECRET` is set |
 | PostHog | Session replay and in-product paths inside the demo | Not yet. Add if GA4 can't explain where demo users drop off |
 
@@ -55,7 +55,7 @@ Agents such as GPTBot, ClaudeBot and PerplexityBot don't run JavaScript, so the 
 
 - [x] GA4 property "Ahrom Labs" created, web stream for `https://ahromlabs.com`
 - [x] Measurement ID in `src/lib/analytics.ts` (public value)
-- [ ] Tag, consent bar and funnel events on the demo (shanti-ops, demo mode only)
+- [x] Tag, consent bar and funnel events on the demo (shanti-ops `components/DemoAnalytics.jsx`, demo mode only); `trial_start` waits for the trial button
 - [ ] Measurement Protocol API secret stored as a Cloudflare secret (`GA_API_SECRET`), never committed
 - [ ] Key events marked: `generate_lead`, `trial_start`
 - [ ] Custom dimensions registered: `agent`, `path`, `demo`, `from`, `form`, `tool`, `role`
