@@ -4,7 +4,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 ## Open
 
-- [ ] **Deploy ahromlabs.com** (`npm run deploy` in ahrom-labs): the electronics and interiors demo links, the lead emails to ahromlabs@gmail.com (contact form and all three demos) and the new event names are committed but not live until then. Until it is deployed, the contact form still emails the old CONTACT_TO address and demo lead emails fail quietly (leads are still saved).
+- [ ] **Deploy ahromlabs.com** (`npm run deploy` in ahrom-labs): the electronics and interiors demo links, the lead emails to pujan@ahromlabs.com (contact form and all three demos) and the new event names are committed but not live until then. Until it is deployed, the contact form still emails the old CONTACT_TO address and demo lead emails fail quietly (leads are still saved).
 - [ ] **Savistar live check after the Next 15 upgrade** (merged 13 Oct 2026, PR #1): once Render shows the deploy finished, open the live app and check sign-in, a client page and an invoice PDF.
 - [ ] **Savistar: confirm `SESSION_SECRET` is set on Render.** `lib/auth.js` falls back to a fixed string when it's missing, which would let anyone forge a login. Once confirmed, the fallback can be removed.
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.

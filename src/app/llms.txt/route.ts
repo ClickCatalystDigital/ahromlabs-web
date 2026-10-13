@@ -57,7 +57,7 @@ const FOOTER = `
 Ahrom Labs is a services business, not a SaaS product. There is no self-serve
 signup or rate card: work is quoted as fixed-price phases after a modeling
 phase (see /engagement). Engagement starts by contacting us through the form
-on the home page or at hello@ahromlabs.com.
+on the home page or at pujan@ahromlabs.com.
 `;
 
 // `answer` comes from YAML folded scalars, so it arrives with embedded newlines

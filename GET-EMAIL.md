@@ -1,3 +1,5 @@
+> **Superseded 13 Oct 2026:** Ahrom Labs now has a real domain mailbox, **pujan@ahromlabs.com**, used everywhere (site footer, structured data, llms.txt, and where form leads are emailed). The hello@ forwarding setup below is no longer used.
+
 To receive and reply to emails as **hello@ahromlabs.com** directly inside your personal Gmail inbox for free, set up **Cloudflare Email Routing** (inbound) and pair it with a free SMTP service like **Brevo** (outbound).
 
 ---

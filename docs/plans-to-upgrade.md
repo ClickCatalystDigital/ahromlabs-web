@@ -13,7 +13,7 @@ Status: **items 1–11 shipped and deployed** (commit `381ef33`), plus a second 
 
 | Decision | Answer |
 |---|---|
-| Public contact email | `hello@ahromlabs.com` — footer mailto + `Organization.email`. Verified live 2026-09-05: receives via Cloudflare Email Routing, authorized to send via SPF. |
+| Public contact email | `pujan@ahromlabs.com` since 13 Oct 2026 (domain mailbox; was `hello@ahromlabs.com`) — footer mailto + `Organization.email`. Verified live 2026-09-05: receives via Cloudflare Email Routing, authorized to send via SPF. |
 | Location | City + region, no street: Ahmedabad, Gujarat, IN |
 | Founder visibility | Named on `/about` and bylined on all 18 note/pattern pages |
 

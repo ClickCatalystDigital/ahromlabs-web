@@ -37,7 +37,7 @@ Each demo has its own event names, so GA reports them apart without filters. Pre
 
 Also tracked on ahromlabs.com: contact form sent (`contact_form_sent`, mark as key event), WebMCP tool used (`webmcp_tool` { tool }).
 
-Every demo form and the contact form are also emailed to `LEADS_TO` (ahromlabs@gmail.com, `wrangler.jsonc`): the demos call `ahromlabs.com/api/demo-lead` with the shared `DEMO_LEAD_KEY`.
+Every demo form and the contact form are also emailed to `LEADS_TO` (pujan@ahromlabs.com, `wrangler.jsonc`): the demos call `ahromlabs.com/api/demo-lead` with the shared `DEMO_LEAD_KEY`.
 
 ## AI agents
 

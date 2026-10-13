@@ -10,8 +10,8 @@ export function SiteFooter() {
           </a>
           {/* The contact form is a client component, so this is the only way to
               reach us with JS off — and the only one on pages that aren't /. */}
-          <a href="mailto:hello@ahromlabs.com" className="footer-copyright focus-ring">
-            hello@ahromlabs.com
+          <a href="mailto:pujan@ahromlabs.com" className="footer-copyright focus-ring">
+            pujan@ahromlabs.com
           </a>
           {/* The machine-readable surfaces, linked from every page so an agent
               that lands anywhere can find the whole graph in one hop. */}

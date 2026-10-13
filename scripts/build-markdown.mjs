@@ -42,7 +42,7 @@ function mainContent(html) {
       .replace(/<script[\s\S]*?<\/script>/g, "")
       .replace(/<svg[\s\S]*?<\/svg>/g, "")
       // The contact form is a client component; point at the mailbox instead.
-      .replace(/<form[\s\S]*?<\/form>/g, "<p>Contact: hello@ahromlabs.com</p>")
+      .replace(/<form[\s\S]*?<\/form>/g, "<p>Contact: pujan@ahromlabs.com</p>")
       // Images here are decorative (alt="").
       .replace(/<img[^>]*>/g, "")
       // Card links wrap a heading and a paragraph in one <a>; flattened, that
@@ -91,7 +91,7 @@ for (const file of htmlFiles(APP_DIR)) {
     "",
     "---",
     "",
-    `Machine-readable: [llms.txt](${SITE}/llms.txt) · [knowledge.json](${SITE}/knowledge.json) · Contact: hello@ahromlabs.com`,
+    `Machine-readable: [llms.txt](${SITE}/llms.txt) · [knowledge.json](${SITE}/knowledge.json) · Contact: pujan@ahromlabs.com`,
     "",
   ]
     .filter((line) => line !== null)

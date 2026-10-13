@@ -4,7 +4,7 @@ import { engagements } from "./work";
 
 export const siteUrl = "https://ahromlabs.com";
 
-const contactEmail = "mailto:hello@ahromlabs.com";
+const contactEmail = "mailto:pujan@ahromlabs.com";
 
 // City + region only, deliberately no streetAddress: enough to establish a real
 // place for entity resolution without publishing a working address. Shared by

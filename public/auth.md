@@ -18,5 +18,5 @@ resource, or agent credential flow on this domain. Do not attempt one.
 
 ## Contacting Ahrom Labs
 
-Email hello@ahromlabs.com. The contact form on the home page is for people;
+Email pujan@ahromlabs.com. The contact form on the home page is for people;
 please don't submit it on someone's behalf without their confirmation.
