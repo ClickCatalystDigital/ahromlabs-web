@@ -49,7 +49,7 @@ A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML 
 1. Parses JSON body; requires `email` and `message` strings.
 2. Honeypot: a hidden `company` field. If filled, silently returns `{ ok: true }` without sending anything (bot never gets a signal to keep trying).
 3. Validates email format (regex) and non-empty message.
-4. Reads `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO` from env. If any are missing, logs an error server-side and returns a generic 500 to the client.
+4. Sends through `src/lib/lead-email.ts`, which reads `RESEND_API_KEY`, `RESEND_FROM` (secrets) and `LEADS_TO` (`wrangler.jsonc` vars, pujan@ahromlabs.com) from env. The three live demos' entry forms use the same helper through `src/app/api/demo-lead/route.ts` (shared `DEMO_LEAD_KEY`). The Resend account belongs to pujan@ahromlabs.com, and the `ahromlabs.com` domain must be verified there or Resend refuses to send. If any are missing, logs an error server-side and returns a generic 500 to the client.
 5. POSTs to `https://api.resend.com/emails` with `Authorization: Bearer ${RESEND_API_KEY}`, `reply_to` set to the visitor's email. On failure, logs and returns a generic 500 — never throws to the client, never leaks provider error detail.
 
 Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`idle`/`submitting`/`success`/`error`) form with a `useId`-based accessible label/error wiring and the same honeypot field, tab-indexed out (`tabIndex={-1}`) and visually hidden.
@@ -108,7 +108,7 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
 
 ## Env vars / config
 
-- `.env.example` — template for local `.env.local`: `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
+- `.env.example` — template for local `.env.local`: `RESEND_API_KEY`, `RESEND_FROM` (the recipient is `LEADS_TO` in `wrangler.jsonc`).
 - `.dev.vars` — same three vars, used by `wrangler`/OpenNext for local `npm run preview`; gitignored, holds real local secrets. Production secrets are set via `wrangler secret put`, not this file.
 - `tsconfig.json` — `@/*` path alias maps to `./src/*` (source of every `@/components/...`, `@/lib/...` import).
 
