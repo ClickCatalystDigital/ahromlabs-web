@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
+import { track } from "@/lib/analytics";
 
 // Declarative WebMCP: a browser agent can fill this form as a tool. No toolautosubmit,
 // so the person still has to press Send.
@@ -49,6 +50,7 @@ export function ContactForm() {
       }
 
       setStatus("success");
+      track("generate_lead", { form: "contact" });
       form.reset();
     } catch (err) {
       setStatus("error");

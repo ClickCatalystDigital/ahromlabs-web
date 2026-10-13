@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { track } from "@/lib/analytics";
 
 // WebMCP (docs/knowledge-layer-plan.md Phase 6): read-only tools for browser agents.
 // The contact form declares itself with toolname/tooldescription attributes instead
@@ -44,7 +45,7 @@ export function WebMcpTools() {
             "Search Ahrom Labs' published engineering notes, patterns, industry pages (custom ERP for boiler makers, PCB traders, interior firms) and pricing answers. Returns titles, URLs and short answers.",
           inputSchema: { type: "object", properties: { query: { type: "string", description: "What to look for, e.g. 'IBR forms' or 'Tally integration'" } }, required: ["query"] },
           annotations: { readOnlyHint: true },
-          execute: async ({ query }: { query: string }) => text(search(await load(), String(query ?? ""))),
+          execute: async ({ query }: { query: string }) => (track("webmcp_tool", { tool: "search-ahrom-knowledge" }), text(search(await load(), String(query ?? "")))),
         },
         { signal: ac.signal },
       );
@@ -55,7 +56,7 @@ export function WebMcpTools() {
           inputSchema: { type: "object", properties: {} },
           annotations: { readOnlyHint: true },
           execute: async () =>
-            text((await load()).filter((e) => e.demo).map((e) => ({ system: e.title, demo: e.demo!.url, about: e.url }))),
+            (track("webmcp_tool", { tool: "list-live-demos" }), text((await load()).filter((e) => e.demo).map((e) => ({ system: e.title, demo: e.demo!.url, about: e.url })))),
         },
         { signal: ac.signal },
       );

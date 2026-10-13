@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { GA_ID } from "@/lib/analytics";
 
 // Cross-checked against the ai-robots-txt project's live list, not guessed.
 const AI_CRAWLERS = [
@@ -33,6 +34,26 @@ const DISCOVERY_LINKS = [
   `<${SITE}/.well-known/api-catalog>; rel="api-catalog"`,
 ];
 
+// AI agents don't run JavaScript, so the GA tag never sees them. Each hit is also sent to
+// the same GA4 property as a server-side `agent_visit` event (docs/analytics-strategy.md).
+// Skipped quietly until the GA_API_SECRET Worker secret exists.
+async function recordAgent(agent: string, path: string) {
+  try {
+    const { env, ctx } = await getCloudflareContext({ async: true });
+    const secret = (env as { GA_API_SECRET?: string }).GA_API_SECRET;
+    if (!secret) return;
+    ctx.waitUntil(
+      fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${GA_ID}&api_secret=${secret}`, {
+        method: "POST",
+        // One client per agent name: GA then counts agents, not requests, as users.
+        body: JSON.stringify({ client_id: `agent.${agent}`, events: [{ name: "agent_visit", params: { agent, path } }] }),
+      }).catch(() => {}),
+    );
+  } catch {
+    // next dev without the Cloudflare context: nothing to send.
+  }
+}
+
 // True when the client ranks text/markdown at least as high as text/html.
 // Browsers never send text/markdown, so they always get HTML.
 function prefersMarkdown(accept: string): boolean {
@@ -61,6 +82,7 @@ export async function proxy(request: NextRequest) {
   if (!isPage(pathname)) {
     if (bot) {
       console.log(JSON.stringify({ event: "ai_crawler_hit", bot, path: pathname, ua }));
+      await recordAgent(bot, pathname);
     }
     return NextResponse.next();
   }
@@ -68,6 +90,7 @@ export async function proxy(request: NextRequest) {
   const markdown = prefersMarkdown(request.headers.get("accept") ?? "");
   if (bot || markdown) {
     console.log(JSON.stringify({ event: "ai_crawler_hit", bot: bot ?? "markdown-agent", path: pathname, ua, markdown }));
+    await recordAgent(bot ?? "markdown-agent", pathname);
   }
 
   // Canonical matches each page's own <link rel="canonical"> (no trailing slash on /).

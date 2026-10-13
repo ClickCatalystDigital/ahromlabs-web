@@ -505,3 +505,50 @@ main :not(pre) > code {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+
+/* ---------- Analytics consent bar ---------- */
+
+.consent-bar {
+  position: fixed;
+  inset-inline: 1rem;
+  bottom: 1rem;
+  z-index: 50;
+  max-width: 34rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
+  background: var(--background);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--foreground-secondary);
+}
+
+.consent-bar p {
+  flex: 1 1 16rem;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.consent-primary,
+.consent-secondary {
+  border-radius: var(--radius);
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+}
+
+.consent-primary {
+  background: var(--accent);
+  color: var(--background);
+}
+
+.consent-secondary {
+  border: 1px solid var(--line-strong);
+  color: var(--foreground);
+}
