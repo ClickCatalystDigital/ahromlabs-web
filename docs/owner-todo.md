@@ -20,7 +20,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
   - `CLOUDFLARE_API_TOKEN`: the same value as in the shanti-ops repo (Ahrom Labs account).
   - `CLIENT_CLOUDFLARE_API_TOKEN`: a token with "Edit Cloudflare Workers" on LS Technologies' Cloudflare account (the one serving lstechnologies.in).
   - `DEMO_DB_TOKEN`: from ls-inventory, run `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`
-- [ ] **Savistar pipeline** (after merging `workers-demo`): secrets `CLOUDFLARE_API_TOKEN` (same as shanti-ops) and `DEMO_DB_TOKEN` (from savistar-ops, `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`), and the variable `CLIENT_URL` = the live app's Render address.
+- [ ] **Savistar pipeline** (after merging `workers-demo`): secrets `CLOUDFLARE_API_TOKEN` (same as shanti-ops) and `DEMO_DB_TOKEN` (from the savistar-ops-workers folder, `grep TURSO_GROUP_TOKEN .demo-secrets | cut -d= -f2 | gh secret set DEMO_DB_TOKEN`), and the variable `CLIENT_URL` = the live app's Render address.
 
 ## Done
 
