@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "Approach",
+  title: "Approach: map the business, then build the system",
   description:
     "How Ahrom Labs maps your business before automating it, and builds the whole workflow once instead of a patch per department.",
   alternates: { canonical: "/approach" },

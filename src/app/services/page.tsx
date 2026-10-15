@@ -8,7 +8,7 @@ import { services, layers, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
 
 const description =
-  "Operations and accounting systems for Indian manufacturers and trading groups: custom ERP and CRM, TallyPrime integration, multi-company finance, analytics, AI document extraction, and search across your drawings, certificates and past quotations (RAG) — on one data model.";
+  "Custom ERP and CRM, TallyPrime integration, multi-company finance, AI document extraction and document search for Indian manufacturers and traders.";
 
 export const metadata: Metadata = {
   title: "Services: custom ERP, CRM, analytics, RAG and AI systems",

@@ -132,7 +132,12 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
               )}
             </p>
           </div>
-          {Figure && <Figure intensity={0.5} play aria-hidden className="hairline-figure hidden lg:col-span-5 lg:block" />}
+          {/* Wrapper carries the breakpoint: the figure's own unlayered display:block beats Tailwind's layered .hidden. */}
+          {Figure && (
+            <div className="hidden lg:col-span-5 lg:block">
+              <Figure intensity={0.5} play aria-hidden className="hairline-figure" />
+            </div>
+          )}
         </section>
 
         {industry.evidence && industry.evidence.length > 0 && (

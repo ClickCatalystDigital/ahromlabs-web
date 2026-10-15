@@ -12,7 +12,7 @@ import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 
 const description =
-  "Ahrom Labs builds operations and accounting systems for Indian manufacturers and trading groups: BOMs, shop floor, IBR, GST and TDS compliance, and TallyPrime in one system — plus analytics, AI document extraction and search across your documents, built on one model of your business.";
+  "Custom ERP for Indian manufacturers and trading groups: BOMs, shop floor, IBR, GST and TDS compliance and TallyPrime in one system. Built in Ahmedabad.";
 
 export const metadata: Metadata = {
   // The homepage <title> is the single strongest signal of what this site is

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About: industrial systems engineering in Ahmedabad",
   description:
     "Ahrom Labs is an industrial systems engineering practice: we map how a factory or trading house actually runs, then build the systems it runs on.",
   alternates: { canonical: "/about" },
