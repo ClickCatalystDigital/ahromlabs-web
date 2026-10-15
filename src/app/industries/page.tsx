@@ -4,6 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
+import { HoverVideo } from "@/components/HoverVideo";
 import { getContent } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 
@@ -57,6 +58,7 @@ export default function IndustriesPage() {
                     href={`/industries/${i.slug}`}
                     className="focus-ring block border-t border-line pt-6"
                   >
+                    <HoverVideo base={`/industries/${i.slug}`} />
                     <h2 className="text-lg font-medium text-foreground">{i.title}</h2>
                     <p className="mt-2 leading-relaxed text-foreground-secondary">{i.answer}</p>
                     {clients.length > 0 && (
