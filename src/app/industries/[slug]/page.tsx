@@ -9,6 +9,7 @@ import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
+import { OpenOnWide } from "@/components/OpenOnWide";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
@@ -176,10 +177,15 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         )}
 
         <section className="section border-t border-line">
-          <div className="rail prose-measure">
-            {headings.length > 3 && (
-              <nav aria-label="On this page" className="mb-12 border-b border-line pb-8">
-                <p className="text-sm font-medium text-foreground-secondary">On this page</p>
+          <div className="rail lg:grid lg:grid-cols-[minmax(0,65ch)_minmax(0,16rem)] lg:justify-between lg:gap-16">
+          {/* Contents: collapsed on phones (it ran 500–800px), and on wide screens a
+              sticky column beside the text instead of a block above it. */}
+          {headings.length > 3 && (
+            <nav aria-label="On this page" className="mb-12 border-b border-line pb-6 lg:order-2 lg:mb-0 lg:border-0 lg:pb-0">
+              <OpenOnWide className="group lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+                <summary className="focus-ring cursor-pointer list-none text-sm font-medium text-foreground-secondary lg:pointer-events-none">
+                  On this page <span aria-hidden="true" className="lg:hidden">({headings.length})</span>{" "}<span aria-hidden="true" className="inline-block transition-transform group-open:rotate-90 lg:hidden">›</span>
+                </summary>
                 <ol className="mt-3 space-y-2 text-sm">
                   {headings.map((h) => (
                     <li key={h}>
@@ -189,9 +195,23 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                     </li>
                   ))}
                 </ol>
-              </nav>
-            )}
+              </OpenOnWide>
+            </nav>
+          )}
+          <div className="prose-measure lg:order-1">
             <Markdown components={markdownComponents}>{industry.body}</Markdown>
+
+            {industry.demo && (
+              <div className="mt-12 border-t border-line pt-8">
+                <p className="text-lg text-foreground">See it with a sample company before you talk to anyone.</p>
+                <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
+                    {industry.demo.label}
+                  </a>
+                  <span className="text-sm text-foreground-secondary">Free. Resets every night.</span>
+                </div>
+              </div>
+            )}
 
             <div className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
               <div>
@@ -248,6 +268,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                 </ul>
               </div>
             )}
+          </div>
           </div>
         </section>
 

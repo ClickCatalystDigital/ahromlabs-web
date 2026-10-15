@@ -52,6 +52,15 @@ function mainContent(html) {
           ? inner.replace(/<(h[1-6])([^>]*)>([\s\S]*?)<\/\1>/, `<$1$2><a href="${href}">$3</a></$1>`)
           : whole,
       )
+      // Visual-only bits (a count, a chevron) are aria-hidden; agents skip them too.
+      .replace(/<span[^>]*aria-hidden="true"[^>]*>(?:[^<]|<!--[\s\S]*?-->)*<\/span>/g, "")
+      // Flow steps: the <ol> already numbers them, so drop the "01" marker and
+      // read each as "**Step**: detail".
+      .replace(/<span[^>]*class="flow-index"[^>]*>[\s\S]*?<\/span>/g, "")
+      .replace(/<span[^>]*class="flow-title"[^>]*>([\s\S]*?)<\/span>/g, "<strong>$1</strong>: ")
+      // Inline elements written back to back (a button, then its caption) run
+      // together once tags are stripped; keep a space between them.
+      .replace(/<\/(span|a)>(?=<(span|a)\b)/g, "</$1> ")
       // Evidence lists (<dl>) read best as "label: value" bullets.
       .replace(/<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g, "<li><strong>$1:</strong> $2</li>")
       .replace(/<dl\b[^>]*>/g, "<ul>")
