@@ -15,6 +15,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
 
+- [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): check SPF/DKIM/DMARC for ahromlabs.com in Workspace; start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app.
+
 ## Done
 
 - [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).
