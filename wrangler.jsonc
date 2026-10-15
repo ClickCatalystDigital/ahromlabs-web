@@ -32,7 +32,8 @@
   "ratelimits": [
     { "name": "FORM_LIMITER", "namespace_id": "1002", "simple": { "limit": 5, "period": 60 } }
   ],
-  // CRM (src/lib/crm.ts, /api/crm): every form lead, saved before the email goes out. Schema in migrations/.
+  // CRM: every form lead, saved before the email goes out. Shared with the CRM app (~/Developer/ahrom-crm,
+  // crm.ahromlabs.com); schema migrations from 0003 on live in that repo, not in migrations/ here.
   "d1_databases": [
     { "binding": "CRM", "database_name": "ahrom-crm", "database_id": "cf6df0f6-b74c-45f3-b65c-2608f75fd29e" }
   ],

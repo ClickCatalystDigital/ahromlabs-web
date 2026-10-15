@@ -4,8 +4,25 @@
     {
       "name": "ahrom-labs",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000
+    },
+    {
+      "name": "ahrom-crm",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/pujan/Developer/ahrom-crm",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "port": 3001
     }
   ]
 }
