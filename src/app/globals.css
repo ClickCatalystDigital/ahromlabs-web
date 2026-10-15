@@ -554,3 +554,13 @@ main :not(pre) > code {
   border: 1px solid var(--line-strong);
   color: var(--foreground);
 }
+
+/* Hairline figures (industry pages) drawn in the site's own greys; plates
+   take the page background so they hide what sits behind them. */
+.hairline-figure {
+  --hairline-plate: var(--background);
+  --hairline-hi: var(--foreground);
+  --hairline-edge: var(--foreground-secondary);
+  --hairline-mid: var(--line-strong);
+  --hairline-lo: var(--line);
+}

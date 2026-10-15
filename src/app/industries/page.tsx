@@ -56,7 +56,7 @@ export default function IndustriesPage() {
                   <Link
                     key={i.slug}
                     href={`/industries/${i.slug}`}
-                    className="focus-ring block border-t border-line pt-6"
+                    className="focus-ring block"
                   >
                     <HoverVideo base={`/industries/${i.slug}`} />
                     <h2 className="text-lg font-medium text-foreground">{i.title}</h2>

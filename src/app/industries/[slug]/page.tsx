@@ -9,6 +9,7 @@ import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
+import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -77,10 +78,19 @@ const markdownComponents = {
   a: (props: ComponentProps<"a">) => <a className="text-link focus-ring" {...props} />,
 };
 
+// Decorative line figure beside the hero on wide screens, one per industry.
+const FIGURES: Record<string, typeof Slow> = {
+  "boiler-pressure-vessel-manufacturing": Slow,
+  "electronics-component-trading": Drawer,
+  "interior-design-and-furniture": Hub,
+};
+
 export default async function IndustryPage(props: PageProps<"/industries/[slug]">) {
   const { slug } = await props.params;
   const industry = getContent("industry").find((i) => i.slug === slug)!;
   const edges = resolveIndustryEdges(industry);
+  // ponytail: stock hairline figures; swap boiler for a custom plate-cut figure later.
+  const Figure = FIGURES[industry.slug];
   const headings = [...industry.body.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
 
   return (
@@ -91,35 +101,38 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
       />
       <SiteNav />
       <main className="flex-1">
-        <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
-          <p className="text-sm font-medium text-foreground-secondary">
-            <Link href="/industries" className="focus-ring hover:underline">Industries</Link>
-            {" · "}
-            {industry.audience}
-          </p>
-          <h1 className="display mt-3 text-5xl text-foreground sm:text-6xl">{industry.title}</h1>
-          <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            {industry.answer}
-          </p>
-          {industry.demo && (
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
-                {industry.demo.label}
-              </a>
-              <span className="text-sm text-foreground-secondary">Sample company. Free. Resets every night.</span>
-            </div>
-          )}
-          <p className="mt-6 text-sm text-foreground-secondary">
-            Pujan Motiwala
-            {" · "}
-            <time dateTime={industry.published}>{formatDate(industry.published)}</time>
-            {industry.updated !== industry.published && (
-              <>
-                {" · Updated "}
-                <time dateTime={industry.updated}>{formatDate(industry.updated)}</time>
-              </>
+        <section className="rail grid grid-cols-1 items-center gap-12 pt-16 pb-8 md:pt-24 md:pb-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="text-sm font-medium text-foreground-secondary">
+              <Link href="/industries" className="focus-ring hover:underline">Industries</Link>
+              {" · "}
+              {industry.audience}
+            </p>
+            <h1 className="display mt-3 text-5xl text-foreground sm:text-6xl">{industry.title}</h1>
+            <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
+              {industry.answer}
+            </p>
+            {industry.demo && (
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
+                  {industry.demo.label}
+                </a>
+                <span className="text-sm text-foreground-secondary">Sample company. Free. Resets every night.</span>
+              </div>
             )}
-          </p>
+            <p className="mt-6 text-sm text-foreground-secondary">
+              Pujan Motiwala
+              {" · "}
+              <time dateTime={industry.published}>{formatDate(industry.published)}</time>
+              {industry.updated !== industry.published && (
+                <>
+                  {" · Updated "}
+                  <time dateTime={industry.updated}>{formatDate(industry.updated)}</time>
+                </>
+              )}
+            </p>
+          </div>
+          {Figure && <Figure intensity={0.5} play aria-hidden className="hairline-figure hidden lg:col-span-5 lg:block" />}
         </section>
 
         {industry.evidence && industry.evidence.length > 0 && (
