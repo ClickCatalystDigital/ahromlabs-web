@@ -17,6 +17,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
 
+- [ ] **Cloudflare Access for crm.ahromlabs.com** (deployed 15 Oct 2026; refuses everyone until this is done): follow "One-time Cloudflare Access setup" in `~/Developer/ahrom-crm/README.md`, then send Claude the AUD tag and team domain.
+
 ## Done
 
 - [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).

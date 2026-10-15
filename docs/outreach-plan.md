@@ -23,7 +23,7 @@ outside step (Meta business verification) starts today.
 3. **Meta WhatsApp Business:** verify the business in Meta Business Manager and get a number that is not on the
    WhatsApp app (verification can take days). Same steps as `shanti-ops` `docs/client-setup.html` §6.
 
-## Phase 1 — CRM app in shadcn (built 15 Oct 2026: `~/Developer/ahrom-crm`, not deployed yet)
+## Phase 1 — CRM app in shadcn (built and deployed 15 Oct 2026: `~/Developer/ahrom-crm`; waits on Cloudflare Access)
 
 - New Next.js app `ahrom-crm` (own repo, OpenNext on Workers) at **crm.ahromlabs.com**, bound to the same D1.
   Separate from the marketing site so the site's CSS, build and deploys stay untouched, and so the CRM can have
