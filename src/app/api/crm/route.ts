@@ -4,14 +4,22 @@ import { env, underRateLimit } from "@/lib/lead-email";
 // and notes per lead. Sign-in form: username = CRM_USER (wrangler.jsonc vars), password = the CRM_PASSWORD
 // Worker secret. A signed cookie keeps the browser signed in for 30 days; changing the password signs
 // everyone out.
+// Second view (?view=prospects): outbound prospects loaded from data_collector (`prospects.py crm-sql`, see
+// migrations/0002). Status, next step and notes are edited here; the loader never overwrites them.
 // ponytail: one server-rendered page, no framework UI. Add CSV export when the list outgrows a screen.
 const STATUSES = ["new", "contacted", "qualified", "won", "lost", "spam"];
+const P_STATUSES = ["not contacted", "contacted", "replied", "meeting", "not interested", "do not contact"];
+const SEGMENTS: Record<string, string> = { boiler: "Boilers", "interiors-furniture": "Interiors", electronics: "Electronics",
+  distribution: "Distribution", "industrial-install-service": "Industrial service" };
 const SOURCES: Record<string, string> = { contact: "Contact form", "demo:boiler": "SB Ops demo", "demo:electronics": "Inventory Ops demo", "demo:interiors": "Designer Ops demo" };
 const COOKIE = "crm_session";
 const SESSION_DAYS = 30;
 
 type Row = { id: number; created_at: string; source: string; name: string | null; company: string | null; email: string; phone: string | null;
   about: string | null; message: string | null; page: string | null; email_status: string; status: string; notes: string; updated_at: string | null };
+type Prospect = { cin: string; company: string; segment: string; sub_type: string | null; priority: string; state: string | null; city: string | null;
+  website: string | null; phone: string | null; email: string | null; email_status: string | null; contact_name: string | null; contact_role: string | null;
+  linkedin_url: string | null; notes_import: string | null; source: string; status: string; next_step: string; notes: string; last_touch: string | null; updated_at: string | null };
 
 const esc = (s: unknown) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 const HEADERS = { "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow", "X-Frame-Options": "DENY" };
@@ -77,6 +85,52 @@ function ago(utc: string) {
   return `${Math.round(mins / 1440)} days ago`;
 }
 
+const nav = (view: string) => `<nav class="bar">${[["", "Leads"], ["prospects", "Prospects"]]
+  .map(([v, label]) => `<a class="tab${v === view ? " on" : ""}" style="text-transform:none" href="?view=${v}">${label}</a>`).join("")}
+<a class="tab" style="text-transform:none;margin-left:auto" href="?logout">Sign out</a></nav>`;
+
+const digits = (phone: string) => phone.replace(/[^\d]/g, "");
+
+async function prospectsPage(CRM: NonNullable<Awaited<ReturnType<typeof env>>["CRM"]>, url: URL) {
+  const seg = url.searchParams.get("segment") || "";
+  const status = url.searchParams.get("status") || "";
+  const where: string[] = [], args: string[] = [];
+  if (seg in SEGMENTS) { where.push("segment = ?"); args.push(seg); }
+  if (P_STATUSES.includes(status)) { where.push("status = ?"); args.push(status); }
+  const { results } = await CRM.prepare(`SELECT * FROM prospects ${where.length ? "WHERE " + where.join(" AND ") : ""}
+    ORDER BY priority, (email IS NULL), segment, company LIMIT 500`).bind(...args).all<Prospect>();
+  const segCounts = (await CRM.prepare("SELECT segment AS k, COUNT(*) AS n FROM prospects GROUP BY segment").bind().all<{ k: string; n: number }>()).results;
+  const stCounts = (await CRM.prepare(`SELECT status AS k, COUNT(*) AS n FROM prospects ${seg in SEGMENTS ? "WHERE segment = ?" : ""} GROUP BY status`)
+    .bind(...(seg in SEGMENTS ? [seg] : [])).all<{ k: string; n: number }>()).results;
+  const n = (list: { k: string; n: number }[], k: string) => list.find((c) => c.k === k)?.n ?? 0;
+  const q = (s2: string, st: string) => `?view=prospects&segment=${encodeURIComponent(s2)}&status=${encodeURIComponent(st)}`;
+
+  const segTabs = [["", `All ${segCounts.reduce((a, c) => a + c.n, 0)}`], ...Object.entries(SEGMENTS).filter(([k]) => n(segCounts, k)).map(([k, label]) => [k, `${label} ${n(segCounts, k)}`])]
+    .map(([k, label]) => `<a class="tab${k === seg ? " on" : ""}" style="text-transform:none" href="${q(k, status)}">${esc(label)}</a>`).join("");
+  const stTabs = [["", "Any status"], ...P_STATUSES.map((st) => [st, `${st} ${n(stCounts, st)}`])]
+    .map(([k, label]) => `<a class="tab${k === status ? " on" : ""}" href="${q(seg, k)}">${esc(label)}</a>`).join("");
+
+  const cards = results.map((r) => `<article class="lead${r.status === "not contacted" ? " new" : ""}" data-search="${esc([r.company, r.contact_name, r.email, r.city, r.state, r.notes, r.next_step].join(" ").toLowerCase())}">
+<div class="who"><b>${esc(r.company)}</b><div class="small muted">${esc(SEGMENTS[r.segment] ?? r.segment)} · ${esc(r.priority)}${r.city || r.state ? ` · ${esc([r.city, r.state].filter(Boolean).join(", "))}` : ""}</div>
+${r.website ? `<div><a href="https://${esc(r.website.replace(/^https?:\/\//, ""))}" target="_blank" rel="noopener noreferrer">${esc(r.website.replace(/^https?:\/\//, ""))}</a></div>` : ""}
+<div class="small muted" style="margin-top:8px">${esc(r.source)}</div></div>
+<div>${r.contact_name ? `<b>${esc(r.contact_name)}</b>${r.contact_role ? ` <span class="muted">· ${esc(r.contact_role)}</span>` : ""}` : '<span class="muted">No named contact</span>'}
+${r.email ? `<div><a href="mailto:${esc(r.email)}">${esc(r.email)}</a>${r.email_status === "verified" ? ' <span class="pill" style="text-transform:none">verified</span>' : ""}</div>` : ""}
+${r.phone ? `<div><a href="tel:${esc(r.phone.replace(/[^\d+]/g, ""))}">${esc(r.phone)}</a> · <a href="https://wa.me/${esc(digits(r.phone))}" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>` : ""}
+${r.linkedin_url ? `<div><a href="${esc(r.linkedin_url.replace(/^http:/, "https:"))}" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>` : ""}
+${r.notes_import ? `<div class="msg small muted" style="margin-top:6px">${esc(r.notes_import)}</div>` : ""}</div>
+<form class="edit" method="post" action="/api/crm${esc(q(seg, status))}"><input type="hidden" name="kind" value="prospect"><input type="hidden" name="cin" value="${esc(r.cin)}">
+<div class="row"><select name="status" aria-label="Status">${P_STATUSES.map((st) => `<option${st === r.status ? " selected" : ""}>${st}</option>`).join("")}</select><button>Save</button></div>
+<input name="next_step" value="${esc(r.next_step)}" aria-label="Next step" placeholder="Next step, e.g. call Tue">
+<textarea name="notes" rows="2" aria-label="Notes" placeholder="Notes">${esc(r.notes)}</textarea>
+${r.last_touch ? `<span class="small muted">Last touch ${ago(r.last_touch)}</span>` : ""}</form></article>`).join("");
+
+  return page("Prospects · Ahrom CRM", `<header><div><h1>Prospects</h1><div class="muted">${n(stCounts, "not contacted")} not contacted yet${seg in SEGMENTS ? ` in ${esc(SEGMENTS[seg])}` : ""}</div></div></header>
+${nav("prospects")}<div class="bar">${segTabs}</div><div class="bar">${stTabs}<input type="search" id="q" placeholder="Search company, person, city, notes" aria-label="Search prospects"></div>
+${cards || '<p class="muted">No prospects here.</p>'}${results.length === 500 ? '<p class="muted">Showing the first 500. Pick a segment or status to narrow.</p>' : ""}
+<script>document.getElementById("q").oninput=e=>{const q=e.target.value.toLowerCase();document.querySelectorAll(".lead").forEach(l=>l.hidden=!l.dataset.search.includes(q))}</script>`);
+}
+
 export async function GET(request: Request) {
   const { CRM, CRM_PASSWORD } = await env();
   if (!CRM_PASSWORD) return new Response("Not found", { status: 404, headers: HEADERS });
@@ -85,6 +139,7 @@ export async function GET(request: Request) {
     return new Response(null, { status: 303, headers: { ...HEADERS, Location: "/api/crm", "Set-Cookie": `${COOKIE}=; Path=/api/crm; Max-Age=0; HttpOnly; Secure; SameSite=Strict` } });
   }
   if (!(await signedIn(request, CRM_PASSWORD))) return loginPage();
+  if (url.searchParams.get("view") === "prospects") return prospectsPage(CRM!, url);
 
   const filter = url.searchParams.get("status") || "";
   const { results } = await (STATUSES.includes(filter)
@@ -108,7 +163,7 @@ ${r.email_status !== "sent" ? `<span class="pill warn" style="text-transform:non
 ${r.updated_at ? `<span class="small muted">Updated ${ago(r.updated_at)}</span>` : ""}</form></article>`).join("");
 
   return page("Leads · Ahrom CRM", `<header><div><h1>Leads</h1><div class="muted">${count("new")} new waiting for a reply</div></div>
-<a class="tab" style="text-transform:none" href="?logout">Sign out</a></header>
+</header>${nav("")}
 ${unsent ? `<div class="alert">${unsent} lead${unsent > 1 ? "s" : ""} below did not reach your inbox. Nothing is lost: they are saved here.</div>` : ""}
 <div class="bar">${tabs}<input type="search" id="q" placeholder="Search name, company, email, notes" aria-label="Search leads"></div>
 ${leads || '<p class="muted">No leads here yet.</p>'}
@@ -135,6 +190,19 @@ export async function POST(request: Request) {
   }
 
   if (!(await signedIn(request, CRM_PASSWORD))) return loginPage("", 401);
+  const back = { ...HEADERS, Location: `/api/crm${new URL(request.url).search}` };
+
+  if (form.get("kind") === "prospect") {
+    const cin = String(form.get("cin") || "");
+    const pStatus = String(form.get("status") || "");
+    if (!cin || !P_STATUSES.includes(pStatus)) return new Response("Bad request", { status: 400, headers: HEADERS });
+    // last_touch moves only when the status changes, so editing a note doesn't count as contact.
+    await CRM!.prepare(`UPDATE prospects SET last_touch = CASE WHEN status <> ?1 THEN datetime('now') ELSE last_touch END,
+      status = ?1, next_step = ?2, notes = ?3, updated_at = datetime('now') WHERE cin = ?4`)
+      .bind(pStatus, String(form.get("next_step") || "").slice(0, 500), String(form.get("notes") || "").slice(0, 5000), cin).run();
+    return new Response(null, { status: 303, headers: back });
+  }
+
   const id = Number(form.get("id"));
   const status = String(form.get("status") || "");
   const notes = String(form.get("notes") || "").slice(0, 5000);
