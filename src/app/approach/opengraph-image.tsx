@@ -8,6 +8,6 @@ export default function Image() {
   return renderOgImage({
     title: "We treat your business as one system, not separate functions.",
     description:
-      "How Ahrom Labs models a business before automating it, and why architecture is the unit of value.",
+      "How Ahrom Labs maps a business before automating it, and builds the whole workflow once instead of a patch per department.",
   });
 }

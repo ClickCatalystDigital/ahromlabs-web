@@ -8,7 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ahrom Labs is an infrastructure engineering practice: we model how a business actually works, then build the systems it runs on.",
+    "Ahrom Labs is an industrial systems engineering practice: we map how a factory or trading house actually runs, then build the systems it runs on.",
   alternates: { canonical: "/about" },
   openGraph: {
     type: "website",
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     siteName: "Ahrom Labs",
     title: "About | Ahrom Labs",
     description:
-      "Ahrom Labs is an infrastructure engineering practice: we model how a business actually works, then build the systems it runs on.",
+      "Ahrom Labs is an industrial systems engineering practice: we map how a factory or trading house actually runs, then build the systems it runs on.",
   },
   twitter: {
     card: "summary_large_image",
     title: "About | Ahrom Labs",
     description:
-      "Ahrom Labs is an infrastructure engineering practice: we model how a business actually works, then build the systems it runs on.",
+      "Ahrom Labs is an industrial systems engineering practice: we map how a factory or trading house actually runs, then build the systems it runs on.",
   },
 };
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 How we work with you
               </h2>
               <p className="prose-measure mt-6 leading-relaxed text-foreground-secondary">
-                Ahrom Labs is an infrastructure engineering practice, not a software
+                Ahrom Labs is an industrial systems engineering practice, not a software
                 vendor. We take on a small number of engagements at a time, because
                 modeling a business properly takes real attention. We map how your
                 business actually works before we design or build anything, and that map

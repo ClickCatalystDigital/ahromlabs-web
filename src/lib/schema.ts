@@ -123,8 +123,8 @@ export const orgGraph = {
       name: "Ahrom Labs",
       url: siteUrl,
       description:
-        "Custom operational infrastructure engineering: modeling a business's entities, workflows, and decisions, then building the systems on top of that model.",
-      serviceType: "Custom business systems and infrastructure engineering",
+        "Industrial systems engineering for Indian manufacturers and trading groups: mapping how the business actually runs, then building its operations and accounting systems on top of that model.",
+      serviceType: "Custom ERP and industrial systems engineering",
       provider: { "@id": `${siteUrl}/#organization` },
       hasOfferCatalog: offerCatalog,
       address: postalAddress,

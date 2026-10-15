@@ -8,7 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const metadata: Metadata = {
   title: "Approach",
   description:
-    "How Ahrom Labs models your business before automating it, and why architecture, not features, is the unit of value.",
+    "How Ahrom Labs maps your business before automating it, and builds the whole workflow once instead of a patch per department.",
   alternates: { canonical: "/approach" },
   openGraph: {
     type: "website",
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     siteName: "Ahrom Labs",
     title: "Approach | Ahrom Labs",
     description:
-      "How Ahrom Labs models your business before automating it, and why architecture, not features, is the unit of value.",
+      "How Ahrom Labs maps your business before automating it, and builds the whole workflow once instead of a patch per department.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Approach | Ahrom Labs",
     description:
-      "How Ahrom Labs models your business before automating it, and why architecture, not features, is the unit of value.",
+      "How Ahrom Labs maps your business before automating it, and builds the whole workflow once instead of a patch per department.",
   },
 };
 
@@ -44,8 +44,8 @@ const sections = [
     ),
   },
   {
-    heading: "Architecture is the unit of value, not the feature",
-    body: "A feature solves a task in isolation. It does not know what happens to its output once another team picks it up. The systems we build for you are structured so that permissions, data, and business rules are defined once and referenced everywhere, rather than redefined per application. A change to how an entity behaves propagates through every workflow that touches it, instead of requiring a separate fix in each tool.",
+    heading: "Build the whole workflow once, not a patch per department",
+    body: "Architecture, not the feature, is the unit of value. A feature solves a task in isolation. It does not know what happens to its output once another team picks it up. The systems we build for you are structured so that permissions, data, and business rules are defined once and referenced everywhere, rather than redefined per application. A change to how an entity behaves propagates through every workflow that touches it, instead of requiring a separate fix in each tool.",
   },
   {
     heading: "Decisions need evidence, not just outputs",

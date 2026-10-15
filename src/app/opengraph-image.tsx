@@ -8,6 +8,6 @@ export default function Image() {
   return renderOgImage({
     title: "We build the systems your business runs on.",
     description:
-      "Ahrom Labs designs and builds custom operational infrastructure, modeled around how your business actually works.",
+      "Operations and accounting systems for Indian manufacturers and trading groups, modeled around how your business actually works.",
   });
 }

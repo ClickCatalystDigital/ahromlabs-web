@@ -10,11 +10,13 @@ export const dynamic = "force-static";
 
 const HEADER = `# Ahrom Labs
 
-> Ahrom Labs is a software factory for operational systems. We take a
-> business from basic, compliant record-keeping to advanced analytics and AI:
-> custom ERP and CRM, TallyPrime integration, multi-company finance,
-> analytics and operational intelligence, AI document extraction with human
-> review, RAG and knowledge graphs. Every system starts from one model of the
+> Ahrom Labs builds operations and accounting systems for Indian
+> manufacturers and trading groups — BOMs, shop-floor production, IBR, GST
+> and TDS compliance, and TallyPrime in one system. We take a business from
+> basic, compliant record-keeping to advanced analytics and AI: custom ERP
+> and CRM, TallyPrime integration, multi-company finance, analytics and
+> operational intelligence, AI document extraction with human review, RAG
+> and knowledge graphs. Every system starts from one model of the
 > business's entities, relationships, workflows, and decisions, and each
 > later layer is built on that same model. We are an engineering practice
 > based in Ahmedabad, Gujarat, working with a small number of clients across

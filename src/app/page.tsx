@@ -12,12 +12,12 @@ import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 
 const description =
-  "Ahrom Labs is a software factory for operational systems: custom ERP and CRM, TallyPrime integration, analytics and operational intelligence, AI document extraction, RAG and knowledge graphs — built on one model of your business.";
+  "Ahrom Labs builds operations and accounting systems for Indian manufacturers and trading groups: BOMs, shop floor, IBR, GST and TDS compliance, and TallyPrime in one system — plus analytics, AI document extraction and search across your documents, built on one model of your business.";
 
 export const metadata: Metadata = {
   // The homepage <title> is the single strongest signal of what this site is
   // about. "Ahrom Labs" alone told Google and every model nothing.
-  title: { absolute: "Ahrom Labs | Custom ERP, CRM, analytics and AI systems — software factory" },
+  title: { absolute: "Ahrom Labs | Custom ERP for Indian manufacturers and trading groups" },
   description,
   alternates: {
     canonical: "/",
@@ -57,10 +57,10 @@ export default function Home() {
                 We build the systems your business runs on.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-                Ahrom Labs is a software factory for operational systems — from compliant
-                ERP and CRM to analytics, RAG and knowledge graphs. We model your entities,
-                workflows, and decisions as one connected system, not another disconnected
-                app.
+                Ahrom Labs builds operations and accounting systems for Indian manufacturers
+                and trading groups — BOMs, shop-floor production, IBR, GST and TDS
+                compliance, and TallyPrime in one system that replaces the side
+                spreadsheets.
               </p>
               <a href="#contact" className="subscribe-submit focus-ring mt-8 inline-block">
                 Start a conversation

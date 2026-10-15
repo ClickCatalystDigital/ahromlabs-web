@@ -8,7 +8,7 @@ import { services, layers, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
 
 const description =
-  "A software factory for operational systems: custom ERP and CRM, TallyPrime integration, multi-company finance, analytics and operational intelligence, AI document extraction, RAG and knowledge graphs — on one data model.";
+  "Operations and accounting systems for Indian manufacturers and trading groups: custom ERP and CRM, TallyPrime integration, multi-company finance, analytics, AI document extraction, and search across your drawings, certificates and past quotations (RAG) — on one data model.";
 
 export const metadata: Metadata = {
   title: "Services: custom ERP, CRM, analytics, RAG and AI systems",
@@ -36,10 +36,11 @@ export default function ServicesPage() {
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">What we build</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            Ahrom Labs is a software factory for operational systems. We take a business from
-            basic, compliant record-keeping to analytics and AI — ERP and CRM, TallyPrime
-            integration, operational intelligence, document extraction, RAG and knowledge
-            graphs — all on one model of how the business actually works. Every client claim
+            Ahrom Labs builds operations and accounting systems for Indian manufacturers and
+            trading groups. We take a business from basic, compliant record-keeping to
+            analytics and AI — ERP and CRM, TallyPrime integration, document extraction, and
+            search across drawings, certificates and past quotations — all on one model of how
+            the business actually works. Every client claim
             below links to the engineering note it comes from.
           </p>
         </section>
