@@ -18,14 +18,15 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
 
 
-- [ ] **Start outreach (campaigns):** on crm.ahromlabs.com/email open "Recover value from steel" and "IBR documentation and traceability", press Preview and Send me a test on each step, then Activate both. On Prospects select boiler companies → pick the campaign → Email sequence, then Turn sending on (5/day to start).
-- [ ] **Reply reading (Jev):** in `~/Developer/ahrom-crm` run `npx wrangler secret put OPENROUTER_KEY` and paste the OpenRouter key. Then ask Claude to test it with `classify_reply`.
-- [ ] **Google Calendar booking page:** Google Calendar → Create → Appointment schedule ("Ahrom Labs intro call", 30 min, Google Meet) → Save → copy the booking page link into crm.ahromlabs.com/email → "Booking link for meeting replies".
-- [ ] **Calendar access for the CRM:** in Google Cloud console (project `ahrom-crm`) enable **Google Calendar API**, and download the "Ahrom CRM outreach" client JSON again (Credentials, or add a new secret). Then tell Claude, who reruns `node scripts/gmail-auth.mjs` for one new consent (Gmail + Calendar).
+- [ ] **Turn sending on:** steel and IBR campaigns are active with 40 boiler companies queued (20 each, 16 Oct 2026; tests sent to pujan@ahromlabs.com). Press Turn sending on at crm.ahromlabs.com/email (5/day to start). The other 102 eligible boiler companies can be added once replies come in.
+- [ ] **Calendar access for the CRM:** Calendar API is enabled. Download the "Ahrom CRM outreach" client JSON again (Google Cloud console → project `ahrom-crm` → Credentials; Add secret if there is no download), then tell Claude, who reruns `node scripts/gmail-auth.mjs` for one new consent (Gmail + Calendar).
 
 - [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
 
 ## Done
+
+- [x] Jev key (`OPENROUTER_KEY`) set; live check classified a call request as meeting (16 Oct 2026).
+- [x] Booking page: the Workspace plan allows one, "30 min with Pujan" (Google Meet, weekdays) on pujan@ahromlabs.com; its link https://calendar.app.google/CuiiSRtJbheEV2U4A is saved in the CRM (16 Oct 2026). A stray "Ahrom Labs intro call" booking page was created on motiwalapujan@gmail.com by mistake; delete it there if you like.
 
 - [x] Cloudflare Access (team ahromlabs, One-time PIN, Pujan only) and Gmail connected for outreach; test email sent (16 Oct 2026).
 
