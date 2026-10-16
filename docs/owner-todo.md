@@ -17,13 +17,14 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
 
-- [ ] **Cloudflare Access for crm.ahromlabs.com** (deployed 15 Oct 2026; refuses everyone until this is done): follow "One-time Cloudflare Access setup" in `~/Developer/ahrom-crm/README.md`, then send Claude the AUD tag and team domain.
 
-- [ ] **Connect Gmail for outreach** (after the Access setup): follow "Connect Gmail (once, Pujan)" in `~/Developer/ahrom-crm/README.md` (Google Cloud project, Internal consent screen, Desktop OAuth client, then `node scripts/gmail-auth.mjs <json>`). Then send yourself tests from crm.ahromlabs.com/email and turn sending on. Sending stays off until you do.
+- [ ] **Start outreach:** check the test email in your inbox, then on crm.ahromlabs.com select prospects → Email sequence, and press Turn sending on (5/day to start).
 
 - [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
 
 ## Done
+
+- [x] Cloudflare Access (team ahromlabs, One-time PIN, Pujan only) and Gmail connected for outreach; test email sent (16 Oct 2026).
 
 - [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).
 - [x] Demo AI keys added (SB Ops, LS Inventory) and tested live; LS pipeline secrets added (13 Oct 2026).
