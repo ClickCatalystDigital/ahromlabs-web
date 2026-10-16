@@ -18,12 +18,12 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
 
 
-- [ ] **Calendar access for the CRM:** Calendar API is enabled. Download the "Ahrom CRM outreach" client JSON again (Google Cloud console → project `ahrom-crm` → Credentials; Add secret if there is no download), then tell Claude, who reruns `node scripts/gmail-auth.mjs` for one new consent (Gmail + Calendar).
 
 - [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
 
 ## Done
 
+- [x] Calendar access: Calendar API enabled, new client secret, Gmail + Calendar consent (16 Oct 2026); client file moved to Trash. The CRM reads bookings hourly and emails you on each.
 - [x] Email sending turned on (16 Oct 2026, 5/day ramp): steel and IBR campaigns, 40 boiler companies queued. The other 102 eligible boiler companies can be added once replies come in.
 - [x] Jev key (`OPENROUTER_KEY`) set; live check classified a call request as meeting (16 Oct 2026).
 - [x] Booking page: the Workspace plan allows one, "30 min with Pujan" (Google Meet, weekdays) on pujan@ahromlabs.com; its link https://calendar.app.google/CuiiSRtJbheEV2U4A is saved in the CRM (16 Oct 2026). A stray "Ahrom Labs intro call" booking page was created on motiwalapujan@gmail.com by mistake; delete it there if you like.
