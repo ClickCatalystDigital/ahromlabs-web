@@ -50,7 +50,7 @@ export function logSendFailure(form: string, err: unknown) {
   console.error(JSON.stringify({ event: "lead_email_failed", form, code: e?.code ?? null, error: String(e?.message ?? err).replace(/[^\s@<>]+@[^\s@<>]+/g, "<email>").slice(0, 200) }));
 }
 
-export type Lead = { source: string; email: string; name?: string; company?: string; phone?: string; about?: string; message?: string; page?: string };
+export type Lead = { source: string; email: string; name?: string; company?: string; phone?: string; about?: string; message?: string; page?: string; whatsappOk?: boolean };
 
 // Saves the lead, then emails it. Returns true when the lead was kept by at least one of the two, so the
 // visitor is told "received" only when that is true. Each failure is logged (without visitor details) and the
@@ -60,8 +60,8 @@ export async function captureLead(lead: Lead, email: Parameters<typeof sendLeadE
   let id: number | null = null;
   try {
     if (!CRM) throw new Error("CRM binding is not configured");
-    const r = await CRM.prepare("INSERT INTO leads (source, name, company, email, phone, about, message, page) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
-      .bind(lead.source, lead.name || null, lead.company || null, lead.email, lead.phone || null, lead.about || null, lead.message || null, lead.page || null).run();
+    const r = await CRM.prepare("INSERT INTO leads (source, name, company, email, phone, about, message, page, whatsapp_ok) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
+      .bind(lead.source, lead.name || null, lead.company || null, lead.email, lead.phone || null, lead.about || null, lead.message || null, lead.page || null, lead.whatsappOk ? 1 : 0).run();
     id = r.meta.last_row_id;
   } catch (err) {
     console.error(JSON.stringify({ event: "lead_save_failed", form: lead.source, error: String((err as Error)?.message ?? err).slice(0, 200) }));

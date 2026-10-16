@@ -18,6 +18,9 @@ export async function POST(request: Request) {
   const email = body.email.trim();
   const message = body.message.trim();
   const honeypot = typeof body.company === "string" ? body.company.trim() : "";
+  // Optional WhatsApp number; consent only counts with the tickbox (Meta's opt-in rule: explicit, names the business).
+  const phone = typeof body.phone === "string" ? body.phone.trim().slice(0, 30) : "";
+  const whatsappOk = body.whatsapp === true && phone.replace(/\D/g, "").length >= 10;
 
   // Real visitors never fill the hidden "company" field. A bot did; report
   // success without sending anything, so it stops retrying.
@@ -31,6 +34,9 @@ export async function POST(request: Request) {
   if (!message) {
     return NextResponse.json({ error: "Enter a message." }, { status: 400 });
   }
+  if (phone && phone.replace(/\D/g, "").length < 10) {
+    return NextResponse.json({ error: "Enter the WhatsApp number with all 10 digits (or leave it empty)." }, { status: 400 });
+  }
   if (message.length > MAX_MESSAGE) {
     return NextResponse.json({ error: `Keep the message under ${MAX_MESSAGE.toLocaleString("en-IN")} characters.` }, { status: 400 });
   }
@@ -42,12 +48,12 @@ export async function POST(request: Request) {
   }
 
   const page = request.headers.get("referer") || "";
-  const kept = await captureLead({ source: "contact", email, message, page }, {
+  const kept = await captureLead({ source: "contact", email, message, page, phone: phone || undefined, whatsappOk }, {
     form: "contact",
     subject: `Website enquiry from ${email}`,
     replyTo: email,
     intro: "New message from the contact form on ahromlabs.com.",
-    fields: [["Email", email], ["Page", page || "-"]],
+    fields: [["Email", email], ["WhatsApp", phone ? `${phone}${whatsappOk ? " (agreed to WhatsApp)" : " (not agreed)"}` : "-"], ["Page", page || "-"]],
     message,
   });
   if (!kept) return NextResponse.json({ error: SEND_FAILED }, { status: 502 });

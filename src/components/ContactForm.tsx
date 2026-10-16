@@ -17,6 +17,8 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function ContactForm() {
   const emailId = useId();
   const messageId = useId();
+  const phoneId = useId();
+  const waId = useId();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -27,6 +29,8 @@ export function ContactForm() {
     const email = String(formData.get("email") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
     const company = String(formData.get("company") ?? ""); // honeypot
+    const phone = String(formData.get("phone") ?? "").trim();
+    const whatsapp = formData.get("whatsapp") === "on";
 
     if (!email || !message) {
       setStatus("error");
@@ -41,7 +45,7 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, message, company }),
+        body: JSON.stringify({ email, message, company, phone, whatsapp }),
       });
 
       if (!response.ok) {
@@ -99,6 +103,28 @@ export function ContactForm() {
           aria-describedby={status === "error" ? `${emailId}-error` : undefined}
           aria-invalid={status === "error"}
         />
+      </div>
+
+      <div className="subscribe-field">
+        <label htmlFor={phoneId} className="subscribe-label">
+          WhatsApp number <span className="text-foreground-secondary">(optional)</span>
+        </label>
+        <input
+          id={phoneId}
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          inputMode="tel"
+          {...param("Optional mobile number for WhatsApp, with the 10 digits")}
+          className="subscribe-input"
+        />
+        <label htmlFor={waId} className="mt-2 flex items-start gap-2 text-sm text-foreground-secondary">
+          <input id={waId} name="whatsapp" type="checkbox" className="mt-1" />
+          <span>
+            Ahrom Labs may message me on WhatsApp about my enquiry and send occasional updates about its work. I can reply
+            &ldquo;stop&rdquo; at any time. <a href="/privacy" className="underline">Privacy</a>
+          </span>
+        </label>
       </div>
 
       {status === "error" && (

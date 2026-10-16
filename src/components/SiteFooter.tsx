@@ -20,6 +20,8 @@ export function SiteFooter() {
             <a href="/llms.txt" className="focus-ring hover:underline">llms.txt</a>
             {" · "}
             <a href="/knowledge.json" className="focus-ring hover:underline">knowledge.json</a>
+            {" · "}
+            <Link href="/privacy" className="focus-ring hover:underline">Privacy</Link>
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-8">
