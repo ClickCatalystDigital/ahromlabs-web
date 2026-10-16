@@ -86,7 +86,7 @@ export const engagementAnswers: Answer[] = [
     id: "ownership",
     question: "Who owns the software, and what happens to our data?",
     answer:
-      "The software stays ours, and once the project is paid in full you have a permanent licence to use your system. Your business data lives in your system and you can export it at any time.",
+      "The software stays ours, and you have a licence to use your system for as long as the annual maintenance contract (AMC) runs. Your business data lives in your system and you can export it at any time.",
     detail: [
       "We may use your data in anonymised, aggregated form to improve our systems and to publish industry benchmarks; nothing that identifies your business or your customers is shared.",
     ],
@@ -95,9 +95,9 @@ export const engagementAnswers: Answer[] = [
     id: "hosting",
     question: "Is it hosted on the cloud or on our own server?",
     answer:
-      "Wherever suits you: during development we host it on our own server at no charge, and at go-live we set up a production cloud server in your name, recommending a provider based on the first interview.",
+      "During development we host it on our own server at no charge. At go-live it moves to a production cloud server, with the provider chosen around your needs in the first interview.",
     detail: [
-      "Server, storage and domain charges are paid by you directly to the provider, so there's no mark-up and no dependency on us to keep it running.",
+      "The server is included in the AMC. Storage is paid by you directly to the provider, so it grows with your data at the provider's price, with no mark-up.",
       "If you'd rather use your own cloud account or your own premises, we deploy there instead.",
     ],
   },
@@ -107,7 +107,7 @@ export const engagementAnswers: Answer[] = [
     answer:
       "Support after go-live runs under an annual maintenance contract (AMC) of 15–21% of the project value per year — nearer 21% for smaller projects, nearer 15% for larger ones.",
     detail: [
-      "The AMC covers fixes and keeping the system and its server running, plus small changes. A new module is quoted as its own phase.",
+      "The AMC covers the licence, the server, fixes and keeping the system running, plus small changes. A new module is quoted as its own phase.",
       "Support requests come in by email today, answered within 48 hours at most. A ticketing system for urgent work is on its way.",
     ],
   },

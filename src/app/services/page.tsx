@@ -159,8 +159,8 @@ export default function ServicesPage() {
                 clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">
-                Work is priced in fixed phases after the modeling phase, you get a permanent
-                licence to your system once it is paid, and support runs under an annual maintenance contract.{" "}
+                Work is priced in fixed phases after the modeling phase, and the licence, the
+                server and support run under an annual maintenance contract.{" "}
                 <Link href="/engagement" className="text-link focus-ring">
                   Pricing, timelines, licensing and support in full
                 </Link>

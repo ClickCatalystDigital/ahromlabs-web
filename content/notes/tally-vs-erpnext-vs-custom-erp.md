@@ -35,7 +35,7 @@ When your processes look like the ones they ship. ERPNext is open source, built 
 
 ## When does a custom system make sense?
 
-When the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder generated from its bill of materials and test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.
+When the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder built from a bank of material test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.
 
 ## What did a boiler manufacturer actually decide?
 

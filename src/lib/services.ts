@@ -79,14 +79,14 @@ export const services: Service[] = [
     name: "GST, TDS and statutory compliance, built in",
     layer: "records",
     answer:
-      "We build accounting and statutory compliance into the operations system itself: ledger, GSTR-1, GSTR-3B, ITC reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, audit log and books lock — and industry filings such as a boiler's IBR forms, generated from the BOM. Tally becomes optional. Rates come from a human-verified registry.",
+      "We build accounting and statutory compliance into the operations system itself: ledger, GSTR-1, GSTR-3B, ITC reconciliation, TDS, reverse charge, fixed assets, bank reconciliation, audit log and books lock — and industry filings such as a boiler's IBR forms, built from a bank of material test certificates. Tally becomes optional. Rates come from a human-verified registry.",
     forWhom:
       "Manufacturers and traders who enter every purchase and sale twice — once in operations, once in Tally — and reconcile the two every month.",
     evidence: [
       { metric: "Reports and documents from one computation each", value: "23" },
       { metric: "GST returns", value: "GSTR-1 (B2B and HSN) and GSTR-3B" },
       { metric: "Bank reconciliation", value: "Auto-matched only when mutually unique; the rest go to a person" },
-      { metric: "Industry filings", value: "IBR Forms II(1), III, III A and IV A, from the BOM and test certificates" },
+      { metric: "Industry filings", value: "IBR Forms II(1), III, III A and IV A, from a bank of material test certificates" },
       { metric: "Statutory rates", value: "GST by HSN, vendor TDS, income-tax and professional-tax slabs, PF/ESI — one verified registry, pulled daily" },
       { metric: "E-way bills", value: "Direct NIC client built to the official v1.03 spec; live once the NIC account is set up" },
     ],

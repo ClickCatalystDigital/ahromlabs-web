@@ -8,11 +8,12 @@ answer: >
   on — BOM, procurement, stores, plate cutting, production, QC, IBR statutory
   folders, job costing, GST and TDS accounting, service contracts and a
   customer portal, in one system. Each
-  boiler's IBR folder is generated from its bill of materials and a bank of
-  material test certificates.
+  boiler's IBR folder takes a few minutes instead of being typed up by hand: the
+  form set follows the boiler model, certificates come from a bank of material
+  test certificates, and a person adds the parts.
 description: >
-  Custom ERP for boiler makers: BOM, plate traceability, IBR forms generated
-  from test certificates, job costing, QC, GST and after-sales service.
+  Custom ERP for boiler makers: BOM, plate traceability, IBR folders built
+  from a bank of test certificates, job costing, QC, GST and after-sales service.
 domain: [manufacturing, compliance, quality-control]
 clients: [shanti-boilers]
 services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction]
@@ -48,14 +49,14 @@ flow:
   - step: Quality
     detail: Incoming and finished-goods inspection, hold points, NCRs, calibration; certificates matched to parts.
   - step: IBR folder and dispatch
-    detail: Statutory folder generated; packing list approved by QC and Production; e-way bill and freight captured.
+    detail: Statutory folder put together from the certificate bank; packing list approved by QC and Production; e-way bill and freight captured.
   - step: Accounts and after-sales
     detail: Invoice, GST and TDS in the same ledger; service calls, contracts and service reports after commissioning.
 demo:
   url: https://boiler-erp.ahromlabs.com/demo
   label: Try the live demo
 evidence:
-  - metric: IBR forms generated
+  - metric: IBR forms produced
     value: Cover letter, Forms II(1), III, III A and IV A
   - metric: Boiler models, each with its own form set
     value: "8"
@@ -75,9 +76,9 @@ Yes. A live demo runs at [boiler-erp.ahromlabs.com](https://boiler-erp.ahromlabs
 
 Four things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [Shanti Boilers & Pressure Vessels](/work#shanti-boilers) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.
 
-## Can the IBR statutory folder be generated instead of typed?
+## Can the IBR statutory folder come out of the system instead of being typed?
 
-Yes. The folder — covering letter, Forms II(1), III, III A and IV A — is generated from the project's bill-of-materials tree and a bank of material test certificates. The form set is chosen by boiler model, Form IV A's lettered sections come from the BOM's own structure, and certificate PDFs are read by AI on upload. Matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).
+Yes, in a few minutes instead of typing it up by hand. The folder — covering letter, Forms II(1), III, III A and IV A — comes out of the system, with the form set chosen by boiler model and every part linked to its material test certificate from the bank. A person adds the parts to the folder in a few minutes per boiler; the bill of materials kept for buying and production doesn't fill the forms reliably on its own. Certificate PDFs are read by AI on upload, and matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Keeping test certificates for a boiler's IBR folder](/notes/ibr-statutory-folder-from-bom).
 
 ## How is material traced from test certificate to finished boiler?
 
@@ -154,7 +155,7 @@ Yes, and they were. Bills of materials are imported from the plant's own spreads
 
 ## Should a boiler maker buy an engineering ERP package or build custom?
 
-Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder generated from the BOM, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
+Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder built from a bank of test certificates, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
 
 ## What should a boiler maker ask any software vendor?
 
