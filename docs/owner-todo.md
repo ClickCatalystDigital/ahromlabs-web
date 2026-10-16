@@ -15,7 +15,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
 
-- [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
+- [ ] **WhatsApp for the CRM (built 16 Oct 2026, waiting on setup):** your business number 6352878159 stays on the WhatsApp Business app; the CRM gets its own number on Meta's Cloud API. Steps: (1) a new SIM/number that has never been on WhatsApp; (2) Meta app → add WhatsApp → add the number, verify by SMS, display name "Ahrom Labs"; (3) system-user token and app secret saved with `wrangler secret put` (Claude prepares the commands; you paste the values in your terminal); (4) webhook https://crm.ahromlabs.com/api/whatsapp; (5) a payment method on the WhatsApp account; (6) first template (follow-up after an email reply). Settings → WhatsApp shows progress. Meta Business Verification can follow later (until then: 250 new chats a day).
 
 
 
