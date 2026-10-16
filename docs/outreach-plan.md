@@ -38,7 +38,7 @@ outside step (Meta business verification) starts today.
   so `prospects.py` pushes directly.
 - `/api/crm` on ahromlabs.com is retired once the new app shows the same data.
 
-## Phase 2 — Email outreach (≈3–4 days; sends start right after, at 5/day)
+## Phase 2 — Email outreach (built 15–16 Oct 2026 in `~/Developer/ahrom-crm`; waits on Gmail connection)
 
 - **Sequences:** step 1 (personal opening line + one problem, from the industry page wording: IBR file from the
   BOM, true cost per boiler, plate remnants), step 2 after 3 working days (short bump), step 3 after 7 (link to

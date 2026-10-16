@@ -19,6 +19,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Cloudflare Access for crm.ahromlabs.com** (deployed 15 Oct 2026; refuses everyone until this is done): follow "One-time Cloudflare Access setup" in `~/Developer/ahrom-crm/README.md`, then send Claude the AUD tag and team domain.
 
+- [ ] **Connect Gmail for outreach** (after the Access setup): follow "Connect Gmail (once, Pujan)" in `~/Developer/ahrom-crm/README.md` (Google Cloud project, Internal consent screen, Desktop OAuth client, then `node scripts/gmail-auth.mjs <json>`). Then send yourself tests from crm.ahromlabs.com/email and turn sending on. Sending stays off until you do.
+
 ## Done
 
 - [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).
