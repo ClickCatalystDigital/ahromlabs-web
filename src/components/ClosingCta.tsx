@@ -16,7 +16,7 @@ export function ClosingCta() {
             Start a conversation
           </Link>
           <Link href="/engagement" className="text-link focus-ring">
-            Pricing, ownership and support
+            Pricing, licensing and support
           </Link>
         </div>
       </div>

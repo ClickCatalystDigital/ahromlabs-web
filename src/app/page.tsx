@@ -298,10 +298,10 @@ export default function Home() {
                 that takes.
               </p>
               <p className="prose-measure mt-4 text-base leading-relaxed text-foreground-secondary">
-                Every project is priced in fixed phases, and the code, the data and the
-                server end up in your name.{" "}
+                Every project is priced in fixed phases, with the scope written down and
+                agreed before any work starts.{" "}
                 <Link href="/engagement" className="text-link focus-ring">
-                  How pricing, ownership and support work
+                  How pricing, licensing and support work
                 </Link>
               </p>
             </div>

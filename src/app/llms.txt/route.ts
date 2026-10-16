@@ -37,7 +37,7 @@ furniture business (Savistar & Saag).
 - [Services](https://ahromlabs.com/services): What we build, who each service is for, the measured results, and how an engagement runs.
 - [Industries](https://ahromlabs.com/industries): One page per industry we have built a real system for, with the problems, what was built, and the engineering notes behind it.
 - [Work](https://ahromlabs.com/work): The client businesses we have built systems for, named with permission, and what each system does.
-- [Working with us](https://ahromlabs.com/engagement): Custom ERP cost in India (market ranges, cited), our pricing model, timelines, Tally, code and data ownership, hosting, AMC, scope changes, and continuity.
+- [Working with us](https://ahromlabs.com/engagement): Custom ERP cost in India (market ranges, cited), our pricing model, timelines, Tally, software licensing and data use, hosting, AMC, scope changes, and continuity.
 - [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.

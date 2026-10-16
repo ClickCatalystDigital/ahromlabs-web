@@ -96,7 +96,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">
                 <Link href="/engagement" className="text-link focus-ring">
-                  See how an engagement runs: pricing, ownership and support
+                  See how an engagement runs: pricing, licensing and support
                 </Link>
               </p>
             </div>

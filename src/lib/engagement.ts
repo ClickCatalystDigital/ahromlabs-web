@@ -84,12 +84,11 @@ export const engagementAnswers: Answer[] = [
   },
   {
     id: "ownership",
-    question: "Who owns the source code and the data?",
+    question: "Who owns the software, and what happens to our data?",
     answer:
-      "You do. Once the project is paid in full, the custom code we wrote for you and all of your data are yours, transferred in writing.",
+      "The software stays ours, and once the project is paid in full you have a permanent licence to use your system. Your business data lives in your system and you can export it at any time.",
     detail: [
-      "We keep ownership of pre-existing, reusable components — internal libraries and tools we use across clients — and give you a permanent licence to use them in your system.",
-      "Your data is always yours, at every stage, paid or not.",
+      "We may use your data in anonymised, aggregated form to improve our systems and to publish industry benchmarks; nothing that identifies your business or your customers is shared.",
     ],
   },
   {
@@ -170,7 +169,7 @@ export const engagementAnswers: Answer[] = [
       "The work doesn't depend on one person: a team of developers and AI agents carries the delivery load, and every system ships with a canonical system document that lets any developer or agent pick it up cold.",
     detail: [
       "That document records what exists, how it fits together, and every known gap — the operations system for Shanti Boilers has one running to thousands of lines, updated as each piece of work lands.",
-      "Combined with owning your code and your server, it means you're never locked in: another team could take over from the document alone.",
+      "It means support never hangs on one person: any of our developers or agents can pick the system up from the document alone.",
     ],
   },
   {

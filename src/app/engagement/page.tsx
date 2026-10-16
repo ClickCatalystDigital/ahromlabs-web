@@ -7,10 +7,10 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { engagementAnswers } from "@/lib/engagement";
 
 const description =
-  "What a custom ERP costs in India, how long it takes, whether it works with Tally, who owns the code, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.";
+  "What a custom ERP costs in India, how long it takes, whether it works with Tally, software licence and data use, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.";
 
 export const metadata: Metadata = {
-  title: "Custom ERP cost, timelines, Tally, ownership and AMC — working with us",
+  title: "Custom ERP cost, timelines, Tally, licensing and AMC — working with us",
   description,
   alternates: { canonical: "/engagement" },
   openGraph: {
