@@ -38,7 +38,11 @@ outside step (Meta business verification) starts today.
   so `prospects.py` pushes directly.
 - `/api/crm` on ahromlabs.com is retired once the new app shows the same data.
 
-## Phase 2 — Email outreach (built 15–16 Oct 2026 in `~/Developer/ahrom-crm`; waits on Gmail connection)
+## Phase 2 — Email outreach (built 15–16 Oct 2026 in `~/Developer/ahrom-crm`; done: Gmail connected 16 Oct 2026, sending off until Pujan turns it on)
+
+- **Added 16 Oct 2026:** campaigns (name + audience + segments, draft/active templates, one campaign at a time per
+  person), reply reading with Jev (category + confidence; the CRM's rules act; only sure meeting / not-now replies
+  are answered automatically, the rest wait on Today) and Google Calendar booking sync. Details in the ahrom-crm README.
 
 - **Sequences:** step 1 (personal opening line + one problem, from the industry page wording: IBR file from the
   BOM, true cost per boiler, plate remnants), step 2 after 3 working days (short bump), step 3 after 7 (link to

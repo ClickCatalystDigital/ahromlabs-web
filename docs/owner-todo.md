@@ -18,7 +18,10 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Outreach phase 0** (see `docs/outreach-plan.md`): start Meta Business verification and get a WhatsApp number that is not on the WhatsApp app. (SPF, DKIM and DMARC for ahromlabs.com were checked on 15 Oct 2026: all present.)
 
 
-- [ ] **Start outreach:** check the test email in your inbox, then on crm.ahromlabs.com select prospects → Email sequence, and press Turn sending on (5/day to start).
+- [ ] **Start outreach (campaigns):** on crm.ahromlabs.com/email open "Recover value from steel" and "IBR documentation and traceability", press Preview and Send me a test on each step, then Activate both. On Prospects select boiler companies → pick the campaign → Email sequence, then Turn sending on (5/day to start).
+- [ ] **Reply reading (Jev):** in `~/Developer/ahrom-crm` run `npx wrangler secret put OPENROUTER_KEY` and paste the OpenRouter key. Then ask Claude to test it with `classify_reply`.
+- [ ] **Google Calendar booking page:** Google Calendar → Create → Appointment schedule ("Ahrom Labs intro call", 30 min, Google Meet) → Save → copy the booking page link into crm.ahromlabs.com/email → "Booking link for meeting replies".
+- [ ] **Calendar access for the CRM:** in Google Cloud console (project `ahrom-crm`) enable **Google Calendar API**, and download the "Ahrom CRM outreach" client JSON again (Credentials, or add a new secret). Then tell Claude, who reruns `node scripts/gmail-auth.mjs` for one new consent (Gmail + Calendar).
 
 - [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
 
