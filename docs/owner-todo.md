@@ -21,6 +21,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 - [ ] **Connect Gmail for outreach** (after the Access setup): follow "Connect Gmail (once, Pujan)" in `~/Developer/ahrom-crm/README.md` (Google Cloud project, Internal consent screen, Desktop OAuth client, then `node scripts/gmail-auth.mjs <json>`). Then send yourself tests from crm.ahromlabs.com/email and turn sending on. Sending stays off until you do.
 
+- [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
+
 ## Done
 
 - [x] Form email on Cloudflare Email Sending: test emails arrived, deployed, live test sent (`lead_email_sent` in the logs), Resend secrets deleted (13 Oct 2026).
