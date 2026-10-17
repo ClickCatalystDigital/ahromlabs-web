@@ -21,10 +21,10 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 
 
-- [ ] **Re-sync the site chatbot:** Cloudflare dashboard → AI Search → `ahromlabs-search` → Sync (site redeployed 16 Oct 2026 with new licence, hosting and IBR wording). Then tell Claude to check the chatbot's answers.
 
 ## Done
 
+- [x] Site chatbot re-sync: no longer manual (17 Oct 2026). Pages now carry real sitemap dates, `npm run deploy` starts a sync, and AI Search also syncs every 6 hours. Hosting and IBR answers checked live; ownership questions still hit or miss (retrieval settings, not stale data).
 - [x] Calendar access: Calendar API enabled, new client secret, Gmail + Calendar consent (16 Oct 2026); client file moved to Trash. The CRM reads bookings hourly and emails you on each.
 - [x] Email sending turned on (16 Oct 2026, 5/day ramp): steel and IBR campaigns, 40 boiler companies queued. The other 102 eligible boiler companies can be added once replies come in.
 - [x] Jev key (`OPENROUTER_KEY`) set; live check classified a call request as meeting (16 Oct 2026).
