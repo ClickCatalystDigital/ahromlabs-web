@@ -1,8 +1,8 @@
-// `node scripts/search-console.check.mjs` — the service-account JWT verifies against
+// `node scripts/google-insights.check.mjs` — the service-account JWT verifies against
 // its key and carries the claims Google's token endpoint expects. No network.
 import crypto from "node:crypto";
 import assert from "node:assert";
-import { signedJwt } from "./search-console.mjs";
+import { signedJwt } from "./google-insights.mjs";
 
 const { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", { modulusLength: 2048 });
 const key = { client_email: "bot@x.iam.gserviceaccount.com", private_key: privateKey.export({ type: "pkcs8", format: "pem" }) };
@@ -16,4 +16,4 @@ assert.deepEqual(JSON.parse(Buffer.from(c, "base64url")), {
   iat: 1000,
   exp: 4600,
 });
-console.log("search-console: jwt ok");
+console.log("google-insights: jwt ok");

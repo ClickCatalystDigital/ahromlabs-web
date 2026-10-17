@@ -136,25 +136,39 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
 - **Scripts** (`package.json`): `content:build` (runs `scripts/build-content.mjs`, see **Knowledge layer**), `dev`/`build`/`preview`/`deploy` all run `content:build` first, `start` (`next start`, unused by the actual Cloudflare deploy path), `lint` (`eslint`), `cf-typegen` (`wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts`).
 - All routes prerender statically except `/api/contact`. Dynamic-segment `opengraph-image.tsx` files (`notes/[slug]/opengraph-image.tsx`, `patterns/[slug]/opengraph-image.tsx`) need their own explicit `generateStaticParams` to actually build static in this pipeline — confirmed empirically (the build output showed `ƒ Dynamic` without it, contradicting what the Next.js docs implied about inheriting params from the sibling `page.tsx` automatically).
 
-## Search Console API (`scripts/search-console.mjs`, `npm run gsc`)
+## Google insights connector (`scripts/google-insights.mjs`, `.mcp.json`)
 
-What Google Search sees, readable from the terminal so an agent can work on it: `queries [days]`
-and `pages [days]` (clicks, impressions, CTR, position; the window ends two days ago because
-Search data lags), `page-queries <path>`, `inspect [path…]` (indexed or not, coverage state, last
-crawl, Google's chosen canonical; no path = every sitemap URL), `sitemaps`, `submit-sitemap`,
-`sites`. No dependencies: the service-account JWT is signed with `node:crypto`
-(`scripts/search-console.check.mjs` verifies it offline).
+A local MCP connector for Search Console, Google Analytics 4 and PageSpeed, so an agent working
+in this folder can see what Google sees and act on it. `.mcp.json` registers it; Claude Code
+loads it in this folder (approve it once when asked). The same tools run from the terminal:
+`npm run google` lists them, `npm run google -- gsc_queries '{"days":7}'` runs one. Each tool
+is defined once in `TOOLS`, read by both surfaces. No Google client library: the service-account
+JWT is signed with `node:crypto` (`scripts/google-insights.check.mjs` verifies it offline). The
+MCP SDK and zod are dev dependencies, never bundled into the site.
 
-- **Auth:** a Google Cloud service account with the Search Console API enabled, added in Search
-  Console as a user on the ahromlabs.com property (Full, so it can resubmit the sitemap). Its JSON
-  key lives **outside the repo** at `~/.config/ahrom-labs/search-console.json` (override with
-  `GSC_KEY_FILE`); never commit it. The property is found automatically, a Domain property
-  (`sc-domain:`) first; override with `GSC_SITE`.
-- **Not possible by API:** "Request indexing". Google keeps it in the web UI. The Indexing API is
-  only for job postings and livestreams; don't use it for ordinary pages. Moving a page's sitemap
-  `lastmod` and resubmitting the sitemap is the API-side lever.
-- **URL Inspection quota** is about 2,000 calls a day per property, so `inspect` with no arguments
-  (about 65 URLs) is fine daily.
+- **Tools:** `setup_status` (run first) · Search Console: `gsc_queries`, `gsc_pages`,
+  `gsc_page_queries`, `gsc_inspect` (index status, coverage, last crawl, Google's canonical; no
+  paths = the whole sitemap), `gsc_sitemaps`, `gsc_submit_sitemap` (the only write) · Analytics:
+  `ga_pages`, `ga_sources`, `ga_ai_referrals` (ChatGPT, Perplexity, Claude, Gemini, Copilot… by
+  landing page; a floor, since many AI answers send no referrer), `ga_events` (the form events),
+  `ga_report` (any dimensions and metrics) · `pagespeed` (Lighthouse scores, lab timings,
+  real-user Core Web Vitals when Google has enough data, and what to fix).
+- **Credentials, outside the repo** in `~/.config/ahrom-labs/`: `service-account.json` (a Google
+  Cloud service account with the Search Console API, Analytics Data API and Analytics Admin API
+  enabled; added in Search Console as a Full user and in GA4 as a Viewer) and `pagespeed-key`
+  (an API key restricted to the PageSpeed Insights API). Never commit either. Overrides:
+  `GOOGLE_KEY_FILE`, `PAGESPEED_KEY_FILE`, `GSC_SITE`, `GA4_PROPERTY`. The Search Console property
+  and GA4 property are found automatically.
+- **Not possible by API:** "Request indexing" (Google keeps it in the web UI). The Indexing API
+  is only for job postings and livestreams; don't use it for ordinary pages. Moving `lastmod` and
+  resubmitting the sitemap is the API-side lever.
+- **Quotas:** URL Inspection about 2,000 calls a day per property (the whole sitemap is about 65);
+  PageSpeed without a key shares a small daily quota that ran out on 17 Oct 2026.
+- **Routine (monthly, or after a big content change):** `setup_status` → `gsc_inspect` (anything
+  not indexed, or a Google canonical that differs) → `gsc_pages` and `gsc_queries` (pages with
+  impressions but low CTR: rewrite the title and meta description; queries ranking 8–20: add the
+  buyer's wording to that page) → `ga_ai_referrals` and `ga_sources` → `pagespeed` on the pages
+  with the most impressions. Record findings in `docs/progress.md`.
 
 ## Env vars / config
 
@@ -174,7 +188,7 @@ crawl, Google's chosen canonical; no path = every sitemap URL), `sitemaps`, `sub
 - `AGENTS.md` — auto-regenerated by `next dev` on every run (per its own header). Never hand-edit; never put project content there.
 - `CLAUDE.md` — one line, `@AGENTS.md` import only.
 - `README.md` — human quick-start doc (dev command, routes list, design-system summary). Predates the knowledge layer; may be stale on routes/scripts — this file is the current source of truth.
-- `scripts/search-console.mjs` — see **Search Console API**.
+- `scripts/google-insights.mjs`, `.mcp.json` — see **Google insights connector**.
 - `docs/plans-to-upgrade.md` — the 2026-09-05 discoverability/trust pass: which findings from an external audit survived verification, what shipped, what was rejected and why, and what is still open.
 - `llms.txt` is no longer a file — it is a generated route (`src/app/llms.txt/route.ts`). See **Routes**.
 - `docs/knowledge-layer-plan.md` — the full phased plan (7 phases, 0-6) the knowledge layer is built against. `docs/progress.md` tracks status per phase. `docs/citation-baseline-2026-08.md` — drafted prompts for Phase 0.5's citation check, not yet run.

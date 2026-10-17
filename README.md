@@ -10,6 +10,11 @@ surfaces: `/llms.txt`, `/knowledge.json`, `/sitemap.xml`, Markdown copies of eve
 `Accept: text/markdown`, WebMCP tools, and an AI Search MCP server. `SYSTEM.md` is the full,
 current reference; read it before changing anything.
 
+**Google insights connector:** `.mcp.json` registers a local MCP connector
+(`scripts/google-insights.mjs`) for Search Console, Google Analytics 4 and PageSpeed, so Claude
+Code in this folder can read search and traffic data. Also from the terminal: `npm run google`.
+Setup: `SYSTEM.md`, "Google insights connector".
+
 ## Development
 
 ```bash

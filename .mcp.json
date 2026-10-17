@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "google-insights": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "--no-warnings",
+        "scripts/google-insights.mjs",
+        "--mcp"
+      ]
+    }
+  }
+}
