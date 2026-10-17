@@ -328,6 +328,7 @@ export function ibrPageGraph(page: {
   published: string;
   updated: string;
   trail: { name: string; path: string }[];
+  image?: { src: string; alt: string };
 }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
@@ -349,6 +350,9 @@ export function ibrPageGraph(page: {
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
         inLanguage: "en-IN",
+        ...(page.image && {
+          image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, caption: page.image.alt },
+        }),
       },
       {
         "@type": "BreadcrumbList",

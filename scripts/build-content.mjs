@@ -86,6 +86,10 @@ function loadKind(kind) {
     if (frontmatter.image !== undefined) {
       assertString(frontmatter.image?.src, "image.src", relPath);
       assertString(frontmatter.image?.alt, "image.alt", relPath);
+      // Width and height reserve the image's space so the page doesn't jump as it loads.
+      if (!Number.isInteger(frontmatter.image?.width) || !Number.isInteger(frontmatter.image?.height)) {
+        throw new Error(`content/${relPath}: image needs integer width and height`);
+      }
       if (!fs.existsSync(path.join(process.cwd(), "public", frontmatter.image.src))) {
         throw new Error(`content/${relPath}: image.src "${frontmatter.image.src}" not found under public/`);
       }

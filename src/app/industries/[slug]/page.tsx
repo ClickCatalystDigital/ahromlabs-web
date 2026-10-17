@@ -10,6 +10,7 @@ import { resolveIndustryEdges } from "@/lib/industries";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
 import { OpenOnWide } from "@/components/OpenOnWide";
+import { headingId, textOf, markdownHeadings } from "@/lib/headings";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
@@ -44,22 +45,6 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
   };
 }
 
-// Stable anchor for a question heading, so each answer can be linked to (and
-// cited) on its own. The contents list and the rendered <h2> both derive it
-// from the same text, so they can't disagree.
-function headingId(text: string) {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function textOf(node: React.ReactNode): string {
-  if (typeof node === "string" || typeof node === "number") return String(node);
-  if (Array.isArray(node)) return node.map(textOf).join("");
-  return "";
-}
-
 const markdownComponents = {
   h2: (props: ComponentProps<"h2">) => (
     <h2
@@ -92,7 +77,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const edges = resolveIndustryEdges(industry);
   // ponytail: stock hairline figures; swap boiler for a custom plate-cut figure later.
   const Figure = FIGURES[industry.slug];
-  const headings = [...industry.body.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
+  const headings = markdownHeadings(industry.body);
 
   return (
     <>

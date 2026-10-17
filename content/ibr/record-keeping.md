@@ -15,6 +15,9 @@ checked: 2026-10-17
 image:
   src: /ibr/ibr-record-keeping.webp
   alt: "How long boiler records are kept under IBR 2026, regulation 308: the Inspecting Authority keeps certificates and approved drawings for at least 3 years after registration; the manufacturer keeps records and drawings for the boiler, economiser or steam pipe for at least 5 years; the owner keeps the boiler's certificates and approved drawings for its entire life and passes them to any new owner."
+  width: 1678
+  height: 937
+  caption: "Who keeps which boiler records, and for how long, under regulation 308 of IBR 2026."
 sources:
   - title: Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)
     publisher: Central Boilers Board, Department for Promotion of Industry and Internal Trade

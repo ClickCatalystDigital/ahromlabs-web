@@ -15,6 +15,9 @@ checked: 2026-10-17
 image:
   src: /ibr/ibr-small-industrial-boiler.webp
   alt: "Small industrial boiler under IBR 2026, regulation 546: a shell type boiler up to 7 kg/cm² (g), over 25 and up to 500 litres; a coil, once-through or water tube boiler up to 12 kg/cm² (g), up to 150 litres. Certificate: Form XXII, formerly Form XVII."
+  width: 2752
+  height: 1536
+  caption: "The pressure and volume limits of a small industrial boiler under regulation 546 of IBR 2026."
 sources:
   - title: Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)
     publisher: Central Boilers Board, Department for Promotion of Industry and Internal Trade

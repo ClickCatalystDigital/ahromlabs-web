@@ -22,7 +22,7 @@ export type ContentEntry = {
   // Optional <meta> description (≤160 chars, checked at build); falls back to `answer`.
   description?: string;
   // Industry-only: a real photo from the engagement, under public/.
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; width?: number; height?: number; caption?: string };
   // Industry-only: a public, hands-on demo of the system this page describes.
   demo?: { url: string; label: string };
   evidence?: { metric: string; value: string }[];

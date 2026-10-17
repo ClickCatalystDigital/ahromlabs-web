@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
-import { IbrPage, ibrMarkdown } from "@/components/IbrPage";
+import { IbrPage, IbrQuotes, ibrMarkdown } from "@/components/IbrPage";
+import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { ibrPageGraph } from "@/lib/schema";
 
@@ -30,6 +31,8 @@ export async function generateMetadata(props: PageProps<"/ibr/[slug]">): Promise
       publishedTime: g.published,
       modifiedTime: g.updated,
       authors: ["Pujan Motiwala"],
+      // The page's infographic is the share image; pages without one keep the site default.
+      ...(g.image && { images: [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }] }),
     },
     twitter: { card: "summary_large_image", title: g.title, description },
   };
@@ -45,31 +48,18 @@ export default async function IbrGuidePage(props: PageProps<"/ibr/[slug]">) {
 
   return (
     <IbrPage
-      graph={ibrPageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail })}
+      graph={ibrPageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, image: g.image })}
       trail={trail}
       title={g.title}
       lead={g.answer}
       checked={g.checked!}
       updated={g.updated}
       sources={g.sources}
+      headings={markdownHeadings(g.body)}
+      image={g.image && { src: g.image.src, alt: g.image.alt, width: g.image.width!, height: g.image.height!, caption: g.image.caption! }}
     >
-      {g.image && (
-        // Infographic of the page's main point; alt text repeats every label, since
-        // crawlers and the site chatbot read the text, not the picture.
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={g.image.src} alt={g.image.alt} loading="lazy" className="mb-12 w-full border border-line" />
-      )}
       <Markdown components={ibrMarkdown}>{g.body}</Markdown>
-
-      <div className="mt-12 border-t border-line pt-8">
-        <h2 className="text-sm font-medium text-foreground-secondary">Quoted from the regulations</h2>
-        {g.checks!.map((c) => (
-          <blockquote key={c.quote} className="mt-4 border-l-2 border-line pl-6 text-foreground-secondary">
-            <p className="italic text-foreground">&ldquo;{c.quote}&rdquo;</p>
-            <p className="mt-1 text-sm">{c.reg}</p>
-          </blockquote>
-        ))}
-      </div>
+      <IbrQuotes quotes={g.checks!} />
     </IbrPage>
   );
 }

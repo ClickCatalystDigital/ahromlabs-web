@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { IbrPage } from "@/components/IbrPage";
+import { IbrPage, IbrH2 } from "@/components/IbrPage";
 import { getContent } from "@/lib/content";
 import { ibrFormPages, formName, IBR_FORMS_CHECKED, IBR_FORMS_PUBLISHED } from "@/lib/ibr-forms";
 import { ibrPageGraph } from "@/lib/schema";
@@ -13,12 +13,25 @@ export const metadata: Metadata = {
   title,
   description: "IBR 2026 for boiler makers: what changed from IBR 1950, every form and its old name, registration documents, record keeping and small industrial boilers.",
   alternates: { canonical: "/ibr" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/ibr", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: {
+    type: "website",
+    url: "https://ahromlabs.com/ibr",
+    siteName: "Ahrom Labs",
+    title,
+    description: lead,
+    images: [{ url: "/ibr/ibr-forms-1950-to-2026.webp", width: 2752, height: 1536, alt: "IBR forms renumbered on 1 October 2026, IBR 1950 to IBR 2026" }],
+  },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
 // Guides in reading order; any guide not listed here still shows, after these.
 const ORDER = ["2026-changes", "registration-documents", "record-keeping", "small-industrial-boilers"];
+
+const FORMS_LIST = {
+  href: "/ibr/forms",
+  title: "IBR 2026 forms list, and their IBR 1950 names",
+  text: "Every form from Form I to Form XXIII, the regulation it falls under, and the IBR 1950 form it replaced.",
+};
 
 export default function IbrHub() {
   const guides = [...getContent("guide")].sort((a, b) => {
@@ -37,35 +50,29 @@ export default function IbrHub() {
       checked={IBR_FORMS_CHECKED}
       updated={updated}
     >
-      <h2 className="display text-3xl text-foreground sm:text-4xl">Guides</h2>
-      <ul className="mt-4 space-y-6">
-        {guides.map((g) => (
-          <li key={g.slug}>
-            <Link href={`/ibr/${g.slug}`} className="text-link focus-ring text-lg font-medium">
+      <IbrH2>Guides</IbrH2>
+      <ul className="mt-6 divide-y divide-line border-y border-line">
+        {[...guides.map((g) => ({ href: `/ibr/${g.slug}`, title: g.title, text: g.answer })), FORMS_LIST].map((g) => (
+          <li key={g.href} className="py-6">
+            <Link href={g.href} className="text-link focus-ring text-xl font-medium">
               {g.title}
             </Link>
-            <p className="mt-1 leading-relaxed text-foreground-secondary">{g.answer}</p>
+            <p className="mt-2 leading-relaxed text-foreground-secondary">{g.text}</p>
           </li>
         ))}
-        <li>
-          <Link href="/ibr/forms" className="text-link focus-ring text-lg font-medium">
-            IBR 2026 forms list, and their IBR 1950 names
-          </Link>
-          <p className="mt-1 leading-relaxed text-foreground-secondary">
-            Every form from Form I to Form XXIII, the regulation it falls under, and the IBR 1950 form it replaced.
-          </p>
-        </li>
       </ul>
 
-      <h2 className="display mt-12 text-3xl text-foreground sm:text-4xl">The forms in a boiler&apos;s folder</h2>
-      <ul className="mt-4 space-y-2 text-foreground-secondary">
+      <IbrH2>The forms in a boiler&apos;s folder</IbrH2>
+      <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-3 text-foreground-secondary sm:grid-cols-2">
         {ibrFormPages().map((f) => (
           <li key={f.slug}>
-            <Link href={`/ibr/forms/${f.slug}`} className="text-link focus-ring">
+            <Link href={`/ibr/forms/${f.slug}`} className="text-link focus-ring font-medium">
               {formName(f)}
             </Link>
-            {`: ${f.title}`}
-            {f.old && ` (was ${f.old.form})`}
+            <span className="block text-sm">
+              {f.title}
+              {f.old && ` · was ${f.old.form}`}
+            </span>
           </li>
         ))}
       </ul>

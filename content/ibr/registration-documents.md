@@ -15,6 +15,9 @@ checked: 2026-10-17
 image:
   src: /ibr/ibr-registration-steps.webp
   alt: "Seven steps to register a boiler under IBR 2026: 1, submit the application with Form I Part B or C, Form IV Part A, drawings, and Form V Parts A and B; 2, the Inspector checks the boiler at site; 3, hydraulic test; 4, provisional order in Form X; 5, registry number engraved on the front plate within one month, for example GT above 1234; 6, steam test, entered in Form XI; 7, certificate for use in Form XII. Regulations 8, 300, 301 and 310."
+  width: 2048
+  height: 768
+  caption: "The seven steps from application to certificate for use, under regulations 8, 300, 301 and 310 of IBR 2026."
 sources:
   - title: Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)
     publisher: Central Boilers Board, Department for Promotion of Industry and Internal Trade
