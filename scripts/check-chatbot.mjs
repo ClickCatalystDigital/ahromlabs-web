@@ -40,7 +40,7 @@ const CHECKS = [
   // IBR 2026 (/ibr): old and new form names, formal and blunt
   ["When did IBR 2026 replace IBR 1950?", /1 October 2026/],
   ["What changed in the Indian Boiler Regulations 2026?", /renumbered/i],
-  ["What is Form III A called now under IBR 2026?", /Form IV Part B \(formerly Form III-A\)|Form III-A under IBR 1950/],
+  ["What is Form III A called now under IBR 2026?", /Form III[- ]A[^.]{0,120}?Form IV Part B|Form IV Part B[^.]{0,60}?Form III-A/],
   ["What is IBR Form IV Part A?", /Constructor's certificate of manufacture and test/i],
   ["Is Form II still the inspection certificate?", /Form I Part B/],
   ["What replaced Form IV-A in the IBR folder?", /Form V Part B/],
