@@ -8,7 +8,6 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Savistar live check after the Next 15 upgrade** (merged 13 Oct 2026, PR #1): once Render shows the deploy finished, open the live app and check sign-in, a client page and an invoice PDF.
 - [ ] **Savistar: confirm `SESSION_SECRET` is set on Render.** `lib/auth.js` falls back to a fixed string when it's missing, which would let anyone forge a login. Once confirmed, the fallback can be removed.
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.
-- [ ] **GA key events:** once each has been seen, star `boiler_demo_form_sent`, `electronics_demo_form_sent`, `interiors_demo_form_sent` and `contact_form_sent` under GA Admin → Events (GA only allows this after the event has arrived). `generate_lead` is no longer sent.
 - [ ] **GA internal traffic:** send Claude the office IP (`curl -s https://api.ipify.org`) so the internal-traffic filter can be set up.
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
 - [ ] **Disk space:** 4.4 GB free on 17 Oct 2026 (enough to deploy); local demo testing needs about 5 GB.
@@ -27,6 +26,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **IBR pages, monthly (first: mid-November 2026):** look for new Central Boilers Board notifications on egazette.gov.in (search "Indian Boiler"). If IBR 2026 was amended, tell Claude: it updates `src/lib/ibr-forms.ts` or the guides, re-runs the quote check (`npm run content:build`) and bumps the dates.
 
 ## Done
+
+- [x] **GA key events (17 Oct 2026):** `contact_form_sent`, `boiler_demo_form_sent`, `electronics_demo_form_sent` and `interiors_demo_form_sent` marked as key events through the insights connector (counted once per event, from now on, not retroactively).
 
 - [x] **Google insights connector set up (17 Oct 2026):** project "Google Search Console Claude" (motiwalapujan@gmail.com) with Search Console, Analytics Data, Analytics Admin and PageSpeed Insights APIs; service account `ahrom-insights@mystical-tensor-502313-p0.iam.gserviceaccount.com` (no Cloud roles) is a Full user in Search Console and an **Administrator** on the GA4 "Ahrom Labs" property (Pujan's choice); key in `~/.config/ahrom-labs/service-account.json`, PageSpeed API key in `~/.config/ahrom-labs/pagespeed-key`. `npm run google -- setup_status` confirms both properties. New Claude Code sessions in this folder: approve the **google-insights** connector when asked.
 
