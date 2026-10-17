@@ -22,7 +22,7 @@ evidence:
   - metric: Missing ledgers
     value: flagged for a person, never auto-created
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 ---
 
 ## Why can't a web app just call Tally?

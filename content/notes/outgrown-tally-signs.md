@@ -18,7 +18,7 @@ evidence:
   - metric: Import documents read by AI instead of typed
     value: 5 types, 88–95% needing no correction
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 ---
 
 TallyPrime is excellent at what it's for: the books. Businesses outgrow it not because it gets worse, but because more of their work happens somewhere Tally can't see. Here are the seven signs we see most — each one drawn from a business we've built for, with what fixed it.

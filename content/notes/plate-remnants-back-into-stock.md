@@ -20,7 +20,7 @@ evidence:
   - metric: cost of a used piece
     value: by weight fraction — 100 kg used of a 157 kg, ₹1,000 plate → ₹636.94
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 ---
 
 A boiler maker buys steel plate in standard sizes and cuts it to the parts a design needs. The leftover is often big enough to use on the next job — if anyone knows it exists. At one boiler and pressure-vessel manufacturer, it used to be re-bought or scrapped blindly. This is how the operations system Ahrom Labs built now keeps it.

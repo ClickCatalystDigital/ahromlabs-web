@@ -22,7 +22,7 @@ evidence:
   - metric: books lock
     value: enforced at the single point every journal posting passes through
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 ---
 
 Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At a boiler and pressure-vessel manufacturer Ahrom Labs built for, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.
