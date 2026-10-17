@@ -115,6 +115,10 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   get it from git (`scripts/build-content.mjs`); content files from `updated:`, and the build
   fails if a file was committed after its `updated:` date. `npm run deploy` starts a sync
   (`npm run search:sync`), and the instance also syncs every 6 hours.
+- **Retrieval settings (dashboard/API, 17 Oct 2026):** hybrid search with reranking, keyword
+  match mode `or` (was `and`, which needed every word of a question on the page), score
+  threshold 0.3 (was 0.4), chunk size 1024, answer cache on for 48 hours. Some phrasings of the
+  ownership question still return nothing; see the note in `docs/owner-todo.md`.
 
 ## Human structure
 
