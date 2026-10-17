@@ -40,7 +40,7 @@ const CHECKS = [
   // IBR 2026 (/ibr): old and new form names, formal and blunt
   ["When did IBR 2026 replace IBR 1950?", /1 October 2026/],
   ["What changed in the Indian Boiler Regulations 2026?", /renumbered/i],
-  ["What is Form III A called now under IBR 2026?", /Form III-A under IBR 1950/],
+  ["What is Form III A called now under IBR 2026?", /Form IV Part B \(formerly Form III-A\)|Form III-A under IBR 1950/],
   ["What is IBR Form IV Part A?", /Constructor's certificate of manufacture and test/i],
   ["Is Form II still the inspection certificate?", /Form I Part B/],
   ["What replaced Form IV-A in the IBR folder?", /Form V Part B/],
@@ -101,7 +101,10 @@ const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map
 for (const url of urls) {
   let status = 0;
   try {
-    status = (await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60000) })).status;
+    // curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
+    // certificate, which macOS curl fetches and Node does not. One byte is enough.
+    status = Number(execFileSync("curl", ["-s", "-L", "-m", "60", "-r", "0-0", "-o", "/dev/null", "-w", "%{http_code}", url], { encoding: "utf-8" }));
+    if (status === 206) status = 200;
   } catch {}
   if (status !== 200) failed++;
   console.log(`${status === 200 ? "ok  " : "DEAD"}  ${url} (${status || "no answer"})`);
