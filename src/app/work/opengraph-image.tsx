@@ -8,6 +8,6 @@ export default function Image() {
   return renderOgImage({
     title: "The businesses we've built systems for.",
     description:
-      "LS Technologies, Savistar & Saag, Shanti Boilers & Pressure Vessels — and what each system actually does.",
+      "LS Technologies, Savistar & Saag, a boiler and pressure-vessel manufacturer — and what each system actually does.",
   });
 }

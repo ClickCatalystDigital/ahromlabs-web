@@ -4,7 +4,7 @@ slug: boiler-pressure-vessel-manufacturing
 title: ERP software for boiler and pressure-vessel manufacturers
 audience: Boiler and pressure-vessel manufacturers
 answer: >
-  Ahrom Labs built the operations system Shanti Boilers & Pressure Vessels runs
+  Ahrom Labs built the operations system a boiler and pressure-vessel manufacturer runs
   on — BOM, procurement, stores, plate cutting, production, QC, IBR statutory
   folders, job costing, GST and TDS accounting, service contracts and a
   customer portal, in one system. Each
@@ -15,7 +15,7 @@ description: >
   Custom ERP for boiler makers: BOM, plate traceability, IBR folders built
   from a bank of test certificates, job costing, QC, GST and after-sales service.
 domain: [manufacturing, compliance, quality-control]
-clients: [shanti-boilers]
+clients: [boiler-manufacturer]
 services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction]
 guides: [2026-changes, registration-documents, record-keeping, small-industrial-boilers]
 notes:
@@ -75,7 +75,7 @@ Yes. A live demo runs at [boiler-erp.ahromlabs.com](https://boiler-erp.ahromlabs
 
 ## What does a boiler manufacturer need that a generic ERP doesn't give?
 
-Four things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [Shanti Boilers & Pressure Vessels](/work#shanti-boilers) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.
+Four things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [a boiler and pressure-vessel manufacturer](/work#boiler-manufacturer) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.
 
 ## Can the IBR statutory folder come out of the system instead of being typed?
 
@@ -138,7 +138,7 @@ The same system runs a device-control layer on office PCs. USB drives, CDs and D
 
 ## What modules does a boiler manufacturer's ERP need?
 
-One per department, sharing the same records rather than handing spreadsheets between them. In the system built for Shanti Boilers:
+One per department, sharing the same records rather than handing spreadsheets between them. In the system built for that manufacturer:
 
 - **Sales and CRM** — leads, quotations, sale orders and a payment tracker with stages per order.
 - **Engineering** — a multi-level bill of materials with where-used and common/uncommon views, engineering change notes, reusable structure templates, drawings approved by role, and calculation sheets linked to the drawings they substantiate.
@@ -156,7 +156,7 @@ Yes, and they were. Bills of materials are imported from the plant's own spreads
 
 ## Should a boiler maker buy an engineering ERP package or build custom?
 
-Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The Shanti Boilers system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder built from a bank of test certificates, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
+Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder built from a bank of test certificates, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
 
 ## What should a boiler maker ask any software vendor?
 
@@ -170,11 +170,11 @@ Whoever builds or sells it, these five questions separate a system that fits fro
 
 ## IBR terms, in one place
 
-The Indian Boiler Regulations, 2026 renumbered the folder's forms on 1 October 2026. Shanti's folders were filed under the IBR 1950 names, given in brackets; every form and its old name is on [the IBR 2026 forms list](/ibr/forms).
+The Indian Boiler Regulations, 2026 renumbered the folder's forms on 1 October 2026. The client's folders were filed under the IBR 1950 names, given in brackets; every form and its old name is on [the IBR 2026 forms list](/ibr/forms).
 
 - **[Form I Part B](/ibr/forms/form-i-part-b) (was Form II(1))** — the inspection certificate: inspecting authority, pressures, hydraulic test pressure and date, drawing numbers and signatories.
 - **[Form IV Part A](/ibr/forms/form-iv-part-a) (was Form III)** — the boiler's description: dimensions, pressures, heating surface, evaporation, parts manufactured, construction and seams.
-- **[Form IV Part B](/ibr/forms/form-iv-part-b) (was Form III-A)** — the certificate for pipes; in Shanti's folders, a material table for one named part such as the feed pipeline, with steel-making process and heat treatment.
+- **[Form IV Part B](/ibr/forms/form-iv-part-b) (was Form III-A)** — the certificate for pipes; in the client's folders, a material table for one named part such as the feed pipeline, with steel-making process and heat treatment.
 - **[Form V Part B](/ibr/forms/form-v-part-b) (was Form IV-A)** — the extract of every material test certificate used in the boiler, grouped into lettered sections.
 - **[Form XXII](/ibr/forms/form-xxii) (was Form XVII)** — the certificate of manufacture and test for a small industrial boiler.
 - **Material test certificate (MTC)** — the mill's certificate for a plate, tube or forging, identified here by certificate, cast and plate number together.

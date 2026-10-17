@@ -165,8 +165,9 @@ export function articleGraph(entry: ContentEntry, path: string) {
   const url = `${siteUrl}${path}`;
   const cites = (p: { kind: string; slug: string }) => p.kind === entry.kind && p.slug === entry.slug;
   const about = services.filter((s) => s.proof.some(cites)).map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` }));
+  // An unnamed client is not an Organization a search engine can resolve.
   const mentions = engagements
-    .filter((e) => e.proof.some(cites))
+    .filter((e) => e.proof.some(cites) && !e.anonymous)
     .map((e) => ({
       "@type": "Organization",
       "@id": `${siteUrl}/work#${e.slug}`,
@@ -198,7 +199,7 @@ export function articleGraph(entry: ContentEntry, path: string) {
 // are listed as `hasPart` so the page's evidence is machine-visible too.
 export function industryGraph(
   entry: ContentEntry,
-  edges: { services: { slug: string }[]; clients: { slug: string; client: string }[]; notes: ContentEntry[] },
+  edges: { services: { slug: string }[]; clients: { slug: string; client: string; anonymous?: boolean }[]; notes: ContentEntry[] },
 ) {
   const url = `${siteUrl}/industries/${entry.slug}`;
   return {
@@ -221,7 +222,7 @@ export function industryGraph(
           significantLink: entry.demo.url,
           mainEntity: {
             "@type": "SoftwareApplication",
-            name: "SB Ops",
+            name: "Boiler ERP (live demo)",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             url: entry.demo.url,
@@ -231,7 +232,7 @@ export function industryGraph(
           },
         }
       : {}),
-    mentions: edges.clients.map((c) => ({
+    mentions: edges.clients.filter((c) => !c.anonymous).map((c) => ({
       "@type": "Organization",
       "@id": `${siteUrl}/work#${c.slug}`,
       name: c.client,

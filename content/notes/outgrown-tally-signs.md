@@ -37,11 +37,11 @@ Outstanding balances live in Tally; the sales team doesn't. The fix is syncing t
 
 ## 4. Production runs on a parallel Excel
 
-Work orders, job cards, material issues, what's waiting on what — none of it fits vouchers. At [Shanti Boilers](/industries/boiler-pressure-vessel-manufacturing), each boiler is a project with its own bill of materials and milestones across design, procurement, stores, production, QC and dispatch, and the system shows what each step is waiting on.
+Work orders, job cards, material issues, what's waiting on what — none of it fits vouchers. At [a boiler manufacturer](/industries/boiler-pressure-vessel-manufacturing), each boiler is a project with its own bill of materials and milestones across design, procurement, stores, production, QC and dispatch, and the system shows what each step is waiting on.
 
 ## 5. Your stock isn't really a count
 
-Steel plate gets cut; the offcut is a specific piece, not "one more plate". Reels of components move between locations. Tally stores quantities. At Shanti Boilers, every plate is a piece with dimensions and every cut is recorded, so a 15.70 kg remnant goes back into stock instead of being scrapped. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).
+Steel plate gets cut; the offcut is a specific piece, not "one more plate". Reels of components move between locations. Tally stores quantities. In the system built for that manufacturer, every plate is a piece with dimensions and every cut is recorded, so a 15.70 kg remnant goes back into stock instead of being scrapped. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).
 
 ## 6. Two companies, one owner, one office
 
@@ -49,11 +49,11 @@ A design firm and its furniture workshop; a trading firm and its sister concern.
 
 ## 7. Industry paperwork is assembled by hand
 
-A boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as Shanti Boilers' IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).
+A boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as that manufacturer's IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).
 
 ## Do you have to replace Tally?
 
-Usually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as Shanti Boilers did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.
+Usually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as the boiler manufacturer did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.
 
 ## Boundary
 

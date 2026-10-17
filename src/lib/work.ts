@@ -9,6 +9,8 @@ export type Engagement = {
   // Anchor on /work.
   slug: string;
   client: string;
+  // Client asked not to be named: `client` is a description, not a business name.
+  anonymous?: boolean;
   industry: string;
   built: string;
   // Service slugs from services.ts — typed so a rename breaks the build.
@@ -64,9 +66,10 @@ export const engagements: Engagement[] = [
     },
   },
   {
-    slug: "shanti-boilers",
+    slug: "boiler-manufacturer",
     demo: { url: "https://boiler-erp.ahromlabs.com/demo", label: "Try the live demo" },
-    client: "Shanti Boilers & Pressure Vessels",
+    client: "A boiler and pressure-vessel manufacturer",
+    anonymous: true,
     industry: "Boiler and pressure-vessel manufacturing",
     built:
       "A custom ERP, CRM and operational-intelligence system for a boiler and pressure-vessel manufacturer — from bills of materials and material stock to the test certificates that go into statutory quality-control documents.",
@@ -86,3 +89,7 @@ export const engagements: Engagement[] = [
     ],
   },
 ];
+
+// For use mid-sentence: "Built for a boiler and pressure-vessel manufacturer".
+export const clientInSentence = (e: Engagement) =>
+  e.anonymous ? e.client.charAt(0).toLowerCase() + e.client.slice(1) : e.client;

@@ -156,7 +156,7 @@ export const services: Service[] = [
       { metric: "Confidence scoring", value: "(approvals+1) / (approvals+rejections+2) ≥ 0.75, minimum 3 approvals" },
       { metric: "Workflow blockers", value: "What each milestone is waiting on, computed fresh on every read" },
       { metric: "Material yield", value: "Every cut conserved: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap" },
-      { metric: "Built for", value: "Boiler manufacturing (Shanti Boilers), interior design and furniture (Savistar & Saag)" },
+      { metric: "Built for", value: "Boiler manufacturing, interior design and furniture (Savistar & Saag)" },
     ],
     proof: [
       { kind: "note", slug: "plate-remnants-back-into-stock" },

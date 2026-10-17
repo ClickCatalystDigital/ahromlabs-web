@@ -9,7 +9,7 @@ import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 
 const description =
-  "Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and Shanti Boilers & Pressure Vessels — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.";
+  "Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and a boiler and pressure-vessel manufacturer — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.";
 
 export const metadata: Metadata = {
   title: "Work: clients and the systems we built for them",

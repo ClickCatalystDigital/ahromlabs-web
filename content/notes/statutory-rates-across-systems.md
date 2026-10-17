@@ -5,12 +5,12 @@ title: Keeping GST, TDS and income-tax rates current across every system
 answer: >
   Ahrom Labs keeps statutory rates — GST by HSN code, vendor TDS, income-tax and
   professional-tax slabs, PF and ESI — in one registry built to serve every
-  system it builds, with Shanti Boilers' system the first connected. A person
+  system it builds, with a boiler manufacturer's system the first connected. A person
   checks each change against the actual CBIC or CBDT notification, a change
   goes live only once approved, installs pull approved rates daily, and a wrong
   rate is retracted rather than edited.
 domain: [compliance, accounting-integration]
-systems: [shanti-ops]
+systems: [boiler-ops]
 patterns: [human-verified-statutory-rates]
 evidence:
   - metric: Rate categories
@@ -57,4 +57,4 @@ The rates registry is one part of the accounting and compliance layer that Ahrom
 
 ## Boundary
 
-Rates are only as current as the person maintaining the registry, so an unscheduled notification can take a short while to arrive — accepted in exchange for never applying an unverified rate. The registry stores rates; it doesn't decide which rate applies to a transaction or give tax advice, and a business's own CA remains the authority on its filings. Shanti Boilers' system is the first connected; others connect as they need it.
+Rates are only as current as the person maintaining the registry, so an unscheduled notification can take a short while to arrive — accepted in exchange for never applying an unverified rate. The registry stores rates; it doesn't decide which rate applies to a transaction or give tax advice, and a business's own CA remains the authority on its filings. A boiler manufacturer's system is the first connected; others connect as they need it.

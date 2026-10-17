@@ -3,7 +3,7 @@ kind: note
 slug: plate-remnants-back-into-stock
 title: Putting steel plate offcuts back into stock, by weight derived from geometry
 answer: >
-  At Shanti Boilers, every cut of a plate or section records what was used and
+  At a boiler manufacturer Ahrom Labs built for, every cut of a plate or section records what was used and
   what usable remnant was kept; the system derives every weight from dimensions
   and density, returns the remnant to stock for a later project, and books the
   rest as scrap. A 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and
@@ -23,7 +23,7 @@ published: 2026-09-24
 updated: 2026-09-24
 ---
 
-A boiler maker buys steel plate in standard sizes and cuts it to the parts a design needs. The leftover is often big enough to use on the next job — if anyone knows it exists. At Shanti Boilers & Pressure Vessels, it used to be re-bought or scrapped blindly. This is how the operations system Ahrom Labs built now keeps it.
+A boiler maker buys steel plate in standard sizes and cuts it to the parts a design needs. The leftover is often big enough to use on the next job — if anyone knows it exists. At one boiler and pressure-vessel manufacturer, it used to be re-bought or scrapped blindly. This is how the operations system Ahrom Labs built now keeps it.
 
 ## Why couldn't the old stock record hold an offcut?
 

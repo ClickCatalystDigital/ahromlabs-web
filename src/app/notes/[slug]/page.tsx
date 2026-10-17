@@ -8,7 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
 import { services } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { engagements, clientInSentence } from "@/lib/work";
 
 // Any slug outside generateStaticParams 404s. Left at the default (true), an
 // unknown slug rendered on demand, hit `find(...)!` on undefined and returned a
@@ -151,7 +151,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
                   {builtFor.map((e) => (
                     <li key={e.slug}>
                       <Link href={`/work#${e.slug}`} className="text-link focus-ring">
-                        Our work for {e.client}
+                        Our work for {clientInSentence(e)}
                       </Link>
                     </li>
                   ))}

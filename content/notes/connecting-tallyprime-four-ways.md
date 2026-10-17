@@ -50,7 +50,7 @@ Some situations can't run anything automatic: the Tally PC isn't always on, noth
 - **Tally stays the books, the PC is on during working hours, and entries should flow on their own** — the local agent.
 - **Several applications, or AI agents, need to read from or post to Tally** — the MCP server, so they share one connection instead of each building its own.
 - **A first step, an occasional sync, or an accountant who wants control** — file export and import.
-- **Most of the accounting starts as operational events** — sometimes the better answer is to keep the books inside the operations system and make Tally optional, as [Shanti Boilers](/notes/accounting-inside-the-manufacturing-erp) did.
+- **Most of the accounting starts as operational events** — sometimes the better answer is to keep the books inside the operations system and make Tally optional, as [one boiler manufacturer](/notes/accounting-inside-the-manufacturing-erp) did.
 
 These aren't exclusive. The file path remains the fallback whichever live connection a business uses.
 

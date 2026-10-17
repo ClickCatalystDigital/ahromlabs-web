@@ -6,7 +6,7 @@ answer: >
   Stay on TallyPrime if the need is accounting with simple stock. Choose ERPNext
   or Odoo when your processes match what they ship. Build custom when the
   workflow is the business — IBR paperwork, piece-level plate traceability, two
-  companies on one book. Shanti Boilers planned an ERPNext integration for
+  companies on one book. A boiler manufacturer planned an ERPNext integration for
   accounting, then built its own ledger instead.
 domain: [erp-selection, manufacturing, accounting-integration]
 patterns: [local-agent-cloud-db, human-verified-statutory-rates]
@@ -17,7 +17,7 @@ evidence:
     value: your processes match what the package ships
   - metric: Custom fits when
     value: the workflow or the regulation is specific to your business
-  - metric: Shanti Boilers' accounting decision
+  - metric: A boiler manufacturer's accounting decision
     value: ERPNext integration planned → own ledger built, Tally kept as optional sync
 published: 2026-09-24
 updated: 2026-10-17
@@ -39,7 +39,7 @@ When the part that's specific to you is the part that matters. Three examples fr
 
 ## What did a boiler manufacturer actually decide?
 
-[Shanti Boilers & Pressure Vessels](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).
+[A boiler and pressure-vessel manufacturer](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).
 
 The cost is real, and worth stating: owning the ledger meant building GST returns, TDS, reverse charge, fixed assets and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.
 

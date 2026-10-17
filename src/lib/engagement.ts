@@ -75,7 +75,7 @@ export const engagementAnswers: Answer[] = [
     answer:
       "Either way works: Tally can stay as your books, with approved invoices posted into it automatically within 30 seconds, or the books can move into the new system with Tally kept as an optional sync.",
     detail: [
-      "LS Technologies kept Tally as the books. Shanti Boilers moved the ledger, GST and TDS into its operations system and kept Tally optional. Which fits depends on how much of your accounting starts as operational events.",
+      "LS Technologies kept Tally as the books. A boiler manufacturer moved the ledger, GST and TDS into its operations system and kept Tally optional. Which fits depends on how much of your accounting starts as operational events.",
     ],
     see: [
       { label: "Seven signs your business has outgrown Tally", href: "/notes/outgrown-tally-signs" },
@@ -168,7 +168,7 @@ export const engagementAnswers: Answer[] = [
     answer:
       "The work doesn't depend on one person: a team of developers and AI agents carries the delivery load, and every system ships with a canonical system document that lets any developer or agent pick it up cold.",
     detail: [
-      "That document records what exists, how it fits together, and every known gap — the operations system for Shanti Boilers has one running to thousands of lines, updated as each piece of work lands.",
+      "That document records what exists, how it fits together, and every known gap — the operations system for a boiler manufacturer has one running to thousands of lines, updated as each piece of work lands.",
       "It means support never hangs on one person: any of our developers or agents can pick the system up from the document alone.",
     ],
   },

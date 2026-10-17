@@ -7,6 +7,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { HoverVideo } from "@/components/HoverVideo";
 import { getContent } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
+import { clientInSentence } from "@/lib/work";
 
 const description =
   "Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture — each backed by a real system in use.";
@@ -63,7 +64,7 @@ export default function IndustriesPage() {
                     <p className="mt-2 leading-relaxed text-foreground-secondary">{i.answer}</p>
                     {clients.length > 0 && (
                       <p className="mt-3 text-sm text-foreground-secondary">
-                        Built for {clients.map((c) => c.client).join(", ")}
+                        Built for {clients.map(clientInSentence).join(", ")}
                       </p>
                     )}
                   </Link>

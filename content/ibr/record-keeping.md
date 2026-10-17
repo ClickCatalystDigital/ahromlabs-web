@@ -66,4 +66,4 @@ Within three years of a boiler's registration, if a question arises about its fi
 
 ## Why does five years matter for a manufacturer?
 
-Five years of certificates for every boiler made is a large archive. In Shanti Boilers' sample, each material test certificate was used across about 3.2 boilers, so one certificate is evidence in several folders. Shanti's system keeps them in one bank indexed by certificate, cast and plate number, rather than copied into each folder. See [how Shanti's system keeps test certificates](/notes/ibr-statutory-folder-from-bom).
+Five years of certificates for every boiler made is a large archive. In one boiler manufacturer's sample, each material test certificate was used across about 3.2 boilers, so one certificate is evidence in several folders. The system Ahrom Labs built for that manufacturer keeps them in one bank indexed by certificate, cast and plate number, rather than copied into each folder. See [how that system keeps test certificates](/notes/ibr-statutory-folder-from-bom).

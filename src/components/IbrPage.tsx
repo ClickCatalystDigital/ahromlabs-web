@@ -158,7 +158,7 @@ export function IbrPage(props: {
                   <span className="text-sm text-foreground-secondary">Free. Resets every night.</span>
                 </div>
                 <p className="mt-4 text-sm text-foreground-secondary">
-                  Built for Shanti Boilers:{" "}
+                  Built for a boiler manufacturer:{" "}
                   <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">
                     ERP for boiler manufacturers
                   </Link>
