@@ -20,7 +20,7 @@ evidence:
   - metric: Shanti Boilers' accounting decision
     value: ERPNext integration planned → own ledger built, Tally kept as optional sync
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 ---
 
 Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely "which software is best"; it's which one matches how much of your business is standard.

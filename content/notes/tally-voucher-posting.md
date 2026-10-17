@@ -21,7 +21,7 @@ evidence:
   - metric: ledger-missing handling
     value: flagged for manual review, not auto-created; retries stop until fixed
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-10-17
 ---
 
 Ahrom Labs built the CRM and Tally-accounting layer running underneath LS Technologies, an electronics-components import/export trading business. Every purchase invoice, freight bill, and customs document gets extracted, reviewed, and — once approved — has to land as a real voucher inside TallyPrime. Here's how that actually works.

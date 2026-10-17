@@ -19,7 +19,7 @@ evidence:
   - metric: staff bank visibility
     value: none, every bank route rejects staff
 published: 2026-08-29
-updated: 2026-08-31
+updated: 2026-10-17
 ---
 
 ## Why one book?

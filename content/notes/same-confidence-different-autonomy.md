@@ -18,7 +18,7 @@ evidence:
   - metric: stock-matcher autonomy
     value: auto-reserves its top match, same confidence math, same threshold
 published: 2026-08-31
-updated: 2026-08-31
+updated: 2026-10-17
 ---
 
 ## Two systems, the same scoring math

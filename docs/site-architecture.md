@@ -110,8 +110,11 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 - **Agents:** `/.well-known/mcp/server-card.json` (SEP-1649 draft; no tool list — Cloudflare
   defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
 - **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host
-  `ahromlabs.com`, and an AI Gateway rate limit + spend alert. Re-sync after each deploy that
-  adds pages (or schedule it).
+  `ahromlabs.com`, and an AI Gateway rate limit + spend alert.
+- **Freshness:** a sync re-reads only pages whose sitemap `lastmod` moved. Hand-written pages
+  get it from git (`scripts/build-content.mjs`); content files from `updated:`, and the build
+  fails if a file was committed after its `updated:` date. `npm run deploy` starts a sync
+  (`npm run search:sync`), and the instance also syncs every 6 hours.
 
 ## Human structure
 

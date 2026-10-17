@@ -9,6 +9,7 @@
 // before dev/build/preview/deploy, never inside the Worker.
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
@@ -99,6 +100,18 @@ function loadKind(kind) {
       frontmatter.description = description;
     }
 
+    // `updated` drives the sitemap lastmod, and AI Search re-reads only pages
+    // whose lastmod moved — a forgotten bump leaves the chatbot on old wording.
+    // So a commit after `updated` fails the build. Uncommitted edits pass until
+    // committed; no git (e.g. a tarball build) skips the check.
+    let committed = "";
+    try {
+      committed = execFileSync("git", ["log", "-1", "--format=%cs", "--", path.join(dir, filename)], { encoding: "utf-8" }).trim();
+    } catch {}
+    if (committed > frontmatter.updated) {
+      throw new Error(`content/${relPath}: last committed ${committed} but "updated" is ${frontmatter.updated}; bump it`);
+    }
+
     return { ...frontmatter, answer, body };
   });
 }
@@ -128,6 +141,28 @@ for (const entry of [...notes, ...industries]) {
     }
   }
 }
+
+// Last-changed dates for the hand-written pages, from the last commit touching
+// each page's source. The sitemap needs them: AI Search only re-reads a page
+// whose lastmod moved, so without one /engagement kept its old wording.
+// Gitignored; a missing git just leaves the date out.
+const PAGE_SOURCES = {
+  "": ["src/app/page.tsx"],
+  services: ["src/app/services", "src/lib/services.ts"],
+  work: ["src/app/work", "src/lib/work.ts"],
+  engagement: ["src/app/engagement", "src/lib/engagement.ts"],
+  privacy: ["src/app/privacy"],
+  approach: ["src/app/approach"],
+  about: ["src/app/about"],
+};
+const pageDates = {};
+for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
+  try {
+    const date = execFileSync("git", ["log", "-1", "--format=%cI", "--", ...paths], { encoding: "utf-8" }).trim();
+    if (date) pageDates[route] = date;
+  } catch {}
+}
+fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
 const all = [...terms, ...notes, ...patterns, ...industries];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");

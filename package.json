@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "npm run content:build && opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "npm run content:build && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "deploy": "npm run content:build && opennextjs-cloudflare build && opennextjs-cloudflare deploy && npm run search:sync",
+    "search:sync": "wrangler ai-search jobs create ahromlabs-search --description \"Post-deploy sync\" || echo \"AI Search sync not started; the 6-hourly scheduled sync will pick the changes up\"",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

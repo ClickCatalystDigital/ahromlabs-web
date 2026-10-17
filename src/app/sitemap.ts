@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getContent, termHasPage } from "@/lib/content";
+import pageDates from "@/lib/page-dates.generated.json";
 
 const siteUrl = "https://ahromlabs.com";
 
@@ -14,26 +15,30 @@ function newestUpdate(kind: Parameters<typeof getContent>[0]): Date {
   );
 }
 
+function pageDate(route: string): Date | undefined {
+  const date = (pageDates as Record<string, string>)[route];
+  return date ? new Date(date) : undefined;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Hand-written pages carry no lastModified at all. They have no date source,
-  // and stamping build time made every deploy claim all six static pages had
-  // changed — a signal crawlers learn to ignore. lastmod is optional; omitting
-  // it is honest, inventing it is not. /services and /work are hand-written
-  // too (src/lib/services.ts, src/lib/work.ts), so the same applies.
+  // Hand-written pages take lastmod from the last commit touching their source
+  // (scripts/build-content.mjs), not build time — a deploy that leaves a page
+  // alone leaves its date alone. AI Search re-reads only pages whose lastmod
+  // moved, so without it edited wording never reached the chatbot.
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: siteUrl, changeFrequency: "monthly", priority: 1 },
-    { url: `${siteUrl}/services`, changeFrequency: "monthly", priority: 0.9 },
+    { url: siteUrl, lastModified: pageDate(""), changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/services`, lastModified: pageDate("services"), changeFrequency: "monthly", priority: 0.9 },
     {
       url: `${siteUrl}/industries`,
       lastModified: newestUpdate("industry"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    { url: `${siteUrl}/work`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${siteUrl}/engagement`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/privacy`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${siteUrl}/approach`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/work`, lastModified: pageDate("work"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${siteUrl}/engagement`, lastModified: pageDate("engagement"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/privacy`, lastModified: pageDate("privacy"), changeFrequency: "yearly", priority: 0.2 },
+    { url: `${siteUrl}/approach`, lastModified: pageDate("approach"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/about`, lastModified: pageDate("about"), changeFrequency: "monthly", priority: 0.7 },
     {
       url: `${siteUrl}/systems`,
       lastModified: newestUpdate("term"),

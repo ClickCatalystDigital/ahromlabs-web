@@ -18,7 +18,7 @@ evidence:
   - metric: master data sync
     value: 24 hours
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-10-17
 ---
 
 ## Context

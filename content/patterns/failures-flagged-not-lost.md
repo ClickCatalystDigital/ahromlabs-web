@@ -16,7 +16,7 @@ evidence:
   - metric: retry behavior for structural errors
     value: none — held with reason attached until a person resolves it
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-10-17
 ---
 
 ## Context
