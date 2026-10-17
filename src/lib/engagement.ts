@@ -63,7 +63,7 @@ export const engagementAnswers: Answer[] = [
     id: "timeline",
     question: "How long does a custom ERP take to go live?",
     answer:
-      "It depends on how new the problem is: something we've already built on another engagement can ship in days or weeks, while genuinely new ground takes a couple of months, delivered in phases so part of it is in use early.",
+      "It depends on how new the problem is: something we've already built on another engagement can ship in days or weeks, while genuinely new ground takes a couple of months, delivered in phases so part of it is in use early. A new system is usable day to day from its first phase, not only once every module is finished.",
     detail: [
       "Every decision from past engagements is written down in our public pattern library, and the developers and AI agents working on a new system check it before designing anything. That's why a repeat problem is fast.",
       "The modeling phase ends with a dated plan per phase, so you know the timeline before you commit to the build.",
@@ -73,7 +73,7 @@ export const engagementAnswers: Answer[] = [
     id: "tally",
     question: "Will it work with Tally, or do we have to replace Tally?",
     answer:
-      "Either way works: Tally can stay as your books, with approved invoices posted into it automatically within 30 seconds, or the books can move into the new system with Tally kept as an optional sync.",
+      "Either way works: Tally can stay as your books, with approved invoices posted into it automatically within 30 seconds, or the books can move into the new system with Tally kept as an optional sync. Your existing Tally setup can stay in place alongside our system; your accountant keeps working in it as before.",
     detail: [
       "LS Technologies kept Tally as the books. A boiler manufacturer moved the ledger, GST and TDS into its operations system and kept Tally optional. Which fits depends on how much of your accounting starts as operational events.",
     ],
@@ -86,7 +86,7 @@ export const engagementAnswers: Answer[] = [
     id: "ownership",
     question: "Who owns the software and the code, and what happens to our data?",
     answer:
-      "The software stays ours, and you have a licence to use your system for as long as the annual maintenance contract (AMC) runs. The source code stays with us as well: you get a working system to use, not a copy of the code. Your business data lives in your system and you can export it at any time.",
+      "The software stays ours, and you have a licence to use your system for as long as the annual maintenance contract (AMC) runs. The source code stays with us as well: you get a working system to use, not a copy of the code. Paying for the build buys that working system and its licence; the software and code are not yours to own after you pay. If you stop paying the AMC, the licence to keep using the system ends with it. Your business data lives in your system and you can export it at any time.",
     detail: [
       "We may use your data in anonymised, aggregated form to improve our systems and to publish industry benchmarks; nothing that identifies your business or your customers is shared.",
     ],
