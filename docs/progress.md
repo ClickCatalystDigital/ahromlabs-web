@@ -497,6 +497,27 @@ checked against ShantiOps SYSTEM.md before anything was written.
 - **Next for speed, if wanted:** serve prerendered HTML from Cloudflare's edge cache instead of
   through the Worker on every request; that is the remaining first-byte cost.
 
+## Search Console audit through the insights connector (2026-10-17)
+
+- **Inspected all 63 sitemap URLs** (`gsc_inspect`): 9 indexed, 31 "Discovered – currently not
+  indexed", 23 unknown to Google. **No errors:** no 404, redirect, noindex, robots block or
+  canonical disagreement; Google's canonical matches ours on every indexed page.
+- **Not a speed problem:** local fetches looked slow (up to 67 s), but the time was lost in the
+  TLS handshake on this connection; Google's own PageSpeed run measured a 10 ms first byte.
+  Check speed with the `pagespeed` tool, never local `curl`.
+- **Fixed:** IBR guides were linked from only 1–2 other pages; every IBR page now links all four
+  guides and the forms list. Sitemap resubmitted after deploy.
+- **Expected, not fixable in code:** a two-month-old domain with few links gets crawled slowly;
+  "Discovered – not indexed" clears as Google spends crawls on it. Levers: request indexing (10 a
+  day, Pujan), backlinks, internal links.
+- **Brand query:** "ahrom" averages position 3.2 with ~2% CTR — an ambiguous word with other
+  results above; title and description are already clear. Brand signals (Google Business
+  Profile, mentions of "Ahrom Labs") are the lever.
+- **Watch:** four pattern pages are under 250 words (`fail-closed-preserve-visibility`,
+  `reconcile-against-source-of-truth`, `reference-rate-anomaly-detection`,
+  `seeded-credentials-forced-rotation`); if they stay unindexed after the rest are, deepen or
+  merge them.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).
