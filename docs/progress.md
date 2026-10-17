@@ -513,6 +513,13 @@ checked against ShantiOps SYSTEM.md before anything was written.
 - **Brand query:** "ahrom" averages position 3.2 with ~2% CTR — an ambiguous word with other
   results above; title and description are already clear. Brand signals (Google Business
   Profile, mentions of "Ahrom Labs") are the lever.
+- **Pages tab (same day):** 3 "Page with redirect" are the http/www variants (301 to
+  https://ahromlabs.com, correct); 2 "Crawled – not indexed" are the notes share image and
+  /knowledge.json (correct, not pages); 34 "Discovered" with validation started; 5xx "Passed".
+  Nothing broken. Don't validate the first two.
+- **Requested indexing** for 10 priority URLs through the Search Console UI in the browser pane;
+  **IndexNow** added to the deploy (63 URLs accepted by Bing); Bing Webmaster Tools set up
+  (imported from Search Console) with the sitemap submitted.
 - **Watch:** four pattern pages are under 250 words (`fail-closed-preserve-visibility`,
   `reconcile-against-source-of-truth`, `reference-rate-anomaly-detection`,
   `seeded-credentials-forced-rotation`); if they stay unindexed after the rest are, deepen or

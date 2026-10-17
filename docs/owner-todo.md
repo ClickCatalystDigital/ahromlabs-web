@@ -21,11 +21,15 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 
 
-- [ ] **Search Console: request indexing (Google allows about 10 a day; Pujan said he will).** URL Inspection → paste the URL → Request indexing, in this order. Day 1: https://ahromlabs.com/services, /work, /industries, /ibr, /ibr/forms, /industries/electronics-component-trading, /industries/interior-design-and-furniture, /ibr/registration-documents, /ibr/2026-changes, /ibr/forms/form-iv-part-a. Day 2: /ibr/record-keeping, /ibr/small-industrial-boilers, /notes/ibr-statutory-folder-from-bom, /notes/accounting-inside-the-manufacturing-erp, /notes/outgrown-tally-signs, /notes/connecting-tallyprime-four-ways, /ibr/forms/form-iv-part-b, /ibr/forms/form-i-part-b, /ibr/forms/form-xxii, /ibr/forms/form-xii. The rest Google will reach through the sitemap; Claude rechecks with `gsc_inspect`.
+- [ ] **Search Console, request indexing, day 2 (Claude can do it in the browser pane when asked; about 10 a day):** /ibr/record-keeping, /ibr/small-industrial-boilers, /notes/ibr-statutory-folder-from-bom, /notes/accounting-inside-the-manufacturing-erp, /notes/outgrown-tally-signs, /notes/connecting-tallyprime-four-ways, /ibr/forms/form-iv-part-b, /ibr/forms/form-i-part-b, /ibr/forms/form-xxii, /ibr/forms/form-xii. Day 1 (17 Oct 2026, done by Claude): /services, /work, /industries, /ibr, /ibr/forms, both other industry pages, /ibr/registration-documents, /ibr/2026-changes, /ibr/forms/form-iv-part-a.
+- [ ] **Google Business Profile** (about 15 minutes, then Google's verification): business.google.com → Ahrom Labs, category "Software company", service-area business (hide the street address; areas: Ahmedabad, Gujarat, India), website https://ahromlabs.com, phone, hours. Strengthens the brand result for "ahrom" and local searches like "custom ERP Ahmedabad". Tell Claude once it's live so the schema `sameAs` can include it.
+- [ ] **Search Console, leave these alone:** don't press "Validate fix" on "Page with redirect" (the http/www versions redirecting, correct) or "Crawled – currently not indexed" (a share image and /knowledge.json, correct). They stay listed on every site.
 - [ ] **Check the chatbot's new rule reads right to you (set 17 Oct 2026):** it now says "the site doesn't cover it" and links the contact page instead of answering from general knowledge. Also read the new ownership sentence on /engagement: "If you stop paying the AMC, the licence to keep using the system ends with it." It restates the existing licence term; change the wording if you'd put it differently.
 - [ ] **IBR pages, monthly (first: mid-November 2026):** look for new Central Boilers Board notifications on egazette.gov.in (search "Indian Boiler"). If IBR 2026 was amended, tell Claude: it updates `src/lib/ibr-forms.ts` or the guides, re-runs the quote check (`npm run content:build`) and bumps the dates.
 
 ## Done
+
+- [x] **Bing Webmaster Tools + IndexNow (17 Oct 2026):** site imported from Search Console by Pujan; sitemap submitted to Bing; IndexNow pings Bing on every deploy (first ping: 63 URLs, accepted).
 
 - [x] **GA key events (17 Oct 2026):** `contact_form_sent`, `boiler_demo_form_sent`, `electronics_demo_form_sent` and `interiors_demo_form_sent` marked as key events through the insights connector (counted once per event, from now on, not retroactively).
 

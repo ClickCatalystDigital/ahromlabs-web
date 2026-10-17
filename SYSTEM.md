@@ -177,6 +177,20 @@ MCP SDK and zod are dev dependencies, never bundled into the site.
   buyer's wording to that page) → `ga_ai_referrals` and `ga_sources` → `pagespeed` on the pages
   with the most impressions. Record findings in `docs/progress.md`.
 
+## Bing and IndexNow (`scripts/indexnow.mjs`)
+
+- **IndexNow** runs inside `npm run deploy`, right after the Worker deploys: it reads the live
+  sitemap and sends Bing (and Yandex, Seznam, Naver) every URL whose `lastmod` is newer than the
+  last accepted ping (`.indexnow-last`, gitignored; the first run sent all 63, accepted with 202).
+  Bing's index feeds ChatGPT search and Microsoft Copilot, so this is how an edit reaches them
+  fastest. The key is public by design, served at `/f0bb9ca76f6f593250c83226eb1ede11.txt`; never
+  delete that file. A failed ping is logged and retried next deploy, never fails the deploy.
+- **Bing Webmaster Tools:** the site was imported from Search Console (17 Oct 2026) and the
+  sitemap submitted there. Its **AI Performance** report shows citations in Copilot and Bing AI
+  answers, the nearest thing to measured AEO.
+- Google does not accept IndexNow; Google gets the sitemap (`gsc_submit_sitemap`) and manual
+  "Request indexing" through the Search Console web UI (no API; about 10 a day).
+
 ## Env vars / config
 
 - `.env.example` — notes only: form mail needs no API key (Cloudflare Email Sending binding; recipient `LEADS_TO` in `wrangler.jsonc`).
