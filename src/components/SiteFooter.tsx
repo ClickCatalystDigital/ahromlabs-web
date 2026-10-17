@@ -10,7 +10,7 @@ export function SiteFooter() {
           </a>
           {/* The contact form is a client component, so this is the only way to
               reach us with JS off — and the only one on pages that aren't /. */}
-          <a href="mailto:pujan@ahromlabs.com" className="footer-copyright focus-ring">
+          <a href="mailto:pujan@ahromlabs.com" className="footer-copyright focus-ring inline-block py-1">
             pujan@ahromlabs.com
           </a>
           {/* The machine-readable surfaces, linked from every page so an agent
