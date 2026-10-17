@@ -9,15 +9,17 @@
 //   node scripts/google-insights.mjs --mcp      the connector (stdio)
 //
 // Credentials stay outside the repo, in ~/.config/ahrom-labs/:
-//   service-account.json  Google service-account key; the account is a user on the
-//                         Search Console property and a Viewer on the GA4 property
+//   service-account.json  Google service-account key; the account is a Full user on
+//                         the Search Console property and an Editor on the GA4 property
 //   pagespeed-key         PageSpeed Insights API key (optional; without it Google's
 //                         small shared quota applies)
 // Overrides: GOOGLE_KEY_FILE, PAGESPEED_KEY_FILE, GSC_SITE, GA4_PROPERTY.
 //
-// Read-only apart from gsc_submit_sitemap. "Request indexing" has no API (Google
-// keeps it in the web UI); the Indexing API is for job postings and livestreams
-// only, so it is deliberately absent.
+// Writes are marked `write: true` and announced to the MCP client as such, so Claude
+// Code asks before running them: resubmitting the sitemap, and GA4 key events, custom
+// dimensions and data retention. "Request indexing" has no API (Google keeps it in the
+// web UI); the Indexing API is for job postings and livestreams only, so it is
+// deliberately absent.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
@@ -29,7 +31,13 @@ const KEY_FILE = process.env.GOOGLE_KEY_FILE ?? path.join(CONFIG_DIR, "service-a
 const PAGESPEED_KEY_FILE = process.env.PAGESPEED_KEY_FILE ?? path.join(CONFIG_DIR, "pagespeed-key");
 const ORIGIN = "https://ahromlabs.com";
 const SITEMAP = `${ORIGIN}/sitemap.xml`;
-const SCOPES = ["https://www.googleapis.com/auth/webmasters", "https://www.googleapis.com/auth/analytics.readonly"];
+// analytics.edit lets the GA4 write tools work; it does nothing beyond the role the
+// service account holds on the property (Editor), so it can't reach other properties.
+const SCOPES = [
+  "https://www.googleapis.com/auth/webmasters",
+  "https://www.googleapis.com/auth/analytics.readonly",
+  "https://www.googleapis.com/auth/analytics.edit",
+];
 const SETUP = 'Setup steps: SYSTEM.md, "Google insights connector".';
 
 // ---------- auth
@@ -165,6 +173,8 @@ async function gaReport({ dimensions, metrics, days = 28, filter, limit = 50, or
   );
 }
 
+const admin = async (rest, opts) => api(`https://analyticsadmin.googleapis.com/v1beta/${await property()}${rest}`, opts);
+
 // Assistants that send visitors with a referrer. Many AI answers send none, so this
 // is a floor, not the whole of AI traffic.
 const AI_SOURCES = "chatgpt|openai|perplexity|claude|anthropic|gemini|bard|copilot|you\\.com|phind|deepseek|meta\\.ai|grok";
@@ -247,7 +257,8 @@ export const TOOLS = {
     run: async () => (await api(await siteApi("/sitemaps"))).sitemap ?? [],
   },
   gsc_submit_sitemap: {
-    description: "Search Console: resubmit https://ahromlabs.com/sitemap.xml so Google rereads it. The only tool that changes anything.",
+    description: "Search Console: resubmit https://ahromlabs.com/sitemap.xml so Google rereads it.",
+    write: true,
     params: {},
     run: async () => {
       await api(await siteApi(`/sitemaps/${encodeURIComponent(SITEMAP)}`), { method: "PUT" });
@@ -292,6 +303,50 @@ export const TOOLS = {
     },
     run: (args) => gaReport(args),
   },
+  ga_key_events: {
+    description: "Analytics: the events marked as key events (GA4's conversions).",
+    params: {},
+    run: async () => (await admin("/keyEvents")).keyEvents ?? [],
+  },
+  ga_create_key_event: {
+    description:
+      "Analytics: mark an event as a key event, e.g. contact_form_sent or boiler_demo_form_sent. GA4 counts it as a key event from then on, not retroactively.",
+    write: true,
+    params: { eventName: z.string().min(1) },
+    run: ({ eventName }) => admin("/keyEvents", { method: "POST", body: { eventName, countingMethod: "ONCE_PER_EVENT" } }),
+  },
+  ga_custom_dimensions: {
+    description: "Analytics: the custom dimensions defined on the property.",
+    params: {},
+    run: async () => (await admin("/customDimensions")).customDimensions ?? [],
+  },
+  ga_create_custom_dimension: {
+    description:
+      "Analytics: register an event (or user) parameter as a custom dimension so reports can break down by it. Only parameters the site actually sends are useful.",
+    write: true,
+    params: {
+      parameterName: z.string().min(1).describe("The event parameter the site sends, e.g. demo"),
+      displayName: z.string().min(1),
+      scope: z.enum(["EVENT", "USER"]).default("EVENT"),
+      description: z.string().default(""),
+    },
+    run: (dimension) => admin("/customDimensions", { method: "POST", body: dimension }),
+  },
+  ga_data_retention: {
+    description: "Analytics: how long event-level data is kept (affects how far back explorations reach).",
+    params: {},
+    run: () => admin("/dataRetentionSettings"),
+  },
+  ga_set_data_retention: {
+    description: "Analytics: set event-data retention. FOURTEEN_MONTHS is the longest on the free tier.",
+    write: true,
+    params: { eventDataRetention: z.enum(["TWO_MONTHS", "FOURTEEN_MONTHS"]) },
+    run: async ({ eventDataRetention }) =>
+      api(`https://analyticsadmin.googleapis.com/v1beta/${await property()}/dataRetentionSettings?updateMask=eventDataRetention`, {
+        method: "PATCH",
+        body: { eventDataRetention },
+      }),
+  },
   pagespeed: {
     description:
       "PageSpeed Insights (Lighthouse plus real-user Core Web Vitals) for one page: scores, lab timings, field data, and what to fix.",
@@ -310,7 +365,10 @@ async function serveMcp() {
   const { StdioServerTransport } = await import("@modelcontextprotocol/sdk/server/stdio.js");
   const server = new McpServer({ name: "ahrom-google-insights", version: "1.0.0" });
   for (const [name, tool] of Object.entries(TOOLS)) {
-    server.tool(name, tool.description, tool.params, async (args) => {
+    const annotations = tool.write
+      ? { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true }
+      : { readOnlyHint: true, openWorldHint: true };
+    server.registerTool(name, { description: tool.description, inputSchema: tool.params, annotations }, async (args) => {
       try {
         return { content: [{ type: "text", text: JSON.stringify(await tool.run(args), null, 2) }] };
       } catch (e) {
@@ -325,7 +383,7 @@ async function cli(name, json) {
   const tool = TOOLS[name];
   if (!tool) {
     console.log("Tools (run: npm run google -- <tool> '<json args>'):\n");
-    for (const [n, t] of Object.entries(TOOLS)) console.log(`  ${n.padEnd(20)} ${t.description}`);
+    for (const [n, t] of Object.entries(TOOLS)) console.log(`  ${n.padEnd(27)} ${t.write ? "[write] " : ""}${t.description}`);
     process.exit(name ? 1 : 0);
   }
   const args = z.object(tool.params).parse(json ? JSON.parse(json) : {});

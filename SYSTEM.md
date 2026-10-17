@@ -148,17 +148,24 @@ MCP SDK and zod are dev dependencies, never bundled into the site.
 
 - **Tools:** `setup_status` (run first) · Search Console: `gsc_queries`, `gsc_pages`,
   `gsc_page_queries`, `gsc_inspect` (index status, coverage, last crawl, Google's canonical; no
-  paths = the whole sitemap), `gsc_sitemaps`, `gsc_submit_sitemap` (the only write) · Analytics:
+  paths = the whole sitemap), `gsc_sitemaps`, `gsc_submit_sitemap` (write) · Analytics:
   `ga_pages`, `ga_sources`, `ga_ai_referrals` (ChatGPT, Perplexity, Claude, Gemini, Copilot… by
   landing page; a floor, since many AI answers send no referrer), `ga_events` (the form events),
-  `ga_report` (any dimensions and metrics) · `pagespeed` (Lighthouse scores, lab timings,
+  `ga_report` (any dimensions and metrics); writes `ga_create_key_event`,
+  `ga_create_custom_dimension`, `ga_set_data_retention` (with readers `ga_key_events`,
+  `ga_custom_dimensions`, `ga_data_retention`) · `pagespeed` (Lighthouse scores, lab timings,
   real-user Core Web Vitals when Google has enough data, and what to fix).
 - **Credentials, outside the repo** in `~/.config/ahrom-labs/`: `service-account.json` (a Google
-  Cloud service account with the Search Console API, Analytics Data API and Analytics Admin API
-  enabled; added in Search Console as a Full user and in GA4 as a Viewer) and `pagespeed-key`
+  Cloud service account `ahrom-insights@mystical-tensor-502313-p0.iam.gserviceaccount.com` in
+  project "Google Search Console Claude" (motiwalapujan@gmail.com) with the Search Console,
+  Analytics Data, Analytics Admin and PageSpeed Insights APIs enabled and **no Cloud roles**;
+  added in Search Console as a **Full** user and in GA4 as an **Administrator**, Pujan's choice; Editor would cover every tool) and `pagespeed-key`
   (an API key restricted to the PageSpeed Insights API). Never commit either. Overrides:
   `GOOGLE_KEY_FILE`, `PAGESPEED_KEY_FILE`, `GSC_SITE`, `GA4_PROPERTY`. The Search Console property
   and GA4 property are found automatically.
+- **Writes** are flagged `write: true` and announced as non-read-only, so Claude Code asks before
+  each. Access comes from the Search Console and GA4 roles, never Cloud IAM roles: those govern the
+  Cloud project (billing, resources), add no data, and would make a leaked key dangerous.
 - **Not possible by API:** "Request indexing" (Google keeps it in the web UI). The Indexing API
   is only for job postings and livestreams; don't use it for ordinary pages. Moving `lastmod` and
   resubmitting the sitemap is the API-side lever.
