@@ -483,9 +483,19 @@ checked against ShantiOps SYSTEM.md before anything was written.
 - **Lesson — check scripts:** Gazette links reported dead were a HEAD-refusing server with a
   broken certificate chain (now checked with curl); a chatbot miss was a too-narrow expected
   phrase. Read the failure before fixing the page.
-- **Open:** 5 older buyer questions (ownership, AMC, go-live time, Tally) retrieve nothing and
-  the chat answers generically; needs wording on those pages and a no-match rule in the AI
-  Search system prompt.
+- **Chatbot finished:** the 5 older misses (ownership, AMC, go-live time, Tally) fixed by
+  adding the buyer's words to the answers in `engagement.ts`; the system prompt now refuses to
+  answer from general knowledge (tested: off-topic questions get "the site doesn't cover it" and
+  the contact link).
+- **Lighthouse, 17 Oct 2026 (local, live site; PageSpeed's keyless quota was spent):** home
+  96 mobile / 94 desktop; `/ibr/forms` 75 / 88; `/ibr/registration-documents` 88 / 88.
+  Accessibility 96–100, best practices 100, CLS 0 everywhere. Largest paint is the lead
+  paragraph, held back by server response time (0.7–2.9 s first byte from Ahmedabad, every
+  page including home, all OpenNext cache hits) — not images or code. SEO 92 only because
+  Lighthouse calls the `Content-Signal` line in robots.txt an unknown directive; kept
+  deliberately (Google ignores unknown lines). Footer email link padded to a 24px tap target.
+- **Next for speed, if wanted:** serve prerendered HTML from Cloudflare's edge cache instead of
+  through the Worker on every request; that is the remaining first-byte cost.
 
 ## Known gaps / risks as of now
 

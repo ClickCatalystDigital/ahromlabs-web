@@ -131,9 +131,15 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   share few words with the page; fix them with wording, then add the question to the check.
   Also ask the real chat (`POST /chat/completions`): retrieval passing is not the same as the
   answer being right.
-- **When nothing matches, the chat answers from general knowledge** ("software is typically
-  licensed…"), which is worse than no answer on a sales site. Its system prompt (dashboard)
-  should say: if no documents match, say so and point to the contact page.
+- **System prompt (set 17 Oct 2026):** answer only from the retrieved pages, first sentence
+  first, name the page; when nothing matches, say the site doesn't cover it and point to
+  `/#contact`; never general knowledge, never invented prices, terms, clients or regulation
+  details, never a client the pages don't name. Before it, a no-match question got a generic
+  answer ("software is typically licensed…"). Wrangler can't set the prompt or the keyword match
+  mode: use the dashboard, or `PUT /accounts/{id}/ai-search/namespaces/default/instances/ahromlabs-search`
+  with only the changed field (`system_prompt_ai_search`), with the token from
+  `wrangler auth token` — partial bodies merge, as Wrangler's own `update` sends them.
+  Answers are cached 48 hours, so test with new questions.
 - **Official links:** the check fetches each with `curl`, not Node `fetch`: egazette.gov.in
   refuses HEAD and omits its intermediate certificate, which macOS curl fetches and Node (even
   with `--use-system-ca`) does not.

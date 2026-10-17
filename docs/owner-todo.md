@@ -22,11 +22,19 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 
 
+- [ ] **Give Claude Search Console access (about 10 minutes, once):**
+  1. Google Cloud console, the project already used for Gmail/Calendar → APIs & Services → Library → enable **Google Search Console API**.
+  2. IAM & Admin → Service accounts → Create (name it `search-console`; no project roles needed) → its Keys tab → Add key → JSON. A file downloads.
+  3. Move it to `~/.config/ahrom-labs/search-console.json` (in Terminal: `mkdir -p ~/.config/ahrom-labs && mv ~/Downloads/<the-file>.json ~/.config/ahrom-labs/search-console.json && chmod 600 ~/.config/ahrom-labs/search-console.json`). Don't paste its contents into chat.
+  4. Search Console → ahromlabs.com → Settings → Users and permissions → Add user: the service account's email (ends in `iam.gserviceaccount.com`), permission **Full**.
+  5. Tell Claude; it runs `npm run gsc -- sites` to confirm.
+- [ ] **Search Console, IBR pages (Pujan said he will, 17 Oct 2026):** URL Inspection → Request indexing for https://ahromlabs.com/ibr and https://ahromlabs.com/ibr/forms. Also re-request the boiler industry page and the notes that changed, so Google's copy drops the client name.
+- [ ] **Check the chatbot's new rule reads right to you (set 17 Oct 2026):** it now says "the site doesn't cover it" and links the contact page instead of answering from general knowledge. Also read the new ownership sentence on /engagement: "If you stop paying the AMC, the licence to keep using the system ends with it." It restates the existing licence term; change the wording if you'd put it differently.
 - [ ] **IBR pages, monthly (first: mid-November 2026):** look for new Central Boilers Board notifications on egazette.gov.in (search "Indian Boiler"). If IBR 2026 was amended, tell Claude: it updates `src/lib/ibr-forms.ts` or the guides, re-runs the quote check (`npm run content:build`) and bumps the dates.
 
 ## Done
 
-- [x] Site chatbot re-sync: no longer manual (17 Oct 2026). Pages now carry real sitemap dates, `npm run deploy` starts a sync, and AI Search also syncs every 6 hours. Hosting and IBR answers checked live; ownership questions still hit or miss (retrieval settings, not stale data).
+- [x] Site chatbot re-sync: no longer manual (17 Oct 2026). Every page's sitemap date is the exact time of its last change, `npm run deploy` starts a sync, and AI Search also syncs every 6 hours. Ownership, AMC, go-live and Tally questions fixed by wording (17 Oct 2026).
 - [x] Calendar access: Calendar API enabled, new client secret, Gmail + Calendar consent (16 Oct 2026); client file moved to Trash. The CRM reads bookings hourly and emails you on each.
 - [x] Email sending turned on (16 Oct 2026, 5/day ramp): steel and IBR campaigns, 40 boiler companies queued. The other 102 eligible boiler companies can be added once replies come in.
 - [x] Jev key (`OPENROUTER_KEY`) set; live check classified a call request as meeting (16 Oct 2026).

@@ -12,7 +12,8 @@
     "deploy": "npm run content:build && opennextjs-cloudflare build && opennextjs-cloudflare deploy && npm run search:sync && npm run search:check -- --wait",
     "search:check": "node --no-warnings scripts/check-chatbot.mjs",
     "search:sync": "wrangler ai-search jobs create ahromlabs-search --description \"Post-deploy sync\" || echo \"AI Search sync not started; the 6-hourly scheduled sync will pick the changes up\"",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "gsc": "node --no-warnings scripts/search-console.mjs"
   },
   "dependencies": {
     "@cloudflare/ai-search-snippet": "0.0.43",
