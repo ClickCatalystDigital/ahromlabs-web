@@ -1,4 +1,5 @@
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
+import { ibrFormPages, formName } from "@/lib/ibr-forms";
 import { services } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -98,12 +99,21 @@ export function GET() {
     .map((i) => `- [${i.title}](https://ahromlabs.com/industries/${i.slug}): ${i.answer.replace(/\s+/g, " ").trim()}`)
     .join("\n");
 
+  const ibr =
+    `- [IBR 2026 for boiler manufacturers](https://ahromlabs.com/ibr): What a boiler maker files under the Indian Boiler Regulations, 2026, which replaced IBR 1950 on 1 October 2026. Every page quotes the Gazette.\n` +
+    getContent("guide").map(line("ibr")).join("\n") +
+    `\n- [IBR 2026 forms list, and their IBR 1950 names](https://ahromlabs.com/ibr/forms): Every form from Form I to Form XXIII and the 1950 form it replaced.\n` +
+    ibrFormPages()
+      .map((f) => `- [${formName(f)}: ${f.title}](https://ahromlabs.com/ibr/forms/${f.slug}): ${f.summary}${f.old ? ` Was ${f.old.form} under IBR 1950.` : ""}`)
+      .join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
     `\n## Services\n\n${offered}\n` +
     `\n## Clients\n\n${clients}\n` +
     `\n## Working with Ahrom Labs\n\n${working}\n` +
+    `\n## IBR 2026 (Indian Boiler Regulations)\n\n${ibr}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

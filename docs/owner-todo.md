@@ -22,6 +22,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 
 
 
+- [ ] **IBR pages, monthly (first: mid-November 2026):** look for new Central Boilers Board notifications on egazette.gov.in (search "Indian Boiler"). If IBR 2026 was amended, tell Claude: it updates `src/lib/ibr-forms.ts` or the guides, re-runs the quote check (`npm run content:build`) and bumps the dates.
+
 ## Done
 
 - [x] Site chatbot re-sync: no longer manual (17 Oct 2026). Pages now carry real sitemap dates, `npm run deploy` starts a sync, and AI Search also syncs every 6 hours. Hosting and IBR answers checked live; ownership questions still hit or miss (retrieval settings, not stale data).

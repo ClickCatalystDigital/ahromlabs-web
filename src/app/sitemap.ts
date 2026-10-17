@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getContent, termHasPage } from "@/lib/content";
 import pageDates from "@/lib/page-dates.generated.json";
+import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 
 const siteUrl = "https://ahromlabs.com";
 
@@ -89,5 +90,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
   ];
 
-  return [...staticRoutes, ...contentRoutes];
+  // IBR pages: guides date from their `updated`, form pages from when the
+  // forms data was last checked against the Gazette.
+  const guides = getContent("guide");
+  const ibrUpdated = new Date([IBR_FORMS_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!);
+  const ibrRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/ibr`, lastModified: ibrUpdated, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/ibr/forms`, lastModified: new Date(IBR_FORMS_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    ...guides.map((g) => ({
+      url: `${siteUrl}/ibr/${g.slug}`,
+      lastModified: new Date(g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...ibrFormPages().map((f) => ({
+      url: `${siteUrl}/ibr/forms/${f.slug}`,
+      lastModified: new Date(IBR_FORMS_CHECKED),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return [...staticRoutes, ...contentRoutes, ...ibrRoutes];
 }

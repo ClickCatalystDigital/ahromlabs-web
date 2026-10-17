@@ -10,8 +10,10 @@
 //
 // Adding a page? Add two or three questions for it here, in a buyer's words, each
 // with a phrase only the right answer contains. See docs/corpus-playbook.md.
+import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { AI_SEARCH_URL } from "../src/lib/ai-search.ts";
+import { IBR_2026_URL } from "../src/lib/ibr-forms.ts";
 
 const CHECKS = [
   // Ownership and licence
@@ -35,6 +37,21 @@ const CHECKS = [
   ["Can your system produce IBR forms for boilers?", /certificate/i],
   ["How long does it take to make a boiler's IBR folder?", /a few minutes/],
   ["Do you build systems for electronics component traders?", /component/i],
+  // IBR 2026 (/ibr): old and new form names, formal and blunt
+  ["When did IBR 2026 replace IBR 1950?", /1 October 2026/],
+  ["What changed in the Indian Boiler Regulations 2026?", /renumbered/i],
+  ["What is Form III A called now under IBR 2026?", /Form III-A under IBR 1950/],
+  ["What is IBR Form IV Part A?", /Constructor's certificate of manufacture and test/i],
+  ["Is Form II still the inspection certificate?", /Form I Part B/],
+  ["What replaced Form IV-A in the IBR folder?", /Form V Part B/],
+  ["Which documents are needed to register a boiler?", /regulation 8/i],
+  ["Can IBR certificates be submitted with a digital signature?", /digital signature/i],
+  ["How long must a boiler manufacturer keep records under IBR?", /at least five years/],
+  ["How long does the owner keep boiler certificates?", /entire life/],
+  ["What is a small industrial boiler under IBR 2026?", /500 litres/],
+  ["Which form certifies a small industrial boiler?", /Form XXII/],
+  ["What is the provisional order form for a new boiler?", /Form X\b/],
+  ["What is the Memorandum of Inspection Book form?", /Form XI\b/],
 ];
 
 // --wait (used by `npm run deploy`): first wait for the sync the deploy just
@@ -76,4 +93,17 @@ for (const [query, expect] of CHECKS) {
   console.log(`${ok ? "pass" : "MISS"}  ${query}  (${where})`);
 }
 console.log(`\n${CHECKS.length - failed}/${CHECKS.length} found the right passage`);
+
+// Official sources the IBR pages link: a dead government link is a page that no
+// longer proves what it says.
+const data = JSON.parse(fs.readFileSync(new URL("../src/lib/content-data.generated.json", import.meta.url), "utf-8"));
+const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map((src) => src.url))]);
+for (const url of urls) {
+  let status = 0;
+  try {
+    status = (await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60000) })).status;
+  } catch {}
+  if (status !== 200) failed++;
+  console.log(`${status === 200 ? "ok  " : "DEAD"}  ${url} (${status || "no answer"})`);
+}
 process.exit(failed ? 1 : 0);

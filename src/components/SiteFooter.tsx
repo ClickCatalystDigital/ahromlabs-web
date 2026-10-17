@@ -52,6 +52,9 @@ export function SiteFooter() {
           <Link href="/patterns" className="nav-link focus-ring">
             Patterns
           </Link>
+          <Link href="/ibr" className="nav-link focus-ring">
+            IBR 2026
+          </Link>
         </div>
         <p className="footer-copyright">© {new Date().getFullYear()} Ahrom Labs · Ahmedabad, India</p>
       </div>

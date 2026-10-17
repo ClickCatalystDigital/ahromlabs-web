@@ -1,6 +1,9 @@
 import type { ContentEntry } from "./content";
 import { services } from "./services";
 import { engagements } from "./work";
+import { IBR_2026_URL } from "./ibr-forms";
+
+export { IBR_2026_URL };
 
 export const siteUrl = "https://ahromlabs.com";
 
@@ -297,5 +300,65 @@ export function termGraph(entry: ContentEntry) {
     dateModified: entry.updated,
     inDefinedTermSet: { "@id": `${siteUrl}/systems#glossary` },
     publisher: { "@id": `${siteUrl}/#organization` },
+  };
+}
+
+// The regulation every /ibr page restates. Declared once, referenced by @id, so
+// engines can tell these pages are based on — not a substitute for — the
+// official Gazette text.
+const ibrLegislation = {
+  "@type": "Legislation",
+  "@id": `${siteUrl}/ibr#ibr-2026`,
+  name: "Indian Boiler Regulations, 2026",
+  legislationIdentifier: "Gazette of India, Extraordinary, Part III—Section 4, No. 596",
+  legislationDate: "2026-08-07",
+  datePublished: "2026-10-01",
+  legislationLegalForce: "https://schema.org/InForce",
+  legislationJurisdiction: "IN",
+  legislationPassedBy: { "@type": "GovernmentOrganization", name: "Central Boilers Board" },
+  url: IBR_2026_URL,
+};
+
+// One TechArticle per /ibr page, based on the Legislation above, with a
+// breadcrumb trail (Home › IBR › …) so the pages read as one body of work.
+export function ibrPageGraph(page: {
+  path: string;
+  title: string;
+  description: string;
+  published: string;
+  updated: string;
+  trail: { name: string; path: string }[];
+}) {
+  const url = `${siteUrl}${page.path}`;
+  const crumbs = [{ name: "Home", path: "" }, ...page.trail];
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      ibrLegislation,
+      {
+        "@type": "TechArticle",
+        "@id": `${url}#article`,
+        url,
+        headline: page.title,
+        description: page.description,
+        datePublished: page.published,
+        dateModified: page.updated,
+        isBasedOn: { "@id": ibrLegislation["@id"] },
+        author: { "@id": `${siteUrl}/#founder` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntityOfPage: url,
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: c.name,
+          item: `${siteUrl}${c.path}`,
+        })),
+      },
+    ],
   };
 }

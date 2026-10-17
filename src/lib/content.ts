@@ -1,6 +1,6 @@
 import contentData from "./content-data.generated.json";
 
-export type ContentKind = "term" | "note" | "pattern" | "industry";
+export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide";
 
 export type ContentEntry = {
   kind: ContentKind;
@@ -26,6 +26,14 @@ export type ContentEntry = {
   // Industry-only: a public, hands-on demo of the system this page describes.
   demo?: { url: string; label: string };
   evidence?: { metric: string; value: string }[];
+  // Guide-only (content/ibr/): the official documents it relies on, the verbatim
+  // quotes scripts/check-ibr-quotes.mjs checks against them, and when a person
+  // last checked the page against the Gazette.
+  sources?: { title: string; publisher: string; url: string; date: string }[];
+  checks?: { reg: string; quote: string; doc?: "act" }[];
+  checked?: string;
+  // Notes and industries: IBR guides they lead to (build-checked).
+  guides?: string[];
   order?: number;
   published: string;
   updated: string;

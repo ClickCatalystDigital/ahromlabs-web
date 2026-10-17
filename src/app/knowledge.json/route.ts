@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
+import { ibrForms, formName } from "@/lib/ibr-forms";
 import { services } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -16,7 +17,7 @@ function contentUrl(entry: ContentEntry): string {
   if (entry.kind === "term") {
     return `${siteUrl}/systems${termHasPage(entry) ? `/${entry.slug}` : `#${entry.slug}`}`;
   }
-  const segment = { note: "notes", pattern: "patterns", industry: "industries" }[entry.kind];
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr" }[entry.kind];
   return `${siteUrl}/${segment}/${entry.slug}`;
 }
 
@@ -32,6 +33,7 @@ export function GET() {
     ...getContent("note"),
     ...getContent("pattern"),
     ...getContent("industry"),
+    ...getContent("guide"),
   ].map((entry) => ({
     ...entry,
     url: contentUrl(entry),
@@ -78,7 +80,19 @@ export function GET() {
   // so Cache-Control is set directly on the response instead. Moderate, not
   // immutable: this URL doesn't change across deploys the way hashed
   // _next/static assets do.
-  return NextResponse.json([...content, ...serviceNodes, ...clientNodes, ...questionNodes], {
+  // Every IBR 2026 form with the IBR 1950 form it replaced — the mapping
+  // /ibr/forms renders, from the same data.
+  const ibrFormNodes = ibrForms.map((f) => ({
+    kind: "ibr-form",
+    slug: f.slug,
+    title: `${formName(f)}: ${f.title}`,
+    answer: f.summary,
+    regulation: `IBR 2026, regulation ${f.regulation}`,
+    ...(f.old ? { replaces: `IBR 1950 ${f.old.form}: ${f.old.title}` } : {}),
+    url: `${siteUrl}/ibr/forms${f.page ? `/${f.slug}` : ""}`,
+  }));
+
+  return NextResponse.json([...content, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes], {
     headers: { "Cache-Control": "public, max-age=3600" },
   });
 }

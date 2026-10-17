@@ -23,12 +23,14 @@ evidence:
   - metric: certificate-to-part linking
     value: suggested by confidence, never applied without a person
 published: 2026-09-24
-updated: 2026-10-16
+updated: 2026-10-17
 ---
 
 Shanti Boilers & Pressure Vessels manufactures boilers, pressure-reducing stations and steam headers. Every unit it ships needs a statutory folder for the Directorate of Boilers, under the Indian Boiler Regulations (IBR): the forms that prove each plate, tube and forging came from certified material. Ahrom Labs built the operations system that now keeps the certificates and produces that folder.
 
 ## What goes into the folder?
+
+The folder described here was filed under the Indian Boiler Regulations, 1950, so it uses their form names. IBR 2026 renumbered them on 1 October 2026: Form II(1) is now Form I Part B, Form III is Form IV Part A, Form III A is Form IV Part B, Form IV A is Form V Part B and Form XVII is Form XXII. See [the IBR 2026 forms list](/ibr/forms).
 
 A complete folder is filed in a fixed order: a covering letter listing its contents, a documentation label, the forms, the list of mountings and fittings, a stage-wise inspection report, and copies of the material test certificates themselves. Which forms are needed depends on the boiler model — a standard shell boiler needs Form II(1), III, III A and IV A; a small industrial boiler swaps II(1) and III for Form XVII; a pressure-reducing station or steam header needs only III and IV A. The system picks the form set from the model set on the project, not from a person remembering which applies.
 

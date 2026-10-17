@@ -14,7 +14,7 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr" };
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -100,6 +100,29 @@ function loadKind(kind) {
       frontmatter.description = description;
     }
 
+    // Guides restate regulations, not our engagements, so every one names its
+    // official sources and quotes the text it relies on; scripts/check-ibr-quotes.mjs
+    // then checks each quote against the Gazette.
+    assertArrayIfPresent(frontmatter.guides, "guides", relPath);
+    if (kind === "guide") {
+      if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
+        throw new Error(`content/${relPath}: a guide needs "sources" (official documents it relies on)`);
+      }
+      for (const [i, src] of frontmatter.sources.entries()) {
+        for (const field of ["title", "publisher", "url", "date"]) assertString(src?.[field], `sources[${i}].${field}`, relPath);
+        if (!/^https:\/\//.test(src.url)) throw new Error(`content/${relPath}: sources[${i}].url must be https`);
+      }
+      if (!Array.isArray(frontmatter.checks) || frontmatter.checks.length === 0) {
+        throw new Error(`content/${relPath}: a guide needs "checks" (verbatim quotes from the regulations)`);
+      }
+      for (const [i, c] of frontmatter.checks.entries()) {
+        assertString(c?.reg, `checks[${i}].reg`, relPath);
+        assertString(c?.quote, `checks[${i}].quote`, relPath);
+      }
+      assertString(frontmatter.checked, "checked", relPath);
+      if (slug === "forms") throw new Error(`content/${relPath}: "forms" is taken by /ibr/forms`);
+    }
+
     // `updated` drives the sitemap lastmod, and AI Search re-reads only pages
     // whose lastmod moved — a forgotten bump leaves the chatbot on old wording.
     // So a commit after `updated` fails the build. Uncommitted edits pass until
@@ -120,6 +143,7 @@ const terms = loadKind("term");
 const notes = loadKind("note");
 const patterns = loadKind("pattern");
 const industries = loadKind("industry");
+const guides = loadKind("guide");
 
 // Cross-reference check: every `patterns`/`notes` edge in a note or industry
 // must point at a real entry. Runs here, at script time, so a broken reference
@@ -128,11 +152,17 @@ const industries = loadKind("industry");
 // script can't import — those are checked at prerender by resolveIndustryEdges().
 const patternSlugs = new Set(patterns.map((p) => p.slug));
 const noteSlugs = new Set(notes.map((n) => n.slug));
+const guideSlugs = new Set(guides.map((g) => g.slug));
 for (const entry of [...notes, ...industries]) {
   const where = `content/${KIND_DIRS[entry.kind]}/${entry.slug}.md`;
   for (const patternSlug of entry.patterns ?? []) {
     if (!patternSlugs.has(patternSlug)) {
       throw new Error(`${where} references unknown pattern "${patternSlug}"`);
+    }
+  }
+  for (const guideSlug of entry.guides ?? []) {
+    if (!guideSlugs.has(guideSlug)) {
+      throw new Error(`${where} references unknown guide "${guideSlug}"`);
     }
   }
   for (const noteSlug of entry.notes ?? []) {
@@ -164,8 +194,8 @@ for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
 }
 fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
-const all = [...terms, ...notes, ...patterns, ...industries];
+const all = [...terms, ...notes, ...patterns, ...industries, ...guides];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );

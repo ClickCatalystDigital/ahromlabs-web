@@ -17,6 +17,7 @@ description: >
 domain: [manufacturing, compliance, quality-control]
 clients: [shanti-boilers]
 services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction]
+guides: [2026-changes, registration-documents, record-keeping, small-industrial-boilers]
 notes:
   - ibr-statutory-folder-from-bom
   - plate-remnants-back-into-stock
@@ -57,7 +58,7 @@ demo:
   label: Try the live demo
 evidence:
   - metric: IBR forms produced
-    value: Cover letter, Forms II(1), III, III A and IV A
+    value: Cover letter, Forms II(1), III, III A and IV A (IBR 1950 numbering)
   - metric: Boiler models, each with its own form set
     value: "8"
   - metric: Reports and documents
@@ -78,7 +79,7 @@ Four things generic ERPs treat as edge cases are the core of this business. Ever
 
 ## Can the IBR statutory folder come out of the system instead of being typed?
 
-Yes, in a few minutes instead of typing it up by hand. The folder — covering letter, Forms II(1), III, III A and IV A — comes out of the system, with the form set chosen by boiler model and every part linked to its material test certificate from the bank. A person adds the parts to the folder in a few minutes per boiler; the bill of materials kept for buying and production doesn't fill the forms reliably on its own. Certificate PDFs are read by AI on upload, and matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Keeping test certificates for a boiler's IBR folder](/notes/ibr-statutory-folder-from-bom).
+Yes, in a few minutes instead of typing it up by hand. The folder — covering letter, Forms II(1), III, III A and IV A under IBR 1950 numbering (Form I Part B, IV Part A, IV Part B and V Part B under [IBR 2026](/ibr/forms)) — comes out of the system, with the form set chosen by boiler model and every part linked to its material test certificate from the bank. A person adds the parts to the folder in a few minutes per boiler; the bill of materials kept for buying and production doesn't fill the forms reliably on its own. Certificate PDFs are read by AI on upload, and matching a certificate to the part it covers is suggested by confidence but always confirmed by a person, because it ends up in paperwork an inspector relies on. The details are in [Keeping test certificates for a boiler's IBR folder](/notes/ibr-statutory-folder-from-bom).
 
 ## How is material traced from test certificate to finished boiler?
 
@@ -169,11 +170,13 @@ Whoever builds or sells it, these five questions separate a system that fits fro
 
 ## IBR terms, in one place
 
-- **Form II(1)** — the inspection certificate: inspecting authority, working pressure, hydraulic test pressure and date, drawing numbers and signatories.
-- **Form III** — the boiler's description: dimensions, pressures, heating surface, evaporation, parts manufactured, construction and seams.
-- **Form III A** — a material table for one named part, such as the feed pipeline, including steel-making process and heat treatment.
-- **Form IV A** — the material table for the boiler, each part with its test certificate, grouped into lettered sections.
-- **Form XVII** — used for a small industrial boiler in place of Forms II(1) and III.
+The Indian Boiler Regulations, 2026 renumbered the folder's forms on 1 October 2026. Shanti's folders were filed under the IBR 1950 names, given in brackets; every form and its old name is on [the IBR 2026 forms list](/ibr/forms).
+
+- **[Form I Part B](/ibr/forms/form-i-part-b) (was Form II(1))** — the inspection certificate: inspecting authority, pressures, hydraulic test pressure and date, drawing numbers and signatories.
+- **[Form IV Part A](/ibr/forms/form-iv-part-a) (was Form III)** — the boiler's description: dimensions, pressures, heating surface, evaporation, parts manufactured, construction and seams.
+- **[Form IV Part B](/ibr/forms/form-iv-part-b) (was Form III-A)** — the certificate for pipes; in Shanti's folders, a material table for one named part such as the feed pipeline, with steel-making process and heat treatment.
+- **[Form V Part B](/ibr/forms/form-v-part-b) (was Form IV-A)** — the extract of every material test certificate used in the boiler, grouped into lettered sections.
+- **[Form XXII](/ibr/forms/form-xxii) (was Form XVII)** — the certificate of manufacture and test for a small industrial boiler.
 - **Material test certificate (MTC)** — the mill's certificate for a plate, tube or forging, identified here by certificate, cast and plate number together.
 - **Hold point** — a stage production can't pass until QC clears it.
 - **NCR** — a non-conformance report, closed only after a disposition and a separate QC verification.
