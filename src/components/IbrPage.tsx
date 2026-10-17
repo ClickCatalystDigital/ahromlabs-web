@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { OpenOnWide } from "@/components/OpenOnWide";
-import { formatDate } from "@/lib/content";
+import { formatDate, getContent } from "@/lib/content";
 import { headingId, textOf } from "@/lib/headings";
 import { IBR_2026_URL, jsonLd } from "@/lib/schema";
 
@@ -23,6 +23,20 @@ const GAZETTE: IbrSource = {
   url: IBR_2026_URL,
   date: "2026-10-01",
 };
+
+// Guides in reading order; any guide not listed here still shows, after these.
+const GUIDE_ORDER = ["2026-changes", "registration-documents", "record-keeping", "small-industrial-boilers"];
+export function ibrGuides() {
+  const rank = (s: string) => GUIDE_ORDER.indexOf(s) + 1 || GUIDE_ORDER.length + 1;
+  return [...getContent("guide")].sort((a, b) => rank(a.slug) - rank(b.slug));
+}
+
+// Every IBR page links every guide and the forms list. Before this, some guides were
+// linked from one other page only, and Google crawls what is linked well first.
+const IBR_LINKS = () => [
+  ...ibrGuides().map((g) => ({ href: `/ibr/${g.slug}`, title: g.title })),
+  { href: "/ibr/forms", title: "IBR 2026 forms list, and their IBR 1950 names" },
+];
 
 // Every section heading gets an anchor id, so the contents list, Google's
 // "jump to" links and AI answers can point straight at it.
@@ -168,6 +182,23 @@ export function IbrPage(props: {
                   </Link>
                 </p>
               </div>
+
+              {(() => {
+                const here = props.trail.at(-1)?.path;
+                const links = IBR_LINKS().filter((l) => l.href !== here);
+                return here === "/ibr" ? null : (
+                  <nav aria-label="IBR 2026 guides" className="mt-12 border-t border-line pt-8">
+                    <h2 className="text-sm font-medium text-foreground-secondary">IBR 2026 guides</h2>
+                    <ul className="mt-3 space-y-2">
+                      {links.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href} className="text-link focus-ring">{l.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                );
+              })()}
 
               <div className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 text-sm sm:grid-cols-2">
                 <div>

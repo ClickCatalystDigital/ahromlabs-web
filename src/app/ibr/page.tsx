@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { IbrPage, IbrH2 } from "@/components/IbrPage";
-import { getContent } from "@/lib/content";
+import { IbrPage, IbrH2, ibrGuides } from "@/components/IbrPage";
 import { ibrFormPages, formName, IBR_FORMS_CHECKED, IBR_FORMS_PUBLISHED } from "@/lib/ibr-forms";
 import { ibrPageGraph } from "@/lib/schema";
 
@@ -24,8 +23,6 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
-// Guides in reading order; any guide not listed here still shows, after these.
-const ORDER = ["2026-changes", "registration-documents", "record-keeping", "small-industrial-boilers"];
 
 const FORMS_LIST = {
   href: "/ibr/forms",
@@ -34,10 +31,7 @@ const FORMS_LIST = {
 };
 
 export default function IbrHub() {
-  const guides = [...getContent("guide")].sort((a, b) => {
-    const rank = (s: string) => (ORDER.indexOf(s) + 1 || ORDER.length + 1);
-    return rank(a.slug) - rank(b.slug);
-  });
+  const guides = ibrGuides();
   const updated = [IBR_FORMS_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
   const trail = [{ name: "IBR", path: "/ibr" }];
 
