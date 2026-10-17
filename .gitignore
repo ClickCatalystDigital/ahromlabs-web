@@ -58,3 +58,4 @@ next-env.d.ts
 # Google credentials for scripts/google-insights.mjs belong in ~/.config/ahrom-labs/, never here.
 service-account*.json
 pagespeed-key
+.indexnow-last
