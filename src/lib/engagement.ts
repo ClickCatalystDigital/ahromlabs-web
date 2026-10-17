@@ -86,7 +86,7 @@ export const engagementAnswers: Answer[] = [
     id: "ownership",
     question: "Who owns the software, and what happens to our data?",
     answer:
-      "The software stays ours, and you have a licence to use your system for as long as the annual maintenance contract (AMC) runs. Your business data lives in your system and you can export it at any time.",
+      "The software stays ours, and you have a licence to use your system for as long as the annual maintenance contract (AMC) runs. The source code stays with us as well: you get a working system to use, not a copy of the code. Your business data lives in your system and you can export it at any time.",
     detail: [
       "We may use your data in anonymised, aggregated form to improve our systems and to publish industry benchmarks; nothing that identifies your business or your customers is shared.",
     ],
