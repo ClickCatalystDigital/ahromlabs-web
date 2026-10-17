@@ -189,6 +189,31 @@ const PAGE_SOURCES = {
   approach: ["src/app/approach"],
   about: ["src/app/about"],
 };
+// Content pages too: the page's own file plus the code that renders it, so a
+// same-day edit, or a change in shared code (a client's name in work.ts, the IBR
+// page frame), still moves lastmod. `updated` alone is a day, and AI Search had
+// already read that day once.
+const RENDERERS = {
+  industries: ["src/app/industries/[slug]", "src/lib/work.ts", "src/lib/industries.ts"],
+  notes: ["src/app/notes/[slug]", "src/lib/work.ts", "src/lib/services.ts"],
+  patterns: ["src/app/patterns/[slug]"],
+  terms: ["src/app/systems/[slug]"],
+  ibr: ["src/app/ibr/[slug]", "src/components/IbrPage.tsx"],
+};
+const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr" };
+for (const [dir, renderers] of Object.entries(RENDERERS)) {
+  const files = fs.readdirSync(path.join(CONTENT_ROOT, dir)).filter((f) => f.endsWith(".md"));
+  for (const file of files) {
+    PAGE_SOURCES[`${ROUTE_PREFIX[dir]}/${file.replace(/\.md$/, "")}`] = [`content/${dir}/${file}`, ...renderers];
+  }
+  // The index page lists every entry of the kind.
+  PAGE_SOURCES[ROUTE_PREFIX[dir]] = [`content/${dir}`, `src/app/${ROUTE_PREFIX[dir]}/page.tsx`, ...renderers.slice(1)];
+}
+const IBR_FRAME = ["src/components/IbrPage.tsx", "src/lib/ibr-forms.ts"];
+PAGE_SOURCES.ibr = ["content/ibr", "src/app/ibr/page.tsx", ...IBR_FRAME];
+PAGE_SOURCES["ibr/forms"] = ["src/app/ibr/forms/page.tsx", ...IBR_FRAME];
+PAGE_SOURCES["ibr/forms/*"] = ["src/app/ibr/forms/[form]", ...IBR_FRAME];
+
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
   try {
