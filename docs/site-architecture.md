@@ -117,8 +117,10 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   (`npm run search:sync`), and the instance also syncs every 6 hours.
 - **Retrieval settings (dashboard/API, 17 Oct 2026):** hybrid search with reranking, keyword
   match mode `or` (was `and`, which needed every word of a question on the page), score
-  threshold 0.3 (was 0.4), chunk size 1024, answer cache on for 48 hours. Some phrasings of the
-  ownership question still return nothing; see the note in `docs/owner-todo.md`.
+  threshold 0.3 (was 0.4), chunk size 1024 (512 was tried and reverted: one question gained,
+  one lost), answer cache on for 48 hours. Questions about "the code" or "source code" find
+  nothing because the ownership answer in `src/lib/engagement.ts` never uses those words; that is
+  a wording fix, not a setting. Any setting change starts a full re-index by itself.
 
 ## Human structure
 
