@@ -111,9 +111,13 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
 - **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host
   `ahromlabs.com`, and an AI Gateway rate limit + spend alert.
-- **Freshness:** a sync re-reads only pages whose sitemap `lastmod` moved. Hand-written pages
-  get it from git (`scripts/build-content.mjs`); content files from `updated:`, and the build
-  fails if a file was committed after its `updated:` date. `npm run deploy` starts a sync
+- **Freshness:** a sync re-reads only pages whose sitemap `lastmod` moved. Every page gets it
+  from the exact time of the last commit touching its sources — its content file and the code
+  that renders it (`PAGE_SOURCES`/`RENDERERS` in `scripts/build-content.mjs`) — or its
+  `updated:` day if later. (Until 17 Oct 2026 content pages used `updated:` alone, a day: a
+  same-day edit never moved it, and the chatbot named the boiler client after the site had
+  stopped.) There is no "re-index everything" command; moving `lastmod` is the lever. To check
+  freshness, search the index for the old text (`POST /search`) and look at which pages return it. `npm run deploy` starts a sync
   (`npm run search:sync`), and the instance also syncs every 6 hours.
 - **Retrieval settings (17 Oct 2026, measured with `npm run search:check`):** hybrid search
   with reranking, keyword match mode `and`, score threshold 0.3, chunk size **256**, answer cache
@@ -125,6 +129,14 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 - **Checking it:** `scripts/check-chatbot.mjs` asks buyer questions and checks the right passage
   comes back; `npm run deploy` runs it after the sync. Remaining misses are paraphrases that
   share few words with the page; fix them with wording, then add the question to the check.
+  Also ask the real chat (`POST /chat/completions`): retrieval passing is not the same as the
+  answer being right.
+- **When nothing matches, the chat answers from general knowledge** ("software is typically
+  licensed…"), which is worse than no answer on a sales site. Its system prompt (dashboard)
+  should say: if no documents match, say so and point to the contact page.
+- **Official links:** the check fetches each with `curl`, not Node `fetch`: egazette.gov.in
+  refuses HEAD and omits its intermediate certificate, which macOS curl fetches and Node (even
+  with `--use-system-ca`) does not.
 
 ## Human structure
 

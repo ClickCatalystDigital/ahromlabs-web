@@ -4,10 +4,11 @@ Marketing site for Ahrom Labs, an infrastructure engineering practice. Next.js 1
 
 ## Routes
 
-- `/` — home
-- `/approach` — the four principles behind how engagements are modeled
-- `/systems` — glossary of the vocabulary used to model a business
-- `/about` — who the practice is for, how an engagement runs
+Home, `/services`, `/industries`, `/work`, `/engagement` (pricing), `/notes`, `/patterns`,
+`/systems` (glossary), `/approach`, `/about`, and the IBR 2026 section under `/ibr`. Machine
+surfaces: `/llms.txt`, `/knowledge.json`, `/sitemap.xml`, Markdown copies of every page for
+`Accept: text/markdown`, WebMCP tools, and an AI Search MCP server. `SYSTEM.md` is the full,
+current reference; read it before changing anything.
 
 ## Development
 
@@ -32,10 +33,13 @@ Colors, the accent, and the radius are CSS custom properties in `:root` and re-e
 - **Pilcrow Rounded** (self-hosted, `src/fonts/pilcrow-rounded/`) — body and heading typeface. Free for commercial use under the ITF Free Font License (Fontshare); `LICENSE.txt` sits alongside the font files.
 - **Geist Mono** (`next/font/google`) — used only for the system diagram's node labels.
 
-## Build
+## Build and deploy
 
 ```bash
-npm run build
+npm run deploy
 ```
 
-All routes prerender statically except `/api/contact`.
+Builds the content (and checks every IBR quote against the Gazette), builds and deploys to
+Cloudflare Workers, re-syncs the site chatbot, then asks it a set of buyer questions. It exits 1
+when a question misses even though the site is live: read the log. Edited a content page? Bump
+its `updated:` date or the build stops. All pages prerender statically except the `/api` routes.

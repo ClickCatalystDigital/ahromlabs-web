@@ -464,6 +464,29 @@ checked against ShantiOps SYSTEM.md before anything was written.
   page (rates, GSTR-2B, e-way bill paragraph), and the electronics page (a link to the
   four-ways note). Graph: 68 nodes, 0 dangling.
 
+## IBR 2026 section, redesign, client name removed, sitemap freshness (2026-10-17)
+
+- **Shipped:** `/ibr` hub, forms list with the 1950 → 2026 table, 13 form pages, 4 guides,
+  4 infographics; boiler industry page and IBR note give 2026 form names. 143/143 Gazette quotes
+  verified at build. Chatbot: 14/14 IBR questions pass and live answers checked by hand.
+- **Redesign:** IBR pages had `.rail` and `.prose-measure` on one element (centred narrow
+  column); now laid out like the industry pages. Mapping table rewritten twice for phones: two
+  columns, names wrapping only at spaces, `overflow-wrap:anywhere` for
+  "desuperheaters/attemperators". Share images for every IBR page.
+- **Boiler client no longer named on the site** (Pujan's request): 27 mentions across 8 pages
+  and 6 code files rewritten sentence by sentence; `anonymous` engagement flag; structured data
+  renamed "SB Ops" to "Boiler ERP (live demo)". The demo app's own "SB Ops" title is Pujan's to
+  rename.
+- **Lesson — lastmod:** the site stopped naming the client but the chatbot didn't, because
+  content pages dated from `updated:` (a day) and the crawler had read that day already. Every
+  page now dates from its sources' last commit, to the second (see `SYSTEM.md`).
+- **Lesson — check scripts:** Gazette links reported dead were a HEAD-refusing server with a
+  broken certificate chain (now checked with curl); a chatbot miss was a too-narrow expected
+  phrase. Read the failure before fixing the page.
+- **Open:** 5 older buyer questions (ownership, AMC, go-live time, Tally) retrieve nothing and
+  the chat answers generically; needs wording on those pages and a no-match rule in the AI
+  Search system prompt.
+
 ## Known gaps / risks as of now
 
 1. ~~Nothing in this repo had been committed since the initial `create-next-app` commit~~ — **resolved 2026-08-29**, commit `65a1db2` (76 files, full site + Phase 0-2 knowledge layer work).
@@ -479,6 +502,9 @@ checked against ShantiOps SYSTEM.md before anything was written.
 7. ~~`LS Technologies` named without a record of permission~~ — **RESOLVED 2026-09-05, and
    permanently closed.** Permission was in fact obtained; it had simply never been logged.
 
+   > **Superseded 2026-10-17 for the boiler client:** Pujan asked for it not to be named on the
+   > site. The other three stay named.
+   >
    > **Client naming permission: RESOLVED, and settled for all clients.** The founder has
    > obtained naming permission from every client whose work appears in this corpus — LS
    > Technologies, Shanti Boilers, Savistar, and Saag. Named attribution is authorized. This is

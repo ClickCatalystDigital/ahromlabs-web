@@ -15,19 +15,26 @@ All under `src/app/`.
 - `/knowledge.json` (`route.ts`, `force-static`) — the entire corpus (terms + notes + patterns) as JSON, for other repos'/agents' consumption. See **Knowledge layer**. Advertised from `/` via `<link rel="alternate" type="application/json">` (set through `alternates.types` in `layout.tsx`) and from `llms.txt`.
 - `/llms.txt` (`route.ts`, `force-static`) — the AI-crawler-facing summary. **Generated**, not hand-written: prose header/footer are template literals in the route, the note and pattern lists come from `getContent()` sorted newest-first. Replaced `public/llms.txt` (2026-09-05), which had been hand-maintained and had already drifted one note behind. Note the trap: the `ASSETS` binding is served ahead of the Worker, so a leftover `public/llms.txt` would silently shadow this route and keep serving the stale copy — the static file had to be deleted, not merely superseded.
 - `/approach`, `/systems`, `/about`, and every note/pattern detail page end in the shared `ClosingCta` component.
+- `/ibr`, `/ibr/forms`, `/ibr/forms/[form]`, `/ibr/[slug]` — the IBR 2026 section (17 Oct 2026): a hub, the forms list with the IBR 1950 → 2026 table, 13 form pages from `src/lib/ibr-forms.ts`, and 4 guides from `content/ibr/*.md` (`kind: guide`). All share `src/components/IbrPage.tsx`: breadcrumb, title and lead, optional infographic (`<figure>`, width/height set, linked full-size), body beside a sticky contents column (`IbrH2` gives every heading an anchor id), folded Gazette quotes (`IbrQuotes`), demo block, official sources and a not-legal-advice note. JSON-LD per page: `Legislation` + `TechArticle` (+ `image`) + `BreadcrumbList` (`ibrPageGraph` in `schema.ts`).
+  - **Every regulation-based fact quotes the Gazette.** `scripts/check-ibr-quotes.mjs` runs inside `content:build` and fails the build on any quote not found word for word in the official text (143/143 on 17 Oct 2026). Claims written in our own words are listed for review in `docs/ibr-claim-sheet.md`.
+  - Share images: guides and `/ibr/forms` use their infographic; form pages a generated card (`ibr/forms/[form]/opengraph-image.tsx`). Setting `openGraph` in a page's metadata without `images` drops the site default, so every IBR page sets one.
 - `/api/contact` (POST) — see **Contact form** below.
 - `/api/crm` — the CRM (every lead, status and notes). See **CRM** below.
 - `error.tsx`, `not-found.tsx` — error/404 boundaries, same `SiteNav`/`SiteFooter` shell as every page.
 - SEO/meta: `manifest.ts`, `robots.ts`, `sitemap.ts`, root `opengraph-image.tsx`. Each of `about/`, `approach/`, `systems/`, `notes/`, `patterns/`, and every `notes/[slug]`/`patterns/[slug]` also has its own `opengraph-image.tsx`, all built on the shared `renderOgImage()` helper (`src/lib/og-image.tsx`).
-  - `sitemap.ts` includes every note/pattern URL with a real per-entry `lastModified` from frontmatter. `/systems`, `/notes`, `/patterns` derive theirs from the newest `updated` in the kind they list. `/`, `/approach`, `/about` deliberately carry **no** `lastModified` — they have no date source, and stamping build time (as this did until 2026-09-05) made every deploy claim all six static pages had changed.
+  - **`lastmod` is the exact time of the last commit touching a page's sources** (17 Oct 2026): its content file plus the code that renders it, listed in `PAGE_SOURCES`/`RENDERERS` in `scripts/build-content.mjs` and written to `src/lib/page-dates.generated.json`; `changed()` in `sitemap.ts` takes the later of that and `updated`. Before, content pages used only the `updated` day, so a same-day edit, or a change in shared code (a client name in `work.ts`, the IBR frame), never moved `lastmod`, and AI Search kept serving the old text: the chatbot still named a client hours after the site stopped. A new shared renderer must be added to `RENDERERS`.
+  - (Earlier, 2026-09-05:) `sitemap.ts` includes every note/pattern URL with a real per-entry `lastModified` from frontmatter. `/systems`, `/notes`, `/patterns` derive theirs from the newest `updated` in the kind they list. `/`, `/approach`, `/about` deliberately carry **no** `lastModified` — they have no date source, and stamping build time (as this did until 2026-09-05) made every deploy claim all six static pages had changed.
 - `src/proxy.ts` — Next.js 16's replacement for `middleware.ts` (renamed; a stray `middleware.ts` would silently be ignored in this version). Logs AI-crawler hits (GPTBot, ClaudeBot, PerplexityBot, etc. — full list in the file) as structured JSON via `console.log`, captured by Cloudflare Workers Logs (`wrangler.jsonc`'s `observability.enabled`). Pure pass-through (`NextResponse.next()`), never mutates the response. Runs on the Node.js runtime by default in v16 — do not add `export const runtime`, it throws.
 
 ## Knowledge layer (`content/`, `src/lib/content.ts`, `scripts/build-content.mjs`)
 
-**Client naming is authorized.** Permission has been obtained from every client whose work
-appears in this corpus — LS Technologies, Shanti Boilers, Savistar, Saag. Named attribution in
-`content/` is deliberate and cleared. Do not flag it as a confidentiality risk; do not
-anonymize existing entries. New clients need their own permission before being named.
+**Client naming.** LS Technologies, Savistar and Saag are cleared to be named; do not flag them
+as a confidentiality risk. **The boiler client is never named on the site** (since 17 Oct 2026):
+it is "a boiler and pressure-vessel manufacturer", engagement `boiler-manufacturer` with
+`anonymous: true` in `src/lib/work.ts`. `anonymous` keeps it out of schema.org `mentions` (an
+unnamed business is not an Organization a search engine can resolve), and `clientInSentence()`
+lower-cases it mid-sentence. Internal `docs/` may keep the name; `content/` and `src/` may not.
+New clients need their own permission before being named.
 
 A markdown corpus (11 terms, 4 notes, 14 patterns as of this writing) with YAML frontmatter (`kind`, `slug`, `title`, `answer`, `domain`, `systems?`, `patterns?`, `evidence?`, `order?` (terms only), `published`, `updated`), documented in full in `docs/knowledge-layer-plan.md`. `docs/progress.md` tracks what's built against that plan, phase by phase.
 
@@ -89,13 +96,16 @@ Client side: `src/components/ContactForm.tsx` (`"use client"`) — a 3-state (`i
 - `og-assets.ts` — build-time base64-embedded Pilcrow Rounded font + logo, consumed by `og-image.tsx`. Regenerate only if the font or logo changes; not read via `node:fs` at request time.
 - `content.ts`, `content-data.generated.json` — see **Knowledge layer** above.
 - `schema.ts` — see **Knowledge layer** above.
+- `headings.ts` — `headingId()`/`textOf()`/`markdownHeadings()`: one slug rule for heading anchors and the contents lists that link to them, shared by the industry and IBR pages.
+- `ibr-forms.ts` — every IBR 2026 form once: number, regulation, 1950 name, summary, and for the 13 with pages, who signs it, when it is filed, what it records and the Gazette quotes. Pages, sitemap, `knowledge.json` and the quote check all read it.
+- `work.ts` — engagements; `anonymous` and `clientInSentence()` (see **Client naming**).
 
 ## Design system
 
 Layout primitives live in `src/app/globals.css`:
 
 - `.rail` — max-width (90rem) + horizontal padding (1.5rem on phones, 2.5rem from 48rem), shared by every section, nav, and footer, so headings share one left edge across routes.
-- `.prose-measure` — 65ch reading width.
+- `.prose-measure` — 65ch reading width. **Never on the same element as `.rail`:** `.rail` centres itself (`margin-inline: auto`), so the pair makes a narrow column centred under a left-aligned header. Put `.rail` on the wrapper and `.prose-measure` inside it, or use the industry page's grid (`lg:grid-cols-[minmax(0,65ch)_minmax(0,16rem)]`, text left, contents right). The first IBR pages shipped with this fault.
 - `.section` — vertical rhythm (padding-block).
 
 Colors, accent, and radius are CSS custom properties on `:root` (`--background`, `--foreground`, `--foreground-secondary`, `--line`, `--line-strong`, `--accent`, `--danger`, `--radius`), re-exposed to Tailwind via `@theme inline` in the same file.
@@ -121,6 +131,8 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
   - `wrangler.jsonc` — worker name `ahrom-labs`, entry `.open-next/worker.js`, custom domain `ahromlabs.com`, static assets served via the `ASSETS` binding, `nodejs_compat` + `global_fetch_strictly_public` compat flags, observability enabled. No KV/R2/queue bindings (no incremental cache to back) and no Images binding.
   - `next.config.ts` — `images.unoptimized: true` (avoids a paid Cloudflare Images binding for a handful of small, already-sized static assets; revisit if user-uploaded/variable imagery is added).
   - `public/_headers` — sets `Cache-Control: public,max-age=31536000,immutable` on `/_next/static/*` only. Routes served through the Worker function rather than the `ASSETS` binding (`sitemap.xml`, `robots.txt`, `/knowledge.json` — confirmed by checking where their build output actually lands, `.next/server/app/...` vs `.open-next/assets`) can't be cached via `_headers`; `/knowledge.json` and `/llms.txt` set `Cache-Control: public, max-age=3600` directly on their response instead, which is what actually reaches the client for a Worker-served route.
+- **`npm run deploy`** = content build (+ IBR quote check) → OpenNext build → deploy → AI Search sync → `search:check --wait` (buyer questions, plus every official IBR link). It exits 1 when any check misses even though the site is already live: read the log, don't assume the deploy failed. The content build also fails when a content file was committed after its `updated:` date — bump `updated` on every edited page.
+- **Images in content:** frontmatter `image` needs `src`, `alt`, integer `width` and `height`, and `caption` (the build enforces width/height). A lazy `<img>` without width and height has no height until it loads, so the page jumps and a screenshot shows nothing there.
 - **Scripts** (`package.json`): `content:build` (runs `scripts/build-content.mjs`, see **Knowledge layer**), `dev`/`build`/`preview`/`deploy` all run `content:build` first, `start` (`next start`, unused by the actual Cloudflare deploy path), `lint` (`eslint`), `cf-typegen` (`wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts`).
 - All routes prerender statically except `/api/contact`. Dynamic-segment `opengraph-image.tsx` files (`notes/[slug]/opengraph-image.tsx`, `patterns/[slug]/opengraph-image.tsx`) need their own explicit `generateStaticParams` to actually build static in this pipeline — confirmed empirically (the build output showed `ƒ Dynamic` without it, contradicting what the Next.js docs implied about inheriting params from the sibling `page.tsx` automatically).
 

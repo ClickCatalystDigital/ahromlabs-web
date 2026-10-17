@@ -74,7 +74,8 @@ Structure and edge rules for every type: `docs/site-architecture.md`.
 - First 1–2 sentences of every section answer its heading. Sections survive being read alone.
 - Numbers or delete it. No adjectives about ourselves.
 - State the boundary: what it doesn't do, what's still open.
-- Name the client in notes when cleared; patterns stay client-neutral.
+- Name the client in notes when cleared; patterns stay client-neutral. The boiler client is
+  never named: "a boiler and pressure-vessel manufacturer", then "the manufacturer".
 
 **For the site chatbot** (Cloudflare AI Search, `docs/site-architecture.md`). It cuts each page
 into small chunks (256 tokens, a paragraph or two) and ranks each one mostly on its opening, so:
@@ -87,7 +88,23 @@ into small chunks (256 tokens, a paragraph or two) and ranks each one mostly on 
   the chatbot serves whichever it finds.
 - Everything a buyer should learn is page text: nothing only in an image, a diagram or a tab.
 - Add two or three test questions for every new page or answer to `scripts/check-chatbot.mjs`,
-  each with a phrase only the right answer contains.
+  each with a phrase only the right answer contains — and not narrower than that: a check for
+  one exact sentence fails when the page answers in a different sentence (Form III A, 17 Oct).
+- Put the buyer's second phrasing in the answer's own sentence ("you pay for a working system;
+  the source code stays with Ahrom"), not in a keyword list or hidden text. The IBR guides pass
+  14/14 because every heading is the question and its first sentence the answer.
+
+**For regulatory pages** (the IBR section, 17 Oct 2026):
+
+- Every fact taken from a regulation carries a word-for-word quote with its regulation number,
+  and the build checks each quote against the official text. Anything written in our own words
+  goes on a claim sheet and is checked against the source by a second pass before it ships;
+  that pass corrected 8 of the first set (a form's purpose, who signs, what "changed" means).
+- Say what the page is not (not legal advice, the Gazette governs, states may differ) and when
+  it was last checked against the source, with the official link.
+- Infographics restate the text, never replace it: alt text repeats every label, a caption says
+  what it shows, and the AI-generated images are checked label by label against the regulation
+  before use (two of four needed regenerating).
 
 ## 5. Connect — every new node gets edges
 
