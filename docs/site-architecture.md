@@ -115,12 +115,16 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   get it from git (`scripts/build-content.mjs`); content files from `updated:`, and the build
   fails if a file was committed after its `updated:` date. `npm run deploy` starts a sync
   (`npm run search:sync`), and the instance also syncs every 6 hours.
-- **Retrieval settings (dashboard/API, 17 Oct 2026):** hybrid search with reranking, keyword
-  match mode `or` (was `and`, which needed every word of a question on the page), score
-  threshold 0.3 (was 0.4), chunk size 1024 (512 was tried and reverted: one question gained,
-  one lost), answer cache on for 48 hours. Questions about "the code" or "source code" find
-  nothing because the ownership answer in `src/lib/engagement.ts` never uses those words; that is
-  a wording fix, not a setting. Any setting change starts a full re-index by itself.
+- **Retrieval settings (17 Oct 2026, measured with `npm run search:check`):** hybrid search
+  with reranking, keyword match mode `and`, score threshold 0.3, chunk size **256**, answer cache
+  48 hours. Chunk size decided it: at 1024 a chunk held five FAQ answers and only the first
+  ranked, 8/17 checks passed; at 512, 11/17; at 256, 12/17. Keyword `and` vs `or` made no difference (8/17
+  both). A chunk change can take 15 minutes to reach every page, and the first sync after it may
+  skip pages: wait until `wrangler ai-search stats` shows nothing queued or running. Any
+  setting change starts a re-index by itself; re-indexing 44 pages takes 10 to 20 minutes.
+- **Checking it:** `scripts/check-chatbot.mjs` asks buyer questions and checks the right passage
+  comes back; `npm run deploy` runs it after the sync. Remaining misses are paraphrases that
+  share few words with the page; fix them with wording, then add the question to the check.
 
 ## Human structure
 

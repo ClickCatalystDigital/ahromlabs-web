@@ -76,6 +76,19 @@ Structure and edge rules for every type: `docs/site-architecture.md`.
 - State the boundary: what it doesn't do, what's still open.
 - Name the client in notes when cleared; patterns stay client-neutral.
 
+**For the site chatbot** (Cloudflare AI Search, `docs/site-architecture.md`). It cuts each page
+into small chunks (256 tokens, a paragraph or two) and ranks each one mostly on its opening, so:
+
+- Headings are questions in the buyer's words ("Who owns the code?", not "Ownership"). Use the
+  words people type, and both spellings where they differ (licence/license).
+- One question per section, under about 150 words. The answer's key fact goes in the first
+  sentence, naming its subject — no "it", "this" or "see above".
+- Each fact lives in one place; other pages link to it. Two wordings of a fact drift apart, and
+  the chatbot serves whichever it finds.
+- Everything a buyer should learn is page text: nothing only in an image, a diagram or a tab.
+- Add two or three test questions for every new page or answer to `scripts/check-chatbot.mjs`,
+  each with a phrase only the right answer contains.
+
 ## 5. Connect — every new node gets edges
 
 - Note → `patterns:` in frontmatter (build fails on an unknown slug).
@@ -91,8 +104,12 @@ Structure and edge rules for every type: `docs/site-architecture.md`.
 npm run content:build     # frontmatter + note→pattern references
 npm run build             # services/work proof references, every page prerenders
 npm run lint
-npm run deploy            # populates the page cache — don't deploy another way
+npm run deploy            # populates the page cache, starts a chatbot sync, then runs the chatbot check
 ```
+
+A content file's `updated:` must be on or after its last commit, or the build stops: the sitemap
+date is what tells the chatbot to re-read the page. A chatbot check miss after deploy means the
+wording needs the buyer's words, not that the deploy failed; `npm run search:check` re-runs it.
 
 Then: Search Console → URL Inspection → request indexing for each new URL; add a dated entry to
 `docs/progress.md` listing what was added and from which source section.
