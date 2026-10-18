@@ -10,9 +10,10 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.
 - [ ] **GA internal traffic:** send Claude the office IP (`curl -s https://api.ipify.org`) so the internal-traffic filter can be set up.
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
-- [ ] **Disk space:** 4.4 GB free on 17 Oct 2026 (enough to deploy); local demo testing needs about 5 GB.
+- [ ] **Disk space:** 12 GB free on 18 Oct 2026 (it filled up once that day during a build); local demo testing needs about 5 GB.
 
 - [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
+- [ ] **Rotate the Turso token in `ls_crm/seed_demo.py`** (found 17 Oct 2026): lines 31-32 have a database URL and auth token typed into the code. Create a new token, revoke the old one, and read it from an env var instead.
 
 - [ ] **WhatsApp for the CRM, paused 16 Oct 2026 (waiting for dad):** dad's +91 83209 77493 was refused (it has WhatsApp on his phone); plan for 17 Oct: a spare BSNL number instead, one that has never been on WhatsApp (or delete WhatsApp from it first). Start tomorrow's chat by adding Meta's WhatsApp Business Tools MCP connector to check the number, webhook and a test send.
   Done so far: Meta app **Ahrom CRM** (ID 4722285194721517) under the **Click Catalyst** portfolio (the new Ahrom Labs portfolio, ID 2517731355391482, is restricted by Meta; move the number there once Ahrom Labs is registered); WhatsApp use case added and its terms accepted; WhatsApp profile entered (display name Ahrom Labs, Professional Services, ahromlabs.com); webhook https://crm.ahromlabs.com/api/whatsapp verified (Worker secret WA_VERIFY_TOKEN set); Access bypass for that path.
@@ -28,6 +29,8 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **IBR pages, monthly (first: mid-November 2026):** look for new Central Boilers Board notifications on egazette.gov.in (search "Indian Boiler"). If IBR 2026 was amended, tell Claude: it updates `src/lib/ibr-forms.ts` or the guides, re-runs the quote check (`npm run content:build`) and bumps the dates.
 
 ## Done
+
+- [x] **Demo data rebuild, 18 Oct 2026:** new seeds and nightly date shift are on branches (savistar-ops `demo-data`, shanti-ops and ls-inventory `demo-data-walkthrough`). **SB Ops live** (18 Oct): golden rebuilt, reset Worker deployed, client-name leaks closed in the demo build only; merged to `main` (c4f5109) and deployed by CI to Render and the demo (all jobs passed). Render still serves the original customer logins and installer link; the demo serves neither. **Inventory Ops live** (18 Oct): golden rebuilt, reset Worker deployed, merged to main at 41688b0 (client site redeployed with real names unchanged). **Designer Ops live** (18 Oct): golden rebuilt from the new seed (old one backed up to `~/.config/ahrom-labs/demo-backups/`), reset Worker deployed and run; `demo-data` merged to main (12e66a5); demo and Render both serve it (18 Oct). Designer Ops UI pass (PR #2) live on both; demo palettes and sample photos written to the golden and live demo DBs.
 
 - [x] **Bing Webmaster Tools + IndexNow (17 Oct 2026):** site imported from Search Console by Pujan; sitemap submitted to Bing; IndexNow pings Bing on every deploy (first ping: 63 URLs, accepted).
 
