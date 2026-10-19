@@ -15,7 +15,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
 - [ ] **Rotate the Turso token in `ls_crm/seed_demo.py`** (found 17 Oct 2026): lines 31-32 have a database URL and auth token typed into the code. Create a new token, revoke the old one, and read it from an env var instead.
 
-- [ ] **WhatsApp for the CRM: live on +91 94265 19798 since 19 Oct 2026** (message in, reply out, read receipts back). Left: display name "Ahrom Labs" is under Meta review (shows "Click Catalyst" until approved); add a payment method (Business settings → Messaging accounts → Click Catalyst → Payment settings) before starting chats with templates; then submit the 3 templates and set the click-to-chat link in CRM Settings → WhatsApp.
+- [ ] **WhatsApp for the CRM: live on +91 94265 19798 since 19 Oct 2026**, ₹100 payment added, 3 templates submitted, click-to-chat link in email signatures, daily cap 20. Only waiting on Meta: the display name "Ahrom Labs" and the template approvals. Check WhatsApp → Templates in a day; raise the daily cap in Settings → WhatsApp when there is budget. Playbook for clients: `docs/whatsapp-cloud-api-setup.md`.
 
 
 
