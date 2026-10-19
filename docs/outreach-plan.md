@@ -1,5 +1,12 @@
 # Outreach plan: CRM UI, email, WhatsApp (15 Oct 2026)
 
+**Status 19 Oct 2026:** CRM live (crm.ahromlabs.com, also as a Claude/ChatGPT connector at /mcp). Email sending on
+since 16 Oct: ramp 10 → 20 from day 5 → 30 from day 10, Mon–Fri 10:00–17:00 and Sat 10:00–13:00 IST, queue topped
+up daily from verified prospects into active campaigns (boiler: 2 active; interiors-furniture and distribution: 4
+drafts to review). CRM holds 539 companies, 388 with a verified decision-maker email (all P1 enriched through Apify
+on 16 Oct; P2 next month). WhatsApp live on +91 94265 19798 (19 Oct): marketing starts once Meta approves the
+display name "Ahrom Labs" and the 3 templates.
+
 Goal: turn the 208 prospects in the CRM (≈194 with a verified email, 150 of them boiler makers) into replies and
 demo calls, with every touch logged in one place. Order is chosen so nothing is built twice and the slow
 outside step (Meta business verification) starts today.
@@ -38,7 +45,7 @@ outside step (Meta business verification) starts today.
   so `prospects.py` pushes directly.
 - `/api/crm` on ahromlabs.com is retired once the new app shows the same data.
 
-## Phase 2 — Email outreach (built 15–16 Oct 2026 in `~/Developer/ahrom-crm`; done: Gmail connected 16 Oct 2026, sending off until Pujan turns it on)
+## Phase 2 — Email outreach (built 15–16 Oct 2026 in `~/Developer/ahrom-crm`; live since 16 Oct 2026)
 
 - **Added 16 Oct 2026:** campaigns (name + audience + segments, draft/active templates, one campaign at a time per
   person), reply reading with Jev (category + confidence; the CRM's rules act; only sure meeting / not-now replies
@@ -58,7 +65,7 @@ outside step (Meta business verification) starts today.
   `replied`, stops the sequence and shows the reply on the timeline and in **Today**.
 - **Test mode** first: every send goes to Pujan's own inbox until switched to live in Settings.
 
-## Phase 3 — WhatsApp (≈2 days build; live when Meta verification is through)
+## Phase 3 — WhatsApp (built 16 Oct 2026; number live 19 Oct 2026; marketing waits on Meta: display name + templates)
 
 - Port `shanti-ops` WhatsApp: setup screen in CRM Settings, webhook on crm.ahromlabs.com (Access bypass for that
   one path, signature-checked), inbox per prospect on the timeline, 24-hour reply window, approved templates.
@@ -72,6 +79,8 @@ outside step (Meta business verification) starts today.
 
 - Weekly: sends, replies, meetings by segment and version; keep the winning version, write the next challenger.
 - More contacts when Apollo credits reset (8 Nov): electronics and interiors P1 first.
+- Monthly enrichment on Apify's free credit (`data_collector/indian_companies/apify_enrich.py`, ~400 companies a
+  month): P2 from November. Steps in the ahrom-crm README, "Enrichment".
 
 ## Decisions
 
