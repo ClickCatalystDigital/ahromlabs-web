@@ -59,10 +59,10 @@ export default function Home() {
               <h1 className="display max-w-[14ch] text-5xl text-foreground sm:text-6xl lg:text-6xl">
                 We build the systems your business runs on.
               </h1>
-              <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
+              <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-pretty text-foreground-secondary sm:text-xl">
                 One system for the whole business, from enquiry to dispatch to the books,
                 that also tells you what&apos;s late, what&apos;s owed and what needs a decision
-                today. Tally can stay. Already in daily use at manufacturers, traders and design studios.
+                today. Tally can stay. Already in daily use at manufacturers, traders and design&nbsp;studios.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a href="#contact" className="subscribe-submit focus-ring inline-block">
