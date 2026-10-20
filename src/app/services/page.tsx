@@ -156,7 +156,8 @@ export default function ServicesPage() {
             <div className="rail prose-measure">
               <h2 className="display text-3xl text-foreground sm:text-4xl">How an engagement runs</h2>
               <p className="mt-6 leading-relaxed text-foreground-secondary">
-                Every engagement starts by modeling the business: its{" "}
+                Every engagement starts by{" "}
+                <Link href="/approach" className="text-link focus-ring">modeling the business</Link>: its{" "}
                 <Link href="/systems#entity" className="text-link focus-ring">entities</Link>,
                 the{" "}
                 <Link href="/systems#workflow" className="text-link focus-ring">workflows</Link>{" "}
@@ -168,7 +169,8 @@ export default function ServicesPage() {
               <p className="mt-4 leading-relaxed text-foreground-secondary">
                 Ahrom Labs takes on a small number of engagements at a time. The person who
                 models your business is the same person who writes the code and answers your
-                first message: Pujan Motiwala, Principal, based in Ahmedabad and working with
+                first message:{" "}
+                <Link href="/about" className="text-link focus-ring">Pujan Motiwala, Principal</Link>, based in Ahmedabad and working with
                 clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">

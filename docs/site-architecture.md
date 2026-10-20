@@ -105,8 +105,14 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 `src/lib/ai-search.ts`.
 
 - **Humans:** `<search-modal-snippet>` on every page (Cmd/Ctrl+K and a nav "Search" item) and
-  a `<chat-bubble-snippet>` on desktop only (`hidden lg:block`), in `src/components/SiteSearch.tsx`, from the pinned npm package
+  the search modal in `src/components/SiteSearch.tsx`, from the pinned npm package
   `@cloudflare/ai-search-snippet`, loaded at browser idle, themed with the site's CSS tokens.
+- **Ahrom AI (chat):** our own panel, `src/components/AhromChat.tsx`, on the same public
+  endpoint's `/chat/completions` (streamed; `event: chunks` gives the source pages shown under
+  each answer). The mascot's face changes with the conversation (`public/ahrom-ai/*.webp`,
+  cropped from one sheet), picked in code from typing, waiting and the reply's wording, not by
+  a model. The endpoint only answers ahromlabs.com, so the chat can't answer on localhost (it
+  shows its error face).
 - **Agents:** `/.well-known/mcp/server-card.json` (SEP-1649 draft; no tool list — Cloudflare
   defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
 - **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host
@@ -131,7 +137,8 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   share few words with the page; fix them with wording, then add the question to the check.
   Also ask the real chat (`POST /chat/completions`): retrieval passing is not the same as the
   answer being right.
-- **System prompt (set 17 Oct 2026):** answer only from the retrieved pages, first sentence
+- **System prompt:** the text lives in `docs/chatbot-system-prompt.md` (Ahrom AI persona, 20 Oct
+  2026); set the live one from it. First version (17 Oct 2026): answer only from the retrieved pages, first sentence
   first, name the page; when nothing matches, say the site doesn't cover it and point to
   `/#contact`; never general knowledge, never invented prices, terms, clients or regulation
   details, never a client the pages don't name. Before it, a no-match question got a generic

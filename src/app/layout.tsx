@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { jsonLd, orgGraph, siteUrl } from "@/lib/schema";
 import { SiteSearch } from "@/components/SiteSearch";
+import { AhromChat } from "@/components/AhromChat";
 import { WebMcpTools } from "@/components/WebMcpTools";
 import { Analytics } from "@/components/Analytics";
 import "./globals.css";
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         {children}
         <SiteSearch />
+        <AhromChat />
         <WebMcpTools />
         <Analytics />
       </body>

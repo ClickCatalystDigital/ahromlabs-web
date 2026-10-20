@@ -232,6 +232,11 @@ export default function Home() {
                   We start by modeling how your business actually works, then build the
                   systems on top of that model. The application layer comes second.
                 </p>
+                <p className="mt-4">
+                  <Link href="/approach" className="text-link focus-ring">
+                    How we map a business before building
+                  </Link>
+                </p>
               </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="border-t border-line pt-4">

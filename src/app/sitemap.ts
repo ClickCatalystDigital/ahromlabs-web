@@ -54,7 +54,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/engagement`, lastModified: pageDate("engagement"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/privacy`, lastModified: pageDate("privacy"), changeFrequency: "yearly", priority: 0.2 },
     { url: `${siteUrl}/approach`, lastModified: pageDate("approach"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/about`, lastModified: pageDate("about"), changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: `${siteUrl}/about`,
+      lastModified: pageDate("about"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      images: ["about-improvised-wiring", "about-structured-wiring", "about-theodolite-survey"].map(
+        (name) => `${siteUrl}/what-we-build/${name}.webp`,
+      ),
+    },
     {
       url: `${siteUrl}/systems`,
       lastModified: changed("systems", newestUpdate("term").toISOString()),

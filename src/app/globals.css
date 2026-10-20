@@ -132,12 +132,6 @@ body {
   transform: translateY(1px) rotate(225deg);
 }
 
-.footer-domain {
-  font-size: 0.875rem;
-  color: var(--foreground-secondary);
-  transition: color 0.15s ease;
-}
-
 .text-link {
   color: var(--foreground-secondary);
   text-decoration: underline;
@@ -146,10 +140,6 @@ body {
 }
 
 .text-link:hover {
-  color: var(--foreground);
-}
-
-.footer-domain:hover {
   color: var(--foreground);
 }
 
@@ -357,12 +347,11 @@ body {
   white-space: nowrap;
 }
 
-/* Cloudflare AI Search widgets (src/components/SiteSearch.tsx), restyled in
+/* Cloudflare AI Search modal (src/components/SiteSearch.tsx), restyled in
    the site's own language — navy accent, 2px corners like every button here,
    hairline borders, Geist, quiet shadows — so they read as part of the site,
    not a plug-in. Only the package's documented custom properties are used. */
-search-modal-snippet,
-chat-bubble-snippet {
+search-modal-snippet {
   --search-snippet-primary-color: var(--accent);
   --search-snippet-primary-hover: #27457c;
   --search-snippet-background: var(--background);
@@ -387,28 +376,177 @@ chat-bubble-snippet {
   --search-snippet-z-modal: 60;
 }
 
-chat-bubble-snippet {
-  --chat-bubble-button-size: 48px;
-  --chat-bubble-button-radius: var(--radius);
-  --chat-bubble-button-icon-size: 20px;
-  --chat-bubble-button-icon-color: var(--background);
-  --chat-bubble-button-bottom: 24px;
-  --chat-bubble-button-right: 24px;
-  --chat-bubble-button-z-index: 50;
-  --chat-bubble-button-shadow: 0 1px 2px rgb(24 24 27 / 0.1), 0 8px 20px -6px rgb(29 52 97 / 0.35);
-  --chat-bubble-window-shadow: 0 0 0 1px var(--line), 0 24px 48px -12px rgb(24 24 27 / 0.2);
+/* ---------- Ahrom AI (src/components/AhromChat.tsx) ---------- */
+.ahrom-ai-face {
+  border-radius: 22%;
+  box-shadow: 0 0 0 1px var(--line);
+  background: #fefcfb;
 }
 
-/* Phones: a smaller button tucked closer to the corner, so it covers as
-   little of the page as possible. The open window is fitted to the screen
-   in SiteSearch.tsx. */
-@media (max-width: 640px) {
-  chat-bubble-snippet {
-    --chat-bubble-button-size: 44px;
-    --chat-bubble-button-icon-size: 18px;
-    --chat-bubble-button-bottom: 16px;
-    --chat-bubble-button-right: 12px;
+.ahrom-ai-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 22%;
+  background: #fefcfb;
+  box-shadow: 0 0 0 1px var(--line), 0 12px 32px -12px rgb(29 52 97 / 0.4);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.ahrom-ai-launcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--line-strong), 0 16px 36px -12px rgb(29 52 97 / 0.5);
+}
+
+.ahrom-ai-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, calc(100vw - 48px));
+  height: min(640px, calc(100dvh - 48px));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--background);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgb(24 24 27 / 0.06), 0 32px 64px -24px rgb(24 24 27 / 0.28);
+  animation: ahrom-ai-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Phones: a smaller launcher tucked into the corner, and a full-screen sheet.
+   The launcher is never shown while the panel is open. */
+@media (max-width: 639px) {
+  .ahrom-ai-launcher {
+    right: 12px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
   }
+  .ahrom-ai-panel {
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@keyframes ahrom-ai-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+}
+
+.ahrom-ai-icon-button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--foreground-secondary);
+}
+
+.ahrom-ai-icon-button:hover {
+  background: #f1f1f4;
+  color: var(--foreground);
+}
+
+.ahrom-ai-chip,
+.ahrom-ai-source {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  background: #fff;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.ahrom-ai-source {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--foreground-secondary);
+}
+
+.ahrom-ai-chip:hover,
+.ahrom-ai-source:hover {
+  border-color: var(--line-strong);
+  color: var(--accent);
+}
+
+.ahrom-ai-user {
+  max-width: 85%;
+  padding: 0.625rem 0.875rem;
+  border-radius: 14px 14px 4px 14px;
+  background: var(--accent);
+  color: var(--background);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.ahrom-ai-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ahrom-ai-composer:focus-within {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 0 3px rgb(29 52 97 / 0.08);
+}
+
+.ahrom-ai-send {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--background);
+  transition: opacity 150ms ease;
+}
+
+.ahrom-ai-send:disabled {
+  opacity: 0.3;
+}
+
+.ahrom-ai-dots {
+  display: inline-flex;
+  gap: 4px;
+  padding: 0.5rem 0;
+}
+
+.ahrom-ai-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--foreground-secondary);
+  animation: ahrom-ai-dot 1.2s ease-in-out infinite;
+}
+
+.ahrom-ai-dots span:nth-child(2) { animation-delay: 0.15s; }
+.ahrom-ai-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes ahrom-ai-dot {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ahrom-ai-panel,
+  .ahrom-ai-dots span { animation: none; }
+  .ahrom-ai-launcher { transition: none; }
 }
 
 /* Long identifiers in inline code (e.g. `classifyResponseError()`) have no
