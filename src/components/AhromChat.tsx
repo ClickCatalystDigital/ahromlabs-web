@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AI_SEARCH_URL } from "@/lib/ai-search";
 import { track } from "@/lib/analytics";
 import { LogoBadge } from "@/components/Wordmark";
+import type { Preset } from "@/lib/ai-chat-presets";
 
 // Ahrom AI: the site chat. Our own panel on the AI Search chat endpoint (the
 // same one Cloudflare's <chat-bubble-snippet> used), so the look and the
@@ -25,8 +26,6 @@ type Message = { role: "user" | "assistant"; content: string; sources?: Source[]
 // Localhost goes through the dev proxy in next.config.ts (the endpoint's CORS
 // only allows ahromlabs.com).
 const CHAT_BASE = process.env.NODE_ENV === "development" ? "/__ahrom-ai" : AI_SEARCH_URL;
-
-const SUGGESTIONS = ["What do you build?", "Who owns the code?", "Does it work with Tally?"];
 
 // ponytail: the face is picked from what's already known (typing, waiting, the
 // reply's wording), not by a model. A classifier call per message would cost
@@ -84,7 +83,9 @@ function sourcesFrom(data: string): Source[] {
   }
 }
 
-export function AhromChat() {
+// `presets` come from the server (layout.tsx), so the page data they are built
+// from stays out of the client bundle.
+export function AhromChat({ presets }: { presets: Preset[] }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -162,12 +163,24 @@ export function AhromChat() {
     setMessages((m) => [...m, { role: "user", content: question }, { role: "assistant", content: "" }]);
     setInput("");
     setBusy(true);
-    setMood(SURPRISED.test(question) ? "surprised" : "thinking");
-    if (SURPRISED.test(question)) setTimeout(() => setMood((m) => (m === "surprised" ? "thinking" : m)), 900);
-    track("ahrom_ai_question");
-
     const update = (patch: Partial<Message>) =>
       setMessages((m) => [...m.slice(0, -1), { ...m[m.length - 1], ...patch }]);
+
+    // A suggested question: its fixed answer, after a beat so it reads as a reply.
+    const preset = presets.find((p) => p.question === question);
+    if (preset) {
+      setMood("thinking");
+      await new Promise((r) => setTimeout(r, 500));
+      update({ content: preset.answer, sources: preset.sources });
+      setMood(moodAfter(question, preset.answer, preset.sources.length));
+      setBusy(false);
+      track("ahrom_ai_question", { kind: "suggested" });
+      return;
+    }
+
+    setMood(SURPRISED.test(question) ? "surprised" : "thinking");
+    if (SURPRISED.test(question)) setTimeout(() => setMood((m) => (m === "surprised" ? "thinking" : m)), 900);
+    track("ahrom_ai_question", { kind: "typed" });
 
     let answer = "";
     let sources = 0;
@@ -280,9 +293,9 @@ export function AhromChat() {
                 <p className="display mt-5 text-3xl text-foreground">Hi, I&apos;m Ahrom AI.</p>
                 <p className="mt-2 text-sm text-foreground-secondary">What would you like to know?</p>
                 <div className="mt-6 flex flex-wrap justify-center gap-2">
-                  {SUGGESTIONS.map((s) => (
-                    <button key={s} type="button" onClick={() => send(s)} className="ahrom-ai-chip focus-ring">
-                      {s}
+                  {presets.map((p) => (
+                    <button key={p.question} type="button" onClick={() => send(p.question)} className="ahrom-ai-chip focus-ring">
+                      {p.question}
                     </button>
                   ))}
                 </div>
@@ -345,7 +358,7 @@ export function AhromChat() {
                 value={input}
                 rows={1}
                 maxLength={500}
-                placeholder="Ask about pricing, Tally, IBR…"
+                placeholder="Ask about the systems we build…"
                 aria-label="Message Ahrom AI"
                 onChange={(e) => {
                   setInput(e.target.value);
