@@ -60,10 +60,10 @@ export default function Home() {
                 We build the systems your business runs on.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-                Ahrom Labs builds operations and accounting systems for Indian manufacturers
-                and trading groups — BOMs, shop-floor production, IBR, GST and TDS
-                compliance, and TallyPrime in one system that replaces the side
-                spreadsheets.
+                One system for the whole business, from enquiry to dispatch to the books,
+                that also tells you what&apos;s late, what&apos;s owed and what needs a decision
+                today. Tally can stay. Already running at a boiler manufacturer, an
+                electronics trader and a furniture workshop.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a href="#contact" className="subscribe-submit focus-ring inline-block">
