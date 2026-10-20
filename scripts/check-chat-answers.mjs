@@ -7,6 +7,9 @@
 //   npm run chat:check -- --url http://localhost:3000/api/ahrom-ai
 //                                            the Jev route (docs/ahrom-ai-router-plan.md)
 //   npm run chat:check -- --only cost        questions whose id contains "cost"
+//   npm run chat:check -- --url https://ahromlabs.com/api/ahrom-ai --pace
+//                                            the live route, 6.5 s between questions to stay
+//                                            under its 10-a-minute limit (CHAT_LIMITER)
 //
 // A check is [id, question, must[], mustNot[]]: every `must` pattern has to
 // match, no `mustNot` may. Expected wording comes from src/lib/engagement.ts and
@@ -71,6 +74,7 @@ const arg = (name) => {
 };
 const url = arg("--url");
 const only = arg("--only");
+const pace = process.argv.includes("--pace") ? 6500 : 0;
 
 // The text of one answer, from either target.
 async function ask(question) {
@@ -97,6 +101,7 @@ for (const [id, question, must, mustNot] of CHECKS) {
   const problems = [];
   let ms = 0;
   for (let run = 1; run <= 2; run++) {
+    if (pace) await new Promise((r) => setTimeout(r, pace));
     const t = Date.now();
     let text;
     try {
