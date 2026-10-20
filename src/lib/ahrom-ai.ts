@@ -17,6 +17,8 @@ export type Entry = {
   title: string;
   // Answer-first text, shown as it is on the fast path. Our own published words.
   answer: string;
+  // More of the page, for Gemma when it writes (how it works, results, who it's for). Never shown as it is.
+  more?: string;
   url: string;
   sourceTitle: string;
   // Always on the shortlist: the questions business owners ask most.
@@ -51,8 +53,27 @@ export function buildEntries(): Entry[] {
   }
   for (const s of services) {
     const url = `${site}${serviceUrl(s)}`;
-    out.push({ id: `service/${s.slug}`, title: `${s.plainName}: ${s.name}`, answer: s.answer, url, sourceTitle: s.name });
-    s.questions.forEach((q, i) => out.push({ id: `service/${s.slug}#${i}`, title: q.q, answer: q.a, url, sourceTitle: s.name }));
+    const more = [
+      `Who it's for: ${s.forWhom}`,
+      `How it works: ${s.steps.join(" ")}`,
+      `Results: ${s.evidence.map((e) => `${e.metric}: ${e.value}`).join("; ")}`,
+    ].join("\n");
+    out.push({ id: `service/${s.slug}`, title: `${s.plainName}: ${s.name}`, answer: s.answer, more, url, sourceTitle: s.name });
+    s.questions.forEach((q, i) => out.push({ id: `service/${s.slug}#${i}`, title: q.q, answer: q.a, more, url, sourceTitle: s.name }));
+    // Where to see this one working: the demo and the sample login the service page names.
+    const demos = (s.demos ?? []).flatMap((d) => {
+      const demo = engagements.find((e) => e.slug === d.client)?.demo;
+      return demo ? [`${demo.name}: ${demo.url} (${d.as})`] : [];
+    });
+    if (demos.length) {
+      out.push({
+        id: `service/${s.slug}#demo`,
+        title: `Can I try ${s.shortName.toLowerCase()} in a live demo?`,
+        answer: `Yes, on sample data with no sign-up. ${demos.join(". ")}.`,
+        url,
+        sourceTitle: s.name,
+      });
+    }
   }
   for (const e of engagements) {
     // An anonymous client's `client` is a description, never a name, so it is safe to show.
@@ -138,7 +159,7 @@ export const JEV_MODEL = "typesafe/jev-1.13"; // pinned, as in the CRM: a newer 
 export const KINDS = {
   about_us: "A question about Ahrom Labs or the systems it builds: what it builds, for whom, prices, timelines, terms, support, demos, Tally, IBR, any feature or industry.",
   small_talk: "A greeting, thanks, a compliment, a joke, or chat that isn't a question about the business.",
-  contact_me: "They want to talk to a person, book a call or meeting, get a quote for their project, or hire Ahrom Labs.",
+  contact_me: "They ask to talk to a person, book a call or meeting, or send them a quote. Not a question about whether Ahrom Labs builds something or how it works.",
   out_of_scope: "A question about something unrelated to Ahrom Labs and business systems, such as the weather, general coding help or another company.",
 } as const;
 export type Kind = keyof typeof KINDS;
@@ -185,7 +206,8 @@ export function route(list: Entry[], answers: Record<string, { choice?: string; 
   // When Jev is fairly sure an entry fits (60%+), small talk and "unrelated" need 90% to win:
   // "hey, do you do payroll?" is a question, not a greeting.
   const entryFits = best && best.key !== "none" && best.p >= 0.6;
-  if (kind?.key === "contact_me" && !entryFits) return { path: "contact" };
+  // "Can you build X?" is a question first: answer it if any entry is plausible.
+  if (kind?.key === "contact_me" && !(best && best.key !== "none" && best.p >= 0.3)) return { path: "contact" };
   if (kind?.key === "small_talk" && !(entryFits && kind.p < 0.9)) return { path: "small_talk" };
   if (!best || best.key === "none" || best.p < 0.3) return { path: "miss" };
   if (kind?.key === "out_of_scope" && kind.p >= 0.9) return { path: "miss" };

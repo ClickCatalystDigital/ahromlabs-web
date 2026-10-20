@@ -16,6 +16,8 @@ import { AI_SEARCH_URL } from "../src/lib/ai-search.ts";
 const NOT_COVERED = /doesn'?t cover|does not cover|not covered|doesn'?t say/i;
 const LEAK = /\bwe need to (search|retrieve|use)|the instructions (say|mention)|let'?s open/i;
 const CONTACT = /ahromlabs\.com\/#contact/;
+// The route's "talk to Pujan" reply: wrong for a question the site answers.
+const HANDOFF = /Tell Pujan about your business/;
 
 const CHECKS = [
   // What we are, what we build
@@ -45,6 +47,14 @@ const CHECKS = [
   ["portal", "Can our customers track their orders?", [/portal|login|track/i], [NOT_COVERED]],
   ["documents", "Can it read our purchase invoices automatically?", [/extract|read|AI/i], [NOT_COVERED]],
   ["ibr", "Can your system make IBR forms for boilers?", [/IBR|Form|certificate/i], [NOT_COVERED]],
+  // The service pages (20 Oct 2026): a "can you build X?" is answered, not sent to the contact page
+  ["crm-leads", "Can your CRM take leads from WhatsApp and IndiaMART?", [/IndiaMART/i, /WhatsApp/i], [NOT_COVERED]],
+  ["supplier", "Do you build a supplier portal?", [/link|supplier/i], [NOT_COVERED]],
+  ["ai-assistant", "Can you build an AI assistant that answers from our own data?", [/assistant|answer/i], [NOT_COVERED, HANDOFF]],
+  ["search-docs", "Can you search our old drawings and quotations?", [/search|drawing|quotation/i], [NOT_COVERED, HANDOFF]],
+  ["portal-demo", "Can I try the customer portal in a demo?", [/-erp\.ahromlabs\.com\/demo/], [NOT_COVERED]],
+  ["bom", "Can you import our BOM from Excel?", [/BOM|bill.of.materials/i], [NOT_COVERED]],
+  ["offcuts", "Do you track offcuts and remnants?", [/remnant|offcut/i], [NOT_COVERED]],
   // Talking to a person
   ["contact", "I want to talk to someone about a project", [CONTACT], []],
   // Small talk and the edges

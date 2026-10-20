@@ -461,7 +461,7 @@ export const services: Service[] = [
     ],
     questions: [
       { q: "Can our old CRM and Excel history come with us?", a: "Yes. At a boiler manufacturer, all 20,167 old diary rows were recovered, the 2,221 quotations that matched exactly one customer were imported, and 303 doubtful ones were held for review instead of guessed." },
-      { q: "Can it take leads from IndiaMART and JustDial?", a: "Connections to IndiaMART, TradeIndia, JustDial and website forms are built. Each enquiry lands in Sales, assigned in turn, once you add your own key." },
+      { q: "Can it take leads from IndiaMART, JustDial and WhatsApp?", a: "Yes. Connections to IndiaMART, TradeIndia, JustDial, WhatsApp and website forms are built: each enquiry lands in Sales, assigned in turn, once you add your own key, and WhatsApp conversations sit in an inbox inside the CRM. Another lead source can be connected the same way." },
       { q: "Do quotations follow our format?", a: "Yes: your letterhead, your terms and conditions, GST lines and the amount in words, with every revision kept." },
     ],
     demos: [

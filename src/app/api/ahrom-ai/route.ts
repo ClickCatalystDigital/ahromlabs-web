@@ -96,7 +96,7 @@ async function decide(key: string, question: string, previous: string | null, li
 }
 
 async function write(key: string, messages: { role: string; content: string }[], entries: Entry[]): Promise<Response | null> {
-  const context = entries.map((e) => `### ${e.title}\n${e.answer}\nURL: ${e.url}`).join("\n\n");
+  const context = entries.map((e) => `### ${e.title}\n${e.answer}${e.more ? `\n${e.more}` : ""}\nURL: ${e.url}`).join("\n\n");
   const res = await fetch(`${OPENROUTER}/v1/chat/completions`, {
     method: "POST",
     headers: { authorization: `Bearer ${key}`, "content-type": "application/json", "x-title": "Ahrom Labs website" },
