@@ -2,9 +2,9 @@
 // data the pages use (one fact, one node), so the questions we put in front of
 // visitors are answered instantly and always right. Typed questions still go to
 // AI Search. Business-owner questions, not ones we'd have to hint at.
-import { engagementAnswers } from "@/lib/engagement";
-import { engagements } from "@/lib/work";
-import { families } from "@/lib/services";
+import { engagementAnswers } from "./engagement";
+import { engagements } from "./work";
+import { families } from "./services";
 
 export type Preset = {
   question: string;

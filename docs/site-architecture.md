@@ -107,15 +107,16 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 - **Humans:** `<search-modal-snippet>` on every page (Cmd/Ctrl+K and a nav "Search" item) and
   the search modal in `src/components/SiteSearch.tsx`, from the pinned npm package
   `@cloudflare/ai-search-snippet`, loaded at browser idle, themed with the site's CSS tokens.
-- **Ahrom AI (chat):** our own panel, `src/components/AhromChat.tsx`, on the same public
-  endpoint's `/chat/completions` (streamed; `event: chunks` gives the source pages shown under
-  each answer). Header: logo, minimise (keeps the conversation) and close (clears it). After
+- **Ahrom AI (chat):** our own panel, `src/components/AhromChat.tsx`. Typed questions go to
+  `/api/ahrom-ai`: one Jev call picks the site's own answer (shown as it is when Jev is sure),
+  Gemma 4 via OpenRouter writes only when needed, and AI Search's `/chat/completions` is the
+  fallback when OpenRouter is unreachable (`docs/ahrom-ai-router-plan.md`, 29/29 on
+  `npm run chat:check`). Secret `OPENROUTER_KEY` (shared with the CRM), limit `CHAT_LIMITER`. Header: logo, minimise (keeps the conversation) and close (clears it). After
   10 s on the site a one-line hello by the visitor's clock appears beside the launcher, once per
   visit. The suggested questions are business-owner questions with fixed answers built from the
   page data (`src/lib/ai-chat-presets.ts`): instant, and right every time, which no model was. The mascot's face changes with the conversation (`public/ahrom-ai/*.webp`,
   cropped from one sheet), picked in code from typing, waiting and the reply's wording, not by
-  a model. The endpoint only answers ahromlabs.com, so the chat can't answer on localhost (it
-  shows its error face).
+  a model.
 - **Agents:** `/.well-known/mcp/server-card.json` (SEP-1649 draft; no tool list — Cloudflare
   defines the tools), an MCP entry in the API catalog, and a line in llms.txt.
 - **Cost guard (dashboard, not code):** public endpoint rate limit ~20/min, authorized host

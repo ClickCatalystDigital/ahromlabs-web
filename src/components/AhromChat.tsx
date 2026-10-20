@@ -3,17 +3,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { AI_SEARCH_URL } from "@/lib/ai-search";
 import { track } from "@/lib/analytics";
 import { LogoBadge } from "@/components/Wordmark";
 import type { Preset } from "@/lib/ai-chat-presets";
 
-// Ahrom AI: the site chat. Our own panel on the AI Search chat endpoint (the
-// same one Cloudflare's <chat-bubble-snippet> used), so the look and the
-// mascot's face are ours. Answers stream as server-sent events: `event: chunks`
-// carries the pages the answer was retrieved from, then OpenAI-style deltas.
-// The persona and the answering rules are the instance's system prompt
-// (docs/chatbot-system-prompt.md), not this file.
+// Ahrom AI: the site chat. Typed questions go to /api/ahrom-ai, which decides
+// with Jev and answers from the site's own published answers, with Gemma
+// writing only when a question needs it (docs/ahrom-ai-router-plan.md). The
+// suggested questions have fixed answers here (presets), no network.
 
 // The mascot's faces, cropped from one sheet into /public/ahrom-ai.
 type Mood = "neutral" | "wink" | "surprised" | "idea" | "alert" | "thinking" | "calm" | "happy" | "sorry" | "delighted" | "confused";
@@ -22,10 +19,6 @@ const MOODS: Mood[] = ["neutral", "wink", "surprised", "idea", "alert", "thinkin
 
 type Source = { url: string; title: string };
 type Message = { role: "user" | "assistant"; content: string; sources?: Source[] };
-
-// Localhost goes through the dev proxy in next.config.ts (the endpoint's CORS
-// only allows ahromlabs.com).
-const CHAT_BASE = process.env.NODE_ENV === "development" ? "/__ahrom-ai" : AI_SEARCH_URL;
 
 // ponytail: the face is picked from what's already known (typing, waiting, the
 // reply's wording), not by a model. A classifier call per message would cost
@@ -67,17 +60,10 @@ function renderText(text: string, onNavigate: () => void) {
     ));
 }
 
-function sourcesFrom(data: string): Source[] {
+// The route's x-sources header: URL-encoded JSON [{ url, title }].
+function sourcesFrom(header: string | null): Source[] {
   try {
-    const chunks = JSON.parse(data) as { item?: { key?: string; metadata?: { title?: string } } }[];
-    const seen = new Map<string, Source>();
-    for (const c of chunks) {
-      const url = c.item?.key;
-      if (url && !seen.has(url)) {
-        seen.set(url, { url, title: (c.item?.metadata?.title ?? url).replace(/\s*\|\s*Ahrom Labs$/, "") });
-      }
-    }
-    return [...seen.values()].slice(0, 3);
+    return header ? (JSON.parse(decodeURIComponent(header)) as Source[]) : [];
   } catch {
     return [];
   }
@@ -184,50 +170,33 @@ export function AhromChat({ presets }: { presets: Preset[] }) {
 
     let answer = "";
     let sources = 0;
+    let path = "";
     try {
       abortRef.current = new AbortController();
-      const res = await fetch(`${CHAT_BASE}/chat/completions`, {
+      const res = await fetch("/api/ahrom-ai", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ messages: [...history, { role: "user", content: question }], stream: true }),
+        body: JSON.stringify({ messages: [...history, { role: "user", content: question }] }),
         signal: abortRef.current.signal,
       });
       if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
+      path = res.headers.get("x-path") ?? "";
+      const found = sourcesFrom(res.headers.get("x-sources"));
+      sources = found.length;
 
+      // Plain text, streamed: our own answer arrives at once, Gemma's word by word.
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
-      let buffer = "";
       for (;;) {
         const { done, value } = await reader.read();
         if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        let cut;
-        while ((cut = buffer.indexOf("\n\n")) !== -1) {
-          const frame = buffer.slice(0, cut);
-          buffer = buffer.slice(cut + 2);
-          const event = frame.match(/^event: (.+)$/m)?.[1];
-          const data = frame.match(/^data: ([\s\S]*)$/m)?.[1];
-          if (!data || data === "[DONE]") continue;
-          if (event === "chunks") {
-            const found = sourcesFrom(data);
-            sources = found.length;
-            update({ sources: found });
-            continue;
-          }
-          try {
-            const delta = JSON.parse(data).choices?.[0]?.delta?.content;
-            if (delta) {
-              answer += delta;
-              update({ content: answer });
-              setMood("calm");
-            }
-          } catch {
-            // A malformed frame is skipped, not fatal.
-          }
-        }
+        answer += decoder.decode(value, { stream: true });
+        update({ content: answer });
+        setMood("calm");
       }
+      update({ content: answer, sources: found });
       if (!answer) throw new Error("empty answer");
-      setMood(moodAfter(question, answer, sources));
+      setMood(path === "contact" ? "happy" : moodAfter(question, answer, sources));
     } catch (e) {
       if ((e as Error).name === "AbortError") return;
       update({

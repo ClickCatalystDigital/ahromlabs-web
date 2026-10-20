@@ -30,7 +30,9 @@
   // 5 form submissions per minute per key (per visitor IP for the contact form; per demo and per visitor email
   // for demo leads). Rate-limit namespace ids are per account; 1002 is unused there (the LS demo uses 1001).
   "ratelimits": [
-    { "name": "FORM_LIMITER", "namespace_id": "1002", "simple": { "limit": 5, "period": 60 } }
+    { "name": "FORM_LIMITER", "namespace_id": "1002", "simple": { "limit": 5, "period": 60 } },
+    // Ahrom AI (api/ahrom-ai): each question can cost an OpenRouter call, on the credit the CRM shares.
+    { "name": "CHAT_LIMITER", "namespace_id": "1003", "simple": { "limit": 10, "period": 60 } }
   ],
   // CRM: every form lead, saved before the email goes out. Shared with the CRM app (~/Developer/ahrom-crm,
   // crm.ahromlabs.com); schema migrations from 0003 on live in that repo, not in migrations/ here.
