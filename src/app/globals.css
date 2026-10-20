@@ -402,6 +402,26 @@ search-modal-snippet {
   box-shadow: 0 0 0 1px var(--line-strong), 0 16px 36px -12px rgb(29 52 97 / 0.5);
 }
 
+.ahrom-ai-greeting {
+  position: fixed;
+  right: 24px;
+  bottom: 92px;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: min(300px, calc(100vw - 48px));
+  padding: 0.75rem 0.75rem 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 4px 14px;
+  background: #fff;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  box-shadow: 0 1px 2px rgb(24 24 27 / 0.06), 0 16px 36px -14px rgb(24 24 27 / 0.28);
+  animation: ahrom-ai-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 .ahrom-ai-panel {
   position: fixed;
   right: 24px;
@@ -427,6 +447,10 @@ search-modal-snippet {
     bottom: 16px;
     width: 48px;
     height: 48px;
+  }
+  .ahrom-ai-greeting {
+    right: 12px;
+    bottom: 76px;
   }
   .ahrom-ai-panel {
     inset: 0;
@@ -489,6 +513,8 @@ search-modal-snippet {
   white-space: pre-line;
 }
 
+/* The textarea's single line is 32px (24px line + 4px padding top and bottom),
+   the same as the send button, so the 8px padding is even above and below. */
 .ahrom-ai-composer {
   display: flex;
   align-items: flex-end;
@@ -545,6 +571,7 @@ search-modal-snippet {
 
 @media (prefers-reduced-motion: reduce) {
   .ahrom-ai-panel,
+  .ahrom-ai-greeting,
   .ahrom-ai-dots span { animation: none; }
   .ahrom-ai-launcher { transition: none; }
 }

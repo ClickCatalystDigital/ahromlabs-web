@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AI_SEARCH_URL } from "@/lib/ai-search";
 import { track } from "@/lib/analytics";
+import { LogoBadge } from "@/components/Wordmark";
 
 // Ahrom AI: the site chat. Our own panel on the AI Search chat endpoint (the
 // same one Cloudflare's <chat-bubble-snippet> used), so the look and the
@@ -89,17 +90,39 @@ export function AhromChat() {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [mood, setMood] = useState<Mood>("neutral");
+  const [greeting, setGreeting] = useState<string | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  // After 10 seconds on the site, a one-line hello by the visitor's own clock,
+  // beside the launcher (the panel stays shut). Once per visit; never once the
+  // chat has been opened. sessionStorage can throw (private mode): then it just
+  // shows again next visit.
+  useEffect(() => {
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem("ahrom-ai-greeted") === "1";
+    } catch {}
+    if (seen) return;
+    const timer = setTimeout(() => {
+      const h = new Date().getHours();
+      const hello = h >= 5 && h < 12 ? "Good morning" : h >= 12 && h < 17 ? "Good afternoon" : h >= 17 && h < 22 ? "Good evening" : "Hello";
+      setGreeting(`${hello}. I'm Ahrom AI. Ask me anything about the systems we build.`);
+      try {
+        sessionStorage.setItem("ahrom-ai-greeted", "1");
+      } catch {}
+    }, 10_000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Warm the other faces once the panel opens, so a change never flickers.
   useEffect(() => {
     if (!open) return;
     for (const m of MOODS) new Image().src = face(m);
     inputRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && minimise();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
@@ -109,11 +132,24 @@ export function AhromChat() {
   }, [messages, busy]);
 
   function openPanel() {
+    setGreeting(null);
     setOpen(true);
     if (messages.length === 0) setMood("happy");
   }
 
+  // Minimise keeps the conversation (the launcher wears the current face);
+  // close ends it.
+  function minimise() {
+    setOpen(false);
+    requestAnimationFrame(() => buttonRef.current?.focus());
+  }
+
   function close() {
+    abortRef.current?.abort();
+    setMessages([]);
+    setInput("");
+    setBusy(false);
+    setMood("neutral");
     setOpen(false);
     // The launcher only exists while the panel is closed: focus it once it's back.
     requestAnimationFrame(() => buttonRef.current?.focus());
@@ -194,6 +230,19 @@ export function AhromChat() {
 
   return (
     <>
+      {!open && greeting && (
+        <div className="ahrom-ai-greeting" role="status">
+          <button type="button" onClick={openPanel} className="focus-ring text-left">
+            {greeting}
+          </button>
+          <button type="button" onClick={() => setGreeting(null)} aria-label="Dismiss" className="ahrom-ai-icon-button focus-ring -mt-1 -mr-2 h-7 w-7 flex-none">
+            <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+              <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {!open && (
         <button
           ref={buttonRef}
@@ -204,17 +253,20 @@ export function AhromChat() {
           aria-expanded={false}
           className="ahrom-ai-launcher focus-ring"
         >
-          <img src={face("neutral")} alt="" width={56} height={56} className="h-full w-full" />
+          <img src={face(messages.length ? mood : greeting ? "happy" : "neutral")} alt="" width={56} height={56} className="h-full w-full" />
         </button>
       )}
 
       {open && (
-        <section id="ahrom-ai" role="dialog" aria-labelledby="ahrom-ai-title" className="ahrom-ai-panel">
-          <header className="flex items-center gap-3 border-b border-line px-5 py-4">
-            <div className="min-w-0 flex-1">
-              <h2 id="ahrom-ai-title" className="display text-xl leading-none text-foreground">Ahrom AI</h2>
-            </div>
-            <button type="button" onClick={close} aria-label="Close Ahrom AI" className="ahrom-ai-icon-button focus-ring">
+        <section id="ahrom-ai" role="dialog" aria-label="Ahrom AI" className="ahrom-ai-panel">
+          <header className="flex items-center gap-1 border-b border-line py-3 pr-3 pl-4">
+            <LogoBadge className="mr-auto" />
+            <button type="button" onClick={minimise} aria-label="Minimise Ahrom AI" title="Minimise" className="ahrom-ai-icon-button focus-ring">
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+                <path d="M5 10h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </button>
+            <button type="button" onClick={close} aria-label="Close and clear the conversation" title="Close" className="ahrom-ai-icon-button focus-ring">
               <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
                 <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
@@ -305,7 +357,7 @@ export function AhromChat() {
                     send(input);
                   }
                 }}
-                className="max-h-32 min-h-6 flex-1 resize-none bg-transparent text-base sm:text-[0.9375rem] text-foreground outline-none placeholder:text-foreground-secondary/70 [field-sizing:content]"
+                className="max-h-32 min-h-8 flex-1 resize-none bg-transparent py-1 text-base leading-6 sm:text-[0.9375rem] sm:leading-6 text-foreground outline-none placeholder:text-foreground-secondary/70 [field-sizing:content]"
               />
               <button
                 type="submit"
