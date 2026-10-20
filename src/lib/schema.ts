@@ -1,5 +1,5 @@
 import type { ContentEntry } from "./content";
-import { services } from "./services";
+import { services, families, servicesIn, serviceUrl, familyUrl, proofHref, type Service } from "./services";
 import { engagements } from "./work";
 import { IBR_2026_URL } from "./ibr-forms";
 
@@ -21,24 +21,43 @@ const postalAddress = {
 
 const areaServed = { "@type": "Country", name: "India" } as const;
 
-// Built from the same array /services renders, so the catalog can't list a
-// service the page doesn't show. Each Service's @id is its /services anchor.
+// Built from the same arrays /services renders, so the catalog can't list a
+// service the page doesn't show: the whole-system ERP at the top, then one
+// nested catalog per family. Each Service's @id is its own page.
+export const serviceId = (s: Pick<Service, "slug">) => `${siteUrl}${serviceUrl(s)}#service`;
+
+const offer = (s: Service) => ({
+  "@type": "Offer",
+  itemOffered: {
+    "@type": "Service",
+    "@id": serviceId(s),
+    name: s.name,
+    alternateName: s.plainName,
+    serviceType: s.name,
+    category: families.find((f) => f.slug === s.family)?.name ?? "Custom ERP",
+    description: s.answer,
+    // The published evidence for this service; each resolves to that page's TechArticle.
+    subjectOf: s.proof.map((p) => ({ "@id": `${siteUrl}${proofHref(p)}#article` })),
+    url: `${siteUrl}${serviceUrl(s)}`,
+    image: `${siteUrl}/what-we-build/${s.slug}.webp`,
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed,
+  },
+});
+
 const offerCatalog = {
   "@type": "OfferCatalog",
   name: "Ahrom Labs services",
   url: `${siteUrl}/services`,
-  itemListElement: services.map((s) => ({
-    "@type": "Offer",
-    itemOffered: {
-      "@type": "Service",
-      "@id": `${siteUrl}/services#${s.slug}`,
-      name: s.name,
-      description: s.answer,
-      url: `${siteUrl}/services#${s.slug}`,
-      provider: { "@id": `${siteUrl}/#organization` },
-      areaServed,
-    },
-  })),
+  itemListElement: [
+    ...services.filter((s) => s.family === null).map(offer),
+    ...families.map((f) => ({
+      "@type": "OfferCatalog",
+      name: f.name,
+      url: `${siteUrl}${familyUrl(f)}`,
+      itemListElement: servicesIn(f).map(offer),
+    })),
+  ],
 };
 
 export const orgGraph = {
@@ -164,7 +183,7 @@ export function jsonLd(data: unknown) {
 export function articleGraph(entry: ContentEntry, path: string) {
   const url = `${siteUrl}${path}`;
   const cites = (p: { kind: string; slug: string }) => p.kind === entry.kind && p.slug === entry.slug;
-  const about = services.filter((s) => s.proof.some(cites)).map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` }));
+  const about = services.filter((s) => s.proof.some(cites)).map((s) => ({ "@id": serviceId(s) }));
   // An unnamed client is not an Organization a search engine can resolve.
   const mentions = engagements
     .filter((e) => e.proof.some(cites) && !e.anonymous)
@@ -215,7 +234,7 @@ export function industryGraph(
     ...(entry.image
       ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${entry.image.src}`, caption: entry.image.alt } }
       : {}),
-    about: edges.services.map((s) => ({ "@id": `${siteUrl}/services#${s.slug}` })),
+    about: edges.services.map((s) => ({ "@id": serviceId(s) })),
     ...(entry.demo
       ? {
           // The hands-on demo of the system this page describes.
@@ -365,5 +384,54 @@ export function ibrPageGraph(page: {
         })),
       },
     ],
+  };
+}
+
+// A family or service page is a WebPage about the Services on it. The Service
+// nodes themselves live in orgGraph's offer catalog, on every page.
+export function servicePageGraph(
+  path: string,
+  name: string,
+  description: string,
+  about: Service[],
+  crumbs: { name: string; path: string }[],
+  image?: { src: string; caption: string },
+) {
+  const url = `${siteUrl}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${siteUrl}${c.path}` })),
+    },
+    "@id": `${url}#page`,
+    url,
+    name,
+    description,
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    ...(image
+      ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${image.src}`, caption: image.caption } }
+      : {}),
+    about: about.map((s) => ({ "@id": serviceId(s) })),
+    ...(about.length === 1 ? { mainEntity: { "@id": serviceId(about[0]) } } : {}),
+  };
+}
+
+// The buyer questions on a service page, as an FAQPage: the same text the page
+// shows, so an agent quoting it quotes the page.
+export function serviceFaqGraph(service: Service) {
+  const url = `${siteUrl}${serviceUrl(service)}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    about: { "@id": serviceId(service) },
+    mainEntity: service.questions.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
   };
 }

@@ -18,7 +18,16 @@ function base64ToArrayBuffer(base64: string): ArrayBuffer {
  * logo, layout) is identical so the social cards read as one system instead
  * of the root's card being reused verbatim across all four pages.
  */
-export function renderOgImage({ title, description }: { title: string; description: string }) {
+export function renderOgImage({
+  title,
+  description,
+  art,
+}: {
+  title: string;
+  description: string;
+  // A JPEG or PNG data URI (satori can't read WebP), shown beside the text.
+  art?: string;
+}) {
   const pilcrowData = base64ToArrayBuffer(pilcrowRegularBase64);
   const logoSrc = `data:image/png;base64,${ogLogoBase64}`;
 
@@ -34,13 +43,24 @@ export function renderOgImage({ title, description }: { title: string; descripti
           padding: "80px",
           background: "#fbfbfc",
           fontFamily: "Pilcrow Rounded",
+          position: "relative",
         }}
       >
+        {art && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={art}
+            width={480}
+            height={270}
+            alt=""
+            style={{ position: "absolute", right: 60, top: 180 }}
+          />
+        )}
         <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logoSrc} width={56} height={56} alt="" />
         </div>
-        <span style={{ fontSize: 72, color: "#18181b", letterSpacing: -1, maxWidth: 960 }}>
+        <span style={{ fontSize: art ? 60 : 72, color: "#18181b", letterSpacing: -1, maxWidth: art ? 560 : 960 }}>
           {title}
         </span>
         <div
@@ -51,7 +71,7 @@ export function renderOgImage({ title, description }: { title: string; descripti
             fontSize: 32,
             color: "#52525b",
             marginTop: 32,
-            maxWidth: 900,
+            maxWidth: art ? 560 : 900,
           }}
         >
           {description.split(" ").map((word, i) => (

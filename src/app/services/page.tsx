@@ -4,8 +4,8 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
-import { services, layers, resolveProof, proofHref } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import Image from "next/image";
+import { services, layers, families, servicesIn, serviceUrl, familyUrl, type Service } from "@/lib/services";
 
 const description =
   "Custom ERP and CRM, TallyPrime integration, multi-company finance, AI document extraction and document search for Indian manufacturers and traders.";
@@ -28,21 +28,71 @@ export const metadata: Metadata = {
   },
 };
 
+const erp = services.find((s) => s.family === null);
+
+// One catalogue entry. The id is the old /services#slug anchor, so a link from
+// before service pages existed still lands on this service.
+function ServiceCard({ service, wide = false }: { service: Service; wide?: boolean }) {
+  return (
+    <div
+      id={wide ? undefined : service.slug}
+      className={`scroll-mt-16 ${wide ? "grid grid-cols-1 items-center gap-8 md:grid-cols-2" : "border-t border-line pt-6"}`}
+    >
+      <Link href={serviceUrl(service)} className="focus-ring block" tabIndex={-1} aria-hidden="true">
+        {/* Decorative; the heading names the service. */}
+        <Image
+          src={`/what-we-build/${service.slug}.webp`}
+          alt=""
+          width={1086}
+          height={362}
+          sizes={wide ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"}
+          className={`aspect-video w-full object-cover ${wide ? "" : "mb-5"}`}
+        />
+      </Link>
+      <div>
+        <h3 className={`${wide ? "text-2xl" : "text-lg"} font-medium text-foreground`}>
+          <Link href={serviceUrl(service)} className="focus-ring hover:underline">{service.plainName}</Link>{" "}
+          <span className="mt-1 block text-sm font-normal text-foreground-secondary">{service.name}</span>
+        </h3>
+        <p className="mt-3 max-w-[52ch] leading-relaxed text-foreground-secondary">{service.forWhom}</p>
+        <p className="mt-4">
+          <Link href={serviceUrl(service)} className="text-link focus-ring text-sm">
+            How it works, the numbers and buyer questions
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function ServicesPage() {
   return (
     <>
       <SiteNav />
       <main className="flex-1">
-        <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
+        <section className="rail grid grid-cols-1 items-center gap-10 pt-16 pb-8 md:pt-24 md:pb-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
           <h1 className="display text-5xl text-foreground sm:text-6xl">What we build</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             Ahrom Labs builds operations and accounting systems for Indian manufacturers and
             trading groups. We take a business from basic, compliant record-keeping to
             analytics and AI — ERP and CRM, TallyPrime integration, document extraction, and
             search across drawings, certificates and past quotations — all on one model of how
-            the business actually works. Every client claim
-            below links to the engineering note it comes from.
+            the business actually works. The system fits the way your business already works,
+            not the other way round. Every client claim below links to the engineering note it
+            comes from.
           </p>
+          </div>
+          {/* Decorative: the whole set on one pegboard. Page colour baked into the file. */}
+          <Image
+            src="/what-we-build/services.webp"
+            alt=""
+            width={1086}
+            height={362}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            priority
+            className="aspect-video w-full object-cover lg:col-span-5"
+          />
         </section>
 
         {/* The ladder: each rung builds on the model the one below it created. */}
@@ -62,9 +112,9 @@ export default function ServicesPage() {
                       .filter((s) => s.layer === layer.slug)
                       .map((s) => (
                         <li key={s.slug}>
-                          <a href={`#${s.slug}`} className="text-link focus-ring text-sm">
+                          <Link href={serviceUrl(s)} className="text-link focus-ring text-sm">
                             {s.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                   </ul>
@@ -74,69 +124,32 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {services.map((service) => {
-          const clients = engagements.filter((e) => e.services.includes(service.slug));
-          return (
-            <Reveal key={service.slug}>
-              <section id={service.slug} className="section scroll-mt-16 border-t border-line">
-                <div className="rail prose-measure">
-                  <h2 className="display text-3xl text-foreground sm:text-4xl">{service.name}</h2>
-                  <p className="mt-6 text-lg leading-relaxed text-foreground">{service.answer}</p>
-                  <p className="mt-4 leading-relaxed text-foreground-secondary">
-                    <span className="font-medium text-foreground">Who it&apos;s for: </span>
-                    {service.forWhom}
-                  </p>
-
-                  <dl className="mt-10 grid grid-cols-1 gap-x-12 gap-y-6 border-t border-line pt-8 sm:grid-cols-2">
-                    {service.evidence.map((item) => (
-                      <div key={item.metric}>
-                        <dt className="text-sm font-medium text-foreground-secondary">{item.metric}</dt>
-                        <dd className="mt-1 text-base text-foreground">{item.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-
-                  <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
-                    <div>
-                      <p className="text-sm font-medium text-foreground-secondary">How it works, in detail</p>
-                      <ul className="mt-3 space-y-2">
-                        {service.proof.map((ref) => (
-                          <li key={ref.slug}>
-                            <Link href={proofHref(ref)} className="text-link focus-ring">
-                              {resolveProof(ref).title}
-                            </Link>
-                          </li>
-                        ))}
-                        {service.links?.map((l) => (
-                          <li key={l.href}>
-                            <a href={l.href} className="text-link focus-ring">
-                              {l.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {clients.length > 0 && (
-                      <div>
-                        <p className="text-sm font-medium text-foreground-secondary">Built for</p>
-                        <ul className="mt-3 space-y-2">
-                          {clients.map((c) => (
-                            <li key={c.slug}>
-                              <Link href={`/work#${c.slug}`} className="text-link focus-ring">
-                                {c.client}
-                              </Link>
-                              <span className="text-foreground-secondary"> — {c.industry}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </section>
-            </Reveal>
-          );
-        })}
+        {/* The catalogue: the whole system, then each family with its services.
+            Full detail lives on each service's own page; the #slug anchors are
+            permanent, because older links and citations point at them. */}
+        {erp && (
+          <section id={erp.slug} className="section scroll-mt-16 border-t border-line">
+            <div className="rail">
+              <ServiceCard service={erp} wide />
+            </div>
+          </section>
+        )}
+        {families.map((f) => (
+          <section key={f.slug} id={f.slug} className="section scroll-mt-16 border-t border-line">
+            <div className="rail">
+              <h2 className="display text-3xl text-foreground sm:text-4xl">
+                <Link href={familyUrl(f)} className="focus-ring hover:underline">{f.plainName}</Link>
+              </h2>
+              <p className="mt-3 text-foreground-secondary">{f.name}</p>
+              <p className="prose-measure mt-6 leading-relaxed text-foreground">{f.summary}</p>
+              <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+                {servicesIn(f).map((s) => (
+                  <ServiceCard key={s.slug} service={s} />
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
 
         <Reveal>
           <section id="engagement" className="section scroll-mt-16 border-t border-line">

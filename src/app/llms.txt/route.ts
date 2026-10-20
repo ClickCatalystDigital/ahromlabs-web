@@ -1,6 +1,6 @@
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrFormPages, formName } from "@/lib/ibr-forms";
-import { services } from "@/lib/services";
+import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { AI_SEARCH_MCP_URL } from "@/lib/ai-search";
@@ -83,9 +83,14 @@ export function GET() {
     )
     .join("\n");
 
-  const offered = services
-    .map((s) => `- [${s.name}](https://ahromlabs.com/services#${s.slug}): ${s.answer}`)
-    .join("\n");
+  // The whole system first, then each family with its services under it.
+  const serviceLine = (s: (typeof services)[number]) => `- [${s.name}](https://ahromlabs.com${serviceUrl(s)}): ${s.plainName}. ${s.answer}`;
+  const offered = [
+    ...services.filter((s) => s.family === null).map(serviceLine),
+    ...families.map(
+      (f) => `\n### [${f.name}](https://ahromlabs.com${familyUrl(f)})\n\n${f.summary}\n\n${servicesIn(f).map(serviceLine).join("\n")}`,
+    ),
+  ].join("\n");
 
   const clients = engagements
     .map((e) => `- [${e.client}](https://ahromlabs.com/work#${e.slug}) (${e.industry}): ${e.built}`)

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getContent, termHasPage } from "@/lib/content";
 import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
+import { families, services } from "@/lib/services";
 
 const siteUrl = "https://ahromlabs.com";
 
@@ -37,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, lastModified: pageDate(""), changeFrequency: "monthly", priority: 1 },
     { url: `${siteUrl}/services`, lastModified: pageDate("services"), changeFrequency: "monthly", priority: 0.9 },
+    ...[...families, ...services].map((x) => ({
+      url: `${siteUrl}/services/${x.slug}`,
+      lastModified: pageDate("services"),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${siteUrl}/industries`,
       lastModified: changed("industries", newestUpdate("industry").toISOString()),

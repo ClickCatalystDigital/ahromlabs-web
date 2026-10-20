@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrForms, formName } from "@/lib/ibr-forms";
-import { services } from "@/lib/services";
+import { services, families, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 
@@ -44,11 +44,28 @@ export function GET() {
     slug: s.slug,
     title: s.name,
     answer: s.answer,
+    plainName: s.plainName,
+    family: s.family,
     layer: s.layer,
     forWhom: s.forWhom,
+    steps: s.steps,
+    questions: s.questions,
     evidence: s.evidence,
     proof: s.proof.map(ref),
-    url: `${siteUrl}/services#${s.slug}`,
+    // Graph edges in both directions, so an agent can walk service → client → industry.
+    clients: engagements.filter((e) => e.services.includes(s.slug)).map((e) => e.slug),
+    industries: getContent("industry").filter((i) => i.services?.includes(s.slug)).map((i) => i.slug),
+    url: `${siteUrl}${serviceUrl(s)}`,
+  }));
+
+  const familyNodes = families.map((f) => ({
+    kind: "family",
+    slug: f.slug,
+    title: f.name,
+    plainName: f.plainName,
+    answer: f.summary,
+    services: services.filter((s) => s.family === f.slug).map((s) => s.slug),
+    url: `${siteUrl}${familyUrl(f)}`,
   }));
 
   const clientNodes = engagements.map((e) => ({
@@ -92,7 +109,7 @@ export function GET() {
     url: `${siteUrl}/ibr/forms${f.page ? `/${f.slug}` : ""}`,
   }));
 
-  return NextResponse.json([...content, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes], {
+  return NextResponse.json([...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes], {
     headers: { "Cache-Control": "public, max-age=3600" },
   });
 }

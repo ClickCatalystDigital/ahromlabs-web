@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
-import { services } from "@/lib/services";
+import { services, serviceUrl } from "@/lib/services";
 import { engagements, clientInSentence } from "@/lib/work";
 
 // Any slug outside generateStaticParams 404s. Left at the default (true), an
@@ -136,7 +136,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
                 <ul className="mt-3 space-y-2">
                   {usedBy.map((s) => (
                     <li key={s.slug}>
-                      <Link href={`/services#${s.slug}`} className="text-link focus-ring">
+                      <Link href={serviceUrl(s)} className="text-link focus-ring">
                         {s.name}
                       </Link>
                     </li>

@@ -15,12 +15,15 @@ description: >
   import bills for electronics-component traders — built for LS Technologies.
 domain: [trading, accounting-integration, ai-extraction, inventory]
 clients: [ls-technologies]
-services: [tally-integration, document-extraction, custom-erp-crm]
+services: [tally-integration, document-extraction, custom-erp-crm, inventory-and-reservations, sales-crm, customer-portal, receivables-from-tally, custom-ai-assistant]
 notes:
   - tally-voucher-posting
   - connecting-tallyprime-four-ways
   - ai-extraction-human-in-the-loop
   - outgrown-tally-signs
+  - reels-boxes-and-two-stores
+  - customer-portal-one-order-every-department
+  - assistant-that-answers-from-your-ledger
 patterns:
   - local-agent-cloud-db
   - failures-flagged-not-lost
@@ -60,7 +63,7 @@ published: 2026-09-24
 demo:
   url: https://electronics-erp.ahromlabs.com/demo
   label: Try the live demo
-updated: 2026-10-13
+updated: 2026-10-20
 ---
 
 ## Can I try it before talking to anyone?

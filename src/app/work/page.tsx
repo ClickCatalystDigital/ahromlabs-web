@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
-import { services, resolveProof, proofHref } from "@/lib/services";
+import { services, resolveProof, proofHref, serviceUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 
@@ -100,7 +100,7 @@ export default function WorkPage() {
                       <ul className="mt-3 space-y-2">
                         {e.services.map((slug) => (
                           <li key={slug}>
-                            <Link href={`/services#${slug}`} className="text-link focus-ring">
+                            <Link href={serviceUrl({ slug })} className="text-link focus-ring">
                               {serviceName(slug)}
                             </Link>
                           </li>

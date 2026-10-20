@@ -10,7 +10,7 @@ Manual items only Pujan can do. Claude: at the start of a chat, mention any open
 - [ ] **Savistar: change any default passwords.** A brand-new database creates hari, sachi, admin and dristi with `<username>123`; if any live account still uses that, change it in Settings.
 - [ ] **GA internal traffic:** send Claude the office IP (`curl -s https://api.ipify.org`) so the internal-traffic filter can be set up.
 - [ ] **Shanti live DB test data:** decide whether to delete the "ZZ DEMO VINDHYA DAIRY PVT LTD" enquiry and customer (2 Oct) and the "ZZ-PLAN-TEST" project (30 Sep).
-- [ ] **Disk space:** 12 GB free on 18 Oct 2026 (it filled up once that day during a build); local demo testing needs about 5 GB.
+- [ ] **Disk space:** down to 2.1 GB free on 20 Oct 2026 (12 GB on 18 Oct); a build needs a few GB and local demo testing about 5 GB. Clear space before the next demo rebuild.
 
 - [ ] **Check the demos for real names by hand** (Pujan said he will): sign in as each sample login on all three demos and look for client, partner or staff names.
 - [ ] **Rotate the Turso token in `ls_crm/seed_demo.py`** (found 17 Oct 2026): lines 31-32 have a database URL and auth token typed into the code. Create a new token, revoke the old one, and read it from an env var instead.

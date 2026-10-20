@@ -16,7 +16,7 @@ description: >
   from a bank of test certificates, job costing, QC, GST and after-sales service.
 domain: [manufacturing, compliance, quality-control]
 clients: [boiler-manufacturer]
-services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction]
+services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction, sales-crm, customer-portal, supplier-portal, material-traceability, bom-from-excel]
 guides: [2026-changes, registration-documents, record-keeping, small-industrial-boilers]
 notes:
   - ibr-statutory-folder-from-bom
@@ -25,6 +25,9 @@ notes:
   - same-confidence-different-autonomy
   - tally-vs-erpnext-vs-custom-erp
   - statutory-rates-across-systems
+  - customer-portal-one-order-every-department
+  - suppliers-quote-on-a-link
+  - sales-history-moved-without-guessing
 patterns:
   - compute-blockers-on-read
   - one-confirmation-teaches-the-system
@@ -66,7 +69,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-20
 ---
 
 ## Can I try it before talking to anyone?

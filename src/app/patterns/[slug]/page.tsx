@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
-import { services } from "@/lib/services";
+import { services, serviceUrl } from "@/lib/services";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -126,7 +126,7 @@ export default async function PatternPage(props: PageProps<"/patterns/[slug]">) 
                 <ul className="mt-3 space-y-2">
                   {usedBy.map((s) => (
                     <li key={s.slug}>
-                      <Link href={`/services#${s.slug}`} className="text-link focus-ring">
+                      <Link href={serviceUrl(s)} className="text-link focus-ring">
                         {s.name}
                       </Link>
                     </li>

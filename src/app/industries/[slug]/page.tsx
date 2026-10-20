@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
+import { serviceUrl } from "@/lib/services";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
 import { OpenOnWide } from "@/components/OpenOnWide";
@@ -216,7 +217,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                 <ul className="mt-3 space-y-2">
                   {edges.services.map((s) => (
                     <li key={s.slug}>
-                      <Link href={`/services#${s.slug}`} className="text-link focus-ring">
+                      <Link href={serviceUrl(s)} className="text-link focus-ring">
                         {s.name}
                       </Link>
                     </li>

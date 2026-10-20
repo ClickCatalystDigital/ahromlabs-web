@@ -14,10 +14,11 @@ description: >
   site visits, worker wages, vendors, freight and a shared GST book.
 domain: [interior-design, manufacturing, finance, access-control]
 clients: [savistar-saag]
-services: [custom-erp-crm, multi-company-finance, operational-intelligence]
+services: [custom-erp-crm, multi-company-finance, operational-intelligence, daily-wage-payroll, custom-ai-assistant]
 notes:
   - two-companies-one-book
   - outgrown-tally-signs
+  - assistant-that-answers-from-your-ledger
 patterns:
   - role-scoped-finance-views
   - reference-rate-anomaly-detection
@@ -51,7 +52,7 @@ published: 2026-09-24
 demo:
   url: https://interiors-erp.ahromlabs.com/demo
   label: Try the live demo
-updated: 2026-10-13
+updated: 2026-10-20
 ---
 
 ## Can I try it before talking to anyone?

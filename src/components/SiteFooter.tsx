@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { families, familyUrl } from "@/lib/services";
 
 export function SiteFooter() {
   return (
@@ -58,6 +59,15 @@ export function SiteFooter() {
         </div>
         <p className="footer-copyright">© {new Date().getFullYear()} Ahrom Labs · Ahmedabad, India</p>
       </div>
+      {/* The five families on every page: the hubs under /services. */}
+      <nav aria-label="What we build" className="rail flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line py-5">
+        <span className="footer-copyright">What we build:</span>
+        {families.map((f) => (
+          <Link key={f.slug} href={familyUrl(f)} className="footer-copyright focus-ring hover:underline">
+            {f.shortName}
+          </Link>
+        ))}
+      </nav>
     </footer>
   );
 }
