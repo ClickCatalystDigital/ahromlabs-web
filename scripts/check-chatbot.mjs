@@ -25,6 +25,8 @@ const CHECKS = [
   ["Can we get a copy of the source code?", /not a copy of the code/],
   // Money, time, hosting
   ["How much does a custom ERP cost in India?", /₹3–15 lakh/],
+  ["ERP banane ka kharcha kitna hai?", /₹3–15 lakh/],
+  ["ERP software ki price kya hogi approx?", /₹3–15 lakh/],
   ["What does the AMC cost?", /15–21%/],
   ["What percentage of project value is the yearly AMC?", /15–21%/],
   ["Is hosting included, who pays for the server and storage?", /server is included in the AMC/],
@@ -37,6 +39,18 @@ const CHECKS = [
   ["Can your system produce IBR forms for boilers?", /certificate/i],
   ["How long does it take to make a boiler's IBR folder?", /a few minutes/],
   ["Do you build systems for electronics component traders?", /component/i],
+  // Services (/services/*): buyers' own words, including Hinglish
+  ["Can you do daily wage payroll for contract labour?", /minus advances/],
+  ["We pay our karigar daily wages, can your system calculate it?", /minus advances/],
+  ["mazdoor ki hajri aur pagar ka hisaab ho sakta hai?", /days present times the daily rate/],
+  ["Do suppliers have to sign up to quote?", /private link per request/],
+  ["Can suppliers see each other's rates?", /only their own link/],
+  ["Can customers see other customers' orders?", /Other customers' orders/],
+  ["Can our customers track their order status online?", /track their order status online/],
+  ["Can the AI assistant get a number wrong?", /never writes the numbers/],
+  ["Can the AI assistant change our data?", /only reads data/],
+  ["Do operators weigh every cut piece?", /dimensions and density/],
+  ["Can we reuse plate offcuts instead of buying new plate?", /least waste first/],
   // IBR 2026 (/ibr): old and new form names, formal and blunt
   ["When did IBR 2026 replace IBR 1950?", /1 October 2026/],
   ["What changed in the Indian Boiler Regulations 2026?", /renumbered/i],

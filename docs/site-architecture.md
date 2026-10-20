@@ -135,6 +135,12 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 - **Checking it:** `scripts/check-chatbot.mjs` asks buyer questions and checks the right passage
   comes back; `npm run deploy` runs it after the sync. Remaining misses are paraphrases that
   share few words with the page; fix them with wording, then add the question to the check.
+  The gate is the reranker (`@cf/baai/bge-reranker-base`, default), not keyword `and`: on
+  20 Oct 2026 "daily wage payroll for contract labour" had 50 vector candidates, the right page
+  first with reranking off, and 0 results with it on, because the 0.3 threshold applies to a
+  rerank score near 0 when the chunk lacks the buyer's words (Hinglish too: "kharcha kitna"
+  scores only against a chunk containing those words). To test wording before a deploy, score
+  the draft chunk with that model through Workers AI (`/ai/run/@cf/baai/bge-reranker-base`).
   Also ask the real chat (`POST /chat/completions`): retrieval passing is not the same as the
   answer being right.
 - **System prompt:** the text lives in `docs/chatbot-system-prompt.md` (Ahrom AI persona, 20 Oct

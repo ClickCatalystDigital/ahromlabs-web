@@ -310,9 +310,9 @@ export const services: Service[] = [
       "An optional sentence in the assistant's voice is shown only if every number in it is in the table.",
     ],
     questions: [
-      { q: "Can it get a number wrong?", a: "The model never writes the numbers. Code runs fixed look-ups with the same maths as the screens, and any written line with a number that isn't in the data is dropped." },
+      { q: "Can the assistant get a number wrong?", a: "The model never writes the numbers. Code runs fixed look-ups with the same maths as the screens, and any written line with a number that isn't in the data is dropped." },
       { q: "What can staff ask?", a: "Only about their own tasks and their own cash entries. Payroll and bank statements are refused to them, as they are on the screens." },
-      { q: "Can it change our data?", a: "No. Look-ups only read. A reminder or note is drafted, and nothing is saved until the person presses Save." },
+      { q: "Can the assistant change our data?", a: "No. The assistant only reads data: look-ups never write. A reminder or note is drafted, and nothing is saved until the person presses Save." },
     ],
     demos: [
       { client: "savistar-saag", as: "Two free questions to Atelier AI, from any sample login" },
@@ -486,7 +486,7 @@ export const services: Service[] = [
     family: "selling-and-customers",
     layer: "operations",
     answer:
-      "We give each customer a login that shows their orders as plain-language stages, worked out from the records each department already keeps. Customers approve drawings, upload their own, download QC certificates, packing lists and invoices, and request quotes from the product range. Running at a boiler manufacturer and at LS Technologies.",
+      "We give each customer a login to track their order status online, as plain-language stages worked out from the records each department already keeps. Customers approve drawings, upload their own, download QC certificates, packing lists and invoices, and request quotes from the product range. Running at a boiler manufacturer and at LS Technologies.",
     forWhom:
       "Manufacturers and traders whose sales team spends its day answering \"where is my order?\" on the phone, with the answer already sitting in the factory's own records.",
     steps: [
@@ -602,7 +602,7 @@ export const services: Service[] = [
     ],
     questions: [
       { q: "Do operators weigh every piece?", a: "No. Weight comes from dimensions and density, so used, remnant and scrap always add back up to the source." },
-      { q: "How does an offcut get used again?", a: "It's matched against BOM lines still waiting for material, least waste first. Only the shortfall goes to Procurement to buy." },
+      { q: "Can offcuts be used again instead of buying new plate?", a: "Yes. Each offcut is matched against BOM lines still waiting for material, least waste first. Only the shortfall goes to Procurement to buy." },
       { q: "Can a part be traced back to its plate?", a: "Yes. Every cut piece is linked to the piece it was cut from." },
     ],
     demos: [
@@ -702,6 +702,8 @@ export const services: Service[] = [
     ],
     questions: [
       { q: "Do we still need the attendance register?", a: "No. Attendance, work logs and advances are recorded as they happen, and payroll is worked out from them." },
+      { q: "Can it calculate daily wages for contract labour and karigars?", a: "Yes. Karigars, helpers and contract labour paid by the day each get a daily rate, and their wages are calculated from attendance: days present, a half day counting as half, times the rate, minus advances. It doesn't calculate PF or ESI." },
+      { q: "Mazdoor ki hajri aur pagar ka hisaab ho sakta hai?", a: "Yes. Hajri (attendance) is marked with one tap each day, and pagar (wages) is worked out from it: days present times the daily rate, minus any advance already given." },
       { q: "How are advances recovered?", a: "They're subtracted in payroll automatically, so nobody has to remember them at month end." },
       { q: "Does it handle salaried staff too?", a: "Yes. Each person is set up on either a salary or a daily wage." },
     ],

@@ -27,9 +27,9 @@ export const engagementAnswers: Answer[] = [
     id: "cost",
     question: "How much does a custom ERP cost in India?",
     answer:
-      "Published 2026 guides put a custom ERP for a small Indian manufacturer at roughly ₹3–15 lakh, and a fuller build for a mid-sized manufacturer at ₹15–40 lakh. Where a project lands depends on scope, and Ahrom Labs quotes a fixed price for each phase once the business has been modeled — never an open-ended hourly bill.",
+      "Published 2026 guides put the price of a custom ERP for a small Indian manufacturer at approximately ₹3–15 lakh, and a fuller build for a mid-sized manufacturer at ₹15–40 lakh. Where a project lands depends on scope, and Ahrom Labs quotes a fixed price for each phase once the business has been modeled — never an open-ended hourly bill.",
     detail: [
-      "Those ranges are market figures from other firms' published guides, not our price list. We don't publish a rate card because two businesses that both want \"an ERP\" can need very different systems — the modeling phase is what makes a fixed quote honest.",
+      "Those ranges are market figures from other firms' published guides, not our price list. We don't publish a rate card because two businesses that both want \"an ERP\" can need very different systems — the modeling phase is what makes a fixed quote honest. Asked as \"ERP banane ka kharcha kitna hai?\" or \"ERP software ki price kya hogi?\", the answer is the same: that range until the modeling phase, then a fixed quote.",
     ],
     sources: [
       { label: "ProftCode — custom ERP for Indian manufacturers", href: "https://www.proftcode.com/blog/why-indian-manufacturers-switching-custom-erp/" },
