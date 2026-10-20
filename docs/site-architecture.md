@@ -131,8 +131,10 @@ chat completions and an MCP server from its public endpoint. All URLs live in
 - **Retrieval settings (17 Oct 2026, measured with `npm run search:check`):** hybrid search
   with reranking, keyword match mode `and`, score threshold 0.3, chunk size **256**. Answer cache
   **off** since 20 Oct 2026: at "close enough" it served stale answers to the chat's own suggested
-  questions. Answer model `@cf/mistralai/mistral-small-3.1-24b-instruct` (20 Oct 2026): the default Llama
-  3.3 70B said "not covered" to questions the passages answered; `@cf/openai/gpt-oss-120b` sometimes
+  questions. Answer model: the default Llama 3.3 70B (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`). It says
+  "not covered" to some questions the passages answer, but it never contradicted them; tried on
+  20 Oct 2026: Mistral Small 3.1 answered "Who owns the code?" with "You own the code" while the
+  top passage said the opposite; `@cf/openai/gpt-oss-120b` sometimes
   printed its own reasoning ("We need to search the site…") and once invented a 4–6 month go-live; `@cf/google/gemma-4-26b-a4b-it` wrote the best
   answers (Hinglish too) but took 22–100 s to its first word, as it reasons first. About 7 s of
   every reply is retrieval, whatever the model. Chunk size decided it: at 1024 a chunk held five FAQ answers and only the first
