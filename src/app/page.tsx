@@ -62,7 +62,7 @@ export default function Home() {
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-foreground-secondary sm:text-xl">
                 One system for the whole business, from enquiry to dispatch to the books,
                 that also tells you what&apos;s late, what&apos;s owed and what needs a decision
-                today. Tally can stay. Already in daily use at manufacturers and traders.
+                today. Tally can stay. Already in daily use at manufacturers, traders and design studios.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a href="#contact" className="subscribe-submit focus-ring inline-block">
