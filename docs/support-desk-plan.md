@@ -290,7 +290,7 @@ These replace the open questions; where they differ from the draft above, they w
 
 9. **Public form first: ahromlabs.com/support.** Built 22 Oct 2026 (website `src/app/support`, `src/app/api/support`;
    CRM `POST /api/support/web` on the `support-desk` branch). Fields: name, registered work email, subject, details,
-   up to 3 screenshots, an "urgent" tick. Reply times stated on the page (decision 2). Not in the nav or sitemap;
+   up to 3 screenshots, an "urgent" tick. Reply times stated on the page (decision 2). In the footer (Client support), not the header or sitemap;
    linked from emails to clients.
 10. **Only registered emails can send.** An email must be a client contact (CRM → Support → Clients → Contacts);
     any other email is refused and nothing is filed. To register, the client writes to pujan@ahromlabs.com. The

@@ -3,7 +3,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SupportForm } from "@/components/SupportForm";
 
-// For clients running a system we built. Linked from emails to clients, not from the nav; kept out of search
+// For clients running a system we built. Linked from the footer (Client support) and emails to clients; kept out of search
 // and the sitemap. Requests land in the Ahrom CRM's support desk (app/api/support/route.ts).
 // Reply targets match the CRM (src/lib/support.ts there) and the decisions in docs/support-desk-plan.md.
 export const metadata: Metadata = {
