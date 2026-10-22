@@ -279,12 +279,25 @@ These replace the open questions; where they differ from the draft above, they w
 
 1. **Business hours:** Mon–Sat 10:00–19:00 IST, Indian public holidays off. Urgent issues outside hours reach Pujan's phone by WhatsApp, best effort, not a promise.
 2. **Targets (first reply):** urgent the same business day; everything else within 2 business days. (Looser than the draft's 2 h / 1 day on purpose: beat it, never miss it in public.)
-3. **WhatsApp:** clients send support to the CRM number, +91 94265 19798, so each message becomes a request automatically. Pujan's personal number stays personal.
+3. **WhatsApp:** ~~clients send support to the CRM number~~ **Changed 22 Oct 2026: WhatsApp is not part of support.** Clients get a separate number for that; WhatsApp intake (phase 3) is dropped.
 4. **Who can raise a request:** every staff login in a client's system, not only owners and managers.
 5. **Lapsed AMC:** the request is still answered, marked "AMC lapsed", and the reply includes the renewal terms.
 6. **Demo requests:** answered for real by Pujan; they are sales conversations.
 7. **Attachments:** in the form from the start: up to 3 images or PDFs per request, stored in R2 (phase 1 for the CRM side, phase 2 for the forms).
 8. **Change requests:** marked "change request", quoted in the thread, and converted to a lead/deal in the CRM once priced.
+
+## Decisions (Pujan, 22 Oct 2026)
+
+9. **Public form first: ahromlabs.com/support.** Built 22 Oct 2026 (website `src/app/support`, `src/app/api/support`;
+   CRM `POST /api/support/web` on the `support-desk` branch). Fields: name, registered work email, subject, details,
+   up to 3 screenshots, an "urgent" tick. Reply times stated on the page (decision 2). Not in the nav or sitemap;
+   linked from emails to clients.
+10. **Only registered emails can send.** An email must be a client contact (CRM → Support → Clients → Contacts);
+    any other email is refused and nothing is filed. To register, the client writes to pujan@ahromlabs.com. The
+    receipt and every reply go to the registered inbox, so someone typing a client's email can't read anything.
+    Not done: a one-time code to prove the sender owns the inbox; add it if fake requests ever show up.
+11. **In-app form placement (phase 2):** SB Ops in its Help page; Inventory Ops in its help page if it has one,
+    otherwise Settings; Designer Ops in Settings.
 
 ## Not doing, and when to reconsider
 

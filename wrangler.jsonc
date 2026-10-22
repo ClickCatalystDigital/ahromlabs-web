@@ -36,6 +36,9 @@
   ],
   // CRM: every form lead, saved before the email goes out. Shared with the CRM app (~/Developer/ahrom-crm,
   // crm.ahromlabs.com); schema migrations from 0003 on live in that repo, not in migrations/ here.
+  // The Ahrom CRM Worker (ahrom-crm repo), for the support form: api/support forwards requests to it directly, so
+  // they never pass through Cloudflare Access. Secret WEB_SUPPORT_KEY must match the one set on ahrom-crm.
+  "services": [{ "binding": "CRM_APP", "service": "ahrom-crm" }],
   "d1_databases": [
     { "binding": "CRM", "database_name": "ahrom-crm", "database_id": "cf6df0f6-b74c-45f3-b65c-2608f75fd29e" }
   ],
