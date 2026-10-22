@@ -153,7 +153,8 @@ export default function ServicesPage() {
 
         <Reveal>
           <section id="engagement" className="section scroll-mt-16 border-t border-line">
-            <div className="rail prose-measure">
+            <div className="rail">
+             <div className="prose-measure">
               <h2 className="display text-3xl text-foreground sm:text-4xl">How an engagement runs</h2>
               <p className="mt-6 leading-relaxed text-foreground-secondary">
                 Every engagement starts by{" "}
@@ -180,6 +181,7 @@ export default function ServicesPage() {
                   Pricing, timelines, licensing and support in full
                 </Link>
               </p>
+             </div>
             </div>
           </section>
         </Reveal>
