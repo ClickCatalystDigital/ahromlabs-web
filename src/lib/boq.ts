@@ -16,7 +16,7 @@
 // - `omits`: what quotes for the item commonly leave out.
 // No rates: they move with city and month. The guides explain building a rate.
 
-export const BOQ_CHECKED = "2026-10-23";
+export const BOQ_CHECKED = "2026-10-24"; // standards re-read 24 Oct (IS 1200 public texts, CPWD GCC 2026)
 export const BOQ_PUBLISHED = "2026-10-23";
 
 export type Unit = "sqft" | "sqm" | "rft" | "rm" | "nos" | "set" | "point" | "ls" | "cum";

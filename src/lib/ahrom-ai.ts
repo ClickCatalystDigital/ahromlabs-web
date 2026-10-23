@@ -94,8 +94,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,
@@ -103,6 +103,30 @@ export function buildEntries(): Entry[] {
       });
     }
   }
+  // The interior BOQ tools: few enough to shortlist on their words, like the guides above.
+  out.push(
+    {
+      id: "boq-tool/check",
+      title: "Is there a free tool to check an interior BOQ or turn it into a quotation?",
+      answer: "Yes: paste a BOQ from Excel into the free interior BOQ checker. Each line is checked against 41 common interior items for a missing board grade, thickness, finish, hardware, unit or measurement basis; then add rates and GST and print it as a quotation. It runs in your browser; nothing is uploaded.",
+      url: `${site}/boq/check`,
+      sourceTitle: "Interior BOQ checker",
+    },
+    {
+      id: "boq-tool/template",
+      title: "Do you have an interior BOQ format or template in Excel?",
+      answer: "Yes, a free interior BOQ template in Excel: 41 common items in 9 trades, each line written with its unit and how it is measured, with amount and total formulas. It has no rates on purpose: they change by city, month and specification.",
+      url: `${site}/boq/template`,
+      sourceTitle: "Interior BOQ format in Excel",
+    },
+    {
+      id: "boq-tool/items",
+      title: "Interior BOQ item library: units, measurement and specifications",
+      answer: "The interior BOQ item library lists 41 items in 9 trades (false ceiling, flooring, carpentry, modular kitchen, wardrobes, painting, electrical, plumbing, civil) with the unit each is priced in, how it is measured, the Indian Standard that applies and what each line must name.",
+      url: `${site}/boq/items`,
+      sourceTitle: "Interior BOQ item library",
+    },
+  );
   return out;
 }
 
@@ -117,7 +141,8 @@ const SYNONYMS: Record<string, string[]> = {
   hisaab: ["accounts", "ledger"], hisab: ["accounts", "ledger"], khata: ["ledger", "accounts"], bahi: ["ledger", "accounts"],
   maal: ["stock", "inventory"], godown: ["stores", "stock", "warehouse"], warehouse: ["stores", "stock"],
   bill: ["invoice"], bills: ["invoice"], challan: ["dispatch", "delivery"], tally: ["tallyprime"], tallyprime: ["tally"],
-  boiler: ["ibr"], demo: ["demo", "live"], owns: ["own", "ownership", "code"], source: ["code"], live: ["live", "go"],
+  boiler: ["ibr"], estimate: ["boq"], quantities: ["boq"], quotation: ["quote", "boq"], wardrobe: ["boq"], kitchen: ["boq"], ceiling: ["boq"],
+  demo: ["demo", "live"], owns: ["own", "ownership", "code"], source: ["code"], live: ["live", "go"],
 };
 
 // Lower-case words, stop words out, a light plural/ending trim, synonyms added.

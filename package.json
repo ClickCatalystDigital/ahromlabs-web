@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "content:build": "node scripts/build-content.mjs && node --no-warnings scripts/check-ibr-quotes.mjs && npx jiti scripts/boq.check.ts",
+    "content:build": "node scripts/build-content.mjs && node --no-warnings scripts/check-ibr-quotes.mjs && node --no-warnings scripts/check-boq-quotes.mjs && npx jiti scripts/boq.check.ts",
     "dev": "npm run content:build && next dev",
     "build": "npm run content:build && next build && node scripts/build-markdown.mjs",
     "start": "next start",

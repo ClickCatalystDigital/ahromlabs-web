@@ -5,13 +5,13 @@ title: Software for interior design firms and furniture workshops
 audience: Interior design firms, design-and-build studios and furniture manufacturers
 answer: >
   Ahrom Labs built the backend Savistar (interior design) and Saag (furniture
-  manufacturing) run on: workers, clients, vendors and freight, projects and
-  site visits, workshop orders, and one finance ledger for two sister companies.
-  Each invoice carries the right company's GSTIN, and staff see only their own
-  cash entries — enforced at the server, not hidden in the screen.
+  manufacturing) run on: clients and quotations built from a BOQ, projects and
+  site visits, workshop orders, workers, vendors and freight, and one finance
+  ledger for two sister companies. Each invoice carries the right company's
+  GSTIN, and staff see only their own cash entries, enforced at the server.
 description: >
-  One system for an interior design studio and its furniture workshop: projects,
-  site visits, worker wages, vendors, freight and a shared GST book.
+  One system for an interior design studio and its furniture workshop: BOQ
+  quotations, projects, site visits, wages, vendors, freight and a shared GST book.
 domain: [interior-design, manufacturing, finance, access-control]
 clients: [savistar-saag]
 services: [custom-erp-crm, multi-company-finance, operational-intelligence, daily-wage-payroll, custom-ai-assistant]

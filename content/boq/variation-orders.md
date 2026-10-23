@@ -21,6 +21,16 @@ sources:
     publisher: Central Public Works Department
     url: https://cpwd.gov.in/
     date: 2026-10-24
+checks:
+  - reg: CPWD General Conditions of Contract (April 2026), clause 12
+    doc: cpwd-gcc-2026
+    quote: shall be carried out by the contractor on the same conditions in all respects including price on which he agreed to do the main work except as hereafter provided
+  - reg: CPWD General Conditions of Contract (April 2026), clause 12.2
+    doc: cpwd-gcc-2026
+    quote: within fifteen days of the receipt of order or occurrence of the item(s), submit claim for market rate(s), supported with proper analysis of rate
+  - reg: CPWD General Conditions of Contract (April 2026), clause 12.1(ii)
+    doc: cpwd-gcc-2026
+    quote: 25% of the time calculated in (i) above or such further additional time as may be considered reasonable by the Engineer-in-Charge
 ---
 
 ## What a variation order is

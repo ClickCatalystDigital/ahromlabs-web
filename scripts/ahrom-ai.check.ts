@@ -18,6 +18,12 @@ assert.ok(!ids("what does it cost").some((id) => id.startsWith("guide/")));
 assert.ok(ids("which IBR form certifies a small boiler").some((id) => id.startsWith("guide/")));
 assert.ok(shortlist(entries, "tally invoice stock payroll boiler ibr form").length <= 40);
 
+// BOQ questions reach the BOQ pages.
+assert.ok(ids("interior boq format in excel").includes("boq-tool/template"));
+assert.ok(ids("how is a wardrobe measured in a boq").includes("boq/measurement-rules"));
+assert.ok(ids("free tool to check my boq").includes("boq-tool/check"));
+assert.ok(ids("variation order after boq agreed").includes("boq/variation-orders"));
+
 // Routing, on Jev-shaped answers.
 const list = shortlist(entries, "who owns the code");
 const own = `e${list.findIndex((e) => e.id === "faq/ownership")}`;

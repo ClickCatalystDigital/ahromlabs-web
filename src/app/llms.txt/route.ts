@@ -29,9 +29,9 @@ system rather than another off-the-shelf tool. Systems built so far: a
 custom ERP, CRM and operational-intelligence system for a boiler and
 pressure-vessel manufacturer; an ERP/CRM with TallyPrime
 automation and an inventory management system for a PCB and electronics
-trading company (LS Technologies); and a backend for workers, clients,
-vendors, freight and finance for an interior design firm and its sister
-furniture business (Savistar & Saag).
+trading company (LS Technologies); and a backend for quotations, workers,
+clients, vendors, freight and finance for an interior design firm and its
+sister furniture business (Savistar & Saag).
 
 ## Pages
 

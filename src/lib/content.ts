@@ -30,7 +30,7 @@ export type ContentEntry = {
   // quotes scripts/check-ibr-quotes.mjs checks against them, and when a person
   // last checked the page against the Gazette.
   sources?: { title: string; publisher: string; url: string; date: string }[];
-  checks?: { reg: string; quote: string; doc?: "act" }[];
+  checks?: { reg: string; quote: string; doc?: string }[]; // IBR: "act" for the Boilers Act; BOQ: a key in scripts/check-boq-quotes.mjs DOCS
   checked?: string;
   // Notes and industries: IBR guides they lead to (build-checked).
   guides?: string[];
