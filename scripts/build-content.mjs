@@ -125,7 +125,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      if (["items", "check"].includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /boq/${slug}`);
+      if (["items", "check", "template"].includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /boq/${slug}`);
     }
     if (kind === "guide") {
       if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
@@ -238,6 +238,7 @@ const BOQ_FRAME = ["src/components/BoqPage.tsx", "src/components/GuidePage.tsx",
 PAGE_SOURCES.boq = ["content/boq", "src/app/boq/page.tsx", ...BOQ_FRAME];
 PAGE_SOURCES["boq/items"] = ["src/app/boq/items/page.tsx", ...BOQ_FRAME];
 PAGE_SOURCES["boq/items/*"] = ["src/app/boq/items/[trade]", ...BOQ_FRAME];
+PAGE_SOURCES["boq/template"] = ["src/app/boq/template", ...BOQ_FRAME];
 PAGE_SOURCES["boq/check"] = ["src/app/boq/check", "src/components/BoqCheck.tsx", "src/lib/boq-check.ts", ...BOQ_FRAME];
 
 const pageDates = {};

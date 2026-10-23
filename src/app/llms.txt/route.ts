@@ -119,6 +119,7 @@ export function GET() {
     (getContent("boq").length ? "\n" : "") +
     `- [Interior BOQ checker and quotation maker](https://ahromlabs.com/boq/check): Paste a BOQ from Excel; each line is checked for missing specifications, units and measurement basis, then priced with GST and printed. Runs in the browser.\n` +
     `- [Interior BOQ item library](https://ahromlabs.com/boq/items): ${boqItems.length} items in ${trades.length} trades with unit, measurement, Indian Standard and required specifications. Template: https://ahromlabs.com/boq/interior-boq-template.xlsx\n` +
+    `- [Interior BOQ format in Excel](https://ahromlabs.com/boq/template): The template explained column by column, with sample lines and why it carries no rates.\n` +
     trades
       .map((t) => `- [${t.name} BOQ items](https://ahromlabs.com/boq/items/${t.slug}): ${tradeItems(t.slug).map((i) => `${i.name} (${UNIT_LABEL[i.unit]})`).join("; ")}.`)
       .join("\n");

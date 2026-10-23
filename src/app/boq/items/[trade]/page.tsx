@@ -4,6 +4,7 @@ import { BoqPage } from "@/components/BoqPage";
 import { GuideH2 } from "@/components/GuidePage";
 import { trades, tradeItems, tradeBySlug, IS, SPEC, UNIT_LABEL, BOQ_CHECKED, BOQ_PUBLISHED } from "@/lib/boq";
 import { boqPageGraph } from "@/lib/schema";
+import { headingId } from "@/lib/headings";
 
 export const dynamicParams = false;
 
@@ -12,6 +13,23 @@ export function generateStaticParams() {
 }
 
 const anchor = (id: string) => id.replace(/\./g, "-");
+
+// The guide sections that matter for each trade: the measurement rule for it, and for joinery the board
+// standards. Anchors are built from the guides' heading text with headingId; renaming a heading means updating it here.
+const rules = (h: string) => `/boq/measurement-rules#${headingId(h)}`;
+const BOARDS: [string, string] = ["/boq/material-specifications", "Board standards: IS 303, IS 710 and others"];
+const MODULAR: [string, string] = [rules("Modular kitchens, wardrobes and lofts"), "How modular work is measured, and why the line must say it"];
+const READ_WITH: Record<string, [string, string][]> = {
+  civil: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
+  "false-ceiling": [[rules("False ceilings"), "How false ceilings are measured: flat area, openings, coves"]],
+  flooring: [[rules("Floors, dado and skirting"), "How floors, dado and skirting are measured"]],
+  carpentry: [[rules("Woodwork and panelling"), "How woodwork and panelling are measured"], BOARDS],
+  "modular-kitchen": [MODULAR, BOARDS],
+  wardrobes: [MODULAR, BOARDS],
+  painting: [[rules("Paint"), "How paint is measured: surfaces, coats, openings"]],
+  electrical: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
+  plumbing: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
+};
 const pageTitle = (name: string) => `${name} BOQ items: units, measurement and specification`;
 
 export async function generateMetadata(props: PageProps<"/boq/items/[trade]">): Promise<Metadata> {
@@ -105,6 +123,17 @@ export default async function BoqTradePage(props: PageProps<"/boq/items/[trade]"
           </dl>
         </section>
       ))}
+
+      <nav aria-label="Read with this trade" className="mt-14 border-t border-line pt-8">
+        <h2 className="text-sm font-medium text-foreground-secondary">Read with these items</h2>
+        <ul className="mt-3 space-y-2">
+          {READ_WITH[t.slug]?.map(([href, label]) => (
+            <li key={href}><Link href={href} className="text-link focus-ring">{label}</Link></li>
+          ))}
+          <li><Link href="/boq/how-to-make-an-interior-boq" className="text-link focus-ring">How to make an interior BOQ, step by step</Link></li>
+          <li><Link href="/boq/template" className="text-link focus-ring">Every item as a blank BOQ: the Excel template</Link></li>
+        </ul>
+      </nav>
 
       <nav aria-label="Other trades" className="mt-14 border-t border-line pt-8">
         <h2 className="text-sm font-medium text-foreground-secondary">Other trades</h2>

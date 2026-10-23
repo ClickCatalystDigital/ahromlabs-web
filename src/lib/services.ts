@@ -477,6 +477,7 @@ export const services: Service[] = [
       { kind: "note", slug: "sales-history-moved-without-guessing" },
       { kind: "pattern", slug: "failures-flagged-not-lost" },
     ],
+    links: [{ href: "/boq/check", label: "Free interior BOQ checker: paste a BOQ, get a GST quotation" }],
   },
   {
     slug: "customer-portal",

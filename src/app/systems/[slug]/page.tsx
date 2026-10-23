@@ -51,15 +51,15 @@ export async function generateMetadata(props: PageProps<"/systems/[slug]">): Pro
 }
 
 const markdownComponents = {
-  h2: (props: ComponentProps<"h2">) => (
+  h2: ({ node, ...props }: ComponentProps<"h2"> & { node?: unknown }) => (
     <h2 className="display mt-12 text-3xl text-foreground first:mt-0 sm:text-4xl" {...props} />
   ),
-  p: (props: ComponentProps<"p">) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
-  ul: (props: ComponentProps<"ul">) => (
+  p: ({ node, ...props }: ComponentProps<"p"> & { node?: unknown }) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
+  ul: ({ node, ...props }: ComponentProps<"ul"> & { node?: unknown }) => (
     <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />
   ),
-  li: (props: ComponentProps<"li">) => <li {...props} />,
-  blockquote: (props: ComponentProps<"blockquote">) => (
+  li: ({ node, ...props }: ComponentProps<"li"> & { node?: unknown }) => <li {...props} />,
+  blockquote: ({ node, ...props }: ComponentProps<"blockquote"> & { node?: unknown }) => (
     <blockquote className="mt-8 border-l-2 border-line pl-6 italic text-foreground" {...props} />
   ),
 };

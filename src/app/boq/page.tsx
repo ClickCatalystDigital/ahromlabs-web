@@ -5,14 +5,14 @@ import { GuideH2 } from "@/components/GuidePage";
 import { boqItems, trades, tradeItems, BOQ_CHECKED, BOQ_PUBLISHED } from "@/lib/boq";
 import { boqPageGraph } from "@/lib/schema";
 
-const title = "Interior BOQ: guides, item library and a free checker";
+const title = "Interior BOQ format, Excel template and free checker";
 const lead = `How to write a bill of quantities for interior work in India that two contractors would price the same way: ${boqItems.length} common items across ${trades.length} trades with the unit each is priced in, how it is measured, the Indian Standards that apply and what every line must name, plus a free checker that reads your BOQ straight from Excel.`;
 
 const image = { src: "/boq/interior-boq-measuring.webp", alt: "A tape measure with its blade drawn out across a ruled sheet, a pencil beside it.", width: 1086, height: 362 };
 
 export const metadata: Metadata = {
   title,
-  description: "Interior BOQ format for India: item library with units, IS standards and specs, a free Excel template, and a checker that flags vague lines.",
+  description: "Interior BOQ format in Excel, free: 41 ready lines with units, IS standards and measurement rules, guides, and a checker that flags vague lines.",
   alternates: { canonical: "/boq" },
   openGraph: { type: "website", url: "https://ahromlabs.com/boq", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
@@ -46,13 +46,10 @@ export default function BoqHub() {
           </li>
         ))}
         <li className="py-6">
-          <span className="text-xl font-medium text-foreground">Interior BOQ template</span>
+          <Link href="/boq/template" className="text-link focus-ring text-xl font-medium">Interior BOQ format in Excel</Link>
           <p className="mt-2 leading-relaxed text-foreground-secondary">
             Every item in the library as a blank BOQ, one sheet, grouped by trade, with a measurement-basis column and
-            the amount and total formulas in place:{" "}
-            <a href="/boq/interior-boq-template.xlsx" className="text-link focus-ring">Excel (.xlsx)</a>
-            {" · "}
-            <a href="/boq/interior-boq-template.csv" className="text-link focus-ring">CSV</a>
+            the amount and total formulas in place. What each column is for, and why there are no rates.
           </p>
         </li>
       </ul>

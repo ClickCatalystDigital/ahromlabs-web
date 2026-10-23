@@ -10,7 +10,7 @@ answer: >
 description: What a BOQ is in interior work, and how it differs from an estimate, a quotation, a BOM, a rate analysis and a schedule of rates.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 checked: 2026-10-23
 sources:
   - title: Delhi Schedule of Rates (DSR)
@@ -25,7 +25,7 @@ sources:
 
 ## What a BOQ is
 
-A BOQ is the list of work, not the price of it. Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.
+A BOQ is the list of work, not the price of it ([what one looks like in Excel](/boq/template)). Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.
 
 Its job is to make prices comparable. When three contractors price the same lines, the quotes differ only in rates, and a cheap quote can't hide a thinner board or a missing loft.
 
@@ -51,6 +51,8 @@ A schedule of rates is a published list of item rates. For central government wo
 - **Lump sum**: one price for a defined scope ("bathroom CP fittings, LS"). Quick to write, but it hides what's inside; split it into named items wherever you can.
 - **Provisional sum**: an allowance for work not yet defined, adjusted when it is.
 - **Prime cost (PC) sum**: an allowance for something the client will choose later, such as tiles at a stated rate per sq ft, adjusted to the actual price.
+
+When a provisional or PC sum is settled, or anything else changes after the BOQ is agreed, it is recorded as a [variation order](/boq/variation-orders).
 
 ## Boundary
 

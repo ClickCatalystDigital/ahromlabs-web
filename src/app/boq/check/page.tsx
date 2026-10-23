@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BoqPage } from "@/components/BoqPage";
 import { GuideH2 } from "@/components/GuidePage";
 import { BoqCheck } from "@/components/BoqCheck";
@@ -38,9 +39,11 @@ export default function BoqCheckPage() {
       <div className="print:hidden">
         <GuideH2>What it checks, and what it doesn&apos;t</GuideH2>
         <p className="mt-4 leading-relaxed text-foreground-secondary">
-          Each line is matched to an item by the words that name it, then checked against that item&apos;s entry in the
-          item library: the specifications the line must name, the units it is priced in, and, for modular work with no
-          measurement standard, whether the line says how it was measured. The checks are fixed rules, not AI, so the
+          Each line is matched to an item by the words that name it, then checked against that item&apos;s entry in the{" "}
+          <Link href="/boq/items" className="text-link focus-ring">item library</Link>: the specifications the line must name
+          (see <Link href="/boq/material-specifications" className="text-link focus-ring">board standards</Link>), the units it
+          is priced in, and, for modular work with no measurement standard, whether the line says how it was measured (see{" "}
+          <Link href="/boq/measurement-rules" className="text-link focus-ring">measurement rules</Link>). The checks are fixed rules, not AI, so the
           same BOQ always gets the same result.
         </p>
         <p className="mt-4 leading-relaxed text-foreground-secondary">

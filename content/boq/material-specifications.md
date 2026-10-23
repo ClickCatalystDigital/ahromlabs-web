@@ -10,7 +10,7 @@ answer: >
 description: The Indian Standards for plywood, block board and particle board, and how to write a joinery BOQ line that can't be substituted.
 domain: [interiors, boq, materials]
 published: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 checked: 2026-10-23
 image:
   src: /boq/interior-board-types.webp
@@ -56,7 +56,7 @@ A joinery line names five things:
 4. The edge band: "2 mm PVC edge band".
 5. The hardware make, or "[make] or equal" with the reference named.
 
-The [checker](/boq/check) flags a joinery line missing any of these; the [item library](/boq/items) has a line to start from for each item.
+How joinery is measured, net as fixed and by area with its thickness, is in [measurement rules](/boq/measurement-rules). The [checker](/boq/check) flags a joinery line missing any of these; the [item library](/boq/items) has a line to start from for each item.
 
 ## Boundary
 

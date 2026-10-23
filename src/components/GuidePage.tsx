@@ -41,12 +41,12 @@ export function GuideH2({ children, className = "" }: { children: ReactNode; cla
 
 export const guideMarkdown = {
   h2: ({ children }: ComponentProps<"h2">) => <GuideH2>{children}</GuideH2>,
-  h3: (props: ComponentProps<"h3">) => <h3 className="mt-8 text-xl font-medium text-foreground" {...props} />,
-  p: (props: ComponentProps<"p">) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
-  ul: (props: ComponentProps<"ul">) => <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />,
-  ol: (props: ComponentProps<"ol">) => <ol className="mt-4 list-decimal space-y-3 pl-5 text-foreground-secondary" {...props} />,
-  a: (props: ComponentProps<"a">) => <a className="text-link focus-ring" {...props} />,
-  strong: (props: ComponentProps<"strong">) => <strong className="font-medium text-foreground" {...props} />,
+  h3: ({ node, ...props }: ComponentProps<"h3"> & { node?: unknown }) => <h3 className="mt-8 text-xl font-medium text-foreground" {...props} />,
+  p: ({ node, ...props }: ComponentProps<"p"> & { node?: unknown }) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
+  ul: ({ node, ...props }: ComponentProps<"ul"> & { node?: unknown }) => <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />,
+  ol: ({ node, ...props }: ComponentProps<"ol"> & { node?: unknown }) => <ol className="mt-4 list-decimal space-y-3 pl-5 text-foreground-secondary" {...props} />,
+  a: ({ node, ...props }: ComponentProps<"a"> & { node?: unknown }) => <a className="text-link focus-ring" {...props} />,
+  strong: ({ node, ...props }: ComponentProps<"strong"> & { node?: unknown }) => <strong className="font-medium text-foreground" {...props} />,
 };
 
 // Quotes from the official text, one per claim. Folded by default on long lists:

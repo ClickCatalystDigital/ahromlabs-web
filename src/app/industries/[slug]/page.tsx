@@ -47,22 +47,22 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
 }
 
 const markdownComponents = {
-  h2: (props: ComponentProps<"h2">) => (
+  h2: ({ node, ...props }: ComponentProps<"h2"> & { node?: unknown }) => (
     <h2
       id={headingId(textOf(props.children))}
       className="display mt-12 scroll-mt-24 text-3xl text-foreground first:mt-0 sm:text-4xl"
       {...props}
     />
   ),
-  p: (props: ComponentProps<"p">) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
-  ul: (props: ComponentProps<"ul">) => (
+  p: ({ node, ...props }: ComponentProps<"p"> & { node?: unknown }) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
+  ul: ({ node, ...props }: ComponentProps<"ul"> & { node?: unknown }) => (
     <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />
   ),
-  ol: (props: ComponentProps<"ol">) => (
+  ol: ({ node, ...props }: ComponentProps<"ol"> & { node?: unknown }) => (
     <ol className="mt-4 list-decimal space-y-2 pl-5 text-foreground-secondary" {...props} />
   ),
-  li: (props: ComponentProps<"li">) => <li {...props} />,
-  a: (props: ComponentProps<"a">) => <a className="text-link focus-ring" {...props} />,
+  li: ({ node, ...props }: ComponentProps<"li"> & { node?: unknown }) => <li {...props} />,
+  a: ({ node, ...props }: ComponentProps<"a"> & { node?: unknown }) => <a className="text-link focus-ring" {...props} />,
 };
 
 // Decorative line figure beside the hero on wide screens, one per industry.

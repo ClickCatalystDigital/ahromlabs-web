@@ -6,7 +6,7 @@ import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { boqPageGraph } from "@/lib/schema";
 
-// Unknown slugs 404. /boq/items and /boq/check are their own routes;
+// Unknown slugs 404. /boq/items, /boq/check and /boq/template are their own routes;
 // build-content.mjs keeps a guide from taking those slugs.
 export const dynamicParams = false;
 

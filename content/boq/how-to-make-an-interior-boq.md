@@ -10,7 +10,7 @@ answer: >
 description: Making an interior BOQ from drawings in 7 steps, with the units, specifications and exclusions each line needs, and a sample.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 checked: 2026-10-23
 image:
   src: /boq/interior-boq-from-drawings.webp
@@ -38,7 +38,7 @@ Use the unit the trade prices in: sq ft for ceilings, floors, panelling and ward
 
 ## 4. Measure, and say how
 
-For civil-type work, IS 1200 sets the method: Part 10 for ceilings and linings, Part 11 for floor finishes, dado and skirting, Part 13 for painting building surfaces, Part 21 for woodwork, which is measured net as fixed with nothing added for shape or joints. Modular work has no such standard, so the line must say it: "measured by front elevation, loft excluded".
+For civil-type work, IS 1200 sets the method ([measurement rules](/boq/measurement-rules) has each part's rules): Part 10 for ceilings and linings, Part 11 for floor finishes, dado and skirting, Part 13 for painting building surfaces, Part 21 for woodwork, which is measured net as fixed with nothing added for shape or joints. Modular work has no such standard, so the line must say it: "measured by front elevation, loft excluded".
 
 ## 5. Name what it's made of
 
@@ -50,7 +50,7 @@ Countertops, appliances, light fittings, sanitaryware and loose furniture are of
 
 ## 7. Price it, then issue it
 
-Rates come last: from your own rate analysis or from contractors pricing the same lines. GST is added at the quotation, not in the rates. Changes after this point are variations, priced as new lines rather than by editing old ones.
+Rates come last: from your own rate analysis or from contractors pricing the same lines. GST is added at the quotation, not in the rates. Changes after this point are [variations](/boq/variation-orders), priced as new lines rather than by editing old ones.
 
 ## A sample
 
@@ -62,7 +62,7 @@ Rates come last: from your own rate analysis or from contractors pricing the sam
 | 4 | Hinged wardrobe in 18 mm IS 303 BWP plywood, 1 mm laminate outside, 0.8 mm inside, 2 mm PVC edge band, [make] soft-close hinges; measured by front elevation, excluding loft | sq ft | 64 |
 | 5 | Gypsum board false ceiling 12.5 mm on GI framing, joints taped; measured by plan area of the flat field, excluding coves | sq ft | 180 |
 
-Paste your own into the [checker](/boq/check) to see what each line leaves open, or start from the [template](/boq/interior-boq-template.xlsx).
+Paste your own into the [checker](/boq/check) to see what each line leaves open, or start from the [Excel template](/boq/template).
 
 ## Boundary
 

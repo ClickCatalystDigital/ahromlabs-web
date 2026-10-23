@@ -16,6 +16,13 @@ import { AI_SEARCH_URL } from "../src/lib/ai-search.ts";
 import { IBR_2026_URL } from "../src/lib/ibr-forms.ts";
 
 const CHECKS = [
+  // Interior BOQ (/boq)
+  ["What is the difference between a BOQ and a quotation?", /list of work, not the price|Binding once accepted|binding.*accepted/i],
+  ["How is a wardrobe measured in a BOQ?", /60 sq ft|front elevation/],
+  ["Which plywood grade should an interior BOQ name?", /IS 303|BWP/],
+  ["Do you have an interior BOQ format in Excel?", /Excel template|blank BOQ/],
+  ["How are changes after the BOQ is agreed priced?", /variation/i],
+  ["Interior BOQ kaise banaye?", /7 steps|room by room/],
   // Ownership and licence
   ["Who owns the code?", /not a copy of the code/],
   ["Who owns the software after I pay?", /software stays ours/],

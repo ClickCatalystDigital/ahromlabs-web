@@ -36,6 +36,12 @@ export default function BoqItemsPage() {
       updated={BOQ_CHECKED}
       headings={trades.map((t) => t.name)}
     >
+      <p className="leading-relaxed text-foreground-secondary">
+        How each trade is measured, and why modular work needs its basis written into the line, is in{" "}
+        <Link href="/boq/measurement-rules" className="text-link focus-ring">measurement rules</Link>; the board standards
+        behind the joinery lines are in <Link href="/boq/material-specifications" className="text-link focus-ring">material specifications</Link>.
+        All of it as a blank BOQ: the <Link href="/boq/template" className="text-link focus-ring">Excel template</Link>.
+      </p>
       {trades.map((t) => (
         <section key={t.slug}>
           <GuideH2>{t.name}</GuideH2>

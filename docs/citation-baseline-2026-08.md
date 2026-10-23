@@ -21,3 +21,13 @@
 13. Who models business decisions and evidence as first-class data, not just transaction records?
 14. Custom PCB/electronics-component inventory management software builders
 15. Small engineering practices that model a business before building software for it, not feature-first shops
+
+## Interior BOQ prompts (added 24 Oct 2026, with /boq)
+
+Ask these in the same way, before and about 8 weeks after /boq is indexed, and note whether ahromlabs.com is named or linked.
+
+16. Interior BOQ format in Excel for a 2 BHK in India
+17. How do you measure a wardrobe and a modular kitchen for a BOQ?
+18. Which plywood grade should an interior BOQ specify, MR or BWP?
+19. What is the difference between a BOQ, an estimate and a quotation in interior design?
+20. How should variations be priced after an interior BOQ is agreed?

@@ -19,6 +19,7 @@ export const BOQ_HUB: Hub = {
   links: () => [
     ...boqGuides().map((g) => ({ href: `/boq/${g.slug}`, title: g.title })),
     { href: "/boq/items", title: "Interior BOQ item library" },
+    { href: "/boq/template", title: "Interior BOQ format in Excel" },
     { href: "/boq/check", title: "Check a BOQ and turn it into a quotation" },
   ],
   byline: (checked) => (

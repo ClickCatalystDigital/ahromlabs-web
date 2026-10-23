@@ -73,6 +73,10 @@ Each project has a checklist of milestones with due dates, a log of site visits 
 
 The home screen is a month calendar of what's due across both businesses: tasks, project milestones, site visits and workshop delivery dates, with the weather forecast alongside for planning site work, and today's and overdue tasks beside it. Owners assign tasks to anyone; staff see their own and can only create tasks for themselves.
 
+## Can a quotation start from a BOQ?
+
+Yes, since October 2026. Each studio keeps its own BOQ library, started from our [interior BOQ item library](/boq/items) and reworded to its own wording. A quotation is built room by room from it, with quantities worked out from site dimensions and each line checked for a missing board grade, thickness, finish or [measurement basis](/boq/measurement-rules). Payment stages printed on the quote become draft invoices once the client accepts. It hasn't been used on a real project yet; the free [BOQ checker](/boq/check) shows the same checks without an account.
+
 ## How does the workshop know who made what?
 
 A workshop order can come from a design project or straight from a walk-in client, and moves from pending to in progress, done and delivered. The daily worksheet records each worker's attendance — present, half day or absent, with in and out times — and what they worked on: which order, which part, from when to when, with a rating. Each order's work history then shows who worked on which part, and when.
