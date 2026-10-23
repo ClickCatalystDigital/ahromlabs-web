@@ -44,8 +44,8 @@ export const BOQ_HUB: Hub = {
         <span className="text-sm text-foreground-secondary">Free. Runs in your browser; the rows never leave it.</span>
       </div>
       <p className="mt-4 text-sm text-foreground-secondary">
-        After the quotation, the project: Designer Ops runs orders, site visits, the workshop and invoices for a design
-        studio.{" "}
+        Designer Ops keeps your own BOQ library and every quote, turns an accepted quote&apos;s payment stages into
+        invoices, then runs the project: orders, site visits and the workshop.{" "}
         <a href="https://interiors-erp.ahromlabs.com/demo" className="text-link focus-ring">
           Try the live demo
         </a>

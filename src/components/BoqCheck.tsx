@@ -254,8 +254,8 @@ export function BoqCheck() {
             <span className="text-sm text-foreground-secondary">Your browser&apos;s print dialog has &ldquo;Save as PDF&rdquo;.</span>
           </div>
           <p className="mt-8 text-sm text-foreground-secondary print:hidden">
-            Once the client says yes, Designer Ops carries the project on: orders, site visits, the workshop and
-            invoices.{" "}
+            Designer Ops saves quotes like this one against your own BOQ library, remembers the rates you quoted, and
+            turns an accepted quote&apos;s payment stages into invoices.{" "}
             <a
               href="https://interiors-erp.ahromlabs.com/demo"
               className="text-link focus-ring"
