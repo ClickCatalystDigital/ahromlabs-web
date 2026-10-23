@@ -1,0 +1,51 @@
+S.No,Description,Unit,Measurement basis,Qty,Rate,Amount,Item id
+,CIVIL AND DEMOLITION,,,,,,
+1,"Dismantling existing [flooring / partitions / fixtures] in [rooms], including stacking reusable material and carting debris to an approved dump.",lump sum,"Priced as a lump sum for a defined scope, or by the area or volume broken out. Name what is removed and where the debris goes.",,,,civil.demolition
+2,"Providing and building [100] mm thick [AAC block / brick] partition in [cement mortar 1:4], including lintels over openings.",sq ft,"By face area of wall built, openings deducted; thick walls are sometimes priced by volume.",,,,civil.block-partition
+3,"Providing and fixing [12.5] mm gypsum board partition on both faces of [GI] stud framing at [600] mm centres, joints taped and finished ready for paint.",sq ft,"By face area of partition, openings deducted.",,,,civil.drywall
+4,"Providing [12] mm thick cement plaster in [1:4] mortar on walls, including chicken mesh at block-concrete joints.",sq ft,"By area plastered, openings over a set size deducted.",,,,civil.plaster
+,FALSE CEILING,,,,,,
+5,"Providing and fixing false ceiling of [12.5] mm gypsum board on [GI] suspension framing, joints taped and finished; measured by plan area of the flat field, excluding coves and bands.",sq ft,"The flat field by plan area. Coves, drops and bands are usually a separate running-ft line; say whether cut-outs are deducted.",,,,false-ceiling.gypsum
+6,Providing and making ceiling cove [300] mm wide × [150] mm drop in [12.5] mm gypsum board on [GI] framing; measured by running length.,running ft,By running length along the cove or band; state its girth (height plus width).,,,,false-ceiling.cove
+7,"Providing and fixing [600 × 600] mm mineral fibre ceiling tiles of [make] on exposed [GI] grid, including wall angle.",sq ft,By plan area.,,,,false-ceiling.grid
+8,Providing and fixing [600 × 600] mm concealed access panel in the false ceiling.,nos,"By number, size stated.",,,,false-ceiling.access-panel
+,FLOORING AND WALL TILING,,,,,,
+9,"Providing and laying [600 × 1200] mm vitrified tile flooring of [make, series] on [tile adhesive / cement mortar] bed, joints filled with [epoxy / cementitious] grout.",sq ft,By finished floor area laid; skirting is a separate line.,,,,flooring.vitrified
+10,"Providing and laying [18] mm [marble / granite] flooring, [mirror polished], on [cement mortar] bed, including machine polishing after laying.",sq ft,By finished area laid.,,,,flooring.stone
+11,"Providing and laying [8] mm [laminate / engineered] wood flooring of [make, series] on [underlay], including end trims.",sq ft,By finished area laid.,,,,flooring.wood
+12,Providing and fixing [100] mm high skirting in [vitrified tile / granite] to match the floor.,running ft,By running length; state the height.,,,,flooring.skirting
+13,"Providing and fixing [300 × 600] mm wall tiles of [make, series] up to [2100] mm height on tile adhesive.",sq ft,By wall area tiled; state the height.,,,,flooring.dado
+,CARPENTRY AND JOINERY,,,,,,
+14,"Providing and fixing wall panelling in [12] mm [IS 303 BWP] plywood on [batten] frame, finished in [1] mm laminate; measured by face area including frame.",sq ft,By face area of panelling; say whether framing and grooves are included.,,,,carpentry.panelling
+15,"Providing and making [TV] unit in [18] mm [IS 303 BWP] plywood carcass, [1] mm laminate outside, [0.8] mm laminate inside, [2] mm PVC edge band, [make] soft-close hinges and channels; measured by front elevation area.",sq ft,Usually by front elevation area (height × width); some quote per unit. State which.,,,,carpentry.storage-unit
+16,"Providing and making [6 × 6.5] ft bed in [18] mm [IS 303 BWP] plywood with [hydraulic lift / drawer] storage of [make], finished in [1] mm laminate.",nos,"By number, size stated (for example 6 ft × 6.5 ft).",,,,carpentry.bed
+17,"Providing and making vanity unit in [18] mm [IS 710 marine / IS 303 BWP] plywood, finished in [1] mm laminate, [2] mm PVC edge band, [make] hinges; measured by running length.",running ft,By running length or per unit; state which.,,,,carpentry.vanity
+18,"Providing and fixing [35] mm flush door shutter to [IS 2202 (Part 1)], finished in [1] mm laminate both sides, with [3] stainless steel hinges of [make].",nos,"By number with size stated, or by shutter area.",,,,carpentry.flush-door
+19,"Providing and fixing door frame of [sal wood / WPC] [100 × 60] mm section, including hold-fasts and architrave on [one / both] sides.",running ft,"By running length of frame, or per door with size stated.",,,,carpentry.door-frame
+,MODULAR KITCHEN,,,,,,
+20,"Providing and making kitchen base cabinets [600] mm deep in [18] mm [IS 303 BWP] plywood carcass, shutters in [acrylic / laminate], [2] mm PVC edge band, [make] soft-close hinges and channels; measured by running length along the wall, excluding countertop and accessories.",running ft,Usually by running length along the wall at counter height; corners counted once. State whether the plinth and back panels are included.,,,,modular-kitchen.base
+21,"Providing and making kitchen wall cabinets [700] mm high × [350] mm deep in [18] mm [IS 303 BWP] plywood, shutters in [laminate / acrylic], [2] mm PVC edge band, [make] hinges; measured by running length.",running ft,By running length along the wall; state the height.,,,,modular-kitchen.wall
+22,"Providing and making [2100] mm tall unit [600] mm wide in [18] mm [IS 303 BWP] plywood, shutters in [laminate / acrylic], [2] mm PVC edge band, [make] tall pull-out; measured per unit.",nos,"Per unit with size stated, or by elevation area.",,,,modular-kitchen.tall
+23,"Providing and fixing [20] mm [granite / quartz] countertop [625] mm deep with [edge profile], including sink and hob cut-outs.",running ft,By running length or area; state the depth and edge profile.,,,,modular-kitchen.countertop
+24,"Providing and fixing [make, model] [cutlery / plate / corner] fitting for [600] mm cabinet.",nos,"By number, each fitting named.",,,,modular-kitchen.accessories
+25,Providing and fixing [quartz / glass / tile] backsplash between counter and wall cabinets.,sq ft,By wall area between counter and wall cabinets.,,,,modular-kitchen.backsplash
+,WARDROBES,,,,,,
+26,"Providing and making hinged wardrobe in [18] mm [IS 303 BWP] plywood carcass, [1] mm laminate outside, [0.8] mm laminate inside, [2] mm PVC edge band, [make] soft-close hinges; measured by front elevation area, excluding loft and drawers.",sq ft,"Usually by front elevation area (height × width). State whether the loft, side panels and internal drawers are included.",,,,wardrobes.hinged
+27,"Providing and making sliding wardrobe in [18] mm [IS 303 BWP] plywood, shutters in [laminate / acrylic], [2] mm PVC edge band, [make, model] sliding system; measured by front elevation area, excluding loft.",sq ft,By front elevation area; state what's included.,,,,wardrobes.sliding
+28,"Providing and making loft [600] mm high in [18] mm [IS 303 BWP] plywood, shutters in [1] mm laminate, [make] hinges; measured by front elevation area.",sq ft,By front elevation area or running length; state the depth.,,,,wardrobes.loft
+29,Providing and making internal drawer [600] mm wide with [make] soft-close telescopic channels.,nos,"By number, width stated.",,,,wardrobes.drawer
+,PAINTING AND POLISHING,,,,,,
+30,"Applying [make, product] interior emulsion in [two] coats over [two] coats of wall putty and [one] coat of primer.",sq ft,By area painted; walls and ceilings are measured separately.,,,,painting.emulsion
+31,"Applying [make, product] texture finish over prepared surface, as per approved sample.",sq ft,By area finished.,,,,painting.texture
+32,"Applying [PU / melamine] polish in [matt / gloss] finish, [three] coats over sanding sealer, on wood surfaces.",sq ft,By surface area polished.,,,,painting.wood-polish
+33,Applying [make] synthetic enamel in [two] coats over [one] coat of primer on steel surfaces.,sq ft,By surface area painted.,,,,painting.enamel
+,ELECTRICAL,,,,,,
+34,"Wiring [light / 6 A socket / 16 A power] point with [1.5] sq mm FRLS copper wire in concealed PVC conduit, including [make] modular switch and plate; one point measured from the board to the outlet.",point,"By point. State what one point includes: conduit, wire to the board, switch and plate.",,,,electrical.point
+35,"Providing and fixing distribution board, [8]-way, of [make] with [MCBs and RCCB as per schedule].",nos,"By number, ways and protection stated.",,,,electrical.db
+36,"Supplying and fixing [make, model] [10] W LED downlight, [3000] K.",nos,"By number, each fitting named.",,,,electrical.fittings
+37,Providing [CAT6] data point in concealed conduit with [make] modular socket.,point,"By point, cable type stated.",,,,electrical.data
+,PLUMBING AND BATHROOMS,,,,,,
+38,"Providing concealed water supply piping in [CPVC / PPR] of [make], [20] mm, including fittings and pressure test; measured by point.",point,"By point or by running length; state which, and what a point includes.",,,,plumbing.piping
+39,"Waterproofing bathroom floor and walls up to [300] mm with [make, system] in [two] coats, including ponding test.",sq ft,"By area treated, wall upturn included; state the upturn height.",,,,plumbing.waterproofing
+40,"Supplying and fixing [make, model] [wall-hung WC / counter-top basin], including fixing accessories.",nos,"By number, each piece named.",,,,plumbing.sanitary
+41,"Supplying and fixing [make, model] [single-lever diverter / basin mixer / overhead shower].",nos,"By number, each fitting named; a lump sum per bathroom hides what's inside.",,,,plumbing.cp-fittings

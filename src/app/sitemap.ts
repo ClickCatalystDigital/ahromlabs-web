@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getContent, termHasPage } from "@/lib/content";
 import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
+import { trades, BOQ_CHECKED } from "@/lib/boq";
 import { families, services } from "@/lib/services";
 
 const siteUrl = "https://ahromlabs.com";
@@ -135,5 +136,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticRoutes, ...contentRoutes, ...ibrRoutes];
+  // BOQ pages: guides from their `updated`, the library and checker from when
+  // the item data was last checked, or later when their sources were committed.
+  const boqGuides = getContent("boq");
+  const boqUpdated = [BOQ_CHECKED, ...boqGuides.map((g) => g.updated)].sort().at(-1)!;
+  const boqRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/boq`, lastModified: changed("boq", boqUpdated), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/boq/interior-boq-measuring.webp`] },
+    { url: `${siteUrl}/boq/check`, lastModified: changed("boq/check", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/boq/interior-boq-checker.webp`] },
+    { url: `${siteUrl}/boq/items`, lastModified: changed("boq/items", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.7, images: [`${siteUrl}/boq/wardrobe-front-elevation-measured.webp`] },
+    ...boqGuides.map((g) => ({
+      url: `${siteUrl}/boq/${g.slug}`,
+      lastModified: changed(`boq/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      ...(g.image && { images: [`${siteUrl}${g.image.src}`] }),
+    })),
+    ...trades.map((t) => ({
+      url: `${siteUrl}/boq/items/${t.slug}`,
+      lastModified: changed("boq/items/*", BOQ_CHECKED),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes];
 }

@@ -52,7 +52,7 @@ published: 2026-09-24
 demo:
   url: https://interiors-erp.ahromlabs.com/demo
   label: Try the live demo
-updated: 2026-10-20
+updated: 2026-10-23
 ---
 
 ## Can I try it before talking to anyone?
@@ -119,4 +119,4 @@ Nothing is ever hard-deleted: a removed record stops showing but stays in the da
 
 This is one shared app for two related businesses, not a multi-tenant platform: adding an unrelated third company would mean a different design, not a new setting.
 
-There is no BOQ or quotation module, no 3D design or mood boards, and no client portal — clients are served by the team, not by a login. Invoices split tax into CGST and SGST for clients in the same state; an IGST path for out-of-state clients hasn't been needed yet and isn't built.
+There is no BOQ or quotation module, no 3D design or mood boards, and no client portal — clients are served by the team, not by a login. For the BOQ itself there is a free, separate [interior BOQ checker](/boq/check), with an [item library and guides](/boq). Invoices split tax into CGST and SGST for clients in the same state; an IGST path for out-of-state clients hasn't been needed yet and isn't built.

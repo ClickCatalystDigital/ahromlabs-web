@@ -729,3 +729,11 @@ main :not(pre) > code {
   --hairline-mid: var(--line-strong);
   --hairline-lo: var(--line);
 }
+
+/* /boq/check prints only the quotation: everything else on the page is hidden,
+   and the quote is lifted to the top of the sheet. */
+@media print {
+  body:has(#boq-quote) * { visibility: hidden; }
+  #boq-quote, #boq-quote * { visibility: visible; }
+  #boq-quote { position: absolute; inset: 0 0 auto 0; }
+}

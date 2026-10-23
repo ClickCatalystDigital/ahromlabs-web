@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrForms, formName } from "@/lib/ibr-forms";
+import { boqItems, trades, IS, SPEC, UNIT_LABEL } from "@/lib/boq";
 import { services, families, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -17,7 +18,7 @@ function contentUrl(entry: ContentEntry): string {
   if (entry.kind === "term") {
     return `${siteUrl}/systems${termHasPage(entry) ? `/${entry.slug}` : `#${entry.slug}`}`;
   }
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr" }[entry.kind];
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" }[entry.kind];
   return `${siteUrl}/${segment}/${entry.slug}`;
 }
 
@@ -34,6 +35,7 @@ export function GET() {
     ...getContent("pattern"),
     ...getContent("industry"),
     ...getContent("guide"),
+    ...getContent("boq"),
   ].map((entry) => ({
     ...entry,
     url: contentUrl(entry),
@@ -109,7 +111,25 @@ export function GET() {
     url: `${siteUrl}/ibr/forms${f.page ? `/${f.slug}` : ""}`,
   }));
 
-  return NextResponse.json([...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes], {
+  // The interior BOQ item library, one node per item, from src/lib/boq.ts: the
+  // same data /boq/items, the checker and the template use.
+  const boqItemNodes = boqItems.map((i) => ({
+    kind: "boq-item",
+    slug: i.id,
+    title: i.name,
+    trade: trades.find((t) => t.slug === i.trade)!.name,
+    answer: `${i.name}: priced in ${UNIT_LABEL[i.unit]}. ${i.measure}`,
+    unit: UNIT_LABEL[i.unit],
+    alsoQuotedIn: (i.units ?? []).map((u) => UNIT_LABEL[u]),
+    measurementBasisRequired: !!i.basis,
+    standards: (i.is ?? []).map((r) => `${IS[r].code}: ${IS[r].title}`),
+    mustSpecify: i.spec.map((k) => `${SPEC[k].label} (${SPEC[k].hint})`),
+    oftenOmitted: i.omits,
+    sampleLine: i.description,
+    url: `${siteUrl}/boq/items/${i.trade}#${i.id.replace(/\./g, "-")}`,
+  }));
+
+  return NextResponse.json([...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes], {
     headers: { "Cache-Control": "public, max-age=3600" },
   });
 }

@@ -14,7 +14,7 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" };
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -108,6 +108,25 @@ function loadKind(kind) {
     // official sources and quotes the text it relies on; scripts/check-ibr-quotes.mjs
     // then checks each quote against the Gazette.
     assertArrayIfPresent(frontmatter.guides, "guides", relPath);
+    // BOQ guides (content/boq/) name their official sources too; `checks` are
+    // optional there, since most cite standards by number (BIS texts are paid)
+    // rather than quote them. Where a guide does quote, the quote must be exact.
+    if (kind === "boq") {
+      if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
+        throw new Error(`content/${relPath}: a BOQ guide needs "sources" (official documents it relies on)`);
+      }
+      for (const [i, src] of frontmatter.sources.entries()) {
+        for (const field of ["title", "publisher", "url", "date"]) assertString(src?.[field], `sources[${i}].${field}`, relPath);
+        if (!/^https:\/\//.test(src.url)) throw new Error(`content/${relPath}: sources[${i}].url must be https`);
+      }
+      assertArrayIfPresent(frontmatter.checks, "checks", relPath);
+      for (const [i, c] of (frontmatter.checks ?? []).entries()) {
+        assertString(c?.reg, `checks[${i}].reg`, relPath);
+        assertString(c?.quote, `checks[${i}].quote`, relPath);
+      }
+      assertString(frontmatter.checked, "checked", relPath);
+      if (["items", "check"].includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /boq/${slug}`);
+    }
     if (kind === "guide") {
       if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
         throw new Error(`content/${relPath}: a guide needs "sources" (official documents it relies on)`);
@@ -148,6 +167,7 @@ const notes = loadKind("note");
 const patterns = loadKind("pattern");
 const industries = loadKind("industry");
 const guides = loadKind("guide");
+const boqGuides = loadKind("boq");
 
 // Cross-reference check: every `patterns`/`notes` edge in a note or industry
 // must point at a real entry. Runs here, at script time, so a broken reference
@@ -198,9 +218,10 @@ const RENDERERS = {
   notes: ["src/app/notes/[slug]", "src/lib/work.ts", "src/lib/services.ts"],
   patterns: ["src/app/patterns/[slug]"],
   terms: ["src/app/systems/[slug]"],
-  ibr: ["src/app/ibr/[slug]", "src/components/IbrPage.tsx"],
+  ibr: ["src/app/ibr/[slug]", "src/components/IbrPage.tsx", "src/components/GuidePage.tsx"],
+  boq: ["src/app/boq/[slug]", "src/components/BoqPage.tsx", "src/components/GuidePage.tsx"],
 };
-const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr" };
+const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq" };
 for (const [dir, renderers] of Object.entries(RENDERERS)) {
   const files = fs.readdirSync(path.join(CONTENT_ROOT, dir)).filter((f) => f.endsWith(".md"));
   for (const file of files) {
@@ -209,10 +230,15 @@ for (const [dir, renderers] of Object.entries(RENDERERS)) {
   // The index page lists every entry of the kind.
   PAGE_SOURCES[ROUTE_PREFIX[dir]] = [`content/${dir}`, `src/app/${ROUTE_PREFIX[dir]}/page.tsx`, ...renderers.slice(1)];
 }
-const IBR_FRAME = ["src/components/IbrPage.tsx", "src/lib/ibr-forms.ts"];
+const IBR_FRAME = ["src/components/IbrPage.tsx", "src/components/GuidePage.tsx", "src/lib/ibr-forms.ts"];
 PAGE_SOURCES.ibr = ["content/ibr", "src/app/ibr/page.tsx", ...IBR_FRAME];
 PAGE_SOURCES["ibr/forms"] = ["src/app/ibr/forms/page.tsx", ...IBR_FRAME];
 PAGE_SOURCES["ibr/forms/*"] = ["src/app/ibr/forms/[form]", ...IBR_FRAME];
+const BOQ_FRAME = ["src/components/BoqPage.tsx", "src/components/GuidePage.tsx", "src/lib/boq.ts"];
+PAGE_SOURCES.boq = ["content/boq", "src/app/boq/page.tsx", ...BOQ_FRAME];
+PAGE_SOURCES["boq/items"] = ["src/app/boq/items/page.tsx", ...BOQ_FRAME];
+PAGE_SOURCES["boq/items/*"] = ["src/app/boq/items/[trade]", ...BOQ_FRAME];
+PAGE_SOURCES["boq/check"] = ["src/app/boq/check", "src/components/BoqCheck.tsx", "src/lib/boq-check.ts", ...BOQ_FRAME];
 
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
@@ -223,8 +249,8 @@ for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
 }
 fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
-const all = [...terms, ...notes, ...patterns, ...industries, ...guides];
+const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );

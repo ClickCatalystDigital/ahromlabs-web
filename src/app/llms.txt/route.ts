@@ -1,5 +1,6 @@
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrFormPages, formName } from "@/lib/ibr-forms";
+import { boqItems, trades, tradeItems, UNIT_LABEL } from "@/lib/boq";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -112,6 +113,16 @@ export function GET() {
       .map((f) => `- [${formName(f)}: ${f.title}](https://ahromlabs.com/ibr/forms/${f.slug}): ${f.summary}${f.old ? ` Was ${f.old.form} under IBR 1950.` : ""}`)
       .join("\n");
 
+  const boq =
+    `- [Interior BOQ: guides, item library and a free checker](https://ahromlabs.com/boq): How to write a bill of quantities for interior work in India that contractors price the same way.\n` +
+    getContent("boq").map(line("boq")).join("\n") +
+    (getContent("boq").length ? "\n" : "") +
+    `- [Interior BOQ checker and quotation maker](https://ahromlabs.com/boq/check): Paste a BOQ from Excel; each line is checked for missing specifications, units and measurement basis, then priced with GST and printed. Runs in the browser.\n` +
+    `- [Interior BOQ item library](https://ahromlabs.com/boq/items): ${boqItems.length} items in ${trades.length} trades with unit, measurement, Indian Standard and required specifications. Template: https://ahromlabs.com/boq/interior-boq-template.xlsx\n` +
+    trades
+      .map((t) => `- [${t.name} BOQ items](https://ahromlabs.com/boq/items/${t.slug}): ${tradeItems(t.slug).map((i) => `${i.name} (${UNIT_LABEL[i.unit]})`).join("; ")}.`)
+      .join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -119,6 +130,7 @@ export function GET() {
     `\n## Clients\n\n${clients}\n` +
     `\n## Working with Ahrom Labs\n\n${working}\n` +
     `\n## IBR 2026 (Indian Boiler Regulations)\n\n${ibr}\n` +
+    `\n## Interior BOQ (bill of quantities)\n\n${boq}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

@@ -435,3 +435,93 @@ export function serviceFaqGraph(service: Service) {
     })),
   };
 }
+
+// The BOQ item library as a Dataset: one @id every /boq page points at, with
+// the CSV and Excel template as its downloads. Agents and Google Dataset
+// Search read it as data rather than prose.
+export const boqDataset = {
+  "@type": "Dataset",
+  "@id": `${siteUrl}/boq/items#dataset`,
+  name: "Interior BOQ item library (India)",
+  description:
+    "Interior fit-out work items with the unit each is priced in, how it is measured, the Indian Standards that apply, what a line must specify, and what quotes commonly leave out. No rates.",
+  url: `${siteUrl}/boq/items`,
+  keywords: ["bill of quantities", "BOQ", "interior fit-out", "IS 1200", "IS 303", "modular kitchen", "wardrobe", "false ceiling"],
+  creator: { "@id": `${siteUrl}/#organization` },
+  isAccessibleForFree: true,
+  inLanguage: "en-IN",
+  spatialCoverage: { "@type": "Country", name: "India" },
+  distribution: [
+    { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/boq/interior-boq-template.csv` },
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      contentUrl: `${siteUrl}/boq/interior-boq-template.xlsx`,
+    },
+  ],
+};
+
+// One TechArticle per /boq page with its breadcrumb, linked to the Dataset;
+// the checker page adds a WebApplication.
+export function boqPageGraph(page: {
+  path: string;
+  title: string;
+  description: string;
+  published: string;
+  updated: string;
+  trail: { name: string; path: string }[];
+  image?: { src: string; alt: string };
+  app?: boolean;
+}) {
+  const url = `${siteUrl}${page.path}`;
+  const crumbs = [{ name: "Home", path: "" }, ...page.trail];
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      boqDataset,
+      {
+        "@type": "TechArticle",
+        "@id": `${url}#article`,
+        url,
+        headline: page.title,
+        description: page.description,
+        datePublished: page.published,
+        dateModified: page.updated,
+        isBasedOn: { "@id": boqDataset["@id"] },
+        author: { "@id": `${siteUrl}/#founder` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntityOfPage: url,
+        inLanguage: "en-IN",
+        ...(page.image && {
+          image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, caption: page.image.alt },
+        }),
+      },
+      ...(page.app
+        ? [
+            {
+              "@type": "WebApplication",
+              "@id": `${url}#app`,
+              name: "Interior BOQ checker",
+              url,
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Any (runs in the browser)",
+              isAccessibleForFree: true,
+              offers: { "@type": "Offer", price: 0, priceCurrency: "INR" },
+              description: page.description,
+              provider: { "@id": `${siteUrl}/#organization` },
+            },
+          ]
+        : []),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: c.name,
+          item: `${siteUrl}${c.path}`,
+        })),
+      },
+    ],
+  };
+}
