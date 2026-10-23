@@ -9,7 +9,8 @@ export function seoTitle(title: string): string | { absolute: string } {
   return title.length + SUFFIX.length > 60 ? { absolute: title } : title;
 }
 
-// Whole sentences up to 158 characters; a first sentence longer than that is cut at a word with "…".
+// Whole sentences up to 158 characters. If that would leave under 110 (a short first sentence and a long
+// second), the text is filled to the limit and cut at a word with "…".
 export function metaDescription(text: string, max = 158): string {
   const flat = text.replace(/\s+/g, " ").trim();
   if (flat.length <= max) return flat;
@@ -20,7 +21,8 @@ export function metaDescription(text: string, max = 158): string {
     out += s;
   }
   out = out.trim();
-  if (out) return out;
+  // Whole sentences, unless they leave a short line (under 110): then fill to the limit and cut at a word.
+  if (out.length >= 110) return out;
   const cut = flat.slice(0, max - 1);
-  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:—–-]$/, "")}…`;
 }
