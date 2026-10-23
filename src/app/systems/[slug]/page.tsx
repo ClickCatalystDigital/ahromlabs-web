@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate, termHasPage } from "@/lib/content";
 import { jsonLd, termGraph } from "@/lib/schema";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Only terms with real body content get a page — see termHasPage. Terms without
 // one stay as definitions on /systems, which is all their content supports.
@@ -26,18 +27,19 @@ export function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/systems/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;
   const term = pagedTerms().find((t) => t.slug === slug)!;
+  const description = metaDescription(term.description ?? term.answer);
   const url = `https://ahromlabs.com/systems/${term.slug}`;
 
   return {
-    title: term.title,
-    description: term.answer,
+    title: seoTitle(term.title),
+    description,
     alternates: { canonical: `/systems/${term.slug}` },
     openGraph: {
       type: "article",
       url,
       siteName: "Ahrom Labs",
       title: term.title,
-      description: term.answer,
+      description,
       publishedTime: term.published,
       modifiedTime: term.updated,
       authors: ["Pujan Motiwala"],
@@ -45,7 +47,7 @@ export async function generateMetadata(props: PageProps<"/systems/[slug]">): Pro
     twitter: {
       card: "summary_large_image",
       title: term.title,
-      description: term.answer,
+      description,
     },
   };
 }

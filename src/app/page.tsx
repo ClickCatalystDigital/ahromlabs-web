@@ -10,14 +10,14 @@ import heroImage from "../../public/hero.webp";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "Custom ERP for Indian manufacturers and trading groups: BOMs, shop floor, IBR, GST and TDS compliance and TallyPrime in one system. Built in Ahmedabad.";
+const description = metaDescription("Custom ERP for Indian manufacturers and trading groups: BOMs, shop floor, IBR, GST and TDS compliance and TallyPrime in one system. Built in Ahmedabad.");
 
 export const metadata: Metadata = {
   // The homepage <title> is the single strongest signal of what this site is
   // about. "Ahrom Labs" alone told Google and every model nothing.
-  title: { absolute: "Ahrom Labs | Custom ERP for Indian manufacturers and trading groups" },
+  title: { absolute: "Ahrom Labs: custom ERP for manufacturers and traders" },
   description,
   alternates: {
     canonical: "/",
@@ -78,10 +78,13 @@ export default function Home() {
                 intercepting the CTA where they overlap; the text column carries
                 z-10 so it stays on top. */}
             <div className="pointer-events-none hidden lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:flex lg:items-center lg:justify-end">
+              {/* Hidden below lg, so no preload: a preloaded 370 KB image was downloaded on every phone
+                  and delayed the headline (mobile LCP 3.8 s). Lazy + high priority: phones skip it,
+                  desktops fetch it first. */}
               <Image
                 src={heroImage}
                 alt=""
-                priority
+                fetchPriority="high"
                 className="h-auto w-full max-w-md object-contain lg:max-w-none lg:w-full"
               />
             </div>

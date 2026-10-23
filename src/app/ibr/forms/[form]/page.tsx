@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IbrPage, IbrH2, IbrQuotes } from "@/components/IbrPage";
 import { ibrForms, ibrFormPages, formName, IBR_FORMS_CHECKED, IBR_FORMS_PUBLISHED } from "@/lib/ibr-forms";
 import { ibrPageGraph } from "@/lib/schema";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Unknown form slugs 404 rather than render on demand (see notes/[slug]).
 export const dynamicParams = false;
@@ -22,12 +23,14 @@ function pageTitle(f: ReturnType<typeof get>) {
 export async function generateMetadata(props: PageProps<"/ibr/forms/[form]">): Promise<Metadata> {
   const f = get((await props.params).form);
   const title = pageTitle(f);
+  // The summary alone is a short line; the old name and the regulation are what people search with.
+  const description = metaDescription(`${f.summary}${f.old ? ` It was ${f.old.form} under IBR 1950.` : ""} Prescribed by regulation ${f.regulation} of the Indian Boiler Regulations, 2026.`);
   return {
-    title,
-    description: f.summary,
+    title: seoTitle(title),
+    description,
     alternates: { canonical: `/ibr/forms/${f.slug}` },
-    openGraph: { type: "article", url: `https://ahromlabs.com/ibr/forms/${f.slug}`, siteName: "Ahrom Labs", title, description: f.summary },
-    twitter: { card: "summary_large_image", title, description: f.summary },
+    openGraph: { type: "article", url: `https://ahromlabs.com/ibr/forms/${f.slug}`, siteName: "Ahrom Labs", title, description },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 

@@ -5,12 +5,12 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { engagementAnswers } from "@/lib/engagement";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "What a custom ERP costs in India, how long it takes, whether it works with Tally, software licence and data use, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.";
+const description = metaDescription("What a custom ERP costs in India, how long it takes, whether it works with Tally, software licence and data use, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.");
 
 export const metadata: Metadata = {
-  title: "Custom ERP cost, timelines, Tally, licensing and AMC — working with us",
+  title: "Custom ERP cost, timelines and AMC terms",
   description,
   alternates: { canonical: "/engagement" },
   openGraph: {

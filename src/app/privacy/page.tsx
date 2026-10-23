@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "How Ahrom Labs collects and uses personal data: website forms, business outreach by email and WhatsApp, meetings, analytics and the systems we build for clients.";
+const description = metaDescription("How Ahrom Labs collects and uses personal data: website forms, business outreach by email and WhatsApp, meetings, analytics and the systems we build for clients.");
 
 export const metadata: Metadata = {
   title: "Privacy policy",

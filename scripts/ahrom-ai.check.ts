@@ -23,6 +23,7 @@ assert.ok(ids("interior boq format in excel").includes("boq-tool/template"));
 assert.ok(ids("how is a wardrobe measured in a boq").includes("boq/measurement-rules"));
 assert.ok(ids("free tool to check my boq").includes("boq-tool/check"));
 assert.ok(ids("variation order after boq agreed").includes("boq/variation-orders"));
+assert.ok(ids("Interior BOQ kaise banaye?").includes("boq/how-to-make-an-interior-boq"), "Hinglish BOQ question");
 
 // Routing, on Jev-shaped answers.
 const list = shortlist(entries, "who owns the code");

@@ -6,12 +6,12 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import Image from "next/image";
 import { services, layers, families, servicesIn, serviceUrl, familyUrl, type Service } from "@/lib/services";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "Custom ERP and CRM, TallyPrime integration, multi-company finance, AI document extraction and document search for Indian manufacturers and traders.";
+const description = metaDescription("Custom ERP and CRM, TallyPrime integration, multi-company finance, AI document extraction and document search for Indian manufacturers and traders.");
 
 export const metadata: Metadata = {
-  title: "Services: custom ERP, CRM, analytics, RAG and AI systems",
+  title: "Services: custom ERP, CRM, analytics and AI",
   description,
   alternates: { canonical: "/services" },
   openGraph: {

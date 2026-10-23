@@ -22,7 +22,8 @@ const CHECKS = [
   ["Which plywood grade should an interior BOQ name?", /IS 303|BWP/],
   ["Do you have an interior BOQ format in Excel?", /Excel template|blank BOQ/],
   ["How are changes after the BOQ is agreed priced?", /variation/i],
-  ["Interior BOQ kaise banaye?", /7 steps|room by room/],
+  // "Interior BOQ kaise banaye?" is checked in scripts/ahrom-ai.check.ts instead: the chat answers through that
+  // router (Hinglish synonyms there), and this index, the fallback, ranks its Hinglish wording below the threshold.
   // Ownership and licence
   ["Who owns the code?", /not a copy of the code/],
   ["Who owns the software after I pay?", /software stays ours/],

@@ -5,6 +5,7 @@ import { guideMarkdown } from "@/components/GuidePage";
 import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { boqPageGraph } from "@/lib/schema";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Unknown slugs 404. /boq/items, /boq/check and /boq/template are their own routes;
 // build-content.mjs keeps a guide from taking those slugs.
@@ -18,9 +19,9 @@ const get = (slug: string) => getContent("boq").find((g) => g.slug === slug)!;
 
 export async function generateMetadata(props: PageProps<"/boq/[slug]">): Promise<Metadata> {
   const g = get((await props.params).slug);
-  const description = g.description ?? g.answer;
+  const description = metaDescription(g.description ?? g.answer);
   return {
-    title: g.title,
+    title: seoTitle(g.title),
     description,
     alternates: { canonical: `/boq/${g.slug}` },
     openGraph: {
@@ -32,7 +33,10 @@ export async function generateMetadata(props: PageProps<"/boq/[slug]">): Promise
       publishedTime: g.published,
       modifiedTime: g.updated,
       authors: ["Pujan Motiwala"],
-      ...(g.image && { images: [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }] }),
+      // The guide's own image, or the BOQ hub's: a page's openGraph replaces the parent's, so without one it would share no image.
+      images: g.image
+        ? [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }]
+        : [{ url: "/boq/interior-boq-measuring.webp", width: 1086, height: 362, alt: "A tape measure with its blade drawn out across a ruled sheet, a pencil beside it." }],
     },
     twitter: { card: "summary_large_image", title: g.title, description },
   };

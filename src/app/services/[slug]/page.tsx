@@ -11,6 +11,7 @@ import { ServiceDetail } from "@/components/ServiceDetail";
 import { families, services, servicesIn, serviceUrl, familyUrl, type Family, type Service } from "@/lib/services";
 import { servicePageGraph, serviceFaqGraph, jsonLd } from "@/lib/schema";
 import { getContent } from "@/lib/content";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Families and services share this route; services.ts guarantees the slugs
 // don't collide. Unknown slugs 404 instead of rendering on demand.
@@ -43,10 +44,10 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
   const { slug } = await props.params;
   const found = find(slug);
   const title = found.kind === "family" ? found.family.name : found.service.name;
-  const description = found.kind === "family" ? lead(found.family.summary) : lead(found.service.answer);
+  const description = metaDescription(found.kind === "family" ? lead(found.family.summary) : lead(found.service.answer));
   const path = `/services/${slug}`;
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: { canonical: path },
     openGraph: { type: "website", url: `https://ahromlabs.com${path}`, siteName: "Ahrom Labs", title, description },

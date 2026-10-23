@@ -9,6 +9,7 @@ import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
 import { services, serviceUrl } from "@/lib/services";
 import { engagements, clientInSentence } from "@/lib/work";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Any slug outside generateStaticParams 404s. Left at the default (true), an
 // unknown slug rendered on demand, hit `find(...)!` on undefined and returned a
@@ -22,18 +23,19 @@ export function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/notes/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;
   const note = getContent("note").find((n) => n.slug === slug)!;
+  const description = metaDescription(note.description ?? note.answer);
   const url = `https://ahromlabs.com/notes/${note.slug}`;
 
   return {
-    title: note.title,
-    description: note.answer,
+    title: seoTitle(note.title),
+    description,
     alternates: { canonical: `/notes/${note.slug}` },
     openGraph: {
       type: "article",
       url,
       siteName: "Ahrom Labs",
       title: note.title,
-      description: note.answer,
+      description,
       publishedTime: note.published,
       modifiedTime: note.updated,
       authors: ["Pujan Motiwala"],
@@ -41,7 +43,7 @@ export async function generateMetadata(props: PageProps<"/notes/[slug]">): Promi
     twitter: {
       card: "summary_large_image",
       title: note.title,
-      description: note.answer,
+      description,
     },
   };
 }

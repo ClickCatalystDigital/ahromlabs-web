@@ -7,9 +7,9 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { services, resolveProof, proofHref, serviceUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and a boiler and pressure-vessel manufacturer — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.";
+const description = metaDescription("Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and a boiler and pressure-vessel manufacturer — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.");
 
 export const metadata: Metadata = {
   title: "Work: clients and the systems we built for them",

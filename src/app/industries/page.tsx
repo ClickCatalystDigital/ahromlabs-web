@@ -8,12 +8,12 @@ import { HoverVideo } from "@/components/HoverVideo";
 import { getContent } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 import { clientInSentence } from "@/lib/work";
+import { metaDescription } from "@/lib/seo";
 
-const description =
-  "Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture — each backed by a real system in use.";
+const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture — each backed by a real system in use.");
 
 export const metadata: Metadata = {
-  title: "Industries: custom ERP and operations software by industry",
+  title: "Industries we build ERP software for",
   description,
   alternates: { canonical: "/industries" },
   openGraph: {

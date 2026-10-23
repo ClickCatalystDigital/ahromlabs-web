@@ -26,7 +26,7 @@ wb = Workbook()
 ws = wb.active
 ws.title = "BOQ"
 ws.append(["Interior BOQ"])
-ws.append(["Fill the [brackets], quantities and rates. From the item library at ahromlabs.com/boq/items; check a filled BOQ at ahromlabs.com/boq/check."])
+ws.append(["Fill the [brackets], quantities and rates. From the item library at ahromlabs.com/boq/items (free under CC BY 4.0, credit Ahrom Labs); check a filled BOQ at ahromlabs.com/boq/check."])
 ws.append([])
 ws.append(HEAD)
 head_row = ws.max_row

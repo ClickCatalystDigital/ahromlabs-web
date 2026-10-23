@@ -8,6 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { articleGraph, jsonLd } from "@/lib/schema";
 import { services, serviceUrl } from "@/lib/services";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -19,18 +20,19 @@ export function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/patterns/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;
   const pattern = getContent("pattern").find((p) => p.slug === slug)!;
+  const description = metaDescription(pattern.description ?? pattern.answer);
   const url = `https://ahromlabs.com/patterns/${pattern.slug}`;
 
   return {
-    title: pattern.title,
-    description: pattern.answer,
+    title: seoTitle(pattern.title),
+    description,
     alternates: { canonical: `/patterns/${pattern.slug}` },
     openGraph: {
       type: "article",
       url,
       siteName: "Ahrom Labs",
       title: pattern.title,
-      description: pattern.answer,
+      description,
       publishedTime: pattern.published,
       modifiedTime: pattern.updated,
       authors: ["Pujan Motiwala"],
@@ -38,7 +40,7 @@ export async function generateMetadata(props: PageProps<"/patterns/[slug]">): Pr
     twitter: {
       card: "summary_large_image",
       title: pattern.title,
-      description: pattern.answer,
+      description,
     },
   };
 }

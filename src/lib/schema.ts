@@ -448,6 +448,7 @@ export const boqDataset = {
   url: `${siteUrl}/boq/items`,
   keywords: ["bill of quantities", "BOQ", "interior fit-out", "IS 1200", "IS 303", "modular kitchen", "wardrobe", "false ceiling"],
   creator: { "@id": `${siteUrl}/#organization` },
+  license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,
   inLanguage: "en-IN",
   spatialCoverage: { "@type": "Place", name: "India" }, // Google's Dataset rules want a Place here, not a Country

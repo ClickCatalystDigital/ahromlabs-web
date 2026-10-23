@@ -5,6 +5,7 @@ import { GuideH2 } from "@/components/GuidePage";
 import { trades, tradeItems, tradeBySlug, IS, SPEC, UNIT_LABEL, BOQ_CHECKED, BOQ_PUBLISHED } from "@/lib/boq";
 import { boqPageGraph } from "@/lib/schema";
 import { headingId } from "@/lib/headings";
+import { seoTitle } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -30,14 +31,14 @@ const READ_WITH: Record<string, [string, string][]> = {
   electrical: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
   plumbing: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
 };
-const pageTitle = (name: string) => `${name} BOQ items: units, measurement and specification`;
+const pageTitle = (name: string) => `${name} BOQ items: units, measurement, specs`;
 
 export async function generateMetadata(props: PageProps<"/boq/items/[trade]">): Promise<Metadata> {
   const t = tradeBySlug((await props.params).trade)!;
   const title = pageTitle(t.name);
   const description = `${t.name} in an interior BOQ: ${tradeItems(t.slug).map((i) => i.name.toLowerCase()).join(", ")}. Unit, measurement, IS standard, specs.`.slice(0, 160);
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: { canonical: `/boq/items/${t.slug}` },
     openGraph: { type: "article", url: `https://ahromlabs.com/boq/items/${t.slug}`, siteName: "Ahrom Labs", title, description },

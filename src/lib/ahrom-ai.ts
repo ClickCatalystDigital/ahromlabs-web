@@ -141,6 +141,7 @@ const SYNONYMS: Record<string, string[]> = {
   hisaab: ["accounts", "ledger"], hisab: ["accounts", "ledger"], khata: ["ledger", "accounts"], bahi: ["ledger", "accounts"],
   maal: ["stock", "inventory"], godown: ["stores", "stock", "warehouse"], warehouse: ["stores", "stock"],
   bill: ["invoice"], bills: ["invoice"], challan: ["dispatch", "delivery"], tally: ["tallyprime"], tallyprime: ["tally"],
+  kaise: ["how"], kaisa: ["how"], banaye: ["make"], banana: ["make"], banane: ["make"], banaen: ["make"], naap: ["measure"], naapna: ["measure"],
   boiler: ["ibr"], estimate: ["boq"], quantities: ["boq"], quotation: ["quote", "boq"], wardrobe: ["boq"], kitchen: ["boq"], ceiling: ["boq"],
   demo: ["demo", "live"], owns: ["own", "ownership", "code"], source: ["code"], live: ["live", "go"],
 };

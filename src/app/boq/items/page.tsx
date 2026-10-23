@@ -42,6 +42,10 @@ export default function BoqItemsPage() {
         behind the joinery lines are in <Link href="/boq/material-specifications" className="text-link focus-ring">material specifications</Link>.
         All of it as a blank BOQ: the <Link href="/boq/template" className="text-link focus-ring">Excel template</Link>.
       </p>
+      <p className="mt-4 text-sm text-foreground-secondary">
+        Free to reuse under <a href="https://creativecommons.org/licenses/by/4.0/" className="text-link focus-ring" rel="license">CC BY 4.0</a>:
+        copy or adapt it, with credit to Ahrom Labs and a link to this page.
+      </p>
       {trades.map((t) => (
         <section key={t.slug}>
           <GuideH2>{t.name}</GuideH2>

@@ -4,6 +4,7 @@ import { IbrPage, IbrQuotes, ibrMarkdown } from "@/components/IbrPage";
 import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { ibrPageGraph } from "@/lib/schema";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Unknown slugs 404 rather than render on demand (see notes/[slug]). /ibr/forms
 // is its own route; build-content.mjs keeps a guide from taking that slug.
@@ -17,9 +18,9 @@ const get = (slug: string) => getContent("guide").find((g) => g.slug === slug)!;
 
 export async function generateMetadata(props: PageProps<"/ibr/[slug]">): Promise<Metadata> {
   const g = get((await props.params).slug);
-  const description = g.description ?? g.answer;
+  const description = metaDescription(g.description ?? g.answer);
   return {
-    title: g.title,
+    title: seoTitle(g.title),
     description,
     alternates: { canonical: `/ibr/${g.slug}` },
     openGraph: {
@@ -32,7 +33,10 @@ export async function generateMetadata(props: PageProps<"/ibr/[slug]">): Promise
       modifiedTime: g.updated,
       authors: ["Pujan Motiwala"],
       // The page's infographic is the share image; pages without one keep the site default.
-      ...(g.image && { images: [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }] }),
+      // The guide's infographic, or the IBR hub's: a page's openGraph replaces the parent's, so without one it would share no image.
+      images: g.image
+        ? [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }]
+        : [{ url: "/ibr/ibr-forms-1950-to-2026.webp", width: 2752, height: 1536, alt: "IBR forms renumbered on 1 October 2026, IBR 1950 to IBR 2026" }],
     },
     twitter: { card: "summary_large_image", title: g.title, description },
   };

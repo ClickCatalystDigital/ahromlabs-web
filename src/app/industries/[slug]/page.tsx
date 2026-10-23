@@ -13,6 +13,7 @@ import { FlowFigure } from "@/components/FlowFigure";
 import { OpenOnWide } from "@/components/OpenOnWide";
 import { headingId, textOf, markdownHeadings } from "@/lib/headings";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
+import { seoTitle, metaDescription } from "@/lib/seo";
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -25,10 +26,10 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
   const { slug } = await props.params;
   const industry = getContent("industry").find((i) => i.slug === slug)!;
   const url = `https://ahromlabs.com/industries/${industry.slug}`;
-  const description = industry.description ?? industry.answer;
+  const description = metaDescription(industry.description ?? industry.answer);
 
   return {
-    title: industry.title,
+    title: seoTitle(industry.title),
     description,
     alternates: { canonical: `/industries/${industry.slug}` },
     openGraph: {

@@ -55,7 +55,10 @@ export default function BoqTemplatePage() {
           Download the Excel template
         </a>
         <a href="/boq/interior-boq-template.csv" className="text-link focus-ring" download>CSV version</a>
-        <span className="text-sm text-foreground-secondary">One sheet, grouped by trade, free to use.</span>
+        <span className="text-sm text-foreground-secondary">
+          One sheet, grouped by trade. Free under{" "}
+          <a href="https://creativecommons.org/licenses/by/4.0/" className="text-link focus-ring" rel="license">CC BY 4.0</a>, with credit to Ahrom Labs.
+        </span>
       </div>
 
       <GuideH2>The columns, and why each is there</GuideH2>
