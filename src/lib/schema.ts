@@ -450,7 +450,7 @@ export const boqDataset = {
   creator: { "@id": `${siteUrl}/#organization` },
   isAccessibleForFree: true,
   inLanguage: "en-IN",
-  spatialCoverage: { "@type": "Country", name: "India" },
+  spatialCoverage: { "@type": "Place", name: "India" }, // Google's Dataset rules want a Place here, not a Country
   distribution: [
     { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/boq/interior-boq-template.csv` },
     {
