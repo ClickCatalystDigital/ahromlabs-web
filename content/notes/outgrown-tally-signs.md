@@ -18,7 +18,7 @@ evidence:
   - metric: Import documents read by AI instead of typed
     value: 5 types, 88–95% needing no correction
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 TallyPrime is excellent at what it's for: the books. Businesses outgrow it not because it gets worse, but because more of their work happens somewhere Tally can't see. Here are the seven signs we see most — each one drawn from a business we've built for, with what fixed it.
@@ -54,6 +54,8 @@ A boiler's statutory folder, a test-certificate trail, a customs file. If a pers
 ## Do you have to replace Tally?
 
 Usually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as the boiler manufacturer did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.
+
+When it's time to write down what the next system must do, start from the [ERP requirements checklist](/erp/requirements), or let the [requirements builder](/erp/check) pick the lines that apply to your business.
 
 ## Boundary
 

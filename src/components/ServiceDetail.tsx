@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Service, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
+import { requirements } from "@/lib/erp";
 
 // The body of one service: answer, who it's for, how it works, the numbers,
 // buyer questions, proof and clients.
@@ -57,6 +58,20 @@ export function ServiceDetail({ service }: { service: Service }) {
           </div>
         ))}
       </dl>
+
+      {(() => {
+        // The ERP checklist lines this service delivers, so a buyer comparing vendors can test for it.
+        const reqs = requirements.filter((r) => r.service === service.slug);
+        return reqs.length > 0 ? (
+          <p className="mt-8 leading-relaxed text-foreground-secondary">
+            What to require from any vendor for this:{" "}
+            <Link href={`/erp/requirements#${reqs[0].id.replace(/\./g, "-")}`} className="text-link focus-ring">
+              {reqs.length} line{reqs.length === 1 ? "" : "s"} on the ERP requirements checklist
+            </Link>
+            , each with the test to ask for in a demo.
+          </p>
+        ) : null;
+      })()}
 
       <h2 className="mt-12 text-sm font-medium text-foreground-secondary">Questions buyers ask</h2>
       <dl className="mt-4 divide-y divide-line border-t border-line">

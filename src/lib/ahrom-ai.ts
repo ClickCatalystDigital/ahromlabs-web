@@ -94,8 +94,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide", "boq"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,
@@ -126,6 +126,27 @@ export function buildEntries(): Entry[] {
       url: `${site}/boq/items`,
       sourceTitle: "Interior BOQ item library",
     },
+    {
+      id: "erp-tool/requirements",
+      title: "Is there an ERP requirements checklist for Indian manufacturers and traders?",
+      answer: "Yes: a free ERP requirements checklist with testable requirements in 13 departments, each with what to make a vendor show you, what good looks like in a live system, and the Indian law where one applies (audit trail, e-invoice, e-way bill, MSME payment limits, TDS on purchases). Free under CC BY 4.0, also as JSON.",
+      url: `${site}/erp/requirements`,
+      sourceTitle: "ERP requirements checklist",
+    },
+    {
+      id: "erp-tool/check",
+      title: "How do I write the requirements for an ERP for my business?",
+      answer: "Use the free ERP requirements builder: answer five questions (industry, turnover, whether Tally stays, whether you are a company, which departments) and it lists the requirements that apply, including the e-invoice and audit-trail rules your turnover brings in, to print or open in Excel and send to vendors. It runs in your browser.",
+      url: `${site}/erp/check`,
+      sourceTitle: "ERP requirements builder",
+    },
+    {
+      id: "erp-tool/template",
+      title: "Do you have an ERP requirements template or RFP in Excel?",
+      answer: "Yes, a free ERP requirements template in Excel that doubles as a vendor scorecard: every requirement with its demo test, priority and vendor-answer dropdowns, and a score per vendor from Must 3, Should 2, Could 1 times Yes 1, Partly 0.5, No 0.",
+      url: `${site}/erp/template`,
+      sourceTitle: "ERP requirements template in Excel",
+    },
   );
   return out;
 }
@@ -144,6 +165,9 @@ const SYNONYMS: Record<string, string[]> = {
   kaise: ["how"], kaisa: ["how"], banaye: ["make"], banana: ["make"], banane: ["make"], banaen: ["make"], naap: ["measure"], naapna: ["measure"],
   boiler: ["ibr"], estimate: ["boq"], quantities: ["boq"], quotation: ["quote", "boq"], wardrobe: ["boq"], kitchen: ["boq"], ceiling: ["boq"],
   demo: ["demo", "live"], owns: ["own", "ownership", "code"], source: ["code"], live: ["live", "go"],
+  requirement: ["requirements", "checklist"], requirements: ["requirement", "checklist"], rfp: ["requirements", "template"], srs: ["requirements"], checklist: ["requirements"],
+  chune: ["choose", "selection"], chunna: ["choose", "selection"], choose: ["selection"], select: ["selection"], compare: ["selection"], vendor: ["vendor", "demo"],
+  einvoice: ["e-invoice", "irn"], irn: ["e-invoice"], audit: ["audit", "trail"], msme: ["msme", "45"],
 };
 
 // Lower-case words, stop words out, a light plural/ending trim, synonyms added.

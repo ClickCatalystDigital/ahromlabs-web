@@ -28,6 +28,10 @@ export function renderOgImage({
   // A JPEG or PNG data URI (satori can't read WebP), shown beside the text.
   art?: string;
 }) {
+  // The card font has no ₹ glyph and the renderer can't fetch one, so cards read "Rs" instead.
+  const rs = (t: string) => t.replace(/₹\s?/g, "Rs ");
+  title = rs(title);
+  description = rs(description);
   const pilcrowData = base64ToArrayBuffer(pilcrowRegularBase64);
   const logoSrc = `data:image/png;base64,${ogLogoBase64}`;
 

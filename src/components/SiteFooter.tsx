@@ -30,6 +30,7 @@ const columns: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/systems", label: "Systems glossary" },
       { href: "/ibr", label: "IBR 2026 guide" },
       { href: "/boq", label: "Interior BOQ guide" },
+      { href: "/erp", label: "ERP requirements guide" },
     ],
   },
   {

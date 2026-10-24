@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";
+import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { track } from "@/lib/analytics";
 
 // Declarative WebMCP: a browser agent can fill this form as a tool. No toolautosubmit,
@@ -20,6 +20,19 @@ export function ContactForm() {
   const phoneId = useId();
   const waId = useId();
   const [status, setStatus] = useState<Status>("idle");
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  // A tool on the site (e.g. the ERP requirements builder) can leave a draft message for this tab
+  // in sessionStorage; it fills an empty box once and is then removed. Never via the URL.
+  useEffect(() => {
+    try {
+      const draft = sessionStorage.getItem("contact-prefill");
+      if (draft && messageRef.current && !messageRef.current.value) {
+        messageRef.current.value = draft;
+        sessionStorage.removeItem("contact-prefill");
+      }
+    } catch {}
+  }, []);
   const [error, setError] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -95,6 +108,7 @@ export function ContactForm() {
         </label>
         <textarea
           id={messageId}
+          ref={messageRef}
           name="message"
           rows={5}
           {...param("What the business is trying to solve, in plain words")}

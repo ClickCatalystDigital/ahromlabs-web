@@ -14,7 +14,7 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp" };
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -111,11 +111,14 @@ function loadKind(kind) {
     // BOQ guides (content/boq/) name their official sources too; `checks` are
     // optional there, since most cite standards by number (BIS texts are paid)
     // rather than quote them. Where a guide does quote, the quote must be exact.
-    if (kind === "boq") {
-      if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
+    // ERP guides that rest on practice rather than a rule (readiness, implementation, the industry
+    // guides) may have no official source; when they cite one, it is checked the same way.
+    if (kind === "boq" || kind === "erp") {
+      if (kind === "boq" && (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0)) {
         throw new Error(`content/${relPath}: a BOQ guide needs "sources" (official documents it relies on)`);
       }
-      for (const [i, src] of frontmatter.sources.entries()) {
+      assertArrayIfPresent(frontmatter.sources, "sources", relPath);
+      for (const [i, src] of (frontmatter.sources ?? []).entries()) {
         for (const field of ["title", "publisher", "url", "date"]) assertString(src?.[field], `sources[${i}].${field}`, relPath);
         if (!/^https:\/\//.test(src.url)) throw new Error(`content/${relPath}: sources[${i}].url must be https`);
       }
@@ -125,7 +128,8 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      if (["items", "check", "template"].includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /boq/${slug}`);
+      const taken = kind === "boq" ? ["items", "check", "template"] : ["requirements", "check", "template"];
+      if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     if (kind === "guide") {
       if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
@@ -168,6 +172,7 @@ const patterns = loadKind("pattern");
 const industries = loadKind("industry");
 const guides = loadKind("guide");
 const boqGuides = loadKind("boq");
+const erpGuides = loadKind("erp");
 
 // Cross-reference check: every `patterns`/`notes` edge in a note or industry
 // must point at a real entry. Runs here, at script time, so a broken reference
@@ -221,8 +226,9 @@ const RENDERERS = {
   terms: ["src/app/systems/[slug]"],
   ibr: ["src/app/ibr/[slug]", "src/components/IbrPage.tsx", "src/components/GuidePage.tsx"],
   boq: ["src/app/boq/[slug]", "src/components/BoqPage.tsx", "src/components/GuidePage.tsx"],
+  erp: ["src/app/erp/[slug]", "src/components/ErpPage.tsx", "src/components/GuidePage.tsx", "src/lib/erp.ts"],
 };
-const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq" };
+const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp" };
 for (const [dir, renderers] of Object.entries(RENDERERS)) {
   const files = fs.readdirSync(path.join(CONTENT_ROOT, dir)).filter((f) => f.endsWith(".md"));
   for (const file of files) {
@@ -241,6 +247,11 @@ PAGE_SOURCES["boq/items"] = ["src/app/boq/items/page.tsx", ...BOQ_FRAME];
 PAGE_SOURCES["boq/items/*"] = ["src/app/boq/items/[trade]", ...BOQ_FRAME];
 PAGE_SOURCES["boq/template"] = ["src/app/boq/template", ...BOQ_FRAME];
 PAGE_SOURCES["boq/check"] = ["src/app/boq/check", "src/components/BoqCheck.tsx", "src/lib/boq-check.ts", ...BOQ_FRAME];
+const ERP_FRAME = ["src/components/ErpPage.tsx", "src/components/GuidePage.tsx", "src/lib/erp.ts"];
+PAGE_SOURCES.erp = ["content/erp", "src/app/erp/page.tsx", ...ERP_FRAME];
+PAGE_SOURCES["erp/requirements"] = ["src/app/erp/requirements", ...ERP_FRAME];
+PAGE_SOURCES["erp/template"] = ["src/app/erp/template", ...ERP_FRAME];
+PAGE_SOURCES["erp/check"] = ["src/app/erp/check", "src/components/ErpCheck.tsx", "src/lib/erp-check.ts", ...ERP_FRAME];
 
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
@@ -251,8 +262,8 @@ for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
 }
 fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
-const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides];
+const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides, ...erpGuides];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides, ${erpGuides.length} ERP guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );

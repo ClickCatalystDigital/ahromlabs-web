@@ -15,6 +15,13 @@ import { headingId, textOf, markdownHeadings } from "@/lib/headings";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 import { seoTitle, metaDescription } from "@/lib/seo";
 
+// Each industry's ERP requirements guide (content/erp), linked from its page.
+const ERP_GUIDE: Record<string, string> = {
+  "boiler-pressure-vessel-manufacturing": "small-manufacturers",
+  "electronics-component-trading": "trading-distribution",
+  "interior-design-and-furniture": "interior-design-firms",
+};
+
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
 
@@ -187,6 +194,16 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
           )}
           <div className="prose-measure lg:order-1">
             <Markdown components={markdownComponents}>{industry.body}</Markdown>
+
+            {ERP_GUIDE[industry.slug] && (
+              <p className="mt-10 leading-relaxed text-foreground-secondary">
+                Writing down what a system must do before you buy one?{" "}
+                <Link href={`/erp/${ERP_GUIDE[industry.slug]}`} className="text-link focus-ring">
+                  The ERP requirements for this kind of business
+                </Link>
+                , each with the test to ask any vendor for.
+              </p>
+            )}
 
             {industry.demo && (
               <div className="mt-12 border-t border-line pt-8">

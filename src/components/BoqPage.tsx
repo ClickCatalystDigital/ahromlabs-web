@@ -54,6 +54,10 @@ export const BOQ_HUB: Hub = {
         <Link href="/industries/interior-design-and-furniture" className="text-link focus-ring">
           system for interior designers
         </Link>
+        {" · "}
+        <Link href="/erp/interior-design-firms" className="text-link focus-ring">
+          what to require from one
+        </Link>
       </p>
     </>
   ),

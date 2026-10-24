@@ -3,6 +3,7 @@ import { getContent, termHasPage } from "@/lib/content";
 import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 import { trades, BOQ_CHECKED } from "@/lib/boq";
+import { ERP_CHECKED } from "@/lib/erp";
 import { families, services } from "@/lib/services";
 
 const siteUrl = "https://ahromlabs.com";
@@ -161,5 +162,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes];
+  // ERP requirements pages: guides from their `updated`, the tools from when the library was checked.
+  const erpGuides = getContent("erp");
+  const erpUpdated = [ERP_CHECKED, ...erpGuides.map((g) => g.updated)].sort().at(-1)!;
+  const erpRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/erp`, lastModified: changed("erp", erpUpdated), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/erp/requirements`, lastModified: changed("erp/requirements", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/erp/check`, lastModified: changed("erp/check", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/erp/template`, lastModified: changed("erp/template", ERP_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    ...erpGuides.map((g) => ({
+      url: `${siteUrl}/erp/${g.slug}`,
+      lastModified: changed(`erp/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      ...(g.image && { images: [`${siteUrl}${g.image.src}`] }),
+    })),
+  ];
+
+  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes];
 }

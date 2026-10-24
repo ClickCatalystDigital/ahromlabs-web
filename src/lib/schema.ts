@@ -475,9 +475,9 @@ export const boqDataset = {
   ],
 };
 
-// One TechArticle per /boq page with its breadcrumb, linked to the Dataset;
-// the checker page adds a WebApplication.
-export function boqPageGraph(page: {
+// One TechArticle per hub page with its breadcrumb, linked to the hub's Dataset;
+// a tool page adds a WebApplication. Shared by /boq and /erp.
+type HubPage = {
   path: string;
   title: string;
   description: string;
@@ -486,13 +486,16 @@ export function boqPageGraph(page: {
   trail: { name: string; path: string }[];
   image?: { src: string; alt: string };
   app?: boolean;
-}) {
+};
+export const boqPageGraph = (page: HubPage) => datasetPageGraph(boqDataset, "Interior BOQ checker", page);
+
+function datasetPageGraph(dataset: { "@id": string }, appName: string, page: HubPage) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
     "@context": "https://schema.org",
     "@graph": [
-      boqDataset,
+      dataset,
       {
         "@type": "TechArticle",
         "@id": `${url}#article`,
@@ -501,7 +504,7 @@ export function boqPageGraph(page: {
         description: page.description,
         datePublished: page.published,
         dateModified: page.updated,
-        isBasedOn: { "@id": boqDataset["@id"] },
+        isBasedOn: { "@id": dataset["@id"] },
         author: { "@id": `${siteUrl}/#founder` },
         publisher: { "@id": `${siteUrl}/#organization` },
         isPartOf: { "@id": `${siteUrl}/#website` },
@@ -516,7 +519,7 @@ export function boqPageGraph(page: {
             {
               "@type": "WebApplication",
               "@id": `${url}#app`,
-              name: "Interior BOQ checker",
+              name: appName,
               url,
               applicationCategory: "BusinessApplication",
               operatingSystem: "Any (runs in the browser)",
@@ -539,3 +542,30 @@ export function boqPageGraph(page: {
     ],
   };
 }
+
+// The ERP requirements library as a Dataset, like the BOQ one: CC BY 4.0, with
+// the JSON, CSV and Excel downloads. Every /erp page points at it.
+export const erpDataset = {
+  "@type": "Dataset",
+  "@id": `${siteUrl}/erp/requirements#dataset`,
+  name: "ERP requirements library for Indian manufacturers and traders",
+  description:
+    "Testable ERP requirements by department, each with why it matters, what a vendor must demonstrate, and where it applies; Indian statutory requirements quoted from the official text.",
+  url: `${siteUrl}/erp/requirements`,
+  keywords: ["ERP requirements", "ERP requirements checklist", "RFP", "e-invoice", "audit trail", "TallyPrime", "manufacturing ERP", "India"],
+  creator: { "@id": `${siteUrl}/#organization` },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  inLanguage: "en-IN",
+  spatialCoverage: { "@type": "Place", name: "India" },
+  distribution: [
+    { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${siteUrl}/erp/requirements.json` },
+    { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/erp/erp-requirements-template.csv` },
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      contentUrl: `${siteUrl}/erp/erp-requirements-template.xlsx`,
+    },
+  ],
+};
+export const erpPageGraph = (page: HubPage) => datasetPageGraph(erpDataset, "ERP requirements checker", page);

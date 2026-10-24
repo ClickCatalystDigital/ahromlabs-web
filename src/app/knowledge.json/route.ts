@@ -5,6 +5,7 @@ import { boqItems, trades, IS, SPEC, UNIT_LABEL } from "@/lib/boq";
 import { services, families, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
+import { erpRequirementNodes } from "@/lib/erp-json";
 
 // Bare route.ts defaults to dynamic rendering since Next.js 15 — force-static
 // keeps this prerendered at build time, consistent with the rest of the site.
@@ -18,7 +19,7 @@ function contentUrl(entry: ContentEntry): string {
   if (entry.kind === "term") {
     return `${siteUrl}/systems${termHasPage(entry) ? `/${entry.slug}` : `#${entry.slug}`}`;
   }
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq" }[entry.kind];
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp" }[entry.kind];
   return `${siteUrl}/${segment}/${entry.slug}`;
 }
 
@@ -36,6 +37,7 @@ export function GET() {
     ...getContent("industry"),
     ...getContent("guide"),
     ...getContent("boq"),
+    ...getContent("erp"),
   ].map((entry) => ({
     ...entry,
     url: contentUrl(entry),
@@ -139,7 +141,7 @@ export function GET() {
     url: `${siteUrl}/about/pujan-motiwala`,
   };
 
-  return NextResponse.json([founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes], {
+  return NextResponse.json([founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes, ...erpRequirementNodes()], {
     headers: { "Cache-Control": "public, max-age=3600" },
   });
 }

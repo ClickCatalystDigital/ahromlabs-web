@@ -1,6 +1,7 @@
 import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrFormPages, formName } from "@/lib/ibr-forms";
 import { boqItems, trades, tradeItems, UNIT_LABEL } from "@/lib/boq";
+import { requirements, departments } from "@/lib/erp";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -125,6 +126,13 @@ export function GET() {
       .map((t) => `- [${t.name} BOQ items](https://ahromlabs.com/boq/items/${t.slug}): ${tradeItems(t.slug).map((i) => `${i.name} (${UNIT_LABEL[i.unit]})`).join("; ")}.`)
       .join("\n");
 
+  const erp =
+    `- [ERP requirements for Indian manufacturers and traders](https://ahromlabs.com/erp): What to ask for before buying or building an ERP, with a test for every requirement and Indian statutory rules quoted from the official text.\n` +
+    `- [ERP requirements checklist](https://ahromlabs.com/erp/requirements): ${requirements.length} testable requirements in ${departments.length} departments, each with why, the vendor demo test, a live benchmark and the law where one applies. As data (CC BY 4.0): https://ahromlabs.com/erp/requirements.json\n` +
+    `- [ERP requirements builder](https://ahromlabs.com/erp/check): Five answers (industry, turnover, Tally, company, departments) give the requirements that apply. Runs in the browser.\n` +
+    `- [ERP requirements template in Excel](https://ahromlabs.com/erp/template): RFP and vendor scorecard in one sheet.\n` +
+    getContent("erp").map(line("erp")).join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -133,6 +141,7 @@ export function GET() {
     `\n## Working with Ahrom Labs\n\n${working}\n` +
     `\n## IBR 2026 (Indian Boiler Regulations)\n\n${ibr}\n` +
     `\n## Interior BOQ (bill of quantities)\n\n${boq}\n` +
+    `\n## ERP requirements (India)\n\n${erp}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

@@ -1,6 +1,19 @@
 [
   {
     "kind": "term",
+    "slug": "audit-trail",
+    "title": "Audit trail (edit log)",
+    "answer": "A record, kept by accounting software for every transaction, of each change made to the books and the date it was made, which the user cannot switch off.",
+    "domain": [
+      "operations"
+    ],
+    "order": 1,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Indian companies that keep their books in accounting software must use software with this feature for financial years from 1 April 2023, under the proviso to rule 3(1) of the Companies (Accounts) Rules, 2014, and their auditors report on it.\n\nIn an ERP it means more than a history tab: the old value, the new value, who changed it and when, for every entry, including those migrated from an older system. See the [audit-trail requirement](/erp/requirements#accounts-audit-trail) and [GST, TDS and statutory compliance](/services/compliance-accounting)."
+  },
+  {
+    "kind": "term",
     "slug": "business-rule",
     "title": "Business rule",
     "answer": "A constraint the business enforces regardless of which application is being used, such as an approval threshold or an eligibility condition.",
@@ -24,6 +37,19 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "data-migration",
+    "title": "Data migration",
+    "answer": "Moving records from an old system or spreadsheets into a new one, checked so that nothing is lost or attached to the wrong record.",
+    "domain": [
+      "operations"
+    ],
+    "order": 12,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Ahrom Labs moves history row by row and holds any row that can't be matched to exactly one record for a person, rather than guessing. See the note [sales history moved without guessing](/notes/sales-history-moved-without-guessing) and the [migration requirement](/erp/requirements#sales-history-migration)."
   },
   {
     "kind": "term",
@@ -66,6 +92,32 @@
   },
   {
     "kind": "term",
+    "slug": "e-invoice",
+    "title": "E-invoice (IRN)",
+    "answer": "A B2B invoice, credit note or debit note registered on the GST invoice registration portal (IRP), which returns an invoice reference number (IRN) and a signed QR code.",
+    "domain": [
+      "operations"
+    ],
+    "order": 2,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Registered persons whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18 must e-invoice from 1 August 2023 (Notification 10/2023–Central Tax). From 1 April 2025, taxpayers with annual aggregate turnover of ₹10 crore and above cannot report a document to the IRP more than 30 days after its date (GSTN advisory, 5 November 2024).\n\nSee the [e-invoice requirements](/erp/requirements#accounts-e-invoice). Ahrom Labs has not yet built an IRP connection."
+  },
+  {
+    "kind": "term",
+    "slug": "e-way-bill",
+    "title": "E-way bill",
+    "answer": "The electronic document generated on the GST e-way bill system before goods move, required under rule 138 of the CGST Rules for a consignment value exceeding ₹50,000.",
+    "domain": [
+      "operations"
+    ],
+    "order": 3,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "An ERP should produce the e-way bill from the invoice and dispatch record rather than having someone retype the consignment into the portal at the gate. See the [e-way bill requirement](/erp/requirements#dispatch-eway-bill); Ahrom Labs has built a direct NIC client to the official v1.03 spec, live once a client's NIC account is set up."
+  },
+  {
+    "kind": "term",
     "slug": "entity",
     "title": "Entity",
     "answer": "A distinct thing the business tracks: a customer, an order, an employee, an asset. Entities are the nouns the rest of the system refers to.",
@@ -89,6 +141,45 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "fixed-asset-register",
+    "title": "Fixed-asset register",
+    "answer": "The record of a business's fixed assets with their cost, the date each was put to use, and depreciation.",
+    "domain": [
+      "operations"
+    ],
+    "order": 10,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Kept inside the ERP and posted to the ledger, it stays in agreement with the books; kept in a spreadsheet, it rarely does. See the [fixed-asset requirement](/erp/requirements#accounts-fixed-assets)."
+  },
+  {
+    "kind": "term",
+    "slug": "material-traceability",
+    "title": "Material traceability",
+    "answer": "Following each piece of material, with its heat or batch and its test certificate, from receipt through cutting into the product it became.",
+    "domain": [
+      "operations"
+    ],
+    "order": 6,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "For pressure parts, traceability is what lets a statutory folder show which certificate covers which part. See the [traceability requirements](/erp/requirements#quality-certificate-bank) and [material traceability, cutting and remnants](/services/material-traceability)."
+  },
+  {
+    "kind": "term",
+    "slug": "msme-payment-rule",
+    "title": "MSME payment rule",
+    "answer": "The rule that a buyer must pay a micro or small enterprise supplier by the agreed date, which can never be more than 45 days from acceptance, or within 15 days where there is no written agreement.",
+    "domain": [
+      "operations"
+    ],
+    "order": 7,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "It comes from section 15 of the MSMED Act, 2006. Under the Income-tax Act, 2025, section 37(2)(g), an amount paid to such a supplier beyond that time limit is deductible only when actually paid. How it applies to a particular business is a question for a CA. See the [MSME requirements](/erp/requirements#purchase-msme-due-dates)."
   },
   {
     "kind": "term",
@@ -118,6 +209,32 @@
   },
   {
     "kind": "term",
+    "slug": "reverse-charge",
+    "title": "Reverse charge",
+    "answer": "A GST arrangement where the buyer, not the supplier, pays the tax on certain purchases.",
+    "domain": [
+      "operations"
+    ],
+    "order": 9,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Because no supplier invoice shows the tax, an ERP must mark these purchases and compute the liability for the return. See the [reverse-charge requirement](/erp/requirements#accounts-reverse-charge)."
+  },
+  {
+    "kind": "term",
+    "slug": "role-based-access",
+    "title": "Role-based access",
+    "answer": "Controlling what each person can see and do by their role, enforced by the system itself rather than by hiding things on screen.",
+    "domain": [
+      "operations"
+    ],
+    "order": 11,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "In the Savistar & Saag system, staff see only their own cash entries and every bank route refuses staff at the API. See the [access requirement](/erp/requirements#nonfunctional-role-access) and the pattern [role-scoped finance views](/patterns/role-scoped-finance-views)."
+  },
+  {
+    "kind": "term",
     "slug": "state-transition",
     "title": "State transition",
     "answer": "A recorded change in an entity's status, such as an order moving from placed to fulfilled, along with what caused the change.",
@@ -128,6 +245,45 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "stock-reservation",
+    "title": "Stock reservation",
+    "answer": "Setting physical stock aside against a specific customer order line, so the same unit can't be promised to two customers.",
+    "domain": [
+      "operations"
+    ],
+    "order": 5,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "In the LS Technologies system, whole reels are reserved per customer PO line, oldest first, and shipping a reserved reel elsewhere needs a manager's override. See the [reservation requirement](/erp/requirements#stores-reservations) and [QR inventory and order reservations](/services/inventory-and-reservations)."
+  },
+  {
+    "kind": "term",
+    "slug": "tds-on-purchases",
+    "title": "TDS on purchase of goods",
+    "answer": "Tax a buyer deducts when paying a seller for goods beyond ₹50 lakh in a year, where the buyer's turnover exceeded ₹10 crore in the preceding year.",
+    "domain": [
+      "operations"
+    ],
+    "order": 8,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Under the Income-tax Act, 2025 it is row 8(ii) of the table in section 393(1), formerly section 194Q of the 1961 Act. An ERP has to track each seller's running total to deduct from the right bill. See the [TDS requirement](/erp/requirements#accounts-tds-purchases); confirm your position with a CA."
+  },
+  {
+    "kind": "term",
+    "slug": "three-way-match",
+    "title": "Three-way match",
+    "answer": "Checking each supplier bill against its purchase order and the goods actually received before it is approved for payment.",
+    "domain": [
+      "operations"
+    ],
+    "order": 4,
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "body": "Differences in quantity or rate between the three are flagged for a person, so a short supply isn't paid in full. See the [three-way match requirement](/erp/requirements#purchase-three-way-match)."
   },
   {
     "kind": "term",
@@ -418,8 +574,8 @@
       }
     ],
     "published": "2026-09-24",
-    "updated": "2026-10-17",
-    "body": "TallyPrime is excellent at what it's for: the books. Businesses outgrow it not because it gets worse, but because more of their work happens somewhere Tally can't see. Here are the seven signs we see most — each one drawn from a business we've built for, with what fixed it.\n\n## 1. The same invoice is typed twice\n\nOnce into a spreadsheet or web app for operations, once into Tally for accounts. At [LS Technologies](/industries/electronics-component-trading), an electronics importer, approved invoices now post into Tally as vouchers within 30 seconds through a small agent on the Tally PC — no second typing. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting).\n\n## 2. Someone reads every PDF and keys it in\n\nPurchase invoices, freight bills, bills of entry, bank statements. At the same business, AI reads five document types directly from the PDF, and 88–95% need no correction depending on type — but every one is still approved by a person before it posts. See [AI extraction with a human in the loop](/notes/ai-extraction-human-in-the-loop).\n\n## 3. Sales keeps asking accounts what a customer owes\n\nOutstanding balances live in Tally; the sales team doesn't. The fix is syncing them back: in the same system, voucher status and outstanding bills flow from Tally to the sales side every 15 minutes.\n\n## 4. Production runs on a parallel Excel\n\nWork orders, job cards, material issues, what's waiting on what — none of it fits vouchers. At [a boiler manufacturer](/industries/boiler-pressure-vessel-manufacturing), each boiler is a project with its own bill of materials and milestones across design, procurement, stores, production, QC and dispatch, and the system shows what each step is waiting on.\n\n## 5. Your stock isn't really a count\n\nSteel plate gets cut; the offcut is a specific piece, not \"one more plate\". Reels of components move between locations. Tally stores quantities. In the system built for that manufacturer, every plate is a piece with dimensions and every cut is recorded, so a 15.70 kg remnant goes back into stock instead of being scrapped. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## 6. Two companies, one owner, one office\n\nA design firm and its furniture workshop; a trading firm and its sister concern. Two sets of books, one client list, and staff who need to record cash without seeing the bank. At [Savistar and Saag](/industries/interior-design-and-furniture), both run on one system: each invoice carries its own company's GSTIN, and staff see only their own cash entries. See [Two companies, one book](/notes/two-companies-one-book).\n\n## 7. Industry paperwork is assembled by hand\n\nA boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as that manufacturer's IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## Do you have to replace Tally?\n\nUsually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as the boiler manufacturer did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.\n\n## Boundary\n\nThese signs come from three businesses — trading, manufacturing, interior design. If only one or two apply, a smaller fix (an integration, a report) may be enough; that's worth finding out before building anything."
+    "updated": "2026-10-25",
+    "body": "TallyPrime is excellent at what it's for: the books. Businesses outgrow it not because it gets worse, but because more of their work happens somewhere Tally can't see. Here are the seven signs we see most — each one drawn from a business we've built for, with what fixed it.\n\n## 1. The same invoice is typed twice\n\nOnce into a spreadsheet or web app for operations, once into Tally for accounts. At [LS Technologies](/industries/electronics-component-trading), an electronics importer, approved invoices now post into Tally as vouchers within 30 seconds through a small agent on the Tally PC — no second typing. See [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting).\n\n## 2. Someone reads every PDF and keys it in\n\nPurchase invoices, freight bills, bills of entry, bank statements. At the same business, AI reads five document types directly from the PDF, and 88–95% need no correction depending on type — but every one is still approved by a person before it posts. See [AI extraction with a human in the loop](/notes/ai-extraction-human-in-the-loop).\n\n## 3. Sales keeps asking accounts what a customer owes\n\nOutstanding balances live in Tally; the sales team doesn't. The fix is syncing them back: in the same system, voucher status and outstanding bills flow from Tally to the sales side every 15 minutes.\n\n## 4. Production runs on a parallel Excel\n\nWork orders, job cards, material issues, what's waiting on what — none of it fits vouchers. At [a boiler manufacturer](/industries/boiler-pressure-vessel-manufacturing), each boiler is a project with its own bill of materials and milestones across design, procurement, stores, production, QC and dispatch, and the system shows what each step is waiting on.\n\n## 5. Your stock isn't really a count\n\nSteel plate gets cut; the offcut is a specific piece, not \"one more plate\". Reels of components move between locations. Tally stores quantities. In the system built for that manufacturer, every plate is a piece with dimensions and every cut is recorded, so a 15.70 kg remnant goes back into stock instead of being scrapped. See [Putting steel plate offcuts back into stock](/notes/plate-remnants-back-into-stock).\n\n## 6. Two companies, one owner, one office\n\nA design firm and its furniture workshop; a trading firm and its sister concern. Two sets of books, one client list, and staff who need to record cash without seeing the bank. At [Savistar and Saag](/industries/interior-design-and-furniture), both run on one system: each invoice carries its own company's GSTIN, and staff see only their own cash entries. See [Two companies, one book](/notes/two-companies-one-book).\n\n## 7. Industry paperwork is assembled by hand\n\nA boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as that manufacturer's IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).\n\n## Do you have to replace Tally?\n\nUsually not. There are two sound paths. Keep Tally as the books and connect an operations system to it, as LS Technologies did — the accountant's workflow doesn't change. Or move the books into the operations system and keep Tally as an optional sync, as the boiler manufacturer did. Which one fits depends on how much of your accounting starts as operational events. The [comparison of Tally, ERPNext, Odoo and custom](/notes/tally-vs-erpnext-vs-custom-erp) covers the choice in full.\n\nWhen it's time to write down what the next system must do, start from the [ERP requirements checklist](/erp/requirements), or let the [requirements builder](/erp/check) pick the lines that apply to your business.\n\n## Boundary\n\nThese signs come from three businesses — trading, manufacturing, interior design. If only one or two apply, a smaller fix (an integration, a report) may be enough; that's worth finding out before building anything."
   },
   {
     "kind": "note",
@@ -718,8 +874,8 @@
       }
     ],
     "published": "2026-09-24",
-    "updated": "2026-10-17",
-    "body": "Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely \"which software is best\"; it's which one matches how much of your business is standard.\n\n## When is TallyPrime enough?\n\nWhen what you need is accounting: double-entry books, vouchers, GST returns, and stock as quantities on invoices. Every CA in India knows it, and for a small company whose problem is the books, it's hard to beat on cost. It stops being enough when work starts happening outside it — the widely quoted sign is a production manager keeping a parallel Excel for work orders, because in Tally stock is an attribute of a voucher rather than something that moves through a factory ([ERPDrive](https://erpdrive.in/blog/erp-vs-tally-for-manufacturing.html)). Multi-level bills of materials — assemblies inside assemblies — are where most manufacturers feel it first.\n\n## When are ERPNext or Odoo the better choice?\n\nWhen your processes look like the ones they ship. ERPNext is open source, built in India, with no per-user licence fees and strong GST, e-way bill and e-invoicing support; Odoo's community edition is free, with enterprise features and many modules paid ([Ksolves](https://www.ksolves.com/blog/odoo/compare-odoo-vs-erpnext), [Cudio](https://www.cudio.com/blog/erpnext-vs-odoo)). If an implementation partner can configure one to fit your business without writing much code, it will be faster and cheaper than a custom build — take that option.\n\n## When does a custom system make sense?\n\nWhen the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder built from a bank of material test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.\n\n## What did a boiler manufacturer actually decide?\n\n[A boiler and pressure-vessel manufacturer](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\nThe cost is real, and worth stating: owning the ledger meant building GST returns, TDS, reverse charge, fixed assets and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.\n\n## A quick way to decide\n\n- Is your problem mostly the books and GST? **Stay on TallyPrime**, and connect your other tools to it if needed.\n- Do your processes match a standard manufacturing ERP, with little customisation? **ERPNext or Odoo**, through a good implementation partner.\n- Is there industry paperwork, traceability or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.\n- Not sure? That's what a modeling phase is for: [map the business first](/engagement#pricing), then choose.\n\n## Boundary\n\nThe package descriptions above summarise the cited comparisons as of September 2026; licences and editions change, so check current terms before deciding. We have not implemented ERPNext or Odoo for a client — this guide compares them from the outside."
+    "updated": "2026-10-25",
+    "body": "Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely \"which software is best\"; it's which one matches how much of your business is standard.\n\n## When is TallyPrime enough?\n\nWhen what you need is accounting: double-entry books, vouchers, GST returns, and stock as quantities on invoices. Every CA in India knows it, and for a small company whose problem is the books, it's hard to beat on cost. It stops being enough when work starts happening outside it — the widely quoted sign is a production manager keeping a parallel Excel for work orders, because in Tally stock is an attribute of a voucher rather than something that moves through a factory ([ERPDrive](https://erpdrive.in/blog/erp-vs-tally-for-manufacturing.html)). Multi-level bills of materials — assemblies inside assemblies — are where most manufacturers feel it first.\n\n## When are ERPNext or Odoo the better choice?\n\nWhen your processes look like the ones they ship. ERPNext is open source, built in India, with no per-user licence fees and strong GST, e-way bill and e-invoicing support; Odoo's community edition is free, with enterprise features and many modules paid ([Ksolves](https://www.ksolves.com/blog/odoo/compare-odoo-vs-erpnext), [Cudio](https://www.cudio.com/blog/erpnext-vs-odoo)). If an implementation partner can configure one to fit your business without writing much code, it will be faster and cheaper than a custom build — take that option.\n\n## When does a custom system make sense?\n\nWhen the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder built from a bank of material test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.\n\n## What did a boiler manufacturer actually decide?\n\n[A boiler and pressure-vessel manufacturer](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).\n\nThe cost is real, and worth stating: owning the ledger meant building GST returns, TDS, reverse charge, fixed assets and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.\n\n## A quick way to decide\n\n- Is your problem mostly the books and GST? **Stay on TallyPrime**, and connect your other tools to it if needed.\n- Do your processes match a standard manufacturing ERP, with little customisation? **ERPNext or Odoo**, through a good implementation partner.\n- Is there industry paperwork, traceability or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.\n- Not sure? That's what a modeling phase is for: [map the business first](/engagement#pricing), then choose.\n\nTo compare the options against your own requirements, line by line, use the [ERP selection matrix](/erp/selection-matrix) and the [requirements checklist](/erp/requirements).\n\n## Boundary\n\nThe package descriptions above summarise the cited comparisons as of September 2026; licences and editions change, so check current terms before deciding. We have not implemented ERPNext or Odoo for a client — this guide compares them from the outside."
   },
   {
     "kind": "note",
@@ -1995,5 +2151,331 @@
       }
     ],
     "body": "## What a BOQ is\n\nA BOQ is the list of work, not the price of it ([what one looks like in Excel](/boq/template)). Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.\n\nIts job is to make prices comparable. When three contractors price the same lines, the quotes differ only in rates, and a cheap quote can't hide a thinner board or a missing loft.\n\n## BOQ, estimate, quotation, BOM: the difference\n\n| Document | Who makes it | What it holds | Binding? |\n|---|---|---|---|\n| BOQ | Designer or quantity surveyor | Items, descriptions, units, quantities | No; it is the basis for prices |\n| Estimate | Designer or owner | The BOQ with expected rates: what the job should cost | No; internal |\n| Quotation | Contractor or the design-build studio | Rates, amounts, taxes, terms, validity | Yes, once accepted |\n| BOM | Manufacturer or workshop | Every part and material to make one product | No; it drives buying and cutting |\n\nThe BOM and the BOQ meet in a workshop. The client's BOQ has one line for a wardrobe priced by area; the workshop's BOM for that wardrobe lists the sheets of plywood, the laminate, the edge band and each hinge.\n\n## Rate analysis and schedules of rates\n\nA rate analysis breaks one item's rate into material, labour, wastage, overheads and profit. It is how a contractor arrives at the rate in a BOQ line, and how a designer checks one that looks too low.\n\nA schedule of rates is a published list of item rates. For central government works, the Central Public Works Department publishes the Delhi Schedule of Rates (DSR). It is a reference for how items are described and priced in government work, not a price list for private interiors in another city.\n\n## Lump sums, provisional sums and PC sums\n\n- **Lump sum**: one price for a defined scope (\"bathroom CP fittings, LS\"). Quick to write, but it hides what's inside; split it into named items wherever you can.\n- **Provisional sum**: an allowance for work not yet defined, adjusted when it is.\n- **Prime cost (PC) sum**: an allowance for something the client will choose later, such as tiles at a stated rate per sq ft, adjusted to the actual price.\n\nWhen a provisional or PC sum is settled, or anything else changes after the BOQ is agreed, it is recorded as a [variation order](/boq/variation-orders).\n\n## Boundary\n\nThis page explains the documents; it does not give rates. How each interior item is measured and specified is in the [item library](/boq/items), and the [checker](/boq/check) reads a BOQ from Excel and shows what each line leaves open."
+  },
+  {
+    "kind": "erp",
+    "slug": "compliance",
+    "title": "Indian compliance requirements for an ERP: audit trail, e-invoice, e-way bill, MSME, TDS",
+    "answer": "An ERP used in India has to meet rules the business is bound by: an audit trail that can't be switched off for companies keeping books in software (from 1 April 2023), e-invoices above ₹5 crore turnover, reporting to the portal within 30 days at ₹10 crore and above, e-way bills above ₹50,000, MSME payment limits of 45 days, TDS on purchases above ₹50 lakh for larger buyers, and safeguards for personal data.",
+    "description": "The Indian rules an ERP must meet in 2026, by turnover: audit trail, e-invoice (IRN), 30-day IRP limit, e-way bill, MSME 45 days, TDS on goods, DPDP.",
+    "domain": [
+      "erp",
+      "compliance",
+      "gst"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "sources": [
+      {
+        "title": "Companies (Accounts) Amendment Rules, 2021 (G.S.R. 205(E))",
+        "publisher": "Ministry of Corporate Affairs, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2021/226081.pdf",
+        "date": "2021-03-24"
+      },
+      {
+        "title": "Companies (Accounts) Second Amendment Rules, 2022 (G.S.R. 235(E))",
+        "publisher": "Ministry of Corporate Affairs, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2022/234733.pdf",
+        "date": "2022-03-31"
+      },
+      {
+        "title": "Notification No. 10/2023–Central Tax (e-invoice threshold)",
+        "publisher": "Central Board of Indirect Taxes and Customs (GST Council copy)",
+        "url": "https://gstcouncil.gov.in/sites/default/files/2024-05/10ct_eng.pdf",
+        "date": "2023-05-10"
+      },
+      {
+        "title": "Advisory: time limit for reporting e-invoice on the IRP portal (AATO ₹10 crore and above)",
+        "publisher": "GSTN",
+        "url": "https://www.mahagst.gov.in/public/uploads/gstnadvisory/1760531580_293%20Advisory%20Time%20Limit%20for%20Reporting%20e%20Invoice%20on%20the%20IRP%20Portal%20%20Lowering%20of%20Threshold%20to%20AATO%2010%20Crores%20and%20Above.pdf",
+        "date": "2024-11-05"
+      },
+      {
+        "title": "Notification No. 12/2018–Central Tax (rule 138, e-way bill)",
+        "publisher": "Central Board of Indirect Taxes and Customs (GST Council copy)",
+        "url": "https://gstcouncil.gov.in/sites/default/files/2024-05/notification-12-2018-central_tax-english.pdf",
+        "date": "2018-03-07"
+      },
+      {
+        "title": "Micro, Small and Medium Enterprises Development Act, 2006",
+        "publisher": "Gazette of India (Ministry of MSME copy)",
+        "url": "https://samadhaan.msme.gov.in/WriteReadData/DocumentFile/MSMED2006act.pdf",
+        "date": "2006-06-16"
+      },
+      {
+        "title": "Income-tax Act, 2025 (30 of 2025)",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2025/265620.pdf",
+        "date": "2025-08-22"
+      },
+      {
+        "title": "Digital Personal Data Protection Act, 2023",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2023/248045.pdf",
+        "date": "2023-08-11"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Companies (Accounts) Rules, 2014, rule 3(1), proviso",
+        "doc": "mca-audit-trail-2021",
+        "quote": "has a feature of recording audit trail of each and every transaction, creating an edit log of each change made in books of account along with the date when such changes were made and ensuring that the audit trail cannot be disabled"
+      },
+      {
+        "reg": "Companies (Accounts) Second Amendment Rules, 2022",
+        "doc": "mca-audit-trail-2022",
+        "quote": "the figures, letters and words “1st day of April, 2023” shall be substituted"
+      },
+      {
+        "reg": "Notification No. 10/2023–Central Tax",
+        "doc": "cbic-10-2023",
+        "quote": "the words “five crore rupees” shall be substituted"
+      },
+      {
+        "reg": "GSTN advisory, 5 November 2024",
+        "doc": "gstn-30-day",
+        "quote": "taxpayers with an AATO of 10 crores and above would not be allowed to report e-Invoices older than 30 days from the date of reporting on IRP portals"
+      },
+      {
+        "reg": "CGST Rules, 2017, rule 138",
+        "doc": "cgst-rule-138",
+        "quote": "consignment value exceeding fifty thousand rupees"
+      },
+      {
+        "reg": "MSMED Act, 2006, section 15, proviso",
+        "doc": "msmed-act-2006",
+        "quote": "Provided that in no case the period agreed upon between the supplier and the buyer in writing shall exceed forty-five days from the day of acceptance or the day of deemed acceptance"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 37(2)(g)",
+        "doc": "it-act-2025",
+        "quote": "amount payable by the assessee to a micro or small enterprise beyond the time limit specified in section 15 of the Micro, Small and Medium Enterprises Development Act, 2006"
+      },
+      {
+        "reg": "Digital Personal Data Protection Act, 2023, section 8(5)",
+        "doc": "dpdp-act-2023",
+        "quote": "reasonable security safeguards to prevent personal data breach"
+      }
+    ],
+    "body": "## Which rules apply to you\n\nMost rules turn on two facts: whether the business is a company, and its turnover. The [requirements builder](/erp/check) applies these for you.\n\n| Rule | Applies when | What the ERP must do |\n|---|---|---|\n| Audit trail | A company keeps its books in software | Log every change with its date; can't be switched off |\n| E-invoice (IRN) | Aggregate turnover above ₹5 crore in any year since 2017-18 | Get an IRN for each B2B invoice, credit and debit note |\n| 30-day IRP limit | Annual aggregate turnover ₹10 crore and above | Report each e-invoice within 30 days of its date |\n| E-way bill | Goods move with a consignment value above ₹50,000 | Produce the e-way bill from the dispatch |\n| MSME payment limit | Buying from a micro or small enterprise | Track each bill's due date, at most 45 days from acceptance |\n| TDS on purchase of goods | A buyer with turnover above ₹10 crore in the previous year | Track each seller's yearly total; deduct beyond ₹50 lakh |\n| Personal data | Holding digital personal data of staff, customers or contacts | Reasonable security safeguards; breaches can be traced |\n\n## Audit trail: every company keeping books in software\n\nSince 1 April 2023, a company that keeps its books in accounting software must use software that records an audit trail of every transaction: an edit log of each change, with its date, that cannot be disabled. The rule is a proviso to rule 3(1) of the Companies (Accounts) Rules, 2014, inserted in March 2021 and deferred twice to 1 April 2023. The company's auditor reports on it.\n\nFor an ERP that keeps the books, this means the old value, the new value, who changed it and when, for every entry, with no setting anywhere that turns it off. It also means no gap at cutover: the trail has to run through the move from the old system to the new one. See the [audit-trail requirement](/erp/requirements#accounts-audit-trail).\n\n## E-invoice, and the 30-day limit\n\nFrom 1 August 2023, registered persons whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18 must e-invoice: each B2B invoice, credit note and debit note is registered on the invoice registration portal (IRP), which returns an IRN and a signed QR code. Notification 10/2023–Central Tax lowered the threshold from ₹10 crore.\n\nFrom 1 April 2025, taxpayers with annual aggregate turnover of ₹10 crore and above cannot report a document to the IRP more than 30 days after its date; the portal refuses it. An ERP for such a business should show which invoices are still unreported and how many days each has left. See the [e-invoice requirements](/erp/requirements#accounts-e-invoice).\n\n## E-way bill\n\nUnder rule 138 of the CGST Rules, an e-way bill is needed before goods move with a consignment value exceeding ₹50,000. The ERP should produce it from the invoice and the dispatch, not have someone retype the consignment into the portal at the gate. See the [e-way bill requirement](/erp/requirements#dispatch-eway-bill).\n\n## MSME payment limits, and why they matter for tax\n\nSection 15 of the MSMED Act, 2006 requires a buyer to pay a micro or small enterprise supplier by the agreed date, and the agreed period can never exceed 45 days from acceptance; with no written agreement, the Act's appointed day applies. Section 16 adds compound interest on late payment.\n\nThe Income-tax Act, 2025, in section 37(2)(g), allows the deduction for an amount owed to such a supplier only when it is actually paid, if it is paid beyond that limit, and the usual grace until the return due date doesn't apply to it. So the ERP needs to know which suppliers are micro or small enterprises, and show each of their bills with its due date. How the rule applies to a particular business, a trader for example, is a question for your CA. See the [MSME requirements](/erp/requirements#purchase-msme-due-dates).\n\n## TDS on purchase of goods\n\nUnder the Income-tax Act, 2025, a buyer whose turnover exceeded ₹10 crore in the preceding tax year deducts tax on payments to a seller for goods beyond ₹50 lakh in the year (section 393(1), table row 8(ii), formerly section 194Q). The provision is a table, so it is cited here rather than quoted: read row 8(ii) and its note in the Act. The ERP has to keep each seller's running total for the year and start deducting on the bill that crosses it. See the [TDS requirement](/erp/requirements#accounts-tds-purchases).\n\n## Personal data\n\nA business holding digital personal data, of employees, customers or contacts, is a data fiduciary under the Digital Personal Data Protection Act, 2023. Section 8 requires reasonable security safeguards to prevent a personal data breach and intimation of a breach in the prescribed way. For an ERP, that means access to personal details limited by role and logged, and a way to see who saw what. Check which of the Act's provisions and rules are in force when you buy. See the [personal-data requirement](/erp/requirements#nonfunctional-personal-data).\n\n## What changed, and when\n\n| Date | Change |\n|---|---|\n| 7 Mar 2018 | Rule 138 substituted: e-way bill above ₹50,000 |\n| 24 Mar 2021 | Audit-trail proviso added to the Companies (Accounts) Rules |\n| 31 Mar 2022 | Audit trail deferred to financial years from 1 April 2023 |\n| 1 Aug 2023 | E-invoice threshold lowered to ₹5 crore |\n| 11 Aug 2023 | Digital Personal Data Protection Act published |\n| 1 Apr 2025 | 30-day IRP reporting limit extended to ₹10 crore and above |\n| 1 Apr 2026 | Income-tax Act, 2025 in force: MSME rule in section 37(2)(g), TDS on goods in section 393 |\n\n## What to ask a vendor\n\nAsk the vendor to do each test on the checklist, in front of you: change an entry and show the audit trail; generate an IRN for a test invoice; list the invoices that are near the 30-day limit; produce an e-way bill from a dispatch; show an MSME supplier's bills with due dates. A vendor who can't show it doesn't have it yet. Ahrom Labs states its own gaps the same way: it has not yet built an IRP connection, and its e-way bill client is built but not yet live."
+  },
+  {
+    "kind": "erp",
+    "slug": "contract-checklist",
+    "title": "ERP contract checklist: code ownership, licence, AMC and your data",
+    "answer": "Before a custom ERP is built, settle in writing who owns the code, what the licence covers and for how long, what the annual maintenance contract includes and costs, how changes are priced, how fast support answers, and how your data comes out at any time. Both ownership models are fair if they are stated.",
+    "description": "ERP contract checklist for India: code ownership, licence term, AMC scope and cost, change pricing, support time, data export and DPDP terms.",
+    "domain": [
+      "erp",
+      "contracts",
+      "selection"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "sources": [
+      {
+        "title": "Digital Personal Data Protection Act, 2023",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2023/248045.pdf",
+        "date": "2023-08-11"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Digital Personal Data Protection Act, 2023, section 8(2)",
+        "doc": "dpdp-act-2023",
+        "quote": "A Data Fiduciary may engage, appoint, use or otherwise involve a Data Processor to process personal data on its behalf for any activity related to offering of goods or services to Data Principals only under a valid contract"
+      }
+    ],
+    "body": "## Two ownership models, both fair if stated\n\nCustom software in India is sold in one of two ways, and buyers often don't find out which until they try to leave.\n\n| | You own the code | The vendor licenses it |\n|---|---|---|\n| What you pay for | The build, and the code is handed over | A working system and a licence to use it |\n| After the build | You can take it to any developer | The licence runs with the maintenance contract |\n| Usually costs | More up front, plus whoever maintains it | Less up front, plus the annual contract |\n| Risk to watch | Code nobody else can maintain without documentation | Losing the licence if the contract ends |\n\nNeither is wrong. What is wrong is not knowing which one you signed.\n\n## Clauses to settle before the build\n\n1. **Ownership.** Who owns the source code and the software. If it's licensed, what the licence covers and for how long. ([requirement](/erp/requirements#contract-ownership))\n2. **Your data.** That you can export all your business data, in standard formats, at any time, including at the end. Data you can't take out ties you tighter than any clause. ([requirement](/erp/requirements#nonfunctional-data-export))\n3. **Pricing.** Fixed price per phase, quoted before each phase starts, or time and materials, with a cap. ([requirement](/erp/requirements#contract-fixed-phases))\n4. **Changes.** How a change is written down, priced and agreed before it is built. ([requirement](/erp/requirements#contract-changes))\n5. **The maintenance contract.** What it covers (licence, hosting, fixes, small changes), what it costs per year, and what is quoted separately. ([requirement](/erp/requirements#contract-amc-scope))\n6. **Support.** Response time in writing, and documentation that lets another developer take the system over. ([requirement](/erp/requirements#nonfunctional-support))\n7. **Hosting and storage.** Who pays for the server and the storage, and whether storage costs are passed on at the provider's price.\n8. **Personal data.** If the vendor processes personal data on your behalf (staff, customers, contacts), the Digital Personal Data Protection Act, 2023 requires a valid contract for that: section 8(2). Name the vendor's duties for safeguards and breach intimation in it.\n\n## How Ahrom Labs does it\n\nStated plainly, as on the [engagement page](/engagement):\n\n- **Ahrom Labs owns the code.** You get a working system and a licence to use it for as long as the annual maintenance contract runs; the source code stays with Ahrom Labs. If the contract stops, the licence ends with it.\n- **Your data is yours** and can be exported at any time.\n- **Fixed price per phase**, after a short fixed-fee modeling phase; a change is priced and agreed before it is built.\n- **The AMC is 15–21% of the project value per year**, covering the licence, the server, fixes and small changes; a new module is its own phase.\n- **Support** requests are answered within 48 hours at most, and every system ships with a system document any developer or agent can pick it up from.\n\nIf you need to own the code outright, say so before the build; it changes the price and the hand-over, and it is better settled first than discovered later."
+  },
+  {
+    "kind": "erp",
+    "slug": "implementation-plan",
+    "title": "ERP implementation plan: phases from mapping the business to go-live",
+    "answer": "A custom ERP goes live in phases, each in use before the next starts: a short modeling phase that maps the business and ends with a dated, fixed-price plan; then the records that must be right; then the daily work of each department; then reports and AI. Data migration is its own scoped piece of work, and the requirements' tests are the acceptance tests for each phase.",
+    "description": "ERP implementation plan for Indian manufacturers and traders: phases from modeling to go-live, migration, acceptance tests, timeline and cost.",
+    "domain": [
+      "erp",
+      "implementation",
+      "planning"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## Why phases, each in use before the next\n\nERP projects in Indian SMEs usually fail the same way: people go back to Excel and WhatsApp because the system doesn't match how the business runs, and the old data turns out messier than anyone planned for. Phases that each go live and get used before the next one starts catch both early. You never pay for months of work you can't see, and a wrong assumption costs a phase, not the project.\n\n## The phases\n\n| Phase | What it delivers | Done when |\n|---|---|---|\n| 0. Modeling | A map of the business (entities, workflows, approvals, rules) and a dated plan with a fixed price per phase | The owner agrees the map and the plan |\n| 1. Records that must be right | Masters, stock, opening balances, the ledger or the Tally link; migration of what's needed | Counts and balances tie to the old system |\n| 2. Daily work, department by department | Sales, purchase, stores, production, dispatch, accounts, as the plan orders them | Each department works in the system, not beside it |\n| 3. Portals | Customer and supplier access | Customers and suppliers use their links |\n| 4. Reports and AI | Dashboards from the same records; assistants and document reading with human review | Figures trace to records; AI answers match the reports |\n\nThe order inside phase 2 comes from the map: whatever the business can least afford to get wrong goes first.\n\n## Data migration is its own piece of work\n\nMigration is scoped and quoted separately, before it starts, rather than discovered halfway. Every import is checked against its source, doubtful rows are held for a person, and each import is tagged so it can be removed as one batch. See [moving from Tally](/erp/tally-migration).\n\n## The requirements are the acceptance tests\n\nEvery line on the [requirements checklist](/erp/requirements) has a test. Before a phase is signed off, run the tests for the lines it covers, on your own data. The same tests made the [vendor demo script](/erp/vendor-demo-script); using them again at go-live is how you find out whether what was shown is what was built.\n\n## How long it takes\n\nIt depends on how new the problem is. Something already built for another business can ship in days or weeks; genuinely new ground takes a couple of months, delivered in phases so part of it is in use early. The modeling phase ends with a date for each phase, so you know the timeline before you commit to the build.\n\n## What it costs\n\nPublished 2026 guides from other firms put a custom ERP for a small Indian manufacturer at roughly ₹3–15 lakh, and a fuller build for a mid-sized manufacturer at ₹15–40 lakh. Those are market figures, not a price list: two businesses that both want \"an ERP\" can need very different systems, which is why the price is fixed per phase only after the modeling phase. Maintenance after go-live usually runs as an annual contract. Ahrom Labs' terms, and the sources for those ranges, are on the [engagement page](/engagement); what to settle in the contract is in the [contract checklist](/erp/contract-checklist).\n\n## Your plan, in one line per phase\n\nWrite the plan as a table: phase, what it delivers, the requirement lines it covers, the acceptance tests, the date, the price. If a vendor can't fill that table before the build, the plan isn't ready."
+  },
+  {
+    "kind": "erp",
+    "slug": "interior-design-firms",
+    "title": "ERP for interior design firms and fit-out businesses: what to require",
+    "answer": "An interior design or fit-out business needs quotations built from a BOQ, projects that show what each is waiting on, vendor and freight charges checked against agreed rates, labour logged against each job and payroll computed from attendance, and, where there are sister companies, each invoicing on its own letterhead and GSTIN from one system.",
+    "description": "ERP requirements for interior design and fit-out firms in India: BOQ quotations, project blockers, vendor rate checks, payroll, two companies.",
+    "domain": [
+      "erp",
+      "interiors",
+      "requirements"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## Start with these\n\n1. **Quotations from a BOQ**, with revisions kept and the accepted one turned into the order without retyping. ([requirement](/erp/requirements#sales-quotation-format)) How to write the BOQ itself is in the [interior BOQ guide](/boq).\n2. **What each project is waiting on**: material, drawing, approval or payment, worked out fresh each time. ([requirement](/erp/requirements#production-blockers))\n3. **Vendor and freight charges checked** against agreed rates, with overcharges flagged. ([requirement](/erp/requirements#purchase-rate-check))\n4. **Labour logged against each job**, so job costs include it. ([requirement](/erp/requirements#payroll-work-logs))\n5. **Payroll computed** from attendance, rates and advances, never typed. ([requirement](/erp/requirements#payroll-computed))\n6. **Two companies, one system**: each invoice under its own company's letterhead and GSTIN, from one client list. ([requirement](/erp/requirements#sales-multi-company))\n7. **Staff see only their own cash entries**, and bank data is refused to them by the system. ([requirement](/erp/requirements#nonfunctional-role-access))\n\n## The rules that usually apply\n\n- **Being a company:** the books need an audit trail. ([audit trail](/erp/requirements#accounts-audit-trail))\n- **Above ₹5 crore:** e-invoices for B2B work. ([e-invoice](/erp/requirements#accounts-e-invoice))\n- **Paying micro and small vendors:** due dates at most 45 days from acceptance. ([MSME](/erp/requirements#purchase-msme-due-dates))\n\nAll of them, quoted from the official text: [compliance requirements](/erp/compliance).\n\n## What this looks like in a running system\n\nSavistar, an interior design studio, and Saag, its sister furniture workshop, run one system: projects and site visits for Savistar, workshop orders for Saag, and one combined finance ledger. Each invoice picks its own company's letterhead, logo and GSTIN; vendor and freight charges are checked against reference rates; payroll is days × rate − advances, never typed; and an AI assistant answers from their own records in English or Hinglish. Quotations are built from a BOQ library, with payment stages that become invoices. See [software for interior design firms](/industries/interior-design-and-furniture), or try the [interiors demo](https://interiors-erp.ahromlabs.com/demo), where one freight trip is overcharged on purpose.\n\n## Build your list\n\nThe [requirements builder](/erp/check) with \"Project businesses\" selected gives the full list for your turnover and whether Tally stays."
+  },
+  {
+    "kind": "erp",
+    "slug": "readiness",
+    "title": "Is your business ready for an ERP? A 10-question self-check",
+    "answer": "A business is ready for an ERP when someone owns each process, the masters are clean enough to load, the owner will decide disputes between departments, and people will record work where it happens. Ten questions, each with what to fix first if the answer is no.",
+    "description": "ERP readiness checklist for Indian manufacturers and traders: ten questions on processes, masters, owners and data, and what to fix first.",
+    "domain": [
+      "erp",
+      "readiness",
+      "selection"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## The ten questions\n\nAnswer each yes or no. Each no is something to fix before, or as the first phase of, any system.\n\n1. **Can you draw how an order moves**, from enquiry to payment, with who does what at each step? If not, that map is the first piece of work; a system built on the wrong picture makes the workarounds faster.\n2. **Does each process have one owner** who can say how it should work? Without one, the system inherits every disagreement.\n3. **Are your masters clean?** One record per customer, supplier and item, with GSTINs and HSN codes that are right. Duplicates in Tally become duplicates in the ERP.\n4. **Do you know your stock** to the level you pick and ship (a reel, a box, a plate), or only as totals? If only totals, plan a stock count before go-live.\n5. **Is there one place for each number?** If the same figure lives in Tally, a spreadsheet and someone's notebook, decide now which one is the truth.\n6. **Will people record work where it happens**, on a phone on the floor or at site, rather than at a desk at day end?\n7. **Will the owner decide** when sales and production disagree about how something should work? Systems fail more often from undecided questions than from code.\n8. **Do you know which compliance rules apply?** Turnover decides e-invoicing and its 30-day limit; being a company decides the audit trail. See [compliance requirements](/erp/compliance).\n9. **Have you decided about Tally?** Keep it as the books, or move the books into the new system. See [moving from Tally](/erp/tally-migration).\n10. **Can you name the first thing the system must get right?** The records that must be right come first; everything else is a later phase.\n\n## Scoring it\n\n- **8 to 10 yes:** ready. Write your requirements with the [builder](/erp/check) and start talking to vendors.\n- **5 to 7:** ready if the first phase is mapping the business and cleaning masters, not building screens.\n- **Under 5:** start with the map. Buying a system before the processes are decided is how ERP projects stall.\n\n## Why this order\n\nAhrom Labs starts every engagement with a short modeling phase that answers most of these questions: what exists, who owns it, which records must be right, and what each phase delivers. You keep the model and the plan whether or not you continue. See [how an engagement runs](/engagement) and the [requirements checklist](/erp/requirements)."
+  },
+  {
+    "kind": "erp",
+    "slug": "selection-matrix",
+    "title": "ERP selection matrix for India: Tally, ERPNext, Odoo, SAP Business One or custom",
+    "answer": "TallyPrime, ERPNext, Odoo and SAP Business One all handle Indian e-invoicing in some form; they differ in how they're licensed, where they run, and how far they bend to your process. A custom system fits the process exactly but has to be built. Score them against your own requirements, weighted by your priorities, not against a vendor's feature list.",
+    "description": "ERP selection criteria for India: TallyPrime, ERPNext, Odoo, SAP Business One and custom, compared on licence, hosting, e-invoice and fit.",
+    "domain": [
+      "erp",
+      "selection",
+      "comparison"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "sources": [
+      {
+        "title": "Audit Trail (Edit Log) in TallyPrime",
+        "publisher": "Tally Solutions",
+        "url": "https://tallysolutions.com/tally/audit-trail-in-tallyprime/",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "Generate e-Invoice (IRN) and print QR code in TallyPrime",
+        "publisher": "Tally Solutions",
+        "url": "https://help.tallysolutions.com/tally-prime/gst-regular-sales/e-invoicing-in-tallyprime/",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "India Compliance app (GST, e-invoice, e-way bill in ERPNext)",
+        "publisher": "Frappe",
+        "url": "https://docs.frappe.io/erpnext/india-compliance-app",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "ERPNext licence (GPL-3.0)",
+        "publisher": "Frappe (GitHub)",
+        "url": "https://github.com/frappe/erpnext/blob/develop/license.txt",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "India fiscal localization (e-invoicing and e-way bill), Odoo 20.0",
+        "publisher": "Odoo",
+        "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/india.html",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "Odoo licence (Community edition, LGPLv3)",
+        "publisher": "Odoo (GitHub)",
+        "url": "https://github.com/odoo/odoo/blob/20.0/LICENSE",
+        "date": "2026-10-25"
+      },
+      {
+        "title": "SAP Business One",
+        "publisher": "SAP",
+        "url": "https://www.sap.com/products/erp/business-one.html",
+        "date": "2026-10-25"
+      }
+    ],
+    "body": "## How to use this matrix\n\nDon't pick a system from a feature table, this one included. Every option below can be made to look good in a demo. Pick from your own requirements:\n\n1. Build your list with the [requirements builder](/erp/check) and set a priority on each line.\n2. Send the same [Excel template](/erp/template) to each option, one copy per vendor. It scores Yes, Partly and No against your priorities.\n3. Make each vendor do the [demo tests](/erp/vendor-demo-script) for your Must lines. A yes you didn't see counts as partly.\n\nThe table below is for the first cut: which options to invite at all. Each fact is from the product's own documentation, linked under sources.\n\n## The matrix\n\n| | TallyPrime | ERPNext | Odoo | SAP Business One | Custom-built |\n|---|---|---|---|---|---|\n| What it is | Accounting and inventory software from Tally Solutions | Open-source ERP from Frappe | ERP suite of apps, Community and Enterprise editions | SAP's ERP for small businesses | A system built around your process |\n| Licence | Proprietary licence | GPL-3.0 (open source) | Community: LGPLv3; Enterprise: Odoo's own licence | Proprietary licence | As your contract says: you own the code, or a licence runs with maintenance |\n| Where it runs | Your PC or server; TallyPrime's integration gateway listens only on that machine | Self-hosted or Frappe Cloud | Odoo Online, Odoo.sh or on-premise | Cloud or on-premise | Wherever it's built for |\n| E-invoice and e-way bill | Built in: IRN, QR code and e-way bill from the sales voucher | Through the India Compliance app (GST, e-invoice, e-way bill, TDS) | India localization modules for e-invoicing (from 15.0) and e-way bill | Through India localization and partner add-ons; check with your partner | Built to the NIC specs, or not at all; ask |\n| Audit trail (edit log) | Edit log; a separate release keeps it always on | Check it meets the rule | Check it meets the rule | Check it meets the rule | Must be built in and can't be switched off |\n| Fit to your process | You adapt to it | Configurable; customised by developers | Configurable; customised by developers or partners | Configured by partners | The process is modeled first, then built |\n| Works alongside Tally | Is Tally | Replaces it, or runs beside it with an integration | Replaces it, or runs beside it with an integration | Replaces it, or runs beside it with an integration | Either: posts into Tally, or keeps the books itself |\n\n\"Check it meets the rule\" means the product's documentation we read doesn't say, in plain terms, that the edit log meets the [audit-trail rule](/erp/compliance): a log of every change with its date that can't be disabled. Ask the vendor to show it.\n\n## When each one tends to fit\n\n- **TallyPrime alone**: accounting-led businesses whose operations fit in its inventory, and who mainly need GST done right. When it stops being enough is in [seven signs you've outgrown Tally](/notes/outgrown-tally-signs).\n- **ERPNext or Odoo**: businesses whose processes are close to the standard modules, with a partner or in-house developer to configure and maintain them.\n- **SAP Business One**: small businesses that want an established vendor and a partner-led implementation.\n- **Custom**: when the process is the business's edge, the standard modules force workarounds, or the system has to do something no package does (an IBR statutory folder from certificates, reel-level reservations, two companies on one ledger).\n\nThe longer comparison for manufacturers is [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).\n\n## What the matrix leaves out\n\nPrice, deliberately: licence, implementation and maintenance costs change by edition, users and partner, and a number here would be wrong for most readers. Get quotes against the same requirements list, and settle ownership and data export before signing: see the [contract checklist](/erp/contract-checklist). Ahrom Labs builds custom systems, so read this page as a builder's view; the facts about each product are from its own documentation."
+  },
+  {
+    "kind": "erp",
+    "slug": "small-manufacturers",
+    "title": "ERP for small manufacturers in India: the requirements that matter most",
+    "answer": "A small Indian manufacturer needs an ERP that works from its existing Excel BOMs, tracks material down to the plate or batch it cuts from, sets stock aside for each order, costs jobs from what was actually used, and keeps the GST books or posts cleanly into Tally. Above ₹5 crore turnover add e-invoicing; as a company, an audit trail.",
+    "description": "ERP requirements for small manufacturers in India: BOM import, traceability, remnants, job costing, reservations, GST or Tally, e-invoice.",
+    "domain": [
+      "erp",
+      "manufacturing",
+      "requirements"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## Start with these\n\nThe lines a small manufacturer can least afford to get wrong, in the order they usually go live. Each links to its test.\n\n1. **Your BOMs, from Excel.** Import the sheets you already keep, matched to the item master; a likely typo suggested, never silently corrected. ([requirement](/erp/requirements#production-bom-import))\n2. **A released BOM is frozen.** Purchase and stores work from a version, not a moving sheet. ([requirement](/erp/requirements#production-bom-release))\n3. **Shortfalls become purchase requests**, after stock and usable remnants are counted. ([requirement](/erp/requirements#purchase-need-to-request))\n4. **Remnants go back into stock**, with weights from dimensions, offered to waiting BOM lines before anything is bought. ([requirement](/erp/requirements#production-cutting-remnants))\n5. **Jobs costed from actual use**, material and labour. ([requirement](/erp/requirements#production-costing-from-use))\n6. **What each job is waiting on**, worked out fresh, not typed. ([requirement](/erp/requirements#production-blockers))\n7. **Certificates kept once and linked to what they cover**, with any link that ends in statutory paperwork confirmed by a person. ([requirement](/erp/requirements#quality-confirmed-links))\n\n## The rules your turnover brings in\n\n- **Being a company:** the books need an audit trail that can't be switched off. ([audit trail](/erp/requirements#accounts-audit-trail))\n- **Above ₹5 crore:** e-invoices for B2B sales; **at ₹10 crore and above:** reported within 30 days. ([e-invoice](/erp/requirements#accounts-e-invoice))\n- **Buying from micro and small enterprises:** due dates at most 45 days from acceptance. ([MSME](/erp/requirements#purchase-msme-due-dates))\n\nAll of them, quoted from the official text, are in [compliance requirements](/erp/compliance).\n\n## What this looks like in a running system\n\nAt a boiler and pressure-vessel manufacturer, Ahrom Labs' system imported six of the client's real BOM files through the interface, traces each plate and section through cutting, and assembled each boiler's IBR statutory folder from a bank of material test certificates. In a live cut test, a 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and 14.13 kg scrap, conserved exactly. The same system keeps the books: GSTR-1, GSTR-3B, TDS and 23 reports, with Tally optional. See [ERP for boiler and pressure-vessel manufacturers](/industries/boiler-pressure-vessel-manufacturing), or try it with twelve sample logins, one per department, at the [manufacturing demo](https://boiler-erp.ahromlabs.com/demo).\n\n## Build your list\n\nThe [requirements builder](/erp/check) with \"Manufacturing\" selected gives the full list for your turnover and whether Tally stays, ready to send to vendors."
+  },
+  {
+    "kind": "erp",
+    "slug": "tally-migration",
+    "title": "Moving from Tally to an ERP: what to migrate and how to check it",
+    "answer": "Decide first whether Tally stays as the books or goes. Then move masters, opening balances, outstanding bills, stock with its batches, and the history people actually look up, each checked against its source: count the rows, hold anything that matches two records for a person, and tag every import so it can be removed as a batch. Keep the audit trail unbroken through the switch.",
+    "description": "How to move from Tally to an ERP in India: keep Tally or replace it, what to migrate, how to check each import, and the audit-trail rule at cutover.",
+    "domain": [
+      "erp",
+      "tally",
+      "migration"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "sources": [
+      {
+        "title": "Companies (Accounts) Second Amendment Rules, 2022 (G.S.R. 235(E))",
+        "publisher": "Ministry of Corporate Affairs, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2022/234733.pdf",
+        "date": "2022-03-31"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Companies (Accounts) Second Amendment Rules, 2022",
+        "doc": "mca-audit-trail-2022",
+        "quote": "the figures, letters and words “1st day of April, 2023” shall be substituted"
+      }
+    ],
+    "body": "## Keep Tally, or replace it?\n\nBoth work, and the choice decides what you migrate.\n\n- **Tally stays as the books.** The ERP runs sales, stock and operations, and posts approved invoices into TallyPrime as vouchers. Your accountant keeps working in Tally. Very little accounting history moves; what moves is masters and open items. LS Technologies runs this way: approved invoices reach TallyPrime within 30 seconds, and every posted voucher is checked against Tally's own data.\n- **The ERP keeps the books.** Ledgers, GST returns and TDS move into the ERP, and Tally becomes optional or goes. More moves, and the audit trail has to carry across. A boiler manufacturer Ahrom Labs built for runs this way, with GSTR-1, GSTR-3B and TDS from the operations system.\n\nHow each connection to Tally works, and why TallyPrime needs an agent on its own PC, is in [four ways to connect a business system to TallyPrime](/notes/connecting-tallyprime-four-ways).\n\n## What to move\n\n| What | Why it matters | How to check it |\n|---|---|---|\n| Ledger and party masters | Every transaction hangs off them | Count before and after; no duplicates by GSTIN |\n| Item masters, with units and HSN | Stock and tax depend on them | Count; every HSN valid; units consistent |\n| Opening balances | The books must agree on day one | Trial balance in the ERP equals Tally's on the cutover date |\n| Outstanding bills (receivable and payable) | Collections and payments continue | Each party's total matches Tally's outstanding |\n| Stock, with batches or units | Reservations and costing need it | Quantity and value per item match; batches or units as labelled |\n| GST history you look up | Returns and notices refer back | The periods you need, read-only, with their filing status |\n| Sales history (enquiries, quotations, orders) | Sales can't work without it | Row counts; doubtful rows held, not guessed |\n\n## How to check each import\n\nThree rules, from moving five years of a manufacturer's sales history (see [the note](/notes/sales-history-moved-without-guessing)):\n\n1. **Check the file against itself first.** A broken export had shifted 154 of 20,167 diary rows by a column or two; read naively, they would have lost their status. All 20,167 were recovered by checking each row's known last columns.\n2. **Hold, don't guess.** A quotation that matched no customer, or more than one, went to a review list: 2,221 matched exactly one customer and came in; 303 waited for a person.\n3. **Tag every import.** Each row carries the import it came from, so a batch found wrong later can be removed as one.\n\n## Cutover and the audit trail\n\nA company keeping its books in software must have an audit trail for every financial year from 1 April 2023 (the date was substituted by the Companies (Accounts) Second Amendment Rules, 2022). Plan the cutover so the trail doesn't break: close a period in Tally, move balances as at that date, and start the ERP's trail from the first entry after. Keep Tally's data for the years before, read-only, for the auditor. See the [audit-trail requirement](/erp/requirements#accounts-audit-trail-date).\n\n## A sequence that works\n\n1. Freeze masters for a week; clean duplicates in Tally first.\n2. Move masters, then check counts.\n3. Pick a cutover date at a period end.\n4. Move opening balances and outstanding bills as at that date; tie the trial balance.\n5. Move stock and check quantity and value per item.\n6. Run both systems for one cycle if Tally stays as the books; compare.\n7. Move history last, read-only, and hold doubtful rows for a person.\n\nSee also the [migration requirement](/erp/requirements#sales-history-migration) and the [Tally integration requirements](/erp/requirements#integrations-tally)."
+  },
+  {
+    "kind": "erp",
+    "slug": "trading-distribution",
+    "title": "ERP for trading and distribution businesses in India: what to require",
+    "answer": "A trading or distribution business needs stock tracked by the unit it picks and ships, reserved against each customer order so nothing is sold twice, moved by scanning across stores, purchase documents read in without retyping, and invoices that reach Tally or the GST books automatically. Above ₹5 crore, e-invoices; at ₹10 crore and above, the 30-day limit and TDS on large purchases.",
+    "description": "ERP requirements for trading and distribution in India: unit-level stock, reservations, scanning, AI-read bills, Tally posting, e-invoice, TDS.",
+    "domain": [
+      "erp",
+      "trading",
+      "requirements"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## Start with these\n\n1. **Stock by the unit you ship**: a reel, a box, a carton, each with its own label, not only a total. ([requirement](/erp/requirements#stores-unit-level))\n2. **Reserved against each order line**, so a reserved unit can't go to another customer without a manager's override. ([requirement](/erp/requirements#stores-reservations))\n3. **Moved by scanning**, in, out and between stores, including a partner's. ([requirement](/erp/requirements#stores-scan-moves))\n4. **Staff entries approved** before they change stock. ([requirement](/erp/requirements#stores-approval))\n5. **Purchase documents read by AI and checked by a person**: invoices, freight bills, bills of entry, bank statements. ([requirement](/erp/requirements#reporting-extraction-review))\n6. **Every supplier bill matched** to its order and what was received. ([requirement](/erp/requirements#purchase-three-way-match))\n7. **Invoices into Tally automatically**, each checked against Tally's own data, if Tally stays as the books. ([requirement](/erp/requirements#accounts-tally-posting))\n8. **Customers follow their own orders** on a portal that never shows stock or other customers. ([requirement](/erp/requirements#portals-no-stock-exposure))\n\n## The rules your turnover brings in\n\n- **Above ₹5 crore:** e-invoices; **at ₹10 crore and above:** reported within 30 days. ([e-invoice](/erp/requirements#accounts-e-invoice))\n- **As a buyer with turnover above ₹10 crore:** TDS on purchases from a seller beyond ₹50 lakh in the year. ([TDS on purchases](/erp/requirements#accounts-tds-purchases))\n- **Goods moving above ₹50,000:** e-way bills. ([e-way bill](/erp/requirements#dispatch-eway-bill))\n\nAll of them, quoted from the official text: [compliance requirements](/erp/compliance).\n\n## What this looks like in a running system\n\nAt LS Technologies, an electronics-component importer and trader, each reel carries its own QR label; 5,256 live reels moved to a two-store model with none lost. Reels are reserved per customer PO line, oldest first. Five document types, bills of entry included, are read by AI at 88–95% zero-correction, each approved by a person, and approved invoices post into TallyPrime as vouchers within 30 seconds. See [software for electronics-component traders](/industries/electronics-component-trading), or scan reels yourself in the [trading demo](https://electronics-erp.ahromlabs.com/demo).\n\n## Build your list\n\nThe [requirements builder](/erp/check) with \"Trading and distribution\" selected gives the full list for your turnover and whether Tally stays."
+  },
+  {
+    "kind": "erp",
+    "slug": "vendor-demo-script",
+    "title": "ERP vendor demo script: what to make every vendor show you",
+    "answer": "Don't let an ERP vendor run their own demo. Bring your own data, give them a list of tests, and watch them do each one: change an entry and show the audit trail, reserve stock and try to ship it elsewhere, post an invoice to Tally and delete it there. A yes you didn't see demonstrated is a partly.",
+    "description": "ERP vendor demo script for Indian manufacturers and traders: the tests to make every vendor do in front of you, by department, and red flags.",
+    "domain": [
+      "erp",
+      "selection",
+      "demo"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "checked": "2026-10-25",
+    "body": "## How to run the demo\n\nA vendor's own demo shows what their product does well, on data made to look good. Yours should show whether it does what your business needs, on data that looks like yours.\n\n1. **Send the tests a week ahead.** The vendor should know what they'll be asked; a vendor who can't prepare for a known test won't handle an unknown one.\n2. **Bring your own data.** A real BOM, a real supplier bill, ten real stock items. Sample data hides the edge cases you live with.\n3. **You drive, or you call every click.** Watching a smooth run-through tells you little; asking \"now change that\" tells you a lot.\n4. **Score as you go.** Yes only for what you saw done. Use the [Excel template](/erp/template): it has a column for each answer and scores vendors for you.\n5. **Keep the script.** The same tests are your acceptance tests before go-live.\n\n## The tests, by department\n\nPick the ones that apply from the [requirements builder](/erp/check). These are the ones most often promised and least often shown.\n\n**Accounts**\n- Enter a purchase bill, change its amount, and show the edit log with the old value, the new value, the user and the time. Then show there is no setting that turns the log off. ([audit trail](/erp/requirements#accounts-audit-trail))\n- If your turnover is above ₹5 crore: generate an IRN for a test invoice and show the QR code on the print. ([e-invoice](/erp/requirements#accounts-e-invoice))\n- Lock last month and try to edit an invoice in it. ([period lock](/erp/requirements#accounts-period-lock))\n- If Tally stays: approve an invoice, find the voucher in TallyPrime, delete it there, and show it flagged after the next sync. ([Tally posting](/erp/requirements#accounts-tally-posting))\n\n**Stores**\n- Receive two units of the same item with different quantities and show each with its own label. ([unit-level stock](/erp/requirements#stores-unit-level))\n- Reserve a unit for one order, then try to ship it on another. ([reservations](/erp/requirements#stores-reservations))\n- Show the movements behind one item's balance, and that they add up to it exactly. ([derived balances](/erp/requirements#stores-balances-derived))\n\n**Purchase**\n- Receive less than ordered, enter the bill for the full quantity, and show the mismatch flagged before approval. ([three-way match](/erp/requirements#purchase-three-way-match))\n- Mark a supplier as a micro enterprise and show its bills with due dates. ([MSME](/erp/requirements#purchase-msme-due-dates))\n\n**Production**\n- Import one of your real BOM sheets and show how each unmatched line is handled. ([BOM import](/erp/requirements#production-bom-import))\n- Cut a plate and show the remnant back in stock with its weight. ([remnants](/erp/requirements#production-cutting-remnants))\n\n**Access and reliability**\n- Sign in as staff and open a bank page directly by its address. It should refuse. ([role access](/erp/requirements#nonfunctional-role-access))\n- Pull the network cable during a sync and show what happens to the queued entries. ([offline](/erp/requirements#nonfunctional-offline))\n- Ask for a full export of the demo data and open it in Excel. ([data export](/erp/requirements#nonfunctional-data-export))\n\n**AI**\n- Ask the assistant this month's sales, then compare its answer with the sales report. A number that doesn't match is the answer to whether you can trust it. ([assistant](/erp/requirements#reporting-assistant-no-invented-numbers))\n\n## What a demo won't tell you\n\nSome answers only come in writing:\n\n- **Who owns the code**, and what you hold if you stop paying. See the [contract checklist](/erp/contract-checklist).\n- **How changes are priced** after the contract is signed.\n- **Support response time**, and who else could take the system over.\n- **A reference customer** like you, whom you call yourself.\n\n## Red flags\n\n- \"That's on the roadmap\" for a Must line.\n- A demo only on the vendor's own sample company.\n- \"It's configurable\" without configuring it in front of you.\n- An AI feature that can't show where its numbers came from.\n- No written answer on code ownership or data export.\n\n## Try the tests on a live system\n\nEvery test above can be tried today on Ahrom Labs' demos, with sample data that resets nightly: [manufacturing](https://boiler-erp.ahromlabs.com/demo), [trading](https://electronics-erp.ahromlabs.com/demo) and [interiors](https://interiors-erp.ahromlabs.com/demo). Use them to see what a pass looks like before you watch anyone else's demo."
   }
 ]

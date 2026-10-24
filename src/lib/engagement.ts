@@ -31,6 +31,10 @@ export const engagementAnswers: Answer[] = [
     detail: [
       "Those ranges are market figures from other firms' published guides, not our price list. We don't publish a rate card because two businesses that both want \"an ERP\" can need very different systems — the modeling phase is what makes a fixed quote honest. Asked as \"ERP banane ka kharcha kitna hai?\" or \"ERP software ki price kya hogi?\", the answer is the same: that range until the modeling phase, then a fixed quote.",
     ],
+    see: [
+      { label: "ERP implementation plan: phases, timeline and cost", href: "/erp/implementation-plan" },
+      { label: "ERP requirements checklist", href: "/erp/requirements" },
+    ],
     sources: [
       { label: "ProftCode — custom ERP for Indian manufacturers", href: "https://www.proftcode.com/blog/why-indian-manufacturers-switching-custom-erp/" },
       { label: "NGD Technolab — custom ERP for manufacturing companies in India", href: "https://ngendevtech.com/blog/custom-erp-development-for-manufacturing-companies-in-india/" },

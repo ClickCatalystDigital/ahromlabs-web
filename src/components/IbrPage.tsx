@@ -57,6 +57,10 @@ export const IBR_HUB: Hub = {
         <Link href="/notes/ibr-statutory-folder-from-bom" className="text-link focus-ring">
           how the folder is produced
         </Link>
+        {" · "}
+        <Link href="/erp/compliance" className="text-link focus-ring">
+          other rules an ERP must meet
+        </Link>
       </p>
     </>
   ),

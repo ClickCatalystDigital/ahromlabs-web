@@ -20,7 +20,7 @@ evidence:
   - metric: A boiler manufacturer's accounting decision
     value: ERPNext integration planned → own ledger built, Tally kept as optional sync
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely "which software is best"; it's which one matches how much of your business is standard.
@@ -49,6 +49,8 @@ The cost is real, and worth stating: owning the ledger meant building GST return
 - Do your processes match a standard manufacturing ERP, with little customisation? **ERPNext or Odoo**, through a good implementation partner.
 - Is there industry paperwork, traceability or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.
 - Not sure? That's what a modeling phase is for: [map the business first](/engagement#pricing), then choose.
+
+To compare the options against your own requirements, line by line, use the [ERP selection matrix](/erp/selection-matrix) and the [requirements checklist](/erp/requirements).
 
 ## Boundary
 
