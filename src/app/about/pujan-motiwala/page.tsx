@@ -134,7 +134,7 @@ export default function FounderPage() {
 
             <h2 className="display mt-14 text-3xl text-foreground sm:text-4xl">What I build at Ahrom Labs</h2>
             <p className="mt-6 leading-relaxed text-foreground-secondary">
-              Since 2024 Ahrom Labs has built and run the operations and accounting systems for an electronics
+              Since January 2025 Ahrom Labs has built and run the operations and accounting systems for an electronics
               component trader, an interior design studio and its furniture workshop, and a boiler manufacturer:
               sales to dispatch, stock, statutory documents, payroll, TallyPrime posting, and AI that reads
               invoices and answers questions from the books, with a person confirming anything that matters. The

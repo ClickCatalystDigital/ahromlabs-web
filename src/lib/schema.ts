@@ -71,7 +71,7 @@ export const orgGraph = {
       description:
         "Ahrom Labs builds custom operational infrastructure for businesses, modeling entities, relationships, workflows, and decisions as one coherent system.",
       founder: { "@id": `${siteUrl}/#founder` },
-      foundingDate: "2024-05",
+      foundingDate: "2025-01",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo/a12.png`,
