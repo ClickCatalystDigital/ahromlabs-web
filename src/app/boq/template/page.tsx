@@ -11,12 +11,13 @@ import { boqPageGraph } from "@/lib/schema";
 
 const title = "Interior BOQ format in Excel: free template";
 const lead = `A free interior BOQ template in Excel with ${boqItems.length} common items in ${trades.length} trades, each line already written with its unit and how it is measured. Fill the values in brackets, add quantities and rates; the amount and total formulas are in place. Why there are no rates, and how to build them, is below.`;
+const image = { src: "/boq/interior-boq-template-clipboard.webp", alt: "A clipboard holding a blank ruled table with a header row, and a pencil beside it.", width: 1086, height: 362 };
 
 export const metadata: Metadata = {
   title,
   description: "Free interior BOQ format in Excel: 41 ready lines in 9 trades with units, measurement basis and formulas. Download, fill the brackets, add rates.",
   alternates: { canonical: "/boq/template" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/boq/template", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/boq/template", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -41,10 +42,11 @@ export default function BoqTemplatePage() {
 
   return (
     <BoqPage
-      graph={boqPageGraph({ path: "/boq/template", title, description: lead, published: BOQ_PUBLISHED, updated: BOQ_CHECKED, trail })}
+      graph={boqPageGraph({ path: "/boq/template", title, description: lead, published: BOQ_PUBLISHED, updated: BOQ_CHECKED, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={BOQ_CHECKED}
       updated={BOQ_CHECKED}
       headings={["Download", "The columns, and why each is there", "What it looks like", "Why there are no rates", "After you fill it"]}

@@ -144,7 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/boq`, lastModified: changed("boq", boqUpdated), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/boq/interior-boq-measuring.webp`] },
     { url: `${siteUrl}/boq/check`, lastModified: changed("boq/check", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/boq/interior-boq-checker.webp`] },
     { url: `${siteUrl}/boq/items`, lastModified: changed("boq/items", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.7, images: [`${siteUrl}/boq/wardrobe-front-elevation-measured.webp`] },
-    { url: `${siteUrl}/boq/template`, lastModified: changed("boq/template", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/boq/template`, lastModified: changed("boq/template", BOQ_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/boq/interior-boq-template-clipboard.webp`] },
     ...boqGuides.map((g) => ({
       url: `${siteUrl}/boq/${g.slug}`,
       lastModified: changed(`boq/${g.slug}`, g.updated),

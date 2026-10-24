@@ -12,6 +12,11 @@ domain: [interiors, boq, estimation]
 published: 2026-10-23
 updated: 2026-10-24
 checked: 2026-10-23
+image:
+  src: /boq/boq-estimate-and-quotation.webp
+  alt: "A ruled bill of quantities on the left and a signed, sealed quotation on the right, with a calculator between them."
+  width: 1086
+  height: 362
 sources:
   - title: Delhi Schedule of Rates (DSR)
     publisher: Central Public Works Department

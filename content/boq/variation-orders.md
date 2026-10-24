@@ -12,6 +12,11 @@ domain: [interiors, boq, contracts]
 published: 2026-10-24
 updated: 2026-10-24
 checked: 2026-10-24
+image:
+  src: /boq/variation-order-marked-up.webp
+  alt: "A checklist sheet with one line struck through and replaced, a pen resting on it and a rubber stamp beside it."
+  width: 1086
+  height: 362
 sources:
   - title: "General Conditions of Contract, Construction Works, April 2026, clause 12 (copy hosted by IIT Hyderabad)"
     publisher: Central Public Works Department

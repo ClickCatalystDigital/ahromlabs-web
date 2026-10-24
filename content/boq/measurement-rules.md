@@ -13,8 +13,8 @@ published: 2026-10-24
 updated: 2026-10-24
 checked: 2026-10-24
 image:
-  src: /boq/wardrobe-front-elevation-measured.webp
-  alt: "A two-door wardrobe with a loft above it, with dimension lines for its overall height, the loft's height and its width."
+  src: /boq/l-shaped-kitchen-measured.webp
+  alt: "An L-shaped modular kitchen with a sink and a hob, with dimension lines along both runs and up its height."
   width: 1086
   height: 362
 sources:

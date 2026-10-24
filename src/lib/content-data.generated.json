@@ -1874,8 +1874,8 @@
     "updated": "2026-10-24",
     "checked": "2026-10-24",
     "image": {
-      "src": "/boq/wardrobe-front-elevation-measured.webp",
-      "alt": "A two-door wardrobe with a loft above it, with dimension lines for its overall height, the loft's height and its width.",
+      "src": "/boq/l-shaped-kitchen-measured.webp",
+      "alt": "An L-shaped modular kitchen with a sink and a hob, with dimension lines along both runs and up its height.",
       "width": 1086,
       "height": 362
     },
@@ -1921,6 +1921,12 @@
     "published": "2026-10-24",
     "updated": "2026-10-24",
     "checked": "2026-10-24",
+    "image": {
+      "src": "/boq/variation-order-marked-up.webp",
+      "alt": "A checklist sheet with one line struck through and replaced, a pen resting on it and a rubber stamp beside it.",
+      "width": 1086,
+      "height": 362
+    },
     "sources": [
       {
         "title": "General Conditions of Contract, Construction Works, April 2026, clause 12 (copy hosted by IIT Hyderabad)",
@@ -1968,6 +1974,12 @@
     "published": "2026-10-23",
     "updated": "2026-10-24",
     "checked": "2026-10-23",
+    "image": {
+      "src": "/boq/boq-estimate-and-quotation.webp",
+      "alt": "A ruled bill of quantities on the left and a signed, sealed quotation on the right, with a calculator between them.",
+      "width": 1086,
+      "height": 362
+    },
     "sources": [
       {
         "title": "Delhi Schedule of Rates (DSR)",
