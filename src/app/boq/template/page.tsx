@@ -55,8 +55,8 @@ export default function BoqTemplatePage() {
       <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
         <a href="/boq/interior-boq-template.xlsx" className="subscribe-submit focus-ring inline-block" download>
           Download the Excel template
-        </a>
-        <a href="/boq/interior-boq-template.csv" className="text-link focus-ring" download>CSV version</a>
+        </a>{" "}
+        <a href="/boq/interior-boq-template.csv" className="text-link focus-ring" download>CSV version</a>{" "}
         <span className="text-sm text-foreground-secondary">
           One sheet, grouped by trade. Free under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/" className="text-link focus-ring" rel="license">CC BY 4.0</a>, with credit to Ahrom Labs.
@@ -93,7 +93,7 @@ export default function BoqTemplatePage() {
                 <td className="py-3 pr-4">
                   {(i === 0 || preview[i - 1].trade.slug !== trade.slug) && (
                     <Link href={`/boq/items/${trade.slug}`} className="text-link focus-ring mb-1 block text-xs font-medium uppercase tracking-wide">{trade.name}</Link>
-                  )}
+                  )}{" "}
                   <span className="font-mono text-xs text-foreground">{item.description}</span>
                 </td>
                 <td className="py-3 pr-4 text-foreground-secondary">{UNIT_LABEL[item.unit]}</td>

@@ -29,7 +29,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           <ul className="mt-3 space-y-3">
             {demos.map((d) => (
               <li key={d.client}>
-                <a href={d.url} className="text-link focus-ring">{d.name}</a>
+                <a href={d.url} className="text-link focus-ring">{d.name}</a>{" "}
                 <span className="mt-0.5 block text-sm text-foreground-secondary">{d.as}</span>
               </li>
             ))}
@@ -42,7 +42,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       <ol className="mt-4 space-y-4">
         {service.steps.map((step, i) => (
           <li key={step} className="grid grid-cols-[2rem_1fr] gap-2 leading-relaxed text-foreground">
-            <span className="text-sm text-foreground-secondary tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+            <span className="text-sm text-foreground-secondary tabular-nums">{String(i + 1).padStart(2, "0")}</span>{" "}
             <span>{step}</span>
           </li>
         ))}
@@ -96,7 +96,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                 <li key={c.slug}>
                   <Link href={`/work#${c.slug}`} className="text-link focus-ring">
                     {c.client}
-                  </Link>
+                  </Link>{" "}
                   <span className="text-foreground-secondary"> — {c.industry}</span>
                 </li>
               ))}

@@ -111,7 +111,7 @@ export function GuidePage(props: {
             </nav>
             <h1 className="display mt-3 max-w-5xl text-5xl text-foreground sm:text-6xl">{props.title}</h1>
             <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">{props.lead}</p>
-            <p className="mt-6 text-sm text-foreground-secondary">Pujan Motiwala · {hub.byline(props.checked)}</p>
+            <p className="mt-6 text-sm text-foreground-secondary"><Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link> · {hub.byline(props.checked)}</p>
           </div>
           {props.art && (
             // Decorative; the page background colour is baked into the file. The object

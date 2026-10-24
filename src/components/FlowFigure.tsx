@@ -11,8 +11,9 @@ export function FlowFigure({ title, steps }: { title: string; steps: { step: str
         {steps.map((s, i) => (
           <li key={s.step} className="flow-step">
             <span className="flow-marker" aria-hidden="true" />
-            <span className="flow-index">{String(i + 1).padStart(2, "0")}</span>
-            <span className="flow-title">{s.step}</span>
+            {/* {" "}: grid ignores it on screen, but text extractors get "01 Step. Detail", not "01StepDetail". */}
+            <span className="flow-index">{String(i + 1).padStart(2, "0")}</span>{" "}
+            <span className="flow-title">{s.step}</span>{" "}
             <span className="flow-detail">{s.detail}</span>
           </li>
         ))}

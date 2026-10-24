@@ -71,6 +71,7 @@ export const orgGraph = {
       description:
         "Ahrom Labs builds custom operational infrastructure for businesses, modeling entities, relationships, workflows, and decisions as one coherent system.",
       founder: { "@id": `${siteUrl}/#founder` },
+      foundingDate: "2024-05",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo/a12.png`,
@@ -110,32 +111,39 @@ export const orgGraph = {
       ],
       sameAs: [
         "https://www.linkedin.com/company/ahromlabs",
-        "https://github.com/ahromlabs",
+        "https://github.com/Ahrom-Labs",
       ],
     },
     {
       "@type": "Person",
       "@id": `${siteUrl}/#founder`,
       name: "Pujan Motiwala",
-      jobTitle: "Principal",
+      jobTitle: "Founder and Principal",
+      description:
+        "Founder of Ahrom Labs. Nine years in data science and business process mapping (USAA, Arkose Labs, ABC Fitness, Liberty Mutual; associate faculty at Columbia University) before building operations and AI systems for Indian manufacturers.",
       worksFor: { "@id": `${siteUrl}/#organization` },
       knowsAbout: [
         "ERP systems",
         "TallyPrime integration",
-        "document extraction",
-        "manufacturing operations",
-        "data engineering",
-        "churn analysis",
+        "Document extraction",
+        "Manufacturing operations",
+        "Business process modeling",
+        "Data science",
+        "Machine learning",
+        "Predictive maintenance",
+        "Anomaly and fraud detection",
+        "Churn analysis",
       ],
       sameAs: [
         "https://www.linkedin.com/in/pujanmotiwala/",
         "https://github.com/PujanMotiwala",
+        "https://clickcatalyst.digital/author/pujan-motiwala",
       ],
-      alumniOf: {
-        "@type": "CollegeOrUniversity",
-        name: "Stevens Institute of Technology",
-      },
-      url: `${siteUrl}/about`,
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "Stevens Institute of Technology", sameAs: "https://en.wikipedia.org/wiki/Stevens_Institute_of_Technology" },
+        { "@type": "CollegeOrUniversity", name: "Gujarat Technological University", sameAs: "https://en.wikipedia.org/wiki/Gujarat_Technological_University" },
+      ],
+      url: `${siteUrl}/about/pujan-motiwala`,
       email: contactEmail,
       address: postalAddress,
     },

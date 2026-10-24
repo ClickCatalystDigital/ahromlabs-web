@@ -112,14 +112,16 @@ export default function AboutPage() {
                   How we work with you
                 </h2>
                 <p className="prose-measure mt-6 leading-relaxed text-foreground-secondary">
-                  Ahrom Labs is an industrial systems engineering practice, not a software
-                  vendor. We take on a small number of engagements at a time, because
+                  Ahrom Labs is an industrial systems engineering practice: we build custom
+                  ERP, CRM and AI systems, not off-the-shelf software. We take on a small number of engagements at a time, because
                   modeling a business properly takes real attention. We map how your
                   business actually works before we design or build anything, and that map
                   becomes the foundation the systems are built on.
                 </p>
                 <p className="prose-measure mt-4 leading-relaxed text-foreground-secondary">
-                  The practice is run by Pujan Motiwala, Principal — the same person who
+                  The practice is run by{" "}
+                  <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link>,
+                  founder and Principal: the same person who
                   does the modeling, writes the code, and answers your first message.
                   Ahrom Labs works out of Ahmedabad, Gujarat, with clients across India.
                 </p>

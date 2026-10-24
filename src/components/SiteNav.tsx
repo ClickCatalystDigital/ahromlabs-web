@@ -47,17 +47,23 @@ export function SiteNav() {
           <summary className="nav-link focus-ring cursor-pointer select-none list-none">
             Menu
           </summary>
-          <div className="absolute right-0 top-full z-10 mt-2 flex w-48 flex-col gap-4 border border-line bg-background p-4">
+          <ul className="absolute right-0 top-full z-10 mt-2 flex w-48 flex-col gap-4 border border-line bg-background p-4">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link focus-ring">
-                {link.label}
-              </Link>
+              <li key={link.href}>
+                <Link href={link.href} className="nav-link focus-ring">
+                  {link.label}
+                </Link>
+              </li>
             ))}
-            <SearchButton className="nav-link focus-ring cursor-pointer text-left" />
-            <Link href="/#contact" className="nav-link nav-link-cta focus-ring">
-              Start a conversation
-            </Link>
-          </div>
+            <li>
+              <SearchButton className="nav-link focus-ring cursor-pointer text-left" />
+            </li>
+            <li>
+              <Link href="/#contact" className="nav-link nav-link-cta focus-ring">
+                Start a conversation
+              </Link>
+            </li>
+          </ul>
         </details>
       </nav>
     </header>

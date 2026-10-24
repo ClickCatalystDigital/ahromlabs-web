@@ -14,7 +14,7 @@ export function ClosingCta() {
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
           <Link href="/#contact" className="subscribe-submit focus-ring inline-block">
             Start a conversation
-          </Link>
+          </Link>{" "}
           <Link href="/engagement" className="text-link focus-ring">
             Pricing, licensing and support
           </Link>

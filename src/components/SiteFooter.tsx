@@ -56,7 +56,7 @@ export function SiteFooter() {
           <p className="mt-6 flex flex-col gap-1 text-sm">
             <a href="mailto:pujan@ahromlabs.com" className="text-link focus-ring self-start">
               pujan@ahromlabs.com
-            </a>
+            </a>{" "}
             <span className="text-foreground-secondary">Ahmedabad, Gujarat · clients across India</span>
           </p>
         </div>

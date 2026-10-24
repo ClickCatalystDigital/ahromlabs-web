@@ -87,7 +87,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
             {note.answer}
           </p>
           <p className="mt-6 text-sm text-foreground-secondary">
-            Pujan Motiwala
+            <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link>
             {" · "}
             <time dateTime={note.published}>{formatDate(note.published)}</time>
             {note.updated !== note.published && (

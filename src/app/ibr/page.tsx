@@ -62,7 +62,7 @@ export default function IbrHub() {
           <li key={f.slug}>
             <Link href={`/ibr/forms/${f.slug}`} className="text-link focus-ring font-medium">
               {formName(f)}
-            </Link>
+            </Link>{" "}
             <span className="block text-sm">
               {f.title}
               {f.old && ` · was ${f.old.form}`}

@@ -67,7 +67,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a href="#contact" className="subscribe-submit focus-ring inline-block">
                   Start a conversation
-                </a>
+                </a>{" "}
                 <a href="#demos" className="text-link focus-ring">
                   Or try a live demo
                 </a>
@@ -324,12 +324,12 @@ export default function Home() {
               <p className="mt-10">
                 <Link href="/industries" className="text-link focus-ring">
                   Browse by industry
-                </Link>
-                <span className="text-foreground-secondary"> · </span>
+                </Link>{" "}
+                <span className="text-foreground-secondary"> · </span>{" "}
                 <Link href="/work" className="text-link focus-ring">
                   See all work
-                </Link>
-                <span className="text-foreground-secondary"> · </span>
+                </Link>{" "}
+                <span className="text-foreground-secondary"> · </span>{" "}
                 <Link href="/notes" className="text-link focus-ring">
                   Read the engineering notes
                 </Link>

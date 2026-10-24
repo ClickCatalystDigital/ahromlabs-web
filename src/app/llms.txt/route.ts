@@ -43,6 +43,7 @@ sister furniture business (Savistar & Saag).
 - [Approach](https://ahromlabs.com/approach): The four principles behind how we model a business before automating it.
 - [Systems](https://ahromlabs.com/systems): A glossary of the vocabulary we use to model a business: entities, relationships, workflows, permissions, decisions, evidence, and related terms.
 - [About](https://ahromlabs.com/about): Who this practice is for and how an engagement runs.
+- [Pujan Motiwala](https://ahromlabs.com/about/pujan-motiwala): The founder: background in data science and process mapping, and where a client's system can go next with AI.
 - [Boiler ERP live demo](https://boiler-erp.ahromlabs.com/demo): A working copy of the boiler and pressure-vessel ERP with a sample company. Leave a name and email, pick a department head, and use the real screens; data resets nightly.
 - [Electronics inventory live demo](https://electronics-erp.ahromlabs.com/demo): A working copy of the reel-level inventory and CRM built for an electronics-component trader, with a sample company. Leave a name and email, pick a login, and use the real screens; data resets nightly.
 - [Interior design and furniture workshop live demo](https://interiors-erp.ahromlabs.com/demo): A working copy of the system built for an interior design studio and its furniture workshop, with two sample companies. Leave a name and email, pick a login, and use the real screens; data resets nightly.

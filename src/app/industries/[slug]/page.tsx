@@ -104,12 +104,12 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
                   {industry.demo.label}
-                </a>
+                </a>{" "}
                 <span className="text-sm text-foreground-secondary">Sample company. Free. Resets every night.</span>
               </div>
             )}
             <p className="mt-6 text-sm text-foreground-secondary">
-              Pujan Motiwala
+              <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link>
               {" · "}
               <time dateTime={industry.published}>{formatDate(industry.published)}</time>
               {industry.updated !== industry.published && (
@@ -194,7 +194,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                 <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
                   <a href={industry.demo.url} className="subscribe-submit focus-ring inline-block">
                     {industry.demo.label}
-                  </a>
+                  </a>{" "}
                   <span className="text-sm text-foreground-secondary">Free. Resets every night.</span>
                 </div>
               </div>

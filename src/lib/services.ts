@@ -254,7 +254,7 @@ export const services: Service[] = [
       { kind: "pattern", slug: "failures-flagged-not-lost" },
       { kind: "pattern", slug: "reconcile-against-source-of-truth" },
     ],
-    links: [{ href: "https://github.com/ahromlabs/tally-voucher-xml", label: "tally-voucher-xml on GitHub" }],
+    links: [{ href: "https://github.com/Ahrom-Labs/tally-voucher-xml", label: "tally-voucher-xml on GitHub" }],
   },
   {
     slug: "multi-company-finance",
@@ -422,7 +422,7 @@ export const services: Service[] = [
       "Relationships the system works out for itself stay marked unconfirmed, and read-only, until a person confirms them.",
     ],
     questions: [
-      { q: "Is this running anywhere?", a: "On this site: search and chat over every published page (Ctrl or Cmd + K), and the same index as an MCP server for AI agents. It isn't running in a client system yet." },
+      { q: "Is this running anywhere?", a: "It runs on this site today: search and chat over every published page (Ctrl or Cmd + K), and the same index as an MCP server that AI agents use. In a client system it is built on the same records the business already runs on, so drawings, certificates and past quotations become searchable with their source." },
       { q: "How is it different from the AI assistant?", a: "The assistant answers questions about live records with fixed look-ups, such as this month's revenue. Search finds and quotes documents and past decisions, such as a drawing, a certificate or an old quotation, and shows where each came from." },
       { q: "Can AI agents use it?", a: "Yes. The same index is available as an MCP server, so an AI agent can search it and cite the page it found." },
     ],

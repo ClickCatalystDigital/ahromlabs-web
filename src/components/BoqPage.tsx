@@ -41,7 +41,7 @@ export const BOQ_HUB: Hub = {
       <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
         <Link href="/boq/check" className="subscribe-submit focus-ring inline-block">
           Check a BOQ
-        </Link>
+        </Link>{" "}
         <span className="text-sm text-foreground-secondary">Free. Runs in your browser; the rows never leave it.</span>
       </div>
       <p className="mt-4 text-sm text-foreground-secondary">

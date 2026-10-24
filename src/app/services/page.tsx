@@ -171,7 +171,7 @@ export default function ServicesPage() {
                 Ahrom Labs takes on a small number of engagements at a time. The person who
                 models your business is the same person who writes the code and answers your
                 first message:{" "}
-                <Link href="/about" className="text-link focus-ring">Pujan Motiwala, Principal</Link>, based in Ahmedabad and working with
+                <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala, Principal</Link>, based in Ahmedabad and working with
                 clients across India.
               </p>
               <p className="mt-4 leading-relaxed text-foreground-secondary">

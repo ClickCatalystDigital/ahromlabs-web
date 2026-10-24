@@ -84,7 +84,7 @@ export default async function TermPage(props: PageProps<"/systems/[slug]">) {
             {term.answer}
           </p>
           <p className="mt-6 text-sm text-foreground-secondary">
-            Pujan Motiwala
+            <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link>
             {" · "}
             <time dateTime={term.published}>{formatDate(term.published)}</time>
             {term.updated !== term.published && (

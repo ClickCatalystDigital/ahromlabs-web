@@ -124,10 +124,10 @@ export default function WorkPage() {
                 LS Technologies system, extracted into a small, dependency-free library with 32
                 tests and stripped of that business&apos;s ledger names and database coupling.{" "}
                 <a
-                  href="https://github.com/ahromlabs/tally-voucher-xml"
+                  href="https://github.com/Ahrom-Labs/tally-voucher-xml"
                   className="text-link focus-ring"
                 >
-                  github.com/ahromlabs/tally-voucher-xml
+                  github.com/Ahrom-Labs/tally-voucher-xml
                 </a>
               </p>
             </div>

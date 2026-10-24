@@ -92,7 +92,7 @@ export default function IbrFormsPage() {
               <tr key={f.slug} className="border-b border-line align-top">
                 <td className="py-3 pr-6">{oldName(f.old!.form)}</td>
                 <td className="py-3 [overflow-wrap:anywhere]">
-                  <span className="font-medium">{link(f)}</span>
+                  <span className="font-medium">{link(f)}</span>{" "}
                   <span className="mt-0.5 block">{f.title}</span>
                 </td>
               </tr>
@@ -101,7 +101,7 @@ export default function IbrFormsPage() {
               <tr key={u.form} className="border-b border-line align-top">
                 <td className="py-3 pr-6">{oldName(u.form)}</td>
                 <td className="py-3 [overflow-wrap:anywhere]">
-                  <span className="font-medium text-foreground">No IBR 2026 form with this title</span>
+                  <span className="font-medium text-foreground">No IBR 2026 form with this title</span>{" "}
                   <span className="mt-0.5 block">{u.title}</span>
                 </td>
               </tr>

@@ -80,7 +80,7 @@ export default async function PatternPage(props: PageProps<"/patterns/[slug]">) 
             {pattern.answer}
           </p>
           <p className="mt-6 text-sm text-foreground-secondary">
-            Pujan Motiwala
+            <Link href="/about/pujan-motiwala" className="text-link focus-ring">Pujan Motiwala</Link>
             {" · "}
             <time dateTime={pattern.published}>{formatDate(pattern.published)}</time>
             {pattern.updated !== pattern.published && (

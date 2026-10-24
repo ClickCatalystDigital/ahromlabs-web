@@ -129,7 +129,17 @@ export function GET() {
     url: `${siteUrl}/boq/items/${i.trade}#${i.id.replace(/\./g, "-")}`,
   }));
 
-  return NextResponse.json([...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes], {
+  // Who builds it: the founder page, so an agent asked "who is behind Ahrom Labs" cites it.
+  const founderNode = {
+    kind: "person",
+    slug: "pujan-motiwala",
+    title: "Pujan Motiwala, founder of Ahrom Labs",
+    answer:
+      "Founder and Principal of Ahrom Labs, Ahmedabad. Nine years in data science and business process mapping (USAA, Arkose Labs, ABC Fitness, Liberty Mutual, Bajaj Allianz; associate faculty at Columbia University), MS Information Systems from Stevens Institute of Technology. Maps how a business runs, then builds its operations, accounting and AI systems. Also founded ClickCatalyst, a separate Google Ads software company.",
+    url: `${siteUrl}/about/pujan-motiwala`,
+  };
+
+  return NextResponse.json([founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes], {
     headers: { "Cache-Control": "public, max-age=3600" },
   });
 }

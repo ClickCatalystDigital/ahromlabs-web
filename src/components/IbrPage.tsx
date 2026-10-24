@@ -45,7 +45,7 @@ export const IBR_HUB: Hub = {
       <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
         <a href="https://boiler-erp.ahromlabs.com/demo" className="subscribe-submit focus-ring inline-block">
           Try the live demo
-        </a>
+        </a>{" "}
         <span className="text-sm text-foreground-secondary">Free. Resets every night.</span>
       </div>
       <p className="mt-4 text-sm text-foreground-secondary">

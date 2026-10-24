@@ -72,7 +72,7 @@ export default function BoqHub() {
       <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 text-foreground-secondary sm:grid-cols-2">
         {trades.map((t) => (
           <li key={t.slug}>
-            <Link href={`/boq/items/${t.slug}`} className="text-link focus-ring font-medium">{t.name}</Link>
+            <Link href={`/boq/items/${t.slug}`} className="text-link focus-ring font-medium">{t.name}</Link>{" "}
             <span className="block text-sm">{tradeItems(t.slug).length} items. {t.summary}</span>
           </li>
         ))}
