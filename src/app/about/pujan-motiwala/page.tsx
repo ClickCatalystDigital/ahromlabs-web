@@ -83,7 +83,7 @@ export default function FounderPage() {
       <SiteNav />
       <main className="flex-1">
         <section className="rail grid grid-cols-1 items-center gap-8 pt-16 pb-8 md:pt-24 md:pb-12 lg:grid-cols-12">
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-7">
           <p className="text-sm text-foreground-secondary">
             <Link href="/about" className="text-link focus-ring">About</Link>
           </p>
@@ -97,11 +97,11 @@ export default function FounderPage() {
           <Image
             src="/people/pujan-motiwala.webp"
             alt="Pujan Motiwala, founder of Ahrom Labs"
-            width={800}
-            height={800}
+            width={1200}
+            height={900}
             fetchPriority="high"
-            sizes="(min-width: 1024px) 25vw, 12rem"
-            className="aspect-square w-48 object-cover sm:w-56 lg:col-span-3 lg:col-start-10 lg:w-full"
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            className="aspect-[4/3] w-full object-cover sm:max-w-md lg:col-span-4 lg:col-start-9 lg:max-w-none"
           />
         </section>
 

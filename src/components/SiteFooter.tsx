@@ -19,6 +19,7 @@ const columns: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/engagement", label: "Pricing" },
       { href: "/about", label: "About" },
       { href: "/support", label: "Client support" },
+      { href: "https://www.linkedin.com/company/ahromlabs", label: "LinkedIn" },
     ],
   },
   {

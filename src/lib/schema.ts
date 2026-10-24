@@ -112,6 +112,8 @@ export const orgGraph = {
       sameAs: [
         "https://www.linkedin.com/company/ahromlabs",
         "https://github.com/Ahrom-Labs",
+        // Google Business Profile (knowledge graph id from its share link, 24 Oct 2026).
+        "https://www.google.com/search?kgmid=/g/11p285b1kh",
       ],
     },
     {
@@ -140,7 +142,7 @@ export const orgGraph = {
         "https://clickcatalyst.digital/author/pujan-motiwala",
         "https://medium.com/@motiwalapujan",
       ],
-      image: { "@type": "ImageObject", url: `${siteUrl}/people/pujan-motiwala.webp`, width: 800, height: 800 },
+      image: { "@type": "ImageObject", url: `${siteUrl}/people/pujan-motiwala.webp`, width: 1200, height: 900 },
       alumniOf: [
         { "@type": "CollegeOrUniversity", name: "Stevens Institute of Technology", sameAs: "https://en.wikipedia.org/wiki/Stevens_Institute_of_Technology" },
         { "@type": "CollegeOrUniversity", name: "Gujarat Technological University", sameAs: "https://en.wikipedia.org/wiki/Gujarat_Technological_University" },
