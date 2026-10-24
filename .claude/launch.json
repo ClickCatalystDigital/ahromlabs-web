@@ -23,6 +23,77 @@
         "3001"
       ],
       "port": 3001
+    },
+    {
+      "name": "designer-ops",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "TURSO_URL=",
+        "TURSO_AUTH_TOKEN=",
+        "DEMO_MODE=1",
+        "NEXT_PUBLIC_DEMO=1",
+        "npm",
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/pujan/Developer/savistar-ops-ui",
+        "--",
+        "-p",
+        "3002"
+      ],
+      "port": 3002
+    },
+    {
+      "name": "sb-ops-scratch",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "TURSO_URL=file:/private/tmp/claude-501/-Users-pujan-Developer-ahrom-labs/00de9a6c-1017-4652-832a-51e1f58b52c0/scratchpad/sbops.db",
+        "TURSO_AUTH_TOKEN=",
+        "npm",
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/pujan/Developer/shanti-ops",
+        "--",
+        "-p",
+        "3072"
+      ],
+      "port": 3072
+    },
+    {
+      "name": "sb-ops-photos-scratch",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "TURSO_URL=file:/private/tmp/claude-501/-Users-pujan-Developer-ahrom-labs/00de9a6c-1017-4652-832a-51e1f58b52c0/scratchpad/sbops.db",
+        "TURSO_AUTH_TOKEN=",
+        "R2_ACCESS_KEY_ID=",
+        "npm",
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/pujan/Developer/shanti-ops-photos",
+        "--",
+        "-p",
+        "3073"
+      ],
+      "port": 3073
+    },
+    {
+      "name": "savistar-quotes",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "TURSO_URL=file:/private/tmp/claude-501/-Users-pujan-Developer-ahrom-labs/095ddf4c-c2dc-46b0-83f7-5f82fd59396c/scratchpad/quotes-test.db",
+        "TURSO_AUTH_TOKEN=",
+        "npm",
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/pujan/Developer/savistar-ops-quotes",
+        "--",
+        "-p",
+        "3003"
+      ],
+      "port": 3003
     }
   ]
 }
