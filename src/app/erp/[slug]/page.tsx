@@ -33,8 +33,10 @@ export async function generateMetadata(props: PageProps<"/erp/[slug]">): Promise
       publishedTime: g.published,
       modifiedTime: g.updated,
       authors: ["Pujan Motiwala"],
-      // The guide's own image when it has one; otherwise the generated card from the route's opengraph-image.
-      ...(g.image && { images: [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }] }),
+      // The guide's own image, or the hub's: a page's openGraph replaces the parent's, so without one it would share no image.
+      images: g.image
+        ? [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }]
+        : [{ url: "/erp/erp-requirements-binder.webp", width: 1086, height: 362, alt: "An open ring binder of ruled sheets with coloured index tabs." }],
     },
     twitter: { card: "summary_large_image", title: g.title, description },
   };

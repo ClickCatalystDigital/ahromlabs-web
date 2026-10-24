@@ -12,6 +12,11 @@ domain: [erp, selection, comparison]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-selection-matrix.webp
+  alt: "A balance scale with one box on each pan, level."
+  width: 1086
+  height: 362
 sources:
   - title: Audit Trail (Edit Log) in TallyPrime
     publisher: Tally Solutions

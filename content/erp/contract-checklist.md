@@ -11,6 +11,11 @@ domain: [erp, contracts, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-contract-ownership.webp
+  alt: "A signed document with ticked lines, a fountain pen and a key resting on it."
+  width: 1086
+  height: 362
 sources:
   - title: Digital Personal Data Protection Act, 2023
     publisher: Ministry of Law and Justice, Gazette of India

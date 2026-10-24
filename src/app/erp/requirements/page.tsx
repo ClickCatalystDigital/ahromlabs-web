@@ -14,11 +14,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "ERP requirements checklist for Indian manufacturers and traders";
 const lead = `${requirements.length} ERP requirements in ${departments.length} departments, each written so you can test it: what to ask for, why it matters, and what to make a vendor show you. Indian statutory requirements are quoted from the official text, and figures come from systems running today.`;
 
+const image = { src: "/erp/erp-requirements-checklist.webp", alt: "A long checklist sheet with tick boxes, the first few ticked, and a pen beside it.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "ERP requirements checklist for Indian manufacturers and traders: testable requirements by department, with vendor demo tests and quoted GST and MCA rules.",
   alternates: { canonical: "/erp/requirements" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/erp/requirements", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/erp/requirements", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -109,10 +111,11 @@ export default function ErpRequirementsPage() {
   ];
   return (
     <ErpPage
-      graph={erpPageGraph({ path: "/erp/requirements", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail })}
+      graph={erpPageGraph({ path: "/erp/requirements", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={ERP_CHECKED}
       updated={ERP_CHECKED}
       headings={departments.map((d) => d.name)}

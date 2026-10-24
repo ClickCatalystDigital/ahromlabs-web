@@ -12,6 +12,11 @@ domain: [erp, implementation, planning]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-implementation-phases.webp
+  alt: "A path of five stepping stones leading to a flag."
+  width: 1086
+  height: 362
 ---
 
 ## Why phases, each in use before the next

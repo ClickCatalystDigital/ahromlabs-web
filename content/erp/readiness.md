@@ -11,6 +11,11 @@ domain: [erp, readiness, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-readiness.webp
+  alt: "A hand placing the top block on a small pyramid of building blocks."
+  width: 1086
+  height: 362
 ---
 
 ## The ten questions

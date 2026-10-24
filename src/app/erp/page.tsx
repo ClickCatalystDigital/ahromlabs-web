@@ -10,11 +10,13 @@ import { headingId } from "@/lib/headings";
 const title = "ERP requirements for Indian manufacturers and traders";
 const lead = `What to ask for before you buy or build an ERP in India: ${requirements.length} requirements in ${departments.length} departments, each with a test you can make any vendor pass, the GST and company-law rules quoted from the official text, and figures from systems running today. Free checklist, Excel template and a builder that picks the lines that apply to you.`;
 
+const image = { src: "/erp/erp-requirements-binder.webp", alt: "An open ring binder of ruled sheets with coloured index tabs.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "ERP requirements for Indian manufacturers and traders: free checklist, Excel template and builder, with vendor tests and quoted e-invoice and audit-trail rules.",
   alternates: { canonical: "/erp" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/erp", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/erp", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -30,10 +32,11 @@ export default function ErpHub() {
 
   return (
     <ErpPage
-      graph={erpPageGraph({ path: "/erp", title, description: lead, published: ERP_PUBLISHED, updated, trail })}
+      graph={erpPageGraph({ path: "/erp", title, description: lead, published: ERP_PUBLISHED, updated, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={ERP_CHECKED}
       updated={updated}
     >

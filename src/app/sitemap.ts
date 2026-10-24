@@ -166,10 +166,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const erpGuides = getContent("erp");
   const erpUpdated = [ERP_CHECKED, ...erpGuides.map((g) => g.updated)].sort().at(-1)!;
   const erpRoutes: MetadataRoute.Sitemap = [
-    { url: `${siteUrl}/erp`, lastModified: changed("erp", erpUpdated), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/erp/requirements`, lastModified: changed("erp/requirements", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/erp/check`, lastModified: changed("erp/check", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/erp/template`, lastModified: changed("erp/template", ERP_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/erp`, lastModified: changed("erp", erpUpdated), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/erp/erp-requirements-binder.webp`] },
+    { url: `${siteUrl}/erp/requirements`, lastModified: changed("erp/requirements", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/erp/erp-requirements-checklist.webp`] },
+    { url: `${siteUrl}/erp/check`, lastModified: changed("erp/check", ERP_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/erp/erp-requirements-builder.webp`] },
+    { url: `${siteUrl}/erp/template`, lastModified: changed("erp/template", ERP_CHECKED), changeFrequency: "monthly", priority: 0.7, images: [`${siteUrl}/erp/erp-requirements-template.webp`] },
     ...erpGuides.map((g) => ({
       url: `${siteUrl}/erp/${g.slug}`,
       lastModified: changed(`erp/${g.slug}`, g.updated),

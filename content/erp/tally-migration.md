@@ -12,6 +12,11 @@ domain: [erp, tally, migration]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/tally-to-erp-migration.webp
+  alt: "Two filing cabinets with an open box of files between them."
+  width: 1086
+  height: 362
 sources:
   - title: Companies (Accounts) Second Amendment Rules, 2022 (G.S.R. 235(E))
     publisher: Ministry of Corporate Affairs, Gazette of India

@@ -12,6 +12,11 @@ domain: [erp, interiors, requirements]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-interior-design-firms.webp
+  alt: "A drafting table with a floor plan pinned to it and a roll of drawings."
+  width: 1086
+  height: 362
 ---
 
 ## Start with these

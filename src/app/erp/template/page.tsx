@@ -13,11 +13,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "ERP requirements template in Excel: free RFP and scorecard";
 const lead = `A free ERP requirements template in Excel with ${requirements.length} requirements in ${departments.length} departments, each with the test a vendor must pass. Set your priorities, send it to vendors, fill in their answers, and the sheet scores them for you.`;
 
+const image = { src: "/erp/erp-requirements-template.webp", alt: "A clipboard holding a ruled table with small dropdown arrows down one column.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: `Free ERP requirements template (Excel) for Indian manufacturers and traders: ${requirements.length} testable requirements, priority and vendor-answer dropdowns, automatic vendor scoring.`,
   alternates: { canonical: "/erp/template" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/erp/template", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/erp/template", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -41,10 +43,11 @@ export default function ErpTemplatePage() {
   const preview = departments.map((d) => requirements.find((r) => r.dept === d.slug)!);
   return (
     <ErpPage
-      graph={erpPageGraph({ path: "/erp/template", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail })}
+      graph={erpPageGraph({ path: "/erp/template", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={ERP_CHECKED}
       updated={ERP_CHECKED}
       headings={["Download", "The columns, and why each is there", "What it looks like", "How to run a vendor evaluation with it"]}

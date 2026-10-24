@@ -11,6 +11,11 @@ domain: [erp, manufacturing, requirements]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-small-manufacturers.webp
+  alt: "A small hydraulic workshop press with its hand pump."
+  width: 1086
+  height: 362
 ---
 
 ## Start with these

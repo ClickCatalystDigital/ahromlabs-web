@@ -10,11 +10,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "ERP requirements builder: your checklist in five answers";
 const lead = `Tell it what kind of business you run, your turnover, whether Tally stays, and which departments the system must cover. It picks the requirements that apply from ${requirements.length}, including the GST and company-law rules your turnover brings in, ready to print or open in Excel and send to vendors. It runs in your browser; nothing is sent anywhere.`;
 
+const image = { src: "/erp/erp-requirements-builder.webp", alt: "A control panel with five toggle switches, some on and some off.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "Free ERP requirements builder for Indian businesses: answer five questions and get the requirements that apply to you, with e-invoice and audit-trail rules.",
   alternates: { canonical: "/erp/check" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/erp/check", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/erp/check", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -25,10 +27,11 @@ export default function ErpCheckPage() {
   ];
   return (
     <ErpPage
-      graph={erpPageGraph({ path: "/erp/check", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail, app: true })}
+      graph={erpPageGraph({ path: "/erp/check", title, description: lead, published: ERP_PUBLISHED, updated: ERP_CHECKED, trail, image, app: true })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={ERP_CHECKED}
       updated={ERP_CHECKED}
     >

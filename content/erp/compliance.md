@@ -12,6 +12,11 @@ domain: [erp, compliance, gst]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-compliance-audit-trail.webp
+  alt: "A closed ledger book with a padlock resting on its cover."
+  width: 1086
+  height: 362
 sources:
   - title: Companies (Accounts) Amendment Rules, 2021 (G.S.R. 205(E))
     publisher: Ministry of Corporate Affairs, Gazette of India

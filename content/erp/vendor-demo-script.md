@@ -11,6 +11,11 @@ domain: [erp, selection, demo]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-vendor-demo.webp
+  alt: "A laptop on a stand showing a dashboard, with a stopwatch beside it."
+  width: 1086
+  height: 362
 ---
 
 ## How to run the demo

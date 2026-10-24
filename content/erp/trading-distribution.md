@@ -12,6 +12,11 @@ domain: [erp, trading, requirements]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /erp/erp-trading-distribution.webp
+  alt: "Cartons stacked on a pallet, with a handheld barcode scanner beside them."
+  width: 1086
+  height: 362
 ---
 
 ## Start with these

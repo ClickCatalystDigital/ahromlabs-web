@@ -24,6 +24,12 @@ const CHECKS = [
   ["How are changes after the BOQ is agreed priced?", /variation/i],
   // "Interior BOQ kaise banaye?" is checked in scripts/ahrom-ai.check.ts instead: the chat answers through that
   // router (Hinglish synonyms there), and this index, the fallback, ranks its Hinglish wording below the threshold.
+  // ERP requirements (/erp)
+  ["What should an ERP requirements checklist include?", /test|what to make a vendor show|vendor must show/i],
+  ["Does my ERP need an audit trail?", /cannot be disabled|can't be switched off/],
+  ["When is e-invoicing mandatory for my business?", /₹5 crore|five crore/],
+  ["What should I ask an ERP vendor to show in a demo?", /in front of you|demo script/i],
+  ["Do you have an ERP requirements template in Excel?", /scorecard|scores/i],
   // Ownership and licence
   ["Who owns the code?", /not a copy of the code/],
   ["Who owns the software after I pay?", /software stays ours/],
