@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         (name) => `${siteUrl}/what-we-build/${name}.webp`,
       ),
     },
-    { url: `${siteUrl}/about/pujan-motiwala`, lastModified: pageDate("about/pujan-motiwala"), changeFrequency: "yearly", priority: 0.5 },
+    { url: `${siteUrl}/about/pujan-motiwala`, lastModified: pageDate("about/pujan-motiwala"), changeFrequency: "yearly", priority: 0.5, images: [`${siteUrl}/people/pujan-motiwala.webp`] },
     {
       url: `${siteUrl}/systems`,
       lastModified: changed("systems", newestUpdate("term").toISOString()),

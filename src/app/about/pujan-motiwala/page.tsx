@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -81,7 +82,8 @@ export default function FounderPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(graph) }} />
       <SiteNav />
       <main className="flex-1">
-        <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
+        <section className="rail grid grid-cols-1 items-center gap-8 pt-16 pb-8 md:pt-24 md:pb-12 lg:grid-cols-12">
+          <div className="lg:col-span-8">
           <p className="text-sm text-foreground-secondary">
             <Link href="/about" className="text-link focus-ring">About</Link>
           </p>
@@ -90,6 +92,17 @@ export default function FounderPage() {
             Founder and Principal, Ahrom Labs. I map how a business actually runs, then build the system it runs
             on, and I&apos;m the person who answers when you write in.
           </p>
+          </div>
+          {/* The LCP element on desktop: loaded eagerly, high priority (images are unoptimized site-wide). */}
+          <Image
+            src="/people/pujan-motiwala.webp"
+            alt="Pujan Motiwala, founder of Ahrom Labs"
+            width={800}
+            height={800}
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 25vw, 12rem"
+            className="aspect-square w-48 object-cover sm:w-56 lg:col-span-3 lg:col-start-10 lg:w-full"
+          />
         </section>
 
         <section className="section border-t border-line">
@@ -184,6 +197,8 @@ export default function FounderPage() {
                   <a href="https://www.linkedin.com/in/pujanmotiwala/" className="text-link focus-ring" rel="me">LinkedIn</a>
                   {" · "}
                   <a href="https://github.com/PujanMotiwala" className="text-link focus-ring" rel="me">GitHub</a>
+                  {" · "}
+                  <a href="https://medium.com/@motiwalapujan" className="text-link focus-ring" rel="me">Medium</a>
                   {" · "}
                   <a href="mailto:pujan@ahromlabs.com" className="text-link focus-ring">pujan@ahromlabs.com</a>
                 </dd>

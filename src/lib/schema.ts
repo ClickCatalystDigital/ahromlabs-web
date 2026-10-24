@@ -138,7 +138,9 @@ export const orgGraph = {
         "https://www.linkedin.com/in/pujanmotiwala/",
         "https://github.com/PujanMotiwala",
         "https://clickcatalyst.digital/author/pujan-motiwala",
+        "https://medium.com/@motiwalapujan",
       ],
+      image: { "@type": "ImageObject", url: `${siteUrl}/people/pujan-motiwala.webp`, width: 800, height: 800 },
       alumniOf: [
         { "@type": "CollegeOrUniversity", name: "Stevens Institute of Technology", sameAs: "https://en.wikipedia.org/wiki/Stevens_Institute_of_Technology" },
         { "@type": "CollegeOrUniversity", name: "Gujarat Technological University", sameAs: "https://en.wikipedia.org/wiki/Gujarat_Technological_University" },
