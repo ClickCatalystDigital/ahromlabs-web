@@ -114,6 +114,7 @@ export const orgGraph = {
         "https://github.com/Ahrom-Labs",
         // Google Business Profile (knowledge graph id from its share link, 24 Oct 2026).
         "https://www.google.com/search?kgmid=/g/11p285b1kh",
+        "https://clutch.co/profile/ahrom-labs",
       ],
     },
     {
