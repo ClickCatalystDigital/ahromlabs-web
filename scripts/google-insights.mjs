@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Google insights for ahromlabs.com — Search Console, Analytics (GA4) and PageSpeed —
+// Google insights for ahromlabs.com and client sites (SITES) — Search Console, Analytics (GA4) and PageSpeed —
 // as a local MCP connector (registered in .mcp.json, so Claude Code in this folder
 // loads it) and as a terminal command. Each tool is defined once in TOOLS; both
 // surfaces read the same table. Setup: SYSTEM.md, "Google insights connector".
@@ -13,7 +13,8 @@
 //                         the Search Console property and an Editor on the GA4 property
 //   pagespeed-key         PageSpeed Insights API key (optional; without it Google's
 //                         small shared quota applies)
-// Overrides: GOOGLE_KEY_FILE, PAGESPEED_KEY_FILE, GSC_SITE, GA4_PROPERTY.
+//   savistar-service-account.json  same, for savistar.in (GOOGLE_SITE=savistar)
+// Overrides: GOOGLE_SITE, GOOGLE_KEY_FILE, PAGESPEED_KEY_FILE, GSC_SITE, GA4_PROPERTY.
 //
 // Writes are marked `write: true` and announced to the MCP client as such, so Claude
 // Code asks before running them: resubmitting the sitemap, and GA4 key events, custom
@@ -27,9 +28,17 @@ import path from "node:path";
 import { z } from "zod";
 
 const CONFIG_DIR = path.join(os.homedir(), ".config/ahrom-labs");
-const KEY_FILE = process.env.GOOGLE_KEY_FILE ?? path.join(CONFIG_DIR, "service-account.json");
+// One script, one service account per site: GOOGLE_SITE picks the row (default ahromlabs).
+export const SITES = {
+  ahromlabs: { domain: "ahromlabs.com", ga4: /ahrom/i, key: "service-account.json" },
+  savistar: { domain: "savistar.in", ga4: /savistar/i, key: "savistar-service-account.json" },
+};
+const SITE_NAME = process.env.GOOGLE_SITE ?? "ahromlabs";
+const SITE = SITES[SITE_NAME];
+if (!SITE) throw new Error(`Unknown GOOGLE_SITE "${SITE_NAME}"; one of: ${Object.keys(SITES).join(", ")}`);
+const KEY_FILE = process.env.GOOGLE_KEY_FILE ?? path.join(CONFIG_DIR, SITE.key);
 const PAGESPEED_KEY_FILE = process.env.PAGESPEED_KEY_FILE ?? path.join(CONFIG_DIR, "pagespeed-key");
-const ORIGIN = "https://ahromlabs.com";
+const ORIGIN = `https://${SITE.domain}`;
 const SITEMAP = `${ORIGIN}/sitemap.xml`;
 // analytics.edit lets the GA4 write tools work; it does nothing beyond the role the
 // service account holds on the property (Editor), so it can't reach other properties.
@@ -96,9 +105,9 @@ let gscSite = process.env.GSC_SITE;
 async function site() {
   if (gscSite) return gscSite;
   const { siteEntry = [] } = await api("https://www.googleapis.com/webmasters/v3/sites");
-  const ours = siteEntry.map((s) => s.siteUrl).filter((u) => u.includes("ahromlabs.com"));
+  const ours = siteEntry.map((s) => s.siteUrl).filter((u) => u.includes(SITE.domain));
   gscSite = ours.find((u) => u.startsWith("sc-domain:")) ?? ours[0];
-  if (!gscSite) throw new Error(`The service account can't see ahromlabs.com in Search Console. ${SETUP}`);
+  if (!gscSite) throw new Error(`The service account can't see ${SITE.domain} in Search Console. ${SETUP}`);
   return gscSite;
 }
 const siteApi = async (rest) => `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(await site())}${rest}`;
@@ -148,8 +157,8 @@ async function property() {
   if (ga4) return ga4;
   const { accountSummaries = [] } = await api("https://analyticsadmin.googleapis.com/v1beta/accountSummaries");
   const props = accountSummaries.flatMap((a) => a.propertySummaries ?? []);
-  const ours = props.find((p) => /ahrom/i.test(p.displayName)) ?? (props.length === 1 ? props[0] : undefined);
-  if (!ours) throw new Error(`The service account can't see the Ahrom Labs GA4 property (sees ${props.length}). ${SETUP}`);
+  const ours = props.find((p) => SITE.ga4.test(p.displayName)) ?? (props.length === 1 ? props[0] : undefined);
+  if (!ours) throw new Error(`The service account can't see the ${SITE.domain} GA4 property (sees ${props.length}). ${SETUP}`);
   return (ga4 = ours.property); // "properties/123456789"
 }
 
@@ -220,7 +229,7 @@ export const TOOLS = {
     description: "Which Google credentials are in place and which properties they can see. Run this first.",
     params: {},
     run: async () => {
-      const status = { serviceAccountKey: fs.existsSync(KEY_FILE) ? KEY_FILE : `missing (${KEY_FILE})` };
+      const status = { site: SITE_NAME, serviceAccountKey: fs.existsSync(KEY_FILE) ? KEY_FILE : `missing (${KEY_FILE})` };
       status.pagespeedKey = process.env.PAGESPEED_API_KEY || fs.existsSync(PAGESPEED_KEY_FILE) ? "present" : "missing (shared quota)";
       if (fs.existsSync(KEY_FILE)) {
         status.serviceAccount = JSON.parse(fs.readFileSync(KEY_FILE, "utf-8")).client_email;
@@ -231,7 +240,7 @@ export const TOOLS = {
     },
   },
   gsc_queries: {
-    description: "Search Console: top Google search queries for ahromlabs.com, with clicks, impressions, CTR and average position.",
+    description: `Search Console: top Google search queries for ${SITE.domain}, with clicks, impressions, CTR and average position.`,
     params: { days },
     run: ({ days }) => searchAnalytics("query", days),
   },
@@ -257,7 +266,7 @@ export const TOOLS = {
     run: async () => (await api(await siteApi("/sitemaps"))).sitemap ?? [],
   },
   gsc_submit_sitemap: {
-    description: "Search Console: resubmit https://ahromlabs.com/sitemap.xml so Google rereads it.",
+    description: `Search Console: resubmit ${SITEMAP} so Google rereads it.`,
     write: true,
     params: {},
     run: async () => {
@@ -363,7 +372,7 @@ export const TOOLS = {
 async function serveMcp() {
   const { McpServer } = await import("@modelcontextprotocol/sdk/server/mcp.js");
   const { StdioServerTransport } = await import("@modelcontextprotocol/sdk/server/stdio.js");
-  const server = new McpServer({ name: "ahrom-google-insights", version: "1.0.0" });
+  const server = new McpServer({ name: `google-insights-${SITE_NAME}`, version: "1.0.0" });
   for (const [name, tool] of Object.entries(TOOLS)) {
     const annotations = tool.write
       ? { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true }

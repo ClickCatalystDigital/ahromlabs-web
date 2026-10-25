@@ -2,7 +2,7 @@
 // its key and carries the claims Google's token endpoint expects. No network.
 import crypto from "node:crypto";
 import assert from "node:assert";
-import { signedJwt } from "./google-insights.mjs";
+import { signedJwt, SITES } from "./google-insights.mjs";
 
 const { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", { modulusLength: 2048 });
 const key = { client_email: "bot@x.iam.gserviceaccount.com", private_key: privateKey.export({ type: "pkcs8", format: "pem" }) };
@@ -16,4 +16,6 @@ assert.deepEqual(JSON.parse(Buffer.from(c, "base64url")), {
   iat: 1000,
   exp: 4600,
 });
-console.log("google-insights: jwt ok");
+const keys = Object.values(SITES).map((s) => s.key);
+assert.equal(new Set(keys).size, keys.length, "each site has its own service-account key file");
+console.log("google-insights: jwt ok, sites ok");

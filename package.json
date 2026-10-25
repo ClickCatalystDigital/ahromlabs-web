@@ -14,6 +14,7 @@
     "search:sync": "wrangler ai-search jobs create ahromlabs-search --description \"Post-deploy sync\" || echo \"AI Search sync not started; the 6-hourly scheduled sync will pick the changes up\"",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "google": "node --no-warnings scripts/google-insights.mjs",
+    "google:savistar": "GOOGLE_SITE=savistar node --no-warnings scripts/google-insights.mjs",
     "indexnow": "node --no-warnings scripts/indexnow.mjs",
     "chat:check": "node --no-warnings scripts/check-chat-answers.mjs"
   },

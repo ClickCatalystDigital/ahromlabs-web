@@ -8,6 +8,18 @@
         "scripts/google-insights.mjs",
         "--mcp"
       ]
+    },
+    "google-insights-savistar": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "--no-warnings",
+        "scripts/google-insights.mjs",
+        "--mcp"
+      ],
+      "env": {
+        "GOOGLE_SITE": "savistar"
+      }
     }
   }
 }

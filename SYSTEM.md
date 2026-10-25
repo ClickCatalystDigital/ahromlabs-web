@@ -161,8 +161,15 @@ MCP SDK and zod are dev dependencies, never bundled into the site.
   Analytics Data, Analytics Admin and PageSpeed Insights APIs enabled and **no Cloud roles**;
   added in Search Console as a **Full** user and in GA4 as an **Administrator**, Pujan's choice; Editor would cover every tool) and `pagespeed-key`
   (an API key restricted to the PageSpeed Insights API). Never commit either. Overrides:
-  `GOOGLE_KEY_FILE`, `PAGESPEED_KEY_FILE`, `GSC_SITE`, `GA4_PROPERTY`. The Search Console property
-  and GA4 property are found automatically.
+  `GOOGLE_SITE`, `GOOGLE_KEY_FILE`, `PAGESPEED_KEY_FILE`, `GSC_SITE`, `GA4_PROPERTY`. The Search
+  Console property and GA4 property are found automatically.
+- **Client sites:** `SITES` in the script holds one row per site (domain, GA4 name match, key file);
+  `GOOGLE_SITE` picks the row, default `ahromlabs`. Each site has its **own** service account, so a
+  client's data is never reachable with the agency key. Savistar (`savistar.in`): key at
+  `~/.config/ahrom-labs/savistar-service-account.json`; MCP server `google-insights-savistar`;
+  terminal `npm run google:savistar -- <tool>`. To add a site: new service account (same APIs, no
+  Cloud roles), add it as a user on that site's Search Console property and GA4 property, drop the
+  key in `~/.config/ahrom-labs/`, add a `SITES` row and an `.mcp.json` entry.
 - **Writes** are flagged `write: true` and announced as non-read-only, so Claude Code asks before
   each. Access comes from the Search Console and GA4 roles, never Cloud IAM roles: those govern the
   Cloud project (billing, resources), add no data, and would make a leaked key dangerous.
