@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ahromlabs/ahromlabs",
+  "title": "Ahrom Labs",
+  "description": "Indian ERP checklist, IBR 2026 compliance, BIS BOQ standards, and engineering notes.",
+  "version": "1.0.0",
+  "websiteUrl": "https://ahromlabs.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ahromlabs.com/mcp"
+    }
+  ]
+}
