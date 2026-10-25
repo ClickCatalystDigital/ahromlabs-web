@@ -46,4 +46,4 @@ At a boiler and pressure-vessel manufacturer, Ahrom Labs' system imported six of
 
 The [requirements builder](/erp/check) with "Manufacturing" selected gives the full list for your turnover and whether Tally stays, ready to send to vendors.
 
-If the system will have an AI assistant, [what it should answer for this kind of business](/ai-assistant/manufacturers) lists the questions, with what Ember answers today.
+If the system will have an AI assistant, [what it should answer for this kind of business](/ai-assistant/manufacturers) lists the questions, with what Ember AI answers today.

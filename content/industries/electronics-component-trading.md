@@ -68,7 +68,7 @@ updated: 2026-10-25
 
 ## Can I try it before talking to anyone?
 
-Yes. A live demo of the inventory and CRM side runs at [electronics-erp.ahromlabs.com](https://electronics-erp.ahromlabs.com/demo) with a made-up trader, Acme Components: reels with QR labels in a main store and a partner store, customer purchase orders, dispatches and approvals waiting. Leave a name and email, pick a login (owner, manager, store staff, partner store or customer) and use the real screens. Uploads are switched off there and Ohm, the AI assistant, takes two questions per visitor, and the data resets every night, so nothing you do reaches anyone.
+Yes. A live demo of the inventory and CRM side runs at [electronics-erp.ahromlabs.com](https://electronics-erp.ahromlabs.com/demo) with a made-up trader, Acme Components: reels with QR labels in a main store and a partner store, customer purchase orders, dispatches and approvals waiting. Leave a name and email, pick a login (owner, manager, store staff, partner store or customer) and use the real screens. Uploads are switched off there, the assistant Ohm AI takes two questions per visitor, and the data resets every night, so nothing you do reaches anyone.
 
 ## Why does an import-trading business end up typing the same invoice twice?
 

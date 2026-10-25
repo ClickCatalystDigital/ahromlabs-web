@@ -316,14 +316,14 @@ export const services: Service[] = [
     ],
     demos: [
       { client: "savistar-saag", as: "Two free questions to Atelier AI, from any sample login" },
-      { client: "ls-technologies", as: "Two free questions to Ohm, from any sample login" },
-      { client: "boiler-manufacturer", as: "Two free questions to Ember, live data from a sample company" },
+      { client: "ls-technologies", as: "Two free questions to Ohm AI, from any sample login" },
+      { client: "boiler-manufacturer", as: "Two free questions to Ember AI, live data from a sample company" },
     ],
     evidence: [
       { metric: "Routing test (Savistar & Saag)", value: "55 of 55 test questions and 57 unseen real phrasings, including Hinglish" },
       { metric: "Who writes the numbers", value: "Code — fixed look-ups, never the model" },
       { metric: "Written answers with a number not in the data", value: "Dropped" },
-      { metric: "Running at", value: "Atelier AI at Savistar & Saag, Ohm at LS Technologies; Ember, with how-to answers, at a boiler manufacturer" },
+      { metric: "Running at", value: "Atelier AI at Savistar & Saag, Ohm AI at LS Technologies; Ember AI, with how-to answers, at a boiler manufacturer" },
     ],
     proof: [{ kind: "note", slug: "assistant-that-answers-from-your-ledger" }],
   },

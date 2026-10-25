@@ -5,7 +5,7 @@ title: "An AI assistant for a trading or distribution business: what it should a
 answer: >
   A trader's assistant should answer stock by item and store, what is running low or not moving, what came in and
   went out, where a particular reel or box is, which purchase orders are waiting, and which customers have stopped
-  ordering. Ohm does this for LS Technologies' own staff today, and says "the data doesn't have that" when
+  ordering. Ohm AI does this for LS Technologies' own staff today, and says "the data doesn't have that" when
   asked about money the system doesn't hold.
 description: "An AI assistant for traders and distributors: the stock, shipment and customer questions it should answer from your own records, and how to check it."
 domain: [ai, trading, selection]
@@ -23,15 +23,15 @@ A trading business asks the same few questions all day: do we have it, where is 
 
 ## What should it answer?
 
-Every question Ohm answers today is listed below, each with the report to check the answer against. The core of it: stock by item and store, what is running low or not moving, what came in and went out, where a particular reel or box is, purchase orders and approvals, and two plain-arithmetic statistics: which items will run out at the recent shipping rate, and which customers have gone quiet against their own usual gap between orders. Each statistic says how much history it used, and "and last month?" keeps the customer and the item.
+Every question Ohm AI answers today is listed below, each with the report to check the answer against. The core of it: stock by item and store, what is running low or not moving, what came in and went out, where a particular reel or box is, purchase orders and approvals, and two plain-arithmetic statistics: which items will run out at the recent shipping rate, and which customers have gone quiet against their own usual gap between orders. Each statistic says how much history it used, and "and last month?" keeps the customer and the item.
 
 ## What should it refuse?
 
 Questions about data the system doesn't keep. A stock system that doesn't hold receivables should say so when asked what a customer owes, not produce a figure.
 
-## How Ohm does it
+## How Ohm AI does it
 
-Ohm is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.
+Ohm AI is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.
 
 ## How to check a vendor's
 

@@ -5,7 +5,7 @@ title: "An AI assistant for a manufacturer: where to start"
 answer: >
   For a manufacturer, start with how-to questions answered from the system's own help guide, for each person's
   departments, and add live-data questions (stock, purchase orders, approvals) once the owner has decided what may
-  be sent to the AI provider. That is where Ember stands at a boiler manufacturer: how-to answers live, live data
+  be sent to the AI provider. That is where Ember AI stands at a boiler manufacturer: how-to answers live, live data
   built and switched off.
 description: "An AI assistant for a manufacturing ERP: start with how-to answers from your own help guide, then stock, purchase and approval questions, and how to check it."
 domain: [ai, manufacturing, selection]
@@ -36,9 +36,9 @@ Unrelated questions ("write me a poem") should get a fixed reply that never reac
 
 Stock on hand, items below minimum, purchase orders not received, an order's value and payments, approvals waiting. These need a decision first: in a design where the rows are worded by a writing model, the rows of each answer are sent to the AI provider. The owner should approve that by name, and each look-up should follow the same department limits as the screens. The [data safety guide](/ai-assistant/data-safety) sets out what to ask.
 
-## How Ember does it
+## How Ember AI does it
 
-Ember is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.
+Ember AI is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.
 
 ## How to check a vendor's
 

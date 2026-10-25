@@ -64,13 +64,13 @@ There are three designs, and they send very different amounts:
 
 | Design | What goes to the AI provider | Ahrom Labs' assistants |
 |---|---|---|
-| The model only chooses | The question, and the one before it for follow-ups | Atelier AI and Ohm by default; Ember for how-to answers (the question and the help-guide sections picked) |
-| The model writes the answer | The question and the rows of the answer | Atelier AI when a person picks a voice for it; Ohm in its "write" answer mode; Ember's live-data answers, built and switched off at the client |
+| The model only chooses | The question, and the one before it for follow-ups | Atelier AI and Ohm AI by default; Ember AI for how-to answers (the question and the help-guide sections picked) |
+| The model writes the answer | The question and the rows of the answer | Atelier AI when a person picks a voice for it; Ohm AI in its "write" answer mode; Ember AI's live-data answers, built and switched off at the client |
 | The model reads your records | Documents or tables, loaded so it can "understand the business" | None |
 
 In the first design the ledger never leaves: the model picks a look-up and a period, and your own system runs it and builds the table. [How it works](/ai-assistant/how-it-works) explains the design. The second design sends a few rows per answer: not the database, but your data, so you should be able to switch it off. The third sends the most: ask what, how often, and where it is kept.
 
-Ember's live-data answers are switched on only when the client's approver is recorded by name in Settings, because in that mode the rows of each answer go to the writing model. On the public demo they are on, with a sample company.
+Ember AI's live-data answers are switched on only when the client's approver is recorded by name in Settings, because in that mode the rows of each answer go to the writing model. On the public demo they are on, with a sample company.
 
 ## Can the assistant change anything?
 
@@ -81,8 +81,8 @@ It shouldn't be able to. Look-ups should be read-only queries, so the worst a wr
 Only if the assistant ignores the screens' rules. Each look-up should run as the signed-in person, with the same limits as the screens:
 
 - **Atelier AI:** staff see only their own tasks and cash entries; payroll, advances and bank statements are refused to them.
-- **Ohm:** answers LS Technologies' own staff, never the partner store's logins or customers; its settings are for the admin.
-- **Ember:** answers each person from the guides of their own departments, and each live-data look-up follows the same department limits as the screens.
+- **Ohm AI:** answers LS Technologies' own staff, never the partner store's logins or customers; its settings are for the admin.
+- **Ember AI:** answers each person from the guides of their own departments, and each live-data look-up follows the same department limits as the screens.
 
 Test it with a junior login.
 

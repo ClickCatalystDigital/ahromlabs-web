@@ -25,8 +25,8 @@ export type Status = "live" | "off" | "not-built";
 // `demo`: what a visitor can ask on the public demo, which caps each visitor at two questions on the server.
 export const ASSISTANT: Record<System, { name: string; system: string; industry: Industry; who: string; demo: string }> = {
   "savistar-saag": { name: "Atelier AI", system: "Savistar & Saag, an interior design studio and furniture workshop", industry: "projects", who: "everyone, staff limited to their own tasks and cash entries", demo: "two questions from any sample login" },
-  "ls-technologies": { name: "Ohm", system: "LS Technologies, an electronic component trader", industry: "trading", who: "LS Technologies' own staff", demo: "two questions from any sample login" },
-  "boiler-manufacturer": { name: "Ember", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments", demo: "two questions, including live data from the sample company" },
+  "ls-technologies": { name: "Ohm AI", system: "LS Technologies, an electronic component trader", industry: "trading", who: "LS Technologies' own staff", demo: "two questions from any sample login" },
+  "boiler-manufacturer": { name: "Ember AI", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments", demo: "two questions, including live data from the sample company" },
 };
 export const SYSTEM_OF: Record<Industry, System> = { projects: "savistar-saag", trading: "ls-technologies", manufacturing: "boiler-manufacturer" };
 
@@ -98,7 +98,7 @@ export const questions: Question[] = [
   { id: "projects.staff-payroll", industry: "projects", role: "operations", question: "What is the payroll this month? (asked from a staff login)", kind: "refuse", answer: "Refused: staff see only their own tasks and cash entries, as on the screens.", check: "The same login can't open payroll on the screens either.", status: "live" },
   { id: "projects.advice", industry: "projects", role: "owner", question: "Should we raise our design fee?", kind: "refuse", answer: "Declined as advice the data can't give, with questions it can answer instead.", check: "The reply gives no recommendation.", alsoAsked: ["what should we charge [client] next"], status: "live" },
 
-  // ── Electronic component trading (Ohm) ─────────────────────────────────────
+  // ── Electronic component trading (Ohm AI) ─────────────────────────────────────
   { id: "trading.item-stock", industry: "trading", role: "operations", question: "How many reels of an item do we have, in each store?", kind: "data", answer: "Reels and pieces in stock of that item, per store.", check: "Reports → Stock Summary for the item.", alsoAsked: ["stock of [part] at the partner store"], status: "live" },
   { id: "trading.low-stock", industry: "trading", role: "operations", question: "What is running low?", kind: "data", answer: "Items with fewer than 5 reels in stock.", check: "The stock summary sorted by reels.", alsoAsked: ["low stock at the partner store", "what about the partner store?"], status: "live" },
   { id: "trading.dead-stock", industry: "trading", role: "owner", question: "Which items haven't shipped in 30 days?", kind: "data", answer: "Items with stock and no outward in the last 30 days, or ever.", check: "The outward log for each item listed.", alsoAsked: ["which items have not moved in a month"], status: "live" },
@@ -124,7 +124,7 @@ export const questions: Question[] = [
   { id: "trading.owes", industry: "trading", role: "accounts", question: "How much does a customer owe us?", kind: "refuse", answer: "\"The data doesn't have that\": this system keeps stock, not the money, so it says so instead of guessing.", check: "The reply gives no figure.", alsoAsked: ["how much revenue did we make from [customer] shipments"], status: "live" },
   { id: "trading.how-approve", industry: "trading", role: "owner", question: "How do I approve an inward request?", kind: "how-to", answer: "The steps from the system's own guide, with a link to the screen.", check: "Follow the steps; they work.", alsoAsked: ["how does the partner store's daily approval work"], status: "live" },
 
-  // ── Manufacturing (Ember: how-to answers live; live data built, switched off) ──
+  // ── Manufacturing (Ember AI: how-to answers live; live data built, switched off) ──
   { id: "manufacturing.purchase-request", industry: "manufacturing", role: "operations", question: "How do I raise a purchase request?", kind: "how-to", answer: "The steps from the system's help guide for the person's own department, with a link to the screen.", check: "Follow the steps; they work.", alsoAsked: ["how do i rais a purchse reqest"], status: "live" },
   { id: "manufacturing.pre-dispatch", industry: "manufacturing", role: "operations", question: "How do I send a packing list for approval before dispatch?", kind: "how-to", answer: "The dispatch guide's approval-before-dispatch section.", check: "Follow the steps; they work.", alsoAsked: ["where is pakcing list aproval"], status: "live" },
   { id: "manufacturing.certificates", industry: "manufacturing", role: "operations", question: "How do I assign test certificates to units?", kind: "how-to", answer: "The quality guide's section on assigning certificates to units.", check: "Follow the steps; they work.", alsoAsked: ["how to add test certifcate"], status: "live" },
