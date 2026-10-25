@@ -38,7 +38,7 @@ export default function VendorTestPage() {
         <li>Print the report each figure question should match: a month&apos;s sales, the unpaid invoices, stock of one item.</li>
         <li>
           Pick your questions from the <Link href="/ai-assistant/questions" className="text-link focus-ring">question library</Link>,
-          or download the <a href="/ai-assistant/vendor-test.csv" className="text-link focus-ring" download>test sheet</a>{" "}
+          or download the <a href="/ai-assistant/vendor-test.csv" className="text-link focus-ring" data-track="ai_test_sheet_download" download>test sheet</a>{" "}
           with every test and question and a pass/fail column for three vendors.
         </li>
         <li>Bring two logins: an owner and a junior staff member.</li>

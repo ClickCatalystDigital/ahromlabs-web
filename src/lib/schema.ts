@@ -584,6 +584,7 @@ export const aiAssistantDataset = {
   inLanguage: "en-IN",
   distribution: [
     { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${siteUrl}/ai-assistant/questions.json` },
+    { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/ai-assistant/questions.csv` },
     { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/ai-assistant/vendor-test.csv` },
   ],
 };

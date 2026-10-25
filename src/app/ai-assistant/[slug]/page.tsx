@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
 import { AiAssistantPage } from "@/components/AiAssistantPage";
-import { guideMarkdown, GuideQuotes } from "@/components/GuidePage";
+import { guideMarkdown, remarkGfm, GuideQuotes, GuideH2 } from "@/components/GuidePage";
+import { QuestionList } from "@/components/QuestionList";
+import { ASSISTANT, SYSTEM_OF } from "@/lib/ai-assistant";
+import type { Industry } from "@/lib/erp";
 import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { aiAssistantPageGraph } from "@/lib/schema";
@@ -14,6 +17,9 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return getContent("ai-assistant").map((g) => ({ slug: g.slug }));
 }
+
+// The industry guides list that industry's questions from the library under their text.
+const INDUSTRY_OF_GUIDE: Record<string, Industry> = { "interior-design-firms": "projects", manufacturers: "manufacturing", "trading-distribution": "trading" };
 
 const get = (slug: string) => getContent("ai-assistant").find((g) => g.slug === slug)!;
 
@@ -57,10 +63,16 @@ export default async function AiGuidePage(props: PageProps<"/ai-assistant/[slug]
       checked={g.checked!}
       updated={g.updated}
       sources={g.sources}
-      headings={markdownHeadings(g.body)}
+      headings={[...markdownHeadings(g.body), ...(INDUSTRY_OF_GUIDE[g.slug] ? [`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`] : [])]}
       art={g.image?.src}
     >
-      <Markdown components={guideMarkdown}>{g.body}</Markdown>
+      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
+      {INDUSTRY_OF_GUIDE[g.slug] && (
+        <section>
+          <GuideH2>{`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`}</GuideH2>
+          <QuestionList industry={INDUSTRY_OF_GUIDE[g.slug]} />
+        </section>
+      )}
       {g.checks && g.checks.length > 0 && <GuideQuotes quotes={g.checks} label="Quoted from the official text" />}
     </AiAssistantPage>
   );

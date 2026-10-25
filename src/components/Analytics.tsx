@@ -48,6 +48,8 @@ export function Analytics() {
     // Funnel step 2: any link into a live demo, wherever it sits on the site.
     const onClick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.("a");
+      // A download or other link named for GA in its markup: <a data-track="ai_questions_download">.
+      if (a?.dataset.track) track(a.dataset.track, { from: location.pathname });
       if (a && /\.ahromlabs\.com$/.test(a.hostname) && a.hostname !== "ahromlabs.com") {
         // One event per demo: boiler-erp.ahromlabs.com -> boiler_demo_click (docs/analytics-strategy.md).
         track(`${a.hostname.split(".")[0].replace(/-erp$/, "").replace(/\W/g, "_")}_demo_click`, { from: location.pathname });

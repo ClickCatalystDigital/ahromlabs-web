@@ -89,6 +89,12 @@ export const ERP_DOCS = {
     publisher: "Ministry of Law and Justice, Gazette of India",
     url: "https://egazette.gov.in/WriteReadData/2023/248045.pdf",
   },
+  "dpdp-rules-2025": {
+    file: "dpdp-rules-2025.txt",
+    title: "Digital Personal Data Protection Rules, 2025 (G.S.R. 846(E), 13 November 2025)",
+    publisher: "Ministry of Electronics and Information Technology, Gazette of India",
+    url: "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+  },
 } as const;
 export type ErpDoc = keyof typeof ERP_DOCS;
 
@@ -851,7 +857,7 @@ export const requirements: Requirement[] = [
       law: "Digital Personal Data Protection Act, 2023, section 8(5)",
       doc: "dpdp-act-2023",
       quote: "reasonable security safeguards to prevent personal data breach",
-      effective: "As the Act's provisions are brought into force; check the current notifications",
+      effective: "As the Act's provisions are brought into force; the DPDP Rules, 2025 on safeguards and breach intimation apply from May 2027 (rule 1(4))",
       appliesWhen: "Any business processing digital personal data",
     },
   },

@@ -45,3 +45,5 @@ At LS Technologies, an electronics-component importer and trader, each reel carr
 ## Build your list
 
 The [requirements builder](/erp/check) with "Trading and distribution" selected gives the full list for your turnover and whether Tally stays.
+
+If the system will have an AI assistant, [what it should answer for this kind of business](/ai-assistant/trading-distribution) lists the questions, with what Ohm answers today.

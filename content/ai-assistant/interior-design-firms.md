@@ -18,14 +18,7 @@ A design studio runs on projects, quotations, site visits, a workshop and a lot 
 
 ## What should it answer?
 
-The questions an owner, the accounts desk and the site team actually ask, each with the screen to check it against, are in the [question library](/ai-assistant/questions#interior-design-and-furniture). The ones that matter most:
-
-- **One project, end to end:** milestones done and overdue, the next one, site visits, its workshop orders and what it has been invoiced and paid.
-- **Money:** unpaid invoices with GST and days overdue, what was billed this month with the CGST and SGST split, and this month against last.
-- **Quotations:** which are still waiting for a reply, and how many were won this month.
-- **The workshop:** which orders are late, and the share delivered on time.
-- **Material:** what is still to come from vendors for a project, and whether a transporter charged above the rate card.
-- **Whether a project made money:** billed, minus materials, minus estimated workshop labour.
+Every question Atelier AI answers today is listed below, with the screen to check each answer against. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.
 
 ## What should it refuse?
 

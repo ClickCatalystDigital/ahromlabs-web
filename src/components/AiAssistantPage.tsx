@@ -9,7 +9,7 @@ import { ERP_DOCS } from "@/lib/erp";
 // GuidePage (as ErpPage does for /erp).
 
 // Guides in reading order; any guide not listed still shows, after these.
-const GUIDE_ORDER = ["data-safety", "interior-design-firms", "manufacturers", "trading-distribution"];
+const GUIDE_ORDER = ["how-it-works", "data-safety", "interior-design-firms", "manufacturers", "trading-distribution"];
 export function aiGuides() {
   const rank = (s: string) => GUIDE_ORDER.indexOf(s) + 1 || GUIDE_ORDER.length + 1;
   return [...getContent("ai-assistant")].sort((a, b) => rank(a.slug) - rank(b.slug));

@@ -17,7 +17,7 @@ evidence:
   - metric: what the model decides
     value: the kind of question, the look-up, the company, the period, whether it's a follow-up
   - metric: read-only look-ups (Savistar & Saag)
-    value: 23, over clients, projects, orders, vendors, people, tasks and money
+    value: 29, over clients, projects, quotations, orders, vendors, people, tasks, cash, the bank and money
   - metric: routing test
     value: 55 of 55 test questions and 57 unseen real-world phrasings, with typos, fragments and Hinglish
   - metric: written answers with a number not in the data
@@ -34,7 +34,7 @@ An owner wants to ask "how did this month compare with last month?" and get the 
 
 In two steps, and only the first uses AI. A small decision model reads the question and picks from fixed options: what kind of question it is (data, how-to, a reminder, small talk, something it can't answer), which look-up fits, which company, which period, and whether it follows on from the last question. It returns a choice, not text. Then ordinary code matches names ("the Mehtas", "Shree Plywood") to real records and runs a fixed, parameterised query. The answer is a table built with the same maths as the app's own screens, so the assistant's revenue figure and the Finance tab's figure are the same figure.
 
-At Savistar and Saag, an interior design studio and a furniture workshop sharing one system, there are 23 of these look-ups: projects due, late workshop orders, unpaid invoices, who worked on what, vendor balances, attendance, period comparisons and so on.
+At Savistar and Saag, an interior design studio and a furniture workshop sharing one system, there are 29 of these look-ups: projects due, late workshop orders, unpaid invoices, open quotations, who worked on what, vendor balances, attendance, bank balances, period comparisons and so on. Each one is listed, with the screen to check it against, in the [question library](/ai-assistant/interior-design-firms).
 
 ## Then where does the personality come from?
 
@@ -50,7 +50,7 @@ No. Look-ups are read-only. "Remind me to call the Mehtas on Friday" drafts a ta
 
 ## Is it the same assistant everywhere?
 
-The design is the same; the assistant isn't. Each one is built on its own system's records and words. LS Technologies' assistant answers about reels, stores, customers and stock for the admin, with a daily question limit and a cost of about a hundredth of a rupee per question. At the boiler manufacturer it starts with how-to questions from the help guide, without sending any business data out. Savistar's has the personas and notes. Each one is tested with its own question set, run through the real pipeline, before it goes live. To test any vendor's assistant the same way, there is a [question library](/ai-assistant/questions), a [vendor test](/ai-assistant/vendor-test) and a [check for made-up numbers](/ai-assistant/number-check).
+The design is the same; the assistant isn't. Each one is built on its own system's records and words. [Ohm](/ai-assistant/trading-distribution), LS Technologies' assistant, answers its own staff about reels, stores, customers and stock, with a daily question limit and a cost of about a hundredth of a rupee per question. [Ember](/ai-assistant/manufacturers), at the boiler manufacturer, starts with how-to questions from the help guide, without sending any business data out. Atelier AI, Savistar's, has the personas and notes. Each one is tested with its own question set, run through the real pipeline, before it goes live. To test any vendor's assistant the same way, there is a [question library](/ai-assistant/questions), a [vendor test](/ai-assistant/vendor-test) and a [check for made-up numbers](/ai-assistant/number-check); the design is laid out for buyers in [how it works](/ai-assistant/how-it-works), and what it sends out in [data safety](/ai-assistant/data-safety).
 
 ## Boundary
 

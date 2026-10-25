@@ -57,7 +57,7 @@ Pick the ones that apply from the [requirements builder](/erp/check). These are 
 - Ask for a full export of the demo data and open it in Excel. ([data export](/erp/requirements#nonfunctional-data-export))
 
 **AI**
-- Ask the assistant this month's sales, then compare its answer with the sales report. A number that doesn't match is the answer to whether you can trust it. ([assistant](/erp/requirements#reporting-assistant-no-invented-numbers))
+- Ask the assistant this month's sales, then compare its answer with the sales report. A number that doesn't match is the answer to whether you can trust it. ([assistant](/erp/requirements#reporting-assistant-no-invented-numbers); the full set of tests for an AI assistant is in the [AI assistant vendor test](/ai-assistant/vendor-test))
 
 ## What a demo won't tell you
 

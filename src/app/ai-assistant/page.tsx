@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AiAssistantPage, aiGuides } from "@/components/AiAssistantPage";
 import { GuideH2 } from "@/components/GuidePage";
-import { questions, vendorTests, ASSISTANT, AI_CHECKED, AI_PUBLISHED } from "@/lib/ai-assistant";
+import { questions, questionsFor, liveCount, vendorTests, ASSISTANT, SYSTEM_OF, INDUSTRY_LABEL, AI_CHECKED, AI_PUBLISHED } from "@/lib/ai-assistant";
+import type { Industry } from "@/lib/erp";
 import { aiAssistantPageGraph } from "@/lib/schema";
 import { seoTitle } from "@/lib/seo";
 
 const title = "AI assistants over your business data";
+const INDUSTRIES: { slug: string; industry: Industry }[] = [
+  { slug: "manufacturers", industry: "manufacturing" },
+  { slug: "trading-distribution", industry: "trading" },
+  { slug: "interior-design-firms", industry: "projects" },
+];
 const lead = "An AI assistant on your ERP or books is only useful if its numbers match the reports. The way to get that is to keep the model away from the numbers: it picks which fixed look-up answers the question, and code does the maths. Here is how to tell whether an assistant works that way, a free check for made-up numbers, the questions to ask it and the tests to run on any vendor.";
 
 export const metadata: Metadata = {
@@ -18,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function AiAssistantHub() {
-  const guides = aiGuides();
+  const guides = aiGuides().filter((g) => !INDUSTRIES.some((i) => i.slug === g.slug)); // industry guides are under By business
   const updated = [AI_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
   const trail = [{ name: "AI assistants", path: "/ai-assistant" }];
   const tools = [
@@ -55,21 +61,33 @@ export default function AiAssistantHub() {
       </p>
 
       <GuideH2>How an assistant should answer</GuideH2>
-      <ol className="mt-4 list-decimal space-y-3 pl-5 leading-relaxed text-foreground-secondary">
-        <li><strong className="font-medium text-foreground">The model only chooses.</strong> It reads the question and picks the kind of question, the look-up, the period and the names it refers to. It returns a choice, not text.</li>
-        <li><strong className="font-medium text-foreground">Code does the maths.</strong> A fixed, read-only query runs with the same maths as the app&apos;s screens, so the assistant&apos;s figure and the report&apos;s are the same figure.</li>
-        <li><strong className="font-medium text-foreground">Words are checked.</strong> If a sentence is written above the table, any number in it that isn&apos;t in the table gets the sentence dropped.</li>
-        <li><strong className="font-medium text-foreground">It says what it can&apos;t answer.</strong> Advice, and data the system doesn&apos;t hold, get &ldquo;the data doesn&apos;t have that&rdquo;, and the misses are listed so the next look-up comes from what people asked.</li>
-      </ol>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
-        That is how the assistants Ahrom Labs builds work: {ASSISTANT["savistar-saag"].name} at Savistar &amp; Saag,{" "}
-        {ASSISTANT["ls-technologies"].name} at LS Technologies and {ASSISTANT["boiler-manufacturer"].name} at a boiler
-        manufacturer, each on its own system&apos;s records and words. The full design is in{" "}
+        Keep the model away from the figures. A small model only chooses which question is being asked; code runs a
+        fixed, read-only look-up with the same maths as the screens; a written sentence with any number that isn&apos;t
+        in the result is dropped; and what the data can&apos;t answer gets &ldquo;the data doesn&apos;t have that&rdquo;.
+        The four steps, for buyers, are in{" "}
+        <Link href="/ai-assistant/how-it-works" className="text-link focus-ring">how an AI assistant answers from your records</Link>
+        ; the engineering note is{" "}
         <Link href="/notes/assistant-that-answers-from-your-ledger" className="text-link focus-ring">
           an assistant that only answers from your own records
         </Link>
         .
       </p>
+
+      <GuideH2>By business</GuideH2>
+      <ul className="mt-6 divide-y divide-line border-y border-line">
+        {INDUSTRIES.map(({ slug, industry }) => {
+          const a = ASSISTANT[SYSTEM_OF[industry]];
+          return (
+            <li key={slug} className="py-6">
+              <Link href={`/ai-assistant/${slug}`} className="text-link focus-ring text-xl font-medium">{INDUSTRY_LABEL[industry]}</Link>
+              <p className="mt-2 leading-relaxed text-foreground-secondary">
+                {a.name}, at {a.system}: {liveCount(industry)} of its {questionsFor(industry).length} questions answered today.
+              </p>
+            </li>
+          );
+        })}
+      </ul>
 
       {guides.length > 0 && (
         <>

@@ -44,3 +44,5 @@ Savistar, an interior design studio, and Saag, its sister furniture workshop, ru
 ## Build your list
 
 The [requirements builder](/erp/check) with "Project businesses" selected gives the full list for your turnover and whether Tally stays.
+
+If the system will have an AI assistant, [what it should answer for this kind of business](/ai-assistant/interior-design-firms) lists the questions, with what Atelier AI answers today.

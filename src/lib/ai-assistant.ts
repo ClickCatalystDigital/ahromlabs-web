@@ -22,10 +22,11 @@ export type Kind = "data" | "how-to" | "reminder" | "refuse";
 export type Status = "live" | "off" | "not-built";
 
 // One assistant per system, built on that system's own records and words.
-export const ASSISTANT: Record<System, { name: string; system: string; industry: Industry; who: string }> = {
-  "savistar-saag": { name: "Atelier AI", system: "Savistar & Saag, an interior design studio and furniture workshop", industry: "projects", who: "everyone, staff limited to their own tasks and cash entries" },
-  "ls-technologies": { name: "Ohm", system: "LS Technologies, an electronic component trader", industry: "trading", who: "the admin" },
-  "boiler-manufacturer": { name: "Ember", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments" },
+// `demo`: what a visitor can ask on the public demo, which caps each visitor at two questions on the server.
+export const ASSISTANT: Record<System, { name: string; system: string; industry: Industry; who: string; demo: string }> = {
+  "savistar-saag": { name: "Atelier AI", system: "Savistar & Saag, an interior design studio and furniture workshop", industry: "projects", who: "everyone, staff limited to their own tasks and cash entries", demo: "two questions from any sample login" },
+  "ls-technologies": { name: "Ohm", system: "LS Technologies, an electronic component trader", industry: "trading", who: "LS Technologies' own staff", demo: "two questions from any sample login" },
+  "boiler-manufacturer": { name: "Ember", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments", demo: "two questions, including live data from the sample company" },
 };
 export const SYSTEM_OF: Record<Industry, System> = { projects: "savistar-saag", trading: "ls-technologies", manufacturing: "boiler-manufacturer" };
 
@@ -50,6 +51,10 @@ export type Question = {
   answer: string; // what should answer it: which records, which maths
   check: string; // what to compare the answer with
   status: Status;
+  // Real phrasings from the assistant's own test set, cleaned of names, amounts and codes, and published only
+  // after Pujan has read them. The question → app look-up mapping is kept outside this public repo
+  // (~/.config/ahrom-labs/ai-lookups.json) and used only by scripts/ai-assistant.check.ts.
+  alsoAsked?: string[];
 };
 
 export const questions: Question[] = [
@@ -70,6 +75,24 @@ export const questions: Question[] = [
   { id: "projects.profit", industry: "projects", role: "owner", question: "Did a project make money?", kind: "data", answer: "Billed, minus vendor materials, minus estimated workshop labour, with the margin. Refused to staff.", check: "The project's invoices, vendor purchase orders and work logs.", status: "live" },
   { id: "projects.cash", industry: "projects", role: "accounts", question: "How much cash came in and went out this month?", kind: "data", answer: "The cash book (not the bank) for the month: in, out, net, the running balance and the largest entries.", check: "The cash book for the month.", status: "live" },
   { id: "projects.money", industry: "projects", role: "owner", question: "How much money do we have?", kind: "data", answer: "Cash in hand, plus the bank balances from the latest statements, plus what is owed to us, shown separately and together. Refused to staff.", check: "The cash book, the latest bank statements and the unpaid invoices.", status: "live" },
+  { id: "projects.overdue-tasks", industry: "projects", role: "sales", question: "What's overdue?", kind: "data", answer: "Follow-up tasks past their due date, for a person or a client.", check: "The task list filtered to overdue.", status: "live" },
+  { id: "projects.all-projects", industry: "projects", role: "owner", question: "How are the projects doing?", kind: "data", answer: "Every project, or those with one status (active, on hold, completed), with milestone progress and what is overdue.", check: "The projects list, same status filter.", status: "live" },
+  { id: "projects.site-visits", industry: "projects", role: "operations", question: "When did we last visit a site?", kind: "data", answer: "Site visits by project: who went and when, past or coming up.", check: "The project's site-visit log.", status: "live" },
+  { id: "projects.client-contact", industry: "projects", role: "sales", question: "When did we last talk to a client, and what was said?", kind: "data", answer: "That client's latest conversations, their projects and workshop orders, and their invoices.", check: "The client's page: conversation log and invoices.", status: "live" },
+  { id: "projects.order-history", industry: "projects", role: "operations", question: "Who worked on a workshop order?", kind: "data", answer: "The order's work log: who worked on which part, on which days, the hours and the rating.", check: "The order's work log.", status: "live" },
+  { id: "projects.attendance", industry: "projects", role: "operations", question: "Who is in today?", kind: "data", answer: "Present, half day and absent for one day, with in and out times.", check: "The attendance screen for that day.", status: "live" },
+  { id: "projects.days-worked", industry: "projects", role: "operations", question: "How many days did a workshop person work this month?", kind: "data", answer: "Days worked in the period (present 1, half day 0.5) and absences.", check: "The attendance register for the month.", status: "live" },
+  { id: "projects.payroll", industry: "projects", role: "owner", question: "What is the payroll for last month?", kind: "data", answer: "Days × daily rate or the monthly salary, minus that month's advances: what is owed and what is paid. Refused to staff.", check: "The payroll screen for the month.", status: "live" },
+  { id: "projects.advances", industry: "projects", role: "accounts", question: "Which advances haven't been recovered yet?", kind: "data", answer: "Advances given to workshop people, and whether that month's payroll has recovered them. Refused to staff.", check: "The advances list against the payroll.", status: "live" },
+  { id: "projects.work-ratings", industry: "projects", role: "owner", question: "Who is doing the best work?", kind: "data", answer: "Each workshop person's logged work rated 1 to 5 in the period, with the number of logs, days and orders.", check: "The work logs for the period.", status: "live" },
+  { id: "projects.vendor-spend", industry: "projects", role: "accounts", question: "How much have we spent with vendors?", kind: "data", answer: "Spend per vendor: purchase orders at rate, plus freight, minus returns and cash already paid, with open orders and overcharges.", check: "The vendor screen's totals.", status: "live" },
+  { id: "projects.bank-balance", industry: "projects", role: "owner", question: "What is our bank balance?", kind: "data", answer: "Each account's balance from its latest uploaded bank statement (not the cash book). Refused to staff.", check: "The latest statement of each account.", status: "live" },
+  { id: "projects.bank-lines", industry: "projects", role: "accounts", question: "What were the biggest debits from the bank last month?", kind: "data", answer: "Bank statement lines in the period: money in or out, the largest, or payments to or from someone by name. Refused to staff.", check: "The bank statement for the month.", status: "live" },
+  { id: "projects.my-notes", industry: "projects", role: "sales", question: "What did I note about a client?", kind: "data", answer: "The notes this person asked the assistant to keep, optionally about one client.", check: "The notes list.", status: "live" },
+  { id: "projects.note", industry: "projects", role: "sales", question: "Note that a client prefers WhatsApp.", kind: "reminder", answer: "A drafted private note; saved only when the person presses Save.", check: "The notes list before and after pressing Save.", status: "live" },
+  { id: "projects.how-site-visit", industry: "projects", role: "operations", question: "How do I log a site visit?", kind: "how-to", answer: "The steps from the system's own guide.", check: "Follow the steps; they work.", status: "live" },
+  { id: "projects.mark-paid", industry: "projects", role: "accounts", question: "Mark an invoice paid.", kind: "refuse", answer: "Not done: the assistant only reads. It says where in the app to record the payment.", check: "The invoice is unchanged.", status: "live" },
+  { id: "projects.stock-value", industry: "projects", role: "owner", question: "What is the value of our stock?", kind: "refuse", answer: "\"The data doesn't have that\": the system doesn't keep a stock valuation, so it says so instead of estimating.", check: "The reply gives no figure.", status: "live" },
   { id: "projects.remind", industry: "projects", role: "sales", question: "Remind me to call a client on Friday.", kind: "reminder", answer: "A drafted task for Friday; nothing is saved until the person presses Save.", check: "The task list before and after pressing Save.", status: "live" },
   { id: "projects.staff-payroll", industry: "projects", role: "operations", question: "What is the payroll this month? (asked from a staff login)", kind: "refuse", answer: "Refused: staff see only their own tasks and cash entries, as on the screens.", check: "The same login can't open payroll on the screens either.", status: "live" },
   { id: "projects.advice", industry: "projects", role: "owner", question: "Should we raise our design fee?", kind: "refuse", answer: "Declined as advice the data can't give, with questions it can answer instead.", check: "The reply gives no recommendation.", status: "live" },
@@ -88,6 +111,15 @@ export const questions: Question[] = [
   { id: "trading.run-out", industry: "trading", role: "operations", question: "Which items will run out in 30 days?", kind: "data", answer: "Days of cover: stock in hand ÷ average pieces shipped per day over the last 90 days at most, with how much history it used.", check: "Work one item out by hand from its stock and its outward log.", status: "live" },
   { id: "trading.quiet-customers", industry: "trading", role: "sales", question: "Which customers have stopped ordering?", kind: "data", answer: "Customers silent for more than twice their own usual gap between orders.", check: "That customer's order dates.", status: "live" },
   { id: "trading.follow-up", industry: "trading", role: "sales", question: "And last month? (after a question about this month)", kind: "data", answer: "The same look-up, same customer and item, for the previous month.", check: "The answer names the same customer and item as the first one.", status: "live" },
+  { id: "trading.find-item", industry: "trading", role: "sales", question: "Do we stock a particular part?", kind: "data", answer: "Items in the catalogue matching a code or description, with pieces per reel.", check: "The catalogue search.", status: "live" },
+  { id: "trading.total-stock", industry: "trading", role: "owner", question: "What is our total stock?", kind: "data", answer: "Totals across items, and the items with the most stock, for a store or both.", check: "Reports → Stock Summary.", status: "live" },
+  { id: "trading.tasks", industry: "trading", role: "sales", question: "What follow-ups are overdue for a salesperson?", kind: "data", answer: "Follow-up tasks and call reminders: open, overdue or due in a period, for a person or a client.", check: "Home → tasks for that person.", status: "live" },
+  { id: "trading.pipeline", industry: "trading", role: "sales", question: "How many clients are at each stage?", kind: "data", answer: "CRM contacts by stage (new, contacted, qualified, customer, lost), the watch list, or those never contacted.", check: "The clients screen by stage.", status: "live" },
+  { id: "trading.client-notes", industry: "trading", role: "sales", question: "Show me the notes on a client.", kind: "data", answer: "The call notes and follow-up history logged for that client.", check: "The client's page.", status: "live" },
+  { id: "trading.two-part", industry: "trading", role: "owner", question: "Low stock and pending approvals?", kind: "data", answer: "Two look-ups answered together, each as its own table.", check: "The stock summary and the Requests screen.", status: "live" },
+  { id: "trading.delete", industry: "trading", role: "operations", question: "Delete a reel.", kind: "refuse", answer: "Not done: the assistant only reads.", check: "The reel is unchanged.", status: "live" },
+  { id: "trading.who-did", industry: "trading", role: "owner", question: "Who inwarded a particular reel?", kind: "refuse", answer: "\"The data doesn't have that\" in the form asked, with questions it can answer instead.", check: "The reply names nobody.", status: "live" },
+  { id: "trading.advice", industry: "trading", role: "owner", question: "What should I order next month?", kind: "refuse", answer: "Declined as advice; it offers stock cover and low stock instead.", check: "The reply gives no recommendation.", status: "live" },
   { id: "trading.owes", industry: "trading", role: "accounts", question: "How much does a customer owe us?", kind: "refuse", answer: "\"The data doesn't have that\": this system keeps stock, not the money, so it says so instead of guessing.", check: "The reply gives no figure.", status: "live" },
   { id: "trading.how-approve", industry: "trading", role: "owner", question: "How do I approve an inward request?", kind: "how-to", answer: "The steps from the system's own guide, with a link to the screen.", check: "Follow the steps; they work.", status: "live" },
 
@@ -96,12 +128,22 @@ export const questions: Question[] = [
   { id: "manufacturing.pre-dispatch", industry: "manufacturing", role: "operations", question: "How do I send a packing list for approval before dispatch?", kind: "how-to", answer: "The dispatch guide's approval-before-dispatch section.", check: "Follow the steps; they work.", status: "live" },
   { id: "manufacturing.certificates", industry: "manufacturing", role: "operations", question: "How do I assign test certificates to units?", kind: "how-to", answer: "The quality guide's section on assigning certificates to units.", check: "Follow the steps; they work.", status: "live" },
   { id: "manufacturing.password", industry: "manufacturing", role: "operations", question: "Where do I change my password?", kind: "how-to", answer: "The general section on profile and password, open to every department.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.quote-to-order", industry: "manufacturing", role: "sales", question: "How do I convert a quotation into a sale order?", kind: "how-to", answer: "The sales guide's section, with a link to the screen.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.receive", industry: "manufacturing", role: "operations", question: "How do I receive material that came today?", kind: "how-to", answer: "The stores guide's inward section.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.job-card", industry: "manufacturing", role: "operations", question: "How do I create a job card?", kind: "how-to", answer: "The production guide's job card section.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.release-bom", industry: "manufacturing", role: "operations", question: "How do I release the BOM?", kind: "how-to", answer: "The engineering guide's BOM release section.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.bank-rec", industry: "manufacturing", role: "accounts", question: "How do I reconcile the bank statement?", kind: "how-to", answer: "The accounts guide's bank section.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.attendance", industry: "manufacturing", role: "operations", question: "How do I mark attendance for workers?", kind: "how-to", answer: "The HR guide's attendance section.", check: "Follow the steps; they work.", status: "live" },
+  { id: "manufacturing.service-visit", industry: "manufacturing", role: "operations", question: "How do I log a service visit?", kind: "how-to", answer: "The installation guide's service visit section.", check: "Follow the steps; they work.", status: "live" },
   { id: "manufacturing.off-topic", industry: "manufacturing", role: "operations", question: "Write me a poem.", kind: "refuse", answer: "A fixed reply saying what it can help with; the question never reaches a writing model.", check: "The reply is the same every time.", status: "live" },
   { id: "manufacturing.stock", industry: "manufacturing", role: "operations", question: "How much of a material do we have in stock?", kind: "data", answer: "Stock on hand from the stores records.", check: "The stores screen for the material.", status: "off" },
   { id: "manufacturing.below-min", industry: "manufacturing", role: "operations", question: "Which items are below their minimum?", kind: "data", answer: "Items whose stock is under the minimum set for them.", check: "The reorder list on the stores screen.", status: "off" },
   { id: "manufacturing.po-pending", industry: "manufacturing", role: "operations", question: "Which purchase orders haven't been received?", kind: "data", answer: "Purchase orders with material not yet received.", check: "The purchase orders screen filtered to pending.", status: "off" },
   { id: "manufacturing.order-value", industry: "manufacturing", role: "accounts", question: "What is an order worth and how much has been paid?", kind: "data", answer: "The order's value and the payments recorded against it, for those whose department may see money.", check: "The order's page.", status: "off" },
   { id: "manufacturing.my-approvals", industry: "manufacturing", role: "owner", question: "What approvals are waiting for me?", kind: "data", answer: "Inward and pre-dispatch approvals waiting for this person.", check: "The approvals screen.", status: "off" },
+  { id: "manufacturing.my-tasks", industry: "manufacturing", role: "operations", question: "What are my open tasks?", kind: "data", answer: "Open tasks for this person or their department.", check: "Home → tasks.", status: "off" },
+  { id: "manufacturing.project-status", industry: "manufacturing", role: "owner", question: "Is a project delayed?", kind: "data", answer: "The project's stage and dates against plan.", check: "The project's page.", status: "off" },
+  { id: "manufacturing.who-owes", industry: "manufacturing", role: "accounts", question: "Which customers owe us the most?", kind: "data", answer: "Outstanding by customer, for those whose department may see money.", check: "The receivables screen.", status: "off" },
   { id: "manufacturing.job-cards", industry: "manufacturing", role: "owner", question: "Which job cards are behind schedule?", kind: "data", answer: "Job cards past their planned date, by work centre.", check: "The shop floor's job cards.", status: "not-built" },
 ];
 
@@ -142,7 +184,12 @@ export function aiQuestionNodes() {
       answeredFrom: q.answer,
       checkAgainst: q.check,
       ahromLabsStatus: STATUS_LABEL[q.status],
-      ...(q.status !== "not-built" && { assistant: `${ASSISTANT[sys].name}, at ${ASSISTANT[sys].system}` }),
+      ...(q.alsoAsked?.length && { alsoAsked: q.alsoAsked }),
+      // Typed edges: who answers it, where to try it, what delivers it, what explains it. Never the app's look-up key.
+      ...(q.status !== "not-built" && { answeredBy: { assistant: ASSISTANT[sys].name, system: ASSISTANT[sys].system } }),
+      ...(q.status !== "not-built" && { provenBy: { url: DEMO_URL[sys], note: ASSISTANT[sys].demo } }),
+      satisfiedBy: { name: "Custom AI assistant over your business data", url: `${site}/services/custom-ai-assistant` },
+      explainedBy: `${site}/ai-assistant/how-it-works`,
       url: `${site}/ai-assistant/questions#${questionAnchor(q.id)}`,
     };
   });

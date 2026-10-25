@@ -36,6 +36,7 @@ function Item({ r }: { r: Requirement }) {
     ...(r.note ? [{ href: `/notes/${r.note}`, label: titleOf("note", r.note) }] : []),
     ...(r.pattern ? [{ href: `/patterns/${r.pattern}`, label: `Pattern: ${titleOf("pattern", r.pattern)}` }] : []),
     ...(r.term ? [{ href: `/systems/${r.term}`, label: `Glossary: ${titleOf("term", r.term)}` }] : []),
+    ...(r.service === "custom-ai-assistant" ? [{ href: "/ai-assistant/vendor-test", label: "How to test an AI assistant" }] : []),
   ];
   return (
     <article id={anchor(r.id)} className="mt-10 scroll-mt-24 border-t border-line pt-6">

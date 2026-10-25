@@ -190,7 +190,7 @@ const SYNONYMS: Record<string, string[]> = {
   requirement: ["requirements", "checklist"], requirements: ["requirement", "checklist"], rfp: ["requirements", "template"], srs: ["requirements"], checklist: ["requirements"],
   chune: ["choose", "selection"], chunna: ["choose", "selection"], choose: ["selection"], select: ["selection"], compare: ["selection"], vendor: ["vendor", "demo"],
   einvoice: ["e-invoice", "irn"], irn: ["e-invoice"], audit: ["audit", "trail"], msme: ["msme", "45"],
-  chatbot: ["assistant", "ai"], copilot: ["assistant", "ai"], gpt: ["ai", "assistant"], chatgpt: ["ai", "assistant"], hallucinate: ["made-up", "number"], hallucination: ["made-up", "number"], hallucinated: ["made-up", "number"], invent: ["made-up", "number"], poochh: ["ask", "assistant"], pucho: ["ask", "assistant"],
+  chatbot: ["assistant", "ai"], atelier: ["assistant", "ai"], ember: ["assistant", "ai"], ohm: ["assistant", "ai"], copilot: ["assistant", "ai"], gpt: ["ai", "assistant"], chatgpt: ["ai", "assistant"], hallucinate: ["made-up", "number"], hallucination: ["made-up", "number"], hallucinated: ["made-up", "number"], invent: ["made-up", "number"], poochh: ["ask", "assistant"], pucho: ["ask", "assistant"],
 };
 
 // Lower-case words, stop words out, a light plural/ending trim, synonyms added.

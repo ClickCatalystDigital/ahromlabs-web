@@ -47,7 +47,17 @@ export const guideMarkdown = {
   ol: ({ node, ...props }: ComponentProps<"ol"> & { node?: unknown }) => <ol className="mt-4 list-decimal space-y-3 pl-5 text-foreground-secondary" {...props} />,
   a: ({ node, ...props }: ComponentProps<"a"> & { node?: unknown }) => <a className="text-link focus-ring" {...props} />,
   strong: ({ node, ...props }: ComponentProps<"strong"> & { node?: unknown }) => <strong className="font-medium text-foreground" {...props} />,
+  // Tables scroll sideways inside their own box on a phone, so the page itself never does.
+  table: ({ node, ...props }: ComponentProps<"table"> & { node?: unknown }) => (
+    <div className="mt-6 overflow-x-auto">
+      <table className="w-full border-collapse text-left text-sm" {...props} />
+    </div>
+  ),
+  th: ({ node, ...props }: ComponentProps<"th"> & { node?: unknown }) => <th className="border-b border-line py-2 pr-4 align-bottom font-medium text-foreground" {...props} />,
+  td: ({ node, ...props }: ComponentProps<"td"> & { node?: unknown }) => <td className="border-b border-line py-2 pr-4 align-top text-foreground-secondary" {...props} />,
 };
+// Guides use GitHub-style tables; pass this with guideMarkdown.
+export { default as remarkGfm } from "remark-gfm";
 
 // Quotes from the official text, one per claim. Folded by default on long lists:
 // the text stays in the HTML for crawlers and the site search either way.

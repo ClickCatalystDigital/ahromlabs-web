@@ -137,7 +137,7 @@ export function GET() {
   const ai =
     `- [AI assistants over your business data](https://ahromlabs.com/ai-assistant): How an assistant on an ERP or books should answer so its numbers match the reports: the model picks a fixed look-up, code does the maths.\n` +
     `- [Check an AI answer for made-up numbers](https://ahromlabs.com/ai-assistant/number-check): Paste the answer and the source data; every number not in the data is marked (₹, lakh and crore understood, no rounding). Runs in the browser.\n` +
-    `- [Questions to ask an AI assistant](https://ahromlabs.com/ai-assistant/questions): ${aiQuestions.length} questions by industry and role, with what should answer each and what to check it against. As data (CC BY 4.0): https://ahromlabs.com/ai-assistant/questions.json\n` +
+    `- [Questions to ask an AI assistant](https://ahromlabs.com/ai-assistant/questions): ${aiQuestions.length} questions by industry and role, with what should answer each and what to check it against. As data (CC BY 4.0): https://ahromlabs.com/ai-assistant/questions.json and https://ahromlabs.com/ai-assistant/questions.csv\n` +
     `- [How to test an AI assistant before you buy it](https://ahromlabs.com/ai-assistant/vendor-test): ${vendorTests.length} tests for a vendor demo, with pass and fail. Test sheet: https://ahromlabs.com/ai-assistant/vendor-test.csv\n` +
     getContent("ai-assistant").map(line("ai-assistant")).join("\n");
 

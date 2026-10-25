@@ -31,11 +31,9 @@ Unrelated questions ("write me a poem") should get a fixed reply that never reac
 
 Stock on hand, items below minimum, purchase orders not received, an order's value and payments, approvals waiting. These need a decision first: in a design where the rows are worded by a writing model, the rows of each answer are sent to the AI provider. The owner should approve that by name, and each look-up should follow the same department limits as the screens. The [data safety guide](/ai-assistant/data-safety) sets out what to ask.
 
-The [question library](/ai-assistant/questions#manufacturing) lists both kinds with the screen to check each against.
-
 ## How Ember does it
 
-Ember is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet.
+Ember is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.
 
 ## How to check a vendor's
 

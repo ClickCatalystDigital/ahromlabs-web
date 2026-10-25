@@ -18,6 +18,10 @@ image:
   width: 1086
   height: 362
 sources:
+  - title: Digital Personal Data Protection Rules, 2025 (G.S.R. 846(E))
+    publisher: Ministry of Electronics and Information Technology, Gazette of India
+    url: https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf
+    date: 2025-11-13
   - title: Companies (Accounts) Amendment Rules, 2021 (G.S.R. 205(E))
     publisher: Ministry of Corporate Affairs, Gazette of India
     url: https://egazette.gov.in/WriteReadData/2021/226081.pdf
@@ -75,6 +79,12 @@ checks:
   - reg: Digital Personal Data Protection Act, 2023, section 8(5)
     doc: dpdp-act-2023
     quote: reasonable security safeguards to prevent personal data breach
+  - reg: Digital Personal Data Protection Rules, 2025, rule 1(4)
+    doc: dpdp-rules-2025
+    quote: Rules 3, 5 to 16, 22 and 23 shall come into force eighteen months after the date of publication
+  - reg: Digital Personal Data Protection Rules, 2025, rule 7(2)(b)
+    doc: dpdp-rules-2025
+    quote: within seventy-two hours of becoming aware of the breach, or within such longer period as the Board may allow on a request made in writing in this behalf
 ---
 
 ## Which rules apply to you
@@ -89,7 +99,7 @@ Most rules turn on two facts: whether the business is a company, and its turnove
 | E-way bill | Goods move with a consignment value above ₹50,000 | Produce the e-way bill from the dispatch |
 | MSME payment limit | Buying from a micro or small enterprise | Track each bill's due date, at most 45 days from acceptance |
 | TDS on purchase of goods | A buyer with turnover above ₹10 crore in the previous year | Track each seller's yearly total; deduct beyond ₹50 lakh |
-| Personal data | Holding digital personal data of staff, customers or contacts | Reasonable security safeguards; breaches can be traced |
+| Personal data | Holding digital personal data of staff, customers or contacts | Reasonable security safeguards; breaches can be traced (rules on how: from May 2027) |
 
 ## Audit trail: every company keeping books in software
 
@@ -119,7 +129,7 @@ Under the Income-tax Act, 2025, a buyer whose turnover exceeded ₹10 crore in t
 
 ## Personal data
 
-A business holding digital personal data, of employees, customers or contacts, is a data fiduciary under the Digital Personal Data Protection Act, 2023. Section 8 requires reasonable security safeguards to prevent a personal data breach and intimation of a breach in the prescribed way. For an ERP, that means access to personal details limited by role and logged, and a way to see who saw what. Check which of the Act's provisions and rules are in force when you buy. See the [personal-data requirement](/erp/requirements#nonfunctional-personal-data).
+A business holding digital personal data, of employees, customers or contacts, is a data fiduciary under the Digital Personal Data Protection Act, 2023. Section 8 requires reasonable security safeguards to prevent a personal data breach and intimation of a breach in the prescribed way. For an ERP, that means access to personal details limited by role and logged, and a way to see who saw what. The Digital Personal Data Protection Rules, 2025 (13 November 2025) set out how: the safeguards (rule 6) and breach intimation, including a detailed report to the Board within 72 hours (rule 7), come into force eighteen months after publication, in May 2027 (rule 1(4)). The Act's own sections are brought into force by separate notification, so check which are in force when you buy. If the system comes with an AI assistant, see [what it sends out](/ai-assistant/data-safety). See the [personal-data requirement](/erp/requirements#nonfunctional-personal-data).
 
 ## What changed, and when
 

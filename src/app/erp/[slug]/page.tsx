@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
 import { ErpPage, ErpQuotes } from "@/components/ErpPage";
-import { guideMarkdown } from "@/components/GuidePage";
+import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
 import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { erpPageGraph } from "@/lib/schema";
@@ -62,7 +62,7 @@ export default async function ErpGuidePage(props: PageProps<"/erp/[slug]">) {
       headings={markdownHeadings(g.body)}
       art={g.image?.src}
     >
-      <Markdown components={guideMarkdown}>{g.body}</Markdown>
+      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
       {g.checks && g.checks.length > 0 && <ErpQuotes quotes={g.checks} />}
     </ErpPage>
   );

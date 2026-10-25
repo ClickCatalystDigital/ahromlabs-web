@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
 import { BoqPage, BoqQuotes } from "@/components/BoqPage";
-import { guideMarkdown } from "@/components/GuidePage";
+import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
 import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { boqPageGraph } from "@/lib/schema";
@@ -62,7 +62,7 @@ export default async function BoqGuidePage(props: PageProps<"/boq/[slug]">) {
       headings={markdownHeadings(g.body)}
       art={g.image?.src}
     >
-      <Markdown components={guideMarkdown}>{g.body}</Markdown>
+      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
       {g.checks && g.checks.length > 0 && <BoqQuotes quotes={g.checks} />}
     </BoqPage>
   );
