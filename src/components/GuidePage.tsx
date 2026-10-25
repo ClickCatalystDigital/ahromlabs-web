@@ -31,9 +31,11 @@ export type Hub = {
 
 // Every section heading gets an anchor id, so the contents list, Google's
 // "jump to" links and AI answers can point straight at it.
+// Its top margin goes only when it opens the page's text column; a heading first inside its own <section>
+// keeps it, or it sits flush under the paragraph before.
 export function GuideH2({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h2 id={headingId(textOf(children))} className={`display mt-14 scroll-mt-24 text-3xl text-foreground first:mt-0 sm:text-4xl ${className}`}>
+    <h2 id={headingId(textOf(children))} className={`display mt-14 scroll-mt-24 text-3xl text-foreground [.prose-measure>&:first-child]:mt-0 sm:text-4xl ${className}`}>
       {children}
     </h2>
   );

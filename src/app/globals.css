@@ -752,6 +752,20 @@ main :not(pre) > code {
   93% { translate: 1px 0; filter: drop-shadow(-1px 0 rgba(255, 45, 85, 0.5)) drop-shadow(1px 0 rgba(34, 211, 238, 0.5)); }
   96% { translate: -0.5px 0; filter: drop-shadow(0.5px 0 rgba(255, 45, 85, 0.4)) drop-shadow(-0.5px 0 rgba(34, 211, 238, 0.4)); }
 }
+/* Ember's flame: a slow sway, the core breathing, and a spark rising off the tip every ~4.5 s. */
+.ai-ember .flame { transform-box: view-box; transform-origin: 12px 20px; animation: ai-em-flicker 2.8s ease-in-out infinite; }
+.ai-ember .core { transform-box: view-box; transform-origin: 12px 19px; animation: ai-em-core 1.9s ease-in-out infinite; }
+.ai-ember .spark { opacity: 0; animation: ai-em-spark 4.5s ease-out infinite; }
+@keyframes ai-em-flicker {
+  0%, 100% { transform: scale(1, 1) skewX(0); }
+  30% { transform: scale(0.97, 1.04) skewX(-2deg); }
+  55% { transform: scale(1.02, 0.97) skewX(1.5deg); }
+  80% { transform: scale(0.99, 1.02) skewX(-1deg); }
+}
+@keyframes ai-em-core { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.86); } }
+@keyframes ai-em-spark { 0%, 62% { opacity: 0; transform: translate(0, 0); } 68% { opacity: 0.9; } 100% { opacity: 0; transform: translate(1.6px, -5.5px); } }
 @media (prefers-reduced-motion: reduce) {
-  .ai-butterfly .wing, .group:hover .ai-butterfly .wing, .group:focus-visible .ai-butterfly .wing, .ai-chip { animation: none; }
+  .ai-butterfly .wing, .group:hover .ai-butterfly .wing, .group:focus-visible .ai-butterfly .wing, .ai-chip,
+  .ai-ember .flame, .ai-ember .core { animation: none; }
+  .ai-ember .spark { animation: none; opacity: 0; }
 }
