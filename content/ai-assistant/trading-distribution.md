@@ -1,7 +1,7 @@
 ---
 kind: ai-assistant
 slug: trading-distribution
-title: "An AI assistant for a trading or distribution business: what it should answer"
+title: "AI assistant for traders and distributors: what it answers"
 answer: >
   A trader's assistant should answer stock by item and store, what is running low or not moving, what came in and
   went out, where a particular reel or box is, which purchase orders are waiting, and which customers have stopped

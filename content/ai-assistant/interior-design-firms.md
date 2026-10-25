@@ -1,7 +1,7 @@
 ---
 kind: ai-assistant
 slug: interior-design-firms
-title: "An AI assistant for an interior design firm: what it should answer"
+title: "AI assistant for interior design firms: what it answers"
 answer: >
   An interior design firm's assistant should answer how each project is going, who owes money, which workshop
   orders are late, what material is still to come and whether a project made money, all from the firm's own

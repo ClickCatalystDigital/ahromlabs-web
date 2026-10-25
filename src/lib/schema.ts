@@ -2,6 +2,7 @@ import type { ContentEntry } from "./content";
 import { services, families, servicesIn, serviceUrl, familyUrl, proofHref, type Service } from "./services";
 import { engagements } from "./work";
 import { IBR_2026_URL } from "./ibr-forms";
+import { AI_VERSION, AI_CHECKED } from "./ai-assistant";
 
 export { IBR_2026_URL };
 
@@ -574,6 +575,8 @@ export const aiAssistantDataset = {
   "@type": "Dataset",
   "@id": `${siteUrl}/ai-assistant/questions#dataset`,
   name: "AI assistant question library for business systems",
+  version: AI_VERSION,
+  dateModified: AI_CHECKED,
   description:
     "Questions owners and staff ask an AI assistant over their business records, by industry and role, with what should answer each one, how to check the answer, and tests to run on any vendor's assistant.",
   url: `${siteUrl}/ai-assistant/questions`,

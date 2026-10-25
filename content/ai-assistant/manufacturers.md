@@ -1,7 +1,7 @@
 ---
 kind: ai-assistant
 slug: manufacturers
-title: "An AI assistant for a manufacturer: where to start"
+title: "AI assistant for manufacturers: where to start"
 answer: >
   For a manufacturer, start with how-to questions answered from the system's own help guide, for each person's
   departments, and add live-data questions (stock, purchase orders, approvals) once the owner has decided what may

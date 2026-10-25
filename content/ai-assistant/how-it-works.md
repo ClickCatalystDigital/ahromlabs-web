@@ -1,7 +1,7 @@
 ---
 kind: ai-assistant
 slug: how-it-works
-title: "How an AI assistant answers from your records without inventing numbers"
+title: "How an AI assistant answers without inventing numbers"
 answer: >
   The design that keeps figures right has four parts: a small AI model only chooses which question is being
   asked; code runs a fixed, read-only look-up with the same maths as the app's screens; any written sentence with

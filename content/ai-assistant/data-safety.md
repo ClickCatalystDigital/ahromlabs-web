@@ -1,7 +1,7 @@
 ---
 kind: ai-assistant
 slug: data-safety
-title: "What leaves your server when you use an AI assistant (India's DPDP Act)"
+title: "What an AI assistant sends out, under India's DPDP Act"
 answer: >
   Ask what is sent to the AI provider with each question. It is one of three things: the question only, the
   question with the rows of the answer, or your records themselves. Ahrom Labs' assistants send the question
