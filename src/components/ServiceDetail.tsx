@@ -73,6 +73,15 @@ export function ServiceDetail({ service }: { service: Service }) {
         ) : null;
       })()}
 
+      {service.slug === "custom-ai-assistant" && (
+        <p className="mt-4 leading-relaxed text-foreground-secondary">
+          Testing any vendor&apos;s assistant:{" "}
+          <Link href="/ai-assistant/number-check" className="text-link focus-ring">check an answer for made-up numbers</Link>, the{" "}
+          <Link href="/ai-assistant/questions" className="text-link focus-ring">questions to ask</Link> and the{" "}
+          <Link href="/ai-assistant/vendor-test" className="text-link focus-ring">vendor test</Link>.
+        </p>
+      )}
+
       <h2 className="mt-12 text-sm font-medium text-foreground-secondary">Questions buyers ask</h2>
       <dl className="mt-4 divide-y divide-line border-t border-line">
         {service.questions.map(({ q, a }) => (

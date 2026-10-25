@@ -94,8 +94,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,
@@ -147,6 +147,28 @@ export function buildEntries(): Entry[] {
       url: `${site}/erp/template`,
       sourceTitle: "ERP requirements template in Excel",
     },
+    // The AI assistant tools.
+    {
+      id: "ai-tool/number-check",
+      title: "How can I check whether an AI assistant made up a number?",
+      answer: "Use the free number check: paste the assistant's answer and the report or table it should have used, and every number in the answer that isn't in the data is marked, whether a total it added up, a share it worked out or a figure it rounded. It understands ₹, lakh and crore, and runs in your browser; nothing is sent.",
+      url: `${site}/ai-assistant/number-check`,
+      sourceTitle: "Check an AI answer for made-up numbers",
+    },
+    {
+      id: "ai-tool/questions",
+      title: "What questions should I ask an AI assistant on my business data?",
+      answer: "The free AI assistant question library lists questions owners and staff ask, for interior design firms, traders and manufacturers, each with what should answer it, what screen to check it against, and which a good assistant refuses (advice, payroll from a staff login, data the system doesn't hold). Free under CC BY 4.0, also as JSON.",
+      url: `${site}/ai-assistant/questions`,
+      sourceTitle: "Questions to ask an AI assistant",
+    },
+    {
+      id: "ai-tool/vendor-test",
+      title: "How do I test an AI assistant or ERP chatbot before buying it?",
+      answer: "Run twelve tests in the vendor's demo on your own data: a figure matches the report, no number it wasn't given, it says when the data doesn't have the answer, no advice, the same role limits as the screens, it can't change anything on its own, typos and Hinglish, follow-ups, ambiguous names, what happens when the AI is down, what is sent to the provider, and where unanswered questions go. A test sheet for Excel is free.",
+      url: `${site}/ai-assistant/vendor-test`,
+      sourceTitle: "How to test an AI assistant before you buy it",
+    },
   );
   return out;
 }
@@ -168,6 +190,7 @@ const SYNONYMS: Record<string, string[]> = {
   requirement: ["requirements", "checklist"], requirements: ["requirement", "checklist"], rfp: ["requirements", "template"], srs: ["requirements"], checklist: ["requirements"],
   chune: ["choose", "selection"], chunna: ["choose", "selection"], choose: ["selection"], select: ["selection"], compare: ["selection"], vendor: ["vendor", "demo"],
   einvoice: ["e-invoice", "irn"], irn: ["e-invoice"], audit: ["audit", "trail"], msme: ["msme", "45"],
+  chatbot: ["assistant", "ai"], copilot: ["assistant", "ai"], gpt: ["ai", "assistant"], chatgpt: ["ai", "assistant"], hallucinate: ["made-up", "number"], hallucination: ["made-up", "number"], hallucinated: ["made-up", "number"], invent: ["made-up", "number"], poochh: ["ask", "assistant"], pucho: ["ask", "assistant"],
 };
 
 // Lower-case words, stop words out, a light plural/ending trim, synonyms added.

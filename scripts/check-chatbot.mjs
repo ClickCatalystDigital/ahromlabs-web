@@ -30,6 +30,10 @@ const CHECKS = [
   ["When is e-invoicing mandatory for my business?", /₹5 crore|five crore/],
   ["What should I ask an ERP vendor to show in a demo?", /in front of you|demo script/i],
   ["Do you have an ERP requirements template in Excel?", /scorecard|scores/i],
+  // AI assistants (/ai-assistant)
+  ["How can I check if an AI assistant made up a number?", /number check|not in the data|isn't in the data/i],
+  ["How do I test an AI assistant before buying it?", /vendor|demo|tests?/i],
+  ["Is it safe to give an AI assistant our business data?", /what is sent|the question|own key|read-only/i],
   // Ownership and licence
   ["Who owns the code?", /not a copy of the code/],
   ["Who owns the software after I pay?", /software stays ours/],

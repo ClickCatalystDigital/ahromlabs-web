@@ -55,8 +55,8 @@ for (const r of requirements) {
 }
 for (const d of departments) if (!requirements.some((r) => r.dept === d.slug)) fail.push(`dept ${d.slug}: no requirements`);
 
-// The /erp guides (content/erp/*.md) quote the same official texts; each check names its doc.
-const guides = JSON.parse(fs.readFileSync("src/lib/content-data.generated.json", "utf-8")).filter((e: { kind: string }) => e.kind === "erp");
+// The /erp and /ai-assistant guides quote the same official texts; each check names its doc.
+const guides = JSON.parse(fs.readFileSync("src/lib/content-data.generated.json", "utf-8")).filter((e: { kind: string }) => e.kind === "erp" || e.kind === "ai-assistant");
 for (const g of guides as { slug: string; checks?: { reg: string; quote: string; doc?: string }[] }[]) {
   for (const c of g.checks ?? []) {
     quotes++;

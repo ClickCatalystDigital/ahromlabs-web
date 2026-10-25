@@ -2,6 +2,7 @@ import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrFormPages, formName } from "@/lib/ibr-forms";
 import { boqItems, trades, tradeItems, UNIT_LABEL } from "@/lib/boq";
 import { requirements, departments } from "@/lib/erp";
+import { questions as aiQuestions, vendorTests } from "@/lib/ai-assistant";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -133,6 +134,13 @@ export function GET() {
     `- [ERP requirements template in Excel](https://ahromlabs.com/erp/template): RFP and vendor scorecard in one sheet.\n` +
     getContent("erp").map(line("erp")).join("\n");
 
+  const ai =
+    `- [AI assistants over your business data](https://ahromlabs.com/ai-assistant): How an assistant on an ERP or books should answer so its numbers match the reports: the model picks a fixed look-up, code does the maths.\n` +
+    `- [Check an AI answer for made-up numbers](https://ahromlabs.com/ai-assistant/number-check): Paste the answer and the source data; every number not in the data is marked (₹, lakh and crore understood, no rounding). Runs in the browser.\n` +
+    `- [Questions to ask an AI assistant](https://ahromlabs.com/ai-assistant/questions): ${aiQuestions.length} questions by industry and role, with what should answer each and what to check it against. As data (CC BY 4.0): https://ahromlabs.com/ai-assistant/questions.json\n` +
+    `- [How to test an AI assistant before you buy it](https://ahromlabs.com/ai-assistant/vendor-test): ${vendorTests.length} tests for a vendor demo, with pass and fail. Test sheet: https://ahromlabs.com/ai-assistant/vendor-test.csv\n` +
+    getContent("ai-assistant").map(line("ai-assistant")).join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -142,6 +150,7 @@ export function GET() {
     `\n## IBR 2026 (Indian Boiler Regulations)\n\n${ibr}\n` +
     `\n## Interior BOQ (bill of quantities)\n\n${boq}\n` +
     `\n## ERP requirements (India)\n\n${erp}\n` +
+    `\n## AI assistants over business data\n\n${ai}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

@@ -569,3 +569,22 @@ export const erpDataset = {
   ],
 };
 export const erpPageGraph = (page: HubPage) => datasetPageGraph(erpDataset, "ERP requirements checker", page);
+
+export const aiAssistantDataset = {
+  "@type": "Dataset",
+  "@id": `${siteUrl}/ai-assistant/questions#dataset`,
+  name: "AI assistant question library for business systems",
+  description:
+    "Questions owners and staff ask an AI assistant over their business records, by industry and role, with what should answer each one, how to check the answer, and tests to run on any vendor's assistant.",
+  url: `${siteUrl}/ai-assistant/questions`,
+  keywords: ["AI assistant", "ERP chatbot", "AI hallucination", "business data", "vendor evaluation", "India"],
+  creator: { "@id": `${siteUrl}/#organization` },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  inLanguage: "en-IN",
+  distribution: [
+    { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${siteUrl}/ai-assistant/questions.json` },
+    { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${siteUrl}/ai-assistant/vendor-test.csv` },
+  ],
+};
+export const aiAssistantPageGraph = (page: HubPage) => datasetPageGraph(aiAssistantDataset, "AI answer number check", page);

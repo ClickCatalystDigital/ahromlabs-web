@@ -21,6 +21,12 @@ const ERP_GUIDE: Record<string, string> = {
   "electronics-component-trading": "trading-distribution",
   "interior-design-and-furniture": "interior-design-firms",
 };
+// And its AI assistant guide (content/ai-assistant).
+const AI_GUIDE: Record<string, string> = {
+  "boiler-pressure-vessel-manufacturing": "manufacturers",
+  "electronics-component-trading": "trading-distribution",
+  "interior-design-and-furniture": "interior-design-firms",
+};
 
 // Unknown slugs 404 instead of rendering on demand and 500ing — see notes/[slug].
 export const dynamicParams = false;
@@ -202,6 +208,16 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                   The ERP requirements for this kind of business
                 </Link>
                 , each with the test to ask any vendor for.
+              </p>
+            )}
+
+            {AI_GUIDE[industry.slug] && (
+              <p className="mt-4 leading-relaxed text-foreground-secondary">
+                Thinking of an AI assistant on top?{" "}
+                <Link href={`/ai-assistant/${AI_GUIDE[industry.slug]}`} className="text-link focus-ring">
+                  What it should answer for this kind of business
+                </Link>
+                , and how to check it doesn&apos;t invent numbers.
               </p>
             )}
 

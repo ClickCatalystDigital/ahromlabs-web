@@ -4,6 +4,7 @@ import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 import { trades, BOQ_CHECKED } from "@/lib/boq";
 import { ERP_CHECKED } from "@/lib/erp";
+import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
 
 const siteUrl = "https://ahromlabs.com";
@@ -179,5 +180,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes];
+  // AI assistant pages: the same shape as the ERP ones.
+  const aiGuides = getContent("ai-assistant");
+  const aiUpdated = [AI_CHECKED, ...aiGuides.map((g) => g.updated)].sort().at(-1)!;
+  const aiRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/ai-assistant`, lastModified: changed("ai-assistant", aiUpdated), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/ai-assistant/number-check`, lastModified: changed("ai-assistant/number-check", AI_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/ai-assistant/questions`, lastModified: changed("ai-assistant/questions", AI_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/ai-assistant/vendor-test`, lastModified: changed("ai-assistant/vendor-test", AI_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    ...aiGuides.map((g) => ({
+      url: `${siteUrl}/ai-assistant/${g.slug}`,
+      lastModified: changed(`ai-assistant/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      ...(g.image && { images: [`${siteUrl}${g.image.src}`] }),
+    })),
+  ];
+
+  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes];
 }

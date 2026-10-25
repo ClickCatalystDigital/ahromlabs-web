@@ -14,7 +14,7 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant" };
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -113,7 +113,7 @@ function loadKind(kind) {
     // rather than quote them. Where a guide does quote, the quote must be exact.
     // ERP guides that rest on practice rather than a rule (readiness, implementation, the industry
     // guides) may have no official source; when they cite one, it is checked the same way.
-    if (kind === "boq" || kind === "erp") {
+    if (kind === "boq" || kind === "erp" || kind === "ai-assistant") {
       if (kind === "boq" && (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0)) {
         throw new Error(`content/${relPath}: a BOQ guide needs "sources" (official documents it relies on)`);
       }
@@ -128,7 +128,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      const taken = kind === "boq" ? ["items", "check", "template"] : ["requirements", "check", "template"];
+      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"] }[kind];
       if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     if (kind === "guide") {
@@ -173,6 +173,7 @@ const industries = loadKind("industry");
 const guides = loadKind("guide");
 const boqGuides = loadKind("boq");
 const erpGuides = loadKind("erp");
+const aiGuides = loadKind("ai-assistant");
 
 // Cross-reference check: every `patterns`/`notes` edge in a note or industry
 // must point at a real entry. Runs here, at script time, so a broken reference
@@ -227,8 +228,9 @@ const RENDERERS = {
   ibr: ["src/app/ibr/[slug]", "src/components/IbrPage.tsx", "src/components/GuidePage.tsx"],
   boq: ["src/app/boq/[slug]", "src/components/BoqPage.tsx", "src/components/GuidePage.tsx"],
   erp: ["src/app/erp/[slug]", "src/components/ErpPage.tsx", "src/components/GuidePage.tsx", "src/lib/erp.ts"],
+  "ai-assistant": ["src/app/ai-assistant/[slug]", "src/components/AiAssistantPage.tsx", "src/components/GuidePage.tsx", "src/lib/ai-assistant.ts"],
 };
-const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp" };
+const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant" };
 for (const [dir, renderers] of Object.entries(RENDERERS)) {
   const files = fs.readdirSync(path.join(CONTENT_ROOT, dir)).filter((f) => f.endsWith(".md"));
   for (const file of files) {
@@ -252,6 +254,11 @@ PAGE_SOURCES.erp = ["content/erp", "src/app/erp/page.tsx", ...ERP_FRAME];
 PAGE_SOURCES["erp/requirements"] = ["src/app/erp/requirements", ...ERP_FRAME];
 PAGE_SOURCES["erp/template"] = ["src/app/erp/template", ...ERP_FRAME];
 PAGE_SOURCES["erp/check"] = ["src/app/erp/check", "src/components/ErpCheck.tsx", "src/lib/erp-check.ts", ...ERP_FRAME];
+const AI_FRAME = ["src/components/AiAssistantPage.tsx", "src/components/GuidePage.tsx", "src/lib/ai-assistant.ts"];
+PAGE_SOURCES["ai-assistant"] = ["content/ai-assistant", "src/app/ai-assistant/page.tsx", ...AI_FRAME];
+PAGE_SOURCES["ai-assistant/questions"] = ["src/app/ai-assistant/questions", ...AI_FRAME];
+PAGE_SOURCES["ai-assistant/vendor-test"] = ["src/app/ai-assistant/vendor-test", ...AI_FRAME];
+PAGE_SOURCES["ai-assistant/number-check"] = ["src/app/ai-assistant/number-check", "src/components/NumberCheck.tsx", "src/lib/number-check.ts", ...AI_FRAME];
 
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
@@ -262,8 +269,8 @@ for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
 }
 fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
-const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides, ...erpGuides];
+const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides, ...erpGuides, ...aiGuides];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides, ${erpGuides.length} ERP guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides, ${erpGuides.length} ERP guides, ${aiGuides.length} AI assistant guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );
