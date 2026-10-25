@@ -3,7 +3,7 @@
 // /knowledge.json — plus the llms.txt summary and the sitemap. Listing them
 // here lets an agent discover all three from one well-known URL instead of
 // scraping pages. Add an entry only for something that actually exists.
-import { AI_SEARCH_MCP_URL } from "@/lib/ai-search";
+import { MCP_URL } from "@/lib/ai-search";
 
 export const dynamic = "force-static";
 
@@ -19,11 +19,11 @@ const catalog = {
         { href: `${SITE}/llms-full.txt`, type: "text/plain", title: "Every page as Markdown, in one file" },
         { href: `${SITE}/agents`, type: "text/html", title: "How to connect: MCP server and machine-readable files" },
         { href: `${SITE}/sitemap.xml`, type: "application/xml", title: "Sitemap" },
-        { href: AI_SEARCH_MCP_URL, title: "MCP server: search this site's content (read-only)" },
+        { href: MCP_URL, title: "MCP server: search this site's content (read-only)" },
       ],
     },
     {
-      anchor: AI_SEARCH_MCP_URL,
+      anchor: MCP_URL,
       "service-desc": [{ href: `${SITE}/.well-known/mcp/server-card.json`, type: "application/json" }],
       "service-doc": [{ href: `${SITE}/llms.txt`, type: "text/plain" }],
     },

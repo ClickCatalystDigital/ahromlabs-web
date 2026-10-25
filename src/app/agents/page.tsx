@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AI_SEARCH_MCP_URL } from "@/lib/ai-search";
+import { MCP_URL, MCP_REPO_URL } from "@/lib/ai-search";
 import { metaDescription } from "@/lib/seo";
 
 // One HTML page for agents and the people wiring them up: the site's MCP server and its machine-readable
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: { type: "website", url: "https://ahromlabs.com/agents", siteName: "Ahrom Labs", title: `${title} | Ahrom Labs`, description },
 };
 
-const config = JSON.stringify({ mcpServers: { "ahromlabs-search": { command: "npx", args: ["-y", "mcp-remote", AI_SEARCH_MCP_URL] } } }, null, 2);
+const config = JSON.stringify({ mcpServers: { "ahromlabs-search": { command: "npx", args: ["-y", "github:Ahrom-Labs/ahromlabs-mcp"] } } }, null, 2);
 
 const FILES = [
   { href: "/llms.txt", name: "llms.txt", what: "A summary of the site for language models: every page, tool and guide with one line on each." },
@@ -49,8 +49,11 @@ export default function AgentsPage() {
               with the URL of the page it came from. No sign-in.
             </p>
             <p className="mt-4 text-sm text-foreground-secondary">Endpoint (streamable HTTP):</p>
-            <pre className="mt-2 overflow-x-auto border border-line p-4 font-mono text-sm text-foreground"><code>{AI_SEARCH_MCP_URL}</code></pre>
-            <p className="mt-4 text-sm text-foreground-secondary">For Claude Desktop or any client that takes a local command:</p>
+            <pre className="mt-2 overflow-x-auto border border-line p-4 font-mono text-sm text-foreground"><code>{MCP_URL}</code></pre>
+            <p className="mt-4 text-sm text-foreground-secondary">
+              For Claude Desktop or any client that takes a local command, the open-source{" "}
+              <a href={MCP_REPO_URL} className="text-link focus-ring">ahromlabs-mcp</a> server (MIT) connects to it for you:
+            </p>
             <pre className="mt-2 overflow-x-auto border border-line p-4 font-mono text-sm text-foreground"><code>{config}</code></pre>
 
             <h2 className="mt-12 text-2xl text-foreground">Files</h2>

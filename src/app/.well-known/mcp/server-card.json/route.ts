@@ -1,4 +1,4 @@
-import { AI_SEARCH_MCP_URL } from "@/lib/ai-search";
+import { MCP_URL } from "@/lib/ai-search";
 
 // MCP Server Card (SEP-1649 draft) for the one MCP server this site really
 // has: Cloudflare AI Search over the site's own published content. Tool names
@@ -17,7 +17,7 @@ const card = {
   description:
     "Search Ahrom Labs' published engineering notes, patterns, industry pages, services and pricing answers. Returns passages with the URL of the page they came from. Read-only; public content only.",
   documentationUrl: "https://ahromlabs.com/llms.txt",
-  transport: { type: "streamable-http", endpoint: AI_SEARCH_MCP_URL },
+  transport: { type: "streamable-http", endpoint: MCP_URL },
   capabilities: { tools: {} },
   authentication: { required: false },
 };

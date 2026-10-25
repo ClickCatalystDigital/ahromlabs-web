@@ -6,7 +6,7 @@ import { questions as aiQuestions, vendorTests } from "@/lib/ai-assistant";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
-import { AI_SEARCH_MCP_URL } from "@/lib/ai-search";
+import { MCP_URL } from "@/lib/ai-search";
 
 // Same shape as knowledge.json/route.ts: force-static keeps this prerendered at
 // build time rather than falling back to dynamic rendering.
@@ -54,7 +54,7 @@ sister furniture business (Savistar & Saag).
 
 ## Machine-readable corpus
 
-- [MCP server](${AI_SEARCH_MCP_URL}): Read-only search over this site's published content, as an MCP (streamable HTTP) server. Card: https://ahromlabs.com/.well-known/mcp/server-card.json
+- [MCP server](${MCP_URL}): Read-only search over this site's published content, as an MCP (streamable HTTP) server. Card: https://ahromlabs.com/.well-known/mcp/server-card.json
 - [knowledge.json](https://ahromlabs.com/knowledge.json): The whole knowledge graph as one JSON array — every term, note, pattern and industry with its full frontmatter and body, every service and client with proof edges to the notes and patterns behind it, and every buyer question with its answer. Each node carries its public url.
 `;
 
