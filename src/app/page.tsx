@@ -212,6 +212,18 @@ export default function Home() {
                     <div key={e.slug} className="border-t border-line pt-6">
                       <h3 className="text-lg font-medium text-foreground">{e.demo!.name}</h3>
                       <p className="mt-1 text-sm text-foreground-secondary">{e.industry}</p>
+                      {e.demo!.image && (
+                        // eslint-disable-next-line @next/next/no-img-element -- static WebP, already sized; images are unoptimized site-wide
+                        <img
+                          src={e.demo!.image.src}
+                          alt={e.demo!.image.alt}
+                          width={960}
+                          height={540}
+                          loading="lazy"
+                          decoding="async"
+                          className="mt-4 aspect-video h-auto w-full object-contain"
+                        />
+                      )}
                       <p className="mt-3 max-w-[48ch] leading-relaxed text-foreground-secondary">{e.demo!.blurb}</p>
                       <a href={e.demo!.url} className="text-link focus-ring mt-4 inline-block">
                         {e.demo!.label}

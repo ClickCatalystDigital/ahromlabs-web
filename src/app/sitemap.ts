@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { engagements } from "@/lib/work";
 import { getContent, termHasPage } from "@/lib/content";
 import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
@@ -39,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // alone leaves its date alone. AI Search re-reads only pages whose lastmod
   // moved, so without it edited wording never reached the chatbot.
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: siteUrl, lastModified: pageDate(""), changeFrequency: "monthly", priority: 1 },
+    { url: siteUrl, lastModified: pageDate(""), changeFrequency: "monthly", priority: 1, images: engagements.flatMap((e) => (e.demo?.image ? [`${siteUrl}${e.demo.image.src}`] : [])) },
     { url: `${siteUrl}/services`, lastModified: pageDate("services"), changeFrequency: "monthly", priority: 0.9 },
     ...[...families, ...services].map((x) => ({
       url: `${siteUrl}/services/${x.slug}`,

@@ -207,7 +207,7 @@ for (const entry of [...notes, ...industries]) {
 // whose lastmod moved, so without one /engagement kept its old wording.
 // Gitignored; a missing git just leaves the date out.
 const PAGE_SOURCES = {
-  "": ["src/app/page.tsx"],
+  "": ["src/app/page.tsx", "src/lib/work.ts", "src/components/FreeGuides.tsx", "public/demos"],
   services: ["src/app/services", "src/lib/services.ts"],
   work: ["src/app/work", "src/lib/work.ts"],
   engagement: ["src/app/engagement", "src/lib/engagement.ts"],

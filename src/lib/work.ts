@@ -19,13 +19,14 @@ export type Engagement = {
   proof: Service["proof"];
   quote?: { text: string; attribution: string };
   // A public demo of the system, when one exists.
-  demo?: { url: string; label: string; name: string; blurb: string };
+  // image: an illustration shown above the demo card on the homepage (public/demos, 960x540).
+  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string } };
 };
 
 export const engagements: Engagement[] = [
   {
     slug: "ls-technologies",
-    demo: { url: "https://electronics-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Electronics trading demo", blurb: "Scan reels in and out, approve staff entries, and see the customer portal and partner store." },
+    demo: { url: "https://electronics-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Electronics trading demo", blurb: "Scan reels in and out, approve staff entries, and see the customer portal and partner store.", image: { src: "/demos/demo-electronics-trading.webp", alt: "Electronic component reels in a carton beside a barcode scanner: the electronics trading and inventory demo" } },
     client: "LS Technologies",
     industry: "Electronics-components import/export trading",
     built:
@@ -47,7 +48,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "savistar-saag",
-    demo: { url: "https://interiors-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant." },
+    demo: { url: "https://interiors-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant.", image: { src: "/demos/demo-interior-design-furniture.webp", alt: "Fabric, stone and wood samples with a floor plan and a chair: the interior design and furniture workshop demo" } },
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:
@@ -71,7 +72,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "boiler-manufacturer",
-    demo: { url: "https://boiler-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder." },
+    demo: { url: "https://boiler-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
     client: "A boiler and pressure-vessel manufacturer",
     anonymous: true,
     industry: "Boiler and pressure-vessel manufacturing",
