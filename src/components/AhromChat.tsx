@@ -81,6 +81,7 @@ export function AhromChat({ presets }: { presets: Preset[] }) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   // After 10 seconds on the site, a one-line hello by the visitor's own clock,
@@ -108,10 +109,36 @@ export function AhromChat({ presets }: { presets: Preset[] }) {
   useEffect(() => {
     if (!open) return;
     for (const m of MOODS) new Image().src = face(m);
-    inputRef.current?.focus();
+    // Focus the box only with a mouse or trackpad: on a phone it would throw the keyboard up over the starter
+    // questions before anyone chose to type.
+    if (window.matchMedia("(pointer: fine)").matches) inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && minimise();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // Phones: the full-screen panel follows the visible area, so the keyboard sits under the message box rather
+  // than over it (iOS doesn't shrink 100dvh for the keyboard), and the page behind it stays still.
+  useEffect(() => {
+    const vv = window.visualViewport;
+    const panel = panelRef.current;
+    if (!open || !vv || !panel || !window.matchMedia("(max-width: 639px)").matches) return;
+    const fit = () => {
+      panel.style.setProperty("--ahrom-ai-vh", `${vv.height}px`);
+      panel.style.setProperty("--ahrom-ai-top", `${vv.offsetTop}px`);
+      listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
+    };
+    fit();
+    vv.addEventListener("resize", fit);
+    vv.addEventListener("scroll", fit);
+    const html = document.documentElement;
+    const overflow = html.style.overflow;
+    html.style.overflow = "hidden";
+    return () => {
+      vv.removeEventListener("resize", fit);
+      vv.removeEventListener("scroll", fit);
+      html.style.overflow = overflow;
+    };
   }, [open]);
 
   useEffect(() => {
@@ -240,7 +267,7 @@ export function AhromChat({ presets }: { presets: Preset[] }) {
       )}
 
       {open && (
-        <section id="ahrom-ai" role="dialog" aria-label="Ahrom AI" className="ahrom-ai-panel">
+        <section ref={panelRef} id="ahrom-ai" role="dialog" aria-label="Ahrom AI" className="ahrom-ai-panel">
           <header className="flex items-center gap-1 border-b border-line py-3 pr-3 pl-4">
             <LogoBadge className="mr-auto" />
             <button type="button" onClick={minimise} aria-label="Minimise Ahrom AI" title="Minimise" className="ahrom-ai-icon-button focus-ring">

@@ -66,6 +66,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "light",
+  // Android Chrome: the on-screen keyboard shrinks the page, so fixed panels (the chat) fit above it.
+  interactiveWidget: "resizes-content",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
