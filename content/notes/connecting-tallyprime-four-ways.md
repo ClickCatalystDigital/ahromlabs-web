@@ -22,7 +22,7 @@ evidence:
   - metric: Missing ledgers
     value: flagged for a person, never auto-created
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 ## Why can't a web app just call Tally?
@@ -31,7 +31,7 @@ Because TallyPrime doesn't expose anything to the internet. Its integration surf
 
 ## 1. A local agent on the Tally PC
 
-The first connection was a small agent running on the same PC as TallyPrime. The cloud app never talks to Tally: it writes to its own online database, and the agent reads approved entries from there and posts them into Tally's gateway. At [LS Technologies](/industries/electronics-component-trading) it picks up approved invoices every 30 seconds, syncs voucher status and outstanding bills back every 15 minutes, and refreshes ledgers, stock items and voucher types nightly. A ledger that doesn't exist yet in Tally is flagged for a person, never created by the software. The details are in [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting), and the XML protocol code is open-sourced as [tally-voucher-xml](https://github.com/ahromlabs/tally-voucher-xml).
+The first connection was a small agent running on the same PC as TallyPrime. The cloud app never talks to Tally: it writes to its own online database, and the agent reads approved entries from there and posts them into Tally's gateway. At [LS Technologies](/industries/electronics-component-trading) it picks up approved invoices every 30 seconds, syncs voucher status and outstanding bills back every 15 minutes, and refreshes ledgers, stock items and voucher types nightly. A ledger that doesn't exist yet in Tally is flagged for a person, never created by the software. The details are in [Posting vouchers into TallyPrime from a cloud app](/notes/tally-voucher-posting), and the XML protocol code is open-sourced as [tally-voucher-xml](https://github.com/Ahrom-Labs/tally-voucher-xml).
 
 ## 2. The same agent, hardened for a connection that drops
 

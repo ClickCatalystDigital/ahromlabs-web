@@ -162,7 +162,7 @@ export const services: Service[] = [
       { client: "savistar-saag", as: "Sign in as Owner" },
     ],
     evidence: [
-      { metric: "Systems built", value: "4, for 4 client businesses" },
+      { metric: "Systems built", value: "4, for 3 clients: LS Technologies (two systems), Savistar & Saag (one shared system for the sister companies) and a boiler manufacturer" },
       { metric: "Industries", value: "Boiler and pressure-vessel manufacturing, PCB and electronics trading, interior design, furniture" },
       { metric: "Outstanding balances", value: "Computed from source transactions at read time, not stored as a running total" },
     ],
@@ -194,7 +194,7 @@ export const services: Service[] = [
     ],
     questions: [
       { q: "Where do the GST and TDS rates come from?", a: "One registry. A person checks each change against the actual CBIC or CBDT notification, it goes live only once approved, and systems pull approved rates daily. A wrong rate is retracted, never quietly edited." },
-      { q: "Can it prepare a boiler's IBR forms?", a: "Yes. The statutory folder (cover letter and Forms II(1), III, III A and IV A) is produced from a bank of material test certificates. A person adds the parts, and a folder takes minutes instead of being typed by hand." },
+      { q: "Can it prepare a boiler's IBR forms?", a: "Yes. The statutory folder (cover letter and IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950)) is produced from a bank of material test certificates. A person adds the parts, and a folder takes minutes instead of being typed by hand." },
       { q: "Do we still need Tally?", a: "No, Tally becomes optional. The operations system can be the book of record, with Tally kept as a sync target if your accountant prefers to work there." },
     ],
     demos: [
@@ -204,7 +204,7 @@ export const services: Service[] = [
       { metric: "Reports and documents from one computation each", value: "23" },
       { metric: "GST returns", value: "GSTR-1 (B2B and HSN) and GSTR-3B" },
       { metric: "Bank reconciliation", value: "Auto-matched only when mutually unique; the rest go to a person" },
-      { metric: "Industry filings", value: "IBR Forms II(1), III, III A and IV A, from a bank of material test certificates" },
+      { metric: "Industry filings", value: "IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950), from a bank of material test certificates" },
       { metric: "Statutory rates", value: "GST by HSN, vendor TDS, income-tax and professional-tax slabs, PF/ESI — one verified registry, pulled daily" },
       { metric: "E-way bills", value: "Direct NIC client built to the official v1.03 spec; live once the NIC account is set up" },
     ],

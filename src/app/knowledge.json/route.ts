@@ -144,6 +144,6 @@ export function GET() {
   };
 
   return NextResponse.json([founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes, ...erpRequirementNodes(), ...aiQuestionNodes()], {
-    headers: { "Cache-Control": "public, max-age=3600" },
+    headers: { "Cache-Control": "public, max-age=3600", "Access-Control-Allow-Origin": "*" },
   });
 }

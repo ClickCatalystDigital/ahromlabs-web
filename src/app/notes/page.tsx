@@ -6,19 +6,19 @@ import { Reveal } from "@/components/Reveal";
 import { getContent, formatDate } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Notes",
+  title: "Engineering notes",
   description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
   alternates: { canonical: "/notes" },
   openGraph: {
     type: "website",
     url: "https://ahromlabs.com/notes",
     siteName: "Ahrom Labs",
-    title: "Notes | Ahrom Labs",
+    title: "Engineering notes | Ahrom Labs",
     description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Notes | Ahrom Labs",
+    title: "Engineering notes | Ahrom Labs",
     description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
   },
 };
@@ -32,7 +32,7 @@ export default function NotesPage() {
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">
-            Notes
+            Engineering notes
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             Engineering notes from real client work: what we built, why, and what it actually does in production.

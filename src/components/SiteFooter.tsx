@@ -37,6 +37,7 @@ const columns: { title: string; links: { href: string; label: string }[] }[] = [
   {
     title: "For AI agents",
     links: [
+      { href: "/agents", label: "MCP and agent access" },
       { href: "/llms.txt", label: "llms.txt" },
       { href: "/knowledge.json", label: "knowledge.json" },
     ],

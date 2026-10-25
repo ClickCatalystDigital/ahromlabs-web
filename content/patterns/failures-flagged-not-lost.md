@@ -16,7 +16,7 @@ evidence:
   - metric: retry behavior for structural errors
     value: none — held with reason attached until a person resolves it
 published: 2026-08-29
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 ## Context
@@ -37,4 +37,4 @@ The classification depends on parsing the target system's own error messages, wh
 
 ## As code
 
-The transient-vs-structural classifier is open-sourced as `classifyNetworkError()`/`classifyResponseError()` in [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml).
+The transient-vs-structural classifier is open-sourced as `classifyNetworkError()`/`classifyResponseError()` in [`tally-voucher-xml`](https://github.com/Ahrom-Labs/tally-voucher-xml).

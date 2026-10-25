@@ -16,6 +16,8 @@ const catalog = {
       item: [
         { href: `${SITE}/knowledge.json`, type: "application/json", title: "Ahrom Labs knowledge graph (read-only)" },
         { href: `${SITE}/llms.txt`, type: "text/plain", title: "Site summary for language models" },
+        { href: `${SITE}/llms-full.txt`, type: "text/plain", title: "Every page as Markdown, in one file" },
+        { href: `${SITE}/agents`, type: "text/html", title: "How to connect: MCP server and machine-readable files" },
         { href: `${SITE}/sitemap.xml`, type: "application/xml", title: "Sitemap" },
         { href: AI_SEARCH_MCP_URL, title: "MCP server: search this site's content (read-only)" },
       ],
@@ -37,6 +39,7 @@ export function GET() {
     headers: {
       "Content-Type": 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"',
       "Cache-Control": "public, max-age=3600",
+      "Access-Control-Allow-Origin": "*",
     },
   });
 }

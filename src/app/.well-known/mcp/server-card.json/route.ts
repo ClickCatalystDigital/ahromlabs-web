@@ -23,5 +23,5 @@ const card = {
 };
 
 export function GET() {
-  return Response.json(card, { headers: { "Cache-Control": "public, max-age=3600" } });
+  return Response.json(card, { headers: { "Cache-Control": "public, max-age=3600", "Access-Control-Allow-Origin": "*" } });
 }

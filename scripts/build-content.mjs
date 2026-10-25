@@ -215,6 +215,7 @@ const PAGE_SOURCES = {
   approach: ["src/app/approach"],
   about: ["src/app/about/page.tsx", "src/app/about/opengraph-image.tsx"],
   "about/pujan-motiwala": ["src/app/about/pujan-motiwala"],
+  agents: ["src/app/agents"],
 };
 // Content pages too: the page's own file plus the code that renders it, so a
 // same-day edit, or a change in shared code (a client's name in work.ts, the IBR

@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // The nav and footer say "Pricing"; people type the word they saw.
+  async redirects() {
+    return [{ source: "/pricing", destination: "/engagement", permanent: true }];
+  },
 };
 
 initOpenNextCloudflareForDev();

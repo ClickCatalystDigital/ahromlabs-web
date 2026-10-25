@@ -6,19 +6,19 @@ import { Reveal } from "@/components/Reveal";
 import { getContent, formatDate } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Patterns",
+  title: "Engineering patterns for business software",
   description: "Reusable decisions extracted from real engagements — the trade-offs we chose and why, so the next system doesn't start from zero.",
   alternates: { canonical: "/patterns" },
   openGraph: {
     type: "website",
     url: "https://ahromlabs.com/patterns",
     siteName: "Ahrom Labs",
-    title: "Patterns | Ahrom Labs",
+    title: "Engineering patterns for business software | Ahrom Labs",
     description: "Reusable decisions extracted from real engagements — the trade-offs we chose and why, so the next system doesn't start from zero.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Patterns | Ahrom Labs",
+    title: "Engineering patterns for business software | Ahrom Labs",
     description: "Reusable decisions extracted from real engagements — the trade-offs we chose and why, so the next system doesn't start from zero.",
   },
 };
@@ -32,7 +32,7 @@ export default function PatternsPage() {
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">
-            Patterns
+            Engineering patterns for business software
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             Reusable decisions extracted from real engagements: the trade-offs we chose and why, so the next system doesn&apos;t start from zero.

@@ -434,7 +434,7 @@ export const requirements: Requirement[] = [
     test: "Generate the statutory folder for one finished product and check each certificate in it against the material used.",
     priority: "should", appliesTo: MAKE, roles: ["operations", "owner"],
     service: "compliance-accounting", note: "ibr-statutory-folder-from-bom",
-    benchmark: "IBR Forms II(1), III, III A and IV A, from a bank of material test certificates",
+    benchmark: "IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950), from a bank of material test certificates",
   },
 
   // ── Dispatch and logistics ─────────────────────────────────────────────────

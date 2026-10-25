@@ -18,7 +18,7 @@ export function pageText(html) {
 
 // lower→Upper ("comAhmedabad", "SalesBuying") and digit→Capital ("02An").
 // ponytail: also flags real camelCase words (TallyPrime, ClickCatalyst); they're allow-listed.
-const ALLOW = /TallyPrime|ClickCatalyst|ClickHub|LinkedIn|GitHub|JavaScript|TypeScript|OpenRouter|PySpark|SageMaker|YouTube|WhatsApp|PostgreSQL|SQLite|iPhone|eWay|McKinsey|DeepSeek|OpenAI|LibreOffice|ChatGPT|PowerBI|BizMitra|NextJS|FastAPI|IndiaMART|DMAIC|BPMN|PDFs|BOQs|BOMs|IDs|GSTINs|ERPs|APIs|MCQs|URLs|SKUs|MTCs|CAs|OEMs|SMEs|MSMEs|PCBs|KPIs|POs|GRNs|TDS|IBR|SoftwareSuggest|AhromLabs|IoT|JustDial|TradeIndia|ProftCode|classify[A-Za-z]*Error|\d+(?:st|nd|rd|th|[KMLx%]|kg|mm|ft|cm|sqft|GB|MB|Cr|AM|PM|D|V|W|A|Hz)\b|Rs|Q\d|FY\d|Form[A-Z]|[A-Z]{2,}s\b/;
+const ALLOW = /TallyPrime|ClickCatalyst|ClickHub|LinkedIn|GitHub|JavaScript|TypeScript|OpenRouter|PySpark|SageMaker|YouTube|WhatsApp|PostgreSQL|SQLite|iPhone|eWay|McKinsey|DeepSeek|OpenAI|LibreOffice|ChatGPT|PowerBI|BizMitra|NextJS|FastAPI|IndiaMART|DMAIC|BPMN|PDFs|BOQs|BOMs|IDs|GSTINs|ERPs|APIs|MCQs|URLs|SKUs|MTCs|CAs|OEMs|SMEs|MSMEs|PCBs|KPIs|POs|GRNs|TDS|IBR|SoftwareSuggest|AhromLabs|IoT|JustDial|TradeIndia|ProftCode|classify[A-Za-z]*Error|mcpServers|\d+(?:st|nd|rd|th|[KMLx%]|kg|mm|ft|cm|sqft|GB|MB|Cr|AM|PM|D|V|W|A|Hz)\b|Rs|Q\d|FY\d|Form[A-Z]|[A-Z]{2,}s\b/;
 
 export function findJoins(text) {
   const hits = [];

@@ -71,6 +71,7 @@ function mainContent(html) {
 const nhm = new NodeHtmlMarkdown({ bulletMarker: "-" });
 
 let count = 0;
+const full = [];
 fs.rmSync(OUT_DIR, { recursive: true, force: true });
 
 for (const file of htmlFiles(APP_DIR)) {
@@ -106,6 +107,7 @@ for (const file of htmlFiles(APP_DIR)) {
     .filter((line) => line !== null)
     .join("\n");
 
+  full.push({ route, doc });
   const out = path.join(OUT_DIR, route === "/" ? "index.md" : `${rel}.md`);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, doc);
@@ -113,3 +115,13 @@ for (const file of htmlFiles(APP_DIR)) {
 }
 
 console.log(`markdown: wrote ${count} pages to ${path.relative(process.cwd(), OUT_DIR)}`);
+
+// /llms-full.txt: every page's Markdown in one file, for an agent that wants the whole site in one fetch
+// (the companion of /llms.txt, which is the index). Gitignored; rebuilt with the twins.
+full.sort((a, b) => a.route.localeCompare(b.route));
+fs.writeFileSync(
+  path.join(process.cwd(), "public/llms-full.txt"),
+  `# Ahrom Labs: every page as Markdown\n\n> ${full.length} pages of ${SITE}, one after another. The index is ${SITE}/llms.txt.\n\n` +
+    full.map((f) => f.doc).join("\n\n"),
+);
+console.log(`markdown: wrote public/llms-full.txt (${full.length} pages)`);

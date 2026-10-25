@@ -5,9 +5,17 @@
 # that ask for text/markdown on the page's own URL. Never index them — the
 # HTML page is the canonical document.
 /md/*
+  Access-Control-Allow-Origin: *
   Content-Type: text/markdown; charset=utf-8
   X-Robots-Tag: noindex
   Cache-Control: public, max-age=3600
 
 /auth.md
   Content-Type: text/markdown; charset=utf-8
+
+# Every page's Markdown in one file (scripts/build-markdown.mjs); readable from any origin, like llms.txt.
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=3600

@@ -5,7 +5,7 @@ title: Keeping test certificates for a boiler's IBR folder
 answer: >
   A boiler manufacturer ships every boiler with an IBR statutory folder for the
   Directorate of Boilers. The system produces it — cover letter, Forms II(1), III,
-  III A and IV A — from a bank of material test certificates, each unique on cert,
+  III A and IV A (under IBR 2026: Forms I Part B, IV Part A, IV Part B and V Part B) — from a bank of material test certificates, each unique on cert,
   cast and plate number and reused across about 3.2 boilers in the sample. The
   form set follows the boiler model; a person adds the parts, so a folder takes a
   few minutes instead of being typed up by hand.
@@ -23,7 +23,7 @@ evidence:
   - metric: certificate-to-part linking
     value: suggested by confidence, never applied without a person
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 The manufacturer this was built for makes boilers, pressure-reducing stations and steam headers. Every unit it ships needs a statutory folder for the Directorate of Boilers, under the Indian Boiler Regulations (IBR): the forms that prove each plate, tube and forging came from certified material. Ahrom Labs built the operations system that now keeps the certificates and produces that folder.

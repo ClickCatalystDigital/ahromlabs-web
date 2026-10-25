@@ -18,7 +18,7 @@ evidence:
   - metric: master data sync
     value: 24 hours
 published: 2026-08-29
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 ## Context
@@ -39,4 +39,4 @@ The integration only works while that PC and its agent are running. Data isn't i
 
 ## As code
 
-The Tally-facing half of this agent — building and posting voucher XML against the local gateway — is open-sourced as [`tally-voucher-xml`](https://github.com/ahromlabs/tally-voucher-xml).
+The Tally-facing half of this agent — building and posting voucher XML against the local gateway — is open-sourced as [`tally-voucher-xml`](https://github.com/Ahrom-Labs/tally-voucher-xml).

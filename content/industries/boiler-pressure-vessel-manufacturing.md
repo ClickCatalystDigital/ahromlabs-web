@@ -61,7 +61,7 @@ demo:
   label: Try the live demo
 evidence:
   - metric: IBR forms produced
-    value: Cover letter, Forms II(1), III, III A and IV A (IBR 1950 numbering)
+    value: Cover letter and IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950)
   - metric: Boiler models, each with its own form set
     value: "8"
   - metric: Reports and documents
@@ -69,7 +69,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-10-20
+updated: 2026-10-25
 ---
 
 ## Can I try it before talking to anyone?

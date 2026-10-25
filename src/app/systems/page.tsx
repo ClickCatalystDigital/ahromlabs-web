@@ -8,7 +8,7 @@ import Link from "next/link";
 import { jsonLd, termSetGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Systems",
+  title: "ERP and compliance glossary",
   description:
     "The vocabulary Ahrom Labs uses to model a business: entities, relationships, workflows, evidence, and the terms that connect them.",
   alternates: { canonical: "/systems" },
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://ahromlabs.com/systems",
     siteName: "Ahrom Labs",
-    title: "Systems | Ahrom Labs",
+    title: "ERP and compliance glossary | Ahrom Labs",
     description:
       "The vocabulary Ahrom Labs uses to model a business: entities, relationships, workflows, evidence, and the terms that connect them.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Systems | Ahrom Labs",
+    title: "ERP and compliance glossary | Ahrom Labs",
     description:
       "The vocabulary Ahrom Labs uses to model a business: entities, relationships, workflows, evidence, and the terms that connect them.",
   },
@@ -68,7 +68,7 @@ export default function SystemsPage() {
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">
-            Systems
+            ERP and compliance glossary
           </h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
             The vocabulary Ahrom uses to model a business. These are the terms the
