@@ -78,7 +78,7 @@ Yes. A live demo runs at [boiler-erp.ahromlabs.com](https://boiler-erp.ahromlabs
 
 ## What does a boiler manufacturer need that a generic ERP doesn't give?
 
-Four things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the material test certificate it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [a boiler and pressure-vessel manufacturer](/work#boiler-manufacturer) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.
+Four things generic ERPs treat as edge cases are the core of this business. Every boiler is its own project, with its own bill of materials and a chain of milestones across design, procurement, stores, production, QC, dispatch and commissioning. Every plate and tube has to trace back to the [material test certificate](/systems/material-test-certificate) it arrived with. Every unit ships with statutory paperwork for the Directorate of Boilers under the Indian Boiler Regulations. And steel plate is bought in standard sizes and cut, so stock is pieces with dimensions, not a count. The system Ahrom Labs built for [a boiler and pressure-vessel manufacturer](/work#boiler-manufacturer) is designed around those four facts rather than bolted onto a generic stock-and-invoice model.
 
 ## Can the IBR statutory folder come out of the system instead of being typed?
 

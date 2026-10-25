@@ -49,7 +49,7 @@ A design firm and its furniture workshop; a trading firm and its sister concern.
 
 ## 7. Industry paperwork is assembled by hand
 
-A boiler's statutory folder, a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as that manufacturer's IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).
+A boiler's [statutory folder](/systems/ibr-statutory-folder), a test-certificate trail, a customs file. If a person compiles it from records that already exist in your systems, it can be generated instead — as that manufacturer's IBR folder now is. See [Generating a boiler's IBR statutory folder](/notes/ibr-statutory-folder-from-bom).
 
 ## Do you have to replace Tally?
 

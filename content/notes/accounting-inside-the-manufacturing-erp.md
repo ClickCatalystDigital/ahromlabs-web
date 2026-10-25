@@ -22,7 +22,7 @@ evidence:
   - metric: books lock
     value: enforced at the single point every journal posting passes through
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At a boiler and pressure-vessel manufacturer Ahrom Labs built for, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.
@@ -33,7 +33,7 @@ Every accounting entry in a manufacturer starts as an operational event: a purch
 
 ## What compliance is covered?
 
-Per legal entity: a chart of accounts and a posting engine; sales invoices, credit notes, vendor bills and debit notes; GSTR-1 (split into B2B and HSN tables the way the GST portal expects) and GSTR-3B; input-tax-credit reconciliation; TDS deduction with a TDS register; reverse charge on both the purchase and sales side; a fixed-asset register with depreciation; payroll exported into accounting; and trial balance, profit and loss, balance sheet and cash flow. Changes are written to an audit log with a searchable viewer, and a books lock stops postings into a closed period at the one function every journal entry passes through — so no document type can slip around it.
+Per legal entity: a chart of accounts and a posting engine; sales invoices, credit notes, vendor bills and debit notes; GSTR-1 (split into B2B and HSN tables the way the GST portal expects) and GSTR-3B; input-tax-credit reconciliation; TDS deduction with a TDS register; [reverse charge](/systems/reverse-charge) on both the purchase and sales side; a [fixed-asset register](/systems/fixed-asset-register) with depreciation; payroll exported into accounting; and trial balance, profit and loss, balance sheet and cash flow. Changes are written to an audit log with a searchable viewer, and a books lock stops postings into a closed period at the one function every journal entry passes through — so no document type can slip around it.
 
 ## Where do GST and TDS rates come from?
 
@@ -49,4 +49,4 @@ With real transactions, not only unit tests. A reverse-charge test that posted r
 
 ## Boundary
 
-E-invoicing has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built.
+[E-invoicing](/systems/e-invoice) has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built.

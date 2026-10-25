@@ -33,8 +33,8 @@ image:
 ## The rules your turnover brings in
 
 - **Above ₹5 crore:** e-invoices; **at ₹10 crore and above:** reported within 30 days. ([e-invoice](/erp/requirements#accounts-e-invoice))
-- **As a buyer with turnover above ₹10 crore:** TDS on purchases from a seller beyond ₹50 lakh in the year. ([TDS on purchases](/erp/requirements#accounts-tds-purchases))
-- **Goods moving above ₹50,000:** e-way bills. ([e-way bill](/erp/requirements#dispatch-eway-bill))
+- **As a buyer with turnover above ₹10 crore:** [TDS on purchases](/systems/tds-on-purchases) from a seller beyond ₹50 lakh in the year. ([TDS on purchases](/erp/requirements#accounts-tds-purchases))
+- **Goods moving above ₹50,000:** [e-way bills](/systems/e-way-bill). ([e-way bill](/erp/requirements#dispatch-eway-bill))
 
 All of them, quoted from the official text: [compliance requirements](/erp/compliance).
 

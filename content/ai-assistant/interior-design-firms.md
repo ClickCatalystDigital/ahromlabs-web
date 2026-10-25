@@ -31,7 +31,7 @@ Advice ("should we raise our design fee?") and anything a login can't see on the
 
 ## How Atelier AI does it
 
-[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its fixed look-ups; code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. "Remind me to call them on Friday" drafts a task that is saved only when the person presses Save.
+[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. "Remind me to call them on Friday" drafts a task that is saved only when the person presses Save.
 
 You can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.
 

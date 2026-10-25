@@ -31,23 +31,23 @@ When what you need is accounting: double-entry books, vouchers, GST returns, and
 
 ## When are ERPNext or Odoo the better choice?
 
-When your processes look like the ones they ship. ERPNext is open source, built in India, with no per-user licence fees and strong GST, e-way bill and e-invoicing support; Odoo's community edition is free, with enterprise features and many modules paid ([Ksolves](https://www.ksolves.com/blog/odoo/compare-odoo-vs-erpnext), [Cudio](https://www.cudio.com/blog/erpnext-vs-odoo)). If an implementation partner can configure one to fit your business without writing much code, it will be faster and cheaper than a custom build — take that option.
+When your processes look like the ones they ship. ERPNext is open source, built in India, with no per-user licence fees and strong GST, [e-way bill](/systems/e-way-bill) and [e-invoicing](/systems/e-invoice) support; Odoo's community edition is free, with enterprise features and many modules paid ([Ksolves](https://www.ksolves.com/blog/odoo/compare-odoo-vs-erpnext), [Cudio](https://www.cudio.com/blog/erpnext-vs-odoo)). If an implementation partner can configure one to fit your business without writing much code, it will be faster and cheaper than a custom build — take that option.
 
 ## When does a custom system make sense?
 
-When the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's IBR statutory folder built from a bank of material test certificates; steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.
+When the part that's specific to you is the part that matters. Three examples from systems we've built: a boiler maker's [IBR statutory folder](/systems/ibr-statutory-folder) built from a bank of [material test certificates](/systems/material-test-certificate); steel plate tracked as individual pieces so offcuts go back into stock by weight; and two sister companies sharing one client list and one ledger while staff see only their own cash entries. Each of those would be heavy customisation on a packaged ERP — and heavy customisation is code you maintain through every upgrade of someone else's product. At that point, owning the system outright is often the simpler path.
 
 ## What did a boiler manufacturer actually decide?
 
 [A boiler and pressure-vessel manufacturer](/industries/boiler-pressure-vessel-manufacturing) had its operations system built custom from the start — projects, BOM, procurement, stores, production, QC — with CRM, selling and HR built natively to the feature depth ERPNext offers. Regulated accounting — the ledger, GST, TDS and statutory payroll — was originally planned as an integration with ERPNext. In August 2026 that was reversed: the operations system became the book of record, ERPNext was dropped, and Tally was kept as an optional sync target rather than the books. The result is described in [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).
 
-The cost is real, and worth stating: owning the ledger meant building GST returns, TDS, reverse charge, fixed assets and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.
+The cost is real, and worth stating: owning the ledger meant building GST returns, TDS, [reverse charge](/systems/reverse-charge), [fixed assets](/systems/fixed-asset-register) and bank reconciliation, and testing them with real transactions — a reverse-charge test found two posting bugs before any real books depended on them. Keeping statutory rates correct is handled by a human-approved rate registry rather than by each system separately.
 
 ## A quick way to decide
 
 - Is your problem mostly the books and GST? **Stay on TallyPrime**, and connect your other tools to it if needed.
 - Do your processes match a standard manufacturing ERP, with little customisation? **ERPNext or Odoo**, through a good implementation partner.
-- Is there industry paperwork, traceability or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.
+- Is there industry paperwork, [traceability](/systems/material-traceability) or a business structure no package models well? **Custom** — and decide separately whether the books move in or Tally stays as the ledger.
 - Not sure? That's what a modeling phase is for: [map the business first](/engagement#pricing), then choose.
 
 To compare the options against your own requirements, line by line, use the [ERP selection matrix](/erp/selection-matrix) and the [requirements checklist](/erp/requirements).

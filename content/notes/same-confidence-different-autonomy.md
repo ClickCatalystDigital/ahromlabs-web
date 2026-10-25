@@ -18,7 +18,7 @@ evidence:
   - metric: stock-matcher autonomy
     value: auto-reserves its top match, same confidence math, same threshold
 published: 2026-08-31
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 ## Two systems, the same scoring math
@@ -35,4 +35,4 @@ At the identical confidence threshold, the stock-matching system auto-reserves i
 
 ## Why the same math earns different trust
 
-A wrong stock reservation is a wasted click — someone notices the piece doesn't fit and picks another from the list. A wrong match on a quality certificate becomes part of the paperwork proving a part meets its material specification. The statistics can't tell those two mistakes apart; the decision about which one gets to act unsupervised has to be made separately, by someone who understands what's actually at stake on each side.
+A wrong [stock reservation](/systems/stock-reservation) is a wasted click — someone notices the piece doesn't fit and picks another from the list. A wrong match on a quality certificate becomes part of the paperwork proving a part meets its material specification. The statistics can't tell those two mistakes apart; the decision about which one gets to act unsupervised has to be made separately, by someone who understands what's actually at stake on each side.

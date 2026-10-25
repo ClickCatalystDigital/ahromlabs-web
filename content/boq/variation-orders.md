@@ -10,7 +10,7 @@ answer: >
 description: "How to record and price changes after an interior BOQ is agreed, using the CPWD contract's clause 12 as the model: rates, new items, time."
 domain: [interiors, boq, contracts]
 published: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 checked: 2026-10-24
 image:
   src: /boq/variation-order-marked-up.webp
@@ -40,7 +40,7 @@ checks:
 
 ## What a variation order is
 
-Once a client accepts a quotation built on a BOQ, every later change is a variation: an extra item, a line dropped, a material swapped, a quantity that grew on site. A variation order writes that change down with its price and its effect on time before the work is done, so the final bill is the BOQ plus a short list of approved changes, not an argument.
+Once a client accepts a quotation built on a BOQ, every later change is a variation: an extra item, a line dropped, a material swapped, a quantity that grew on site. A [variation order](/systems/variation-order) writes that change down with its price and its effect on time before the work is done, so the final bill is the BOQ plus a short list of approved changes, not an argument.
 
 In interior work most variations are substitutions (veneer instead of laminate, a different tile), additions (a loft nobody drew) and quantities that move once walls are measured.
 
@@ -68,7 +68,7 @@ Private interior contracts aren't bound by government rules, but the Central Pub
 
 Most of the price is already in the BOQ. A wardrobe that grows from 60 to 72 sq ft by front elevation is 12 more sq ft at the agreed rate. A swap from laminate to veneer shutters is the difference between two rates, each built from material, labour and wastage. An omission is a credit at the BOQ rate.
 
-This only works if the BOQ line said what was priced. "Wardrobe, per sq ft" gives nothing to price a change against; a line that names the board, thickness, finish, hardware and measurement basis does. The [measurement rules](/boq/measurement-rules) and [material specifications](/boq/material-specifications) are where those lines are settled.
+This only works if the BOQ line said what was priced. "Wardrobe, per sq ft" gives nothing to price a change against; a line that names the board, thickness, finish, hardware and [measurement basis](/systems/measurement-basis) does. The [measurement rules](/boq/measurement-rules) and [material specifications](/boq/material-specifications) are where those lines are settled.
 
 ## Agree the rules before the first change
 

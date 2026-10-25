@@ -22,7 +22,7 @@ evidence:
   - metric: A wrong approved rate
     value: Retracted with a reason; the original and its approval kept
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-25
 ---
 
 ## Why not fetch tax rates automatically?
@@ -52,7 +52,7 @@ The rates registry is one part of the accounting and compliance layer that Ahrom
 
 - **GSTIN verification** — a live lookup of a customer's or vendor's GSTIN before it's saved.
 - **GST returns** — GSTR-1 and GSTR-3B from the system's own ledger, and the government's GSTR-2B imported from the portal's download, with each line's Invoice Management System status — accepted, rejected, pending or deemed accepted — recorded against it. See [GST, TDS and the general ledger inside a manufacturing ERP](/notes/accounting-inside-the-manufacturing-erp).
-- **E-way bills** — a client that talks directly to the government's NIC e-way bill system, with no intermediary, built to the official v1.03 specification to generate and cancel e-way bills from the invoice's own line items. It is built and checked locally; it goes live once the company's NIC account is set up.
+- **[E-way bills](/systems/e-way-bill)** — a client that talks directly to the government's NIC e-way bill system, with no intermediary, built to the official v1.03 specification to generate and cancel e-way bills from the invoice's own line items. It is built and checked locally; it goes live once the company's NIC account is set up.
 - **TallyPrime** — connected four ways, or made optional. See [Four ways to connect a business system to TallyPrime](/notes/connecting-tallyprime-four-ways).
 
 ## Boundary

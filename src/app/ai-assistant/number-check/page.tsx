@@ -45,7 +45,8 @@ export default function NumberCheckPage() {
         </li>
         <li>
           <strong className="font-medium text-foreground">No rounding.</strong> &ldquo;About ₹12.4 lakh&rdquo; against
-          ₹12,43,500 is marked. A rounded figure is one the assistant made, and the owner should see the real one.
+          ₹12,43,500 is marked. A rounded figure is one the assistant made (a mild{" "}
+          <Link href="/systems/ai-hallucination" className="text-link focus-ring">hallucination</Link>), and the owner should see the real one.
         </li>
         <li>
           <strong className="font-medium text-foreground">Whole numbers only.</strong> 25 doesn&apos;t count as found
@@ -59,7 +60,8 @@ export default function NumberCheckPage() {
 
       <GuideH2>Where the rule comes from</GuideH2>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
-        It is the check {ASSISTANT["savistar-saag"].name}, the assistant in {ASSISTANT["savistar-saag"].system}, runs
+        It is a <Link href="/systems/grounding-check" className="text-link focus-ring">grounding check</Link>, the one{" "}
+        {ASSISTANT["savistar-saag"].name}, the assistant in {ASSISTANT["savistar-saag"].system}, runs
         before it shows a written line: if the sentence contains a number that isn&apos;t in the table, the sentence is
         dropped and only the table is shown. The figures themselves come from fixed look-ups in code, never from the model.
         How that works is in{" "}

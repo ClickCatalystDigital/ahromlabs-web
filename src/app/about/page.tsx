@@ -4,6 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
+import { FreeGuides } from "@/components/FreeGuides";
 import Image from "next/image";
 
 // One illustration beside a section's text, same layout as the /services hero.
@@ -138,6 +139,8 @@ export default function AboutPage() {
             </div>
           </section>
         </Reveal>
+
+        <FreeGuides heading="What we publish" />
 
         <ClosingCta />
       </main>

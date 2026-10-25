@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { SystemDiagram } from "@/components/SystemDiagram";
 import { ContactForm } from "@/components/ContactForm";
+import { FreeGuides } from "@/components/FreeGuides";
 import heroImage from "../../public/hero.webp";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
@@ -221,6 +222,8 @@ export default function Home() {
             </div>
           </section>
         </Reveal>
+
+        <FreeGuides />
 
         {/* 3. The Ahrom approach */}
         <Reveal>

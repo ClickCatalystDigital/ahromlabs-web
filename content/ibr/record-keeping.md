@@ -10,7 +10,7 @@ answer: >
 description: Who keeps a boiler's IBR certificates and drawings, and for how long, under regulation 308 of IBR 2026 — 3 years, 5 years, or the boiler's life.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-25
 checked: 2026-10-17
 image:
   src: /ibr/ibr-record-keeping.webp
@@ -66,4 +66,4 @@ Within three years of a boiler's registration, if a question arises about its fi
 
 ## Why does five years matter for a manufacturer?
 
-Five years of certificates for every boiler made is a large archive. In one boiler manufacturer's sample, each material test certificate was used across about 3.2 boilers, so one certificate is evidence in several folders. The system Ahrom Labs built for that manufacturer keeps them in one bank indexed by certificate, cast and plate number, rather than copied into each folder. See [how that system keeps test certificates](/notes/ibr-statutory-folder-from-bom).
+Five years of certificates for every boiler made is a large archive. In one boiler manufacturer's sample, each [material test certificate](/systems/material-test-certificate) was used across about 3.2 boilers, so one certificate is evidence in several folders. The system Ahrom Labs built for that manufacturer keeps them in one bank indexed by certificate, cast and plate number, rather than copied into each folder. See [how that system keeps test certificates](/notes/ibr-statutory-folder-from-bom).

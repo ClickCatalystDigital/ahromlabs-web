@@ -10,7 +10,7 @@ answer: >
 description: Making an interior BOQ from drawings in 7 steps, with the units, specifications and exclusions each line needs, and a sample.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-10-24
+updated: 2026-10-25
 checked: 2026-10-23
 image:
   src: /boq/interior-boq-from-drawings.webp
@@ -26,7 +26,7 @@ sources:
 
 ## 1. Start from the drawings and the finish schedule
 
-A BOQ is only as complete as the drawings behind it: plans, ceiling plans, elevations of every joinery unit, the electrical layout and a finish schedule naming each material. Anything not drawn is either missing from the BOQ or priced as a guess.
+A [BOQ](/systems/bill-of-quantities) is only as complete as the drawings behind it: plans, ceiling plans, elevations of every joinery unit, the electrical layout and a finish schedule naming each material. Anything not drawn is either missing from the BOQ or priced as a guess.
 
 ## 2. Split the work by room, then by trade
 

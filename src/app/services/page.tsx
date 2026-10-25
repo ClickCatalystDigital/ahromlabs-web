@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FreeGuides } from "@/components/FreeGuides";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
@@ -150,6 +151,8 @@ export default function ServicesPage() {
             </div>
           </section>
         ))}
+
+        <FreeGuides heading="Free guides to the work" />
 
         <Reveal>
           <section id="engagement" className="section scroll-mt-16 border-t border-line">

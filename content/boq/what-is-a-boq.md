@@ -10,7 +10,7 @@ answer: >
 description: What a BOQ is in interior work, and how it differs from an estimate, a quotation, a BOM, a rate analysis and a schedule of rates.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-10-24
+updated: 2026-10-25
 checked: 2026-10-23
 image:
   src: /boq/boq-estimate-and-quotation.webp
@@ -30,7 +30,7 @@ sources:
 
 ## What a BOQ is
 
-A BOQ is the list of work, not the price of it ([what one looks like in Excel](/boq/template)). Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.
+A [BOQ](/systems/bill-of-quantities) is the list of work, not the price of it ([what one looks like in Excel](/boq/template)). Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.
 
 Its job is to make prices comparable. When three contractors price the same lines, the quotes differ only in rates, and a cheap quote can't hide a thinner board or a missing loft.
 

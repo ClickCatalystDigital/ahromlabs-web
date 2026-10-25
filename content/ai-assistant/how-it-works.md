@@ -19,7 +19,7 @@ image:
   height: 362
 ---
 
-Most AI assistants on business data let the model produce the answer's figures, either by writing a database query ([text-to-SQL](/systems/text-to-sql)) or by reading rows and summarising them. Both work most of the time, and that is the problem: an owner can't tell the answer that is right from the one that is nearly right. The design below takes the figures away from the model altogether. It is how [Atelier AI, Ohm AI and Ember AI](/ai-assistant/questions) work.
+Most AI assistants on business data let the model produce the answer's figures, either by writing a database query ([text-to-SQL](/systems/text-to-sql)) or by reading rows and summarising them. Both work most of the time, and that is the problem: an owner can't tell the answer that is right from the one that is nearly right (an [AI hallucination](/systems/ai-hallucination)). The design below takes the figures away from the model altogether. It is how [Atelier AI, Ohm AI and Ember AI](/ai-assistant/questions) work.
 
 ## Step 1: the model only chooses
 

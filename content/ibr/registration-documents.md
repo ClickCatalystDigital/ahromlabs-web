@@ -1,16 +1,16 @@
 ---
 kind: guide
 slug: registration-documents
-title: Documents for boiler registration under IBR 2026
+title: "Boiler registration under IBR 2026: documents checklist"
 answer: >
   Under regulation 8 of IBR 2026, a boiler's registration application goes to the Chief
   Inspector with four sets of documents: the Inspecting Authority's certificate (Form I
   Part B or C), the maker's certificate (Form IV Part A), drawings, and the material
   certificates (Form V Part A, with the Form V Part B extract).
-description: The documents a boiler registration application needs under regulation 8 of IBR 2026, form by form, and what happens after it is filed.
+description: "Checklist for a boiler registration application under IBR 2026: the four document sets, Forms I Part B or C, IV Part A and V Part A, and what follows."
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-25
 checked: 2026-10-17
 image:
   src: /ibr/ibr-registration-steps.webp
@@ -59,7 +59,7 @@ Regulation 8 of the Indian Boiler Regulations, 2026 lists what goes to the Chief
 1. **The Inspecting Authority's certificate:** [Form I Part B](/ibr/forms/form-i-part-b) for a shop-assembled boiler, or [Form I Part C](/ibr/forms/form-i-part-c) for one assembled at site. [Form I Part D](/ibr/forms/form-i-part-d) replaces either when permitted variations apply.
 2. **The maker's certificate of manufacture and test:** [Form IV Part A](/ibr/forms/form-iv-part-a), signed by the maker.
 3. **Drawings:** for a shop-assembled boiler, drawings showing principal dimensions, sections, maker's number, stamp position, bill of material, welding details and design parameters.
-4. **Material certificates:** the steel maker's [Form V Part A](/ibr/forms/form-v-part-a), and the [Form V Part B](/ibr/forms/form-v-part-b) extract of every material test certificate used.
+4. **Material certificates:** the steel maker's [Form V Part A](/ibr/forms/form-v-part-a), and the [Form V Part B](/ibr/forms/form-v-part-b) extract of every [material test certificate](/systems/material-test-certificate) used.
 
 ## What else is needed for some boilers?
 

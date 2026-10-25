@@ -147,6 +147,7 @@ export function GET() {
     `\n## Services\n\n${offered}\n` +
     `\n## Clients\n\n${clients}\n` +
     `\n## Working with Ahrom Labs\n\n${working}\n` +
+    `\n## For AI agents\n\n- [MCP server and files for AI agents](https://ahromlabs.com/agents): The site's read-only MCP search server with a config to copy, every page as Markdown in one file (https://ahromlabs.com/llms-full.txt), and the knowledge graph.\n` +
     `\n## IBR 2026 (Indian Boiler Regulations)\n\n${ibr}\n` +
     `\n## Interior BOQ (bill of quantities)\n\n${boq}\n` +
     `\n## ERP requirements (India)\n\n${erp}\n` +

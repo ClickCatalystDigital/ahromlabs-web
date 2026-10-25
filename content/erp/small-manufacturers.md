@@ -32,7 +32,7 @@ The lines a small manufacturer can least afford to get wrong, in the order they 
 
 ## The rules your turnover brings in
 
-- **Being a company:** the books need an audit trail that can't be switched off. ([audit trail](/erp/requirements#accounts-audit-trail))
+- **Being a company:** the books need an [audit trail](/systems/audit-trail) that can't be switched off. ([audit trail](/erp/requirements#accounts-audit-trail))
 - **Above ₹5 crore:** e-invoices for B2B sales; **at ₹10 crore and above:** reported within 30 days. ([e-invoice](/erp/requirements#accounts-e-invoice))
 - **Buying from micro and small enterprises:** due dates at most 45 days from acceptance. ([MSME](/erp/requirements#purchase-msme-due-dates))
 
@@ -40,7 +40,7 @@ All of them, quoted from the official text, are in [compliance requirements](/er
 
 ## What this looks like in a running system
 
-At a boiler and pressure-vessel manufacturer, Ahrom Labs' system imported six of the client's real BOM files through the interface, traces each plate and section through cutting, and assembled each boiler's IBR statutory folder from a bank of material test certificates. In a live cut test, a 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and 14.13 kg scrap, conserved exactly. The same system keeps the books: GSTR-1, GSTR-3B, TDS and 23 reports, with Tally optional. See [ERP for boiler and pressure-vessel manufacturers](/industries/boiler-pressure-vessel-manufacturing), or try it with twelve sample logins, one per department, at the [manufacturing demo](https://boiler-erp.ahromlabs.com/demo).
+At a boiler and pressure-vessel manufacturer, Ahrom Labs' system imported six of the client's real BOM files through the interface, traces each plate and section through cutting, and assembled each boiler's [IBR statutory folder](/systems/ibr-statutory-folder) from a bank of [material test certificates](/systems/material-test-certificate). In a live cut test, a 157.00 kg plate became 127.17 kg used, 15.70 kg remnant and 14.13 kg scrap, conserved exactly. The same system keeps the books: GSTR-1, GSTR-3B, TDS and 23 reports, with Tally optional. See [ERP for boiler and pressure-vessel manufacturers](/industries/boiler-pressure-vessel-manufacturing), or try it with twelve sample logins, one per department, at the [manufacturing demo](https://boiler-erp.ahromlabs.com/demo).
 
 ## Build your list
 

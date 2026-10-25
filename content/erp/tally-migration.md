@@ -33,7 +33,7 @@ checks:
 Both work, and the choice decides what you migrate.
 
 - **Tally stays as the books.** The ERP runs sales, stock and operations, and posts approved invoices into TallyPrime as vouchers. Your accountant keeps working in Tally. Very little accounting history moves; what moves is masters and open items. LS Technologies runs this way: approved invoices reach TallyPrime within 30 seconds, and every posted voucher is checked against Tally's own data.
-- **The ERP keeps the books.** Ledgers, GST returns and TDS move into the ERP, and Tally becomes optional or goes. More moves, and the audit trail has to carry across. A boiler manufacturer Ahrom Labs built for runs this way, with GSTR-1, GSTR-3B and TDS from the operations system.
+- **The ERP keeps the books.** Ledgers, GST returns and TDS move into the ERP, and Tally becomes optional or goes. More moves, and the [audit trail](/systems/audit-trail) has to carry across. A boiler manufacturer Ahrom Labs built for runs this way, with GSTR-1, GSTR-3B and TDS from the operations system.
 
 How each connection to Tally works, and why TallyPrime needs an agent on its own PC, is in [four ways to connect a business system to TallyPrime](/notes/connecting-tallyprime-four-ways).
 

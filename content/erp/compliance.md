@@ -103,29 +103,29 @@ Most rules turn on two facts: whether the business is a company, and its turnove
 
 ## Audit trail: every company keeping books in software
 
-Since 1 April 2023, a company that keeps its books in accounting software must use software that records an audit trail of every transaction: an edit log of each change, with its date, that cannot be disabled. The rule is a proviso to rule 3(1) of the Companies (Accounts) Rules, 2014, inserted in March 2021 and deferred twice to 1 April 2023. The company's auditor reports on it.
+Since 1 April 2023, a company that keeps its books in accounting software must use software that records an [audit trail](/systems/audit-trail) of every transaction: an edit log of each change, with its date, that cannot be disabled. The rule is a proviso to rule 3(1) of the Companies (Accounts) Rules, 2014, inserted in March 2021 and deferred twice to 1 April 2023. The company's auditor reports on it.
 
 For an ERP that keeps the books, this means the old value, the new value, who changed it and when, for every entry, with no setting anywhere that turns it off. It also means no gap at cutover: the trail has to run through the move from the old system to the new one. See the [audit-trail requirement](/erp/requirements#accounts-audit-trail).
 
 ## E-invoice, and the 30-day limit
 
-From 1 August 2023, registered persons whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18 must e-invoice: each B2B invoice, credit note and debit note is registered on the invoice registration portal (IRP), which returns an IRN and a signed QR code. Notification 10/2023–Central Tax lowered the threshold from ₹10 crore.
+From 1 August 2023, registered persons whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18 must [e-invoice](/systems/e-invoice): each B2B invoice, credit note and debit note is registered on the invoice registration portal (IRP), which returns an IRN and a signed QR code. Notification 10/2023–Central Tax lowered the threshold from ₹10 crore.
 
 From 1 April 2025, taxpayers with annual aggregate turnover of ₹10 crore and above cannot report a document to the IRP more than 30 days after its date; the portal refuses it. An ERP for such a business should show which invoices are still unreported and how many days each has left. See the [e-invoice requirements](/erp/requirements#accounts-e-invoice).
 
 ## E-way bill
 
-Under rule 138 of the CGST Rules, an e-way bill is needed before goods move with a consignment value exceeding ₹50,000. The ERP should produce it from the invoice and the dispatch, not have someone retype the consignment into the portal at the gate. See the [e-way bill requirement](/erp/requirements#dispatch-eway-bill).
+Under rule 138 of the CGST Rules, an [e-way bill](/systems/e-way-bill) is needed before goods move with a consignment value exceeding ₹50,000. The ERP should produce it from the invoice and the dispatch, not have someone retype the consignment into the portal at the gate. See the [e-way bill requirement](/erp/requirements#dispatch-eway-bill).
 
 ## MSME payment limits, and why they matter for tax
 
-Section 15 of the MSMED Act, 2006 requires a buyer to pay a micro or small enterprise supplier by the agreed date, and the agreed period can never exceed 45 days from acceptance; with no written agreement, the Act's appointed day applies. Section 16 adds compound interest on late payment.
+Section 15 of the MSMED Act, 2006 (the [MSME payment rule](/systems/msme-payment-rule)) requires a buyer to pay a micro or small enterprise supplier by the agreed date, and the agreed period can never exceed 45 days from acceptance; with no written agreement, the Act's appointed day applies. Section 16 adds compound interest on late payment.
 
 The Income-tax Act, 2025, in section 37(2)(g), allows the deduction for an amount owed to such a supplier only when it is actually paid, if it is paid beyond that limit, and the usual grace until the return due date doesn't apply to it. So the ERP needs to know which suppliers are micro or small enterprises, and show each of their bills with its due date. How the rule applies to a particular business, a trader for example, is a question for your CA. See the [MSME requirements](/erp/requirements#purchase-msme-due-dates).
 
 ## TDS on purchase of goods
 
-Under the Income-tax Act, 2025, a buyer whose turnover exceeded ₹10 crore in the preceding tax year deducts tax on payments to a seller for goods beyond ₹50 lakh in the year (section 393(1), table row 8(ii), formerly section 194Q). The provision is a table, so it is cited here rather than quoted: read row 8(ii) and its note in the Act. The ERP has to keep each seller's running total for the year and start deducting on the bill that crosses it. See the [TDS requirement](/erp/requirements#accounts-tds-purchases).
+Under the Income-tax Act, 2025, a buyer whose turnover exceeded ₹10 crore in the preceding tax year deducts tax on payments to a seller for goods beyond ₹50 lakh in the year ([TDS on purchases](/systems/tds-on-purchases)) (section 393(1), table row 8(ii), formerly section 194Q). The provision is a table, so it is cited here rather than quoted: read row 8(ii) and its note in the Act. The ERP has to keep each seller's running total for the year and start deducting on the bill that crosses it. See the [TDS requirement](/erp/requirements#accounts-tds-purchases).
 
 ## Personal data
 

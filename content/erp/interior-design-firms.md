@@ -31,7 +31,7 @@ image:
 
 ## The rules that usually apply
 
-- **Being a company:** the books need an audit trail. ([audit trail](/erp/requirements#accounts-audit-trail))
+- **Being a company:** the books need an [audit trail](/systems/audit-trail). ([audit trail](/erp/requirements#accounts-audit-trail))
 - **Above ₹5 crore:** e-invoices for B2B work. ([e-invoice](/erp/requirements#accounts-e-invoice))
 - **Paying micro and small vendors:** due dates at most 45 days from acceptance. ([MSME](/erp/requirements#purchase-msme-due-dates))
 

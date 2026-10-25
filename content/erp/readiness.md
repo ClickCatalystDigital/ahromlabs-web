@@ -29,7 +29,7 @@ Answer each yes or no. Each no is something to fix before, or as the first phase
 5. **Is there one place for each number?** If the same figure lives in Tally, a spreadsheet and someone's notebook, decide now which one is the truth.
 6. **Will people record work where it happens**, on a phone on the floor or at site, rather than at a desk at day end?
 7. **Will the owner decide** when sales and production disagree about how something should work? Systems fail more often from undecided questions than from code.
-8. **Do you know which compliance rules apply?** Turnover decides e-invoicing and its 30-day limit; being a company decides the audit trail. See [compliance requirements](/erp/compliance).
+8. **Do you know which compliance rules apply?** Turnover decides [e-invoicing](/systems/e-invoice) and its 30-day limit; being a company decides the [audit trail](/systems/audit-trail). See [compliance requirements](/erp/compliance).
 9. **Have you decided about Tally?** Keep it as the books, or move the books into the new system. See [moving from Tally](/erp/tally-migration).
 10. **Can you name the first thing the system must get right?** The records that must be right come first; everything else is a later phase.
 
