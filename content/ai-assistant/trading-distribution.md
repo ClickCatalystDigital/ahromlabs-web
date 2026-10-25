@@ -12,6 +12,11 @@ domain: [ai, trading, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /ai/ai-trading-distribution.webp
+  alt: "A reel of electronic components on carrier tape, partly unspooled."
+  width: 1086
+  height: 362
 ---
 
 A trading business asks the same few questions all day: do we have it, where is it, what went out, who hasn't ordered. The answers are in the stock records already; an assistant saves opening four reports to get them.

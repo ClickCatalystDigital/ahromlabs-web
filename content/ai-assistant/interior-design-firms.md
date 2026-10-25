@@ -12,6 +12,11 @@ domain: [ai, interiors, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /ai/ai-interior-design-firms.webp
+  alt: "A fan of fabric and wood-veneer swatches beside a rolled tape measure."
+  width: 1086
+  height: 362
 ---
 
 A design studio runs on projects, quotations, site visits, a workshop and a lot of money owed. The owner's questions cut across all of them: how is this client's project going, who still owes us, are we delivering on time. An assistant earns its place if it answers those in one line, with the same figures as the screens.

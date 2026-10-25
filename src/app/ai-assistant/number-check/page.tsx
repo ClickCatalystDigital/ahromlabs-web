@@ -10,11 +10,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "Check an AI answer for made-up numbers";
 const lead = "Paste what an AI assistant said and the report or table it should have answered from. Every number in the answer that isn't in the data is marked: a total it added up, a share it worked out, a figure it rounded or invented. It runs in your browser; nothing is sent anywhere.";
 
+const image = { src: "/ai/ai-number-check.webp", alt: "A magnifying glass resting on a ruled ledger sheet.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "Free check for AI hallucinated numbers: paste an assistant's answer and the source data, and every figure not in the data is marked. Handles ₹, lakh and crore.",
   alternates: { canonical: "/ai-assistant/number-check" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/number-check", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/number-check", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -25,10 +27,11 @@ export default function NumberCheckPage() {
   ];
   return (
     <AiAssistantPage
-      graph={aiAssistantPageGraph({ path: "/ai-assistant/number-check", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail, app: true })}
+      graph={aiAssistantPageGraph({ path: "/ai-assistant/number-check", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail, image, app: true })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={AI_CHECKED}
       updated={AI_CHECKED}
     >

@@ -12,6 +12,11 @@ domain: [ai, manufacturing, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /ai/ai-manufacturers.webp
+  alt: "A round steel pressure gauge on a short pipe stub."
+  width: 1086
+  height: 362
 ---
 
 A manufacturing system has many departments and many screens, and most questions on the shop floor and in the office are "how do I". That is the safest place for an assistant to start: the answers come from the system's own help guide, and no business data leaves.

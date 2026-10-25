@@ -12,6 +12,11 @@ domain: [ai, design, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /ai/ai-how-it-works.webp
+  alt: "A wooden pigeonhole rack with one card in a single slot."
+  width: 1086
+  height: 362
 ---
 
 Most AI assistants on business data let the model produce the answer's figures, either by writing a database query ([text-to-SQL](/systems/text-to-sql)) or by reading rows and summarising them. Both work most of the time, and that is the problem: an owner can't tell the answer that is right from the one that is nearly right. The design below takes the figures away from the model altogether. It is how [Atelier AI, Ohm and Ember](/ai-assistant/questions) work.

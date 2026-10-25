@@ -9,11 +9,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "How to test an AI assistant before you buy it";
 const lead = `${vendorTests.length} tests to run in any vendor's demo, on your own data: does a figure match the report, does it invent numbers, does it say when the data doesn't have the answer, does it respect who may see what, and can it change anything on its own. A yes you didn't see demonstrated is a no.`;
 
+const image = { src: "/ai/ai-vendor-test.webp", alt: "A brass balance scale with two empty pans, level.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "How to evaluate an AI assistant for your ERP or business data: 12 tests to run in a vendor demo, with pass and fail for each and a test sheet for Excel.",
   alternates: { canonical: "/ai-assistant/vendor-test" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/vendor-test", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/vendor-test", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -24,10 +26,11 @@ export default function VendorTestPage() {
   ];
   return (
     <AiAssistantPage
-      graph={aiAssistantPageGraph({ path: "/ai-assistant/vendor-test", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail })}
+      graph={aiAssistantPageGraph({ path: "/ai-assistant/vendor-test", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={AI_CHECKED}
       updated={AI_CHECKED}
       headings={["Before the demo", "The tests", "After the demo"]}

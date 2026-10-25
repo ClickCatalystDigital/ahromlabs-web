@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AiAssistantPage, aiGuides } from "@/components/AiAssistantPage";
 import { GuideH2 } from "@/components/GuidePage";
+import { AssistantMark } from "@/components/AssistantMark";
 import { questions, questionsFor, liveCount, vendorTests, ASSISTANT, SYSTEM_OF, INDUSTRY_LABEL, AI_CHECKED, AI_PUBLISHED } from "@/lib/ai-assistant";
 import type { Industry } from "@/lib/erp";
 import { aiAssistantPageGraph } from "@/lib/schema";
@@ -15,11 +16,13 @@ const INDUSTRIES: { slug: string; industry: Industry }[] = [
 ];
 const lead = "An AI assistant on your ERP or books is only useful if its numbers match the reports. The way to get that is to keep the model away from the numbers: it picks which fixed look-up answers the question, and code does the maths. Here is how to tell whether an assistant works that way, a free check for made-up numbers, the questions to ask it and the tests to run on any vendor.";
 
+const image = { src: "/ai/ai-assistants-hub.webp", alt: "A polished brass service bell.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "AI assistants for ERP and business data that never invent a number: a free hallucinated-number check, a question library and a vendor test.",
   alternates: { canonical: "/ai-assistant" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -35,10 +38,11 @@ export default function AiAssistantHub() {
 
   return (
     <AiAssistantPage
-      graph={aiAssistantPageGraph({ path: "/ai-assistant", title, description: lead, published: AI_PUBLISHED, updated, trail })}
+      graph={aiAssistantPageGraph({ path: "/ai-assistant", title, description: lead, published: AI_PUBLISHED, updated, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={AI_CHECKED}
       updated={updated}
     >
@@ -79,11 +83,14 @@ export default function AiAssistantHub() {
         {INDUSTRIES.map(({ slug, industry }) => {
           const a = ASSISTANT[SYSTEM_OF[industry]];
           return (
-            <li key={slug} className="py-6">
-              <Link href={`/ai-assistant/${slug}`} className="text-link focus-ring text-xl font-medium">{INDUSTRY_LABEL[industry]}</Link>
-              <p className="mt-2 leading-relaxed text-foreground-secondary">
-                {a.name}, at {a.system}: {liveCount(industry)} of its {questionsFor(industry).length} questions answered today.
-              </p>
+            <li key={slug} className="group flex items-start justify-between gap-6 py-6">
+              <div>
+                <Link href={`/ai-assistant/${slug}`} className="text-link focus-ring text-xl font-medium">{INDUSTRY_LABEL[industry]}</Link>
+                <p className="mt-2 leading-relaxed text-foreground-secondary">
+                  {a.name}, at {a.system}: {liveCount(industry)} of its {questionsFor(industry).length} questions answered today.
+                </p>
+              </div>
+              <AssistantMark system={SYSTEM_OF[industry]} className="mt-1 size-10 text-foreground-secondary" />
             </li>
           );
         })}

@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import { AiAssistantPage } from "@/components/AiAssistantPage";
 import { guideMarkdown, remarkGfm, GuideQuotes, GuideH2 } from "@/components/GuidePage";
 import { QuestionList } from "@/components/QuestionList";
+import { AssistantMark } from "@/components/AssistantMark";
 import { ASSISTANT, SYSTEM_OF } from "@/lib/ai-assistant";
 import type { Industry } from "@/lib/erp";
 import { markdownHeadings } from "@/lib/headings";
@@ -39,8 +40,10 @@ export async function generateMetadata(props: PageProps<"/ai-assistant/[slug]">)
       publishedTime: g.published,
       modifiedTime: g.updated,
       authors: ["Pujan Motiwala"],
-      // Its own image once it has one; until then the route's opengraph-image.tsx renders a card.
-      ...(g.image && { images: [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }] }),
+      // The guide's own image, or the hub's: a page's openGraph replaces the parent's, so without one it would share no image.
+      images: g.image
+        ? [{ url: g.image.src, width: g.image.width, height: g.image.height, alt: g.image.alt }]
+        : [{ url: "/ai/ai-assistants-hub.webp", width: 1086, height: 362, alt: "A polished brass service bell." }],
     },
     twitter: { card: "summary_large_image", title: g.title, description },
   };
@@ -69,7 +72,10 @@ export default async function AiGuidePage(props: PageProps<"/ai-assistant/[slug]
       <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
       {INDUSTRY_OF_GUIDE[g.slug] && (
         <section>
-          <GuideH2>{`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`}</GuideH2>
+          <GuideH2>
+            {`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`}{" "}
+            <AssistantMark system={SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]} className="ml-1 size-9 align-[-0.15em]" />
+          </GuideH2>
           <QuestionList industry={INDUSTRY_OF_GUIDE[g.slug]} />
         </section>
       )}

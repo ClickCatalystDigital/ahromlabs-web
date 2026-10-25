@@ -3,7 +3,8 @@ import Link from "next/link";
 import { AiAssistantPage } from "@/components/AiAssistantPage";
 import { GuideH2 } from "@/components/GuidePage";
 import { QuestionList } from "@/components/QuestionList";
-import { questions, AI_CHECKED, AI_PUBLISHED, AI_VERSION, INDUSTRY_LABEL } from "@/lib/ai-assistant";
+import { AssistantMark } from "@/components/AssistantMark";
+import { questions, AI_CHECKED, AI_PUBLISHED, AI_VERSION, INDUSTRY_LABEL, SYSTEM_OF } from "@/lib/ai-assistant";
 import type { Industry } from "@/lib/erp";
 import { aiAssistantPageGraph } from "@/lib/schema";
 import { seoTitle } from "@/lib/seo";
@@ -11,11 +12,13 @@ import { seoTitle } from "@/lib/seo";
 const title = "Questions to ask an AI assistant over your business data";
 const lead = `${questions.length} questions owners and staff ask an assistant built on their own records, by industry and role. For each: what should answer it, what to compare the answer with, and whether Ahrom Labs' assistants answer it today. Some should be refused, and a good assistant refuses them.`;
 
+const image = { src: "/ai/ai-question-library.webp", alt: "An open wooden card-index box with cards and tabs.", width: 1086, height: 362 };
+
 export const metadata: Metadata = {
   title: seoTitle(title),
   description: "Questions to ask an AI assistant over your ERP or business data, by industry and role, with what should answer each one and how to check the answer.",
   alternates: { canonical: "/ai-assistant/questions" },
-  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/questions", siteName: "Ahrom Labs", title, description: lead },
+  openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/questions", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
@@ -28,10 +31,11 @@ export default function AiQuestionsPage() {
   ];
   return (
     <AiAssistantPage
-      graph={aiAssistantPageGraph({ path: "/ai-assistant/questions", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail })}
+      graph={aiAssistantPageGraph({ path: "/ai-assistant/questions", title, description: lead, published: AI_PUBLISHED, updated: AI_CHECKED, trail, image })}
       trail={trail}
       title={title}
       lead={lead}
+      art={image.src}
       checked={AI_CHECKED}
       updated={AI_CHECKED}
       headings={ORDER.map((i) => INDUSTRY_LABEL[i])}
@@ -51,7 +55,9 @@ export default function AiQuestionsPage() {
       </p>
       {ORDER.map((i) => (
         <section key={i}>
-          <GuideH2>{INDUSTRY_LABEL[i]}</GuideH2>
+          <GuideH2>
+            {INDUSTRY_LABEL[i]} <AssistantMark system={SYSTEM_OF[i]} className="ml-1 size-9 align-[-0.15em]" />
+          </GuideH2>
           <QuestionList industry={i} />
         </section>
       ))}

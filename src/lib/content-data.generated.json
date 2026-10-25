@@ -2621,6 +2621,12 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "checked": "2026-10-25",
+    "image": {
+      "src": "/ai/ai-data-safety.webp",
+      "alt": "A closed steel lockbox with a key in the lock.",
+      "width": 1086,
+      "height": 362
+    },
     "sources": [
       {
         "title": "Digital Personal Data Protection Act, 2023",
@@ -2698,6 +2704,12 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "checked": "2026-10-25",
+    "image": {
+      "src": "/ai/ai-how-it-works.webp",
+      "alt": "A wooden pigeonhole rack with one card in a single slot.",
+      "width": 1086,
+      "height": 362
+    },
     "body": "Most AI assistants on business data let the model produce the answer's figures, either by writing a database query ([text-to-SQL](/systems/text-to-sql)) or by reading rows and summarising them. Both work most of the time, and that is the problem: an owner can't tell the answer that is right from the one that is nearly right. The design below takes the figures away from the model altogether. It is how [Atelier AI, Ohm and Ember](/ai-assistant/questions) work.\n\n## Step 1: the model only chooses\n\nA small AI model reads the question and picks from fixed options: what kind of question it is (a figure, how to do something, a reminder, small talk, something the data can't answer), which look-up fits, which period, and whether it follows on from the last question. It returns a choice, not text. Names in the question (a client, an item, a reel number) are matched to real records by code; when two records could match, Ohm, for one, asks which one is meant.\n\n## Step 2: code runs a fixed look-up\n\nEach question type has a [fixed look-up](/systems/fixed-look-up): a read-only query written in advance, with only the values filled in. It uses the same maths as the app's own screens, so \"who owes us money?\" counts the same invoices, the same way, as the unpaid-invoices screen. The answer is shown as a table, with a link to that screen.\n\nBecause the look-ups only read, the assistant can't change anything. \"Remind me to call them on Friday\" drafts a task that is saved only when the person presses Save.\n\n## Step 3: words are checked against the table\n\nA sentence above the table is optional, in the voice the person picked. Before it is shown, a [grounding check](/systems/grounding-check) compares every number in it with the table. If any number isn't there, such as a total the writer added up, a percentage it worked out or a figure it rounded, the sentence is dropped and only the table is shown. You can run the same check on any assistant with the [number check](/ai-assistant/number-check).\n\n## Step 4: it says what it can't answer\n\nAdvice (\"should we raise prices?\") and data the system doesn't hold get a plain \"the data doesn't have that\", with questions it can answer instead. Every question it couldn't answer, and every thumbs-down, is listed for the owner, so the next look-up to add comes from what people actually asked.\n\n## How is it tested?\n\nEach assistant has its own set of real questions, run through the real pipeline before it goes live: plain English, fragments, typos and Hinglish. Atelier AI routed 55 of 55 test questions and 57 unseen real phrasings correctly. The questions each assistant answers are in the [question library](/ai-assistant/questions).\n\n## What does it cost to run?\n\nVery little, because the model only makes a choice. At LS Technologies it is about a hundredth of a rupee per question, on the client's own AI account, with a daily question limit. What is sent to the AI provider is set out in [what leaves your server](/ai-assistant/data-safety).\n\n## What it doesn't do\n\nIt doesn't answer questions nobody built a look-up for, and it doesn't search documents. Questions over drawings, certificates and past decisions are a different design, [retrieval and knowledge graphs](/services/rag-knowledge-graphs), where each answer shows the document it came from. The full engineering note is [an assistant that only answers from your own records](/notes/assistant-that-answers-from-your-ledger)."
   },
   {
@@ -2714,6 +2726,12 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "checked": "2026-10-25",
+    "image": {
+      "src": "/ai/ai-interior-design-firms.webp",
+      "alt": "A fan of fabric and wood-veneer swatches beside a rolled tape measure.",
+      "width": 1086,
+      "height": 362
+    },
     "body": "A design studio runs on projects, quotations, site visits, a workshop and a lot of money owed. The owner's questions cut across all of them: how is this client's project going, who still owes us, are we delivering on time. An assistant earns its place if it answers those in one line, with the same figures as the screens.\n\n## What should it answer?\n\nEvery question Atelier AI answers today is listed below, with the screen to check each answer against. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.\n\n## What should it refuse?\n\nAdvice (\"should we raise our design fee?\") and anything a login can't see on the screens. A site supervisor asking for payroll should get a refusal, not a figure.\n\n## How Atelier AI does it\n\n[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its fixed look-ups; code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. \"Remind me to call them on Friday\" drafts a task that is saved only when the person presses Save.\n\nYou can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.\n\n## How to check a vendor's\n\nRun the [vendor test](/ai-assistant/vendor-test) on a copy of your own projects, and paste its written answers into the [number check](/ai-assistant/number-check) with the finance screen beside them. If the assistant comes with a new system, the [ERP guide for interior design firms](/erp/interior-design-firms) lists what the system itself should do."
   },
   {
@@ -2730,6 +2748,12 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "checked": "2026-10-25",
+    "image": {
+      "src": "/ai/ai-manufacturers.webp",
+      "alt": "A round steel pressure gauge on a short pipe stub.",
+      "width": 1086,
+      "height": 362
+    },
     "body": "A manufacturing system has many departments and many screens, and most questions on the shop floor and in the office are \"how do I\". That is the safest place for an assistant to start: the answers come from the system's own help guide, and no business data leaves.\n\n## Step 1: how-to answers from your own guide\n\nThe assistant picks the right section of the help guide for the question, from the departments the person works in, and answers from it with a link to the screen. Questions like:\n\n- How do I raise a purchase request?\n- How do I send a packing list for approval before dispatch?\n- How do I assign test certificates to units?\n- Where do I change my password?\n\nUnrelated questions (\"write me a poem\") should get a fixed reply that never reaches a writing model. Each person gets a daily question limit set per department.\n\n## Step 2: live data, when the owner decides\n\nStock on hand, items below minimum, purchase orders not received, an order's value and payments, approvals waiting. These need a decision first: in a design where the rows are worded by a writing model, the rows of each answer are sent to the AI provider. The owner should approve that by name, and each look-up should follow the same department limits as the screens. The [data safety guide](/ai-assistant/data-safety) sets out what to ask.\n\n## How Ember does it\n\nEmber is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.\n\n## How to check a vendor's\n\nAsk ten how-to questions from your own process and follow the answers: do the steps work? Then run the [vendor test](/ai-assistant/vendor-test). For the system itself, see the [ERP guide for small manufacturers](/erp/small-manufacturers)."
   },
   {
@@ -2746,6 +2770,12 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "checked": "2026-10-25",
+    "image": {
+      "src": "/ai/ai-trading-distribution.webp",
+      "alt": "A reel of electronic components on carrier tape, partly unspooled.",
+      "width": 1086,
+      "height": 362
+    },
     "body": "A trading business asks the same few questions all day: do we have it, where is it, what went out, who hasn't ordered. The answers are in the stock records already; an assistant saves opening four reports to get them.\n\n## What should it answer?\n\nEvery question Ohm answers today is listed below, each with the report to check the answer against. The core of it: stock by item and store, what is running low or not moving, what came in and went out, where a particular reel or box is, purchase orders and approvals, and two plain-arithmetic statistics: which items will run out at the recent shipping rate, and which customers have gone quiet against their own usual gap between orders. Each statistic says how much history it used, and \"and last month?\" keeps the customer and the item.\n\n## What should it refuse?\n\nQuestions about data the system doesn't keep. A stock system that doesn't hold receivables should say so when asked what a customer owes, not produce a figure.\n\n## How Ohm does it\n\nOhm is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.\n\n## How to check a vendor's\n\nPick five items you know the stock of, and ask in the demo. Then run the [vendor test](/ai-assistant/vendor-test) and compare its written answers with the stock summary in the [number check](/ai-assistant/number-check). For the system underneath, see the [ERP guide for trading and distribution](/erp/trading-distribution)."
   }
 ]

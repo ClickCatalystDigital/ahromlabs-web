@@ -12,6 +12,11 @@ domain: [ai, data-safety, dpdp, selection]
 published: 2026-10-25
 updated: 2026-10-25
 checked: 2026-10-25
+image:
+  src: /ai/ai-data-safety.webp
+  alt: "A closed steel lockbox with a key in the lock."
+  width: 1086
+  height: 362
 sources:
   - title: Digital Personal Data Protection Act, 2023
     publisher: Ministry of Law and Justice, Gazette of India
