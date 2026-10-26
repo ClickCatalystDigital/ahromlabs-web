@@ -96,6 +96,27 @@ export const engagements: Engagement[] = [
       { kind: "pattern", slug: "compute-blockers-on-read" },
     ],
   },
+  {
+    slug: "construction-company",
+    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, a director dashboard and a trading desk." },
+    client: "A construction company",
+    anonymous: true,
+    industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",
+    built:
+      "One operations system for a contractor that executes work on site and trades construction chemicals: daily progress reports, site attendance, BOQ and running-account bills, stores for the godown and every site, site cash, a director dashboard and trading from quote to e-way bill.",
+    services: ["custom-erp-crm", "operational-intelligence"],
+    highlights: [
+      "Site engineers file the daily report from a phone: quantity done against each BOQ line, labour pre-filled from attendance, material used from the site's own stock, photos. Only reports the project manager approves count toward progress.",
+      "Running-account bills are built from measurements against the BOQ, with previous, this-bill and up-to-date quantities, the GST split and the amount in words on the PDF.",
+      "Each site's cost to date (material used, labour from attendance, site cash spent) is set against the value of approved work, so the director sees which site is heading over its estimate before it finishes.",
+      "Trading quotes show godown stock and the last purchase rate behind each line; orders are held until the advance is in or the customer is within credit, and the customer's quotation never shows our cost.",
+    ],
+    proof: [
+      { kind: "pattern", slug: "derive-balances-dont-store-them" },
+      { kind: "pattern", slug: "role-scoped-finance-views" },
+      { kind: "pattern", slug: "graceful-degradation-by-env-var" },
+    ],
+  },
 ];
 
 // For use mid-sentence: "Built for a boiler and pressure-vessel manufacturer".

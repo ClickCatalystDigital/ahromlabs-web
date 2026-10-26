@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { captureLead, underRateLimit } from "@/lib/lead-email";
 
-// Called by the three live demos (boiler-erp, electronics-erp, interiors-erp .ahromlabs.com) when a visitor
+// Called by the four live demos (boiler-erp, electronics-erp, interiors-erp, construction-erp .ahromlabs.com) when a visitor
 // fills in the demo entry form, so each lead lands in our CRM and inbox as well as in that demo's leads database.
 // Server to server only: the demos send the shared DEMO_LEAD_KEY (a Worker secret on all four). The demo has
 // already saved the lead, so a failure here is logged by the demo and never blocks the visitor.
-const DEMOS: Record<string, string> = { boiler: "SB Ops (boiler-erp)", electronics: "Inventory Ops (electronics-erp)", interiors: "Designer Ops (interiors-erp)" };
+const DEMOS: Record<string, string> = { boiler: "SB Ops (boiler-erp)", electronics: "Inventory Ops (electronics-erp)", interiors: "Designer Ops (interiors-erp)", construction: "SiteBook (construction-erp)" };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clip = (v: unknown, n: number) => String(v ?? "").trim().slice(0, n);
 
