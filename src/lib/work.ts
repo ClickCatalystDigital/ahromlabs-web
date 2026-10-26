@@ -98,7 +98,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "construction-company",
-    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, a director dashboard and a trading desk." },
+    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, machinery, a director dashboard and a trading desk.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
     client: "A construction company",
     anonymous: true,
     industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",
