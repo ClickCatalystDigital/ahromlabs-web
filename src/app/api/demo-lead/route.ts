@@ -16,17 +16,19 @@ export async function POST(request: Request) {
   const demoKey = clip(b.demo, 20);
   const demo = DEMOS[demoKey];
   const lead = { name: clip(b.name, 120), company: clip(b.company, 160), email: clip(b.email, 160), phone: clip(b.phone, 40), about: clip(b.about, 200) };
+  // Only meaningful with a usable mobile number, same rule as the contact form's tickbox.
+  const whatsappOk = b.whatsapp_ok === true && lead.phone.replace(/\D/g, "").length >= 10;
   if (!demo || !lead.name || !lead.company || !EMAIL_RE.test(lead.email)) return NextResponse.json({ error: "Bad request" }, { status: 400 });
   // These requests all come from the demo Workers, so limit per demo and per visitor email, not per IP.
   if (!(await underRateLimit(`demo-lead:${demoKey}`)) || !(await underRateLimit(`demo-lead:${lead.email.toLowerCase()}`))) {
     return NextResponse.json({ error: "Rate limited" }, { status: 429 });
   }
-  const kept = await captureLead({ source: `demo:${demoKey}`, ...lead }, {
+  const kept = await captureLead({ source: `demo:${demoKey}`, ...lead, whatsappOk }, {
     form: `demo-lead:${demoKey}`,
     subject: `Demo lead: ${lead.company} (${demo})`,
     replyTo: lead.email,
     intro: `New visitor on the ${demo} live demo.`,
-    fields: [["Name", lead.name], ["Company", lead.company], ["Email", lead.email], ["Phone", lead.phone], ["About their business", lead.about]],
+    fields: [["Name", lead.name], ["Company", lead.company], ["Email", lead.email], ["Phone", lead.phone], ["WhatsApp", whatsappOk ? "Yes" : "No"], ["About their business", lead.about]],
   });
   if (!kept) return NextResponse.json({ error: "Could not save or send" }, { status: 502 });
   return NextResponse.json({ ok: true });
