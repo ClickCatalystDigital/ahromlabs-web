@@ -301,6 +301,17 @@ export const TOOLS = {
     params: { days },
     run: ({ days }) => gaReport({ dimensions: ["eventName"], metrics: ["eventCount", "totalUsers"], days }),
   },
+  ga_realtime: {
+    description: "Analytics realtime: events in the last 30 minutes, by event name. Use to check tracking works today (other reports end yesterday).",
+    params: {},
+    run: async () => {
+      const { rows = [] } = await api(`https://analyticsdata.googleapis.com/v1beta/${await property()}:runRealtimeReport`, {
+        method: "POST",
+        body: { dimensions: [{ name: "eventName" }], metrics: [{ name: "eventCount" }] },
+      });
+      return rows.map((r) => ({ eventName: r.dimensionValues[0].value, eventCount: Number(r.metricValues[0].value) }));
+    },
+  },
   ga_report: {
     description:
       "Analytics: any GA4 report. Names from the GA4 Data API schema, e.g. dimensions pagePath, landingPage, sessionSourceMedium, country, deviceCategory; metrics sessions, activeUsers, screenPageViews, engagementRate, keyEvents.",
