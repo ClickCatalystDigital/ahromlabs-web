@@ -30,7 +30,7 @@ export const engagements: Engagement[] = [
     client: "LS Technologies",
     industry: "Electronics-components import/export trading",
     built:
-      "An ERP and CRM with TallyPrime accounting automation and AI document extraction, plus a separate inventory management system for PCB components and reels.",
+      "An AI-powered ERP and CRM with TallyPrime accounting automation and AI document extraction, plus a separate inventory management system for PCB components and reels.",
     services: ["tally-integration", "document-extraction", "custom-erp-crm", "inventory-and-reservations", "sales-crm", "customer-portal", "receivables-from-tally", "custom-ai-assistant"],
     highlights: [
       "Approved invoices post into TallyPrime as vouchers within 30 seconds, through a local agent on the Tally PC.",
@@ -52,7 +52,7 @@ export const engagements: Engagement[] = [
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:
-      "The backend both businesses run on: workers, clients, vendors and freight, projects and site visits for Savistar, workshop orders for Saag, and one combined finance ledger.",
+      "The AI-powered backend both businesses run on: workers, clients, vendors and freight, projects and site visits for Savistar, workshop orders for Saag, and one combined finance ledger.",
     services: ["custom-erp-crm", "multi-company-finance", "operational-intelligence", "daily-wage-payroll", "custom-ai-assistant"],
     highlights: [
       "Each invoice picks its own company's letterhead, logo and GSTIN from a single shared app.",
@@ -98,13 +98,13 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "construction-company",
-    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, machinery, a director dashboard and a trading desk.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
+    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
     client: "A construction company",
     anonymous: true,
     industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",
     built:
-      "One operations system for a contractor that executes work on site and trades construction chemicals: daily progress reports, site attendance, BOQ and running-account bills, stores for the godown and every site, site cash, a director dashboard and trading from quote to e-way bill.",
-    services: ["custom-erp-crm", "operational-intelligence"],
+      "One AI-powered operations system for a contractor that executes work on site and trades construction chemicals: daily progress reports, site attendance, BOQ and running-account bills, stores for the godown and every site, site cash, workforce KYC and payroll, receivables and GST, a director dashboard, trading from quote to e-way bill, and Datum AI, an assistant that answers from the live data.",
+    services: ["custom-erp-crm", "operational-intelligence", "custom-ai-assistant", "daily-wage-payroll"],
     highlights: [
       "Site engineers file the daily report from a phone: quantity done against each BOQ line, labour pre-filled from attendance, material used from the site's own stock, photos. Only reports the project manager approves count toward progress.",
       "Running-account bills are built from measurements against the BOQ, with previous, this-bill and up-to-date quantities, the GST split and the amount in words on the PDF.",
