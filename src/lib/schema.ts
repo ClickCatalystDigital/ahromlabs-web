@@ -116,6 +116,21 @@ export const orgGraph = {
         // Google Business Profile (knowledge graph id from its share link, 24 Oct 2026).
         "https://www.google.com/search?kgmid=/g/11p285b1kh",
         "https://clutch.co/profile/ahrom-labs",
+        "https://www.instagram.com/ahromlabs/",
+        "https://www.goodfirms.co/company/ahromlabs",
+      ],
+    },
+    // The public MCP server. The registry has no per-server page, so Glama and
+    // the source repo stand in for it.
+    {
+      "@type": "WebAPI",
+      "@id": `${siteUrl}/#mcp`,
+      name: "Ahrom Labs MCP server",
+      url: `${siteUrl}/mcp`,
+      provider: { "@id": `${siteUrl}/#organization` },
+      sameAs: [
+        "https://glama.ai/mcp/servers/Ahrom-Labs/ahromlabs-mcp",
+        "https://github.com/Ahrom-Labs/ahromlabs-mcp",
       ],
     },
     {
