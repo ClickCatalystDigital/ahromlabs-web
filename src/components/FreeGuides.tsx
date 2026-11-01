@@ -4,6 +4,7 @@ import { ibrForms } from "@/lib/ibr-forms";
 import { boqItems, trades } from "@/lib/boq";
 import { requirements } from "@/lib/erp";
 import { questions } from "@/lib/ai-assistant";
+import { asmeGuides } from "@/lib/asme";
 
 // The four free reference hubs, as one section for the homepage, /about and /services: they bring most of
 // the search traffic, and a footer link alone carries little weight. Counts come from the data files.
@@ -11,6 +12,7 @@ const GUIDES = [
   { href: "/ibr", title: "IBR 2026 guide", text: `All ${ibrForms.length} forms of the Indian Boiler Regulations, 2026 with their IBR 1950 numbers, what changed, registration documents and record keeping, quoted from the Gazette.` },
   { href: "/boq", title: "Interior BOQ guide", text: `How to write a bill of quantities contractors price the same way: ${boqItems.length} items in ${trades.length} trades, a free checker and an Excel template.` },
   { href: "/erp", title: "ERP requirements", text: `${requirements.length} testable requirements for Indian manufacturers and traders, a builder, an Excel scorecard and the GST and company-law rules quoted.` },
+  { href: "/asme", title: "ASME code guide", text: `The Boiler and Pressure Vessel Code in plain English: ${asmeGuides().length} guides on sections, stamps, Section IX welding and design, with hydrotest, shell thickness and welder continuity tools.` },
   { href: "/ai-assistant", title: "AI assistants guide", text: `How an assistant on your records should answer, a check for made-up numbers, ${questions.length} questions to ask it and a vendor test.` },
 ];
 

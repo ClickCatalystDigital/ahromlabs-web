@@ -3,6 +3,7 @@ import { ibrFormPages, formName } from "@/lib/ibr-forms";
 import { boqItems, trades, tradeItems, UNIT_LABEL } from "@/lib/boq";
 import { requirements, departments } from "@/lib/erp";
 import { questions as aiQuestions, vendorTests } from "@/lib/ai-assistant";
+import { asmeGuides, ASME_EDITION } from "@/lib/asme";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -141,6 +142,11 @@ export function GET() {
     `- [How to test an AI assistant before you buy it](https://ahromlabs.com/ai-assistant/vendor-test): ${vendorTests.length} tests for a vendor demo, with pass and fail. Test sheet: https://ahromlabs.com/ai-assistant/vendor-test.csv\n` +
     getContent("ai-assistant").map(line("ai-assistant")).join("\n");
 
+  const asme =
+    `- [ASME Boiler and Pressure Vessel Code, in plain English](https://ahromlabs.com/asme): Sections, stamps, Section IX welding qualifications and Section VIII design rules, written to the ${ASME_EDITION.name}, for shops in the US, Canada and India. Paragraphs cited, not reproduced; not reviewed by an Authorized Inspector.\n` +
+    `- [ASME questions, answered](https://ahromlabs.com/asme/questions): One question per guide, each answered in a few lines.\n` +
+    asmeGuides().map(line("asme")).join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -152,6 +158,7 @@ export function GET() {
     `\n## Interior BOQ (bill of quantities)\n\n${boq}\n` +
     `\n## ERP requirements (India)\n\n${erp}\n` +
     `\n## AI assistants over business data\n\n${ai}\n` +
+    `\n## ASME Boiler and Pressure Vessel Code\n\n${asme}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

@@ -35,6 +35,7 @@ const columns: { title: string; links: { href: string; label: string; markets?: 
       { href: "/boq", label: "Interior BOQ guide" },
       { href: "/erp", label: "ERP requirements guide" },
       { href: "/ai-assistant", label: "AI assistants guide" },
+      { href: "/asme", label: "ASME code guide" },
     ],
   },
   {

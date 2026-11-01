@@ -27,6 +27,10 @@ assert.equal(shownIn("NA", "/ibr/forms"), false);
 assert.equal(shownIn("NA", "/erp"), false);
 assert.equal(shownIn("NA", "/erpx"), true);
 assert.equal(shownIn("IN", "/ibr"), true);
+assert.equal(shownIn("NA", "/asme/asme-vs-ibr"), false);
+assert.equal(shownIn("IN", "/asme/state-boiler-laws"), false);
+assert.equal(shownIn("NA", "/asme/state-boiler-laws"), true);
+assert.equal(shownIn("NA", "/asme"), true);
 
 assert.equal(say("NA", "every enquiry and quotation, summarised"), "every inquiry and estimate, summarized");
 assert.equal(say("NA", "a promise to the enterprise, otherwise"), "a promise to the enterprise, otherwise");

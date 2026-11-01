@@ -14,6 +14,19 @@
   },
   {
     "kind": "term",
+    "slug": "asme-certification-mark",
+    "title": "ASME Certification Mark (stamp)",
+    "answer": "The mark a holder of an ASME certificate stamps on a boiler, pressure vessel or relief device, with a designator for what it is built to: U for Section VIII Division 1 vessels, S for power boilers, UV for relief valves.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 12,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "Every designator is in [ASME stamps](/asme/stamps); getting one is in [how to get the U stamp](/asme/u-stamp)."
+  },
+  {
+    "kind": "term",
     "slug": "audit-trail",
     "title": "Audit trail (edit log)",
     "answer": "A record, kept by accounting software for every transaction, of each change made to the books and the date it was made, which the user cannot switch off.",
@@ -24,6 +37,19 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "body": "Indian companies that keep their books in accounting software must use software with this feature for financial years from 1 April 2023, under the proviso to rule 3(1) of the Companies (Accounts) Rules, 2014, and their auditors report on it.\n\nIn an ERP it means more than a history tab: the old value, the new value, who changed it and when, for every entry, including those migrated from an older system. See the [audit-trail requirement](/erp/requirements#accounts-audit-trail) and [GST, TDS and statutory compliance](/services/compliance-accounting)."
+  },
+  {
+    "kind": "term",
+    "slug": "authorized-inspector",
+    "title": "Authorized Inspector",
+    "answer": "The independent inspector on every ASME-stamped boiler or pressure vessel, employed by an accredited inspection agency and holding a National Board commission. They check design, materials, welding and testing, and sign the data report.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 3,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "No Inspector's signature, no stamp. See [the Authorized Inspector and AIA](/asme/authorized-inspector)."
   },
   {
     "kind": "term",
@@ -209,6 +235,32 @@
   },
   {
     "kind": "term",
+    "slug": "heat-number",
+    "title": "Heat number",
+    "answer": "The number a steel mill gives to one melt (heat) of steel, marked on the material and printed on its test certificate. It is the link between a piece of plate or pipe and the certificate that proves what it is.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 11,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "Keeping it on every cut piece is the core of [material traceability](/systems/material-traceability); see [material test reports](/asme/mtr)."
+  },
+  {
+    "kind": "term",
+    "slug": "hydrostatic-test",
+    "title": "Hydrostatic test",
+    "answer": "The pressure test of a finished boiler or vessel filled with water, held above its MAWP and inspected for leaks: at least 1.3 × MAWP (times a stress ratio) for an ASME Section VIII Division 1 vessel, 1.5 × MAWP for a Section I boiler.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 10,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "A calculator and the procedure are in [the hydrostatic test guide](/asme/hydrostatic-test)."
+  },
+  {
+    "kind": "term",
     "slug": "ibr-statutory-folder",
     "title": "IBR statutory folder",
     "answer": "The set of documents a boiler maker sends with each boiler for registration under the Indian Boiler Regulations: a covering letter, the forms, the mountings and fittings list, a stage-wise inspection report and copies of the material test certificates, filed in a fixed order.",
@@ -219,6 +271,32 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "body": "Under IBR 2026 the forms are Form I Part B or C, Form IV Part A and Form V Part A with its Part B extract; see [documents for boiler registration](/ibr/registration-documents) and [the folder built from a BOM](/notes/ibr-statutory-folder-from-bom)."
+  },
+  {
+    "kind": "term",
+    "slug": "joint-efficiency",
+    "title": "Joint efficiency",
+    "answer": "The factor (E) applied to a welded joint in ASME pressure vessel thickness formulas, set by the joint type and how much it is radiographed: 1.0, 0.85 or 0.70 for a double-welded butt joint with full, spot or no radiography.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 9,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "See [joint efficiency and radiography](/asme/joint-efficiency)."
+  },
+  {
+    "kind": "term",
+    "slug": "manufacturers-data-report",
+    "title": "Manufacturer's Data Report",
+    "answer": "The ASME form that records a stamped boiler or vessel as built, such as U-1A or P-2: design conditions, materials, thicknesses, joints, examination and test pressure, signed by the manufacturer and the Authorized Inspector.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 13,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "Which form applies and what goes in it are in [data reports](/asme/data-reports)."
   },
   {
     "kind": "term",
@@ -248,6 +326,32 @@
   },
   {
     "kind": "term",
+    "slug": "mawp",
+    "title": "MAWP (maximum allowable working pressure)",
+    "answer": "The highest gauge pressure a finished boiler or pressure vessel may run at, measured at its top, at a stated temperature, worked out from the thicknesses actually used less corrosion. The relief device is set at or below it.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 1,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "It is at least the design pressure and is stamped on the nameplate. How it relates to design and operating pressure is in [MAWP and design pressure](/asme/mawp); the [shell thickness calculator](/asme/shell-thickness) works it back from a thickness."
+  },
+  {
+    "kind": "term",
+    "slug": "mdmt",
+    "title": "MDMT (minimum design metal temperature)",
+    "answer": "The coldest metal temperature at which a pressure vessel may be at its full pressure. It decides whether the steel, welds and heat-affected zones must be impact tested to prove they won't fracture when cold.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 2,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "It is stamped on the nameplate with the MAWP. The exemption curves and when testing is needed are in [MDMT and impact testing](/asme/impact-testing)."
+  },
+  {
+    "kind": "term",
     "slug": "measurement-basis",
     "title": "Measurement basis",
     "answer": "The rule a BOQ line is measured by: square metres, running metres or numbers, and what is deducted. Floors, ceilings, paint and woodwork follow IS 1200; modular kitchens and wardrobes have no standard, so the line must state its basis.",
@@ -274,6 +378,32 @@
   },
   {
     "kind": "term",
+    "slug": "nbic",
+    "title": "NBIC (National Board Inspection Code)",
+    "answer": "The National Board's code for boilers and pressure vessels after they're built: installation, inservice inspection, repairs and alterations, and pressure relief devices. Repairs under it are done by holders of the R stamp.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 14,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "See [National Board registration and the R stamp](/asme/national-board-registration)."
+  },
+  {
+    "kind": "term",
+    "slug": "p-number",
+    "title": "P-number",
+    "answer": "ASME Section IX's grouping of base metals with similar welding behaviour, so one procedure or welder test covers every material in the group: P-No. 1 for carbon steel, P-No. 8 for austenitic stainless.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 8,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "Filler metals have F-numbers and A-numbers; all three are in [P-numbers, F-numbers and A-numbers](/asme/p-numbers)."
+  },
+  {
+    "kind": "term",
     "slug": "permission",
     "title": "Permission",
     "answer": "A rule defining who can view, change, or act on a given entity or workflow step, defined once and enforced everywhere that entity appears.",
@@ -284,6 +414,19 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "procedure-qualification-record",
+    "title": "PQR (procedure qualification record)",
+    "answer": "The record of a test weld made to qualify a welding procedure: the materials and settings actually used and the results of its tension, bend and any impact tests. Every WPS must be supported by one or more PQRs.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 5,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "Which changes need a new PQR is in [essential variables](/asme/essential-variables)."
   },
   {
     "kind": "term",
@@ -401,6 +544,45 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "body": "How a changed item and a new item are priced under CPWD's contract conditions is in [variation orders in interior work](/boq/variation-orders)."
+  },
+  {
+    "kind": "term",
+    "slug": "welder-continuity",
+    "title": "Welder continuity",
+    "answer": "The rule (ASME Section IX, QW-322) that a welder's qualification for a process lapses after six months without welding with it. Shops keep a log of each welder's last weld per process to show continuity.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 7,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "A free checker and the record to keep are in [welder continuity](/asme/welder-continuity)."
+  },
+  {
+    "kind": "term",
+    "slug": "welder-performance-qualification",
+    "title": "WPQ (welder performance qualification)",
+    "answer": "The record that a welder passed their own qualification test under ASME Section IX, and what it covers: process, positions, thicknesses, diameters and filler F-number.",
+    "domain": [
+      "pressure"
+    ],
+    "order": 6,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "It stays valid while the welder keeps welding with the process; see [welder continuity](/asme/welder-continuity) and [welder qualification](/asme/welder-qualification)."
+  },
+  {
+    "kind": "term",
+    "slug": "welding-procedure-specification",
+    "title": "WPS (welding procedure specification)",
+    "answer": "The written welding instructions a welder follows: process, materials, filler metal, position, preheat, heat treatment and electrical settings, each given as a range supported by a qualified procedure test (the PQR).",
+    "domain": [
+      "pressure"
+    ],
+    "order": 4,
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "body": "How it relates to the PQR and the welder's qualification is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
   },
   {
     "kind": "term",
@@ -2842,5 +3024,1086 @@
       "height": 362
     },
     "body": "A trading business asks the same few questions all day: do we have it, where is it, what went out, who hasn't ordered. The answers are in the stock records already; an assistant saves opening four reports to get them.\n\n## What should it answer?\n\nEvery question Ohm AI answers today is listed below, each with the report to check the answer against. The core of it: stock by item and store, what is running low or not moving, what came in and went out, where a particular reel or box is, purchase orders and approvals, and two plain-arithmetic statistics: which items will run out at the recent shipping rate, and which customers have gone quiet against their own usual gap between orders. Each statistic says how much history it used, and \"and last month?\" keeps the customer and the item.\n\n## What should it refuse?\n\nQuestions about data the system doesn't keep. A stock system that doesn't hold receivables should say so when asked what a customer owes, not produce a figure.\n\n## How Ohm AI does it\n\nOhm AI is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.\n\n## How to check a vendor's\n\nPick five items you know the stock of, and ask in the demo. Then run the [vendor test](/ai-assistant/vendor-test) and compare its written answers with the stock summary in the [number check](/ai-assistant/number-check). For the system underneath, see the [ERP guide for trading and distribution](/erp/trading-distribution)."
+  },
+  {
+    "kind": "asme",
+    "slug": "asme-vs-ibr",
+    "group": "bridge",
+    "title": "ASME vs IBR 2026: how the two boiler codes fit together",
+    "question": "Does IBR accept ASME boilers and materials?",
+    "answer": "In India a boiler is registered under the Indian Boiler Regulations, 2026, whatever code it was designed to. IBR 2026 does accept ASME in defined ways: ASME materials, ASME welding consumables and NDT certificates, ASME-designed parts where IBR has no provision, and inspection of export boilers to a foreign code with a Form I Part A certificate.",
+    "description": "ASME BPVC vs IBR 2026 side by side: who approves, inspects and stamps, the forms, and every place IBR 2026 accepts ASME, quoted from the Gazette.",
+    "domain": [
+      "asme",
+      "ibr",
+      "boilers",
+      "india"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
+        "publisher": "Central Boilers Board, Department for Promotion of Industry and Internal Trade",
+        "url": "https://egazette.gov.in/WriteReadData/2026/276813.pdf",
+        "date": "2026-10-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "IBR 2026, regulation 3(4)",
+        "doc": "ibr-2026",
+        "quote": "Where no specific provision is made in these regulations for design or manufacture of any pressure part, the Inspecting Authority may permit the design, manufacture, stage inspections and certification of such pressure parts including the valves; mountings and fittings conforming to the Codes or Standards like British Standards (BS), European Standards (EN), American Society of Mechanical Engineers (ASME) Boiler and Pressure Vessel Code"
+      },
+      {
+        "reg": "IBR 2026, regulation 4",
+        "doc": "ibr-2026",
+        "quote": "the inspecting authority may inspect any boiler meant for export during the various stages of its construction to comply with the requirements of any foreign code and may grant a certificate in Part-A of Form-I."
+      },
+      {
+        "reg": "IBR 2026, regulation 5(1)",
+        "doc": "ibr-2026",
+        "quote": "design and construction of boiler or boiler component is in accordance with international code or standard including British Standards (BS), European Standards (EN), American Society of Mechanical Engineers (ASME) Boiler and Pressure Vessel Code"
+      },
+      {
+        "reg": "IBR 2026, regulation 30, notes to the material table",
+        "doc": "ibr-2026",
+        "quote": "In addition to the above, materials conforming to IS or to any of the International codes BS, EN, ASME, DIN and JIS can also be used."
+      },
+      {
+        "reg": "IBR 2026, regulation 71(2)",
+        "doc": "ibr-2026",
+        "quote": "Specifications for Filler Alloys (SFA) of American Society of Mechanical Engineers (ASME) Part IIC"
+      },
+      {
+        "reg": "IBR 2026, regulation 7",
+        "doc": "ibr-2026",
+        "quote": "Level-III NDT Certificates from Indian Society for Non-destructive Testing(I.S.N.T.) or American Society for Non-destructive Testing( A.S.N.T.)"
+      },
+      {
+        "reg": "IBR 2026, regulation 3(5)",
+        "doc": "ibr-2026",
+        "quote": "The tubes of boilers and heat exchangers made of titanium and other exotic metals may be approved as per international codes, including American Society of Mechanical Engineers (ASME)"
+      }
+    ],
+    "body": "## Side by side\n\n| | ASME BPVC | IBR 2026 |\n|---|---|---|\n| What it is | A private standard, given legal force by US states and Canadian provinces that adopt it | Statutory regulations under the Boilers Act, 2025, in force across India |\n| Written by | ASME committees | The Central Boilers Board |\n| Covers | Boilers, pressure vessels, nuclear, transport tanks | Boilers, steam pipes and their parts (pressure vessels are outside IBR) |\n| Shop approval | ASME certificate, after a joint review ([U and S stamps](/asme/u-stamp)) | Recognition as a manufacturer by class, under IBR 2026 |\n| Independent inspection | [Authorized Inspector](/asme/authorized-inspector) from an accredited agency | Inspecting Authority, Competent Person |\n| Record of the item | [Manufacturer's Data Report](/asme/data-reports) (P-2, P-3, U-1) | Forms: Inspecting Authority's certificate (Form I), maker's certificate (Form IV), material certificates (Form V) |\n| Welders | Section IX qualification ([WPQ](/asme/wps-pqr-wpq)) | IBR welder certificate |\n| In service | NBIC and the jurisdiction | IBR registration, periodic inspection and certificate for use |\n\nThe biggest practical difference: in India IBR applies to **boilers and steam pipes**, while unfired pressure vessels are not regulated by IBR at all (vessels for compressed gases fall under PESO's Static and Mobile Pressure Vessels (Unfired) Rules instead); in the US, a pressure vessel is usually regulated by the state and built to [Section VIII](/asme/section-viii).\n\n## Where IBR 2026 accepts ASME\n\nQuoted from the Gazette below:\n\n- **Parts IBR doesn't cover** may be designed, made, inspected and certified to the ASME Code (among others), with the Inspecting Authority's permission (regulation 3(4)).\n- **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).\n- **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms/form-i-part-a).\n- **Exemption** of a boiler or component built to an international code, ASME included, on conditions (regulation 5).\n- **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30). See [Section II](/asme/section-ii).\n- **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).\n- **NDT personnel** with ASNT certificates are accepted alongside ISNT (regulation 7). See [Section V](/asme/section-v).\n\n## What a shop working to both needs\n\nAn Indian boiler maker building to ASME for export and to IBR at home keeps two sets of approvals, two sets of welder qualifications and two report formats over the same welds and materials. The records underneath are the same: [heat numbers](/asme/mtr), welders, procedures, NDE, tests. That's the case for keeping them once and printing either set of forms; the IBR side is covered in the [IBR 2026 guide](/ibr) and [boiler registration documents](/ibr/registration-documents)."
+  },
+  {
+    "kind": "asme",
+    "slug": "authorized-inspector",
+    "group": "certification",
+    "title": "Authorized Inspector and AIA: who inspects ASME work",
+    "question": "What does an ASME Authorized Inspector do?",
+    "answer": "An Authorized Inspector is the independent third party on every stamped ASME boiler or vessel. They work for an Authorized Inspection Agency (usually an insurance company or a state), hold a National Board commission, check the design, materials, welding and NDE, witness the pressure test and sign the data report. No signature, no stamp.",
+    "description": "The ASME Authorized Inspector (AI) and Inspection Agency (AIA): who they are, the National Board commission, what they check and sign.",
+    "domain": [
+      "asme",
+      "certification",
+      "inspection"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
+        "date": "2026-11-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "for most of the ASME Certificates of Authorization to use the ASME Certification Mark, an agreement with an ASME Accredited Authorized Inspection Agency (AIA) is required."
+      }
+    ],
+    "body": "## The people and the organizations\n\n- **Authorized Inspection Agency (AIA)**: an organization accredited by ASME to provide inspection for Code construction. Most are insurance companies that write boiler and machinery cover; some are state or provincial jurisdictions acting as their own agency.\n- **Authorized Inspector (AI)**: the agency's employee who does the inspecting. They hold a National Board commission with the endorsement for new construction, earned through education, experience and an examination.\n- **AI Supervisor**: the agency's senior inspector who oversees the AI and takes part in joint reviews and audits.\n\nA shop can't hire an AI on its own; it signs an inspection agreement with an agency, which assigns the inspector. Most ASME certificates require that agreement before ASME will schedule a [joint review](/asme/u-stamp).\n\n## What the Inspector does on a job\n\n- Reviews the design calculations and drawings for Code compliance.\n- Checks material against its [MTR](/asme/mtr) and its marking.\n- Checks that every weld is made to a qualified [WPS](/asme/wps-pqr-wpq) by a qualified welder, and that welders are in [continuity](/asme/welder-continuity).\n- Reviews NDE results and heat treatment records.\n- Witnesses the [hydrostatic or pneumatic test](/asme/hydrostatic-test).\n- Signs the [data report](/asme/data-reports) and authorizes the stamping.\n\nThe shop's quality control manual names the Inspector's hold points: the steps where work stops until the AI has seen it.\n\n## The Inspector is not the shop's QC\n\nThe AI checks that the shop's system worked; they don't run it. If the shop's own inspection is missing, the AI reports it as a nonconformity rather than doing it for them.\n\n## Repairs in service\n\nRepairs and alterations to equipment already installed are inspected by a National Board commissioned inspector under the NBIC, with the repair company holding the National Board R stamp. See [National Board registration and the R stamp](/asme/national-board-registration)."
+  },
+  {
+    "kind": "asme",
+    "slug": "b31-1-vs-b31-3",
+    "group": "bridge",
+    "title": "ASME B31.1 vs B31.3: power piping and process piping",
+    "question": "What is the difference between ASME B31.1 and B31.3?",
+    "answer": "B31.1 is the Power Piping code, for steam and water systems in power plants and boiler external piping. B31.3 is the Process Piping code, for refineries, chemical, pharmaceutical and similar plants, with fluid service categories that scale the rules to the hazard. Neither is part of the Boiler and Pressure Vessel Code, but both use Section IX for welding.",
+    "description": "ASME B31.1 power piping vs B31.3 process piping: scope, boiler external piping, fluid service categories, examination, hydrotest pressure and welding.",
+    "domain": [
+      "asme",
+      "piping"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "B31.1 Power Piping",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/b31-1-power-piping",
+        "date": "2026-11-01"
+      }
+    ],
+    "body": "## Side by side\n\n| | B31.1 Power Piping | B31.3 Process Piping |\n|---|---|---|\n| Typical plants | Power stations, central heating and cooling plants, industrial steam systems | Refineries, chemical, petrochemical, pharmaceutical, food, gas processing |\n| Special scope | Boiler external piping (BEP) | Fluid service categories: Normal, Category D, Category M, High Pressure, High Purity |\n| Hazard approach | One set of rules, conservative | Rules scale with the fluid's hazard |\n| Hydrostatic test | 1.5 × design pressure | 1.5 × design pressure, adjusted by the stress ratio at temperature |\n| Welding qualification | Section IX | Section IX (with B31.3's own additions) |\n| Stamp | BEP by a Section I certificate holder; otherwise none | None |\n\n## Boiler external piping\n\nThe piping from a power boiler out to the first stop valve and beyond, as Section I defines it, is **boiler external piping**. It is designed to B31.1 but is part of the Section I boiler: built by a holder of a Section I certificate (S, A or PP) and inspected by the [Authorized Inspector](/asme/authorized-inspector). See [Section I vs Section IV](/asme/section-i-vs-iv).\n\n## B31.3 fluid service categories\n\n- **Normal**: most services.\n- **Category D**: non-flammable, non-toxic fluids at low pressure and moderate temperature; lighter rules.\n- **Category M**: fluids where a single small exposure can cause serious harm; stricter rules.\n- **High Pressure** and **High Purity**: chapters of their own.\n\nThe owner is responsible for assigning the category.\n\n## What carries over from the BPVC\n\n- Welding procedures and welders are qualified to [Section IX](/asme/section-ix); a shop's [WPS and PQR](/asme/wps-pqr-wpq) can serve both its vessel and piping work where the variables fit.\n- NDE methods come from [Section V](/asme/section-v); the piping code sets how much and the acceptance criteria.\n- Materials are mostly ASME or ASTM specifications; see [Section II](/asme/section-ii).\n\nPiping test pressures follow the same logic as vessels: see the [hydrostatic test](/asme/hydrostatic-test) guide."
+  },
+  {
+    "kind": "asme",
+    "slug": "bpvc-sections",
+    "group": "code",
+    "title": "ASME BPVC sections I to XIII explained",
+    "question": "What are the sections of the ASME Boiler and Pressure Vessel Code?",
+    "answer": "The ASME Boiler and Pressure Vessel Code has thirteen sections. Construction sections set the rules for a product: I for power boilers, IV for heating boilers, VIII for pressure vessels, X and XII for plastic vessels and transport tanks, III for nuclear. Reference sections serve them all: II for materials, V for testing, IX for welding, XIII for relief devices.",
+    "description": "The 13 sections of the ASME Boiler and Pressure Vessel Code: what each covers, which ones a boiler or pressure vessel shop needs, and how they fit together.",
+    "domain": [
+      "asme",
+      "boilers",
+      "pressure-vessels"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "Subscription to the indicated sections of the ASME Boiler and Pressure Vessel Code is required for certification to assure that Code users have the latest applicable Code rules."
+      }
+    ],
+    "body": "## Construction sections and reference sections\n\nThe Code is easiest to read as two kinds of book. A **construction section** is the rulebook for one kind of equipment: what it may be made of, how it is designed, welded, examined, tested and stamped. A **reference section** holds rules that several construction sections point to, so they aren't written out again in each.\n\nA pressure vessel shop working to Section VIII Division 1 therefore also works to Section II (materials), Section V (nondestructive examination), Section IX (welding) and Section XIII (relief devices), because Division 1 sends it there.\n\n## The thirteen sections\n\n| Section | Title, in short | Kind |\n|---|---|---|\n| I | Power boilers | Construction |\n| II | Materials (Parts A to D) | Reference |\n| III | Nuclear facility components | Construction |\n| IV | Heating boilers | Construction |\n| V | Nondestructive examination | Reference |\n| VI | Care and operation of heating boilers | Recommended practice |\n| VII | Care of power boilers | Recommended practice |\n| VIII | Pressure vessels (Divisions 1, 2 and 3) | Construction |\n| IX | Welding, brazing and fusing qualifications | Reference |\n| X | Fiber-reinforced plastic pressure vessels | Construction |\n| XI | Inservice inspection of nuclear plants | Inspection |\n| XII | Transport tanks | Construction |\n| XIII | Overpressure protection | Reference |\n\nSections VI and VII are recommendations for owners, not construction rules, and nothing is stamped to them. Section XI applies to nuclear plants in service.\n\n## Which sections a shop needs\n\n- **Pressure vessels**: [Section VIII](/asme/section-viii) (usually Division 1), plus II Part A or B for the material, II Part C if it buys filler metal to an SFA specification, II Part D for allowable stresses, V, [IX](/asme/section-ix) and XIII.\n- **Power boilers** (steam above 15 psi, hot water above 160 psi or 250 °F): Section I with the same reference sections. Below those limits, a heating boiler is built to Section IV; see [Section I vs Section IV](/asme/section-i-vs-iv).\n- **Relief valves and rupture disks**: [Section XIII](/asme/section-xiii).\n\nTo hold an ASME certificate, a shop must own current copies of the sections its scope uses (ASME lists them per certificate as its \"required code books\"); photocopies are not accepted at the joint review.\n\n## How the sections are numbered inside\n\nEach construction section uses letter prefixes for its parts, which is why paragraph numbers look the way they do. In Section VIII Division 1, UG paragraphs are general requirements for every vessel, UW is welded construction, UCS is carbon and low-alloy steel and UHA is high-alloy steel. Section I uses PG for general requirements and PW for welding; Section IX uses QW for welding. A reference such as UG-27 therefore reads \"Section VIII Division 1, general requirements, paragraph 27\": the [shell thickness rules](/asme/shell-thickness).\n\n## Editions\n\nThe whole Code is republished every two years; the current one is the 2025 Edition. How editions, code cases and interpretations work is in [ASME Code editions](/asme/editions)."
+  },
+  {
+    "kind": "asme",
+    "slug": "buying-from-india",
+    "group": "bridge",
+    "title": "Buying ASME-stamped vessels and boilers from India",
+    "question": "Can an Indian manufacturer build an ASME U-stamped pressure vessel?",
+    "answer": "Yes. An Indian fabricator holding an ASME U certificate builds and stamps Section VIII vessels to the same rules and with the same Authorized Inspector involvement as a US shop. For a US installation, also check National Board registration and the state's rules. For boilers, IBR 2026 lets an Indian Inspecting Authority certify an export boiler to a foreign code.",
+    "description": "Sourcing ASME-stamped vessels and boilers from India: certificate checks, the AI, NB registration, IBR 2026 export inspection and what to ask.",
+    "domain": [
+      "asme",
+      "sourcing",
+      "india"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Registration",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
+        "publisher": "Central Boilers Board, Department for Promotion of Industry and Internal Trade",
+        "url": "https://egazette.gov.in/WriteReadData/2026/276813.pdf",
+        "date": "2026-10-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "IBR 2026, regulation 4",
+        "doc": "ibr-2026",
+        "quote": "the inspecting authority may inspect any boiler meant for export during the various stages of its construction to comply with the requirements of any foreign code and may grant a certificate in Part-A of Form-I."
+      }
+    ],
+    "body": "## Why buyers look at India\n\nIndia has a large base of fabricators building boilers, pressure vessels and heat exchangers for refineries, power and process plants, many with ASME certificates for export work, and engineering and fabrication rates below US levels. The Code is the same wherever the shop is: a U stamp from a shop in Gujarat means what one from Texas does.\n\n## What to check before ordering\n\n| Check | How |\n|---|---|\n| The certificate covers the work | Designator (U, U2, S, PP), scope (shop or field), and that it is current; ask for a copy and confirm on ASME's certificate holder listing. See [ASME stamps](/asme/stamps) |\n| Who the Authorized Inspection Agency is | The AIA named on their agreement; the [Authorized Inspector](/asme/authorized-inspector) signs your [data report](/asme/data-reports) |\n| National Board registration | If your state requires NB registration (most do), the shop must be authorized to register. See [National Board registration](/asme/national-board-registration) |\n| The edition | Name the Code edition in the order; see [editions](/asme/editions) |\n| Your jurisdiction's own rules | Some states and every Canadian province add requirements; see [US and Canadian boiler laws](/asme/state-boiler-laws) |\n| Materials | SA specifications with MTRs, and where the mill is. See [MTRs](/asme/mtr) |\n| Documents | The full package in English: calculations, drawings, MTRs, WPS/PQR, welder records, NDE, PWHT charts, test record, data report |\n\n## Boilers: the IBR side\n\nFor a boiler, the Indian Boiler Regulations add a step at home. Regulation 4 of IBR 2026 lets an Indian Inspecting Authority inspect a boiler meant for export, through its stages of construction, against a foreign code such as ASME, and certify it in Form I Part A. That certificate is for India's records; it doesn't replace the ASME stamp or the Authorized Inspector. See [ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form I Part A](/ibr/forms/form-i-part-a).\n\n## Managing the order\n\n- **Inspection and test plan**: agree hold points (material review, fit-up, NDE, PWHT, hydrostatic test) and who witnesses each, yours and the AI's.\n- **Document review before shipping**: get the data report package as a draft before the vessel ships, not with it.\n- **Logistics**: oversized vessels need shipping planned early; the data report and nameplate must match what arrives.\n\n## Records that travel well\n\nA buyer overseas sees a shop through its documents. Shops that keep heat numbers, welders and NDE in one system send a complete package on the day the vessel is ready; that is the system we build."
+  },
+  {
+    "kind": "asme",
+    "slug": "data-reports",
+    "group": "certification",
+    "title": "ASME Manufacturer's Data Reports: U-1, U-1A, U-2, P-2 and H-2",
+    "question": "What is an ASME U-1A form?",
+    "answer": "A Manufacturer's Data Report is the record of what a stamped boiler or pressure vessel is: its design conditions, materials, thicknesses, joints, examinations and test pressure, signed by the manufacturer and the Authorized Inspector. U-1 and U-1A are for Section VIII Division 1 vessels, U-2 for parts, P-2 and P-3 for Section I boilers, H-2 for heating boilers.",
+    "description": "ASME Manufacturer's Data Reports: which form for which item (U-1, U-1A, U-2, A-1, P-2, P-3, H-2), what goes in them, who signs, and National Board registration.",
+    "domain": [
+      "asme",
+      "certification",
+      "records"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "ASME Data Report Forms",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Registration",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      }
+    ],
+    "body": "## Which form\n\nASME publishes the forms free on its website as fillable PDFs. The ones most shops use:\n\n| Item | Form |\n|---|---|\n| Section VIII Div. 1 vessel | U-1, or U-1A (alternative form for single-chamber vessels) |\n| Part of a Div. 1 vessel built by another shop | U-2 or U-2A (partial data report) |\n| Plate heat exchanger | U-1P |\n| Supplementary sheet, shell-and-tube heat exchanger | U-5 |\n| Section VIII Div. 2 vessel | A-1 (A-2 for parts) |\n| Section VIII Div. 3 vessel | K-1 |\n| Section I boiler, except watertube and electric | P-2 (P-2A electric) |\n| Section I watertube boilers, superheaters, waterwalls, economizers | P-3 |\n| Section I fabricated piping | P-4A |\n| Section IV boiler, except watertube and cast | H-2 (H-3 watertube) |\n| Section XIII relief valve or rupture disk | UV-1, HV-1, UD-1 or TV-1 (certificates of conformance) |\n\nThe 2025 forms became mandatory with the 2025 Code on 1 January 2026; see [ASME Code editions](/asme/editions).\n\n## What goes in a U-1A\n\nThe report describes the vessel as built, not as quoted:\n\n- manufacturer, purchaser and installation location, serial numbers;\n- design pressure, [MAWP](/asme/mawp) and coincident temperature, and the [MDMT](/asme/impact-testing);\n- for each shell and head: material specification and grade, nominal and corrosion thickness, inside diameter, length, [joint efficiency](/asme/joint-efficiency) and type, radiography;\n- nozzles and openings, with their reinforcement;\n- heat treatment ([PWHT](/asme/pwht)) and impact testing;\n- the [hydrostatic or pneumatic test pressure](/asme/hydrostatic-test);\n- code cases used, and parts from other shops (with their U-2 reports attached);\n- certification by the manufacturer and by the [Authorized Inspector](/asme/authorized-inspector).\n\n## The data report package\n\nBehind the one-page report sits the file the Inspector checked: calculations, drawings, [MTRs](/asme/mtr), weld map, [WPS, PQR and welder qualifications](/asme/wps-pqr-wpq), NDE reports, heat treatment charts and the test record. Assembling that file at the end of a job is where most shops lose days; building it as the job runs is what the software we write does.\n\n## Registration and keeping it\n\nSection VIII Division 1 requires the manufacturer to keep a copy of the data report for a period set by the Code, or to register it with the National Board, which keeps it permanently. Many US jurisdictions require National Board registration for the item to be installed; the National Board asks for reports within 30 days of certification. See [National Board registration](/asme/national-board-registration).\n\n## In India\n\nThe IBR equivalents are the maker's certificate (Form IV Part A) and the Inspecting Authority's certificate (Form I); see [IBR Form I Part A](/ibr/forms/form-i-part-a), [boiler registration documents](/ibr/registration-documents) and [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "editions",
+    "group": "code",
+    "title": "ASME Code editions: the 2025 Edition, code cases and interpretations",
+    "question": "When does the ASME 2025 Edition become mandatory?",
+    "answer": "ASME publishes the whole Boiler and Pressure Vessel Code every two years and each edition becomes mandatory six months after publication. The 2025 Edition was published on 1 July 2025 and applied from 1 January 2026; the next is due in 2027. Code cases add approved alternatives between editions, and interpretations answer questions on the wording.",
+    "description": "How ASME Code editions work: the two-year cycle, the 2025 Edition dates, which edition applies to a vessel, code cases, interpretations and data report forms.",
+    "domain": [
+      "asme",
+      "editions"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Registration (data report forms for the 2025 Code)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "The edition becomes mandatory six months after the date of publication."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "Reproduced/unauthorized documents from any source are not accepted for ASME Certification"
+      }
+    ],
+    "body": "## The two-year cycle\n\nASME revises the Code continuously in committee and publishes all the changes together every two years, in odd years. There are no addenda between editions any more: the cycle replaced them. Each edition becomes mandatory six months after it's published, which gives shops time to update procedures and their QC manual.\n\n| Edition | Published | Mandatory |\n|---|---|---|\n| 2023 | 1 July 2023 | 1 January 2024 |\n| 2025 | 1 July 2025 | 1 January 2026 |\n| 2027 | Due July 2027 | Six months after |\n\nThe National Board applied the same date to data report forms: items built to the 2025 Code must use the 2025 forms, and reports on outdated forms are sent back. See [data reports](/asme/data-reports).\n\n## Which edition applies to a vessel\n\nThe edition is fixed per job, not per day. In general, a vessel is built to the edition agreed for it (usually the one mandatory when the contract was signed), and the jurisdiction where it will be installed may require a particular one. Write the edition into the purchase order and the design basis, and make sure the QC manual tells staff how a job's edition is recorded.\n\nWelding qualifications don't expire with an edition: a PQR or WPQ qualified under an earlier edition stays valid, and new qualifications follow the edition in force when they are made. The [Section IX guide](/asme/section-ix) covers the 2025 changes.\n\n## Code cases\n\nA **code case** is an approved alternative or addition published between editions: a new material, a new method, a relaxation in a defined situation. Using one is optional, needs the jurisdiction's acceptance, and must be recorded on the data report. Many are later written into the Code itself; some are annulled.\n\n## Interpretations\n\nAn **interpretation** is ASME's written answer to a question about what the Code says. It isn't a change to the Code, and it doesn't approve a design; it tells you how the committee reads a paragraph. Interpretations are published by ASME and searchable online.\n\n## Owning the Code\n\nA certificate holder must own current editions of the sections its scope uses, bought from ASME or a licensed reseller. That's also why these guides cite paragraph numbers instead of reprinting them; see [ASME stamps](/asme/stamps) and [how to get the U stamp](/asme/u-stamp)."
+  },
+  {
+    "kind": "asme",
+    "slug": "essential-variables",
+    "group": "welding",
+    "title": "Essential, supplementary essential and nonessential variables",
+    "question": "What are essential variables in ASME welding?",
+    "answer": "ASME Section IX classifies each welding variable. Changing an essential variable, such as the base metal P-number, filler F-number, thickness range or heat treatment, needs a new PQR. Supplementary essential variables count only when impact testing is required. Nonessential variables, such as groove design, can change by revising the WPS.",
+    "description": "ASME Section IX essential, supplementary essential and nonessential variables explained, with common examples for procedures and for welders.",
+    "domain": [
+      "asme",
+      "welding"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Why variables are classified\n\nA procedure test proves one set of conditions. Section IX's variable tables (QW-250 onwards, one per process) say which conditions matter to the weld's mechanical properties and how far you can move from the test before you have to test again.\n\n## The three kinds, for procedures\n\n| Kind | If you change it beyond the PQR | Typical examples |\n|---|---|---|\n| Essential | Qualify a new PQR | Base metal P-number; filler metal F-number and A-number; thickness beyond the qualified range; adding or removing post-weld heat treatment; a drop in preheat of more than 100 °F; a change of process; adding or removing shielding gas or a backing gas in some processes |\n| Supplementary essential | New PQR only if the construction code requires impact testing | Group number within a P-number; heat input increase; single to multi-pass changes in some processes |\n| Nonessential | Revise the WPS; no new test | Groove design, backing type, technique details, cleaning methods |\n\nThe exact list differs for each process (SMAW, GTAW, GMAW, SAW, FCAW), so always read the table for the process on your WPS.\n\n## Thickness ranges\n\nA groove weld PQR qualifies a range of base metal thickness and of weld metal thickness based on the coupon's thickness. As a general picture, a coupon of moderate thickness qualifies from a minimum up to twice its thickness, with thicker coupons qualifying up to the maximum allowed. Where impact testing applies, the lower limit changes too. Section IX's thickness table (QW-451) gives the numbers.\n\n## For welders\n\nWelders have their own essential variables (QW-350 onwards): process, position, backing, the F-number of the filler, and diameter and thickness ranges. Changing one beyond the WPQ means a new welder test. See [welder qualification](/asme/welder-qualification).\n\n## Practical rules\n\n- Keep a **PQR register** with each PQR's qualified ranges worked out once. Most WPS errors are ranges copied wrong.\n- When a WPS cites two PQRs (for example to cover two thickness ranges), make sure every essential variable is covered by at least one.\n- Impact-tested work is where supplementary essentials catch shops out. See [MDMT and impact testing](/asme/impact-testing).\n\nThe documents themselves are explained in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq), and the material grouping in [P-numbers, F-numbers and A-numbers](/asme/p-numbers)."
+  },
+  {
+    "kind": "asme",
+    "slug": "heads",
+    "group": "design",
+    "title": "Pressure vessel heads: 2:1 ellipsoidal, torispherical and hemispherical (UG-32)",
+    "question": "What is a 2:1 ellipsoidal head?",
+    "answer": "A 2:1 ellipsoidal head is half an ellipse in section, its depth a quarter of its diameter, and it needs about the same thickness as the shell it closes. Torispherical (flanged and dished) heads are shallower and cheaper but thicker; hemispherical heads are the deepest and need about half the shell thickness. ASME UG-32 gives a formula for each.",
+    "description": "ASME UG-32 formed heads compared: 2:1 ellipsoidal, torispherical (F&D, ASME 80-10) and hemispherical, with their thickness formulas and when to use each.",
+    "domain": [
+      "asme",
+      "design"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The three common formed heads\n\n| Head | Shape | Thickness (UG-32), internal pressure | Relative thickness | Typical use |\n|---|---|---|---|---|\n| 2:1 ellipsoidal | Depth = D/4 | t = PD / (2SE − 0.2P) | About the shell's | The default for most vessels |\n| Torispherical (standard \"ASME F&D\": crown radius about equal to the diameter, knuckle radius 6% of the crown radius) | Shallower, a spherical crown with a knuckle | t = 0.885PL / (SE − 0.1P) | Thicker than the shell | Low pressure, storage, where height matters |\n| Hemispherical | Half a sphere | t = PL / (2SE − 0.2P) | About half the shell's | High pressure, large diameters |\n\nD is the inside diameter, L the inside crown (or sphere) radius, and P, S and E are as in the [shell thickness](/asme/shell-thickness) guide. Each formula has validity limits, and other proportions (other ellipses, other crown and knuckle radii) use the general rules in Mandatory Appendix 1-4.\n\n## Choosing\n\n- **Cost**: a hemispherical head is the thinnest but the hardest to form and the deepest; torispherical heads are the cheapest to form but the thickest. The 2:1 ellipsoidal sits between and is the usual answer.\n- **Height and volume**: torispherical heads save height; hemispherical heads add the most volume.\n- **Joint efficiency**: a seamless head's E depends on the radiography of the weld that joins it to the shell; see [joint efficiency and radiography](/asme/joint-efficiency).\n\n## Heads are formed thin\n\nForming thins the plate, most at the knuckle. Order the head with a **minimum thickness after forming** equal to or above the required thickness plus corrosion; the head maker adds their own thinning allowance. The minimum thickness after forming goes on the [data report](/asme/data-reports).\n\n## Flat heads and covers\n\nFlat heads, blind flanges and bolted covers are designed under UG-34 instead, with a factor for how the head is attached. They are far thicker than a formed head for the same pressure, which is why formed heads are used wherever they fit.\n\nThe finished vessel is proved by the [hydrostatic test](/asme/hydrostatic-test), at a pressure set from its [MAWP](/asme/mawp)."
+  },
+  {
+    "kind": "asme",
+    "slug": "hydrostatic-test",
+    "group": "design",
+    "title": "ASME hydrostatic test pressure (UG-99, UG-100, PG-99), with a calculator",
+    "question": "What is the ASME hydrostatic test pressure for a pressure vessel?",
+    "answer": "For a Section VIII Division 1 vessel, the minimum hydrostatic test pressure is 1.3 times the MAWP, multiplied by the lowest ratio of allowable stress at test temperature to allowable stress at design temperature (UG-99(b)). A pneumatic test uses 1.1 instead (UG-100). A Section I boiler is tested to at least 1.5 times its MAWP (PG-99).",
+    "description": "ASME hydrostatic test pressure with a free calculator: UG-99 (1.3 × MAWP × stress ratio), pneumatic UG-100 (1.1), Section I PG-99 (1.5), procedure and gauges.",
+    "domain": [
+      "asme",
+      "design",
+      "testing"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "tool": "hydrotest",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section I and Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The rules\n\n| Equipment | Test | Minimum test pressure |\n|---|---|---|\n| Section VIII Div. 1 vessel | Hydrostatic, UG-99(b) | 1.3 × MAWP × stress ratio |\n| Section VIII Div. 1 vessel | Pneumatic, UG-100 | 1.1 × MAWP × stress ratio |\n| Section I boiler | Hydrostatic, PG-99 | 1.5 × MAWP |\n\nThe **stress ratio** is the allowable stress at the test temperature divided by the allowable stress at the design temperature, taken for the material where that ratio is lowest. At ordinary temperatures the two are often equal and the ratio is 1, so the test is simply 1.3 × MAWP. For a hot vessel, whose allowable stress falls with temperature, the ratio is above 1 and the test pressure rises.\n\nThe test pressure is at the **top** of the vessel. If the gauge is at the bottom, add the static head of the water column.\n\n## Example\n\nA vessel with MAWP 100 psi at 650 °F, where the material's allowable stress is 20,000 psi at test temperature and 16,000 psi at 650 °F: 1.3 × 100 × (20,000 ÷ 16,000) = **162.5 psi**. The calculator above does this for any rule and unit.\n\n## How the test is done (Division 1)\n\n- **Water temperature**: the metal should be at least 30 °F above the [MDMT](/asme/impact-testing) to avoid brittle fracture, and Division 1 recommends not above 120 °F so the vessel can be approached safely.\n- **Inspection**: after reaching test pressure, it is reduced to at least the test pressure divided by 1.3 and held while every joint and connection is examined, normally with the [Authorized Inspector](/asme/authorized-inspector) present.\n- **Gauges**: the dial should read about twice the test pressure, and never less than 1.5 or more than 4 times it (UG-102). Calibrate before the test.\n- **Vents**: vent the high points so no air is trapped.\n\n## Pneumatic tests\n\nA gas stores far more energy than water at the same pressure, so a pneumatic test is used only where water can't be: vessels that can't be supported full, or that must not see any water. Division 1 adds conditions (examination of certain welds first, raising pressure in steps from half the test pressure), and the inspection pressure is the test pressure divided by 1.1.\n\n## On the paperwork\n\nThe test pressure goes on the [data report](/asme/data-reports) and the nameplate record. How MAWP is set is in [MAWP and design pressure](/asme/mawp); the Indian practice for boilers is in [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "impact-testing",
+    "group": "design",
+    "title": "MDMT and impact test exemptions (UCS-66)",
+    "question": "When is impact testing required for an ASME pressure vessel?",
+    "answer": "Carbon and low-alloy steels can turn brittle when cold, so ASME Section VIII Division 1 requires Charpy impact tests unless an exemption applies. UCS-66 gives exemption curves (A to D) by material and thickness against the vessel's MDMT; thin parts and lower stresses earn more exemption. Below about −55 °F most parts need testing.",
+    "description": "ASME impact testing and MDMT explained: UCS-66 exemption curves A to D, governing thickness, the stress-ratio reduction, UG-20(f), and what testing involves.",
+    "domain": [
+      "asme",
+      "design",
+      "materials"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Why it matters\n\nSteel that is tough at room temperature can fracture like glass when cold. The **MDMT** (minimum design metal temperature) is the coldest the metal may be while the vessel is at pressure; impact testing proves the steel, welds and heat-affected zones are tough at that temperature. See [MAWP and MDMT](/asme/mawp).\n\n## How the exemption works\n\nFor carbon and low-alloy steels (Part UCS), Division 1 works it out part by part:\n\n1. **Assign the material to a curve.** Figure UCS-66 has curves A to D. Curve A is for materials with the least toughness assurance; Curve D for the best (for example, normalized fine-grain plate). The curve assignments are listed in the Code.\n2. **Find the governing thickness** of each part: for a butt joint, the thicker of the two members, with rules for other joints.\n3. **Read the curve.** It gives the coldest MDMT allowed without impact testing at that thickness. If the vessel's MDMT is warmer, the part is exempt.\n4. **Take credit for low stress.** When the part is less stressed than its full allowable (thicker than needed, or at lower pressure), Figure UCS-66.1 allows a further reduction in the exemption temperature.\n\nThere's also a blanket exemption for simple cases (UG-20(f)): P-No. 1 materials of limited thickness, hydrostatically tested to UG-99(b), with design temperatures between −20 °F and 650 °F and no unusual shock or cyclic loading.\n\nBelow −55 °F, impact testing is generally required unless the part is very lightly stressed.\n\n## What impact testing involves\n\nCharpy V-notch specimens are cut from the material, or from a test weld for welds and heat-affected zones, and broken at the test temperature. The energy absorbed must meet a minimum that depends on the material's strength and thickness (UG-84). When impact testing applies, the welding procedure must also be qualified with impact tests, which brings in Section IX's supplementary [essential variables](/asme/essential-variables).\n\n## Practical points\n\n- Specify MDMT honestly: too warm is unsafe; too cold forces testing you didn't need.\n- Buy plate to a specification and heat treatment on the better curves (normalized SA-516, for example) when the MDMT is cold.\n- The MDMT and any impact test results go on the [data report](/asme/data-reports), and the steel's own test results come on its [MTR](/asme/mtr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "joint-efficiency",
+    "group": "design",
+    "title": "Joint efficiency and radiography: full vs spot (UW-11, UW-12)",
+    "question": "What is joint efficiency in ASME Section VIII?",
+    "answer": "Joint efficiency (E) is the factor ASME Section VIII Division 1 applies to a welded joint in the thickness formulas. It depends on the joint type and how much it is radiographed: a double-welded butt joint is 1.0 with full radiography, 0.85 with spot radiography and 0.70 with none (UW-12). Less radiography means a thicker shell.",
+    "description": "ASME UW-12 joint efficiency values by joint type and radiography, joint categories A to D, when full radiography is mandatory (UW-11), and the cost trade-off.",
+    "domain": [
+      "asme",
+      "design",
+      "nde"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Joint efficiency by type and examination\n\nSection VIII Division 1, Table UW-12, for the common butt joints:\n\n| Joint type | Description | Full radiography | Spot radiography | None |\n|---|---|---|---|---|\n| 1 | Double-welded butt joint, or equivalent full penetration | 1.00 | 0.85 | 0.70 |\n| 2 | Single-welded butt joint with a backing strip left in | 0.90 | 0.80 | 0.65 |\n| 3 | Single-welded butt joint without backing | – | – | 0.60 |\n\nLap and fillet joints have lower values again and are limited in where they may be used.\n\n## Joint categories\n\nDivision 1 names joints by **location**, because location decides how much stress they carry:\n\n- **Category A**: longitudinal welds in shells and nozzles, and the welds joining a hemispherical head to the shell. They carry the higher (hoop) stress.\n- **Category B**: circumferential welds between shell courses and between shell and most formed heads.\n- **Category C**: welds attaching flanges, tubesheets and flat heads.\n- **Category D**: welds attaching nozzles and communicating chambers.\n\nType is what the joint is; category is where it is. Both go on the [data report](/asme/data-reports).\n\n## When full radiography is required\n\nUW-11 makes full radiography of butt welds mandatory in several cases, among them:\n\n- vessels in **lethal service**;\n- butt welds thicker than a limit set by the material (for carbon steel, 1¼ in);\n- **unfired steam boilers** above 50 psi;\n- where the designer has used E = 1.0.\n\nOtherwise the designer chooses, and the choice is commercial: full radiography costs more in examination and saves steel by allowing E = 1.0.\n\n## Seamless parts\n\nA seamless shell or head has no longitudinal joint, but its efficiency still depends on the circumferential welds joining it: with those spot radiographed to the rule for this case, a seamless part uses E = 1.0; without, 0.85.\n\n## Where it is used\n\nE goes straight into the [shell thickness](/asme/shell-thickness) and [head](/asme/heads) formulas. The method and acceptance standards for the radiographs come from [Section V](/asme/section-v) and UW-51 (full) or UW-52 (spot)."
+  },
+  {
+    "kind": "asme",
+    "slug": "mawp",
+    "group": "design",
+    "title": "MAWP, design pressure, operating pressure and MDMT",
+    "question": "What is the difference between MAWP and design pressure?",
+    "answer": "Design pressure is the pressure the vessel is designed for, set from the process with a margin. MAWP is the highest pressure the finished vessel can take at the top, at its design temperature, worked out from the thicknesses actually used; it is at least the design pressure. Operating pressure sits below both, and the relief valve is set at or below MAWP.",
+    "description": "MAWP vs design pressure vs operating pressure in ASME Section VIII, how they relate to the relief valve set pressure, and what MDMT means on a nameplate.",
+    "domain": [
+      "asme",
+      "design"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Four pressures, in order\n\n| Pressure | What it is | Who sets it |\n|---|---|---|\n| Operating pressure | What the process normally runs at | The process |\n| Relief set pressure | Where the relief device opens; at or below MAWP | The designer, within Code limits |\n| Design pressure | What the vessel is designed for, at the top, with the coincident temperature | The owner or designer (UG-21) |\n| MAWP | The most the completed vessel can take at the top, at the design temperature, from its actual thicknesses | Calculated (UG-98) |\n\nA common margin is design pressure about 10% above the maximum operating pressure, or 25 psi above it for low pressures, so normal swings don't lift the relief valve. That margin is practice, not a Code rule.\n\n## Why MAWP can be higher than design pressure\n\nPlates come in standard thicknesses. If the [shell thickness](/asme/shell-thickness) needed for the design pressure is 0.30 in and you use 0.375 in plate, the shell can take more. MAWP is worked out back from each part's thickness, less corrosion allowance, and the weakest part sets it. Many owners simply set MAWP equal to design pressure to keep the relief valve and nameplate simple; that's allowed.\n\nMAWP is stated at the **top** of the vessel in its operating position. Parts lower down see the static head of the liquid too, and are designed for it.\n\n## Hot and corroded, new and cold\n\nThe thickness used for MAWP is the **corroded** thickness at the **design temperature**. Some owners also ask for MAP (maximum allowable pressure, new and cold), which is higher. The [hydrostatic test](/asme/hydrostatic-test) is set from MAWP.\n\n## MDMT\n\nThe **minimum design metal temperature** is the coldest metal temperature the vessel may see at its MAWP: a cold winter start-up, an autorefrigerating flash, a cold fluid. It decides whether materials need impact testing; see [MDMT and impact testing](/asme/impact-testing). Both MAWP at its temperature and MDMT go on the nameplate and the [data report](/asme/data-reports).\n\n## Overpressure\n\nWhile a relief device is discharging, pressure may rise above MAWP by a set amount: in Division 1, generally 10% or 3 psi for a single device, 16% with several, 21% for fire exposure. See [Section XIII](/asme/section-xiii)."
+  },
+  {
+    "kind": "asme",
+    "slug": "mtr",
+    "group": "materials",
+    "title": "Material test reports and heat numbers: ASME material traceability",
+    "question": "What does an MTR need to show for ASME pressure vessel material?",
+    "answer": "A material test report (MTR, or mill test certificate) certifies one heat of material: its specification and grade, heat number, chemical analysis, mechanical test results and heat treatment. For ASME work the plate's heat number must match its MTR, stay legible or be transferred when the plate is cut (UG-77), and be recorded against every part.",
+    "description": "ASME material traceability: what an MTR must show, heat numbers, UG-77 marking transfer, SA vs A on certificates, EN 10204 3.1, and records an Inspector checks.",
+    "domain": [
+      "asme",
+      "materials",
+      "traceability"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
+        "publisher": "Central Boilers Board, Department for Promotion of Industry and Internal Trade",
+        "url": "https://egazette.gov.in/WriteReadData/2026/276813.pdf",
+        "date": "2026-10-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "IBR 2026, regulation 8(d)(i)",
+        "doc": "ibr-2026",
+        "quote": "A certificate in Form-V(Part-A) from the steel maker and a certificate from the maker of the plates or bars"
+      }
+    ],
+    "body": "## What an MTR is\n\nA mill makes steel in **heats** (one melt). The MTR certifies a heat, or a lot from it, against a specification:\n\n| On the MTR | Why the shop checks it |\n|---|---|\n| Specification and grade, e.g. SA-516 Grade 70 | Must match the drawing and the Code's accepted specification; see [Section II](/asme/section-ii) for SA vs A |\n| Heat number (and slab or plate number) | The link between the paper and the steel |\n| Chemical analysis | Within the specification's limits |\n| Tensile and yield strength, elongation | Within the specification |\n| Heat treatment (as-rolled, normalized) | Affects the impact test curve; see [impact testing](/asme/impact-testing) |\n| Charpy results, if ordered | Needed when the part isn't exempt from impact testing |\n| Supplementary requirements | E.g. ultrasonic examination, simulated PWHT |\n| Certification statement and signature | The mill's certification |\n\nIndia and Europe usually call it a [material test certificate](/systems/material-test-certificate) and order it to EN 10204 type 3.1; the US says MTR or CMTR. The content the Code needs is the same.\n\n## The Code's rules, in outline\n\n- **Receiving** (UG-93): plate for pressure parts comes with the mill's certified test report; the shop checks it against the material and keeps it. Other product forms (pipe, forgings, fittings) need the certification the Code allows for that form.\n- **Marking** (UG-94 and the material specification): the material carries its specification, grade and heat number.\n- **Cutting** (UG-77): when plate is cut, the marking is transferred to every piece that goes into the vessel before it's cut, or a coded system is used that the Inspector accepts, so each piece stays traceable.\n- **Records**: the quality control manual describes how; see [the quality control manual](/asme/quality-control-manual).\n\n## Where traceability breaks\n\n- Offcuts and remnants returned to stock without their heat number, then reused on the next job.\n- One MTR filed for a delivery that held two heats.\n- Nozzle necks and pipe cut from a length whose marking ended up on the scrap end.\n- MTRs scanned into a folder with no link to the parts they cover.\n\nEach of these turns up at the [Authorized Inspector](/asme/authorized-inspector)'s check of the [data report](/asme/data-reports) package. A system that keeps [material traceability](/systems/material-traceability), recording the heat number at receipt and carries it to every cut piece, remnant and weld removes the search at the end.\n\n## In India\n\nIBR 2026 asks for the steel maker's certificate in Form V Part A and an extract of every material certificate (Form V Part B) with the registration papers, and lists ASME SA specifications among acceptable materials. See [ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form V Part A](/ibr/forms/form-v-part-a)."
+  },
+  {
+    "kind": "asme",
+    "slug": "national-board-registration",
+    "group": "certification",
+    "title": "National Board registration, the NB mark and the R stamp",
+    "question": "What is National Board registration for a pressure vessel?",
+    "answer": "National Board registration files a stamped boiler's or vessel's data report with the National Board of Boiler and Pressure Vessel Inspectors, which keeps it permanently; the item then carries the NB mark. Most US jurisdictions require it for installation. The National Board also runs the R stamp program for repairs and alterations under its inspection code, the NBIC.",
+    "description": "National Board registration and the NB mark, the NBIC, and the R, VR, NR and T/O stamps for repairs, relief valves and testing, explained for shops and owners.",
+    "domain": [
+      "asme",
+      "certification",
+      "national-board"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Registration",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "registration of data report forms may be required by the legal authority of a state or municipality of the United States or province of Canada."
+      }
+    ],
+    "body": "## Who the National Board is\n\nThe National Board of Boiler and Pressure Vessel Inspectors is made up of the chief boiler inspectors of US states and Canadian provinces. ASME writes the construction code; the National Board commissions inspectors, keeps the registry of built items, and writes the code for equipment once it's in service, the **National Board Inspection Code (NBIC)**.\n\n## Registration and the NB mark\n\nRegistration is the last step after design and construction and inspection: the manufacturer sends the signed [data report](/asme/data-reports) to the National Board, which keeps it on permanent record, and the nameplate carries the **NB** mark with a National Board number.\n\n- A manufacturer becomes **authorized to register** by meeting the National Board's criteria (its document NB-264). Authorization is free; each registered item has a fee.\n- Reports are filed on paper or electronically, within 30 days of certification, on current forms.\n- Registration is required by most US jurisdictions for pressure equipment to be installed. Check the jurisdiction for the place of installation; see [US and Canadian boiler laws](/asme/state-boiler-laws).\n\nFor an owner, registration means a lost data report can always be replaced, which matters at every later inspection, repair or sale.\n\n## The NBIC\n\nThe NBIC has four parts: installation, inspection, repairs and alterations, and pressure relief devices. It is the rulebook for the equipment's life after the ASME stamp.\n\n## R, VR, NR and T/O\n\n| Stamp | For |\n|---|---|\n| R | Repairs and alterations to boilers and pressure vessels |\n| VR | Repair of pressure relief valves |\n| NR | Repairs and replacements of nuclear components |\n| T/O | Testing of pressure relief valves |\n\nA company gets one by having its quality system manual evaluated and showing it works, much like an ASME [joint review](/asme/u-stamp). R-stamp work is accepted by a National Board commissioned inspector, and the holder keeps an agreement with an inspection agency. Repairs are recorded on NBIC forms (R-1 for a repair, R-2 for an alteration) and, for registered items, filed with the National Board too."
+  },
+  {
+    "kind": "asme",
+    "slug": "p-numbers",
+    "group": "welding",
+    "title": "P-numbers, F-numbers and A-numbers in ASME Section IX",
+    "question": "What is a P-number in welding?",
+    "answer": "A P-number groups base metals with similar welding behaviour, so a procedure or welder test on one covers the others in the group: P-No. 1 is carbon steel, P-No. 8 austenitic stainless. F-numbers group filler metals by usability, such as F-4 for low-hydrogen electrodes like E7018, and A-numbers group steel weld metal by chemistry.",
+    "description": "ASME Section IX P-numbers, Group numbers, F-numbers and A-numbers explained, with common materials and electrodes in each.",
+    "domain": [
+      "asme",
+      "welding",
+      "materials"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Why groups exist\n\nThere are thousands of material specifications. Without grouping, every pairing would need its own procedure test. Section IX assigns each base metal a **P-number** (and, for ferrous metals where toughness matters, a **Group number**), so a PQR on one material qualifies the others in its P-number. The full assignments are in Section IX (QW/QB-422) and Section II Part D; the common ones are below.\n\n## Common P-numbers\n\n| P-No. | Materials | Examples |\n|---|---|---|\n| 1 | Carbon and carbon-manganese steels | SA-516 Gr 70, SA-106 Gr B, SA-105 |\n| 3 | C–½Mo and low-chromium steels | SA-204, SA-335 P1 |\n| 4 | 1–1¼Cr–½Mo steels | SA-387 Gr 11, SA-335 P11 |\n| 5A | 2¼Cr–1Mo steels | SA-387 Gr 22, SA-335 P22 |\n| 5B | 5Cr to 9Cr steels | SA-335 P5, P9 |\n| 7 | Ferritic stainless | SA-240 Type 405, 409, 430 |\n| 8 | Austenitic stainless | SA-240 Type 304, 316, 321 |\n| 10H | Duplex stainless | SA-240 S31803, S32205 |\n| 15E | Creep-strength enhanced ferritic steels | SA-335 P91 |\n| 21–26 | Aluminum alloys | SB-209 5083 |\n| 31–35 | Copper alloys | SB-171 |\n| 41–49 | Nickel alloys | SB-168 Alloy 600, SB-443 Alloy 625 |\n| 51–53 | Titanium | SB-265 Grade 2 |\n\nWelding a P-No. 1 to a P-No. 8 is a dissimilar-metal joint and needs a procedure qualified for that combination.\n\n## F-numbers: filler metal usability\n\n| F-No. | Filler | Example |\n|---|---|---|\n| 1 | Heavy iron-powder steel electrodes | E7024 |\n| 2 | Rutile steel electrodes | E6013 |\n| 3 | Cellulosic steel electrodes | E6010, E6011 |\n| 4 | Low-hydrogen steel electrodes | E7018 |\n| 5 | Stainless steel electrodes | E308L-16 |\n| 6 | Solid and metal-cored steel wires and rods (GTAW, GMAW, SAW) | ER70S-6 |\n| 43 | Nickel alloy filler | ERNiCrMo-3 |\n\nF-numbers matter most for **welders**: they reflect how hard the electrode is to handle, so a welder qualified with F-4 is generally also qualified for F-1 to F-3 in the same process, but not the other way round. Section IX's QW-433 table has the exact pairings, including the effect of welding with or without backing.\n\n## A-numbers: weld metal chemistry\n\nA-numbers classify the deposited weld metal of steels by composition (A-1 carbon steel, A-2 carbon–molybdenum, up to A-8 austenitic chromium–nickel and others). A change of A-number is a procedure [essential variable](/asme/essential-variables) for most processes.\n\n## Using them well\n\n- Write the P-number, Group number, F-number and A-number on every WPS and PQR; reviewers check them first.\n- Check the material's P-number in the current edition: new materials are added and occasionally regrouped.\n- The base metal's specification and grade come from its [MTR](/asme/mtr); see [Section II](/asme/section-ii) for SA vs A.\n\nThe documents these numbers appear on are explained in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
+  },
+  {
+    "kind": "asme",
+    "slug": "pwht",
+    "group": "design",
+    "title": "Post-weld heat treatment requirements (UCS-56)",
+    "question": "When is post-weld heat treatment required by ASME?",
+    "answer": "ASME Section VIII Division 1 requires post-weld heat treatment (PWHT) by material and thickness: Table UCS-56 sets, for each P-number, the holding temperature, the time per inch of thickness and when it can be skipped. For P-No. 1 carbon steel, PWHT is generally required above 1½ in, held at 1,100 °F or more, and some services need it at any thickness.",
+    "description": "ASME PWHT requirements under UCS-56: holding temperature and time for P-No. 1, thickness exemptions, service-driven PWHT, heating and cooling rates and records.",
+    "domain": [
+      "asme",
+      "design",
+      "welding"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Why heat treat after welding\n\nWelding leaves high residual stresses and hard zones next to the weld. PWHT (stress relieving) heats the part below its transformation temperature and holds it, which relaxes the stresses and tempers the hard zones. It improves toughness and resistance to some kinds of cracking, at the cost of furnace time and, sometimes, strength.\n\n## The table, for P-No. 1 carbon steel\n\nTable UCS-56-1 sets requirements by P-number. For P-No. 1 (carbon steel, the commonest case), in outline:\n\n| Item | Requirement |\n|---|---|\n| Minimum holding temperature | 1,100 °F (595 °C) |\n| Holding time, up to 2 in thick | 1 hour per inch, at least 15 minutes |\n| Holding time, over 2 in | Longer, on a sliding scale in the table |\n| Exemption by thickness | PWHT is not mandatory up to 1¼ in, and up to 1½ in with a minimum preheat, subject to the table's notes |\n\nOther P-numbers have their own temperatures and much narrower exemptions; chromium–molybdenum steels (P-No. 4, 5A) nearly always need it. Check the current edition's table for your material: the notes carry most of the detail.\n\n## When service decides, not thickness\n\nPWHT can be required whatever the thickness:\n\n- **Lethal service** (UW-2): Division 1 requires PWHT of carbon and low-alloy steel vessels.\n- **Low temperature**: some impact test exemptions depend on it; see [impact testing](/asme/impact-testing).\n- **The owner's specification**: caustic, amine, wet H₂S and similar services often call for PWHT to resist stress-corrosion cracking, beyond the Code's minimum.\n\n## Doing it\n\n- Heating and cooling rates above 800 °F are limited by thickness (UCS-56(d)), so a thick vessel takes a long cycle.\n- Temperatures are recorded by thermocouples on the part, and the chart is part of the record.\n- PWHT is a procedure [essential variable](/asme/essential-variables): adding or removing it needs a PQR qualified that way.\n\n## On the paperwork\n\nThe PWHT chart goes in the [data report](/asme/data-reports) package and PWHT is declared on the report itself. In India, IBR asks for heat treatment charts of welded drums with the registration documents; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "quality-control-manual",
+    "group": "certification",
+    "title": "The ASME quality control manual: what it must cover",
+    "question": "What should an ASME quality control manual include?",
+    "answer": "An ASME quality control manual describes, in English, how the shop meets every Code requirement in its scope: who has authority, how drawings and calculations are controlled, how material is received and traced, welding, NDE, heat treatment, calibration, nonconformities, inspection and records. The joint review checks the manual, then checks the shop works the way it says.",
+    "description": "What an ASME quality control manual must cover for a U or S certificate: the elements Section VIII lists and how the joint review tests it.",
+    "domain": [
+      "asme",
+      "certification",
+      "quality"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "While the Applicant must address each element of the QCS in the Code, the Applicant need only demonstrate those elements within the intended scope of activities that apply to their program."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The Manual need not follow the format of this Guide."
+      }
+    ],
+    "body": "## What it is for\n\nThe manual is the written description of the shop's quality control system. ASME doesn't certify a product; it certifies that the shop has a system that will keep producing Code items, and the manual is how that system is described. At the [joint review](/asme/u-stamp) the team reads the manual, then watches the shop do what it says.\n\n## The elements\n\nFor Section VIII Division 1 the elements are listed in its quality control system appendix (Mandatory Appendix 10 in recent editions); Section I and the others have equivalents. In outline:\n\n| Element | What the manual says |\n|---|---|\n| Authority and responsibility | Who is responsible for quality, and that they can stop work |\n| Organization | An org chart showing the quality function's independence |\n| Drawings, calculations and specifications | How they are prepared or received, checked, approved, revised and issued |\n| Material control | Receiving, checking against the [MTR](/asme/mtr), marking and [traceability](/asme/mtr) through cutting |\n| Examination and inspection program | What is checked, when, and the Inspector's hold points |\n| Correction of nonconformities | How a nonconformity is recorded, decided and closed |\n| Welding | [WPS, PQR and WPQ](/asme/wps-pqr-wpq) control, welder identification, [continuity](/asme/welder-continuity) |\n| Nondestructive examination | Procedures to [Section V](/asme/section-v), personnel qualification |\n| Heat treatment | Procedures and records, including [PWHT](/asme/pwht) charts |\n| Calibration | Gauges and test equipment, intervals and records |\n| Records retention | Which records are kept, where, for how long |\n| Sample forms | Every form the manual refers to |\n| Inspection of vessels and parts | How the Authorized Inspector is given access and information |\n| Relief valves | How they are inspected, where in scope |\n\nASME also gives applicants a checklist to cross-reference each element to the manual's paragraphs; the completed checklist goes to the review team.\n\n## What makes a manual pass\n\n- **It describes this shop.** A bought template with another company's job titles and forms fails the moment the team asks someone to show a step.\n- **Every form exists and is used.** The forms in the manual are the forms on the shop floor.\n- **Records join up.** A reviewer picks a weld on the demonstration item and follows it to the welder, their qualification, the WPS, the PQR, the filler metal and the NDE report. Each link has to be there.\n\nThat last test is the one most shops find hardest on paper and easiest in software: a record per weld, heat number and welder, linked once, rather than files cross-referenced by hand."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-i-vs-iv",
+    "group": "code",
+    "title": "ASME Section I vs Section IV: power boilers and heating boilers",
+    "question": "What is the difference between ASME Section I and Section IV boilers?",
+    "answer": "Section IV covers heating boilers: steam boilers up to 15 psi, and hot water boilers up to 160 psi and 250 °F. Anything above those limits is a power boiler under Section I, which has stricter design, material, examination and inspection rules. The stamps differ too: S for Section I power boilers, H for Section IV heating boilers.",
+    "description": "ASME Section I power boilers vs Section IV heating boilers: the pressure and temperature limits, stamps, data reports and what changes for the shop.",
+    "domain": [
+      "asme",
+      "boilers"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certification (designators S, A, E, M, PP, H, HLW)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "ASME Data Report Forms",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-01"
+      }
+    ],
+    "body": "## Where the line is\n\n| | Section IV (heating boilers) | Section I (power boilers) |\n|---|---|---|\n| Steam boilers | Up to 15 psi | Above 15 psi |\n| Hot water boilers | Up to 160 psi and 250 °F | Above 160 psi or above 250 °F |\n| Typical use | Space heating, domestic hot water | Process steam, power generation, high-temperature hot water |\n| Certification designator | H (HLW for lined potable water heaters) | S, with A for assembly, E for electric, M for miniature, PP for boiler piping |\n| Main data reports | H-2, H-3 (H-5 and H-5A for cast iron and cast aluminum) | P-2, P-3, P-4 |\n\nSection IV allows cast iron and cast aluminum sectional boilers, which Section I does not, and its rules are simpler throughout because the energy stored at low pressure is much smaller.\n\n## What changes for the shop\n\n- **Design**: Section I has its own formulas (Part PG) and sets thicknesses for drums, headers and tubes in the hot zone; Section IV's are simpler and include minimum thicknesses.\n- **Examination**: more volumetric examination of welds in Section I.\n- **Testing**: a Section I boiler is hydrostatically tested to at least 1.5 times its maximum allowable working pressure (PG-99); the [hydrostatic test guide](/asme/hydrostatic-test) has a calculator.\n- **Piping**: boiler external piping, from the boiler to the first stop valve and beyond as the Code defines it, is part of the Section I boiler and is built to [B31.1](/asme/b31-1-vs-b31-3) by a holder of a Section I certificate that covers it (S, A or PP).\n- **Inspection**: both need an [Authorized Inspector](/asme/authorized-inspector), except Section IV cast iron and cast aluminum boilers, whose certificate needs no inspection agency agreement (see [ASME stamps](/asme/stamps)).\n\n## In India\n\nBoilers in India are registered under the Indian Boiler Regulations, 2026, whichever ASME section they were designed to. How the two fit together is in [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-ii",
+    "group": "code",
+    "title": "ASME Section II materials: Parts A to D, and SA vs A specifications",
+    "question": "What is the difference between SA-516 and A516?",
+    "answer": "ASME Section II holds the material specifications the Code allows: Part A ferrous, Part B nonferrous, Part C filler metals, Part D properties and allowable stresses. An SA specification is ASME's adoption of an ASTM one, sometimes with changes; SA-516 is ASME's version of ASTM A516. Code pressure parts must be certified to the SA specification, often on a dual-marked MTR.",
+    "description": "ASME Section II explained: Parts A, B, C and D, SA vs A (SA-516 vs A516), dual certification, and where the allowable stress values come from.",
+    "domain": [
+      "asme",
+      "materials"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section II, Parts A to D)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The four Parts\n\n| Part | Contents | Typical specifications |\n|---|---|---|\n| A | Ferrous material specifications | SA-516 plate, SA-106 pipe, SA-105 forgings, SA-240 stainless plate |\n| B | Nonferrous material specifications | SB-168 nickel alloy plate, SB-209 aluminum plate |\n| C | Welding rods, electrodes and filler metals | SFA-5.1 (carbon steel electrodes such as E7018), SFA-5.18 (GMAW and GTAW wires) |\n| D | Properties | Allowable stresses, tensile and yield strength at temperature, external pressure charts, physical properties |\n\nPart D comes in customary (psi, °F) and metric volumes. The [shell thickness](/asme/shell-thickness) and [hydrostatic test](/asme/hydrostatic-test) calculators both need its allowable stress values, which is why those tools ask you for them rather than supply them: the tables are ASME's, and they change between editions.\n\n## SA vs A\n\nASTM writes most of the material standards; ASME adopts them into Section II, adds an \"S\" (SA, SB) and sometimes adds requirements. Section II prints each adopted specification with a note of which ASTM edition it matches and any differences.\n\nWhat that means in practice:\n\n- A pressure part must be certified to the SA specification (or to an ASTM edition the Code accepts as identical), not just \"A516\".\n- Mills therefore often **dual-certify**: the MTR reads \"SA-516/A516 Grade 70\", stating it meets both.\n- If an MTR shows only the ASTM number, the [MTR guide](/asme/mtr) explains what the Code lets you do about it, and the Inspector decides whether it is acceptable.\n\n## Allowable stress in Part D\n\nSection VIII Division 1 and Section I take their maximum allowable stresses from Part D tables (Table 1A for ferrous materials, Table 1B for nonferrous), by specification, grade and temperature. Division 2 has its own, higher, values because of its smaller design margin; see [Section VIII Division 1 vs 2](/asme/section-viii).\n\n## Welding consumables\n\nPart C's SFA specifications classify filler metals; Section IX then groups them by F-number and A-number for qualification. See [P-numbers, F-numbers and A-numbers](/asme/p-numbers). In India, IBR 2026 classifies covered electrodes by these same SFA specifications or AWS ones; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-ix",
+    "group": "code",
+    "title": "ASME Section IX: welding, brazing and fusing qualifications",
+    "question": "What is ASME Section IX?",
+    "answer": "ASME Section IX sets how a shop qualifies its welding procedures and its welders. A procedure is qualified by welding a test coupon and testing it (the PQR), then written up as a WPS; each welder is qualified by a test of their own (the WPQ). Section IX doesn't decide where welds go or how they're examined: the construction section does.",
+    "description": "ASME Section IX explained: what it covers, its parts (QG, QW, QB, QF), WPS, PQR and WPQ, and how it works with Sections I and VIII and the B31 piping codes.",
+    "domain": [
+      "asme",
+      "welding"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "Summary of Changes to ASME Boiler and Pressure Vessel Code Section IX (Welding Journal, July 2025)",
+        "publisher": "American Welding Society",
+        "url": "https://uatsitecore.aws.org/magazines-and-media/welding-journal/wj-july-25-feature-05-sperko/",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## What Section IX does, and what it doesn't\n\nSection IX answers two questions: **can this procedure make a sound weld**, and **can this person make it**. It does that with test coupons and mechanical or volumetric tests, and with rules for how far a passed test stretches (which materials, thicknesses, positions and processes it covers).\n\nIt does not say which joints need welding, what type of joint, which welds are radiographed or when heat treatment is needed. That is the construction section's job: [Section VIII](/asme/section-viii), Section I, or a B31 piping code, which then sends you to Section IX for qualification.\n\n## Its parts\n\n| Part | Covers |\n|---|---|\n| QG | General requirements shared by all processes |\n| QW | Welding: procedure qualification (QW-200), performance qualification (QW-300), the variables (QW-400) and standard welding procedure specifications (QW-500) |\n| QB | Brazing |\n| QF | Plastic fusing (polyethylene pipe) |\n\n## The three documents\n\n- **WPS** (welding procedure specification): the written instructions a welder follows, with ranges for each variable.\n- **PQR** (procedure qualification record): the record of the test coupon that proves the WPS works: what was actually used, and the test results.\n- **WPQ** (welder or welding operator performance qualification): the record that a person passed their test, and what it qualifies them for.\n\nHow the three link, and what goes in each, is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq). Which changes need a new PQR is in [essential variables](/asme/essential-variables); which positions a welder's test covers is in [welder qualification](/asme/welder-qualification); and how a welder keeps their qualification alive is the [continuity rule](/asme/welder-continuity).\n\n## Material grouping\n\nSection IX groups base metals by **P-number** and filler metals by **F-number** and **A-number**, so one test covers a family of materials instead of one specification. See [P-numbers, F-numbers and A-numbers](/asme/p-numbers).\n\n## The 2025 Edition\n\nThe Section IX changes in the 2025 Edition became mandatory for new qualifications on 1 January 2026, as the Welding Journal's summary of changes notes. Existing qualifications made to earlier editions stay valid; the [editions guide](/asme/editions) explains how that works."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-v",
+    "group": "code",
+    "title": "ASME Section V: nondestructive examination",
+    "question": "What is ASME Section V?",
+    "answer": "ASME Section V sets how nondestructive examinations are done: radiography, ultrasonic, magnetic particle, liquid penetrant, visual and leak testing, each in its own Article. It covers the method, not the verdict: which welds are examined and what counts as a rejectable flaw come from the construction section, such as Section VIII or Section I.",
+    "description": "ASME Section V explained: its Articles for RT, UT, MT, PT, VT and leak testing, who sets acceptance criteria, and how NDE personnel are qualified.",
+    "domain": [
+      "asme",
+      "nde"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section V: Nondestructive Examination)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## Method in Section V, verdict in the construction section\n\nA radiograph is taken the way Section V says: film or digital, source and geometry, image quality indicators, density. Whether the indication on it is acceptable is judged by the construction section: in Section VIII Division 1, for example, full radiography is judged under UW-51 and spot radiography under UW-52. That split is why an NDE procedure cites Section V and the report cites Section VIII.\n\n## The main Articles\n\n| Article | Method |\n|---|---|\n| 1 | General requirements |\n| 2 | Radiographic examination (RT), film and digital |\n| 4 | Ultrasonic examination (UT) of welds, including phased array and TOFD |\n| 6 | Liquid penetrant examination (PT) |\n| 7 | Magnetic particle examination (MT) |\n| 9 | Visual examination (VT) |\n| 10 | Leak testing |\n| 23 | Material specifications for NDE (adopted ASTM standards) |\n\n## Personnel\n\nThe construction sections require NDE personnel to be qualified and certified to a written practice. In US and Canadian shops that is usually the employer's written practice to ASNT's SNT-TC-1A, with Level I, II and III personnel. IBR 2026 accepts ASNT certificates alongside the Indian Society for Non-destructive Testing's; see [ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## Where it meets the rest of the Code\n\n- How much radiography a joint gets changes its **joint efficiency** and so its required thickness: see [joint efficiency and radiography](/asme/joint-efficiency).\n- NDE reports go into the vessel's file and are listed on the [data report](/asme/data-reports) package.\n- A welder can be qualified by radiography instead of bend tests for most processes; see [welder qualification](/asme/welder-qualification)."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-viii",
+    "group": "code",
+    "title": "ASME Section VIII: Division 1 vs 2 vs 3",
+    "question": "What is the difference between ASME Section VIII Division 1 and Division 2?",
+    "answer": "Section VIII sets the rules for pressure vessels. Division 1 is design by rule with a larger safety margin and is used for most vessels. Division 2 allows thinner walls in return for more design analysis, stricter material and examination rules, and a certified design report. Division 3 is for very high pressures, usually above 10,000 psi.",
+    "description": "ASME Section VIII Division 1, 2 and 3 compared: design margin, analysis, examination, paperwork and stamps, and how to choose for a pressure vessel.",
+    "domain": [
+      "asme",
+      "pressure-vessels",
+      "design"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certification (certification designators U, UM, U2, U3)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "ASME Data Report Forms",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-01"
+      }
+    ],
+    "body": "## What Section VIII covers\n\nSection VIII is the Code's pressure vessel section: tanks, columns, reactors, heat exchangers, receivers and similar vessels that hold internal or external pressure. Division 1 itself excludes some equipment, for example vessels designed for 15 psi or less, and very small vessels (6 in inside diameter or less), which is why many low-pressure tanks are built to other standards. Fired equipment that generates steam belongs to [Section I](/asme/section-i-vs-iv).\n\n## The three Divisions side by side\n\n| | Division 1 | Division 2 | Division 3 |\n|---|---|---|---|\n| Approach | Design by rule: formulas and charts | Design by rule or by analysis (stress analysis, finite elements) | Design by analysis, fracture mechanics |\n| Typical use | Most vessels | Large, thick or high-pressure vessels where thinner walls save money | Very high pressure, usually above 10,000 psi |\n| Design margin on tensile strength | 3.5 | 2.4 | Based on yield, with further checks |\n| Owner's input | Design conditions on the order | A User's Design Specification | A User's Design Specification |\n| Design certification | The manufacturer | A Manufacturer's Design Report, certified as the Division requires | As Division 2, plus more |\n| Certification designator | U (UM for miniature vessels) | U2 | U3 |\n| Data report | U-1 or U-1A | A-1 | K-1 |\n\nThe smaller margin is the reason Division 2 exists: the same vessel needs less steel. The price is engineering. Division 2 demands more analysis, more examination of welds and materials, and documents that Division 1 doesn't, so it pays off mainly on large, thick or alloy vessels where steel is the bigger cost.\n\n## How to choose\n\n- **Start with Division 1** unless there's a reason not to. More shops hold a U certificate, more inspectors know it, and the paperwork is lighter.\n- **Consider Division 2** when the wall gets thick (a rough sign: shells over about 2 in), the material is expensive, or the vessel is cyclic and needs a fatigue assessment anyway.\n- **Division 3** is a specialist field (isostatic presses, high-pressure reactors).\n\nA shop can only stamp what its certificate covers: a U certificate does not allow Division 2 work. See [ASME stamps](/asme/stamps).\n\n## What a Division 1 vessel's paperwork looks like\n\nThe design calculations ([shell thickness](/asme/shell-thickness), [heads](/asme/heads), nozzles, flanges), material certificates ([MTRs](/asme/mtr)), welding procedures and welder qualifications ([WPS, PQR and WPQ](/asme/wps-pqr-wpq)), examination reports, the [hydrostatic test](/asme/hydrostatic-test) record, and finally the [Manufacturer's Data Report](/asme/data-reports), signed by the manufacturer and the [Authorized Inspector](/asme/authorized-inspector). ASME's 2025 forms list for Division 1 also includes User's Design Requirements forms (U-DR-1 and U-DR-2) for the owner's design conditions."
+  },
+  {
+    "kind": "asme",
+    "slug": "section-xiii",
+    "group": "code",
+    "title": "ASME Section XIII: relief valves and overpressure protection",
+    "question": "What is ASME Section XIII?",
+    "answer": "Section XIII, first published in the 2021 Edition, holds the Code's rules for pressure relief devices: relief valves, rupture disks and pin devices, how their capacity is certified and how they are marked. The construction sections still say when a boiler or vessel needs protection; Section XIII says what the device must be.",
+    "description": "ASME Section XIII explained: why relief device rules moved there in 2021, the UV, V, HV and UD stamps, capacity certification and what stayed in Section VIII.",
+    "domain": [
+      "asme",
+      "relief-devices"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2021 ASME Boiler and Pressure Vessel Code (new Section XIII: Rules for Overpressure Protection)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2021",
+        "date": "2021-07-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certification (Section XIII designators)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 2",
+        "doc": "asme-handbook",
+        "quote": "it is necessary that all required capacity certification tests be scheduled within ninety days from the date of the review. If the tests are not successfully completed within six months from the date of the review, a new review must be conducted."
+      }
+    ],
+    "body": "## Why it exists\n\nUntil 2021 each construction section carried its own relief device rules: Section VIII Division 1 in its UG-125 series of paragraphs, Section IV and Section I in theirs. The 2021 Edition gathered the device rules into one new section so that a valve maker works to one book. The construction sections kept the requirement to protect the equipment and point to Section XIII for the device. In older drawings and data sheets you'll still see \"UG-125\"; on new work the device side is Section XIII.\n\n## The device stamps\n\n| Designator | Device |\n|---|---|\n| V | Boiler pressure relief valves |\n| HV | Heating boiler safety valves |\n| UV | Pressure vessel pressure relief valves |\n| UD | Pressure vessel nonreclosing devices (rupture disks and similar) |\n| UV3, UD3 | High-pressure vessel devices (Division 3) |\n| TV, TD | Transport tank devices |\n\nUnlike a vessel certificate, these need no agreement with an inspection agency. Instead, the National Board appoints the reviewer, and the device's relieving capacity has to be certified by test at an accepted laboratory; the time limits for those tests are quoted below. See [ASME stamps](/asme/stamps) for the full list.\n\n## What stays with the vessel designer\n\nThe construction section still decides:\n\n- that the vessel or boiler needs protection, and from what (a blocked outlet, a fire, a failed control);\n- the set pressure, normally not above the [MAWP](/asme/mawp);\n- how far pressure may rise while the device relieves: in Division 1, generally 10% or 3 psi above MAWP for one device, 16% with several, 21% for fire.\n\n## Repairs\n\nSetting and repairing relief valves in service is not ASME Section XIII work. It is done under the National Board's VR program; see [National Board registration and the R stamp](/asme/national-board-registration)."
+  },
+  {
+    "kind": "asme",
+    "slug": "shell-thickness",
+    "group": "design",
+    "title": "Shell thickness and MAWP (UG-27), with a calculator",
+    "question": "How do you calculate pressure vessel shell thickness to ASME?",
+    "answer": "For a cylindrical shell under internal pressure, ASME Section VIII Division 1 (UG-27) gives the required thickness as t = PR / (SE − 0.6P), where P is design pressure, R the inside radius, S the allowable stress and E the joint efficiency. Add the corrosion allowance, check the longitudinal-stress formula too, and take the larger.",
+    "description": "ASME UG-27 shell thickness for cylinders and spheres, with a free calculator: formulas, corrosion allowance, joint efficiency and MAWP.",
+    "domain": [
+      "asme",
+      "design"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "tool": "shell",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The formulas\n\nSection VIII Division 1, UG-27, for internal pressure, using the **inside radius in the corroded condition**:\n\n| Shell | Required thickness | Valid while |\n|---|---|---|\n| Cylinder, circumferential stress (governs the longitudinal joints) | t = PR / (SE − 0.6P) | P ≤ 0.385SE and t ≤ R/2 |\n| Cylinder, longitudinal stress (governs the circumferential joints) | t = PR / (2SE + 0.4P) | P ≤ 1.25SE and t ≤ R/2 |\n| Sphere | t = PR / (2SE − 0.2P) | P ≤ 0.665SE and t ≤ 0.356R |\n\n- **P**: design pressure, plus any static head at that point.\n- **R**: inside radius, increased by the corrosion allowance.\n- **S**: maximum allowable stress at the design temperature, from [Section II Part D](/asme/section-ii).\n- **E**: [joint efficiency](/asme/joint-efficiency) of the relevant joint.\n\nOutside the limits, use the thick-shell formulas in Mandatory Appendix 1-2. Each formula can also be rearranged to give the **MAWP** a known thickness allows; for a cylinder, P = SEt / (R + 0.6t).\n\n## A worked example\n\nA carbon steel shell, 48 in inside diameter, design pressure 150 psi, allowable stress 20,000 psi, spot radiographed Type 1 joints (E = 0.85), corrosion allowance 0.125 in:\n\n1. Corroded radius: 24 + 0.125 = 24.125 in.\n2. Circumferential: t = 150 × 24.125 / (20,000 × 0.85 − 0.6 × 150) = 3,618.75 / 16,910 = **0.214 in**.\n3. Longitudinal: t = 150 × 24.125 / (2 × 20,000 × 0.85 + 0.4 × 150) = 0.106 in. Circumferential governs.\n4. Add corrosion: 0.214 + 0.125 = **0.339 in** minimum.\n5. Choose plate: ⅜ in (0.375) covers it, after allowing for any mill undertolerance and forming thin-out.\n\nThe calculator above repeats these steps for your numbers and works the MAWP back from a chosen thickness. The allowable stress is yours to enter: it comes from ASME's tables for your material, grade and temperature, which change between editions and aren't reproduced here.\n\n## What the formula doesn't cover\n\n- **Heads**: their own formulas; see [heads](/asme/heads).\n- **Openings**: every nozzle needs reinforcement checked (UG-37 and onwards).\n- **External pressure and vacuum**: a separate check (UG-28) with charts from Section II Part D; often thicker than internal pressure needs.\n- **Other loads**: wind, seismic, supports, lifting and piping loads (UG-22).\n- **Minimum thickness**: Division 1 sets a floor for shells and heads regardless of pressure (UG-16).\n\nRelated: [MAWP and design pressure](/asme/mawp), and the [hydrostatic test](/asme/hydrostatic-test) that proves the result."
+  },
+  {
+    "kind": "asme",
+    "slug": "stamps",
+    "group": "certification",
+    "title": "ASME stamps: U, U2, S, H, PP, UV and the other certification marks",
+    "question": "What do the ASME U, S and R stamps mean?",
+    "answer": "An ASME stamp is the ASME Certification Mark with a designator showing what the item is built to: U for a Section VIII Division 1 pressure vessel, U2 for Division 2, S for a Section I power boiler, H for a heating boiler, UV for a relief valve. Only a holder of that certificate may apply it. The R stamp is the National Board's, for repairs.",
+    "description": "Every ASME certification designator (U, UM, U2, U3, S, A, E, M, PP, H, HLW, PRT, RP, T, V, HV, UV, UD) and the National Board R, VR, NR and NB marks.",
+    "domain": [
+      "asme",
+      "certification"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certification",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Registration",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "The ASME Certification Mark can only be used by a company that holds a valid Certificate of Authorization to use the Certification Mark."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "the PRT Certificate is for Manufacturers of parts who do not perform or assume any design responsibility for the parts they manufacture."
+      }
+    ],
+    "body": "## One mark, many designators\n\nSince the early 2010s there has been one **ASME Certification Mark** (the cloverleaf), stamped together with a **designator**: the letters that say which section and which kind of work the item was built to. People still say \"U stamp\" for the mark with the U designator, and this guide does too.\n\n## ASME designators\n\nASME's certification page lists these, with how long each certificate lasts and whether it needs an agreement with an Authorized Inspection Agency (from ASME's informational handbook):\n\n| Section | Designator | For | Valid | Inspection agency |\n|---|---|---|---|---|\n| I | S | Power boilers | 3 years | Yes |\n| I | A | Assembly of power boilers | 3 years | Yes |\n| I | E | Electric boilers | 3 years | Yes |\n| I | M | Miniature boilers | 3 years | Yes |\n| I | PP | Pressure piping (boiler external piping) | 3 years | Yes |\n| IV | H | Heating boilers (not cast iron or aluminum) | 3 years | Yes |\n| IV | H | Cast iron and cast aluminum heating boilers | 1 year | No |\n| IV | HLW | Lined potable water heaters | 3 years | Yes |\n| VIII-1 | U | Pressure vessels | 3 years | Yes |\n| VIII-1 | UM | Miniature pressure vessels (needs a U or S too) | 1 year | Through the U or S |\n| VIII-2 | U2 | Pressure vessels, alternative rules | 3 years | Yes |\n| VIII-3 | U3 | High-pressure vessels | 3 years | Yes |\n| X | RP | Fiber-reinforced plastic vessels | 3 years | Yes |\n| XII | T | Transport tanks | 3 years | Yes |\n| I, IV, VIII-1, VIII-2, XII | PRT | Parts, without design responsibility | 3 years | Yes |\n| XIII | V, HV, UV, UD, UV3, UD3, TV, TD | Relief valves and devices | 3 years | No |\n\nPRT is for parts makers who build to someone else's design: the certificate holder who buys the part takes design responsibility. Relief device certificates have their own review route; see [Section XIII](/asme/section-xiii).\n\n## National Board marks\n\nThese are not ASME's; they come from the National Board of Boiler and Pressure Vessel Inspectors:\n\n- **NB**: the item's data report is registered with the National Board. Many US jurisdictions require it; see [National Board registration](/asme/national-board-registration).\n- **R**: repairs and alterations to boilers and pressure vessels in service, under the NBIC.\n- **VR**: repair of pressure relief valves.\n- **NR**: repairs and replacements at nuclear facilities.\n- **T/O**: testing of pressure relief valves.\n\n## What the stamp means to a buyer\n\nA stamp says the item was built under an accepted quality system and inspected by an [Authorized Inspector](/asme/authorized-inspector), and that a [data report](/asme/data-reports) exists for it. It says nothing about whether the design suits your process; that is set by the design conditions you specify. To get a stamp, see [how to get the U stamp](/asme/u-stamp)."
+  },
+  {
+    "kind": "asme",
+    "slug": "state-boiler-laws",
+    "group": "bridge",
+    "title": "US and Canadian boiler and pressure vessel laws: who requires ASME",
+    "question": "Is the ASME Code required by law in the US?",
+    "answer": "The ASME Code isn't a federal law in the US. Most states, and every Canadian province, make it law by adopting it in their own boiler and pressure vessel acts, with their own inspection, registration and permit rules, and some don't regulate every kind of vessel. Check the jurisdiction where the equipment will be installed.",
+    "description": "How US states and Canadian provinces make the ASME Code law: adoption, inspection, National Board registration, Canada's CRN.",
+    "domain": [
+      "asme",
+      "law",
+      "north-america"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Registration",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
+        "date": "2026-11-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "(1) United States: Alaska, Delaware, Hawaii, Louisiana, Minnesota, Nebraska, Oklahoma, Texas, Washington"
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "registration of data report forms may be required by the legal authority of a state or municipality of the United States or province of Canada."
+      }
+    ],
+    "body": "## How the Code becomes law\n\nASME is a standards body, not a regulator. The Code gets legal force when a **jurisdiction** (a state, a province, sometimes a city) adopts it in its boiler and pressure vessel law. The law then says which equipment is covered, which Code edition, who inspects it in service, and what has to be registered or permitted before it's operated.\n\nWhat varies between jurisdictions:\n\n- **Scope**: some regulate boilers and pressure vessels; some only boilers; many exempt small or low-pressure vessels.\n- **Registration**: most US jurisdictions require the item's data report to be registered with the [National Board](/asme/national-board-registration) before installation.\n- **Inspection in service**: by state inspectors or by insurance company inspectors holding National Board commissions, on set intervals.\n- **Installation permits and operating certificates**.\n\n## Who leads ASME reviews where\n\nJurisdictions also take part in certifying shops. ASME's handbook lists the states where the jurisdiction appoints the team leader for a [joint review](/asme/u-stamp) (Alaska, Delaware, Hawaii, Louisiana, Minnesota, Nebraska, Oklahoma, Texas and Washington), and says ASME appoints for Idaho, Wyoming, Puerto Rico, the Virgin Islands and all Canadian provinces, and the National Board for the remaining states.\n\n## Canada\n\nIn Canada each province or territory regulates pressure equipment, generally by adopting CSA B51, which in turn uses the ASME Code. A design is registered with the province before construction and gets a **Canadian Registration Number (CRN)**, and fittings need one too. A vessel stamped to ASME but without a CRN can't be installed.\n\n## How to check a jurisdiction\n\n1. Find the state or provincial boiler and pressure vessel office for the installation site; the National Board keeps a listing of every jurisdiction's requirements and contacts.\n2. Confirm: is this equipment in scope, which edition, is NB registration required, what inspection before first use.\n3. Put the answers in the purchase order, so the [data report](/asme/data-reports) and nameplate come out right the first time.\n\nThis page doesn't list each state's rules: they change, and the jurisdiction's own office is the source. For buying from a shop outside the US, see [buying from India](/asme/buying-from-india)."
+  },
+  {
+    "kind": "asme",
+    "slug": "u-stamp",
+    "group": "certification",
+    "title": "How to get the ASME U stamp: steps, joint review, cost and timeline",
+    "question": "How do you get an ASME U stamp?",
+    "answer": "To get the U stamp a shop writes a quality control manual, signs an inspection agreement with an ASME-accredited Authorized Inspection Agency, applies to ASME through CA Connect with the fees, and passes a joint review: an on-site audit of the manual and a demonstration on real work or a mock-up. The certificate lasts three years.",
+    "description": "Getting the ASME U stamp step by step: QC manual, AIA agreement, CA Connect, joint review, demonstration, costs, timeline and renewal.",
+    "domain": [
+      "asme",
+      "certification"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certification",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/asme-certification-process/required-code-books",
+        "date": "2026-11-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The Joint Review will consist of an on-site evaluation of the Applicant's QCS encompassing both a review of the Applicant's written description (QC Manual) and a demonstration of implementation of the program."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "they may be demonstrated using current work, a mock-up, or a combination of the two."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The written description and documentation which support understanding of the program must be in English."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 2",
+        "doc": "asme-handbook",
+        "quote": "It is required that renewal applications, fees, and review deposit, as applicable, be received by ASME at least six months prior to the expiration date."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, Exhibit B",
+        "doc": "asme-handbook",
+        "quote": "An extension, if granted, will be for six months, with no further extension."
+      }
+    ],
+    "body": "## The steps\n\nASME's informational handbook sets out the route. In the order a shop usually does it:\n\n1. **Decide the scope.** Which designator (U for Division 1 vessels), shop only or field work too, and any limits. The scope drives everything else; see [ASME stamps](/asme/stamps).\n2. **Buy the Code books.** Current editions of every section the scope uses (ASME publishes the list per certificate). Copies aren't accepted.\n3. **Write the quality control manual.** In English, covering every element the Code requires for the scope. See [the quality control manual](/asme/quality-control-manual).\n4. **Sign an inspection agreement** with an ASME-accredited Authorized Inspection Agency. The agency's [Authorized Inspector](/asme/authorized-inspector) will work with you on every stamped job.\n5. **Apply** through ASME's CA Connect, with the deposit and fees, and return the signed ASME Accreditation/Certification Agreement.\n6. **Prepare the demonstration.** Real Code work, a mock-up, or both, run through your system from drawing to data report: design calculations, material receipt and [MTRs](/asme/mtr), [WPS and PQR](/asme/wps-pqr-wpq), welder qualifications, NDE, a [hydrostatic test](/asme/hydrostatic-test) and a completed [data report](/asme/data-reports).\n7. **The joint review.** A team leader (the ASME Designee) and a representative of your inspection agency audit the manual and watch the demonstration. They recommend issue to ASME, or list what must be fixed first.\n8. **Certificate and stamp issued.** Valid for three years.\n\n## Who leads the review\n\nThe ASME Designee is appointed by ASME, by the jurisdiction, or by the National Board, depending on where the shop is. The handbook names the US states where the jurisdiction appoints (Alaska, Delaware, Hawaii, Louisiana, Minnesota, Nebraska, Oklahoma, Texas, Washington), says ASME appoints for Idaho, Wyoming, Puerto Rico, the Virgin Islands and all Canadian provinces, and the National Board for the other states. See [US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## What it costs\n\nASME publishes its fees in its Price Guide; they change, so check the current one. The full cost to budget is more than ASME's fee:\n\n- ASME's application and certificate fees, the review deposit, and the Designee's travel when ASME appoints;\n- the inspection agency's fees for the review and then for every job it inspects;\n- the Code books;\n- staff time to write the manual and run the demonstration, and the demonstration item itself;\n- any consultant who helps write the manual.\n\n## How long it takes\n\nThere's no official timeline. The pace is usually set by the shop: writing a manual that matches how the shop really works, and getting a demonstration job through every step. Plan in months, not weeks, and book the review only when a full job can be shown end to end.\n\n## Keeping it\n\nThe certificate lasts three years. Renewal is another joint review, and ASME must receive the renewal application at least six months before expiry. A shop with work in progress at expiry can ask for one six-month extension to finish that work.\n\n## In India\n\nThe route is the same for a shop in India, and many Indian fabricators hold U and S certificates for export work. IBR 2026 lets an Indian Inspecting Authority inspect an export boiler to a foreign code; see [buying ASME equipment from India](/asme/buying-from-india) and [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "welder-continuity",
+    "group": "welding",
+    "title": "Welder continuity (QW-322): the six-month rule, with a free checker",
+    "question": "How long is an ASME welder qualification valid?",
+    "answer": "An ASME Section IX welder qualification has no fixed expiry date. Under QW-322 it lapses when the welder hasn't welded with that process for six months or more, and it can be revoked sooner if there's a reason to doubt their work. Each welding job resets the clock for that process, so a shop needs a record of every welder's last weld per process.",
+    "description": "ASME welder continuity under QW-322: the six-month rule, renewing a lapsed qualification, the record to keep, and a free checker.",
+    "domain": [
+      "asme",
+      "welding",
+      "records"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "tool": "continuity",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The rule\n\nSection IX's QW-322 sets two ways a welder's (or welding operator's) qualification ends:\n\n1. **Six months without the process.** If the welder hasn't welded with a process for six months or more, their qualifications for that process lapse.\n2. **Specific reason to question.** If there's a reason to doubt their ability to make welds that meet the specification, the qualifications supporting that work are revoked; the rest stay.\n\nThe clock is **per process**, not per WPS or per position. A welder qualified for SMAW and GTAW who only welds SMAW for seven months keeps SMAW and loses GTAW.\n\n## What keeps it alive\n\nWelding with the process, recorded. The record has to show the welder, the process and the date. Most shops log continuity from production weld maps or from a monthly sign-off sheet.\n\nThe checker above takes that log (welder, process, last weld date, one line each) and lists who lapses when, soonest first, with anyone within 30 days flagged.\n\n## Renewing a lapsed qualification\n\nA lapsed qualification is renewed with a single test coupon in the process (QW-322.2), of any thickness, position and diameter, tested by bend tests or volumetric examination. Passing renews the welder's earlier qualifications for that process, with their original ranges. A revoked qualification is a different case: the welder retests for the work that was in question.\n\n## The record an Inspector expects\n\n| Field | Why |\n|---|---|\n| Welder ID (their stamp) | Links to their WPQ and to welds on the weld map |\n| Process | Continuity is per process |\n| Date welded | Sets the next lapse date |\n| Job or weld number | Evidence that it was real welding |\n| Signed off by | Who confirmed it |\n\nKeep it next to the WPQs; the [Authorized Inspector](/asme/authorized-inspector) checks continuity on every welder whose stamp appears on a job. A lapse found after welding means those welds were made by an unqualified welder. In a system that records who welded what and when, the lapse date is simply computed, which is what the checker does.\n\n## Related\n\nWhat the welder's test covers is in [welder qualification](/asme/welder-qualification); how the WPQ relates to the WPS and PQR is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
+  },
+  {
+    "kind": "asme",
+    "slug": "welder-qualification",
+    "group": "welding",
+    "title": "Welder qualification: test positions 1G to 6G and what each covers",
+    "question": "What does a 6G welding test qualify for?",
+    "answer": "An ASME Section IX welder test qualifies a person for a process, a range of positions, thicknesses and pipe diameters, and a filler F-number. Positions go from 1G (flat) to 6G (pipe fixed at 45°). A 6G pipe test qualifies groove welds in all positions; plate tests qualify less on pipe. The test is checked by bend tests or by radiography.",
+    "description": "ASME welder qualification (WPQ): 1G, 2G, 3G, 4G, 5G and 6G positions, what each qualifies, diameter and thickness limits, and bend vs radiography testing.",
+    "domain": [
+      "asme",
+      "welding"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The test positions\n\n| Position | Plate | Pipe |\n|---|---|---|\n| 1G | Flat | Pipe horizontal, rolled while welding |\n| 2G | Horizontal (vertical plate, horizontal weld) | Pipe vertical, weld runs horizontally around it |\n| 3G | Vertical | (plate only) |\n| 4G | Overhead | (plate only) |\n| 5G | – | Pipe horizontal and fixed: the welder goes flat, vertical and overhead round it |\n| 6G | – | Pipe fixed at 45°: every position in one weld |\n\nF (1F to 5F) positions are the fillet weld equivalents.\n\n## What a test qualifies\n\nSection IX's position table (QW-461.9) sets what each test covers. The headline cases:\n\n- **6G pipe**: groove welds in all positions, plate and pipe, and fillets in all positions.\n- **2G plus 5G pipe** (two tests): the same as 6G.\n- **3G and 4G plate**: plate in all positions, but pipe only above a large diameter, which is why pipe shops test on pipe.\n- **1G**: flat only.\n\nDiameter limits also apply (QW-452.3): a small-bore test coupon qualifies down to roughly its own size, and a coupon of 2⅞ in outside diameter or more qualifies that diameter and up. Thickness limits come from the deposited weld metal on the coupon.\n\n## How the test is judged\n\n- **Bend tests** (QW-302): coupons cut from the test weld and bent; cracks or openings beyond the limit fail.\n- **Radiography or ultrasonic examination** (QW-302, QW-304): allowed instead of bends for most processes and materials, and much faster, but not for short-circuiting GMAW, which can hide lack of fusion.\n\n## Welders and welding operators\n\nA **welder** holds and guides the torch or electrode. A **welding operator** runs machine or automatic welding equipment, and has a separate, simpler qualification. The WPQ form records which.\n\n## Keeping it\n\nA welder's qualification doesn't expire on a calendar date: it lapses after six months without welding in the process. See [welder continuity](/asme/welder-continuity), and for the variables that force a retest, [essential variables](/asme/essential-variables).\n\nIn India, a boiler welder needs an IBR welder certificate as well; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+  },
+  {
+    "kind": "asme",
+    "slug": "wps-pqr-wpq",
+    "group": "welding",
+    "title": "WPS vs PQR vs WPQ: what each proves and how they link",
+    "question": "What is the difference between a WPS and a PQR?",
+    "answer": "A PQR records a test weld: the actual materials, settings and test results that prove a procedure makes sound welds. A WPS is the instruction a welder follows, written with ranges the PQR supports. A WPQ records that one welder passed their own test. In ASME Section IX the PQR comes first, the WPS cites it, and each welder needs a WPQ.",
+    "description": "WPS, PQR and WPQ in ASME Section IX: what each document is, what goes in it, the tests behind it, and how a weld traces back through all three.",
+    "domain": [
+      "asme",
+      "welding"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "checked": "2026-11-01",
+    "sources": [
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      }
+    ],
+    "body": "## The three documents\n\n| | PQR | WPS | WPQ |\n|---|---|---|---|\n| Full name | Procedure Qualification Record | Welding Procedure Specification | Welder (or Welding Operator) Performance Qualification |\n| Proves | The procedure makes welds with the required strength and ductility | Nothing by itself; it's the instruction | This person can make a sound weld |\n| Records | What was actually used on one test coupon, and the test results | Ranges for every variable, within what the PQR(s) support | The welder's test, results and what they're qualified for |\n| Written | Once per test | From one or more PQRs | Once per welder per test |\n| Signed by | The manufacturer, certifying the record is correct | The manufacturer | The manufacturer |\n\n## The order a shop builds them\n\n1. **Draft a WPS** for the job you want to weld (often called a pWPS until it's qualified).\n2. **Weld a test coupon** to it and record every variable actually used.\n3. **Test the coupon.** For a groove weld procedure, Section IX requires tension tests (for strength) and guided bend tests (for ductility): typically two tension and four bends, side bends for thicker coupons. Toughness tests are added when the construction code requires impact testing.\n4. **Write the PQR** from the coupon record and the test results.\n5. **Issue the WPS**, citing the PQR, with each variable's range set by what the PQR qualifies: thickness, materials, filler, position, preheat, heat treatment.\n6. **Qualify each welder** on the WPS (or a test of their own), and record it on a WPQ.\n\nSection IX doesn't allow a shop to use another company's PQR. The exception is AWS's Standard Welding Procedure Specifications, which Section IX accepts under conditions (in its QW-500 rules), with the shop demonstrating them first.\n\n## Which changes need a new PQR\n\nEvery variable in Section IX is classified. Change an **essential** variable beyond what the PQR covers and you need a new PQR; change a **nonessential** one and you only revise the WPS. See [essential variables](/asme/essential-variables).\n\n## Following one weld back\n\nOn a [data report](/asme/data-reports) package, any weld should trace like this: weld number on the weld map → welder's stamp → that welder's WPQ and [continuity](/asme/welder-continuity) → the WPS used → the PQR behind it → the filler metal's certificate and the base metal's [MTR](/asme/mtr). An Authorized Inspector will pick a weld and walk it. When those links live in different binders, this is where audits stall.\n\n## Further reading\n\nWhat a welder's test covers is in [welder qualification](/asme/welder-qualification); how materials are grouped so one test covers many is in [P-numbers](/asme/p-numbers); the whole of Section IX in outline is in [the Section IX guide](/asme/section-ix)."
   }
 ]

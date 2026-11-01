@@ -49,15 +49,19 @@ export const ADAPTIVE: Partial<Record<MarketCode, string[]>> = {
 export const adaptedPath = (market: MarketCode, path: string) =>
   ADAPTIVE[market]?.includes(path) ? `/${market.toLowerCase()}${path === "/" ? "" : path}` : null;
 
-// Bucket B: India-only pages (statutory, Tally and India-specific industries). Hidden from the menu, footer and
+// Bucket B: market-only pages. India-only pages (statutory, Tally and India-specific industries). Hidden from the menu, footer and
 // cards elsewhere; the sitemap keeps them, because Google crawls from the US and must still index them.
 const IN_ONLY = [
   "/ibr", "/boq", "/erp", "/engagement",
   "/industries/boiler-pressure-vessel-manufacturing", "/industries/interior-design-and-furniture",
   "/services/compliance-accounting", "/services/tally-integration", "/services/receivables-from-tally", "/services/daily-wage-payroll",
+  "/asme/asme-vs-ibr",
 ];
+// North America only: US and Canadian law.
+const NA_ONLY = ["/asme/state-boiler-laws"];
+const under = (list: string[], href: string) => list.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`));
 export const marketsFor = (href: string): MarketCode[] | undefined =>
-  IN_ONLY.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`)) ? ["IN"] : undefined;
+  under(IN_ONLY, href) ? ["IN"] : under(NA_ONLY, href) ? ["NA"] : undefined;
 export const shownIn = (market: MarketCode, href: string) => marketsFor(href)?.includes(market) ?? true;
 
 /** Spread on an element that only some markets should see; CSS in globals.css hides it elsewhere. */

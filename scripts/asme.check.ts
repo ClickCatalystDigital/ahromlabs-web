@@ -1,0 +1,57 @@
+// Checks the ASME hub (src/lib/asme.ts, content/asme/): every guide is in a hub group, every internal link in a
+// guide points at a page that exists, each guide links to at least two other ASME guides, and the calculators
+// give the textbook answers. Runs inside `npm run content:build`.
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { ASME_GROUPS, asmeGuides, continuityLapse, shellMawp, shellThickness, testPressure } from "../src/lib/asme";
+import { getContent } from "../src/lib/content";
+import { services } from "../src/lib/services";
+
+const fail: string[] = [];
+const guides = asmeGuides();
+const slugs = new Set(guides.map((g) => g.slug));
+
+for (const group of ASME_GROUPS) for (const s of group.order) if (!slugs.has(s)) fail.push(`asme.ts lists "${s}" in ${group.slug}, but content/asme/${s}.md doesn't exist`);
+for (const g of guides) if (!ASME_GROUPS.find((x) => x.slug === g.group)?.order.includes(g.slug)) fail.push(`${g.slug}: not in its group's order in asme.ts`);
+
+// Pages a guide may link to: other guides, the hub's own routes, and the rest of the site's content and routes.
+const appRoute = (p: string) => fs.existsSync(path.join("src/app", p, "page.tsx"));
+const exists = (href: string) => {
+  const [p] = href.split(/[#?]/);
+  const [, seg, slug, sub] = p.split("/");
+  if (seg === "asme") return !slug || slug === "questions" || slugs.has(slug);
+  if (seg === "services" && slug) return services.some((s) => s.slug === slug) || appRoute(p);
+  const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", systems: "term" };
+  if (kinds[seg] && slug && !sub) return getContent(kinds[seg]).some((e) => e.slug === slug) || appRoute(p);
+  return appRoute(p) || (seg === "ibr" && slug === "forms");
+};
+for (const g of guides) {
+  const urls = (g.sources ?? []).map((x) => x.url);
+  if (new Set(urls).size !== urls.length) fail.push(`${g.slug}: the same source URL is listed twice; merge them`);
+  const links = [...g.body.matchAll(/\]\((\/[^)\s]*)\)/g)].map((m) => m[1]);
+  for (const l of links) if (!exists(l)) fail.push(`${g.slug}: link to ${l}, which doesn't exist`);
+  const others = new Set(links.filter((l) => l.startsWith("/asme/")).map((l) => l.split(/[#?]/)[0]).filter((l) => l !== `/asme/${g.slug}`));
+  if (others.size < 2) fail.push(`${g.slug}: links to ${others.size} other ASME guide(s); link at least 2`);
+}
+
+// Calculators against hand-worked answers.
+const close = (a: number, b: number) => Math.abs(a - b) < 1e-3;
+assert.ok(close(testPressure("viii-1-hydro", 150, 20000, 20000).pressure, 195));
+assert.ok(close(testPressure("viii-1-hydro", 100, 20000, 16000).pressure, 162.5));
+assert.ok(close(testPressure("viii-1-pneumatic", 100, 20000, 20000).pressure, 110));
+assert.ok(close(testPressure("i-hydro", 200).pressure, 300));
+// 150 psi, R 24 in + 0.125 CA, S 20,000, E 0.85: t = 150 × 24.125 / (17,000 − 90) = 0.21400.
+const shell = shellThickness({ P: 150, R: 24, S: 20000, E: 0.85, CA: 0.125, shape: "cylinder" });
+assert.ok(close(shell.circumferential, 0.214), `circumferential ${shell.circumferential}`);
+assert.equal(shell.governs, "circumferential");
+assert.ok(close(shell.required, 0.339));
+assert.ok(close(shellMawp({ t: 0.339, R: 24, S: 20000, E: 0.85, CA: 0.125 }), 150.0) || Math.abs(shellMawp({ t: 0.339, R: 24, S: 20000, E: 0.85, CA: 0.125 }) - 150) < 0.2);
+assert.equal(continuityLapse("2026-05-02"), "2026-11-02");
+assert.equal(continuityLapse("2026-08-31"), "2027-02-28");
+
+if (fail.length) {
+  console.error(`asme: ${fail.length} problem(s):\n${fail.join("\n")}`);
+  process.exit(1);
+}
+console.log(`asme: ${guides.length} guides ok, calculators ok`);

@@ -1,6 +1,6 @@
 import contentData from "./content-data.generated.json";
 
-export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant";
+export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant" | "asme";
 
 export type ContentEntry = {
   kind: ContentKind;
@@ -35,6 +35,10 @@ export type ContentEntry = {
   // Notes and industries: IBR guides they lead to (build-checked).
   guides?: string[];
   order?: number;
+  // ASME guides (content/asme/): hub group, the question as people search it, an embedded tool.
+  group?: "code" | "certification" | "welding" | "design" | "materials" | "bridge";
+  question?: string;
+  tool?: "hydrotest" | "shell" | "continuity";
   published: string;
   updated: string;
   body: string;

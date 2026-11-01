@@ -607,3 +607,57 @@ export const aiAssistantDataset = {
   ],
 };
 export const aiAssistantPageGraph = (page: HubPage) => datasetPageGraph(aiAssistantDataset, "AI answer number check", page);
+
+// The ASME hub (/asme): one TechArticle per page about the ASME Boiler and Pressure Vessel Code (the work
+// itself, published by ASME), with its breadcrumb; a tool page adds a WebApplication. Written in plain English
+// for India and North America, so no regional inLanguage.
+const asmeCode = {
+  "@type": "CreativeWork",
+  "@id": `${siteUrl}/asme#bpvc`,
+  name: "ASME Boiler and Pressure Vessel Code",
+  alternateName: "ASME BPVC",
+  publisher: { "@type": "Organization", name: "The American Society of Mechanical Engineers", url: "https://www.asme.org" },
+  url: "https://www.asme.org/codes-standards/bpvc-standards",
+};
+export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string }) {
+  const url = `${siteUrl}${page.path}`;
+  const crumbs = [{ name: "Home", path: "" }, ...page.trail];
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      asmeCode,
+      {
+        "@type": "TechArticle",
+        "@id": `${url}#article`,
+        url,
+        headline: page.title,
+        description: page.description,
+        datePublished: page.published,
+        dateModified: page.updated,
+        about: { "@id": asmeCode["@id"] },
+        author: { "@id": `${siteUrl}/#founder` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntityOfPage: url,
+        inLanguage: "en",
+      },
+      ...(page.app
+        ? [{
+            "@type": "WebApplication",
+            "@id": `${url}#app`,
+            name: page.app,
+            url,
+            applicationCategory: "EngineeringApplication",
+            operatingSystem: "Any (runs in the browser)",
+            isAccessibleForFree: true,
+            description: page.description,
+            provider: { "@id": `${siteUrl}/#organization` },
+          }]
+        : []),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${siteUrl}${c.path}` })),
+      },
+    ],
+  };
+}
