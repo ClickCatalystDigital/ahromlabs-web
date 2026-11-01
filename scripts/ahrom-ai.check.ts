@@ -1,7 +1,7 @@
 // Self-check for Ahrom AI's shortlist and routing (src/lib/ahrom-ai.ts), no network:
 //   npx jiti scripts/ahrom-ai.check.ts
 import assert from "node:assert/strict";
-import { buildEntries, shortlist, route, words } from "../src/lib/ahrom-ai";
+import { buildEntries, entriesFor, shortlist, route, words } from "../src/lib/ahrom-ai";
 
 const entries = buildEntries();
 const ids = (q: string) => shortlist(entries, q).map((e) => e.id);
@@ -39,5 +39,12 @@ assert.equal(route(list, j("small_talk", 0.95, "none", 0.9, 0)).path, "small_tal
 assert.equal(route(list, j("small_talk", 0.7, own, 0.8, 0.8)).path, "entry"); // "hey, who owns the code?"
 assert.equal(route(list, j("contact_me", 0.9, "none", 0.9, 0)).path, "contact");
 assert.equal(route(list, j("out_of_scope", 0.95, own, 0.4, 0)).path, "miss");
+
+// Markets: North America gets US prices and no India-only pages; ASME answers are in.
+const na = entriesFor("NA", entries);
+assert.ok(na.some((e) => e.id === "na/pricing") && !na.some((e) => e.id === "faq/cost"));
+assert.ok(!na.some((e) => e.url.includes(".com/ibr") || e.url.includes("/asme/asme-vs-ibr")));
+assert.ok(shortlist(na, "how much does it cost").some((e) => e.id === "na/pricing"));
+assert.ok(shortlist(entries, "asme hydrostatic test pressure").some((e) => e.url.endsWith("/asme/hydrostatic-test")));
 
 console.log(`ahrom-ai: ok (${entries.length} entries)`);

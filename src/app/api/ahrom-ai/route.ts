@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { AI_SEARCH_URL } from "@/lib/ai-search";
-import { buildEntries, shortlist, jevQuestions, route, sourcesOf, JEV_MODEL, type Entry, type Route } from "@/lib/ahrom-ai";
+import { buildEntries, entriesFor, shortlist, jevQuestions, route, sourcesOf, JEV_MODEL, type Entry, type Route } from "@/lib/ahrom-ai";
+import { CHOICE_COOKIE, marketFromParam, marketOf } from "@/lib/markets";
 
 // Ahrom AI's answers (docs/ahrom-ai-router-plan.md). One Jev call decides; our own published
 // answer is shown as it is when Jev is sure, Gemma writes only when the question needs it, and a
@@ -14,7 +15,8 @@ type Env = { OPENROUTER_KEY?: string; CHAT_LIMITER?: RateLimit };
 
 const OPENROUTER = "https://openrouter.ai/api";
 const WRITER_MODEL = "google/gemma-4-26b-a4b-it"; // the model SB Ops and Savistar's assistants use
-const ENTRIES = buildEntries();
+const ALL = buildEntries();
+const ENTRIES = { IN: ALL, NA: entriesFor("NA", ALL) };
 const CONTACT = "https://ahromlabs.com/#contact";
 const MAX_QUESTION = 500;
 
@@ -147,7 +149,10 @@ export async function POST(req: Request) {
 
   const previous = users.at(-2)?.content ?? null;
   // The previous question too, so "and how long does that take?" keeps its subject.
-  const list = shortlist(ENTRIES, previous ? `${question} ${previous}` : question);
+  // The visitor's market, as the pages decide it (src/proxy.ts): their choice, else Cloudflare's country.
+  const chosen = marketFromParam(req.headers.get("cookie")?.match(new RegExp(`(?:^|;\\s*)${CHOICE_COOKIE}=([^;]+)`))?.[1]);
+  const market = (chosen ?? marketOf(req.headers.get("cf-ipcountry"))) === "NA" ? "NA" : "IN";
+  const list = shortlist(ENTRIES[market], previous ? `${question} ${previous}` : question);
   const started = Date.now();
   let decision: Route;
   try {

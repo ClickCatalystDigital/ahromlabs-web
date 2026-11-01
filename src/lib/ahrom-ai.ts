@@ -8,6 +8,8 @@ import { engagementAnswers } from "./engagement";
 import { services, families, serviceUrl, familyUrl } from "./services";
 import { engagements } from "./work";
 import { chatPresets } from "./ai-chat-presets";
+import { DICT, money, say, shownIn, type MarketCode } from "./markets";
+import { MATERIALS } from "./asme-items";
 
 const site = "https://ahromlabs.com";
 
@@ -94,8 +96,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant", "asme"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,
@@ -103,6 +105,13 @@ export function buildEntries(): Entry[] {
       });
     }
   }
+  // The ASME hub's tools and lists.
+  out.push(
+    { id: "asme-tool/items", title: "Boiler and pressure vessel materials list: ASME specifications and P-numbers", answer: `A free list of ${MATERIALS.length} common ASME materials for boilers and pressure vessels (plate, pipe, tubes, forgings, fittings, castings and bolting, such as SA-516 Grade 70, SA-106 Grade B and SA-213 T22), with typical use, dimension standard, Section IX P-number and whether IBR 2026's material table names it, plus a pipe schedule chart. Free to download as CSV.`, url: `${site}/asme/items`, sourceTitle: "Boiler and pressure vessel materials list" },
+    { id: "asme-tool/hydrotest", title: "Is there a calculator for ASME hydrostatic test pressure?", answer: "Yes, a free hydrostatic test pressure calculator: Section VIII Division 1 hydrostatic (1.3 × MAWP × stress ratio, UG-99), pneumatic (1.1 ×, UG-100) and Section I (1.5 × MAWP, PG-99), in any pressure unit. It runs in your browser.", url: `${site}/asme/hydrostatic-test`, sourceTitle: "ASME hydrostatic test pressure calculator" },
+    { id: "asme-tool/shell", title: "Is there a calculator for pressure vessel shell thickness (UG-27)?", answer: "Yes, a free shell thickness and MAWP calculator for cylinders and spheres under ASME Section VIII Division 1 UG-27, with corrosion allowance and joint efficiency; you enter the allowable stress for your material. It runs in your browser.", url: `${site}/asme/shell-thickness`, sourceTitle: "Shell thickness and MAWP calculator" },
+    { id: "asme-tool/continuity", title: "Is there a welder continuity log or checker for ASME QW-322?", answer: "Yes: a free welder continuity checker (paste welders and last weld dates to see who lapses when under QW-322's six-month rule) and a free Excel log that works out each lapse date and flags lapsed welders.", url: `${site}/asme/welder-continuity`, sourceTitle: "Welder continuity checker" },
+  );
   // The interior BOQ tools: few enough to shortlist on their words, like the guides above.
   out.push(
     {
@@ -171,6 +180,26 @@ export function buildEntries(): Entry[] {
     },
   );
   return out;
+}
+
+/** The entries a visitor in this market should get: North America loses India-only pages and India's
+ *  market price ranges, gets the US prices, and reads everything in US words. Other markets get India's. */
+export function entriesFor(market: MarketCode, all: Entry[] = buildEntries()): Entry[] {
+  if (market !== "NA") return all;
+  const p = DICT.NA.pricing!;
+  const indiaCost = (e: Entry) => e.id === "faq/cost" || (e.id.startsWith("preset/") && /cost/i.test(e.title));
+  const kept = all.filter((e) => !indiaCost(e) && (e.id.startsWith("faq/") || shownIn("NA", e.url.replace(site, "") || "/")));
+  return [
+    {
+      id: "na/pricing",
+      title: "What does it cost? Prices in USD",
+      answer: `Fixed prices, agreed before work starts: a working prototype of your main workflow for ${money("NA", p.prototype)} flat in ${p.prototypeWeeks} weeks; a full build from ${money("NA", p.buildFrom)} to ${money("NA", p.buildTo)} in ${p.buildWeeks} weeks; care and changes at ${money("NA", p.care)} a month. The first ${p.foundingCount} US clients get ${p.foundingOff}% off. ${p.pay}`,
+      url: `${site}/#pricing`,
+      sourceTitle: "Prices",
+      core: true,
+    },
+    ...kept.map((e) => ({ ...e, title: say("NA", e.title), answer: say("NA", e.answer), ...(e.more && { more: say("NA", e.more) }) })),
+  ];
 }
 
 // ---------- shortlist ----------

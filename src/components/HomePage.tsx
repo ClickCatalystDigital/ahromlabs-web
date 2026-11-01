@@ -177,12 +177,23 @@ export function HomePage({ market }: { market: MarketCode }) {
                     </ul>
                   </div>
                 ))}
+                {/* Sixth card: fills the 3-column row and holds the ways on from here. */}
+                <div className="border-t border-line pt-6">
+                  <Link href="/services" className="focus-ring block">
+                    <Image src="/what-we-build/services.webp" alt="" width={1086} height={362} sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw" className="mb-5 h-auto w-full" />
+                    <h3 className="text-lg font-medium text-foreground">
+                      Not sure where to start?{" "}
+                      <span className="mt-1 block text-sm font-normal text-foreground-secondary">Every service, prices and demos</span>
+                    </h3>
+                  </Link>
+                  <ul className="mt-4 space-y-2 text-sm leading-snug">
+                    <li><Link href="/services" className="text-link focus-ring">How each one works, with the numbers</Link></li>
+                    <li><a href="#demos" className="text-link focus-ring">Try a live demo</a></li>
+                    <li><Link href={market === "IN" ? "/engagement" : "/#pricing"} className="text-link focus-ring">Prices</Link></li>
+                    <li><a href="#contact" className="text-link focus-ring">Talk to us</a></li>
+                  </ul>
+                </div>
               </div>
-              <p className="mt-10">
-                <Link href="/services" className="text-link focus-ring">
-                  How each one works, with the numbers
-                </Link>
-              </p>
             </div>
           </section>
         </Reveal>
