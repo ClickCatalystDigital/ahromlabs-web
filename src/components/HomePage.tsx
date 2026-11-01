@@ -11,7 +11,7 @@ import heroImage from "../../public/hero.webp";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
-import { DICT, say, shownIn, type MarketCode } from "@/lib/markets";
+import { DICT, say, shownIn, type MarketCode, demoHref } from "@/lib/markets";
 
 // The home page for every market: src/app/page.tsx (India) and src/app/na/page.tsx (North America), served at
 // the same URL by src/proxy.ts. India's text is the original; other markets swap words (DICT) and sections.
@@ -227,7 +227,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                         />
                       )}
                       <p className="mt-3 max-w-[48ch] leading-relaxed text-foreground-secondary">{e.demo!.blurb}</p>
-                      <a href={e.demo!.url} className="text-link focus-ring mt-4 inline-block">
+                      <a href={demoHref(market, e.demo!.url)} className="text-link focus-ring mt-4 inline-block">
                         {e.demo!.label}
                       </a>
                     </div>

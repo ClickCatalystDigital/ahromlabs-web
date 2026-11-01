@@ -2,7 +2,7 @@ import Link from "next/link";
 import { type Service, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { requirements } from "@/lib/erp";
-import { say, type MarketCode } from "@/lib/markets";
+import { demoHref, say, type MarketCode } from "@/lib/markets";
 
 // The body of one service: answer, who it's for, how it works, the numbers,
 // buyer questions, proof and clients.
@@ -32,7 +32,7 @@ export function ServiceDetail({ service, market = "IN" }: { service: Service; ma
           <ul className="mt-3 space-y-3">
             {demos.map((d) => (
               <li key={d.client}>
-                <a href={d.url} className="text-link focus-ring">{d.name}</a>{" "}
+                <a href={demoHref(market, d.url)} className="text-link focus-ring">{d.name}</a>{" "}
                 <span className="mt-0.5 block text-sm text-foreground-secondary">{d.as}</span>
               </li>
             ))}

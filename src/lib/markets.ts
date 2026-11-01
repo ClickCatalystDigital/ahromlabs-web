@@ -124,3 +124,6 @@ export const say = (market: MarketCode, text: string) => DICT[market].words.redu
 /** Whole-unit money in the market's currency: $7,500, ₹3,00,000. */
 export const money = (market: MarketCode, n: number) =>
   new Intl.NumberFormat(DICT[market].locale, { style: "currency", currency: MARKETS[market].currency, maximumFractionDigits: 0 }).format(n);
+
+/** A demo link for this market: North America's carry ?market=us, so the demo shows US number and date style. */
+export const demoHref = (market: MarketCode, url: string) => (market === "NA" ? `${url}?market=us` : url);
