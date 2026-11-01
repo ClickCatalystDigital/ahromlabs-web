@@ -197,7 +197,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                 {market === "IN" ? "Three" : count} of the systems we&apos;ve built, running with sample {demos.length === 1 ? "company" : "companies"}. A short form, then
                 pick a sample login. Free, and every demo resets each night.
               </p>
-              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-3">
+              <div className="mt-12 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
                 {demos
                   .map((e) => (
                     <div key={e.slug} className="border-t border-line pt-6">
