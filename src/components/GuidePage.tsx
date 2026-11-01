@@ -91,6 +91,7 @@ export function GuidePage(props: {
   headings?: string[];
   image?: GuideImage;
   art?: string; // a /what-we-build-style illustration beside the title (page colour baked in)
+  artAlt?: string; // describe the art for image search (ASME hub); omitted, it stays decorative
   sources?: GuideSource[];
   children: ReactNode;
 }) {
@@ -130,7 +131,7 @@ export function GuidePage(props: {
             // sits mid-canvas, so a 16:9 crop frames it without cutting it.
             <Image
               src={props.art}
-              alt=""
+              alt={props.artAlt ?? ""}
               width={1086}
               height={362}
               sizes="(min-width: 1024px) 40vw, 100vw"

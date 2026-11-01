@@ -5,6 +5,7 @@ import { ContinuityChecker, HydrotestCalculator, ShellCalculator } from "@/compo
 import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
 import { markdownHeadings } from "@/lib/headings";
 import { asmeGuide, asmeGuides } from "@/lib/asme";
+import { asmeArt } from "@/lib/asme-images";
 import { asmePageGraph } from "@/lib/schema";
 import { seoTitle, metaDescription } from "@/lib/seo";
 
@@ -38,10 +39,11 @@ export default async function AsmeGuidePage(props: PageProps<"/asme/[slug]">) {
   const path = `/asme/${g.slug}`;
   const trail = [{ name: "ASME", path: "/asme" }, { name: g.title, path }];
   const tool = g.tool ? TOOLS[g.tool] : null;
+  const art = asmeArt(g.slug);
   return (
     <AsmePage
       group={g.group}
-      graph={asmePageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, app: tool?.name })}
+      graph={asmePageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, app: tool?.name, image: art })}
       trail={trail}
       title={g.title}
       lead={g.answer}
@@ -49,6 +51,8 @@ export default async function AsmeGuidePage(props: PageProps<"/asme/[slug]">) {
       updated={g.updated}
       sources={g.sources}
       headings={markdownHeadings(g.body)}
+      art={art?.src}
+      artAlt={art?.alt}
     >
       {tool && <tool.Tool />}
       <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>

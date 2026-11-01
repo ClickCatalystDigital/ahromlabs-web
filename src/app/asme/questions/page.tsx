@@ -4,6 +4,7 @@ import { AsmePage, asmeOnly } from "@/components/AsmePage";
 import { GuideH2 } from "@/components/GuidePage";
 import { ASME_CHECKED, ASME_GROUPS, ASME_PUBLISHED, asmeGuides } from "@/lib/asme";
 import { asmePageGraph } from "@/lib/schema";
+import { asmeArt } from "@/lib/asme-images";
 
 // One question per guide, in the words people search, with the guide's answer-first lead. The page AI answers
 // lift from; each answer links to the full guide.
@@ -21,16 +22,19 @@ export default function AsmeQuestions() {
   const guides = asmeGuides();
   const lead = `${guides.length} questions about the ASME Boiler and Pressure Vessel Code, each answered in a few lines and linked to the guide that explains it in full.`;
   const trail = [{ name: "ASME", path: "/asme" }, { name: title, path: "/asme/questions" }];
+  const art = asmeArt("questions");
   const updated = [ASME_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
   return (
     <AsmePage
-      graph={asmePageGraph({ path: "/asme/questions", title, description: lead, published: ASME_PUBLISHED, updated, trail })}
+      graph={asmePageGraph({ path: "/asme/questions", title, description: lead, published: ASME_PUBLISHED, updated, trail, image: art })}
       trail={trail}
       title={title}
       lead={lead}
       checked={ASME_CHECKED}
       updated={updated}
       headings={ASME_GROUPS.map((g) => g.name)}
+      art={art?.src}
+      artAlt={art?.alt}
     >
       {ASME_GROUPS.map((group) => (
         <div key={group.slug}>

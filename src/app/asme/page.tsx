@@ -4,6 +4,7 @@ import { AsmePage, asmeOnly } from "@/components/AsmePage";
 import { GuideH2 } from "@/components/GuidePage";
 import { ASME_CHECKED, ASME_EDITION, ASME_GROUPS, ASME_PUBLISHED, asmeGuides } from "@/lib/asme";
 import { asmePageGraph } from "@/lib/schema";
+import { asmeArt } from "@/lib/asme-images";
 
 const title = "ASME Boiler and Pressure Vessel Code, in plain English";
 const lead = `The ASME Boiler and Pressure Vessel Code (BPVC) sets how boilers and pressure vessels are designed, built, welded, inspected and stamped. These guides explain the sections, the certification stamps, Section IX welding qualifications and the core Section VIII design rules, with free calculators, written to the ${ASME_EDITION.name} for shops in the US, Canada and India.`;
@@ -26,14 +27,17 @@ export default function AsmeHub() {
   const guides = asmeGuides();
   const updated = [ASME_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
   const trail = [{ name: "ASME", path: "/asme" }];
+  const art = asmeArt("asme-hub");
   return (
     <AsmePage
-      graph={asmePageGraph({ path: "/asme", title, description: lead, published: ASME_PUBLISHED, updated, trail })}
+      graph={asmePageGraph({ path: "/asme", title, description: lead, published: ASME_PUBLISHED, updated, trail, image: art })}
       trail={trail}
       title={title}
       lead={lead}
       checked={ASME_CHECKED}
       updated={updated}
+      art={art?.src}
+      artAlt={art?.alt}
     >
       <GuideH2>Free tools</GuideH2>
       <ul className="mt-6 divide-y divide-line border-y border-line">

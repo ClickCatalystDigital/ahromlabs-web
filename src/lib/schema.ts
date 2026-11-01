@@ -619,7 +619,7 @@ const asmeCode = {
   publisher: { "@type": "Organization", name: "The American Society of Mechanical Engineers", url: "https://www.asme.org" },
   url: "https://www.asme.org/codes-standards/bpvc-standards",
 };
-export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string }) {
+export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -640,6 +640,9 @@ export function asmePageGraph(page: { path: string; title: string; description: 
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
         inLanguage: "en",
+        ...(page.image && {
+          image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
+        }),
       },
       ...(page.app
         ? [{

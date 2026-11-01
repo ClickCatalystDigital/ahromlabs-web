@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { ASME_GROUPS, asmeGuides, continuityLapse, shellMawp, shellThickness, testPressure } from "../src/lib/asme";
 import { getContent } from "../src/lib/content";
+import { asmeArt } from "../src/lib/asme-images";
 import { services } from "../src/lib/services";
 
 const fail: string[] = [];
@@ -33,6 +34,12 @@ for (const g of guides) {
   for (const l of links) if (!exists(l)) fail.push(`${g.slug}: link to ${l}, which doesn't exist`);
   const others = new Set(links.filter((l) => l.startsWith("/asme/")).map((l) => l.split(/[#?]/)[0]).filter((l) => l !== `/asme/${g.slug}`));
   if (others.size < 2) fail.push(`${g.slug}: links to ${others.size} other ASME guide(s); link at least 2`);
+}
+
+// Page art: a delivered image must have alt text (src/lib/asme-images.ts).
+for (const name of ["asme-hub", "questions", ...guides.map((g) => g.slug)]) {
+  const a = asmeArt(name);
+  if (a && !a.alt) fail.push(`public/asme/${name}.webp has no alt text in asme-images.ts`);
 }
 
 // Calculators against hand-worked answers.

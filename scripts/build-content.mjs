@@ -242,7 +242,7 @@ const RENDERERS = {
   boq: ["src/app/boq/[slug]", "src/components/BoqPage.tsx", "src/components/GuidePage.tsx"],
   erp: ["src/app/erp/[slug]", "src/components/ErpPage.tsx", "src/components/GuidePage.tsx", "src/lib/erp.ts"],
   "ai-assistant": ["src/app/ai-assistant/[slug]", "src/components/AiAssistantPage.tsx", "src/components/GuidePage.tsx", "src/lib/ai-assistant.ts"],
-  asme: ["src/app/asme/[slug]", "src/components/AsmePage.tsx", "src/components/AsmeTools.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts"],
+  asme: ["src/app/asme/[slug]", "src/components/AsmePage.tsx", "src/components/AsmeTools.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts", "src/lib/asme-images.ts", "public/asme"],
 };
 const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme" };
 for (const [dir, renderers] of Object.entries(RENDERERS)) {
@@ -273,7 +273,7 @@ PAGE_SOURCES["ai-assistant"] = ["content/ai-assistant", "src/app/ai-assistant/pa
 PAGE_SOURCES["ai-assistant/questions"] = ["src/app/ai-assistant/questions", ...AI_FRAME];
 PAGE_SOURCES["ai-assistant/vendor-test"] = ["src/app/ai-assistant/vendor-test", ...AI_FRAME];
 PAGE_SOURCES["ai-assistant/number-check"] = ["src/app/ai-assistant/number-check", "src/components/NumberCheck.tsx", "src/lib/number-check.ts", ...AI_FRAME];
-const ASME_FRAME = ["src/components/AsmePage.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts"];
+const ASME_FRAME = ["src/components/AsmePage.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts", "src/lib/asme-images.ts", "public/asme"];
 PAGE_SOURCES.asme = ["content/asme", "src/app/asme/page.tsx", ...ASME_FRAME];
 PAGE_SOURCES["asme/questions"] = ["content/asme", "src/app/asme/questions", ...ASME_FRAME];
 

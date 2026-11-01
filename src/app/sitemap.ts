@@ -5,6 +5,7 @@ import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 import { trades, BOQ_CHECKED } from "@/lib/boq";
 import { asmeGuides, ASME_CHECKED } from "@/lib/asme";
+import { asmeArt } from "@/lib/asme-images";
 import { ERP_CHECKED } from "@/lib/erp";
 import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
@@ -200,16 +201,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // Page art once it exists (src/lib/asme-images.ts), for Google Images.
+  const artImages = (name: string) => {
+    const a = asmeArt(name);
+    return a ? { images: [`${siteUrl}${a.src}`] } : {};
+  };
   const asme = asmeGuides();
   const asmeUpdated = [ASME_CHECKED, ...asme.map((g) => g.updated)].sort().at(-1)!;
   const asmeRoutes: MetadataRoute.Sitemap = [
-    { url: `${siteUrl}/asme`, lastModified: changed("asme", asmeUpdated), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/asme/questions`, lastModified: changed("asme/questions", asmeUpdated), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/asme`, lastModified: changed("asme", asmeUpdated), changeFrequency: "monthly", priority: 0.8, ...artImages("asme-hub") },
+    { url: `${siteUrl}/asme/questions`, lastModified: changed("asme/questions", asmeUpdated), changeFrequency: "monthly", priority: 0.7, ...artImages("questions") },
     ...asme.map((g) => ({
       url: `${siteUrl}/asme/${g.slug}`,
       lastModified: changed(`asme/${g.slug}`, g.updated),
       changeFrequency: "monthly" as const,
       priority: g.tool ? 0.8 : 0.7,
+      ...artImages(g.slug),
     })),
   ];
 

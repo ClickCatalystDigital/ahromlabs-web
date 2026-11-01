@@ -1,5 +1,6 @@
 import { renderOgImage, ogImageSize } from "@/lib/og-image";
 import { asmeGuide, asmeGuides } from "@/lib/asme";
+import { asmeOgArt } from "@/lib/asme-images";
 
 export const alt = "Ahrom Labs";
 export const size = ogImageSize;
@@ -11,5 +12,5 @@ export function generateStaticParams() {
 
 export default async function Image(props: PageProps<"/asme/[slug]">) {
   const g = asmeGuide((await props.params).slug)!;
-  return renderOgImage({ title: g.title, description: g.question ?? g.answer });
+  return renderOgImage({ title: g.title, description: g.question ?? g.answer, art: await asmeOgArt(g.slug) });
 }
