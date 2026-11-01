@@ -227,7 +227,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                         />
                       )}
                       <p className="mt-3 max-w-[48ch] leading-relaxed text-foreground-secondary">{e.demo!.blurb}</p>
-                      <a href={demoHref(market, e.demo!.url)} className="text-link focus-ring mt-4 inline-block">
+                      <a href={demoHref(market, e.demo!.url, e.demo!.usUrl)} className="text-link focus-ring mt-4 inline-block">
                         {e.demo!.label}
                       </a>
                     </div>

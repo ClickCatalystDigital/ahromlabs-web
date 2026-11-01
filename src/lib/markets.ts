@@ -125,5 +125,6 @@ export const say = (market: MarketCode, text: string) => DICT[market].words.redu
 export const money = (market: MarketCode, n: number) =>
   new Intl.NumberFormat(DICT[market].locale, { style: "currency", currency: MARKETS[market].currency, maximumFractionDigits: 0 }).format(n);
 
-/** A demo link for this market: North America's carry ?market=us, so the demo shows US number and date style. */
-export const demoHref = (market: MarketCode, url: string) => (market === "NA" ? `${url}?market=us` : url);
+/** A demo link for this market: North America gets the demo's US build when it has one, else the shared demo with
+ *  ?market=us (US number and date style). */
+export const demoHref = (market: MarketCode, url: string, usUrl?: string) => (market === "NA" ? usUrl ?? `${url}?market=us` : url);

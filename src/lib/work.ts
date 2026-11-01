@@ -22,7 +22,8 @@ export type Engagement = {
   // A public demo of the system, when one exists.
   // image: an illustration shown above the demo card on the homepage (public/demos, 960x540).
   // markets: only shown there (src/lib/markets.ts) until the demo has that market's words, units and currency.
-  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string }; markets?: MarketCode[] };
+  // usUrl: the demo's North American build (US company, $, US tax); North American visitors are sent there.
+  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string }; markets?: MarketCode[]; usUrl?: string };
 };
 
 export const engagements: Engagement[] = [
@@ -50,7 +51,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "savistar-saag",
-    demo: { url: "https://interiors-erp.ahromlabs.com/demo", markets: ["IN"], label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant.", image: { src: "/demos/demo-interior-design-furniture.webp", alt: "Fabric, stone and wood samples with a floor plan and a chair: the interior design and furniture workshop demo" } },
+    demo: { url: "https://interiors-erp.ahromlabs.com/demo", usUrl: "https://interiors-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant.", image: { src: "/demos/demo-interior-design-furniture.webp", alt: "Fabric, stone and wood samples with a floor plan and a chair: the interior design and furniture workshop demo" } },
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:

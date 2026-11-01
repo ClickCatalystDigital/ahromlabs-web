@@ -15,7 +15,7 @@ export function ServiceDetail({ service, market = "IN" }: { service: Service; ma
   const demos = (service.demos ?? []).map(({ client, as }) => {
     const e = engagements.find((x) => x.slug === client);
     if (!e?.demo) throw new Error(`services.ts: "${service.slug}" lists a demo for "${client}", which has none`);
-    return { client, as, url: e.demo.url, name: e.demo.name };
+    return { client, as, url: e.demo.url, usUrl: e.demo.usUrl, name: e.demo.name };
   });
   return (
     <>
@@ -32,7 +32,7 @@ export function ServiceDetail({ service, market = "IN" }: { service: Service; ma
           <ul className="mt-3 space-y-3">
             {demos.map((d) => (
               <li key={d.client}>
-                <a href={demoHref(market, d.url)} className="text-link focus-ring">{d.name}</a>{" "}
+                <a href={demoHref(market, d.url, d.usUrl)} className="text-link focus-ring">{d.name}</a>{" "}
                 <span className="mt-0.5 block text-sm text-foreground-secondary">{d.as}</span>
               </li>
             ))}

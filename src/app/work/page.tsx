@@ -62,9 +62,17 @@ export default function WorkPage() {
                     </p>
                   )}
                   {e.demo && (
-                    <p className="mt-3" {...only(e.demo.markets)}>
-                      <a href={e.demo.url} className="text-link focus-ring">{e.demo.label} →</a>
-                    </p>
+                    <>
+                      <p className="mt-3" {...only(e.demo.usUrl ? ["IN"] : e.demo.markets)}>
+                        <a href={e.demo.url} className="text-link focus-ring">{e.demo.label} →</a>
+                      </p>
+                      {/* North America: the demo's US build. */}
+                      {e.demo.usUrl && (
+                        <p className="mt-3" {...only(["NA"])}>
+                          <a href={e.demo.usUrl} className="text-link focus-ring">{e.demo.label} →</a>
+                        </p>
+                      )}
+                    </>
                   )}
                   <ul className="mt-6 list-disc space-y-2 pl-5 text-foreground-secondary">
                     {e.highlights.map((h) => (
