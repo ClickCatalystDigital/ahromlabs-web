@@ -2,7 +2,7 @@
 kind: asme
 slug: welder-qualification
 group: welding
-title: "Welder qualification: test positions 1G to 6G and what each covers"
+title: "Welder qualification positions 1G to 6G explained"
 question: "What does a 6G welding test qualify for?"
 answer: >
   An ASME Section IX welder test qualifies a person for a process, a range of positions, thicknesses and pipe

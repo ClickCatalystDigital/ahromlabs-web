@@ -144,7 +144,10 @@ export function GET() {
 
   const asme =
     `- [ASME Boiler and Pressure Vessel Code, in plain English](https://ahromlabs.com/asme): Sections, stamps, Section IX welding qualifications and Section VIII design rules, written to the ${ASME_EDITION.name}, for shops in the US, Canada and India. Paragraphs cited, not reproduced; not reviewed by an Authorized Inspector.\n` +
+    `- [Boiler and pressure vessel materials list](https://ahromlabs.com/asme/items): The common ASME plate, pipe, tube, forging, fitting, casting and bolting specifications with use, dimension standard, P-number and whether IBR 2026's material table names them, plus an ASME B36.10M pipe size chart. CSV (CC BY 4.0): https://ahromlabs.com/asme/items.csv\n` +
     `- [ASME questions, answered](https://ahromlabs.com/asme/questions): One question per guide, each answered in a few lines.\n` +
+    `- [Welder continuity log for Excel](https://ahromlabs.com/asme/welder-continuity-log.xlsx): One row per welder and process; the lapse date under QW-322 (six months after the last weld) and days left are worked out. CC BY 4.0.\n` +
+    `- Browser agents (WebMCP) on ahromlabs.com can call the calculators as tools: asme-hydrostatic-test-pressure, asme-shell-thickness and asme-welder-continuity.\n` +
     asmeGuides().map(line("asme")).join("\n");
 
   const body =

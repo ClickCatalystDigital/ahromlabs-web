@@ -2,7 +2,7 @@
 kind: asme
 slug: welder-continuity
 group: welding
-title: "Welder continuity (QW-322): the six-month rule, with a free checker"
+title: "Welder continuity (QW-322): six-month rule and checker"
 question: "How long is an ASME welder qualification valid?"
 answer: >
   An ASME Section IX welder qualification has no fixed expiry date. Under QW-322 it lapses when the welder hasn't
@@ -35,7 +35,7 @@ The clock is **per process**, not per WPS or per position. A welder qualified fo
 
 Welding with the process, recorded. The record has to show the welder, the process and the date. Most shops log continuity from production weld maps or from a monthly sign-off sheet.
 
-The checker above takes that log (welder, process, last weld date, one line each) and lists who lapses when, soonest first, with anyone within 30 days flagged.
+The checker above takes that log (welder, process, last weld date, one line each) and lists who lapses when, soonest first, with anyone within 30 days flagged. To keep the log itself, download the free [welder continuity log for Excel](/asme/welder-continuity-log.xlsx): one row per welder and process, with the lapse date, days left and status worked out for you, and lapsed or nearly lapsed rows coloured.
 
 ## Renewing a lapsed qualification
 

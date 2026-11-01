@@ -210,6 +210,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const asmeUpdated = [ASME_CHECKED, ...asme.map((g) => g.updated)].sort().at(-1)!;
   const asmeRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/asme`, lastModified: changed("asme", asmeUpdated), changeFrequency: "monthly", priority: 0.8, ...artImages("asme-hub") },
+    { url: `${siteUrl}/asme/items`, lastModified: changed("asme/items", ASME_CHECKED), changeFrequency: "monthly", priority: 0.8, ...artImages("p-numbers") },
     { url: `${siteUrl}/asme/questions`, lastModified: changed("asme/questions", asmeUpdated), changeFrequency: "monthly", priority: 0.7, ...artImages("questions") },
     ...asme.map((g) => ({
       url: `${siteUrl}/asme/${g.slug}`,

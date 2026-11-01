@@ -2,7 +2,7 @@
 kind: asme
 slug: section-i-vs-iv
 group: code
-title: "ASME Section I vs Section IV: power boilers and heating boilers"
+title: "ASME Section I vs IV: power vs heating boilers"
 question: "What is the difference between ASME Section I and Section IV boilers?"
 answer: >
   Section IV covers heating boilers: steam boilers up to 15 psi (1 bar), and hot water boilers up to 160 psi (11 bar) and 250 °F (121 °C).

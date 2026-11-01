@@ -70,7 +70,7 @@ Quoted from the Gazette below:
 - **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).
 - **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms/form-i-part-a).
 - **Exemption** of a boiler or component built to an international code, ASME included, on conditions (regulation 5).
-- **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30). See [Section II](/asme/section-ii).
+- **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30); the [materials list](/asme/items) shows which common ones it names. See [Section II](/asme/section-ii).
 - **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).
 - **NDT personnel** with ASNT certificates are accepted alongside ISNT (regulation 7). See [Section V](/asme/section-v).
 

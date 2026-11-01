@@ -132,7 +132,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions"] }[kind];
+      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"] }[kind];
       if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     // ASME guides: a group for the hub, the question people search (the question library), an optional tool.
@@ -276,6 +276,7 @@ PAGE_SOURCES["ai-assistant/number-check"] = ["src/app/ai-assistant/number-check"
 const ASME_FRAME = ["src/components/AsmePage.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts", "src/lib/asme-images.ts", "public/asme"];
 PAGE_SOURCES.asme = ["content/asme", "src/app/asme/page.tsx", ...ASME_FRAME];
 PAGE_SOURCES["asme/questions"] = ["content/asme", "src/app/asme/questions", ...ASME_FRAME];
+PAGE_SOURCES["asme/items"] = ["src/app/asme/items", "src/lib/asme-items.ts", ...ASME_FRAME];
 
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {

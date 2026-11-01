@@ -27,6 +27,7 @@ function asmeHub(group?: AsmeGroup): Hub {
         .map((g) => ({ href: `/asme/${g.slug}`, title: g.title })),
       { href: "/asme", title: "All ASME guides" },
       { href: "/asme/questions", title: "ASME questions, answered" },
+      { href: "/asme/items", title: "Boiler and pressure vessel materials list" },
     ],
     byline: (checked) => (
       <>

@@ -7,6 +7,7 @@ import path from "node:path";
 import { ASME_GROUPS, asmeGuides, continuityLapse, shellMawp, shellThickness, testPressure } from "../src/lib/asme";
 import { getContent } from "../src/lib/content";
 import { asmeArt } from "../src/lib/asme-images";
+import { MATERIALS } from "../src/lib/asme-items";
 import { services } from "../src/lib/services";
 
 const fail: string[] = [];
@@ -20,8 +21,9 @@ for (const g of guides) if (!ASME_GROUPS.find((x) => x.slug === g.group)?.order.
 const appRoute = (p: string) => fs.existsSync(path.join("src/app", p, "page.tsx"));
 const exists = (href: string) => {
   const [p] = href.split(/[#?]/);
+  if (/\.[a-z0-9]+$/i.test(p)) return fs.existsSync(path.join("public", p)); // a download, e.g. the continuity log
   const [, seg, slug, sub] = p.split("/");
-  if (seg === "asme") return !slug || slug === "questions" || slugs.has(slug);
+  if (seg === "asme") return !slug || slug === "questions" || slug === "items" || slugs.has(slug);
   if (seg === "services" && slug) return services.some((s) => s.slug === slug) || appRoute(p);
   const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", systems: "term" };
   if (kinds[seg] && slug && !sub) return getContent(kinds[seg]).some((e) => e.slug === slug) || appRoute(p);
@@ -41,6 +43,26 @@ for (const name of ["asme-hub", "questions", ...guides.map((g) => g.slug)]) {
   const a = asmeArt(name);
   if (a && !a.alt) fail.push(`public/asme/${name}.webp has no alt text in asme-images.ts`);
 }
+
+// The materials list (/asme/items): every "named in IBR 2026" claim against regulation 30's table in the Gazette.
+const GAZETTE = path.join(process.env.IBR_SOURCES ?? "/Users/pujan/Developer/FOLDER SAMPLE - FOR APP/IBR 2026/sources", "IBR 2026 - Gazette No 596 2026-10-01.txt");
+if (fs.existsSync(GAZETTE)) {
+  const all = fs.readFileSync(GAZETTE, "utf-8").split("\n");
+  const from = all.findIndex((l) => l.includes("30.Plates, Pipes, Tubes"));
+  const to = all.findIndex((l, i) => i > from && l.includes("In addition to the above, materials conforming to IS"));
+  const table = all.slice(from, to).map((l) => l.replace(/\s+/g, " "));
+  if (from < 0 || to < 0) fail.push("regulation 30 table not found in the Gazette text");
+  for (const m of MATERIALS) {
+    const num = `SA ${m.spec.match(/^SA-(\d+)/)![1]}`;
+    const lines = table.filter((l) => new RegExp(`${num}(?!\\d)`).test(l));
+    if (m.ibr) {
+      if (!lines.some((l) => !m.ibr!.grade || l.includes(m.ibr!.grade))) fail.push(`${m.spec}: marked as named in IBR 2026's table, but "${num} ${m.ibr.grade ?? ""}" isn't there`);
+    } else {
+      const grade = m.spec.replace(/^SA-\d+\s*(Grade\s*)?/, "").split(/[\s/]/)[0];
+      if (lines.some((l) => !grade || l.includes(grade))) fail.push(`${m.spec}: marked as not named in IBR 2026's table, but it is`);
+    }
+  }
+} else console.warn("asme: IBR Gazette text not found; materials list IBR column not checked (set IBR_SOURCES)");
 
 // Calculators against hand-worked answers.
 const close = (a: number, b: number) => Math.abs(a - b) < 1e-3;

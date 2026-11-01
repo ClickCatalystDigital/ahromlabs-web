@@ -2,7 +2,7 @@
 kind: asme
 slug: stamps
 group: certification
-title: "ASME stamps: U, U2, S, H, PP, UV and the other certification marks"
+title: "ASME stamps list: U, U2, S, H, PP, UV and R explained"
 question: "What do the ASME U, S and R stamps mean?"
 answer: >
   An ASME stamp is the ASME Certification Mark with a designator showing what the item is built to: U for a

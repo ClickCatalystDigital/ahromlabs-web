@@ -45,6 +45,8 @@ There are thousands of material specifications. Without grouping, every pairing 
 
 Welding a P-No. 1 to a P-No. 8 is a dissimilar-metal joint and needs a procedure qualified for that combination.
 
+The [materials list](/asme/items) gives the P-number of each common boiler and vessel material.
+
 ## F-numbers: filler metal usability
 
 | F-No. | Filler | Example |

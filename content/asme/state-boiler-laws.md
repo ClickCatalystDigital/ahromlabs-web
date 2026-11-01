@@ -2,7 +2,7 @@
 kind: asme
 slug: state-boiler-laws
 group: bridge
-title: "US and Canadian boiler and pressure vessel laws: who requires ASME"
+title: "US and Canadian boiler laws: who requires ASME"
 question: "Is the ASME Code required by law in the US?"
 answer: >
   The ASME Code isn't a federal law in the US. Most states, and every Canadian province, make it law by adopting

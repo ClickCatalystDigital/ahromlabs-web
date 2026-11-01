@@ -1,9 +1,9 @@
 "use client";
 
 import { useId, useState } from "react";
-import { HYDRO_CASES, continuityLapse, shellMawp, shellThickness, testPressure, type HydroCase } from "@/lib/asme";
+import { HYDRO_CASES, continuityLapse, shellMawp, shellThickness, testPressure, type HydroCase } from "@/lib/asme-calc";
 
-// The three ASME tools, embedded in their guides (content/asme/*.md `tool:`). The maths is in src/lib/asme.ts.
+// The three ASME tools, embedded in their guides (content/asme/*.md `tool:`). The maths is in src/lib/asme-calc.ts.
 // Everything runs in the browser; nothing is sent anywhere.
 
 const num = (v: string) => (v.trim() === "" ? NaN : Number(v));

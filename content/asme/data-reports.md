@@ -2,7 +2,7 @@
 kind: asme
 slug: data-reports
 group: certification
-title: "ASME Manufacturer's Data Reports: U-1, U-1A, U-2, P-2 and H-2"
+title: "ASME data reports: U-1, U-1A, U-2, P-2 and H-2 forms"
 question: "What is an ASME U-1A form?"
 answer: >
   A Manufacturer's Data Report is the record of what a stamped boiler or pressure vessel is: its design

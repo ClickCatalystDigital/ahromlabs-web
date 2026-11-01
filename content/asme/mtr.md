@@ -2,7 +2,7 @@
 kind: asme
 slug: mtr
 group: materials
-title: "Material test reports and heat numbers: ASME material traceability"
+title: "Material test reports (MTR) and heat number traceability"
 question: "What does an MTR need to show for ASME pressure vessel material?"
 answer: >
   A material test report (MTR, or mill test certificate) certifies one heat of material: its specification and
@@ -35,7 +35,7 @@ A mill makes steel in **heats** (one melt). The MTR certifies a heat, or a lot f
 
 | On the MTR | Why the shop checks it |
 |---|---|
-| Specification and grade, e.g. SA-516 Grade 70 | Must match the drawing and the Code's accepted specification; see [Section II](/asme/section-ii) for SA vs A |
+| Specification and grade, e.g. SA-516 Grade 70 ([common ones](/asme/items)) | Must match the drawing and the Code's accepted specification; see [Section II](/asme/section-ii) for SA vs A |
 | Heat number (and slab or plate number) | The link between the paper and the steel |
 | Chemical analysis | Within the specification's limits |
 | Tensile and yield strength, elongation | Within the specification |

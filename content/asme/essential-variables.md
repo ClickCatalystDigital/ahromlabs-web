@@ -2,7 +2,7 @@
 kind: asme
 slug: essential-variables
 group: welding
-title: "Essential, supplementary essential and nonessential variables"
+title: "Essential and nonessential variables in ASME Section IX"
 question: "What are essential variables in ASME welding?"
 answer: >
   ASME Section IX classifies each welding variable. Changing an essential variable, such as the base metal

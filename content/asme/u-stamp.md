@@ -2,7 +2,7 @@
 kind: asme
 slug: u-stamp
 group: certification
-title: "How to get the ASME U stamp: steps, joint review, cost and timeline"
+title: "How to get the ASME U stamp: steps, cost and timeline"
 question: "How do you get an ASME U stamp?"
 answer: >
   To get the U stamp a shop writes a quality control manual, signs an inspection agreement with an ASME-accredited

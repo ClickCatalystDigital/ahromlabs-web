@@ -10,7 +10,8 @@ const title = "ASME Boiler and Pressure Vessel Code, in plain English";
 const lead = `The ASME Boiler and Pressure Vessel Code (BPVC) sets how boilers and pressure vessels are designed, built, welded, inspected and stamped. These guides explain the sections, the certification stamps, Section IX welding qualifications and the core Section VIII design rules, with free calculators, written to the ${ASME_EDITION.name} for shops in the US, Canada and India.`;
 
 export const metadata: Metadata = {
-  title: "ASME BPVC guide: sections, stamps, welding and calculators",
+  // Absolute: with the " | Ahrom Labs" suffix it would run past what results show.
+  title: { absolute: "ASME BPVC guide: sections, stamps, welding and calculators" },
   description: "The ASME Boiler and Pressure Vessel Code explained: sections I to XIII, U and S stamps, WPS/PQR, welder continuity, hydrotest and shell calculators.",
   alternates: { canonical: "/asme" },
   openGraph: { type: "website", url: "https://ahromlabs.com/asme", siteName: "Ahrom Labs", title, description: lead },
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 const TOOLS = [
   { slug: "hydrostatic-test", title: "Hydrostatic test pressure calculator", text: "Section VIII Division 1 hydrostatic and pneumatic, and Section I: the minimum test pressure with every step cited." },
   { slug: "shell-thickness", title: "Shell thickness and MAWP calculator", text: "UG-27 for cylinders and spheres, with the corrosion allowance and the joint efficiency, both ways round." },
-  { slug: "welder-continuity", title: "Welder continuity checker", text: "Paste welders and their last weld dates: who lapses when under QW-322, soonest first." },
+  { slug: "welder-continuity", title: "Welder continuity checker", text: "Paste welders and their last weld dates: who lapses when under QW-322, soonest first. With a free Excel log that does the same." },
 ];
 
 export default function AsmeHub() {
@@ -47,6 +48,10 @@ export default function AsmeHub() {
             <p className="mt-2 leading-relaxed text-foreground-secondary">{t.text}</p>
           </li>
         ))}
+        <li className="py-6">
+          <Link href="/asme/items" className="text-link focus-ring text-xl font-medium">Boiler and pressure vessel materials list</Link>
+          <p className="mt-2 leading-relaxed text-foreground-secondary">The common ASME plate, pipe, tube, forging, fitting, casting and bolting specifications, with P-numbers, IBR 2026 status and a pipe size chart. Free to download.</p>
+        </li>
         <li className="py-6">
           <Link href="/asme/questions" className="text-link focus-ring text-xl font-medium">ASME questions, answered</Link>
           <p className="mt-2 leading-relaxed text-foreground-secondary">{guides.length} questions people ask about the Code, each answered in a few lines, with the guide that explains it.</p>

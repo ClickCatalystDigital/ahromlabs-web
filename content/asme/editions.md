@@ -2,7 +2,7 @@
 kind: asme
 slug: editions
 group: code
-title: "ASME Code editions: the 2025 Edition, code cases and interpretations"
+title: "ASME 2025 Edition: dates, code cases and interpretations"
 question: "When does the ASME 2025 Edition become mandatory?"
 answer: >
   ASME publishes the whole Boiler and Pressure Vessel Code every two years and each edition becomes mandatory six

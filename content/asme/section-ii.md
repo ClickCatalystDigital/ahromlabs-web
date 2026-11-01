@@ -2,7 +2,7 @@
 kind: asme
 slug: section-ii
 group: code
-title: "ASME Section II materials: Parts A to D, and SA vs A specifications"
+title: "ASME Section II materials and SA vs A specifications"
 question: "What is the difference between SA-516 and A516?"
 answer: >
   ASME Section II holds the material specifications the Code allows: Part A ferrous, Part B nonferrous, Part C
@@ -31,6 +31,8 @@ sources:
 | D | Properties | Allowable stresses, tensile and yield strength at temperature, external pressure charts, physical properties |
 
 Part D comes in customary (psi, °F) and metric volumes. The [shell thickness](/asme/shell-thickness) and [hydrostatic test](/asme/hydrostatic-test) calculators both need its allowable stress values, which is why those tools ask you for them rather than supply them: the tables are ASME's, and they change between editions.
+
+The specifications a boiler or vessel shop buys most, with P-numbers and their IBR 2026 status, are in the [materials list](/asme/items).
 
 ## SA vs A
 

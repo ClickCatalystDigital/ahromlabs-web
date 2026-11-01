@@ -2,7 +2,7 @@
 kind: asme
 slug: joint-efficiency
 group: design
-title: "Joint efficiency and radiography: full vs spot (UW-11, UW-12)"
+title: "Joint efficiency and radiography (UW-11, UW-12)"
 question: "What is joint efficiency in ASME Section VIII?"
 answer: >
   Joint efficiency (E) is the factor ASME Section VIII Division 1 applies to a welded joint in the thickness

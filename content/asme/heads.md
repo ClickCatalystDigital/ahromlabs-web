@@ -2,7 +2,7 @@
 kind: asme
 slug: heads
 group: design
-title: "Pressure vessel heads: 2:1 ellipsoidal, torispherical and hemispherical (UG-32)"
+title: "Pressure vessel heads (UG-32): ellipsoidal vs torispherical"
 question: "What is a 2:1 ellipsoidal head?"
 answer: >
   A 2:1 ellipsoidal head is half an ellipse in section, its depth a quarter of its diameter, and it needs about
