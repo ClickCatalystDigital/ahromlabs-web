@@ -29,7 +29,7 @@ export type Engagement = {
 export const engagements: Engagement[] = [
   {
     slug: "ls-technologies",
-    demo: { url: "https://electronics-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Electronics trading demo", blurb: "Scan reels in and out, approve staff entries, and see the customer portal and partner store.", image: { src: "/demos/demo-electronics-trading.webp", alt: "Electronic component reels in a carton beside a barcode scanner: the electronics trading and inventory demo" } },
+    demo: { url: "https://electronics-erp.ahromlabs.com/demo", usUrl: "https://electronics-erp-us.ahromlabs.com/demo", label: "Try the live demo", name: "Electronics trading demo", blurb: "Scan reels in and out, approve staff entries, and see the customer portal and partner store.", image: { src: "/demos/demo-electronics-trading.webp", alt: "Electronic component reels in a carton beside a barcode scanner: the electronics trading and inventory demo" } },
     client: "LS Technologies",
     industry: "Electronics-components import/export trading",
     built:
