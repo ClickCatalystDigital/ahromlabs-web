@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { LogoBadge } from "./Wordmark";
 import { SearchButton } from "./SiteSearch";
+import { marketsFor, only, type MarketCode } from "@/lib/markets";
 
 // Ordered the way a buyer decides: what do you build, for businesses like
 // mine?, for whom already?, what does it cost?, prove it, who are you.
 // Approach, Systems and Patterns stay one click away in the footer.
-const links = [
+const links: { href: string; label: string; markets?: MarketCode[] }[] = [
   { href: "/services", label: "Services" },
   { href: "/industries", label: "Industries" },
   { href: "/work", label: "Work" },
   { href: "/engagement", label: "Pricing" },
+  // North America's prices are on its home page (src/app/na/page.tsx); /engagement is India's.
+  { href: "/#pricing", label: "Pricing", markets: ["NA"] },
   { href: "/notes", label: "Notes" },
   { href: "/about", label: "About" },
 ];
@@ -27,7 +30,7 @@ export function SiteNav() {
         {/* Six links plus the CTA don't fit before lg; below it the menu takes over. */}
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} {...only(link.markets ?? marketsFor(link.href))}>
               <Link href={link.href} className="nav-link focus-ring">
                 {link.label}
               </Link>
@@ -49,7 +52,7 @@ export function SiteNav() {
           </summary>
           <ul className="absolute right-0 top-full z-10 mt-2 flex w-48 flex-col gap-4 border border-line bg-background p-4">
             {links.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} {...only(link.markets ?? marketsFor(link.href))}>
                 <Link href={link.href} className="nav-link focus-ring">
                   {link.label}
                 </Link>

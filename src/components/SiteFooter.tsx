@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { families, familyUrl } from "@/lib/services";
 import { LogoBadge } from "@/components/Wordmark";
+import { DICT, MARKETS, marketsFor, only, type MarketCode } from "@/lib/markets";
 
 // Every page's way out: the five families (the hubs under /services), the
 // company pages, the reading library, and the machine-readable surfaces, so an
 // agent that lands anywhere can find the whole graph in one hop.
-const columns: { title: string; links: { href: string; label: string }[] }[] = [
+const columns: { title: string; links: { href: string; label: string; markets?: MarketCode[] }[] }[] = [
   {
     title: "What we build",
     links: [{ href: "/services", label: "All services" }, ...families.map((f) => ({ href: familyUrl(f), label: f.shortName }))],
@@ -17,6 +18,7 @@ const columns: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/industries", label: "Industries" },
       { href: "/approach", label: "Approach" },
       { href: "/engagement", label: "Pricing" },
+      { href: "/#pricing", label: "Pricing", markets: ["NA"] },
       { href: "/about", label: "About" },
       { href: "/support", label: "Client support" },
       { href: "https://www.linkedin.com/company/ahromlabs", label: "LinkedIn" },
@@ -45,6 +47,9 @@ const columns: { title: string; links: { href: string; label: string }[] }[] = [
   },
 ];
 
+// Markets with a version of the site; the switcher offers these.
+const SHOWN = (Object.keys(MARKETS) as MarketCode[]).filter((m) => MARKETS[m].active);
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-line">
@@ -62,7 +67,9 @@ export function SiteFooter() {
             <a href="mailto:pujan@ahromlabs.com" className="text-link focus-ring self-start">
               pujan@ahromlabs.com
             </a>{" "}
-            <span className="text-foreground-secondary">Ahmedabad, Gujarat · clients across India</span>
+            {SHOWN.map((m) => (
+              <span key={m} className="text-foreground-secondary" {...only([m])}>{DICT[m].where}</span>
+            ))}
           </p>
         </div>
 
@@ -72,7 +79,7 @@ export function SiteFooter() {
               <p className="text-xs font-medium uppercase tracking-[0.08em] text-foreground">{col.title}</p>
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
-                  <li key={l.href}>
+                  <li key={l.href} {...only(l.markets ?? marketsFor(l.href))}>
                     {/* Plain <a> for the .txt/.json routes: they aren't pages to prefetch. */}
                     {l.href.includes(".") ? (
                       <a href={l.href} className="nav-link focus-ring">{l.label}</a>
@@ -92,6 +99,16 @@ export function SiteFooter() {
         <p className="footer-copyright pr-16">
           © {new Date().getFullYear()} Ahrom Labs. Industrial systems engineering.{" · "}
           <Link href="/privacy" className="focus-ring hover:underline">Privacy</Link>
+          {/* Market switcher: plain links, so the proxy saves the choice and serves that market's version. */}
+          {" · "}
+          {SHOWN.map((m, i) => (
+            <span key={m}>
+              {i > 0 && " / "}
+              <a href={`?market=${m === "NA" ? "us" : "in"}`} className="focus-ring hover:underline" data-market-link={m} rel="nofollow">
+                {MARKETS[m].label}
+              </a>
+            </span>
+          ))}
         </p>
       </div>
     </footer>

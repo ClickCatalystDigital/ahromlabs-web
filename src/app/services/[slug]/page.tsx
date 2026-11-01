@@ -12,6 +12,8 @@ import { families, services, servicesIn, serviceUrl, familyUrl, type Family, typ
 import { servicePageGraph, serviceFaqGraph, jsonLd } from "@/lib/schema";
 import { getContent } from "@/lib/content";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { MarketPricing } from "@/components/MarketPricing";
+import { say, type MarketCode } from "@/lib/markets";
 
 // Families and services share this route; services.ts guarantees the slugs
 // don't collide. Unknown slugs 404 instead of rendering on demand.
@@ -55,8 +57,10 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
   };
 }
 
-export default async function ServiceOrFamilyPage(props: PageProps<"/services/[slug]">) {
+// market: src/app/na/services/[slug]/page.tsx renders this page for North America (served here by src/proxy.ts).
+export default async function ServiceOrFamilyPage(props: PageProps<"/services/[slug]"> & { market?: MarketCode }) {
   const { slug } = await props.params;
+  const market = props.market ?? "IN";
   const found = find(slug);
   const family = found.family;
   const art = found.kind === "family" ? found.family.image : artFor(found.service.slug);
@@ -111,7 +115,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
           ) : (
             <>
               <h1 className="display mt-3 text-5xl text-foreground sm:text-6xl">{found.service.name}</h1>
-              <p className="prose-measure mt-6 text-xl leading-relaxed text-foreground-secondary">{found.service.plainName}</p>
+              <p className="prose-measure mt-6 text-xl leading-relaxed text-foreground-secondary">{say(market, found.service.plainName)}</p>
             </>
           )}
           </div>
@@ -168,7 +172,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
           <section className="section border-t border-line">
             <div className="rail">
               <div className="prose-measure">
-                <ServiceDetail service={found.service} />
+                <ServiceDetail service={found.service} market={market} />
 
                 {/* Keep reading: the next page in the family, the industries it's
                     built for, and (for the whole system) its parts. */}
@@ -212,6 +216,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
           </section>
         )}
 
+        <MarketPricing market={market} />
         <ClosingCta />
       </main>
       <SiteFooter />

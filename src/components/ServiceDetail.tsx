@@ -2,12 +2,14 @@ import Link from "next/link";
 import { type Service, resolveProof, proofHref } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { requirements } from "@/lib/erp";
+import { say, type MarketCode } from "@/lib/markets";
 
 // The body of one service: answer, who it's for, how it works, the numbers,
 // buyer questions, proof and clients.
 // Rendered only on /services/<slug>: /services and the family pages summarise
 // and link here, so the full detail exists once.
-export function ServiceDetail({ service }: { service: Service }) {
+export function ServiceDetail({ service, market = "IN" }: { service: Service; market?: MarketCode }) {
+  const t = (text: string) => say(market, text);
   const clients = engagements.filter((e) => e.services.includes(service.slug));
   // Fails the build if a demo points at a client without a public demo.
   const demos = (service.demos ?? []).map(({ client, as }) => {
@@ -17,10 +19,10 @@ export function ServiceDetail({ service }: { service: Service }) {
   });
   return (
     <>
-      <p className="mt-6 text-lg leading-relaxed text-foreground">{service.answer}</p>
+      <p className="mt-6 text-lg leading-relaxed text-foreground">{t(service.answer)}</p>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
         <span className="font-medium text-foreground">Who it&apos;s for: </span>
-        {service.forWhom}
+        {t(service.forWhom)}
       </p>
 
       {demos.length > 0 && (
@@ -44,7 +46,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         {service.steps.map((step, i) => (
           <li key={step} className="grid grid-cols-[2rem_1fr] gap-2 leading-relaxed text-foreground">
             <span className="text-sm text-foreground-secondary tabular-nums">{String(i + 1).padStart(2, "0")}</span>{" "}
-            <span>{step}</span>
+            <span>{t(step)}</span>
           </li>
         ))}
       </ol>
@@ -53,8 +55,8 @@ export function ServiceDetail({ service }: { service: Service }) {
       <dl className="mt-4 grid grid-cols-1 gap-x-12 gap-y-6 border-t border-line pt-6 sm:grid-cols-2">
         {service.evidence.map((item) => (
           <div key={item.metric}>
-            <dt className="text-sm font-medium text-foreground-secondary">{item.metric}</dt>
-            <dd className="mt-1 text-base text-foreground">{item.value}</dd>
+            <dt className="text-sm font-medium text-foreground-secondary">{t(item.metric)}</dt>
+            <dd className="mt-1 text-base text-foreground">{t(item.value)}</dd>
           </div>
         ))}
       </dl>
@@ -62,7 +64,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       {(() => {
         // The ERP checklist lines this service delivers, so a buyer comparing vendors can test for it.
         const reqs = requirements.filter((r) => r.service === service.slug);
-        return reqs.length > 0 ? (
+        return reqs.length > 0 && market === "IN" ? (
           <p className="mt-8 leading-relaxed text-foreground-secondary">
             What to require from any vendor for this:{" "}
             <Link href={`/erp/requirements#${reqs[0].id.replace(/\./g, "-")}`} className="text-link focus-ring">
@@ -86,8 +88,8 @@ export function ServiceDetail({ service }: { service: Service }) {
       <dl className="mt-4 divide-y divide-line border-t border-line">
         {service.questions.map(({ q, a }) => (
           <div key={q} className="py-5">
-            <dt className="font-medium text-foreground">{q}</dt>
-            <dd className="mt-2 leading-relaxed text-foreground-secondary">{a}</dd>
+            <dt className="font-medium text-foreground">{t(q)}</dt>
+            <dd className="mt-2 leading-relaxed text-foreground-secondary">{t(a)}</dd>
           </div>
         ))}
       </dl>

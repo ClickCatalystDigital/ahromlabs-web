@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { only } from "@/lib/markets";
 
 export function ClosingCta() {
   return (
@@ -15,8 +16,11 @@ export function ClosingCta() {
           <Link href="/#contact" className="subscribe-submit focus-ring inline-block">
             Start a conversation
           </Link>{" "}
-          <Link href="/engagement" className="text-link focus-ring">
+          <Link href="/engagement" className="text-link focus-ring" {...only(["IN"])}>
             Pricing, licensing and support
+          </Link>
+          <Link href="/#pricing" className="text-link focus-ring" {...only(["NA"])}>
+            Fixed prices in USD
           </Link>
         </div>
       </div>

@@ -23,6 +23,8 @@ const SKIP = new Set(["_global-error.html", "_not-found.html"]);
 function htmlFiles(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
     const p = path.join(dir, d.name);
+    // na/: other markets' versions of pages, served at the same URLs; the twin is India's (src/lib/markets.ts).
+    if (dir === APP_DIR && (d.name === "na" || d.name === "na.html")) return [];
     if (d.isDirectory()) return htmlFiles(p);
     return d.name.endsWith(".html") && !SKIP.has(d.name) ? [p] : [];
   });

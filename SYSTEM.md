@@ -26,6 +26,17 @@ All under `src/app/`.
   - (Earlier, 2026-09-05:) `sitemap.ts` includes every note/pattern URL with a real per-entry `lastModified` from frontmatter. `/systems`, `/notes`, `/patterns` derive theirs from the newest `updated` in the kind they list. `/`, `/approach`, `/about` deliberately carry **no** `lastModified` — they have no date source, and stamping build time (as this did until 2026-09-05) made every deploy claim all six static pages had changed.
 - `src/proxy.ts` — Next.js 16's replacement for `middleware.ts` (renamed; a stray `middleware.ts` would silently be ignored in this version). Logs AI-crawler hits (GPTBot, ClaudeBot, PerplexityBot, etc. — full list in the file) as structured JSON via `console.log`, captured by Cloudflare Workers Logs (`wrangler.jsonc`'s `observability.enabled`). Pure pass-through (`NextResponse.next()`), never mutates the response. Runs on the Node.js runtime by default in v16 — do not add `export const runtime`, it throws.
 
+## Markets (`src/lib/markets.ts`, 28 Oct 2026)
+
+One site, same URLs, adapted to the visitor's market (plan: `docs/markets-plan.md`). Codes and country groups are copied from the CRM (`ahrom-crm/src/lib/markets.ts`): IN; NA = US, CA; UK and EU defined but off (their visitors get the India site).
+
+- **Which market:** `src/proxy.ts`: `?market=in|us` (saved in the `market` cookie, a year) beats the saved choice, which beats Cloudflare's `cf-ipcountry`. Never a redirect by IP. The footer switcher is two plain `?market=` links.
+- **Pages with their own version** (`ADAPTIVE` in `markets.ts`): `/`, `/services`, `/services/inventory-and-reservations` for NA. Prerendered at `src/app/na/...` and served at the public URL by a proxy rewrite, so the static cache keys each version by its own path and nothing renders per request. Direct hits on `/na/...` redirect to the public URL with `?market=us`. Shared bodies: `HomePage`, `ServicesPage`, and `ServiceOrFamilyPage`'s `market` prop. `build-markdown.mjs` skips `na/` (the markdown twin is India's).
+- **Shown or hidden:** `IN_ONLY` paths (IBR, BOQ, ERP, `/engagement`, GST/Tally services, boiler and interiors industries) and `demo.markets` in `work.ts`. Links carry `data-only="IN"`; the inline script in `layout.tsx` copies the `mkt` cookie (set by the proxy) to `<html data-market>` before paint, and `globals.css` hides the rest. No JS: everything shows. The sitemap keeps every page, because Google crawls from the US.
+- **Words:** `DICT` per market (`say()` for word swaps, `money()`, contact line, booking link, WhatsApp on or off, NA pricing shown by `MarketPricing`). Product names in client claims are never swapped.
+- **Leads:** `/api/contact` stores `leads.country` (`leadCountry()`: Cloudflare's country, or the chosen market's first country if they differ); `/api/demo-lead` accepts an optional `country` from the demos.
+- **Check:** `scripts/markets.check.ts` (in `content:build`).
+
 ## Knowledge layer (`content/`, `src/lib/content.ts`, `scripts/build-content.mjs`)
 
 **Client naming.** LS Technologies, Savistar and Saag are cleared to be named; do not flag them

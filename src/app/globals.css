@@ -29,6 +29,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Markets (src/lib/markets.ts): an element with data-only="IN" shows only to that market. data-market is set
+   by the inline script in layout.tsx; without it (no JS) everything shows. */
+html[data-market="IN"] [data-only]:not([data-only~="IN"]),
+html[data-market="NA"] [data-only]:not([data-only~="NA"]) {
+  display: none !important;
+}
+html[data-market="IN"] [data-market-link="IN"],
+html[data-market="NA"] [data-market-link="NA"] {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
 /* Display typeface for hero headlines and major section headings. Body, UI,
    navigation, buttons, labels and card titles stay on --font-sans.
    Instrument Serif has one weight (400), so this sets it explicitly rather than

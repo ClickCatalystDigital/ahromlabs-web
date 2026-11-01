@@ -8,6 +8,7 @@ import { services, resolveProof, proofHref, serviceUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 import { metaDescription } from "@/lib/seo";
+import { only } from "@/lib/markets";
 
 const description = metaDescription("Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and a boiler and pressure-vessel manufacturer — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.");
 
@@ -61,7 +62,7 @@ export default function WorkPage() {
                     </p>
                   )}
                   {e.demo && (
-                    <p className="mt-3">
+                    <p className="mt-3" {...only(e.demo.markets)}>
                       <a href={e.demo.url} className="text-link focus-ring">{e.demo.label} →</a>
                     </p>
                   )}

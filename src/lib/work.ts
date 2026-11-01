@@ -1,4 +1,5 @@
 import type { Service } from "./services";
+import type { MarketCode } from "./markets";
 
 // Who Ahrom Labs has built for. Named with permission — settled for every
 // client below (docs/plans-to-upgrade.md, "Settled — do not re-raise"). A new
@@ -20,7 +21,8 @@ export type Engagement = {
   quote?: { text: string; attribution: string };
   // A public demo of the system, when one exists.
   // image: an illustration shown above the demo card on the homepage (public/demos, 960x540).
-  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string } };
+  // markets: only shown there (src/lib/markets.ts) until the demo has that market's words, units and currency.
+  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string }; markets?: MarketCode[] };
 };
 
 export const engagements: Engagement[] = [
@@ -48,7 +50,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "savistar-saag",
-    demo: { url: "https://interiors-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant.", image: { src: "/demos/demo-interior-design-furniture.webp", alt: "Fabric, stone and wood samples with a floor plan and a chair: the interior design and furniture workshop demo" } },
+    demo: { url: "https://interiors-erp.ahromlabs.com/demo", markets: ["IN"], label: "Try the live demo", name: "Interior design and furniture demo", blurb: "Projects, workshop orders, vendors, payroll, and two free questions to the Atelier AI assistant.", image: { src: "/demos/demo-interior-design-furniture.webp", alt: "Fabric, stone and wood samples with a floor plan and a chair: the interior design and furniture workshop demo" } },
     client: "Savistar & Saag",
     industry: "Interior design and furniture manufacturing — sister companies",
     built:
@@ -72,7 +74,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "boiler-manufacturer",
-    demo: { url: "https://boiler-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
+    demo: { url: "https://boiler-erp.ahromlabs.com/demo", markets: ["IN"], label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
     client: "A boiler and pressure-vessel manufacturer",
     anonymous: true,
     industry: "Boiler and pressure-vessel manufacturing",
@@ -98,7 +100,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "construction-company",
-    demo: { url: "https://construction-erp.ahromlabs.com/demo", label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
+    demo: { url: "https://construction-erp.ahromlabs.com/demo", markets: ["IN"], label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
     client: "A construction company",
     anonymous: true,
     industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",

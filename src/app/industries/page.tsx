@@ -9,6 +9,7 @@ import { getContent } from "@/lib/content";
 import { resolveIndustryEdges } from "@/lib/industries";
 import { clientInSentence } from "@/lib/work";
 import { metaDescription } from "@/lib/seo";
+import { marketsFor, only } from "@/lib/markets";
 
 const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture — each backed by a real system in use.");
 
@@ -58,6 +59,7 @@ export default function IndustriesPage() {
                     key={i.slug}
                     href={`/industries/${i.slug}`}
                     className="focus-ring block"
+                    {...only(marketsFor(`/industries/${i.slug}`))}
                   >
                     <HoverVideo base={`/industries/${i.slug}`} />
                     <h2 className="text-lg font-medium text-foreground">{i.title}</h2>

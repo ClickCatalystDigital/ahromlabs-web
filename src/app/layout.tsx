@@ -75,12 +75,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
+      // The inline script below sets data-market before paint, so React must not flag it.
+      suppressHydrationWarning
       className={`${geistSans.variable} ${instrumentSerif.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {/* Every section below each page's hero ships at opacity:0, revealed
             by IntersectionObserver in the Reveal component. Without JS that
             observer never runs, so this keeps the content visible. */}
+        {/* The market this visit is shown (cookie set by src/proxy.ts), so CSS hides links to other markets'
+            pages before the first paint. Pages stay one static file for every market. No JS: everything shows. */}
+        <script dangerouslySetInnerHTML={{ __html: `try{var m=document.cookie.match(/(?:^|; )mkt=([A-Z]{2})/);document.documentElement.dataset.market=m?m[1]:"IN"}catch(e){}` }} />
         <noscript>
           <style>{".reveal{opacity:1 !important;transform:none !important;}"}</style>
         </noscript>

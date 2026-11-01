@@ -14,7 +14,8 @@ const param = (d: string) => ({ toolparamdescription: d }) as Record<string, str
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm() {
+// whatsapp: offer the WhatsApp number and consent (India); other markets book a call instead.
+export function ContactForm({ whatsapp: offerWhatsapp = true }: { whatsapp?: boolean } = {}) {
   const emailId = useId();
   const messageId = useId();
   const phoneId = useId();
@@ -119,7 +120,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="subscribe-field">
+      {offerWhatsapp && <div className="subscribe-field">
         <label htmlFor={phoneId} className="subscribe-label">
           WhatsApp number <span className="text-foreground-secondary">(optional)</span>
         </label>
@@ -139,7 +140,7 @@ export function ContactForm() {
             &ldquo;stop&rdquo; at any time. <a href="/privacy" className="underline">Privacy</a>
           </span>
         </label>
-      </div>
+      </div>}
 
       {status === "error" && (
         <p id={`${emailId}-error`} className="subscribe-error" role="status" aria-live="polite">

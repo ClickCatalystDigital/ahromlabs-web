@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { GA_ID } from "@/lib/analytics";
+import { CHOICE_COOKIE, SHOWN_COOKIE, adaptedPath, marketFromParam, marketOf } from "@/lib/markets";
 
 // Cross-checked against the ai-robots-txt project's live list, not guessed.
 const AI_CRAWLERS = [
@@ -87,6 +88,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // The market versions' own paths (src/app/na/) are internal: send people to the public URL.
+  const internal = pathname.match(/^\/na(\/.*)?$/);
+  if (internal) return NextResponse.redirect(new URL(`${internal[1] ?? "/"}?market=us`, request.url), 308);
+
   const markdown = prefersMarkdown(request.headers.get("accept") ?? "");
   if (bot || markdown) {
     console.log(JSON.stringify({ event: "ai_crawler_hit", bot: bot ?? "markdown-agent", path: pathname, ua, markdown }));
@@ -116,10 +121,19 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  const response = NextResponse.next();
+  // Market (docs/markets-plan.md): ?market= beats the visitor's saved choice, which beats Cloudflare's country.
+  // Never a redirect by IP: the same URL is served, and a page with a version for this market is rewritten to
+  // it (src/app/na/). Both versions are prerendered, so the static cache keys them by their own paths.
+  const param = marketFromParam(request.nextUrl.searchParams.get("market"));
+  const chosen = param ?? marketFromParam(request.cookies.get(CHOICE_COOKIE)?.value);
+  const market = chosen ?? marketOf(request.headers.get("cf-ipcountry"));
+  const adapted = adaptedPath(market, route || "/");
+  const response = adapted ? NextResponse.rewrite(new URL(`${adapted}${request.nextUrl.search}`, request.url)) : NextResponse.next();
+  if (param) response.cookies.set(CHOICE_COOKIE, param, { path: "/", maxAge: 31536000, sameSite: "lax", secure: true });
+  if (request.cookies.get(SHOWN_COOKIE)?.value !== market) response.cookies.set(SHOWN_COOKIE, market, { path: "/", sameSite: "lax", secure: true });
   response.headers.set("Link", link);
-  // The same URL has two representations; caches must key on Accept.
-  response.headers.set("Vary", "Accept");
+  // The same URL has two representations by Accept, and by market for the adapted pages.
+  response.headers.set("Vary", "Accept, Cookie");
   return response;
 }
 
