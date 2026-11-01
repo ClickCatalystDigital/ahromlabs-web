@@ -42,7 +42,7 @@ export function HydrotestCalculator() {
           {Object.entries(HYDRO_CASES).map(([key, v]) => <option key={key} value={key}>{v.label} ({v.para})</option>)}
         </select>
       </div>
-      <Field label="MAWP" value={mawp} onChange={setMawp} hint="Any unit (psi, bar, MPa); the answer comes out in the same one." />
+      <Field label="MAWP" value={mawp} onChange={setMawp} hint="Any unit: psi, bar or MPa. The answer comes out in the same one." />
       {k.ratio && (
         <>
           <Field label="Allowable stress at test temperature" value={sTest} onChange={setSTest} hint="From Section II Part D, for the material with the lowest ratio." />

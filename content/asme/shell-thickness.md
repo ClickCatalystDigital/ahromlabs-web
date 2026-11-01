@@ -49,6 +49,8 @@ A carbon steel shell, 48 in inside diameter, design pressure 150 psi, allowable 
 4. Add corrosion: 0.214 + 0.125 = **0.339 in** minimum.
 5. Choose plate: ⅜ in (0.375) covers it, after allowing for any mill undertolerance and forming thin-out.
 
+The same shell in metric: 1,220 mm inside diameter, design pressure 1.03 MPa (10.3 bar), allowable stress 138 MPa, E = 0.85, corrosion allowance 3 mm. Corroded radius 613 mm; t = 1.03 × 613 / (138 × 0.85 − 0.6 × 1.03) = **5.4 mm**, plus 3 mm corrosion = **8.4 mm**, so a 10 mm plate. Use MPa with mm, or psi with inches, and never mix them.
+
 The calculator above repeats these steps for your numbers and works the MAWP back from a chosen thickness. The allowable stress is yours to enter: it comes from ASME's tables for your material, grade and temperature, which change between editions and aren't reproduced here.
 
 ## What the formula doesn't cover

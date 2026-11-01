@@ -20,7 +20,7 @@ evidence:
   - metric: cost of a used piece
     value: by weight fraction — 100 kg used of a 157 kg, ₹1,000 plate → ₹636.94
 published: 2026-09-24
-updated: 2026-10-17
+updated: 2026-11-01
 ---
 
 A boiler maker buys steel plate in standard sizes and cuts it to the parts a design needs. The leftover is often big enough to use on the next job — if anyone knows it exists. At one boiler and pressure-vessel manufacturer, it used to be re-bought or scrapped blindly. This is how the operations system Ahrom Labs built now keeps it.
@@ -44,6 +44,8 @@ Because a remnant is stored as a real piece with real dimensions, it's matched a
 ## What does a cut piece cost?
 
 Cost follows weight. A used piece carries the fraction of its source's cost that its weight represents: 100 kg used from a 157 kg plate that cost ₹1,000 is booked at ₹636.94. Building this surfaced a real, pre-existing error in how average cost was being recalculated for piece-tracked stock — fixed at the root rather than patched in the report.
+
+The ASME Code puts the same requirement in its rule on transferring material markings when plate is cut (UG-77); see [material test reports and heat numbers](/asme/mtr).
 
 ## Boundary
 

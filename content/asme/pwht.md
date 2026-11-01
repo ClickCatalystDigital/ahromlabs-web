@@ -7,7 +7,7 @@ question: "When is post-weld heat treatment required by ASME?"
 answer: >
   ASME Section VIII Division 1 requires post-weld heat treatment (PWHT) by material and thickness: Table UCS-56
   sets, for each P-number, the holding temperature, the time per inch of thickness and when it can be skipped.
-  For P-No. 1 carbon steel, PWHT is generally required above 1½ in, held at 1,100 °F or more, and some services
+  For P-No. 1 carbon steel, PWHT is generally required above 1½ in (38 mm), held at 1,100 °F (595 °C) or more, and some services
   need it at any thickness.
 description: "ASME PWHT requirements under UCS-56: holding temperature and time for P-No. 1, thickness exemptions, service-driven PWHT, heating and cooling rates and records."
 domain: [asme, design, welding]
@@ -32,9 +32,9 @@ Table UCS-56-1 sets requirements by P-number. For P-No. 1 (carbon steel, the com
 | Item | Requirement |
 |---|---|
 | Minimum holding temperature | 1,100 °F (595 °C) |
-| Holding time, up to 2 in thick | 1 hour per inch, at least 15 minutes |
-| Holding time, over 2 in | Longer, on a sliding scale in the table |
-| Exemption by thickness | PWHT is not mandatory up to 1¼ in, and up to 1½ in with a minimum preheat, subject to the table's notes |
+| Holding time, up to 2 in (50 mm) thick | 1 hour per inch, at least 15 minutes |
+| Holding time, over 2 in (50 mm) | Longer, on a sliding scale in the table |
+| Exemption by thickness | PWHT is not mandatory up to 1¼ in (32 mm), and up to 1½ in (38 mm) with a minimum preheat, subject to the table's notes |
 
 Other P-numbers have their own temperatures and much narrower exemptions; chromium–molybdenum steels (P-No. 4, 5A) nearly always need it. Check the current edition's table for your material: the notes carry most of the detail.
 
@@ -48,7 +48,7 @@ PWHT can be required whatever the thickness:
 
 ## Doing it
 
-- Heating and cooling rates above 800 °F are limited by thickness (UCS-56(d)), so a thick vessel takes a long cycle.
+- Heating and cooling rates above 800 °F (425 °C) are limited by thickness (UCS-56(d)), so a thick vessel takes a long cycle.
 - Temperatures are recorded by thermocouples on the part, and the chart is part of the record.
 - PWHT is a procedure [essential variable](/asme/essential-variables): adding or removing it needs a PQR qualified that way.
 

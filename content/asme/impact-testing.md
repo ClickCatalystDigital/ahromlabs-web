@@ -7,7 +7,7 @@ question: "When is impact testing required for an ASME pressure vessel?"
 answer: >
   Carbon and low-alloy steels can turn brittle when cold, so ASME Section VIII Division 1 requires Charpy impact
   tests unless an exemption applies. UCS-66 gives exemption curves (A to D) by material and thickness against the
-  vessel's MDMT; thin parts and lower stresses earn more exemption. Below about −55 °F most parts need testing.
+  vessel's MDMT; thin parts and lower stresses earn more exemption. Below about −55 °F (−48 °C) most parts need testing.
 description: "ASME impact testing and MDMT explained: UCS-66 exemption curves A to D, governing thickness, the stress-ratio reduction, UG-20(f), and what testing involves."
 domain: [asme, design, materials]
 published: 2026-11-01
@@ -33,9 +33,9 @@ For carbon and low-alloy steels (Part UCS), Division 1 works it out part by part
 3. **Read the curve.** It gives the coldest MDMT allowed without impact testing at that thickness. If the vessel's MDMT is warmer, the part is exempt.
 4. **Take credit for low stress.** When the part is less stressed than its full allowable (thicker than needed, or at lower pressure), Figure UCS-66.1 allows a further reduction in the exemption temperature.
 
-There's also a blanket exemption for simple cases (UG-20(f)): P-No. 1 materials of limited thickness, hydrostatically tested to UG-99(b), with design temperatures between −20 °F and 650 °F and no unusual shock or cyclic loading.
+There's also a blanket exemption for simple cases (UG-20(f)): P-No. 1 materials of limited thickness, hydrostatically tested to UG-99(b), with design temperatures between −20 °F (−29 °C) and 650 °F (343 °C) and no unusual shock or cyclic loading.
 
-Below −55 °F, impact testing is generally required unless the part is very lightly stressed.
+Below −55 °F (−48 °C), impact testing is generally required unless the part is very lightly stressed.
 
 ## What impact testing involves
 

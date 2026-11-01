@@ -58,7 +58,7 @@ Sections VI and VII are recommendations for owners, not construction rules, and 
 ## Which sections a shop needs
 
 - **Pressure vessels**: [Section VIII](/asme/section-viii) (usually Division 1), plus II Part A or B for the material, II Part C if it buys filler metal to an SFA specification, II Part D for allowable stresses, V, [IX](/asme/section-ix) and XIII.
-- **Power boilers** (steam above 15 psi, hot water above 160 psi or 250 °F): Section I with the same reference sections. Below those limits, a heating boiler is built to Section IV; see [Section I vs Section IV](/asme/section-i-vs-iv).
+- **Power boilers** (steam above 15 psi (1 bar), hot water above 160 psi (11 bar) or 250 °F (121 °C)): Section I with the same reference sections. Below those limits, a heating boiler is built to Section IV; see [Section I vs Section IV](/asme/section-i-vs-iv).
 - **Relief valves and rupture disks**: [Section XIII](/asme/section-xiii).
 
 To hold an ASME certificate, a shop must own current copies of the sections its scope uses (ASME lists them per certificate as its "required code books"); photocopies are not accepted at the joint review.

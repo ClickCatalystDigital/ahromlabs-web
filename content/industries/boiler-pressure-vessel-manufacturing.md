@@ -69,7 +69,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-10-25
+updated: 2026-11-01
 ---
 
 ## Can I try it before talking to anyone?
@@ -89,6 +89,8 @@ Yes, in a few minutes instead of typing it up by hand. The folder — covering l
 Each test certificate is identified by certificate, cast and plate number together — one certificate number covered four casts in the client's own sample — and one certificate is typically used across several boilers. When a plate is cut, every used piece, remnant and scrap piece is chained to the plate it came from. QC records heat and lot numbers, non-conformance reports with a disposition and a verification step before closing, and hold points that stop a job until inspection clears it.
 
 The heat number and certificate are captured once, when a plate is received, and every piece cut from it inherits them automatically — nobody re-types them at the cutting table. A non-conformance can be dispositioned as rework, repair, scrap or use-as-is: rework and repair open a new job card that carries the lineage of the original, and scrap or use-as-is can't be saved without a written justification. Hold points come from the work order's own route — a step marked as a quality checkpoint holds the job until QC releases it — so there is no separate inspection plan to keep in step with production.
+
+Shops that also build to the ASME Code need the same trail for its material rules: see [material test reports and heat numbers](/asme/mtr), and [ASME vs IBR 2026](/asme/asme-vs-ibr) for where the two codes meet.
 
 ## How does work move between departments without chasing people?
 

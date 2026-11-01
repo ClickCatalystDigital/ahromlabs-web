@@ -36,11 +36,11 @@ The test pressure is at the **top** of the vessel. If the gauge is at the bottom
 
 ## Example
 
-A vessel with MAWP 100 psi at 650 °F, where the material's allowable stress is 20,000 psi at test temperature and 16,000 psi at 650 °F: 1.3 × 100 × (20,000 ÷ 16,000) = **162.5 psi**. The calculator above does this for any rule and unit.
+A vessel with MAWP 100 psi at 650 °F, where the material's allowable stress is 20,000 psi at test temperature and 16,000 psi at 650 °F: 1.3 × 100 × (20,000 ÷ 16,000) = **162.5 psi**. In metric units it reads the same: MAWP 10 bar with the same materials gives 1.3 × 10 × 1.25 = **16.25 bar**. The calculator above does this for any rule and unit.
 
 ## How the test is done (Division 1)
 
-- **Water temperature**: the metal should be at least 30 °F above the [MDMT](/asme/impact-testing) to avoid brittle fracture, and Division 1 recommends not above 120 °F so the vessel can be approached safely.
+- **Water temperature**: the metal should be at least 30 °F (17 °C) above the [MDMT](/asme/impact-testing) to avoid brittle fracture, and Division 1 recommends not above 120 °F (49 °C) so the vessel can be approached safely.
 - **Inspection**: after reaching test pressure, it is reduced to at least the test pressure divided by 1.3 and held while every joint and connection is examined, normally with the [Authorized Inspector](/asme/authorized-inspector) present.
 - **Gauges**: the dial should read about twice the test pressure, and never less than 1.5 or more than 4 times it (UG-102). Calibrate before the test.
 - **Vents**: vent the high points so no air is trapped.

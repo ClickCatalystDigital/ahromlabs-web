@@ -56,7 +56,7 @@ The construction section still decides:
 
 - that the vessel or boiler needs protection, and from what (a blocked outlet, a fire, a failed control);
 - the set pressure, normally not above the [MAWP](/asme/mawp);
-- how far pressure may rise while the device relieves: in Division 1, generally 10% or 3 psi above MAWP for one device, 16% with several, 21% for fire.
+- how far pressure may rise while the device relieves: in Division 1, generally 10% or 3 psi (0.2 bar) above MAWP for one device, 16% with several, 21% for fire.
 
 ## Repairs
 

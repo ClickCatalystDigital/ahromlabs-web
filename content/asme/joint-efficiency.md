@@ -49,8 +49,8 @@ Type is what the joint is; category is where it is. Both go on the [data report]
 UW-11 makes full radiography of butt welds mandatory in several cases, among them:
 
 - vessels in **lethal service**;
-- butt welds thicker than a limit set by the material (for carbon steel, 1¼ in);
-- **unfired steam boilers** above 50 psi;
+- butt welds thicker than a limit set by the material (for carbon steel, 1¼ in, 32 mm);
+- **unfired steam boilers** above 50 psi (3.4 bar);
 - where the designer has used E = 1.0.
 
 Otherwise the designer chooses, and the choice is commercial: full radiography costs more in examination and saves steel by allowing E = 1.0.

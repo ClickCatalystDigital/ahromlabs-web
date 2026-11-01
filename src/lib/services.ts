@@ -616,6 +616,7 @@ export const services: Service[] = [
       { metric: "Weights typed by the operator", value: "None — derived from dimensions and density" },
       { metric: "Built for", value: "A boiler and pressure-vessel manufacturer" },
     ],
+    links: [{ href: "/asme/mtr", label: "ASME material traceability: MTRs, heat numbers and marking transfer" }],
     proof: [
       { kind: "note", slug: "plate-remnants-back-into-stock" },
       { kind: "pattern", slug: "derive-balances-dont-store-them" },

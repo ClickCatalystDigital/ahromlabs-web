@@ -23,7 +23,7 @@ evidence:
   - metric: certificate-to-part linking
     value: suggested by confidence, never applied without a person
 published: 2026-09-24
-updated: 2026-10-25
+updated: 2026-11-01
 ---
 
 The manufacturer this was built for makes boilers, pressure-reducing stations and steam headers. Every unit it ships needs a [statutory folder](/systems/ibr-statutory-folder) for the Directorate of Boilers, under the Indian Boiler Regulations (IBR): the forms that prove each plate, tube and forging came from certified material. Ahrom Labs built the operations system that now keeps the certificates and produces that folder.
@@ -45,6 +45,8 @@ Form IV A lists every material part with its certificate, grouped into lettered 
 ## Where does AI help, and where does it stop?
 
 Certificate PDFs are read by AI on upload, so the certificate's fields don't have to be typed. Matching a certificate to the part it covers is suggested by a confidence score learned from past approvals — but on this document, a suggestion never links itself. A person clicks to use it, because a wrong link here ends up in paperwork a boiler inspector relies on. The [same-confidence note](/notes/same-confidence-different-autonomy) explains why the identical score is allowed to act on its own elsewhere in the same system.
+
+The ASME Code asks for the same trail behind its Manufacturer's Data Report, the document an ASME-stamped boiler or vessel ships with; see [ASME data reports](/asme/data-reports) and [ASME vs IBR 2026](/asme/asme-vs-ibr).
 
 ## Boundary
 

@@ -29,7 +29,7 @@ A procedure test proves one set of conditions. Section IX's variable tables (QW-
 
 | Kind | If you change it beyond the PQR | Typical examples |
 |---|---|---|
-| Essential | Qualify a new PQR | Base metal P-number; filler metal F-number and A-number; thickness beyond the qualified range; adding or removing post-weld heat treatment; a drop in preheat of more than 100 °F; a change of process; adding or removing shielding gas or a backing gas in some processes |
+| Essential | Qualify a new PQR | Base metal P-number; filler metal F-number and A-number; thickness beyond the qualified range; adding or removing post-weld heat treatment; a drop in preheat of more than 100 °F (56 °C); a change of process; adding or removing shielding gas or a backing gas in some processes |
 | Supplementary essential | New PQR only if the construction code requires impact testing | Group number within a P-number; heat input increase; single to multi-pass changes in some processes |
 | Nonessential | Revise the WPS; no new test | Groove design, backing type, technique details, cleaning methods |
 

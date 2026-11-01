@@ -8,7 +8,7 @@ answer: >
 domain: [operations]
 order: 16
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-01
 ---
 
-One certificate often covers parts of several boilers, so a system that keeps each one once and links it to every part avoids retyping and mismatches; see [the IBR statutory folder from a BOM](/notes/ibr-statutory-folder-from-bom) and [Form V Part A](/ibr/forms/form-v-part-a).
+One certificate often covers parts of several boilers, so a system that keeps each one once and links it to every part avoids retyping and mismatches; see [the IBR statutory folder from a BOM](/notes/ibr-statutory-folder-from-bom) and [Form V Part A](/ibr/forms/form-v-part-a). In the US the same document is usually called a mill test report (MTR); what one must show for ASME work is in [material test reports and heat numbers](/asme/mtr).

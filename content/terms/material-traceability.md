@@ -7,7 +7,7 @@ answer: >
 domain: [operations]
 order: 6
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-01
 ---
 
-For pressure parts, traceability is what lets a statutory folder show which certificate covers which part. See the [traceability requirements](/erp/requirements#quality-certificate-bank) and [material traceability, cutting and remnants](/services/material-traceability).
+For pressure parts, traceability is what lets a statutory folder show which certificate covers which part. See the [traceability requirements](/erp/requirements#quality-certificate-bank) and [material traceability, cutting and remnants](/services/material-traceability); for ASME Code work, see [material test reports and heat numbers](/asme/mtr).

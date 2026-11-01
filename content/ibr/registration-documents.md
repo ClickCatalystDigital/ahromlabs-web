@@ -10,7 +10,7 @@ answer: >
 description: "Checklist for a boiler registration application under IBR 2026: the four document sets, Forms I Part B or C, IV Part A and V Part A, and what follows."
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-10-25
+updated: 2026-11-01
 checked: 2026-10-17
 image:
   src: /ibr/ibr-registration-steps.webp
@@ -72,3 +72,5 @@ Under regulation 300, the Inspector inspects the boiler at site for transit dama
 ## When is the registry number engraved?
 
 Within one month of receiving it, the registry number is cut into the boiler's front plate or wherever the Inspector points out, and the engraving is reported to the Chief Inspector within the same month (regulation 301). The number sits below the state's letters, for example GT for Gujarat and MR for Maharashtra; a small industrial boiler's number carries an "S" prefix.
+
+A boiler designed to the ASME Code still goes through IBR registration in India. Where IBR 2026 accepts ASME designs, materials and inspection, and how the ASME paperwork lines up with these forms, is in [ASME vs IBR 2026](/asme/asme-vs-ibr) and [ASME data reports](/asme/data-reports).

@@ -30,11 +30,11 @@ sources:
 | Design pressure | What the vessel is designed for, at the top, with the coincident temperature | The owner or designer (UG-21) |
 | MAWP | The most the completed vessel can take at the top, at the design temperature, from its actual thicknesses | Calculated (UG-98) |
 
-A common margin is design pressure about 10% above the maximum operating pressure, or 25 psi above it for low pressures, so normal swings don't lift the relief valve. That margin is practice, not a Code rule.
+A common margin is design pressure about 10% above the maximum operating pressure, or 25 psi (1.7 bar) above it for low pressures, so normal swings don't lift the relief valve. That margin is practice, not a Code rule.
 
 ## Why MAWP can be higher than design pressure
 
-Plates come in standard thicknesses. If the [shell thickness](/asme/shell-thickness) needed for the design pressure is 0.30 in and you use 0.375 in plate, the shell can take more. MAWP is worked out back from each part's thickness, less corrosion allowance, and the weakest part sets it. Many owners simply set MAWP equal to design pressure to keep the relief valve and nameplate simple; that's allowed.
+Plates come in standard thicknesses. If the [shell thickness](/asme/shell-thickness) needed for the design pressure is 0.30 in (7.6 mm) and you use 0.375 in (9.5 mm) plate, the shell can take more. MAWP is worked out back from each part's thickness, less corrosion allowance, and the weakest part sets it. Many owners simply set MAWP equal to design pressure to keep the relief valve and nameplate simple; that's allowed.
 
 MAWP is stated at the **top** of the vessel in its operating position. Parts lower down see the static head of the liquid too, and are designed for it.
 
@@ -48,4 +48,4 @@ The **minimum design metal temperature** is the coldest metal temperature the ve
 
 ## Overpressure
 
-While a relief device is discharging, pressure may rise above MAWP by a set amount: in Division 1, generally 10% or 3 psi for a single device, 16% with several, 21% for fire exposure. See [Section XIII](/asme/section-xiii).
+While a relief device is discharging, pressure may rise above MAWP by a set amount: in Division 1, generally 10% or 3 psi (0.2 bar) for a single device, 16% with several, 21% for fire exposure. See [Section XIII](/asme/section-xiii).

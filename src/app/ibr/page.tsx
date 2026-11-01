@@ -24,6 +24,13 @@ export const metadata: Metadata = {
 };
 
 
+// Boilers built to the ASME Code are registered under IBR too; the ASME hub explains where the two meet.
+const ASME_LINK = {
+  href: "/asme/asme-vs-ibr",
+  title: "ASME vs IBR 2026: how the two boiler codes fit together",
+  text: "Where IBR 2026 accepts ASME materials, consumables, NDT certificates and designs, and export inspection to a foreign code, quoted from the Gazette.",
+};
+
 const FORMS_LIST = {
   href: "/ibr/forms",
   title: "IBR 2026 forms list, and their IBR 1950 names",
@@ -46,7 +53,7 @@ export default function IbrHub() {
     >
       <IbrH2>Guides</IbrH2>
       <ul className="mt-6 divide-y divide-line border-y border-line">
-        {[...guides.map((g) => ({ href: `/ibr/${g.slug}`, title: g.title, text: g.answer })), FORMS_LIST].map((g) => (
+        {[...guides.map((g) => ({ href: `/ibr/${g.slug}`, title: g.title, text: g.answer })), FORMS_LIST, ASME_LINK].map((g) => (
           <li key={g.href} className="py-6">
             <Link href={g.href} className="text-link focus-ring text-xl font-medium">
               {g.title}

@@ -43,7 +43,7 @@ Section IX's position table (QW-461.9) sets what each test covers. The headline 
 - **3G and 4G plate**: plate in all positions, but pipe only above a large diameter, which is why pipe shops test on pipe.
 - **1G**: flat only.
 
-Diameter limits also apply (QW-452.3): a small-bore test coupon qualifies down to roughly its own size, and a coupon of 2⅞ in outside diameter or more qualifies that diameter and up. Thickness limits come from the deposited weld metal on the coupon.
+Diameter limits also apply (QW-452.3): a small-bore test coupon qualifies down to roughly its own size, and a coupon of 2⅞ in (73 mm) outside diameter or more qualifies that diameter and up. Thickness limits come from the deposited weld metal on the coupon.
 
 ## How the test is judged
 

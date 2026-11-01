@@ -8,7 +8,7 @@ answer: >
   Section VIII sets the rules for pressure vessels. Division 1 is design by rule with a larger safety margin and
   is used for most vessels. Division 2 allows thinner walls in return for more design analysis, stricter material
   and examination rules, and a certified design report. Division 3 is for very high pressures, usually above
-  10,000 psi.
+  10,000 psi (690 bar).
 description: "ASME Section VIII Division 1, 2 and 3 compared: design margin, analysis, examination, paperwork and stamps, and how to choose for a pressure vessel."
 domain: [asme, pressure-vessels, design]
 published: 2026-11-01
@@ -27,14 +27,14 @@ sources:
 
 ## What Section VIII covers
 
-Section VIII is the Code's pressure vessel section: tanks, columns, reactors, heat exchangers, receivers and similar vessels that hold internal or external pressure. Division 1 itself excludes some equipment, for example vessels designed for 15 psi or less, and very small vessels (6 in inside diameter or less), which is why many low-pressure tanks are built to other standards. Fired equipment that generates steam belongs to [Section I](/asme/section-i-vs-iv).
+Section VIII is the Code's pressure vessel section: tanks, columns, reactors, heat exchangers, receivers and similar vessels that hold internal or external pressure. Division 1 itself excludes some equipment, for example vessels designed for 15 psi (1 bar) or less, and very small vessels (6 in, 152 mm, inside diameter or less), which is why many low-pressure tanks are built to other standards. Fired equipment that generates steam belongs to [Section I](/asme/section-i-vs-iv).
 
 ## The three Divisions side by side
 
 | | Division 1 | Division 2 | Division 3 |
 |---|---|---|---|
 | Approach | Design by rule: formulas and charts | Design by rule or by analysis (stress analysis, finite elements) | Design by analysis, fracture mechanics |
-| Typical use | Most vessels | Large, thick or high-pressure vessels where thinner walls save money | Very high pressure, usually above 10,000 psi |
+| Typical use | Most vessels | Large, thick or high-pressure vessels where thinner walls save money | Very high pressure, usually above 10,000 psi (690 bar) |
 | Design margin on tensile strength | 3.5 | 2.4 | Based on yield, with further checks |
 | Owner's input | Design conditions on the order | A User's Design Specification | A User's Design Specification |
 | Design certification | The manufacturer | A Manufacturer's Design Report, certified as the Division requires | As Division 2, plus more |
@@ -46,7 +46,7 @@ The smaller margin is the reason Division 2 exists: the same vessel needs less s
 ## How to choose
 
 - **Start with Division 1** unless there's a reason not to. More shops hold a U certificate, more inspectors know it, and the paperwork is lighter.
-- **Consider Division 2** when the wall gets thick (a rough sign: shells over about 2 in), the material is expensive, or the vessel is cyclic and needs a fatigue assessment anyway.
+- **Consider Division 2** when the wall gets thick (a rough sign: shells over about 2 in, 50 mm), the material is expensive, or the vessel is cyclic and needs a fatigue assessment anyway.
 - **Division 3** is a specialist field (isostatic presses, high-pressure reactors).
 
 A shop can only stamp what its certificate covers: a U certificate does not allow Division 2 work. See [ASME stamps](/asme/stamps).
