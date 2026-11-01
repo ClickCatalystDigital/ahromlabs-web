@@ -51,7 +51,7 @@ export function HomePage({ market }: { market: MarketCode }) {
           <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-0">
             <div className="rail relative z-10 col-span-1 row-start-1 lg:col-span-6 lg:col-start-1 lg:row-start-1">
               <h1 className="display max-w-[14ch] text-5xl text-foreground sm:text-6xl lg:text-6xl">
-                We build the systems your business runs on.
+                We build the AI systems your business runs on.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-pretty text-foreground-secondary sm:text-xl">
                 {say(market, `One system for the whole business, from enquiry to dispatch to the books, that also tells you what's late, what's owed and what needs a decision today. ${t.books} can stay. Already in daily use at manufacturers, traders and design\u00a0studios.`)}

@@ -50,12 +50,12 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Ahrom Labs",
     title: "Ahrom Labs",
-    description: "We build the systems your business runs on.",
+    description: "We build the AI systems your business runs on.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Ahrom Labs",
-    description: "We build the systems your business runs on.",
+    description: "We build the AI systems your business runs on.",
   },
   // Fill these in from Google Search Console / Bing Webmaster Tools after
   // deploy. Left unset rather than filled with a placeholder value.
