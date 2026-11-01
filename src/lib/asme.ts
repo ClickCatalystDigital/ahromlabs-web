@@ -63,4 +63,29 @@ export function asmeGuides(): ContentEntry[] {
 }
 export const asmeGuide = (slug: string) => getContent("asme").find((g) => g.slug === slug);
 
+/** The question library (/asme/questions) as data, CC BY 4.0: one question per guide with its short answer. */
+export function asmeQuestions() {
+  const group = (g: ContentEntry) => ASME_GROUPS.find((x) => x.slug === g.group)!.name;
+  return asmeGuides().map((g) => ({
+    question: g.question!,
+    answer: g.answer.replace(/\s+/g, " ").trim(),
+    topic: group(g),
+    guide: `https://ahromlabs.com/asme/${g.slug}`,
+    updated: g.updated,
+  }));
+}
+export function asmeQuestionsJson() {
+  return {
+    name: "ASME Boiler and Pressure Vessel Code questions, answered",
+    edition: `ASME BPVC ${ASME_EDITION.name}`,
+    checked: ASME_CHECKED,
+    publisher: "Ahrom Labs",
+    url: "https://ahromlabs.com/asme/questions",
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    citation: `Ahrom Labs, "ASME Boiler and Pressure Vessel Code questions, answered", ${ASME_CHECKED}, https://ahromlabs.com/asme/questions`,
+    note: "Not engineering advice and not reviewed by an Authorized Inspector; check against the Code and your Inspector.",
+    questions: asmeQuestions(),
+  };
+}
+
 export * from "./asme-calc";

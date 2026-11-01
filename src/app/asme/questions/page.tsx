@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function AsmeQuestions() {
   const guides = asmeGuides();
-  const lead = `${guides.length} questions about the ASME Boiler and Pressure Vessel Code, each answered in a few lines and linked to the guide that explains it in full.`;
+  const lead = `${guides.length} questions about the ASME Boiler and Pressure Vessel Code, each answered in a few lines and linked to the guide that explains it in full. Free to reuse as data under CC BY 4.0.`;
   const trail = [{ name: "ASME", path: "/asme" }, { name: title, path: "/asme/questions" }];
   const art = asmeArt("questions");
   const updated = [ASME_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
@@ -36,6 +36,10 @@ export default function AsmeQuestions() {
       art={art?.src}
       artAlt={art?.alt}
     >
+      <p className="leading-relaxed text-foreground-secondary">
+        Download the questions and answers as <a href="/asme/questions.csv" className="text-link focus-ring">CSV for Excel</a> or{" "}
+        <a href="/asme/questions.json" className="text-link focus-ring">JSON</a>. Free under CC BY 4.0: use them, credit Ahrom Labs.
+      </p>
       {ASME_GROUPS.map((group) => (
         <div key={group.slug}>
           <GuideH2>{group.name}</GuideH2>
