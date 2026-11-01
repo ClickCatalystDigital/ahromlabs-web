@@ -36,7 +36,7 @@ Unset means `IN`, so today's behaviour is the default.
 | Accounting link | TallyPrime | QuickBooks link shown as "planned" until it is built; the books screens work on their own |
 | Words | quotation, enquiry, dispatch, test certificate | estimate, inquiry, shipping, mill test report (same list as the site's `DICT`) |
 | Dates | 1 Nov 2026 | Nov 1, 2026 |
-| Units | metric | metric stored, imperial shown where the US trade uses it (pipe NPS, inches, psi, °F) |
+| Units | metric | A **Units** setting (Metric / Imperial) in each system's Settings, defaulting by country: Metric for India, Imperial for the US. Values are always stored metric; only display and entry convert (mm↔in, kg↔lb, bar↔psi, °C↔°F, m²↔sq ft). Pipe sizes stay NPS/DN in both. |
 
 ### Boiler system (shanti-ops): the biggest piece
 
@@ -45,13 +45,14 @@ Unset means `IN`, so today's behaviour is the default.
    Section VIII vessel, P-2/P-3 for a Section I boiler; ASME publishes these free as fillable PDFs), the weld map with
    welder stamps, WPS/PQR references, welder continuity, MTRs by heat number, NDE and PWHT records, hydrotest record.
    The folder's current structure (every part linked to its certificate) already holds most of this.
-2. **Welder continuity** from records the system already keeps (job cards, who welded what): the QW-322 lapse date,
+2. **Units setting** (Metric / Imperial) in Settings, default by market, used by the calc sheet, BOM weights, drawings list, QC records and PDFs. Stored values never change, so Shanti's data and printed forms stay exactly as they are.
+3. **Welder continuity** from records the system already keeps (job cards, who welded what): the QW-322 lapse date,
    the same rule as the site's checker.
-3. **Item master from `~/Developer/items`**: import the US boiler catalogue (308 items: pipe, flanges, fittings,
+4. **Item master from `~/Developer/items`**: import the US boiler catalogue (308 items: pipe, flanges, fittings,
    gaskets, studs, valves, instruments) into the US demo only. Before import: fix the rounded pipe outside
    diameters, remove the `[SYNTHETIC DEMO ALIAS]` text, and drop vendor prices and client codes. The import is a
    one-way script into the demo's `items` table; nothing flows back into `~/Developer/items`.
-4. **US demo company**: a US Acme with US customers, states, $ prices, ASME jobs (one U-stamp vessel, one Section I
+5. **US demo company**: a US Acme with US customers, states, $ prices, ASME jobs (one U-stamp vessel, one Section I
    boiler) and an Authorized Inspector hold point.
 
 ### Interiors (savistar-ops) and construction (structonova-ops)
@@ -63,7 +64,7 @@ Unset means `IN`, so today's behaviour is the default.
 
 ### Inventory (ls-inventory): first, because US visitors already see it
 
-Number and date formatting from `MARKET`, ₹ and lakh removed, the AI assistant's sample questions in US words. Small.
+Done on branch `demo-us-formatting` (PR ClickCatalystDigital/reel-inventory#1, demo deployed 1 Nov): the shared demo follows each visitor (`?market=` from the site, else country), US number and date style, freight weight in lb beside kg. Money stays ₹ (the demo company's books are in rupees). A US-dollar demo company is a separate, later step. The only measurement shown is freight weight, so no Units setting here.
 
 ## 3. Order and effort
 
