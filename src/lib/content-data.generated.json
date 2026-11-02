@@ -3159,7 +3159,7 @@
       "width": 1086,
       "height": 362
     },
-    "body": "A design studio runs on projects, quotations, site visits, a workshop and a lot of money owed. The owner's questions cut across all of them: how is this client's project going, who still owes us, are we delivering on time. An assistant earns its place if it answers those in one line, with the same figures as the screens.\n\n## What should it answer?\n\nEvery question Atelier AI answers today is listed below, with the screen to check each answer against. Atelier AI runs at an Indian studio, so its money questions say GST; a US studio asks the same ones with sales tax. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.\n\n## What should it refuse?\n\nAdvice (\"should we raise our design fee?\") and anything a login can't see on the screens. A site supervisor asking for payroll should get a refusal, not a figure.\n\n## How Atelier AI does it\n\n[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. \"Remind me to call them on Friday\" drafts a task that is saved only when the person presses Save.\n\nYou can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.\n\n## How to check a vendor's\n\nRun the [vendor test](/ai-assistant/vendor-test) on a copy of your own projects, and paste its written answers into the [number check](/ai-assistant/number-check) with the finance screen beside them. If the assistant comes with a new system, the [ERP guide for interior design firms](/erp/interior-design-firms) lists what the system itself should do."
+    "body": "A design studio runs on projects, quotations, site visits, a workshop and a lot of money owed. The owner's questions cut across all of them: how is this client's project going, who still owes us, are we delivering on time. An assistant earns its place if it answers those in one line, with the same figures as the screens.\n\n## What should it answer?\n\nEvery question Atelier AI answers today is listed below, with the screen to check each answer against. Its money questions name the tax its own studio charges; a US studio asks the same ones about sales tax and QuickBooks. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.\n\n## What should it refuse?\n\nAdvice (\"should we raise our design fee?\") and anything a login can't see on the screens. A site supervisor asking for payroll should get a refusal, not a figure.\n\n## How Atelier AI does it\n\n[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. \"Remind me to call them on Friday\" drafts a task that is saved only when the person presses Save.\n\nYou can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.\n\n## How to check a vendor's\n\nRun the [vendor test](/ai-assistant/vendor-test) on a copy of your own projects, and paste its written answers into the [number check](/ai-assistant/number-check) with the finance screen beside them. If the assistant comes with a new system, the [ERP guide for interior design firms](/erp/interior-design-firms) lists what the system itself should do."
   },
   {
     "kind": "ai-assistant",
@@ -4638,5 +4638,553 @@
       }
     ],
     "body": "## What WIP tracking records\n\n[Work in progress](/systems/work-in-progress) is every job that has started and not shipped. Tracking it means recording a small set of events, always against a job and an operation:\n\n| Event | Who records it | What it gives you |\n|---|---|---|\n| Material issued to the job | Stores | Stock leaves the shelf and becomes WIP cost |\n| Operation started | Operator | Where the job is; queue time before it |\n| Operation finished, with good and scrapped quantity | Operator | Actual run time and scrap per operation |\n| Inspection passed or held | Quality | Whether it can move on |\n| Job finished and packed | Shipping | WIP becomes finished goods, ready to invoice |\n\nEach scan moves the job from one state to the next ([state transitions](/systems#state-transition)), so the system can refuse impossible moves, such as finishing an operation that never started or shipping a job still waiting for inspection.\n\n## A work order example\n\nThe [job traveler](/systems#job-traveler) is the work order as it travels with the parts. A made-up example for 200 steel brackets:\n\n| Op | Operation | Machine | Setup (h) | Run (min each) | Started | Finished | Good | Scrap |\n|---|---|---|---:|---:|---|---|---:|---:|\n| 10 | Laser cut blanks | Laser | 0.5 | 1.0 | Tue 07:10 | Tue 11:05 | 208 | 0 |\n| 20 | Bend, two flanges | Press brake | 1.0 | 1.5 | Tue 12:30 | Wed 09:40 | 200 | 8 |\n| 30 | Weld gusset | Weld cell | 0.5 | 3.0 | Wed 10:15 | | | |\n| 40 | Inspect, first and last piece | Quality | | | | | | |\n| 50 | Powder coat | Outside vendor | | | | | | |\n\nThe header carries the job number (and its barcode), customer, part number and revision, quantity, due date, material with heat or lot number, and the drawing. Times and quantities come from scans, not handwriting. The quoted setup and run times on each line are what [job costing](/manufacturing/quickbooks-job-costing) compares the actual times against.\n\n## Scan stations or tablets\n\nOwners discussing this on Practical Machinist land in roughly the same place:\n\n- **Fixed stations** (a screen and scanner at each work center, or one per area) survive coolant and dust, don't get dropped or walk off, and stay on a wired network.\n- **Tablets** are convenient and have a camera that reads barcodes, but touchscreens get dirty, they're dropped or misplaced, and slow Wi-Fi in a metal building makes every scan a wait.\n- **Phones** work for stores and shipping, where people move around anyway.\n\nA common setup: a barcode on the paper traveler, a cheap scanner at each station, phones for stores.\n\n## Getting operators to scan\n\nSoftware is the easy part. What makes it stick, from shops that have done it:\n\n- **One scan, not a form.** Scan the job, scan your badge, type a quantity. Anything longer gets skipped.\n- **Tie it to pay.** When the same scans fill timesheets, people scan, because it pays them.\n- **Say what it's for.** Scanning can feel like surveillance; it lands better framed as \"so nobody has to walk the floor to find a job\".\n- **Watch for gaming**, such as closing an operation early. Compare scans with the schedule and look at outliers, not everyone.\n- **Do it daily.** Time recorded at the end of the day, before clocking out, is close enough; time recorded at the end of the week is fiction.\n\n## When it pays off\n\nOne owner on Practical Machinist puts the break-even around seven to ten people. Below that, the owner can see every job from the office door, and manual counts in QuickBooks may be enough. Above it, nobody can, and WIP tracking is what makes a [schedule](/manufacturing/production-scheduling-software) trustworthy: the plan knows what has actually finished. The accounting side matters too: WIP is an asset on the balance sheet, which QuickBooks Online doesn't hold as a stage of its own ([QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory))."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "economic-nexus-thresholds",
+    "group": "nexus",
+    "tool": "nexus",
+    "title": "Economic nexus thresholds by state, with a checker",
+    "question": "What is the economic nexus threshold in each state?",
+    "answer": "Most states set economic nexus at $100,000 of sales into the state in a year. Alabama and Mississippi use $250,000, and California, Texas and New York $500,000; New York also needs more than 100 sales. Some states accept 200 transactions instead of the dollar amount. The checker below compares your figures with each state's rule as the Streamlined Sales Tax Governing Board lists it.",
+    "description": "Economic nexus thresholds for every US state, which sales count (gross, retail or taxable), the period each uses, and a free checker for your sales.",
+    "domain": [
+      "sales-tax",
+      "nexus"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Remote Seller State Guidance",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs/remote-seller-state-guidance",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Remote Seller FAQs",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller State Guidance",
+        "doc": "sst-chart",
+        "quote": "Many states base their threshold on sales OR transactions, while some states base their threshold on sales AND transactions."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller State Guidance",
+        "doc": "sst-chart",
+        "quote": "Many states do not distinguish between taxable and non-taxable sales when determining if a threshold is met."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller State Guidance",
+        "doc": "sst-chart",
+        "quote": "This is general guidance and is not legal advice. Nothing in this chart overrides an individual state’s laws."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs (\"gross sales\")",
+        "doc": "sst-faq",
+        "quote": "all sales and transactions into the state are included in determining whether the remote seller meets or exceeds the threshold, including sales for resale and other exempt or nontaxable sales."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs (\"retail sales\")",
+        "doc": "sst-faq",
+        "quote": "Since sales for resale are specifically excluded from the definition of “retail sale,” they are not included in the threshold computation."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs (\"taxable sales\")",
+        "doc": "sst-faq",
+        "quote": "Transactions that are not taxed due to the provision of an exemption certificate or other documentation on the part of the purchaser are not included in “taxable sales.”"
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller State Guidance (Wisconsin)",
+        "doc": "sst-chart",
+        "quote": "Effective 2/20/2021, the threshold of 200 or more transactions was removed."
+      }
+    ],
+    "body": "## Which sales count toward the threshold?\n\nStates measure different things, and the difference is large for a manufacturer or distributor, because so much of\nwhat you sell goes to resellers or to buyers with an exemption certificate. The Streamlined Sales Tax Governing\nBoard explains the three bases with one example: a company sells $400,000 into a state in a year, made up of\n$220,000 to wholesalers buying for resale, $75,000 to buyers claiming another exemption (such as use in\nmanufacturing), $10,000 of exempt products and $95,000 of taxable sales.\n\n| The state counts | What's included | The example's figure |\n|---|---|---|\n| Gross sales | Everything, including resale and exempt sales | $400,000 |\n| Retail sales | Everything except sales for resale | $180,000 |\n| Taxable sales | Only sales that are (or should be) taxed | $95,000 |\n\nThe same company is over a $100,000 threshold in a state that counts gross or retail sales, and under it in a state\nthat counts taxable sales. Each state's rule in the table below names the basis it uses.\n\n## Which period does each state use?\n\nMost states look at the previous or the current calendar year: you are over as soon as either one passes. Others\nuse the last 12 months (Pennsylvania, Tennessee, Texas, Vermont, Mississippi) or the previous four sales tax\nquarters (New York). Check monthly against a rolling 12 months and you catch all of them.\n\n## Are transaction thresholds going away?\n\nYes. Many states first copied South Dakota's \"$100,000 or 200 transactions\" and have since dropped the transaction\ncount: North Dakota in 2019, Wisconsin in 2021, South Dakota in 2023, Indiana, North Carolina and Wyoming in 2024,\nAlaska and Utah in 2025 and Illinois from January 1, 2026, all as listed in the Board's chart. Where a count is\nleft, a business with many small orders, such as spare parts, can pass it long before the dollar amount.\n\n## How to use the checker\n\nEnter each state you ship to with your sales and number of orders into it over the period that state uses. The\nchecker says whether you are over, within 20% of the threshold, or under, and quotes the state's rule beside the\nanswer. Physical presence in a state means you register there regardless; see\n[what sales tax nexus is](/sales-tax/sales-tax-nexus). If you are over in several of the 24 member states, one\nregistration covers them: see [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax).\n\nThe figures come from your own system: sales by ship-to state, split into resale, exempt and taxable, for any\nperiod. If you can't get that report today, see [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp).\n\n## Thresholds by state\n\nThe Board's chart says it is a summary and does not override any state's law. Before you register or decide not to,\nread the state's own remote seller page, linked from the chart."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "manufacturing-sales-tax-exemption",
+    "group": "exemptions",
+    "title": "Sales tax exemptions for manufacturers: what qualifies",
+    "question": "Do manufacturers pay sales tax on raw materials and equipment?",
+    "answer": "Usually not on material that becomes part of a product made for sale, and often not on the machinery that makes it, but each state draws its own line. Texas exempts components and equipment that physically or chemically change the product; California gives a partial exemption on qualified manufacturing equipment until June 30, 2030. Hand tools, forklifts and office supplies usually stay taxable.",
+    "description": "The manufacturing sales tax exemption: materials and machinery that qualify, what stays taxable, how to claim it and divergent use, in Texas and California.",
+    "domain": [
+      "sales-tax",
+      "exemptions",
+      "manufacturing"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Manufacturing Exemptions (publication 94-124)",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/publications/94-124.php",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Tax Guide for Manufacturing, and Research & Development, and Electric Power Equipment & Buildings Exemption",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://cdtfa.ca.gov/industry/manufacturing-and-research-and-development-equipment-exemption/",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions",
+        "doc": "tx-mfg",
+        "quote": "Texas sales and use tax exempts tangible personal property that becomes an ingredient or component of an item manufactured for sale, as well as taxable services performed on a manufactured product to make it more marketable."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions",
+        "doc": "tx-mfg",
+        "quote": "The exemption also applies to tangible personal property that makes a chemical or physical change in the product being manufactured and is necessary and essential in the manufacturing process."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions",
+        "doc": "tx-mfg",
+        "quote": "A hammer, for example, is taxable even if it is used in fabricating a product for sale."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions (does not qualify)",
+        "doc": "tx-mfg",
+        "quote": "Persons repairing real or tangible personal property belonging to others."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions (does not qualify)",
+        "doc": "tx-mfg",
+        "quote": "Intraplant transportation equipment such as conveyors, pipes, forklifts, hoists, cranes and hydraulic lifts."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions",
+        "doc": "tx-mfg",
+        "quote": "Examples of non-qualifying, taxable manufacturing support equipment include air conditioning for employee comfort, equipment used to make molds or dies, and equipment used to make other equipment that is then used to make a product for sale."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions (divergent use)",
+        "doc": "tx-mfg",
+        "quote": "If divergent use during a month is 5 percent or less of the total use of the equipment, no tax is due in that month."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions (divergent use)",
+        "doc": "tx-mfg",
+        "quote": "After four years, there is no tax on divergent use."
+      },
+      {
+        "reg": "California CDTFA, manufacturing exemption guide",
+        "doc": "ca-mfg",
+        "quote": "may qualify for a partial exemption from sales and use tax on the purchase or lease of qualified machinery and equipment primarily used in manufacturing, research and development, and electric power generation or production, storage or distribution."
+      },
+      {
+        "reg": "California CDTFA, manufacturing exemption guide",
+        "doc": "ca-mfg",
+        "quote": "Extended the sunset date of R&TC section 6377.1 from June 30, 2022, to June 30, 2030."
+      }
+    ],
+    "body": "## What do manufacturers usually not pay sales tax on?\n\nMany states exempt some of a manufacturer's purchases, so that the same product isn't taxed twice:\nonce on the inputs and again when it's sold. What's exempt is each state's own law. Texas is a\nuseful model, since its rules are spelled out item by item:\n\n| Purchase | Texas | Why |\n|---|---|---|\n| Steel, castings, fasteners that go into the product | Exempt | Becomes a component of an item made for sale |\n| Machines that cut, form, weld or heat-treat the product | Exempt | Causes a physical or chemical change and is essential |\n| Quality-control equipment testing products for sale | Exempt | Listed by the Comptroller |\n| Safety apparel required in production, not resold | Exempt | Listed by the Comptroller |\n| Hand tools (a hammer) | Taxable | Excluded even when used in fabrication |\n| Forklifts, conveyors, hoists, cranes | Taxable | Intraplant transportation is excluded |\n| Molds and dies equipment, air conditioning for comfort | Taxable | Manufacturing support, not production |\n| Equipment rented for less than a year, R&D items | Taxable | Excluded |\n\nRepair work doesn't qualify in Texas: a shop repairing equipment that belongs to others is not a manufacturer for\nthe exemption. A job shop that both makes parts and repairs customers' equipment buys for the two differently.\n\n## What does California exempt?\n\nCalifornia has a partial exemption, not a full one: manufacturers (and certain research and development and\nelectric power businesses) may get a partial exemption on qualified machinery and equipment used primarily in\nmanufacturing. Three conditions apply: the buyer is a \"qualified person\" by its line of business, the property is\nqualified, and it's used in a qualified way. The law behind it, Revenue and Taxation Code section 6377.1, runs to\nJune 30, 2030. CDTFA's guide sets out who and what qualifies; ask CDTFA in writing for your case.\n\n## How do you claim it?\n\nNot by paying and asking for a refund, in most cases: you give your vendor an exemption certificate when you buy.\nIn Texas, a manufacturer gives a properly completed Form 01-339 exemption certificate describing the item, the\nreason it's exempt, and signed and dated. Your vendor keeps it on file, the same way you keep your customers'\n[resale certificates](/sales-tax/resale-certificates). Where a vendor charged tax on an exempt purchase anyway,\nstates have refund procedures.\n\n## What is divergent use?\n\nExempt equipment used for something other than making products for sale is in \"divergent use\". Texas lets you buy\nthe equipment exempt, then pay tax on the share of use that diverges, measured in hours or output each month. If\ndivergent use is 5% or less in a month, no tax is due that month, and after four years there's no tax on divergent\nuse. A plant that runs a machine for its own maintenance parts part of the time needs the machine's hours split\nby purpose, which is a shop-floor record, not an accounting one.\n\n## What should your records show?\n\nAn auditor checking a manufacturer's exemption asks three things: what did you buy tax-free, why was each purchase\nexempt, and was it used that way? The system that answers them holds:\n\n- the exemption reason on each purchase order line and vendor bill, not just \"no tax\"\n- the item's use: a component on the bill of materials, production equipment, or neither\n- machine hours by job, which split production from other use for divergent use\n- materials issued from stock to something other than a product for sale, such as maintenance or samples, which\n  owe [use tax](/sales-tax/use-tax)\n\nA [job shop ERP](/manufacturing/job-shop-erp) that records material issues and machine hours by job already has most\nof this; see [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp) for the rest."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "resale-certificates",
+    "group": "exemptions",
+    "title": "Resale and exemption certificates: what to collect",
+    "question": "How do resale and exemption certificates work for a US seller?",
+    "answer": "A resale or exemption certificate is the buyer's signed statement that a purchase isn't taxable: bought to resell, or exempt for another reason, such as use in manufacturing. When you accept a valid certificate in good faith, you don't collect tax on that sale. You keep it on file against the customer; nobody sends it to the state until an auditor asks for it.",
+    "description": "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined certificate, drop shipments, and keeping them on file.",
+    "domain": [
+      "sales-tax",
+      "exemptions"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Publication 103, Sales for Resale",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://cdtfa.ca.gov/formspubs/pub103/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Exemptions",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/exemptions",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Manufacturing Exemptions (publication 94-124)",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/publications/94-124.php",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "California CDTFA, Publication 103",
+        "doc": "ca-pub103",
+        "quote": "When a seller accepts a valid resale certificate in good faith and in a timely manner, the seller does not owe tax on that sale."
+      },
+      {
+        "reg": "California CDTFA, Publication 103",
+        "doc": "ca-pub103",
+        "quote": "If a purchaser is buying an item that is not something they ordinarily sell, the seller should require a resale certificate that states that the specific property is being purchased for resale in the regular course of business."
+      },
+      {
+        "reg": "California CDTFA, Publication 103",
+        "doc": "ca-pub103",
+        "quote": "Purchasers are subject to penalties and interest for the misuse of a resale certificate."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions",
+        "doc": "sst-exemptions",
+        "quote": "Do not send exemption certificates to the Streamlined Sales Tax Governing Board or to the states."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions",
+        "doc": "sst-exemptions",
+        "quote": "Purchasers should provide the completed exemption certificate to their supplier and keep a copy for their records."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions",
+        "doc": "sst-exemptions",
+        "quote": "The seller is not required to verify the purchaser's ID number or determine the purchaser's registration requirements."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions (drop shipments)",
+        "doc": "sst-exemptions",
+        "quote": "If the Drop Shipper receives a completed exemption certificate from the seller/retailer purchasing the item for resale, the Drop Shipper is not liable for the sales tax on products the Drop Shipper delivers to the seller/retailer's customer in a Streamlined Member state."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions",
+        "doc": "tx-mfg",
+        "quote": "The reason the purchase is exempt from tax;"
+      }
+    ],
+    "body": "## What is the difference between a resale and an exemption certificate?\n\n| Certificate | The buyer says | Typical buyers of a manufacturer or distributor |\n|---|---|---|\n| Resale | \"I will sell this item, or it becomes part of something I sell\" | Distributors, dealers, other manufacturers buying components |\n| Exemption | \"This purchase is exempt for another reason\" | Manufacturers buying production equipment or materials, nonprofits, government, farms |\n\nBoth do the same thing for you as the seller: with a valid certificate on file, the sale is not taxable and the tax\nis no longer your liability. Without one, an auditor treats the sale as taxable and bills you for the tax you\ndidn't charge, plus interest.\n\n## Which form do you accept?\n\n- **Streamlined states.** The Streamlined Sales Tax exemption certificate is accepted by all 24 member states, for\n  resale and the other exemptions it lists. Not every member allows every exemption on it, and some want a\n  state-specific ID number. See [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax).\n- **Other states.** Each has its own form or accepts a multistate one: California's general resale certificate is\n  CDTFA-230; in Texas, the back of Form 01-339 is the Texas Sales and Use Tax Exemption Certificate.\n\nA certificate is good for the kind of goods it describes. California's guidance is that the property may be listed\nitem by item or by a general description; if a customer buys something it doesn't normally sell, ask for a\ncertificate that names that property.\n\n## What must a certificate say?\n\nEach state sets its fields, but they usually include:\n\n- the buyer's name, address and sales tax permit or registration number\n- a description of the items, or the type of items, bought tax-free\n- the reason the purchase is exempt (resale, manufacturing, an exempt organization)\n- the buyer's signature and the date\n\nTexas lists the description, the reason, and the signature and date for a manufacturing exemption certificate.\n\n## Do you have to check the buyer's number?\n\nIn Streamlined states, the seller doesn't have to verify the buyer's ID number (the Board notes Georgia as the\nexception). You do have to accept it in good faith: a certificate for goods that obviously don't fit the buyer's\nbusiness, such as office furniture \"for resale\" from a machine shop, isn't one. The buyer carries the penalty for\nmisusing a certificate, and California says intentional misuse can be prosecuted.\n\n## How do drop shipments work?\n\nWhen you buy from a supplier who ships straight to your customer, the supplier needs your resale certificate. In\nStreamlined states, a drop shipper that receives a completed certificate from you is not liable for the tax on what\nit delivers to your customer, and the ID number you give may be one issued by another state. Outside Streamlined,\ncheck the delivery state's own rule for drop shipments.\n\n## Where do certificates go?\n\nNot to the state. The buyer gives the certificate to the seller and keeps a copy; the seller keeps it on file and\nproduces it in an audit. In practice that means each certificate should sit on the customer's record with:\n\n- which states it covers, and which exemption\n- the date received, and an expiry or renewal date where the state sets one\n- the customer's ship-to states, so an order to a state with no certificate on file is taxed\n\nManufacturers claiming exemption on their own purchases do the same in reverse: see\n[the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption), and for exempt purchases later used\nanother way, [use tax](/sales-tax/use-tax). How an order system should hold all this:\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "sales-tax-in-erp",
+    "group": "systems",
+    "title": "How an ERP should handle US sales tax",
+    "question": "What should an ERP or order system do about sales tax?",
+    "answer": "It should work out the tax from the ship-to address and each item's taxability, hold every customer's exemption certificates with their states and dates, total sales and orders by state so you see a threshold coming, flag untaxed purchases for use tax, and give the figures for each return. The rates themselves are best taken from a rate service, not typed in.",
+    "description": "What an ERP or order system must record for US sales tax: ship-to sourcing, item taxability, certificates, sales by state for nexus, use tax and returns.",
+    "domain": [
+      "sales-tax",
+      "erp"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Remote Sellers",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/remote-sellers.php",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Use Tax Collection Requirements Based on Sales into California Due to the Wayfair Decision",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://cdtfa.ca.gov/industry/wayfair/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Remote Seller FAQs",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "Local use tax is due at the location in Texas where the order is shipped or delivered when the order is not received or fulfilled from a Texas place of business."
+      },
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "The current single local use tax rate is 1.75 percent, and the rate is published in the Texas Register by Jan. 1 of each year."
+      },
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "However, all sellers must keep required records of all marketplace sales for at least four years."
+      },
+      {
+        "reg": "California CDTFA, Wayfair guide",
+        "doc": "ca-wayfair",
+        "quote": "the total combined sales of tangible personal property for delivery in California by the retailer and all persons related to the retailer exceed $500,000."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs (what a certified provider does)",
+        "doc": "sst-faq",
+        "quote": "Determine the appropriate sales or use tax rate and calculate the tax due at the time of the sale"
+      }
+    ],
+    "body": "## What does sales tax ask of your system?\n\nFive things, and only the first is the tax calculation most people think of:\n\n| The system must | Because |\n|---|---|\n| Tax each invoice line by the ship-to address and the item's taxability | Rates and rules are set by the delivery location, down to city and district |\n| Know which customers buy tax-free, in which states, and why | A missing certificate makes the sale taxable to you |\n| Total sales and orders by ship-to state, split into resale, exempt and taxable | That's how you see an [economic nexus threshold](/sales-tax/economic-nexus-thresholds) coming |\n| Flag purchases that owe use tax | Untaxed bills and stock taken for internal use |\n| Give each state's return figures | Taxable sales, exempt sales by reason, tax by jurisdiction |\n\n## Where does the rate come from?\n\nFrom where the goods are delivered, in most cases. Texas, for example, puts local use tax at the location where the\norder is shipped or delivered when it isn't fulfilled from a Texas place of business, and also offers remote\nsellers a single local rate (1.75% when checked) in place of each destination's local tax. California adds district\ntaxes. A ZIP code is not precise enough, because district and city boundaries cut across ZIP codes.\n\nSo the system should not hold a rate table someone types in. It should send the ship-to address, item tax code and\namount to a rate service and store the answer on the invoice line: the jurisdictions, the rates and the tax. The\ncertified service providers in the [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax) program do exactly\nthis, free in member states for remote sellers who qualify; commercial rate services do it everywhere.\n\n## What has to be on the customer record?\n\n- Each [resale or exemption certificate](/sales-tax/resale-certificates): the states it covers, the exemption, the\n  date received and any renewal date, and the file itself.\n- The customer's ship-to addresses, since one customer can be exempt in one state and taxable in another.\n- A rule at order entry: an order shipping to a state with no certificate on file is taxed, and someone is told.\n\n## How does it see nexus coming?\n\nWith one report that most small-business systems can't produce: sales and order count by ship-to state for any\n12 months, with resale, exempt and taxable sales apart. Two details matter:\n\n- **Related companies count together** in some states. California's $500,000 test counts combined sales by the\n  retailer and all persons related to it, so a group with two companies needs the report across both.\n- **Marketplace sales** need their own column: some states leave them out of your threshold, and Texas wants their\n  records kept for at least four years.\n\nRun it monthly against the thresholds. A spreadsheet export into the\n[nexus checker](/sales-tax/economic-nexus-thresholds) is enough to start.\n\n## What about use tax and manufacturing?\n\nPurchases are the other half. Every vendor bill line should carry its tax treatment: taxed, exempt with a reason,\nor untaxed and owing [use tax](/sales-tax/use-tax). A manufacturer claiming the\n[manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) also needs material issues and machine hours\nby job, so exempt purchases can be shown to have been used as claimed.\n\n## How to test a vendor's system\n\nAsk for these on your own data, in the demo:\n\n1. An invoice to a ship-to address in a city with a district tax: are the jurisdictions shown?\n2. The same customer shipping to a state where you hold their certificate, and one where you don't.\n3. Sales by ship-to state for the last 12 months, resale, exempt and taxable apart.\n4. A vendor bill with no tax from an out-of-state supplier: is it flagged?\n5. Stock taken from inventory for your own use: does it create a use tax line?\n6. The figures for one state's return, without a spreadsheet.\n\nA system that fails 3 and 6 will have you rebuilding the numbers by hand at every return. For choosing between a\npackage and a system built to fit, see [custom vs off-the-shelf ERP](/manufacturing/custom-vs-off-the-shelf-erp)."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "sales-tax-nexus",
+    "group": "nexus",
+    "title": "What is sales tax nexus? Physical and economic nexus",
+    "question": "What is sales tax nexus, and when do I have it in another state?",
+    "answer": "Sales tax nexus is the link with a state that obliges you to register there, collect its sales tax and file returns. You have it through physical presence, such as an office, warehouse, staff or inventory in the state, or, since South Dakota v. Wayfair in 2018, through economic nexus: sales into the state above its threshold.",
+    "description": "What sales tax nexus is: physical presence, economic nexus after South Dakota v. Wayfair, when a remote seller must register, and marketplace sales.",
+    "domain": [
+      "sales-tax",
+      "nexus"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "South Dakota v Wayfair",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs/scotus-ruling---south-dakota-v-wayfair",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Remote Seller State Guidance",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs/remote-seller-state-guidance",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Remote Sellers",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/remote-sellers.php",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Engaged in Business (publication 94-108)",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/publications/94-108.php",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Use Tax Collection Requirements Based on Sales into California Due to the Wayfair Decision",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://cdtfa.ca.gov/industry/wayfair/",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Streamlined Sales Tax Governing Board, South Dakota v Wayfair",
+        "doc": "sst-wayfair",
+        "quote": "that states can require sellers to collect and remit sales or use tax on sales delivered to locations within their state regardless of physical presence."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller State Guidance",
+        "doc": "sst-chart",
+        "quote": "If you have a physical presence in a state, you are not a Remote Seller and are required to register in that state regardless of the amount of sales."
+      },
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "Remote sellers are out-of-state sellers whose only activity in Texas is the remote solicitation of sales."
+      },
+      {
+        "reg": "Texas Comptroller, Engaged in Business",
+        "doc": "tx-business",
+        "quote": "You have an employee or representative in Texas to sell, deliver or take orders for taxable items."
+      },
+      {
+        "reg": "Texas Comptroller, Engaged in Business",
+        "doc": "tx-business",
+        "quote": "You deliver items using owned, leased or company vehicles in Texas."
+      },
+      {
+        "reg": "California CDTFA, Wayfair guide (examples of physical presence)",
+        "doc": "ca-wayfair",
+        "quote": "Maintaining inventory or office locations in California."
+      },
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "beginning no later than the first day of the fourth month after the month that a remote seller exceeds the $500,000 safe harbor amount."
+      },
+      {
+        "reg": "Texas Comptroller, Remote Sellers",
+        "doc": "tx-remote",
+        "quote": "A remote seller who only sells through a marketplace provider that certifies they are collecting and reporting sales and use tax on the remote seller’s behalf is not required to hold a Texas tax permit."
+      }
+    ],
+    "body": "## What does nexus mean for sales tax?\n\nNexus is the connection between your business and a state that lets the state make you collect its tax. Once you\nhave it, you register with that state, charge its sales tax on taxable sales delivered there, file its returns and\nkeep the records it asks for. Without it, the buyer owes the state [use tax](/sales-tax/use-tax) instead, and\nusually doesn't pay it.\n\nThere are two ways to have nexus:\n\n| Kind | What creates it | Since |\n|---|---|---|\n| Physical nexus | An office, plant, warehouse, inventory, employees or representatives in the state | Always |\n| Economic nexus | Sales into the state above its threshold, with no presence at all | South Dakota v. Wayfair, June 21, 2018 |\n\n## What counts as a physical presence?\n\nEach state lists its own. Texas, for example, counts a location you operate, an employee or representative who\nsells, delivers or takes orders, services performed in the state, and delivering in your own or leased vehicles.\nCalifornia's examples include keeping inventory or an office there, having representatives who take orders or\ninstall, and leasing equipment such as a server in the state.\n\nTwo cases catch manufacturers and distributors out:\n\n- **Stock in someone else's warehouse.** Inventory you keep in a state is usually a presence there, even in a\n  rented or third-party warehouse: California's examples start with maintaining inventory in the state.\n- **Installation and service crews.** A team that installs equipment or does warranty work in a state is presence,\n  even if the sale was made from home.\n\nA physical presence means registering whatever the amount of sales. The thresholds only apply to remote sellers.\n\n## What changed with South Dakota v. Wayfair?\n\nBefore 2018, a state could only make a seller collect if it had a physical presence there. In South Dakota v.\nWayfair the Supreme Court ruled that a state can require collection on sales delivered into it regardless of\nphysical presence. Every state with a sales tax now has an economic nexus rule: most at $100,000 of sales a year,\nsome with a transaction count as well. See [every state's threshold, with a checker](/sales-tax/economic-nexus-thresholds).\n\n## When do you have to start collecting?\n\nEach state sets its own start. Texas gives an example: a remote seller whose Texas revenue passes $500,000 over\ntwelve months must get a permit and start collecting no later than the first day of the fourth month after the\nmonth it passed. Other states expect registration from the day you pass, or from the start of the next month or\nquarter. Look up the state's own page before the threshold is near, not after.\n\nIf you are already registered and collecting in a state, keep doing so: the Streamlined Sales Tax Governing Board's\nguidance is to continue, and dropping a registration has its own procedure in each state.\n\n## Do marketplace sales count?\n\nWhere a marketplace collects the tax for you, most states let you leave those sales out of your own filing, and\nTexas does not require a permit for a seller that sells only through a marketplace that collects for it. Whether\nmarketplace sales count toward your own threshold differs by state; the state's rule says. Keep the marketplace's\nreports either way: Texas asks sellers to keep records of all marketplace sales for at least four years.\n\n## What to do once you know where you have nexus\n\n1. List the states where you have a physical presence, including stock held by others and crews working there.\n2. Run your last 12 months of sales by ship-to state through the [nexus checker](/sales-tax/economic-nexus-thresholds).\n3. Register in each state you're over, directly or, in the 24 member states, once through the\n   [Streamlined Sales Tax registration system](/sales-tax/streamlined-sales-tax).\n4. Collect [resale and exemption certificates](/sales-tax/resale-certificates) from customers who buy tax-free,\n   before you invoice them in a new state.\n5. Make your order system report sales by state every month, so the next threshold doesn't arrive as a surprise:\n   see [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "streamlined-sales-tax",
+    "group": "nexus",
+    "title": "Streamlined Sales Tax: member states and free services",
+    "question": "What is the Streamlined Sales Tax Agreement, and who can use its free services?",
+    "answer": "The Streamlined Sales and Use Tax Agreement is a set of uniform sales tax rules that 24 states follow: 23 full members and Tennessee as an associate. A seller can register in all of them with one free application and use one exemption certificate, and a remote seller can have a certified provider calculate, file and pay the tax in those states at the states' cost.",
+    "description": "Streamlined Sales Tax: the 24 member states, one free registration, one exemption certificate, and free certified provider services for remote sellers.",
+    "domain": [
+      "sales-tax",
+      "streamlined"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "State Information",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/about-us/state-information",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Remote Seller FAQs",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Free sales tax services",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/free-sales-tax-services",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Exemptions",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/exemptions",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "South Dakota v Wayfair",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs/scotus-ruling---south-dakota-v-wayfair",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Streamlined Sales Tax Governing Board, State Information (full member state)",
+        "doc": "sst-states",
+        "quote": "A Streamlined Full Member State is a state that has been found to be in compliance with the Streamlined Sales and Use Tax Agreement (SSUTA) and its laws, rules, regulations, and policies to bring them into compliance are in effect."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs",
+        "doc": "sst-faq",
+        "quote": "There is no fee to register using the SSTRS."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Remote Seller FAQs",
+        "doc": "sst-faq",
+        "quote": "You are responsible for filing returns with each Streamlined State you register in."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Free sales tax services",
+        "doc": "sst-free",
+        "quote": "A remote seller that is only required to report and remit sales tax in a state because it meets the economic nexus threshold of that state qualifies for free CSP services in that state."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Free sales tax services",
+        "doc": "sst-free",
+        "quote": "The CSP may charge for these services in states you do not meet the criteria as a \"CSP-compensated seller\" or for services in addition to those provided under the Streamlined contract."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, South Dakota v Wayfair (quoting the Supreme Court)",
+        "doc": "sst-wayfair",
+        "quote": "It also provides sellers access to sales tax administration software paid for by the State. Sellers who choose to use such software are immune from audit liability"
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions",
+        "doc": "sst-exemptions",
+        "quote": "You do not need to be registered through the Streamlined Sales Tax ® Registration System to use the Streamlined Exemption Certificate."
+      }
+    ],
+    "body": "## Which states are in Streamlined Sales Tax?\n\nAs the Governing Board lists them on 3 November 2026:\n\n| Status | States |\n|---|---|\n| Full members (23) | Arkansas, Georgia, Indiana, Iowa, Kansas, Kentucky, Michigan, Minnesota, Nebraska, Nevada, New Jersey, North Carolina, North Dakota, Ohio, Oklahoma, Rhode Island, South Dakota, Utah, Vermont, Washington, West Virginia, Wisconsin, Wyoming |\n| Associate member (1) | Tennessee |\n| Not members | Every other state, including California, Texas, New York, Florida, Illinois and Pennsylvania |\n\nA full member's laws already follow the agreement; an associate has substantially complied. The states with the\nmost manufacturing and distribution sales, California, Texas and New York, are not members, so a growing seller\ndeals with them directly whatever it does in Streamlined states.\n\n## What do member states have in common?\n\nThe agreement standardizes how sales tax works, not the rates. Member states share definitions of products, a\nsingle state-level administration, simpler rate structures and other uniform rules. When the Supreme\nCourt decided South Dakota v. Wayfair, it pointed to South Dakota's membership as one reason its law did not burden\ninterstate sellers unduly.\n\nFor a seller, three things follow:\n\n- **One registration.** The Streamlined Sales Tax Registration System registers you in any or all member states\n  with one application, free. You still file a return with each state you register in.\n- **One exemption certificate.** The Streamlined exemption certificate is accepted by all 24 member states, and you\n  don't need to be registered through Streamlined to use it. See\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **Published taxability and rates.** Each member state publishes a taxability matrix and rate and boundary files\n  in a common format, which is what a tax engine loads.\n\n## Can a remote seller get sales tax filing for free?\n\nYes, in member states, for remote sellers. The Board contracts with certified service providers (CSPs); on\n3 November 2026 it lists Avalara, TaxCloud, Sovos, AccurateTax and Avior as offering the free service. A seller\nthat is a \"CSP-compensated seller\" in a member state gets, at the state's cost:\n\n- setup and integration of the provider's system with yours\n- tax calculated on each sale\n- returns prepared and filed, and the tax remitted\n- help with that state's notices and audits\n\nTo qualify in a state, you register through the Streamlined system, contract with a CSP under the Streamlined\ncontract, and in the 12 months before registering had no fixed place of business there for more than 30 days, less\nthan $50,000 of property and of payroll there, under 25% of your total property or payroll there, and weren't\ncollecting there to qualify as a state supplier. A remote seller that only has to collect because it passed the\neconomic threshold qualifies. The provider may charge for states where you don't qualify, for non-member states and\nfor extra services.\n\n## Is it worth registering through Streamlined?\n\nFor a manufacturer or distributor that has passed the threshold in several member states and has no presence\nthere, usually yes: one registration, and a provider files those states for free. It doesn't help with California,\nTexas or New York. Check where you are over with the [nexus checker](/sales-tax/economic-nexus-thresholds), and\nsee [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp) for connecting a provider to your order\nsystem."
+  },
+  {
+    "kind": "sales-tax",
+    "slug": "use-tax",
+    "group": "exemptions",
+    "title": "Use tax for businesses: when you owe it yourself",
+    "question": "When does a business owe use tax on its purchases?",
+    "answer": "Use tax is the other half of sales tax: when you buy something taxable for your own use and the seller doesn't charge your state's tax, you owe the same tax yourself. It catches untaxed purchases from out-of-state suppliers, and goods bought tax-free for resale or manufacturing that you then use another way. A registered business usually reports it on its regular sales tax return.",
+    "description": "Use tax for US businesses: what it is, when you owe it on purchases, goods bought exempt and then used, how it's reported, and credit for tax paid elsewhere.",
+    "domain": [
+      "sales-tax",
+      "use-tax"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Use Tax",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/use-tax.php",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Exemptions",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/for-businesses/exemptions",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Publication 103, Sales for Resale",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://cdtfa.ca.gov/formspubs/pub103/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Manufacturing Exemptions (publication 94-124)",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/publications/94-124.php",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Texas Comptroller, Use Tax",
+        "doc": "tx-use",
+        "quote": "Use tax is a nonrecurring tax that is complementary to sales tax and is imposed on the storage, use, or other consumption of tangible personal property or a taxable service in Texas."
+      },
+      {
+        "reg": "Texas Comptroller, Use Tax",
+        "doc": "tx-use",
+        "quote": "If the seller does not have a permit or fails to charge sales and use tax, the purchaser must pay the use tax directly to our office unless an exemption applies."
+      },
+      {
+        "reg": "Texas Comptroller, Use Tax",
+        "doc": "tx-use",
+        "quote": "Texas allows a credit for sales or use tax paid to other states."
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Exemptions",
+        "doc": "sst-exemptions",
+        "quote": "When the seller does not collect and remit the applicable sales tax due, the seller’s customer must remit use tax directly to the state unless the customer can claim a valid exemption."
+      },
+      {
+        "reg": "California CDTFA, Publication 103",
+        "doc": "ca-pub103",
+        "quote": "If a purchaser paid sales tax to its supplier for items it purchased for business or personal use, but resold the items before any taxable use, the purchaser can take a deduction on their tax return when they report the sale."
+      },
+      {
+        "reg": "Texas Comptroller, Manufacturing Exemptions (divergent use)",
+        "doc": "tx-mfg",
+        "quote": "The manufacturer must calculate and remit tax on the amount of divergent use of the equipment."
+      }
+    ],
+    "body": "## What is use tax?\n\nSales tax is collected by the seller; use tax is paid by the buyer when the seller didn't collect. The rate is the\nsame, and the point is the same: a taxable item used in the state is taxed once, wherever it was bought. Texas\ndescribes use tax as complementary to sales tax, on the storage, use or consumption of taxable items in the state.\n\nFor a household, use tax is mostly theory. For a business it's an audit finding waiting to happen, because\nauditors read your purchase ledger, not just your sales.\n\n## When does a business owe it?\n\n| Situation | Example | You owe use tax on |\n|---|---|---|\n| An out-of-state supplier didn't charge your state's tax | Shop supplies from a supplier not registered in your state | The price of the supplies |\n| You bought for resale, then used it yourself | A distributor takes a drill from stock for its own warehouse | The cost of the drill |\n| You bought exempt for manufacturing, then used it another way | Steel bought exempt, used to build a rack for your own plant | The cost of the steel |\n| Exempt equipment used partly for other purposes | A machine also used for your own maintenance parts | The divergent share (Texas) |\n| The supplier charged a lower rate than your location's | Bought at a counter in an area with no local tax | The local tax not charged |\n\nThe Streamlined Sales Tax Governing Board puts the rule in one line: when the seller doesn't collect the tax due,\nthe customer must pay use tax directly to the state unless it can claim an exemption.\n\n## How do you report it?\n\nA business with a sales tax permit reports use tax on its regular sales and use tax return, as taxable purchases;\nTexas has a line for it. A business without a permit files a separate use tax return. If you paid another state's\ntax on the item first, Texas allows a credit for it; check your own state's rule.\n\nThe reverse also works: California lets a buyer that paid sales tax on an item, then resold it before using it,\ntake a deduction when it reports the sale.\n\n## How does a system catch it?\n\nUse tax is missed when nobody looks at the tax line of a vendor bill. The checks are mechanical:\n\n- **Vendor bills with no tax** on taxable items, from vendors not registered in your state: flag for accrual.\n- **Stock issued to internal use**: an issue from resale or exempt stock to maintenance, samples or your own\n  buildings creates a use tax line at cost.\n- **Exempt purchases** carry the reason they were exempt, so a later use that doesn't match it shows up. See\n  [the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) and\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **A monthly accrual report** by state and rate, which goes onto the return.\n\nFor how these fit with the rest of sales tax in an order system, see\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
   }
 ]

@@ -1,5 +1,5 @@
 // Keeps each hub serving the market it is for (docs/knowledge-base-roadmap.md): the AI assistant pages are for India
-// and North America alike, so none may lean on one market's words; the ASME and manufacturing hubs are for North
+// and North America alike, so none may lean on one market's words; the ASME, manufacturing and sales tax hubs are for North
 // America, so none may lean Indian. Signals are counted per 1,000 words of the page's own text (frontmatter answer +
 // body); a page "leans" when one market's rate is 3+ and over twice the other's. Runs in `npm run content:build`.
 import { readFileSync } from "node:fs";
@@ -22,6 +22,7 @@ const RULES: Record<ContentKind, { allowed: (l: Lean) => boolean; want: string }
   "ai-assistant": { allowed: common, want: "common to India and North America" },
   asme: { allowed: notIN, want: "North American (or common)" },
   manufacturing: { allowed: notIN, want: "North American (or common)" },
+  "sales-tax": { allowed: notIN, want: "North American (or common)" },
   guide: { allowed: notNA, want: "Indian (IBR)" },
   boq: { allowed: notNA, want: "Indian (BOQ)" },
   erp: { allowed: notNA, want: "Indian (ERP requirements)" },

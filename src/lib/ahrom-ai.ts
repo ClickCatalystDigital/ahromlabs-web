@@ -96,8 +96,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant", "asme", "manufacturing"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant", "asme", "manufacturing", "sales-tax"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,
@@ -259,7 +259,7 @@ export function shortlist(entries: Entry[], question: string, limit = 40): Entry
 export const JEV_MODEL = "typesafe/jev-1.13"; // pinned, as in the CRM: a newer version could choose differently
 
 export const KINDS = {
-  about_us: "A question about Ahrom Labs or the systems it builds: what it builds, for whom, prices, timelines, terms, support, demos, Tally, any feature or industry; or a topic the site's guides explain: IBR, the ASME boiler and pressure vessel code, welding qualifications, interior BOQs, ERP requirements, AI assistants.",
+  about_us: "A question about Ahrom Labs or the systems it builds: what it builds, for whom, prices, timelines, terms, support, demos, Tally, any feature or industry; or a topic the site's guides explain: IBR, the ASME boiler and pressure vessel code, welding qualifications, interior BOQs, ERP requirements, AI assistants, US sales tax (nexus, exemption certificates, use tax).",
   small_talk: "A greeting, thanks, a compliment, a joke, or chat that isn't a question about the business.",
   contact_me: "They ask to talk to a person, book a call or meeting, or send them a quote. Not a question about whether Ahrom Labs builds something or how it works.",
   out_of_scope: "A question about something unrelated to Ahrom Labs and business systems, such as the weather, general coding help or another company, and not a topic the site's guides explain.",

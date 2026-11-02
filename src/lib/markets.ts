@@ -66,7 +66,7 @@ const IN_ONLY = [
   "/asme/asme-vs-ibr",
 ];
 // North America only: US and Canadian law.
-const NA_ONLY = ["/asme/state-boiler-laws", "/manufacturing"];
+const NA_ONLY = ["/asme/state-boiler-laws", "/manufacturing", "/sales-tax"];
 const under = (list: string[], href: string) => list.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`));
 export const marketsFor = (href: string): MarketCode[] | undefined =>
   under(IN_ONLY, href) ? ["IN"] : under(NA_ONLY, href) ? ["NA"] : undefined;

@@ -142,7 +142,7 @@ export const layers: Layer[] = [
 export const services: Service[] = [
   {
     slug: "custom-erp-crm",
-    guides: ["/manufacturing/job-shop-erp", "/manufacturing/quickbooks-for-manufacturing", "/manufacturing/custom-vs-off-the-shelf-erp"],
+    guides: ["/manufacturing/job-shop-erp", "/manufacturing/quickbooks-for-manufacturing", "/manufacturing/custom-vs-off-the-shelf-erp", "/sales-tax/sales-tax-in-erp"],
     name: "Custom ERP, CRM and operations systems",
     plainName: "One system for the whole business, from enquiry to dispatch",
     shortName: "Custom ERP",
@@ -568,7 +568,7 @@ export const services: Service[] = [
       name: "Manufacturing inventory management software",
       description: "Inventory management software for manufacturers and distributors: every unit QR-labelled, scanned across locations, reserved per order, beside QuickBooks.",
     },
-    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing"],
+    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing", "/sales-tax/economic-nexus-thresholds"],
     family: "buying-and-stores",
     layer: "operations",
     answer:

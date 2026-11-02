@@ -6,6 +6,7 @@ import { requirements } from "@/lib/erp";
 import { questions } from "@/lib/ai-assistant";
 import { asmeGuides } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
+import { stGuides } from "@/lib/sales-tax";
 import { marketsFor, only } from "@/lib/markets";
 
 // The free reference hubs (each shown only in the markets it's for), as one section for the homepage, /about and /services: they bring most of
@@ -16,6 +17,7 @@ const GUIDES = [
   { href: "/erp", title: "ERP requirements", text: `${requirements.length} testable requirements for Indian manufacturers and traders, a builder, an Excel scorecard and the GST and company-law rules quoted.` },
   { href: "/asme", title: "ASME code guide", text: `The Boiler and Pressure Vessel Code in plain English: ${asmeGuides().length} guides on sections, stamps, Section IX welding and design, with hydrotest, shell thickness and welder continuity tools.` },
   { href: "/manufacturing", title: "Manufacturing software guide", text: `For US job shops and small manufacturers: ${mfgGuides().length} guides on choosing an ERP, QuickBooks for manufacturing, job costing and scheduling, with a job cost calculator and a schedule demo.` },
+  { href: "/sales-tax", title: "US sales tax guide", text: `When you must collect in another state, every state's economic nexus threshold with a checker, resale and exemption certificates, the manufacturing exemption and use tax: ${stGuides().length} guides.` },
   { href: "/ai-assistant", title: "AI assistants guide", text: `How an assistant on your records should answer, a check for made-up numbers, ${questions.length} questions to ask it and a vendor test.` },
 ];
 

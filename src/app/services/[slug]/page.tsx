@@ -73,7 +73,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
   // Deeper guides for this service; a missing one fails the build here rather than shipping a dead link.
   const guides = (found.kind === "service" ? found.service.guides ?? [] : []).map((href) => {
     const [, hub, slug] = href.split("/");
-    const kind = ({ manufacturing: "manufacturing", "ai-assistant": "ai-assistant", asme: "asme" } as const)[hub as "manufacturing"];
+    const kind = ({ manufacturing: "manufacturing", "ai-assistant": "ai-assistant", asme: "asme", "sales-tax": "sales-tax" } as const)[hub as "manufacturing"];
     const entry = getContent(kind).find((e) => e.slug === slug);
     if (!entry) throw new Error(`services.ts: ${found.kind === "service" ? found.service.slug : ""} lists guide ${href}, which doesn't exist`);
     return { href, title: entry.title };

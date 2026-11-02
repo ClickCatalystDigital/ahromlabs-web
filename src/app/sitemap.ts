@@ -9,6 +9,8 @@ import { adaptedPath, languages } from "@/lib/markets";
 import { asmeArt } from "@/lib/asme-images";
 import { mfgGuides, MFG_CHECKED } from "@/lib/manufacturing";
 import { mfgArt } from "@/lib/manufacturing-images";
+import { stGuides, ST_CHECKED } from "@/lib/sales-tax";
+import { stArt } from "@/lib/sales-tax-images";
 import { ERP_CHECKED } from "@/lib/erp";
 import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
@@ -242,7 +244,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes];
+  // The sales tax hub (src/lib/sales-tax.ts).
+  const stImages = (name: string) => {
+    const a = stArt(name);
+    return a ? { images: [`${siteUrl}${a.src}`] } : {};
+  };
+  const st = stGuides();
+  const stUpdated = [ST_CHECKED, ...st.map((g) => g.updated)].sort().at(-1)!;
+  const stRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/sales-tax`, lastModified: changed("sales-tax", stUpdated), changeFrequency: "monthly", priority: 0.8, ...stImages("sales-tax-hub") },
+    ...st.map((g) => ({
+      url: `${siteUrl}/sales-tax/${g.slug}`,
+      lastModified: changed(`sales-tax/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: g.tool ? 0.8 : 0.7,
+      ...stImages(g.slug),
+    })),
+  ];
+
+  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes, ...stRoutes];
   // Pages with a North American version: both URLs listed, each naming the other (hreflang), as in their metadata.
   const abs = (langs: Record<string, string>) => Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${siteUrl}${v === "/" ? "" : v}`]));
   const withAlt = all.map((e) => {
