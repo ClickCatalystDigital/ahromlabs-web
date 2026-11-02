@@ -36,6 +36,7 @@ const columns: { title: string; links: { href: string; label: string; markets?: 
       { href: "/erp", label: "ERP requirements guide" },
       { href: "/ai-assistant", label: "AI assistants guide" },
       { href: "/asme", label: "ASME code guide" },
+      { href: "/manufacturing", label: "Manufacturing software guide" },
     ],
   },
   {

@@ -6,6 +6,8 @@ import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 import { trades, BOQ_CHECKED } from "@/lib/boq";
 import { asmeGuides, ASME_CHECKED } from "@/lib/asme";
 import { asmeArt } from "@/lib/asme-images";
+import { mfgGuides, MFG_CHECKED } from "@/lib/manufacturing";
+import { mfgArt } from "@/lib/manufacturing-images";
 import { ERP_CHECKED } from "@/lib/erp";
 import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
@@ -221,5 +223,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes];
+  // The manufacturing hub (src/lib/manufacturing.ts), with page art once it exists.
+  const mfgImages = (name: string) => {
+    const a = mfgArt(name);
+    return a ? { images: [`${siteUrl}${a.src}`] } : {};
+  };
+  const mfg = mfgGuides();
+  const mfgUpdated = [MFG_CHECKED, ...mfg.map((g) => g.updated)].sort().at(-1)!;
+  const mfgRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/manufacturing`, lastModified: changed("manufacturing", mfgUpdated), changeFrequency: "monthly", priority: 0.8, ...mfgImages("manufacturing-hub") },
+    ...mfg.map((g) => ({
+      url: `${siteUrl}/manufacturing/${g.slug}`,
+      lastModified: changed(`manufacturing/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...mfgImages(g.slug),
+    })),
+  ];
+
+  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes];
 }

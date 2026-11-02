@@ -53,6 +53,19 @@
   },
   {
     "kind": "term",
+    "slug": "bill-of-materials",
+    "title": "Bill of materials (BOM)",
+    "answer": "The list of components and raw materials, with quantities, needed to make one unit of a part or assembly. A multi-level BOM includes subassemblies that have their own BOMs.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 2,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": ""
+  },
+  {
+    "kind": "term",
     "slug": "bill-of-quantities",
     "title": "Bill of quantities (BOQ)",
     "answer": "A list of every item of work with its description, unit and quantity, measured from the drawings before anyone prices it, so contractors fill in rates and their quotes can be compared line by line.",
@@ -196,6 +209,19 @@
   },
   {
     "kind": "term",
+    "slug": "finite-capacity-scheduling",
+    "title": "Finite capacity scheduling",
+    "answer": "Scheduling that only books a machine for the hours it is actually available, so when it is full the next job waits and its later operations move with it.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 6,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": ""
+  },
+  {
+    "kind": "term",
     "slug": "fixed-asset-register",
     "title": "Fixed-asset register",
     "answer": "The record of a business's fixed assets with their cost, the date each was put to use, and depreciation.",
@@ -271,6 +297,32 @@
     "published": "2026-10-25",
     "updated": "2026-11-01",
     "body": "Under IBR 2026 the forms are Form I Part B or C, Form IV Part A and Form V Part A with its Part B extract; see [documents for boiler registration](/ibr/registration-documents) and [the folder built from a BOM](/notes/ibr-statutory-folder-from-bom). The ASME Code's counterpart is the [Manufacturer's Data Report](/asme/data-reports) and the file behind it."
+  },
+  {
+    "kind": "term",
+    "slug": "job-costing",
+    "title": "Job costing",
+    "answer": "Collecting the actual cost of each job (material, labor, machine time, outside work, scrap and rework) and comparing it with what was quoted.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 7,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "Job costing suits work made to order, where every job is different; process costing averages cost over a continuous run of identical units. In a machine shop the useful comparison is per operation: quoted against actual setup and run time, because that is what the next quote can correct. A worked example with a calculator is in [job costing in QuickBooks for manufacturers](/manufacturing/quickbooks-job-costing)."
+  },
+  {
+    "kind": "term",
+    "slug": "job-traveler",
+    "title": "Job traveler",
+    "answer": "The document that moves with a job through the shop, listing each operation in order, where operators sign off, record time and note quantities and scrap. Increasingly a barcode or screen rather than paper.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 4,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": ""
   },
   {
     "kind": "term",
@@ -365,6 +417,19 @@
   },
   {
     "kind": "term",
+    "slug": "mrp",
+    "title": "MRP (material requirements planning)",
+    "answer": "Working out what material to buy or make, how much and when, from orders, bills of materials, stock on hand and lead times.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 10,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "MRP explodes each order through its [bill of materials](/systems#bill-of-materials), subtracts stock and open purchase orders, and offsets by lead time to say \"order this, by then\". Classic MRP assumes unlimited machine capacity; finite scheduling (see [production scheduling software](/manufacturing/production-scheduling-software)) is the step that checks the plan against real machine hours. ERP grew out of MRP by adding sales, purchasing and accounting on the same database."
+  },
+  {
+    "kind": "term",
     "slug": "msme-payment-rule",
     "title": "MSME payment rule",
     "answer": "The rule that a buyer must pay a micro or small enterprise supplier by the agreed date, which can never be more than 45 days from acceptance, or within 15 days where there is no written agreement.",
@@ -388,6 +453,19 @@
     "published": "2026-11-01",
     "updated": "2026-11-01",
     "body": "See [National Board registration and the R stamp](/asme/national-board-registration)."
+  },
+  {
+    "kind": "term",
+    "slug": "oee",
+    "title": "OEE (overall equipment effectiveness)",
+    "answer": "A measure of how much of a machine's planned time produces good parts: availability × performance × quality.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 8,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "- **Availability**: run time ÷ planned production time (stops and breakdowns count against it).\n- **Performance**: (ideal cycle time × total parts) ÷ run time (slow cycles count against it).\n- **Quality**: good parts ÷ total parts (scrap and rework count against it).\n\nExample: a machine planned for 8 hours runs 6.4 (availability 80%), makes 300 parts at an ideal 1 minute each in those 6.4 hours, 384 minutes (performance 300 ÷ 384 = 78.1%), and 285 are good (quality 95%). OEE = 0.80 × 0.781 × 0.95 = 59.4%.\n\nThe number alone doesn't say what to fix; the three factors do. Collecting them needs stops, counts and scrap recorded at the machine, the same shop-floor data [scheduling](/manufacturing/production-scheduling-software) and [job costing](/manufacturing/quickbooks-job-costing) depend on."
   },
   {
     "kind": "term",
@@ -456,6 +534,19 @@
   },
   {
     "kind": "term",
+    "slug": "rfq",
+    "title": "RFQ (request for quote)",
+    "answer": "A request for a price and lead time on a defined part or quantity. A manufacturer receives RFQs from customers and sends them to suppliers; the two are different workflows.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 9,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "- **Customer RFQ** (incoming): a drawing, quantity and due date arrive by email or a portal; the shop works out material, operations and times, and sends a quote. Speed matters: same-day quotes win work.\n- **Supplier RFQ** (outgoing): the shop asks vendors to price material or outside processing, compares the replies and orders.\n\nAn RFQ asks for a price on something already specified; an RFP (request for proposal) asks suppliers to propose how they would meet a need, and is judged on more than price. The quoted operations from a customer RFQ become the job's [routing](/systems/routing) if the order comes in. For supplier quotes collected on a link instead of by email, see [suppliers quote on a link](/notes/suppliers-quote-on-a-link)."
+  },
+  {
+    "kind": "term",
     "slug": "role-based-access",
     "title": "Role-based access",
     "answer": "Controlling what each person can see and do by their role, enforced by the system itself rather than by hiding things on screen.",
@@ -466,6 +557,19 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "body": "In the Savistar & Saag system, staff see only their own cash entries and every bank route refuses staff at the API. See the [access requirement](/erp/requirements#nonfunctional-role-access) and the pattern [role-scoped finance views](/patterns/role-scoped-finance-views)."
+  },
+  {
+    "kind": "term",
+    "slug": "routing",
+    "title": "Routing",
+    "answer": "The ordered list of operations that makes a part (for example cut, bend, weld, inspect), with the machine or work center, setup time and run time for each.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 1,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "A [bill of materials](/systems#bill-of-materials) says what a part is made of; the routing says how. It is what turns a quote into a schedule and a job cost: the same operations and times price the job, place it on machines and become the estimate that actual time is compared against. No QuickBooks edition models routings; see [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing) and [production scheduling software](/manufacturing/production-scheduling-software)."
   },
   {
     "kind": "term",
@@ -583,6 +687,32 @@
     "published": "2026-11-01",
     "updated": "2026-11-01",
     "body": "How it relates to the PQR and the welder's qualification is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
+  },
+  {
+    "kind": "term",
+    "slug": "work-in-progress",
+    "title": "Work in progress (WIP)",
+    "answer": "Material and labor already put into jobs that aren't finished yet: no longer raw stock, not yet a finished part.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 5,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": "WIP matters twice. On the floor, it shows where each job is and where work is piling up in front of a machine. In the books, it is an asset: the cost of material issued and hours worked on open jobs, which stays on the balance sheet until the job ships. QuickBooks Online has no WIP stage of its own, so material sits in stock until someone adjusts it; see [QuickBooks Online inventory for manufacturers](/manufacturing/quickbooks-online-inventory). Tracking it means recording each operation as it finishes, the same data [job costing](/manufacturing/quickbooks-job-costing) uses."
+  },
+  {
+    "kind": "term",
+    "slug": "work-order",
+    "title": "Work order",
+    "answer": "The instruction to make a quantity of a part by a date, carrying its routing and materials. In a job shop it is usually the job itself; printed, it is the traveler.",
+    "domain": [
+      "manufacturing"
+    ],
+    "order": 3,
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "body": ""
   },
   {
     "kind": "term",
@@ -4105,5 +4235,276 @@
       }
     ],
     "body": "## The three documents\n\n| | PQR | WPS | WPQ |\n|---|---|---|---|\n| Full name | Procedure Qualification Record | Welding Procedure Specification | Welder (or Welding Operator) Performance Qualification |\n| Proves | The procedure makes welds with the required strength and ductility | Nothing by itself; it's the instruction | This person can make a sound weld |\n| Records | What was actually used on one test coupon, and the test results | Ranges for every variable, within what the PQR(s) support | The welder's test, results and what they're qualified for |\n| Written | Once per test | From one or more PQRs | Once per welder per test |\n| Signed by | The manufacturer, certifying the record is correct | The manufacturer | The manufacturer |\n\n## The order a shop builds them\n\n1. **Draft a WPS** for the job you want to weld (often called a pWPS until it's qualified).\n2. **Weld a test coupon** to it and record every variable actually used.\n3. **Test the coupon.** For a groove weld procedure, Section IX requires tension tests (for strength) and guided bend tests (for ductility): typically two tension and four bends, side bends for thicker coupons. Toughness tests are added when the construction code requires impact testing.\n4. **Write the PQR** from the coupon record and the test results.\n5. **Issue the WPS**, citing the PQR, with each variable's range set by what the PQR qualifies: thickness, materials, filler, position, preheat, heat treatment.\n6. **Qualify each welder** on the WPS (or a test of their own), and record it on a WPQ.\n\nSection IX doesn't allow a shop to use another company's PQR. The exception is AWS's Standard Welding Procedure Specifications, which Section IX accepts under conditions (in its QW-500 rules), with the shop demonstrating them first.\n\n## Which changes need a new PQR\n\nEvery variable in Section IX is classified. Change an **essential** variable beyond what the PQR covers and you need a new PQR; change a **nonessential** one and you only revise the WPS. See [essential variables](/asme/essential-variables).\n\n## Following one weld back\n\nOn a [data report](/asme/data-reports) package, any weld should trace like this: weld number on the weld map → welder's stamp → that welder's WPQ and [continuity](/asme/welder-continuity) → the WPS used → the PQR behind it → the filler metal's certificate and the base metal's [MTR](/asme/mtr). An Authorized Inspector will pick a weld and walk it. When those links live in different binders, this is where audits stall.\n\n## Further reading\n\nWhat a welder's test covers is in [welder qualification](/asme/welder-qualification); how materials are grouped so one test covers many is in [P-numbers](/asme/p-numbers); the whole of Section IX in outline is in [the Section IX guide](/asme/section-ix)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "job-shop-erp",
+    "group": "choosing",
+    "title": "ERP for job shops and small manufacturers: what to look for",
+    "question": "What should a job shop look for in ERP software?",
+    "answer": "A job shop ERP should carry each job from quote to invoice on one record: the quoted routing becomes the job, material is reserved for it, operations are scheduled on real machine capacity, the floor records time and scrap per operation, and actual cost is compared with the quote while the job is open. For a shop of 10 to 50 people, start with quoting, jobs, scheduling and job cost; keep QuickBooks for accounting; and test every vendor on two of your own jobs, not their sample data.",
+    "description": "Job shop ERP explained for small manufacturers: the quote-to-invoice flow, what to buy first, testable requirements, and how to run a vendor demo on your jobs.",
+    "domain": [
+      "manufacturing",
+      "erp",
+      "job-shop"
+    ],
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "checked": "2026-11-02",
+    "sources": [
+      {
+        "title": "Machine shop ERP recommendations (forum discussion)",
+        "publisher": "Practical Machinist",
+        "url": "https://www.practicalmachinist.com/forum/threads/machine-shop-erp-recommendations.400718/",
+        "date": "2026-11-02"
+      },
+      {
+        "title": "ERP: JobBOSS2 vs ProShop vs something actually good (forum discussion)",
+        "publisher": "Practical Machinist",
+        "url": "https://www.practicalmachinist.com/forum/threads/erp-jobboss-2-vs-proshop-vs-something-actually-good.411796/",
+        "date": "2026-11-02"
+      }
+    ],
+    "body": "## One job, start to finish\n\nA job shop makes to order, so the unit of work is the job, not the product. An ERP for one follows a job through every department on the same record:\n\n1. **Quote**: material, operations, setup and run times, outside processing, price.\n2. **Order**: the customer's PO turns the quote into a job with nothing typed again.\n3. **Job and routing**: the quoted operations become the job's [routing](/systems/routing) and its traveler.\n4. **Material**: stock is reserved for the job, or bought for it, with heat or lot numbers where they matter.\n5. **Schedule**: operations placed on machines with real capacity ([how scheduling works](/manufacturing/production-scheduling-software)).\n6. **Shop floor**: operators record start, finish, quantity and scrap for each operation.\n7. **Quality**: inspection results and certificates attached to the job.\n8. **Ship and invoice**: packing list, invoice from what shipped, posted to the accounting system.\n9. **Job cost**: actual against quoted, per operation ([a worked example](/manufacturing/quickbooks-job-costing)).\n\nIf two of these steps live in different files, that's where errors and lost hours collect.\n\n## What to buy first\n\nNot everything is equally urgent. For a shop of 10 to 50 people:\n\n| First | Next | Usually later |\n|---|---|---|\n| Quoting from operations and times | Material reservation per job | Maintenance scheduling |\n| Jobs and travelers from the quote | Purchasing from job shortages | Advanced planning (optimizers) |\n| One shared schedule | Quality records and certificates | Customer portal |\n| Shop-floor time per operation | Heat, lot or serial traceability | EDI with large customers |\n| Job cost vs quote | Inventory by location | Multi-plant |\n\nAccounting stays where it is. Most small manufacturers already run QuickBooks, and replacing it buys nothing; the ERP should post invoices and inventory value to it ([what QuickBooks covers](/manufacturing/quickbooks-for-manufacturing)).\n\n## What shop owners warn about\n\nOwners discussing ERP on forums such as Practical Machinist raise the same few points, and they are worth taking seriously:\n\n- **Someone has to run it.** One experienced poster puts it plainly: a full ERP needs an administrator, which is real overhead for a 3 to 10 person shop.\n- **Paying for what you don't use.** Large packages carry modules a small shop never touches, and the setup effort that comes with them.\n- **Weak scheduling.** Several owners say the scheduling module was the weak part: not good enough to plan the floor day to day.\n- **The workflow bends to the software.** If the system can't model how your jobs move, people keep the old spreadsheets, and now there are two sources of truth.\n\n## Ten requirements you can test in a demo\n\nEach of these can be checked in an hour with your own data. A vendor that can't show one live is telling you something.\n\n1. Turn one of your recent quotes into a job without retyping the operations.\n2. Show the job's traveler with each operation, machine and quoted time.\n3. Reserve stock for the job, then show that a second job can't plan on the same material.\n4. Schedule five jobs on your machines and shifts, then add a rush order and show what moves.\n5. Record an operation's time and scrap from a phone or a shop-floor screen.\n6. Show estimated vs actual cost for a job before it ships.\n7. Find which jobs used a given heat or lot number, and the reverse.\n8. Ship part of a job and invoice only what shipped.\n9. Post that invoice to QuickBooks once, retry the post, and show there's still one invoice.\n10. Export every record (jobs, routings, stock, costs) to files you can open without the vendor.\n\nThe last one matters more than it looks: it's what makes leaving possible.\n\n## Packaged, configurable or built for you\n\nThree routes, each right for some shops:\n\n- **Packaged job shop ERP.** Fastest to start if your work fits its model. You adapt to the software, pay per user, and live with its scheduling and reports.\n- **Configurable platform.** A general ERP or low-code base set up for you. More flexible, but someone keeps the configuration working.\n- **Built for your workflow.** Fits exactly and can change as you do. It costs more up front and depends on the builder staying around, so insist on owning the code and data, and a fixed scope per phase.\n\nAhrom Labs builds the third kind: operations systems for manufacturers and distributors, in phases, beside the accounting software you already use. Two things we've built show what \"fits the workflow\" means in practice: a cutting record where every plate cut puts its usable remnant back into stock, with weights that always add up ([remnants back into stock](/notes/plate-remnants-back-into-stock)), and a customer portal that shows each order's stage from the records departments already keep ([one order, every department](/notes/customer-portal-one-order-every-department)). Both run at a manufacturer in India; our US offer starts with a fixed-price prototype of one workflow, shown below.\n\nWhatever you choose, take two of your own jobs to every demo, the [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory) questions if stock is your pain, and the ten tests above."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "production-scheduling-software",
+    "group": "planning",
+    "title": "Production scheduling software for job shops: machines, shifts and due dates",
+    "question": "What does production scheduling software do in a job shop?",
+    "answer": "Production scheduling software places each job's operations on the machines that can run them, in routing order, within the hours each machine is staffed, and shows which jobs will miss their due date before it happens. In a job shop it replaces the spreadsheet or whiteboard with one shared schedule, built from each job's routing, real shift hours and due dates, that updates when a rush order arrives or a machine goes down.",
+    "description": "How production scheduling software works in a job shop: finite capacity, routings, shifts, due dates, dispatch rules vs optimizers, and a live demo.",
+    "domain": [
+      "manufacturing",
+      "scheduling"
+    ],
+    "tool": "schedule",
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "checked": "2026-11-02",
+    "sources": [
+      {
+        "title": "Machine scheduling (forum discussion)",
+        "publisher": "Practical Machinist",
+        "url": "https://www.practicalmachinist.com/forum/threads/machine-scheduling.393367/",
+        "date": "2026-11-02"
+      },
+      {
+        "title": "Machine scheduling software, not quite ERP (forum discussion)",
+        "publisher": "Practical Machinist",
+        "url": "https://www.practicalmachinist.com/forum/threads/machine-scheduling-software-not-quite-erp.386668/",
+        "date": "2026-11-02"
+      }
+    ],
+    "body": "## What a schedule needs to know\n\nA schedule is only as good as four inputs. Most bad schedules are missing one of them:\n\n| Input | What it is | Where it usually lives today |\n|---|---|---|\n| **Routing** for each job | The operations in order, the machine or work center for each, setup and run time | In the estimator's head, or on the quote |\n| **Capacity** | Which machines exist, their shifts, planned downtime | On the wall, or nowhere |\n| **Due dates** | When each job must ship | In the order, or the customer's email |\n| **Material** | Whether the material for each job is in stock or due in | In QuickBooks or the stores, often out of date |\n\nA [routing](/systems/routing) is the piece shops most often lack. If quotes are built from operations and times, the routing already exists; see [job costing](/manufacturing/quickbooks-job-costing), where the same times become the estimate.\n\n## Finite and infinite capacity\n\n**Infinite capacity** scheduling works backward from the due date and assumes every machine is free when needed. It answers \"when must this start?\" and is how classic MRP plans. It is why a schedule can show the laser booked for 30 hours on a Tuesday.\n\n**[Finite capacity](/systems#finite-capacity-scheduling)** scheduling only books a machine for the hours it has. When the laser is full, the next job waits, and its later operations move with it. That answers the question customers actually ask: \"when will it ship?\"\n\nThe demo above is finite. With one shift, the five sample jobs all ship on time. Add a rush order due tomorrow and it goes first, and frame job J-103 slips a day, because both the rush job and J-103 need the welding cell and the weld cell is the bottleneck. Switch to two shifts and everything ships on time again. That is the trade a scheduler weighs every day, made visible.\n\n## How the software decides the order\n\nThree approaches, from simplest to most complex:\n\n1. **Dispatch rules.** Take jobs in a fixed order (earliest due date first is the common one, as in the demo) and give each operation the first slot its machine and the previous operation allow. Predictable: a planner can check any result by hand.\n2. **Optimizers (APS).** Advanced planning and scheduling tools search many orders to cut lateness or changeovers. Better on paper, but harder to explain, and a plan nobody understands tends to be overridden on the floor.\n3. **People with a tool.** The planner drags jobs around a board; the software checks capacity and shows the knock-on effect. Most small shops land here.\n\nFor a shop of 10 to 50 people, a dispatch rule plus a planner who can override it usually beats an optimizer. The bigger win is having one schedule everyone trusts.\n\n## Where AI fits, and where it doesn't\n\nAI is useful around the schedule: reading a new order's drawing or email into a draft routing, warning that a job is drifting late, or explaining in plain words why J-103 moved. It shouldn't decide machine assignments by itself. A schedule must respect hard limits, such as machine hours, routing order and material on hand, and a rule or solver can guarantee those; a language model can't. Our rule: AI drafts and explains, rules and people decide, the same split we use where a suggestion ends up on a quality document ([same confidence, different autonomy](/notes/same-confidence-different-autonomy)).\n\n## Why the spreadsheet stops working\n\nShop owners on Practical Machinist describe the same path: a sheet with one column per machine and a row per day, or a whiteboard, which works while one person owns it. It breaks when:\n\n- two or three people edit it, and the copies drift apart;\n- a job's later operations don't move when its first one slips;\n- nobody can say when a new order could ship without redoing the whole sheet;\n- the floor's actual progress never makes it back, so the plan slowly turns into fiction.\n\nThe last point is the real limit. A schedule needs to know what has actually finished, which means operators recording each operation as they complete it, the same data [job costing](/manufacturing/quickbooks-job-costing) needs.\n\n## What to ask a vendor\n\n- Does it schedule to finite capacity, per machine and shift, or only backward from due dates?\n- Can it take the routing straight from the quote?\n- What happens to a job's later operations when an earlier one runs late?\n- Can a planner override a slot without breaking the rest?\n- How does finished work get back from the floor, and how quickly?\n- Does it check material before scheduling a job?\n\nBring two or three of your own jobs to the demo and ask them to schedule them live. For choosing the rest of the system, see [ERP for job shops](/manufacturing/job-shop-erp); for where scheduling sits next to QuickBooks, see [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-for-manufacturing",
+    "group": "quickbooks",
+    "title": "Does QuickBooks work for manufacturing? Edition by edition",
+    "question": "Does QuickBooks work for manufacturing?",
+    "answer": "Partly, and it depends on the edition. QuickBooks Online Plus and Advanced track inventory and job costs but have no bills of materials or manufacturing orders; Intuit says its manufacturing features are only in Intuit Enterprise Suite, which still doesn't support multi-level bills of materials. QuickBooks Desktop Enterprise (Manufacturing & Wholesale) goes furthest. None of them, by Intuit's own pages, schedules machines or tracks time by operation, so most job shops keep QuickBooks for the books and run the shop in a separate system.",
+    "description": "What QuickBooks Online, Intuit Enterprise Suite and Desktop Enterprise do for manufacturers: BOMs, assemblies, work orders, costing, and where each stops.",
+    "domain": [
+      "manufacturing",
+      "quickbooks",
+      "accounting"
+    ],
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "checked": "2026-11-02",
+    "sources": [
+      {
+        "title": "Get started with manufacturing orders and assemblies",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/sales-orders/learn-manufacturing-orders-assemblies/L7ffspckB_US_en_US",
+        "date": "2026-08-03"
+      },
+      {
+        "title": "Set up and track your inventory in QuickBooks Online",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/inventory-management/set-track-inventory-quickbooks-online/L22FZLBGN_US_en_US",
+        "date": "2026-06-17"
+      },
+      {
+        "title": "Manufacturing accounting software (QuickBooks Desktop Enterprise)",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/desktop/enterprise/industry-solutions/manufacturing/",
+        "date": "2026-11-02"
+      },
+      {
+        "title": "Advanced Inventory management software (QuickBooks Desktop Enterprise)",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/desktop/enterprise/advanced-inventory/",
+        "date": "2026-11-02"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies (plan downgrades)",
+        "doc": "intuit-mo",
+        "quote": "Manufacturing features are currently available in Intuit Enterprise Suite."
+      },
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies",
+        "doc": "intuit-mo",
+        "quote": "Multi level bill of materials with sub assemblies aren't supported in Intuit Enterprise Suite."
+      },
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies (step 1)",
+        "doc": "intuit-mo",
+        "quote": "You cannot start a manufacturing order without a bill of materials."
+      },
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies (plan downgrades)",
+        "doc": "intuit-mo",
+        "quote": "Bill of materials: Retained as view-only; cannot be edited or created."
+      },
+      {
+        "reg": "Intuit help, set up and track inventory in QuickBooks Online",
+        "doc": "intuit-qbo",
+        "quote": "Inventory features are available only for QuickBooks Online Plus and Advanced."
+      },
+      {
+        "reg": "QuickBooks Desktop Enterprise manufacturing page",
+        "doc": "intuit-desktop",
+        "quote": "Track costs from raw materials to finished goods, including labor and shipping with landed cost and bill of materials."
+      },
+      {
+        "reg": "QuickBooks Desktop Enterprise Advanced Inventory page (product information)",
+        "doc": "intuit-desktop",
+        "quote": "Advanced Inventory is included in the Platinum and Diamond subscriptions only."
+      }
+    ],
+    "body": "## The short answer, by edition\n\nChecked against Intuit's own pages on 2 November 2026. Intuit changes plans often; check yours before relying on this.\n\n| | QuickBooks Online Plus / Advanced | Intuit Enterprise Suite | QuickBooks Desktop Enterprise (Manufacturing & Wholesale) |\n|---|---|---|---|\n| Inventory quantities and value | Yes | Yes | Yes |\n| Bill of materials and assemblies | No | Yes, single level only | Yes, including subassemblies |\n| Manufacturing (build) orders | No | Yes: planned, in progress, completed | Yes: build orders |\n| Component shortages | No | Yes, a shortage report | Yes: how many you can build from stock |\n| Labor in product cost | Through projects, not per unit | As a service line on the bill of materials | Yes |\n| Multiple warehouses, bins, lots, serials | Not described in Intuit's inventory setup article | Not described in Intuit's manufacturing help | Advanced Inventory, Platinum and Diamond only |\n| Routings, machines, operations | No | Not described in Intuit's help | Not described on Intuit's product page |\n| Machine scheduling, shop-floor time by operation | No | Not described | Not described (production forecasts and labor planning are) |\n\n\"Not described\" means the Intuit page we checked doesn't mention it; ask Intuit or a ProAdvisor if it matters to you.\n\n## Three different things called \"manufacturing\"\n\nMost confusion comes from mixing up three things a shop needs:\n\n1. **What a part is made of**: the [bill of materials](/systems#bill-of-materials). QuickBooks' assembly items cover this, in the editions that have them.\n2. **How it is made**: the [routing](/systems/routing), the operations in order (cut, bend, weld, inspect), on which machine, with setup and run times. No QuickBooks edition models this.\n3. **When it is made**: the schedule, which puts each operation on a machine with real capacity. See [production scheduling software](/manufacturing/production-scheduling-software).\n\nA shop that buys and assembles kits mostly needs the first. A job shop that machines, cuts or welds to order needs all three, which is why job shops outgrow QuickBooks sooner than assemblers do.\n\n## QuickBooks Online Plus and Advanced\n\nInventory is included in Plus and Advanced: quantity on hand, reorder points, purchase orders, and either FIFO or moving average cost, chosen once (see [QuickBooks Online inventory for manufacturers](/manufacturing/quickbooks-online-inventory)). What's missing for a manufacturer:\n\n- **No bills of materials or builds.** Intuit's manufacturing help says these features are in Intuit Enterprise Suite; if you downgrade from it, bills of materials become view-only.\n- **Bundles are not assemblies.** A bundle groups items so they go on an invoice together; no finished part sits in stock and no labor goes into its cost.\n- **Job costing is by project.** Plus and Advanced group a customer's income, expenses and timesheets into a project. That gives job profit, but not setup and run hours per operation (see [job costing in QuickBooks](/manufacturing/quickbooks-job-costing)).\n\nA common workaround is to keep raw material as non-inventory items and adjust finished goods by hand. It keeps the books roughly right but hides what each job really used.\n\n## Intuit Enterprise Suite\n\nIntuit Enterprise Suite is Intuit's cloud plan above QuickBooks Online Advanced. Its manufacturing feature works like this:\n\n- An **inventory assembly item** carries a bill of materials: components, raw materials and services such as labor for one unit. A manufacturing order can't start without one.\n- A **manufacturing order** starts as Planned and reserves its components; a shortage column counts what other open orders need from the same stock.\n- Completing the order creates a **build assembly** that moves components into finished stock and computes the actual cost. Estimated cost comes from each component's default purchase cost.\n\nThe limits that matter to a job shop: bills of materials are single level (no subassemblies), edits to a bill apply only to new orders, and Intuit's help doesn't describe routings, work centers or scheduling. It suits a shop that assembles from bought parts more than one that machines from bar stock.\n\n## QuickBooks Desktop Enterprise, Manufacturing & Wholesale\n\nDesktop Enterprise has the deepest manufacturing features of the three: bills of materials with subassemblies, automated builds and purchase orders for the components a final assembly needs, and costs from raw material to finished goods including labor and landed cost. Its **Advanced Inventory** (multiple locations down to bin, lot and serial numbers, barcode scanning, cycle counts) is in the Platinum and Diamond subscriptions only; landed cost and sales order fulfillment are too.\n\nIt is Windows software (hosted versions exist), sold by subscription, and Intuit's page doesn't describe routing by machine or shop-floor time by operation.\n\n## Signs the shop has outgrown QuickBooks\n\nFrom what shop owners describe on forums such as Practical Machinist, and what we see in our own work:\n\n- Quotes live in a spreadsheet and the job is set up again from scratch when the order arrives.\n- The schedule is a whiteboard or a sheet with one column per machine, and only one person trusts it.\n- You find out a job lost money weeks after it shipped, when the bills arrive.\n- Stock in QuickBooks and stock on the shelf disagree, because material used on the floor is entered later, or never.\n- Two people keep \"the real list\" of open jobs, and they differ.\n\nNone of these is a QuickBooks bug. QuickBooks is an accounting system; these are operations problems.\n\n## Keep QuickBooks, add a shop system\n\nFor most small manufacturers the cheapest sound setup is QuickBooks for the books and a shop system for the work, with one owner for each record:\n\n| Record | Owned by | Goes to the other system as |\n|---|---|---|\n| Customers and vendors | Either, but only one | A copy, kept in step |\n| Quotes, jobs, routings, schedule | Shop system | Nothing (stays in operations) |\n| Shop-floor hours, scrap, material used | Shop system | Job cost, and the inventory value at month-end |\n| Customer invoices | Shop system (from the shipped job) | An invoice, posted once |\n| Vendor bills and payments | QuickBooks | Status read back to the shop system |\n| Chart of accounts, tax, payroll | QuickBooks | Nothing |\n\n\"Owned by\" means people change that record in one place only. Everything that breaks between two systems starts with a record two people can edit in both.\n\n## Connecting the two without duplicates\n\nOur QuickBooks Online connector is being built; it isn't live yet. The rules it follows are the ones our [TallyPrime connection](/notes/connecting-tallyprime-four-ways) already runs on:\n\n- **Post once, by our own number.** Each invoice carries the shop system's document number; before posting, the connector checks whether that number already exists, so a retry can't create a second copy.\n- **Read back, don't assume.** After posting, read the record from the accounting system and store its ID and totals ([reconcile against the source of truth](/patterns/reconcile-against-source-of-truth)).\n- **Fail loudly.** A rejected entry (a missing account, a closed period) waits for a person with the reason shown, instead of retrying forever or being dropped ([failures flagged, not lost](/patterns/failures-flagged-not-lost)).\n- **Nobody re-keys.** On Intuit's community, many \"duplicate\" problems come from someone entering by hand what an integration had already posted, which also takes the stock out twice.\n\n## Is QuickBooks an ERP?\n\nNo. An ERP covers operations (orders, production, stock, purchasing) as well as accounting, on one database. QuickBooks is accounting software with some inventory; Intuit Enterprise Suite and Desktop Enterprise add manufacturing pieces but not shop-floor control. That's fine: many good shop systems are built to sit beside QuickBooks rather than replace it. See [ERP for job shops](/manufacturing/job-shop-erp) for what the shop side needs."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-job-costing",
+    "group": "quickbooks",
+    "title": "Job costing in QuickBooks for manufacturers: estimated vs actual",
+    "question": "Can QuickBooks do job costing for a manufacturer?",
+    "answer": "QuickBooks Online Plus, Advanced and Intuit Enterprise Suite do job costing through projects: each customer job collects its invoices, bills, expenses and timesheets, and shows profit. That works for a contractor. A machine shop also needs setup and run hours, machine time, scrap and rework per job, compared with what was quoted while the job is still open. QuickBooks doesn't split cost that way, so shops either keep a job-cost sheet beside it or track it in a shop system.",
+    "description": "Job costing in QuickBooks for machine shops and fabricators: what projects track, what they miss, and a worked estimated-vs-actual example with a calculator.",
+    "domain": [
+      "manufacturing",
+      "quickbooks",
+      "job-costing"
+    ],
+    "tool": "jobcost",
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "checked": "2026-11-02",
+    "sources": [
+      {
+        "title": "Create projects in QuickBooks Online or Intuit Enterprise Suite",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/manage-projects/set-create-projects-quickbooks-online/L9GAdLMyT_US_en_US",
+        "date": "2026-10-06"
+      },
+      {
+        "title": "Track hourly labor costs and profitability by project in QuickBooks Online",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/regular-payroll/track-hourly-labor-costs-profitability-project/L9ZxBA4sn_US_en_US",
+        "date": "2026-08-05"
+      },
+      {
+        "title": "How many shops track actual hours vs the bid price? (forum discussion)",
+        "publisher": "Practical Machinist",
+        "url": "https://www.practicalmachinist.com/forum/threads/how-many-shops-track-actual-hours-vs-the-bid-price.446887/",
+        "date": "2026-11-02"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit help, create projects",
+        "doc": "intuit-qbo",
+        "quote": "If you have QuickBooks Online Plus, QuickBooks Online Advanced, or Intuit Enterprise Suite, you can use projects to track income and costs for specific projects."
+      },
+      {
+        "reg": "Intuit help, track hourly labor costs by project",
+        "doc": "intuit-qbo",
+        "quote": "Estimated hourly costs multiplies the hours worked by a fixed per-employee rate"
+      },
+      {
+        "reg": "Intuit help, track hourly labor costs by project",
+        "doc": "intuit-qbo",
+        "quote": "Hourly cost rates only apply to time that is tracked after the hourly cost rate is set."
+      },
+      {
+        "reg": "Intuit help, track hourly labor costs by project",
+        "doc": "intuit-qbo",
+        "quote": "This report only uses data from payroll expenses, so if you only track hourly time costs, this report won't give you accurate information."
+      },
+      {
+        "reg": "Intuit help, create projects",
+        "doc": "intuit-qbo",
+        "quote": "If you pick Detailed, you can't switch back to Basic."
+      }
+    ],
+    "body": "## What QuickBooks job costing does\n\nIn QuickBooks Online Plus, Advanced and Intuit Enterprise Suite, a **project** groups one customer job's invoices, estimates, bills, expenses and timesheets, with an income, cost and profit view. Intuit's own example is an auto repair job that tracks every part and labor hour.\n\nLabor reaches a project two ways, per Intuit's help:\n\n- **Payroll expenses**: real wages, taxes and workers' comp, posted after each payroll run.\n- **Estimated hourly costs**: hours on project timesheets times a fixed rate per employee, which can include overhead. Visible straight away, but only for time tracked after the rate was set.\n\nThe project profitability report uses payroll expenses only. Intuit Enterprise Suite, and Advanced with the construction add-on, also offer basic or detailed project costing; once you pick detailed you can't switch back.\n\n## What a manufacturer needs that projects don't split\n\nA project answers \"did this job make money?\" after the costs arrive. A shop needs to know why, while it can still act:\n\n| Cost a shop tracks | In a QuickBooks project |\n|---|---|\n| Material issued to the job | Only if bought for that job, or adjusted by hand |\n| Setup hours vs run hours | One timesheet total per person |\n| Machine time (the shop rate) separate from labor | No: an hourly rate per employee, not per machine |\n| Scrapped parts and rework | Not separated from normal production |\n| Outside processing (plating, heat treat) | Yes, as bills assigned to the project |\n| Quoted hours per operation, to compare | No |\n\nMachine time matters most. In a machine shop the machine and its overhead often cost more per hour than the operator, and one operator may run two machines. A rate per employee can't show that.\n\n## A worked example\n\nEvery figure here is made up. A shop quotes 200 steel brackets at $18.50 each. Labor costs $32 an hour; the shop rate (machine plus overhead) is $65 per machine hour, so an hour of setup or run time costs $97.\n\n| | Estimated | Actual |\n|---|---:|---:|\n| Material | $840.00 (200 × $4.20) | $910.00 (200 × $4.55) |\n| Setup | $194.00 (2 h) | $339.50 (3.5 h) |\n| Run time | $1,940.00 (6 min each) | $2,425.00 (7.5 min each) |\n| Outside processing | $300.00 | $300.00 |\n| Scrapped parts (8 made again) | $0.00 | $133.40 |\n| Rework | $0.00 | $145.50 (1.5 h) |\n| **Total cost** | **$3,274.00** | **$4,253.40** |\n| Revenue | $3,700.00 | $3,700.00 |\n| **Margin** | **$426.00 (11.5%)** | **−$553.40 (−15.0%)** |\n\nThe job was quoted at 22 hours and took 31: **1.41 hours used per hour quoted**. The largest part of the $979.40 miss is run time ($485.00, from a cycle 25% slower than quoted), not the scrap that people notice on the floor. The calculator above has the same job; change any figure.\n\nOne owner on Practical Machinist describes the habit that fixes quoting: log estimated and actual time side by side on every job, and when a few months of similar jobs show the same miss, raise the quoted time by that much. The hours factor is that number.\n\n## Doing it with QuickBooks and a spreadsheet\n\n1. Turn on projects and create one per job.\n2. Assign material bills and outside processing to the project as they arrive.\n3. Have operators record time per job daily, before they clock out; split setup from run if you can.\n4. Keep the quoted hours and material per job in a sheet beside it. The free [job cost workbook](/manufacturing/job-cost-worked-example.xlsx) has the columns and formulas, with this example filled in.\n5. Close each job by comparing the two, and feed the hours factor back into the next quote.\n\nIt works for a handful of jobs a week. It strains when material is issued from stock rather than bought per job, when one operator runs two machines, or when you want the answer before the job ships.\n\n## When to move job costing into a shop system\n\nMove it when the comparison arrives too late to matter. A shop system records material issued, setup and run time and scrap against each operation as they happen, compares them with the quoted routing while the job is open, and posts only the invoice and the inventory value to QuickBooks (see [keeping QuickBooks beside a shop system](/manufacturing/quickbooks-for-manufacturing)). Material reserved per job keeps the material line honest; see [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory). And costing depends on where the hours were planned: [production scheduling](/manufacturing/production-scheduling-software)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-online-inventory",
+    "group": "quickbooks",
+    "title": "QuickBooks Online inventory: what it tracks and where manufacturers outgrow it",
+    "question": "Is QuickBooks Online inventory management enough for a manufacturer?",
+    "answer": "QuickBooks Online Plus and Advanced track how many of each item you have, what it's worth (FIFO or moving average cost, chosen once), what's on order and when to reorder. That covers a reseller. A manufacturer usually also needs raw material, work in progress and finished parts kept apart, material set aside for each job, and stock by location or lot, which QuickBooks Online's inventory doesn't describe. That is the point to add a stock layer beside it.",
+    "description": "QuickBooks Online inventory for manufacturers: plans, FIFO or average cost, reorder points, and the gaps: WIP, job reservations, locations, lots and BOMs.",
+    "domain": [
+      "manufacturing",
+      "quickbooks",
+      "inventory"
+    ],
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "checked": "2026-11-02",
+    "sources": [
+      {
+        "title": "Set up and track your inventory in QuickBooks Online",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/inventory-management/set-track-inventory-quickbooks-online/L22FZLBGN_US_en_US",
+        "date": "2026-06-17"
+      },
+      {
+        "title": "Inventory valuation methods for cost accounting",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/inventory-management/fifo-used-inventory-cost-accounting/L1x3hkunE_US_en_US",
+        "date": "2026-08-14"
+      },
+      {
+        "title": "Get started with manufacturing orders and assemblies",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/sales-orders/learn-manufacturing-orders-assemblies/L7ffspckB_US_en_US",
+        "date": "2026-08-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit help, set up and track inventory in QuickBooks Online",
+        "doc": "intuit-qbo",
+        "quote": "Inventory features are available only for QuickBooks Online Plus and Advanced."
+      },
+      {
+        "reg": "Intuit help, set up and track inventory in QuickBooks Online",
+        "doc": "intuit-qbo",
+        "quote": "If you use QuickBooks Online Simple Start or Essentials and would like to start using inventory tracking, you can buy the inventory add-on or upgrade your QuickBooks subscription."
+      },
+      {
+        "reg": "Intuit help, inventory valuation methods",
+        "doc": "intuit-qbo",
+        "quote": "Choose your costing method carefully because it can't be changed later."
+      },
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies (plan downgrades)",
+        "doc": "intuit-mo",
+        "quote": "Manufacturing features are currently available in Intuit Enterprise Suite."
+      }
+    ],
+    "body": "## What QuickBooks Online inventory does\n\nFrom Intuit's help pages, checked on 2 November 2026:\n\n| Feature | QuickBooks Online |\n|---|---|\n| Plans | Plus and Advanced; Simple Start and Essentials can buy an inventory add-on or upgrade |\n| Quantity on hand | Goes down with each invoice or sales receipt, up with each receipt from a vendor |\n| Reordering | Reorder points and low-stock alerts; purchase orders and what's still on order |\n| Valuation | FIFO or moving average cost (MAC), chosen once: it can't be changed later, and an item created before choosing defaults to FIFO |\n| Item types | Inventory, non-inventory (tracked as cost, not quantity), service, and bundles that group items on a sales form |\n| Reports | Stock on hand, best sellers, cost of goods sold |\n\nFor a business that buys finished products and sells them, that is a complete inventory system.\n\n## Where a manufacturer runs out of room\n\nA manufacturer's stock moves through stages QuickBooks Online doesn't model:\n\n- **No raw, in-progress and finished stages.** Material issued to a job isn't stock on the shelf any more, but it isn't a finished part yet either. QuickBooks Online has no [work in progress](/systems/work-in-progress); material sits in stock until someone adjusts it.\n- **No bills of materials or builds.** Turning components into a finished part is an Intuit Enterprise Suite feature, not a QuickBooks Online one. See [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing).\n- **No material set aside per job.** Quantity on hand tells you what's on the shelf, not what is already promised. Without a [stock reservation](/systems/stock-reservation), two jobs can plan on the same bar stock and the second finds out on the floor.\n- **One pool of stock.** Intuit's inventory setup article doesn't describe warehouses, bins, lots or serial numbers. On Intuit's community the usual workarounds are a separate item per location or location codes in item names, which multiplies the item list.\n- **Counts arrive late.** Stock changes when someone enters a transaction. Material taken on the floor and entered at week's end means the number is wrong all week.\n\n## What changes when you add a stock layer\n\nThe usual fix is not to leave QuickBooks but to keep stock movements in an operations system and send QuickBooks the accounting result:\n\n| In the stock layer | In QuickBooks |\n|---|---|\n| Every receipt, issue to a job, return, transfer and count, scanned as it happens | Purchase bills and the inventory asset value |\n| Raw, in-progress and finished quantities per item and location | Cost of goods sold when invoiced |\n| Material reserved against each job, oldest stock first | Nothing: reservations aren't accounting |\n| Lots, heat numbers or serials, and which job used them | Nothing |\n\nThe [QR inventory and order reservations](/services/inventory-and-reservations) system we built for an electronic components trader works this way: whole reels reserved per customer order line, two stores, scanning in and out, with a manager's override needed to ship reserved stock elsewhere ([how the reels and boxes work](/notes/reels-boxes-and-two-stores)). The US build of that system is open as a live demo with sample logins.\n\n## When to stay, when to move\n\nStay on QuickBooks Online inventory if you resell more than you make, have one location, and can count everything in an afternoon. Add a stock layer when material is issued to jobs, when two jobs compete for the same stock, when you need lot or heat traceability, or when the shelf and the books disagree every month. For costing those jobs, see [job costing in QuickBooks](/manufacturing/quickbooks-job-costing)."
   }
 ]

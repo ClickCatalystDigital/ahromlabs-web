@@ -4,6 +4,8 @@ import { boqItems, trades, tradeItems, UNIT_LABEL } from "@/lib/boq";
 import { requirements, departments } from "@/lib/erp";
 import { questions as aiQuestions, vendorTests } from "@/lib/ai-assistant";
 import { asmeGuides, ASME_EDITION } from "@/lib/asme";
+import { mfgGuides } from "@/lib/manufacturing";
+import { DICT } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -35,6 +37,13 @@ automation and an inventory management system for a PCB and electronics
 trading company (LS Technologies); and a backend for quotations, workers,
 clients, vendors, freight and finance for an interior design firm and its
 sister furniture business (Savistar & Saag).
+
+For North America (US and Canada), Ahrom Labs builds the same kind of system
+for job shops, fabricators and small manufacturers and distributors, beside
+QuickBooks rather than replacing it: quoting, jobs and routings, scheduling,
+stock and reservations, shop-floor time and job costing. US work starts with
+a fixed-price prototype of one workflow (USD ${DICT.NA.pricing!.prototype.toLocaleString("en-US")}, ${DICT.NA.pricing!.prototypeWeeks} weeks); the US demos run on
+sample data. Guides: https://ahromlabs.com/manufacturing
 
 ## Pages
 
@@ -150,6 +159,11 @@ export function GET() {
     `- Browser agents (WebMCP) on ahromlabs.com can call the calculators as tools: asme-hydrostatic-test-pressure, asme-shell-thickness and asme-welder-continuity.\n` +
     asmeGuides().map(line("asme")).join("\n");
 
+  const mfg =
+    `- [Production management software for job shops and small manufacturers](https://ahromlabs.com/manufacturing): Choosing a job shop ERP, what each QuickBooks edition does for manufacturing (checked against Intuit's pages), job costing and finite-capacity scheduling, for US job shops and small manufacturers.\n` +
+    `- [Job cost workbook for Excel](https://ahromlabs.com/manufacturing/job-cost-worked-example.xlsx): Estimated vs actual cost for one job (material, setup, run time, outside processing, scrap, rework), margin and the hours-used-per-hour-quoted factor, with a worked example. CC BY 4.0.\n` +
+    mfgGuides().map(line("manufacturing")).join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -162,6 +176,7 @@ export function GET() {
     `\n## ERP requirements (India)\n\n${erp}\n` +
     `\n## AI assistants over business data\n\n${ai}\n` +
     `\n## ASME Boiler and Pressure Vessel Code\n\n${asme}\n` +
+    `\n## Manufacturing software (US job shops and small manufacturers)\n\n${mfg}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

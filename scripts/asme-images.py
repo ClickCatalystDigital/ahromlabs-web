@@ -2,6 +2,7 @@
 """Turns generated PNGs into the ASME hub's page art, the same way as the other hubs' images.
 
     python3 scripts/asme-images.py ~/Downloads/asme-pngs
+    python3 scripts/asme-images.py ~/Downloads/mfg-pngs manufacturing   # another hub: public/<hub>/, og-art/<hub>/
 
 Each <name>.png (names from docs/asme-image-prompts.md, .png or .webp suffix both fine) becomes:
   public/asme/<name>.webp             1086 x 362, the object centred on the page colour (#fbfbfc)
@@ -48,7 +49,8 @@ def art(src: Path) -> Image.Image:
 
 def main() -> None:
     folder = Path(sys.argv[1]).expanduser()
-    out, og = ROOT / "public/asme", ROOT / "src/assets/og-art/asme"
+    hub = sys.argv[2] if len(sys.argv) > 2 else "asme"
+    out, og = ROOT / "public" / hub, ROOT / "src/assets/og-art" / hub
     out.mkdir(parents=True, exist_ok=True)
     og.mkdir(parents=True, exist_ok=True)
     files = sorted(p for p in folder.iterdir() if p.suffix.lower() in {".png", ".webp", ".jpg", ".jpeg"})
@@ -64,7 +66,7 @@ def main() -> None:
         crop = canvas.crop(((W - cw) // 2, 0, (W + cw) // 2, H)).resize((480, 270), Image.LANCZOS)
         crop.save(og / f"{name}.jpg", quality=85, optimize=True, progressive=True)
         kb = (out / f"{name}.webp").stat().st_size // 1024
-        print(f"{name}: public/asme/{name}.webp ({kb} KB), og-art/asme/{name}.jpg")
+        print(f"{name}: public/{hub}/{name}.webp ({kb} KB), og-art/{hub}/{name}.jpg")
 
 
 if __name__ == "__main__":

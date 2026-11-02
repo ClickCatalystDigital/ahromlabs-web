@@ -34,8 +34,9 @@ const DOMAIN_LABELS: Record<string, string> = {
   truth: "Truth",
   operations: "Operations and compliance",
   pressure: "Boilers and pressure vessels (ASME)",
+  manufacturing: "Manufacturing and the shop floor",
 };
-const DOMAIN_ORDER = ["structure", "governance", "truth", "operations", "pressure"];
+const DOMAIN_ORDER = ["structure", "governance", "truth", "operations", "manufacturing", "pressure"];
 
 function getGroups() {
   const terms = getContent("term");

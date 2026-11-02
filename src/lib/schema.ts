@@ -664,3 +664,49 @@ export function asmePageGraph(page: { path: string; title: string; description: 
     ],
   };
 }
+
+// The manufacturing hub (/manufacturing): one TechArticle per guide with its breadcrumb; a page with a tool adds
+// a WebApplication. Written for US job shops and small manufacturers.
+export function mfgPageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null }) {
+  const url = `${siteUrl}${page.path}`;
+  const crumbs = [{ name: "Home", path: "" }, ...page.trail];
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": `${url}#article`,
+        url,
+        headline: page.title,
+        description: page.description,
+        datePublished: page.published,
+        dateModified: page.updated,
+        author: { "@id": `${siteUrl}/#founder` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntityOfPage: url,
+        inLanguage: "en-US",
+        ...(page.image && {
+          image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
+        }),
+      },
+      ...(page.app
+        ? [{
+            "@type": "WebApplication",
+            "@id": `${url}#app`,
+            name: page.app,
+            url,
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Any (runs in the browser)",
+            isAccessibleForFree: true,
+            description: page.description,
+            provider: { "@id": `${siteUrl}/#organization` },
+          }]
+        : []),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${siteUrl}${c.path}` })),
+      },
+    ],
+  };
+}

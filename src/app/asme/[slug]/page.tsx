@@ -38,7 +38,7 @@ export default async function AsmeGuidePage(props: PageProps<"/asme/[slug]">) {
   const g = asmeGuide((await props.params).slug)!;
   const path = `/asme/${g.slug}`;
   const trail = [{ name: "ASME", path: "/asme" }, { name: g.title, path }];
-  const tool = g.tool ? TOOLS[g.tool] : null;
+  const tool = g.tool && g.tool in TOOLS ? TOOLS[g.tool as keyof typeof TOOLS] : null;
   const art = asmeArt(g.slug);
   return (
     <AsmePage

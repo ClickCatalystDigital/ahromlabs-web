@@ -14,11 +14,14 @@ import { load as loadYaml } from "js-yaml";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.json");
-const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme" };
+const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing" };
 
 // ASME guide groups (src/lib/asme.ts ASME_SECTIONS) and the tools a guide can carry.
 const ASME_GROUPS = ["code", "certification", "welding", "design", "materials", "bridge"];
 const ASME_TOOLS = ["hydrotest", "shell", "continuity"];
+// Manufacturing guide groups (src/lib/manufacturing.ts MFG_GROUPS) and their tools.
+const MFG_GROUPS = ["choosing", "quickbooks", "planning"];
+const MFG_TOOLS = ["jobcost", "schedule"];
 
 function assertString(value, field, relPath) {
   if (typeof value !== "string" || value.length === 0) {
@@ -117,7 +120,7 @@ function loadKind(kind) {
     // rather than quote them. Where a guide does quote, the quote must be exact.
     // ERP guides that rest on practice rather than a rule (readiness, implementation, the industry
     // guides) may have no official source; when they cite one, it is checked the same way.
-    if (kind === "boq" || kind === "erp" || kind === "ai-assistant" || kind === "asme") {
+    if (kind === "boq" || kind === "erp" || kind === "ai-assistant" || kind === "asme" || kind === "manufacturing") {
       if ((kind === "boq" || kind === "asme") && (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0)) {
         throw new Error(`content/${relPath}: a BOQ guide needs "sources" (official documents it relies on)`);
       }
@@ -132,7 +135,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"] }[kind];
+      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"], manufacturing: [] }[kind];
       if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     // ASME guides: a group for the hub, the question people search (the question library), an optional tool.
@@ -141,6 +144,11 @@ function loadKind(kind) {
       if (!ASME_GROUPS.includes(frontmatter.group)) throw new Error(`content/${relPath}: "group" must be one of ${ASME_GROUPS.join(", ")}`);
       assertString(frontmatter.question, "question", relPath);
       if (frontmatter.tool !== undefined && !ASME_TOOLS.includes(frontmatter.tool)) throw new Error(`content/${relPath}: unknown "tool"`);
+    }
+    if (kind === "manufacturing") {
+      if (!MFG_GROUPS.includes(frontmatter.group)) throw new Error(`content/${relPath}: "group" must be one of ${MFG_GROUPS.join(", ")}`);
+      assertString(frontmatter.question, "question", relPath);
+      if (frontmatter.tool !== undefined && !MFG_TOOLS.includes(frontmatter.tool)) throw new Error(`content/${relPath}: unknown "tool"`);
     }
     if (kind === "guide") {
       if (!Array.isArray(frontmatter.sources) || frontmatter.sources.length === 0) {
@@ -186,6 +194,7 @@ const boqGuides = loadKind("boq");
 const erpGuides = loadKind("erp");
 const aiGuides = loadKind("ai-assistant");
 const asmeGuides = loadKind("asme");
+const mfgGuides = loadKind("manufacturing");
 
 // Cross-reference check: every `patterns`/`notes` edge in a note or industry
 // must point at a real entry. Runs here, at script time, so a broken reference
@@ -243,8 +252,9 @@ const RENDERERS = {
   erp: ["src/app/erp/[slug]", "src/components/ErpPage.tsx", "src/components/GuidePage.tsx", "src/lib/erp.ts"],
   "ai-assistant": ["src/app/ai-assistant/[slug]", "src/components/AiAssistantPage.tsx", "src/components/GuidePage.tsx", "src/lib/ai-assistant.ts"],
   asme: ["src/app/asme/[slug]", "src/components/AsmePage.tsx", "src/components/AsmeTools.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts", "src/lib/asme-images.ts", "public/asme"],
+  manufacturing: ["src/app/manufacturing/[slug]", "src/components/ManufacturingPage.tsx", "src/components/ManufacturingTools.tsx", "src/components/GuidePage.tsx", "src/lib/manufacturing.ts", "src/lib/manufacturing-images.ts", "public/manufacturing"],
 };
-const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme" };
+const ROUTE_PREFIX = { industries: "industries", notes: "notes", patterns: "patterns", terms: "systems", ibr: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing" };
 for (const [dir, renderers] of Object.entries(RENDERERS)) {
   const files = fs.readdirSync(path.join(CONTENT_ROOT, dir)).filter((f) => f.endsWith(".md"));
   for (const file of files) {
@@ -277,6 +287,7 @@ const ASME_FRAME = ["src/components/AsmePage.tsx", "src/components/GuidePage.tsx
 PAGE_SOURCES.asme = ["content/asme", "src/app/asme/page.tsx", ...ASME_FRAME];
 PAGE_SOURCES["asme/questions"] = ["content/asme", "src/app/asme/questions", ...ASME_FRAME];
 PAGE_SOURCES["asme/items"] = ["src/app/asme/items", "src/lib/asme-items.ts", ...ASME_FRAME];
+PAGE_SOURCES.manufacturing = ["content/manufacturing", "src/app/manufacturing/page.tsx", "src/components/ManufacturingPage.tsx", "src/components/GuidePage.tsx", "src/lib/manufacturing.ts", "src/lib/manufacturing-images.ts", "public/manufacturing"];
 
 const pageDates = {};
 for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
@@ -287,8 +298,8 @@ for (const [route, paths] of Object.entries(PAGE_SOURCES)) {
 }
 fs.writeFileSync(path.join(process.cwd(), "src/lib/page-dates.generated.json"), JSON.stringify(pageDates, null, 2) + "\n");
 
-const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides, ...erpGuides, ...aiGuides, ...asmeGuides];
+const all = [...terms, ...notes, ...patterns, ...industries, ...guides, ...boqGuides, ...erpGuides, ...aiGuides, ...asmeGuides, ...mfgGuides];
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(all, null, 2) + "\n");
 console.log(
-  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides, ${erpGuides.length} ERP guides, ${aiGuides.length} AI assistant guides, ${asmeGuides.length} ASME guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  `content: wrote ${all.length} entries (${terms.length} terms, ${notes.length} notes, ${patterns.length} patterns, ${industries.length} industries, ${guides.length} IBR guides, ${boqGuides.length} BOQ guides, ${erpGuides.length} ERP guides, ${aiGuides.length} AI assistant guides, ${asmeGuides.length} ASME guides, ${mfgGuides.length} manufacturing guides) to ${path.relative(process.cwd(), OUTPUT_PATH)}`
 );

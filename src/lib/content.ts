@@ -1,6 +1,6 @@
 import contentData from "./content-data.generated.json";
 
-export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant" | "asme";
+export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant" | "asme" | "manufacturing";
 
 export type ContentEntry = {
   kind: ContentKind;
@@ -36,9 +36,10 @@ export type ContentEntry = {
   guides?: string[];
   order?: number;
   // ASME guides (content/asme/): hub group, the question as people search it, an embedded tool.
-  group?: "code" | "certification" | "welding" | "design" | "materials" | "bridge";
+  // Manufacturing guides (content/manufacturing/) use the same fields with their own groups and tools.
+  group?: "code" | "certification" | "welding" | "design" | "materials" | "bridge" | "choosing" | "quickbooks" | "planning";
   question?: string;
-  tool?: "hydrotest" | "shell" | "continuity";
+  tool?: "hydrotest" | "shell" | "continuity" | "jobcost" | "schedule";
   published: string;
   updated: string;
   body: string;

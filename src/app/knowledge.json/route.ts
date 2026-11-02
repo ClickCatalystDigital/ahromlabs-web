@@ -20,7 +20,7 @@ function contentUrl(entry: ContentEntry): string {
   if (entry.kind === "term") {
     return `${siteUrl}/systems${termHasPage(entry) ? `/${entry.slug}` : `#${entry.slug}`}`;
   }
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme" }[entry.kind];
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing" }[entry.kind];
   return `${siteUrl}/${segment}/${entry.slug}`;
 }
 
@@ -41,6 +41,7 @@ export function GET() {
     ...getContent("asme"),
     ...getContent("erp"),
     ...getContent("ai-assistant"),
+    ...getContent("manufacturing"),
   ].map((entry) => ({
     ...entry,
     url: contentUrl(entry),
