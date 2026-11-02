@@ -45,6 +45,22 @@ stock and reservations, shop-floor time and job costing. US work starts with
 a fixed-price prototype of one workflow (USD ${DICT.NA.pricing!.prototype.toLocaleString("en-US")}, ${DICT.NA.pricing!.prototypeWeeks} weeks); the US demos run on
 sample data. Guides: https://ahromlabs.com/manufacturing
 
+## North America (US and Canada)
+
+The site has a version for each market. Pages that differ have their own US
+URL, joined to the India page by hreflang; every other page serves both.
+Visitors in the US and Canada are shown the US version automatically.
+
+- [Home, US](https://ahromlabs.com/us): Custom operations software for US manufacturers and distributors, with fixed USD prices and the US demos.
+- [Services, US](https://ahromlabs.com/us/services): The same services in US terms (estimates, sales tax, QuickBooks alongside).
+- [Manufacturing inventory management software, US](https://ahromlabs.com/us/services/inventory-and-reservations): Stock, reservations and orders for US manufacturers and distributors.
+- Prices (USD, fixed, agreed before work starts): prototype of one workflow $${DICT.NA.pricing!.prototype.toLocaleString("en-US")} in ${DICT.NA.pricing!.prototypeWeeks} weeks; full build $${DICT.NA.pricing!.buildFrom.toLocaleString("en-US")}–$${DICT.NA.pricing!.buildTo.toLocaleString("en-US")} in ${DICT.NA.pricing!.buildWeeks} weeks; care and changes $${DICT.NA.pricing!.care.toLocaleString("en-US")} a month; ${DICT.NA.pricing!.foundingOff}% off for the first ${DICT.NA.pricing!.foundingCount} US clients. ${DICT.NA.pricing!.pay}
+- [US boiler and pressure vessel demo](https://boiler-erp-us.ahromlabs.com/demo): A US fabricator on sample data: ASME data report package, welder continuity, mill test reports by heat number, USD and sales tax.
+- [US electronics distribution demo](https://electronics-erp-us.ahromlabs.com/demo): Reel-level inventory and orders for a US component distributor, in USD.
+- [US interior design and furniture demo](https://interiors-erp-us.ahromlabs.com/demo): A US design studio and furniture workshop: estimates, sales tax invoices, projects and the workshop.
+- [US construction demo](https://construction-erp-us.ahromlabs.com/demo): A US general contractor: pay applications with retainage and change orders, job costing, imperial units.
+- Guides written for US buyers: ASME Boiler and Pressure Vessel Code (https://ahromlabs.com/asme) and production software for job shops (https://ahromlabs.com/manufacturing). The AI assistant guides (https://ahromlabs.com/ai-assistant) serve both markets, including US privacy rules.
+
 ## Pages
 
 - [Home](https://ahromlabs.com/): Positioning, the problem with disconnected business systems, our approach, and how to start a conversation.
@@ -59,6 +75,7 @@ sample data. Guides: https://ahromlabs.com/manufacturing
 - [Boiler ERP live demo](https://boiler-erp.ahromlabs.com/demo): A working copy of the boiler and pressure-vessel ERP with a sample company. Leave a name and email, pick a department head, and use the real screens; data resets nightly.
 - [Electronics inventory live demo](https://electronics-erp.ahromlabs.com/demo): A working copy of the reel-level inventory and CRM built for an electronics-component trader, with a sample company. Leave a name and email, pick a login, and use the real screens; data resets nightly.
 - [Interior design and furniture workshop live demo](https://interiors-erp.ahromlabs.com/demo): A working copy of the system built for an interior design studio and its furniture workshop, with two sample companies. Leave a name and email, pick a login, and use the real screens; data resets nightly.
+- [Construction company live demo](https://construction-erp.ahromlabs.com/demo): A working copy of a contractor's system with a sample company: daily site reports, running bills, labour and stores. Leave a name and email, pick a login, and use the real screens; data resets nightly.
 - [Notes](https://ahromlabs.com/notes): Engineering notes from real client work.
 - [Patterns](https://ahromlabs.com/patterns): Reusable decisions extracted from real engagements.
 
