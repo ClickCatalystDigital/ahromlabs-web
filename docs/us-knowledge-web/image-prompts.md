@@ -2,9 +2,7 @@
 
 Same style and hand-over as the ASME hub (`docs/asme-image-prompts.md`): paste the **style block** from that file before each prompt, generate a wide PNG, name it as in the File column but ending `.png`, put them in one folder and give Claude the folder. Claude converts them to `public/manufacturing/<name>.webp` with the hub's image script.
 
-File names are fixed. **Status (2 Nov 2026):** done and in `public/manufacturing/`: manufacturing-hub, quickbooks-for-manufacturing, quickbooks-integration, job-shop-scheduling, job-costing, machine-shop-erp, ai-rfq-quoting, custom-vs-off-the-shelf. Convert new ones with `python3 scripts/asme-images.py <folder> manufacturing`.
-
-**Still needed (all four pages are live without an image until then):** `manufacturing-inventory`, `shop-floor-tracking`, `scheduling-template`, `ai-in-erp`. For `ai-in-erp`, Claude adds it to the AI hub page's `image:` frontmatter (it lives in `public/ai/`).
+File names are fixed. **Status (2 Nov 2026): all done.** Every page in the hub has its image in `public/manufacturing/` (ai-in-erp is in `public/ai/`). Convert new ones with `python3 scripts/asme-images.py <folder> manufacturing`.
 
 ## Core pages (decided 2 Nov; confirmed by Keyword Planner data, see architecture.md)
 

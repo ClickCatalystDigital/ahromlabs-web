@@ -13,6 +13,11 @@ domain: [ai, erp, selection]
 published: 2026-11-02
 updated: 2026-11-02
 checked: 2026-11-02
+image:
+  src: /ai/ai-in-erp.webp
+  alt: "A brass desk lamp lighting an open steel card-index drawer, one card raised: finding the one right record."
+  width: 1086
+  height: 362
 ---
 
 ## Three jobs AI does well in an ERP

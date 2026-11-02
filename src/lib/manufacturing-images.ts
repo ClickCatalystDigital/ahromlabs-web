@@ -10,14 +10,14 @@ const ALT: Record<string, string> = {
   "manufacturing-hub": "A CNC vertical machining center with a part clamped in the vise, beside a small cart of finished parts: production in a machine shop.",
   "job-shop-erp": "A workbench with a bench vise, a tray of machined brackets and flanges, a closed laptop, drawers and parts bins: running a job shop with software.",
   "quickbooks-for-manufacturing": "A closed ledger book with a pen, next to a machined flange, bracket and shaft: accounting software and the parts a manufacturer makes.",
-  "quickbooks-online-inventory": "Steel shelving with labelled parts bins, bar stock below and boxed finished parts above: raw material, work in progress and finished goods.",
+  "quickbooks-online-inventory": "Steel shelving with bar stock and tube on the bottom shelf, labelled bins of parts in the middle and boxes and flanges on top: raw material, work in progress and finished goods.",
   "quickbooks-job-costing": "A brass balance scale with a machined bracket on one pan and steel weights on the other: estimated against actual job cost.",
   // Later pages (docs/us-knowledge-web/architecture.md); their images are already in public/manufacturing.
   "quickbooks-integration": "Two document trays joined by a short brass roller conveyor carrying one sheet across: records passing between a shop system and the accounting system.",
   "rfq-to-quote": "An engineering drawing of a flanged part with the machined part on its corner and a brass magnifying glass: reading a customer RFQ into a quote.",
   "custom-vs-off-the-shelf-erp": "A ring of identical blank keys beside a key-cutting machine cutting one key: off-the-shelf software against software cut to fit.",
-  "wip-tracking": "A handheld barcode scanner on a stack of parts bins with blank labels, the top bin half full of turned parts: tracking work in progress.",
-  "production-schedule-template": "A paper spreadsheet grid on a clipboard with rows shaded like booked machine time, a pencil and a steel ruler: a schedule template.",
+  "wip-tracking": "A stack of grey parts bins with blank labels, the top one holding turned steel parts, and a handheld barcode scanner beside them: tracking work in progress.",
+  "production-schedule-template": "A spreadsheet grid on a clipboard with coloured bars like booked machine time, a steel ruler and a pencil across it: a schedule template.",
   "production-scheduling-software": "A magnetic planning board with coloured blocks of different lengths along empty rows: scheduling jobs on machines.",
 };
 // Delivered image file name per page, where it differs from the page slug (docs/us-knowledge-web/image-prompts.md).
