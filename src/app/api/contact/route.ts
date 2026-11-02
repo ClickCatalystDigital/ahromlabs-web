@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { captureLead, underRateLimit } from "@/lib/lead-email";
 import { CHOICE_COOKIE, leadCountry, marketFromParam } from "@/lib/markets";
+import { attributionFrom, cookieIn } from "@/lib/analytics";
 
 // Contact form (components/ContactForm.tsx) -> CRM database + email to LEADS_TO (lib/lead-email.ts).
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,7 +53,8 @@ export async function POST(request: Request) {
   // CRM leads.country: Cloudflare's country, or the market the visitor chose (src/lib/markets.ts).
   const chosen = marketFromParam(request.headers.get("cookie")?.match(new RegExp(`(?:^|; )${CHOICE_COOKIE}=([a-zA-Z]+)`))?.[1]);
   const country = leadCountry(request.headers.get("cf-ipcountry"), chosen);
-  const kept = await captureLead({ source: "contact", email, message, page, phone: phone || undefined, whatsappOk, country }, {
+  const attribution = attributionFrom(cookieIn(request.headers.get("cookie")));
+  const kept = await captureLead({ source: "contact", email, message, page, phone: phone || undefined, whatsappOk, country, attribution }, {
     form: "contact",
     subject: `Website enquiry from ${email}`,
     replyTo: email,

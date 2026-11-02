@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { GA_ID, track } from "@/lib/analytics";
+import { GA_ID, rememberSource, track } from "@/lib/analytics";
 
 // Consent lives in a cookie on .ahromlabs.com so the demo (boiler-erp.ahromlabs.com)
 // reads the same answer and doesn't ask again. gtag.js isn't fetched at all until
@@ -20,6 +20,7 @@ function saveConsent(value: "granted" | "denied") {
 const noSubscribe = () => () => {};
 
 function loadGa() {
+  rememberSource();
   if (document.getElementById("ga-js")) return;
   const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void };
   w.dataLayer = w.dataLayer || [];
@@ -28,6 +29,9 @@ function loadGa() {
     // eslint-disable-next-line prefer-rest-params
     w.dataLayer.push(arguments);
   };
+  // Consent Mode v2 signals, matching what the bar promises: analytics yes, ads no. Before Google Ads can use these
+  // visitors (remarketing, enhanced conversions), the bar and privacy policy must ask for ads too; then grant ad_*.
+  w.gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
   w.gtag("js", new Date());
   w.gtag("config", GA_ID);
   const s = document.createElement("script");

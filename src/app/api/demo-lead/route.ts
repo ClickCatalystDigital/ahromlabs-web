@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { captureLead, underRateLimit } from "@/lib/lead-email";
+import { attributionFrom } from "@/lib/analytics";
 
 // Called by the four live demos (boiler-erp, electronics-erp, interiors-erp, construction-erp .ahromlabs.com) when a visitor
 // fills in the demo entry form, so each lead lands in our CRM and inbox as well as in that demo's leads database.
@@ -19,13 +20,17 @@ export async function POST(request: Request) {
   // Only meaningful with a usable mobile number, same rule as the contact form's tickbox.
   // The visitor's country as the demo saw it (its own cf-ipcountry); optional until every demo sends it.
   const country = /^[A-Z]{2}$/.test(String(b.country ?? "")) ? String(b.country) : null;
+  // Optional: the demo forwards the visitor's ga_consent, ahrom_src and _ga cookies (all on .ahromlabs.com) as
+  // { cookies: { name: raw value } }; without them the lead simply has no attribution.
+  const cookies = b.cookies && typeof b.cookies === "object" ? (b.cookies as Record<string, unknown>) : {};
+  const attribution = attributionFrom((name) => (typeof cookies[name] === "string" ? cookies[name] : undefined));
   const whatsappOk = b.whatsapp_ok === true && lead.phone.replace(/\D/g, "").length >= 10;
   if (!demo || !lead.name || !lead.company || !EMAIL_RE.test(lead.email)) return NextResponse.json({ error: "Bad request" }, { status: 400 });
   // These requests all come from the demo Workers, so limit per demo and per visitor email, not per IP.
   if (!(await underRateLimit(`demo-lead:${demoKey}`)) || !(await underRateLimit(`demo-lead:${lead.email.toLowerCase()}`))) {
     return NextResponse.json({ error: "Rate limited" }, { status: 429 });
   }
-  const kept = await captureLead({ source: `demo:${demoKey}`, ...lead, whatsappOk, country }, {
+  const kept = await captureLead({ source: `demo:${demoKey}`, ...lead, whatsappOk, country, attribution }, {
     form: `demo-lead:${demoKey}`,
     subject: `Demo lead: ${lead.company} (${demo})`,
     replyTo: lead.email,
