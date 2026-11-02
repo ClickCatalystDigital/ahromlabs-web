@@ -22,7 +22,7 @@ export const MFG_GROUPS: { slug: MfgGroup; name: string; intro: string; order: s
     slug: "quickbooks",
     name: "QuickBooks and the shop",
     intro: "What each QuickBooks edition does for manufacturing, where it stops, and how a shop system sits beside it.",
-    order: ["quickbooks-for-manufacturing", "quickbooks-online-inventory", "quickbooks-job-costing"],
+    order: ["quickbooks-for-manufacturing", "quickbooks-online-vs-desktop", "quickbooks-online-inventory", "quickbooks-job-costing", "quickbooks-vs-erp", "quickbooks-desktop-end-of-support", "quickbooks-integration"],
   },
   {
     slug: "planning",

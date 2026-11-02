@@ -4524,6 +4524,64 @@
   },
   {
     "kind": "manufacturing",
+    "slug": "quickbooks-desktop-end-of-support",
+    "group": "quickbooks",
+    "title": "QuickBooks Desktop 2023 end of support: what to do now",
+    "question": "What happens when QuickBooks Desktop 2023 support ends, and where should a manufacturer move?",
+    "answer": "Intuit discontinued QuickBooks Desktop 2023 after May 31, 2026. The software still opens, but it lost live support, security updates, payroll tax updates, bank feeds, payments and emailing forms. The choices are Desktop Enterprise (or Desktop Plus 2024) to stay on Desktop, QuickBooks Online Advanced, Intuit Enterprise Suite, or keeping QuickBooks for the books beside a shop system.",
+    "description": "QuickBooks Desktop 2023 service discontinuation (May 31, 2026): what stopped working, and the options for a manufacturer: Enterprise, Online, or a shop system.",
+    "domain": [
+      "manufacturing",
+      "quickbooks"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "QuickBooks Desktop 2023 service discontinuation policy",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/feature-preferences/quickbooks-desktop-service-discontinuation-policy/L17cXxlie_US_en_US",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "QuickBooks Desktop and Online solutions",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/desktop/",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit, Desktop 2023 service discontinuation policy",
+        "doc": "intuit-sunset",
+        "quote": "After May 31, 2026, QuickBooks Desktop 2023 software will be discontinued. This includes QuickBooks Desktop Pro Plus, Premier Plus, Mac Plus, and Enterprise Solutions 23.0."
+      },
+      {
+        "reg": "Intuit, Desktop 2023 service discontinuation policy",
+        "doc": "intuit-sunset",
+        "quote": "If you don't upgrade by May 31, 2026, you will lose access to live technical support. You’ll lose access to Intuit services like QuickBooks Desktop Payroll, Desktop Payments, or online bank feeds. Discontinued versions won’t receive critical security updates."
+      },
+      {
+        "reg": "Intuit, Desktop 2023 service discontinuation policy (Basic or Enhanced Payroll)",
+        "doc": "intuit-sunset",
+        "quote": "After May 31, 2026, QuickBooks Desktop 2023 won't automatically calculate payroll taxes or provide payroll tax forms."
+      },
+      {
+        "reg": "Intuit, Desktop 2023 service discontinuation policy",
+        "doc": "intuit-sunset",
+        "quote": "Existing QuickBooks Desktop Plus and Desktop Enterprise subscribers receive version 2024 at no extra cost as part of your annual plan."
+      },
+      {
+        "reg": "Intuit, Desktop and Online solutions",
+        "doc": "intuit-plans",
+        "quote": "Save 50% on your first year of QuickBooks Online Advanced, or Advanced with Workforce, when you migrate from QuickBooks Desktop."
+      }
+    ],
+    "body": "## What stopped working on May 31, 2026?\n\nDesktop 2023 (Pro Plus, Premier Plus including the Manufacturing & Wholesale edition, Mac Plus and Enterprise 23.0)\nwas discontinued after May 31, 2026. From\nIntuit's page, a company still on it has lost:\n\n| Lost | What that means for a shop |\n|---|---|\n| Live technical support | No help when a file breaks |\n| Critical security updates | The company file and the PC are exposed |\n| Payroll tax calculation and forms (Basic, Enhanced, Assisted) | Paychecks may be wrong; Assisted no longer files for you |\n| Online bank feeds and online banking | Bank transactions typed or imported by hand |\n| Payment processing and eInvoice pay links | Card and check payments handled outside QuickBooks |\n| Emailing forms and reports | Invoices and statements sent another way |\n\nThe books themselves are still there and still open. The risk grows with each month.\n\n## What are the options?\n\n| Option | What changes | Fits |\n|---|---|---|\n| Upgrade within Desktop (Plus 2024 or Enterprise 24.0) | Little; Plus and Enterprise subscribers get 2024 at no extra cost | You want time to decide |\n| QuickBooks Desktop Enterprise | Same interface, up to 40 users, industry editions | Desktop users who need more capacity |\n| QuickBooks Online Advanced | Cloud; Intuit offers migration help and a first-year discount | Firms ready to move to the cloud |\n| Intuit Enterprise Suite | Intuit's ERP for multi-entity firms; where Intuit's manufacturing features are | Larger, multi-company firms |\n| Keep QuickBooks for the books, add a shop system | Accounting stays in QuickBooks; jobs, stock and the floor move to a system built for them | Shops whose problem is the work, not the ledger |\n\nBefore choosing, read [QuickBooks Online vs Desktop for manufacturers](/manufacturing/quickbooks-online-vs-desktop):\nQuickBooks Online doesn't do everything Desktop Enterprise does for inventory and assemblies.\n\n## A move off Desktop is a migration either way\n\nWhatever you pick, plan it like one:\n\n1. Decide what moves: lists (customers, vendors, items), open invoices and bills, and how much history.\n2. Freeze item and account changes for the move.\n3. Run both for one month-end, and compare the trial balance and stock value.\n4. Keep the old file read-only, on a backed-up PC, for the records you must keep.\n\nIf the move is also the moment to stop running jobs in spreadsheets, see\n[when a business has outgrown QuickBooks](/manufacturing/quickbooks-vs-erp) and\n[connecting QuickBooks to a shop system](/manufacturing/quickbooks-integration)."
+  },
+  {
+    "kind": "manufacturing",
     "slug": "quickbooks-for-manufacturing",
     "group": "quickbooks",
     "title": "Does QuickBooks work for manufacturing? Edition by edition",
@@ -4602,6 +4660,92 @@
       }
     ],
     "body": "## The short answer, by edition\n\nChecked against Intuit's own pages on 2 November 2026. Intuit changes plans often; check yours before relying on this.\n\n| | QuickBooks Online Plus / Advanced | Intuit Enterprise Suite | QuickBooks Desktop Enterprise (Manufacturing & Wholesale) |\n|---|---|---|---|\n| Inventory quantities and value | Yes | Yes | Yes |\n| Bill of materials and assemblies | No | Yes, single level only | Yes, including subassemblies |\n| Manufacturing (build) orders | No | Yes: planned, in progress, completed | Yes: build orders |\n| Component shortages | No | Yes, a shortage report | Yes: how many you can build from stock |\n| Labor in product cost | Through projects, not per unit | As a service line on the bill of materials | Yes |\n| Multiple warehouses, bins, lots, serials | Not described in Intuit's inventory setup article | Not described in Intuit's manufacturing help | Advanced Inventory, Platinum and Diamond only |\n| Routings, machines, operations | No | Not described in Intuit's help | Not described on Intuit's product page |\n| Machine scheduling, shop-floor time by operation | No | Not described | Not described (production forecasts and labor planning are) |\n\n\"Not described\" means the Intuit page we checked doesn't mention it; ask Intuit or a ProAdvisor if it matters to you.\n\n## Three different things called \"manufacturing\"\n\nMost confusion comes from mixing up three things a shop needs:\n\n1. **What a part is made of**: the [bill of materials](/systems#bill-of-materials). QuickBooks' assembly items cover this, in the editions that have them.\n2. **How it is made**: the [routing](/systems/routing), the operations in order (cut, bend, weld, inspect), on which machine, with setup and run times. No QuickBooks edition models this.\n3. **When it is made**: the schedule, which puts each operation on a machine with real capacity. See [production scheduling software](/manufacturing/production-scheduling-software).\n\nA shop that buys and assembles kits mostly needs the first. A job shop that machines, cuts or welds to order needs all three, which is why job shops outgrow QuickBooks sooner than assemblers do.\n\n## QuickBooks Online Plus and Advanced\n\nInventory is included in Plus and Advanced: quantity on hand, reorder points, purchase orders, and either FIFO or moving average cost, chosen once (see [QuickBooks Online inventory for manufacturers](/manufacturing/quickbooks-online-inventory)). What's missing for a manufacturer:\n\n- **No bills of materials or builds.** Intuit's manufacturing help says these features are in Intuit Enterprise Suite; if you downgrade from it, bills of materials become view-only.\n- **Bundles are not assemblies.** A bundle groups items so they go on an invoice together; no finished part sits in stock and no labor goes into its cost.\n- **Job costing is by project.** Plus and Advanced group a customer's income, expenses and timesheets into a project. That gives job profit, but not setup and run hours per operation (see [job costing in QuickBooks](/manufacturing/quickbooks-job-costing)).\n\nA common workaround is to keep raw material as non-inventory items and adjust finished goods by hand. It keeps the books roughly right but hides what each job really used.\n\n## Intuit Enterprise Suite\n\nIntuit Enterprise Suite is Intuit's cloud plan above QuickBooks Online Advanced. Its manufacturing feature works like this:\n\n- An **inventory assembly item** carries a bill of materials: components, raw materials and services such as labor for one unit. A manufacturing order can't start without one.\n- A **manufacturing order** starts as Planned and reserves its components; a shortage column counts what other open orders need from the same stock.\n- Completing the order creates a **build assembly** that moves components into finished stock and computes the actual cost. Estimated cost comes from each component's default purchase cost.\n\nThe limits that matter to a job shop: bills of materials are single level (no subassemblies), edits to a bill apply only to new orders, and Intuit's help doesn't describe routings, work centers or scheduling. It suits a shop that assembles from bought parts more than one that machines from bar stock.\n\n## QuickBooks Desktop Enterprise, Manufacturing & Wholesale\n\nDesktop Enterprise has the deepest manufacturing features of the three: bills of materials with subassemblies, automated builds and purchase orders for the components a final assembly needs, and costs from raw material to finished goods including labor and landed cost. Its **Advanced Inventory** (multiple locations down to bin, lot and serial numbers, barcode scanning, cycle counts) is in the Platinum and Diamond subscriptions only; landed cost and sales order fulfillment are too.\n\nIt is Windows software (hosted versions exist), sold by subscription, and Intuit's page doesn't describe routing by machine or shop-floor time by operation.\n\n## Signs the shop has outgrown QuickBooks\n\nFrom what shop owners describe on forums such as Practical Machinist, and what we see in our own work:\n\n- Quotes live in a spreadsheet and the job is set up again from scratch when the order arrives.\n- The schedule is a whiteboard or a sheet with one column per machine, and only one person trusts it.\n- You find out a job lost money weeks after it shipped, when the bills arrive.\n- Stock in QuickBooks and stock on the shelf disagree, because material used on the floor is entered later, or never.\n- Two people keep \"the real list\" of open jobs, and they differ.\n\nNone of these is a QuickBooks bug. QuickBooks is an accounting system; these are operations problems.\n\n## Keep QuickBooks, add a shop system\n\nFor most small manufacturers the cheapest sound setup is QuickBooks for the books and a shop system for the work, with one owner for each record:\n\n| Record | Owned by | Goes to the other system as |\n|---|---|---|\n| Customers and vendors | Either, but only one | A copy, kept in step |\n| Quotes, jobs, routings, schedule | Shop system | Nothing (stays in operations) |\n| Shop-floor hours, scrap, material used | Shop system | Job cost, and the inventory value at month-end |\n| Customer invoices | Shop system (from the shipped job) | An invoice, posted once |\n| Vendor bills and payments | QuickBooks | Status read back to the shop system |\n| Chart of accounts, tax, payroll | QuickBooks | Nothing |\n\n\"Owned by\" means people change that record in one place only. Everything that breaks between two systems starts with a record two people can edit in both.\n\n## Connecting the two without duplicates\n\nOur QuickBooks Online connector is being built; it isn't live yet. The rules it follows are the ones our [TallyPrime connection](/notes/connecting-tallyprime-four-ways) already runs on:\n\n- **Post once, by our own number.** Each invoice carries the shop system's document number; before posting, the connector checks whether that number already exists, so a retry can't create a second copy.\n- **Read back, don't assume.** After posting, read the record from the accounting system and store its ID and totals ([reconcile against the source of truth](/patterns/reconcile-against-source-of-truth)).\n- **Fail loudly.** A rejected entry (a missing account, a closed period) waits for a person with the reason shown, instead of retrying forever or being dropped ([failures flagged, not lost](/patterns/failures-flagged-not-lost)).\n- **Nobody re-keys.** On Intuit's community, many \"duplicate\" problems come from someone entering by hand what an integration had already posted, which also takes the stock out twice.\n\n## Is QuickBooks an ERP?\n\nNo. An ERP covers operations (orders, production, stock, purchasing) as well as accounting, on one database. QuickBooks is accounting software with some inventory; Intuit Enterprise Suite and Desktop Enterprise add manufacturing pieces but not shop-floor control. That's fine: many good shop systems are built to sit beside QuickBooks rather than replace it. See [ERP for job shops](/manufacturing/job-shop-erp) for what the shop side needs."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-integration",
+    "group": "quickbooks",
+    "title": "Connecting QuickBooks Online to a shop or ERP system",
+    "question": "How should a custom shop system connect to QuickBooks Online?",
+    "answer": "Decide which system owns each record first: usually the shop system owns jobs, items and stock, and QuickBooks owns the ledger, payments and bank. Then sync customers, items, invoices, bills and payments through Intuit's API with OAuth 2.0, use webhooks for changes and change data capture (30 days back) as the safety net, and log every failed sync for a person to fix.",
+    "description": "How a custom system connects to QuickBooks Online: what syncs, which side owns each record, webhooks and change data capture, and Intuit's app review.",
+    "domain": [
+      "manufacturing",
+      "quickbooks",
+      "integration"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Webhooks and configure webhooks",
+        "publisher": "Intuit Developer",
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks/configure-webhooks",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Change data capture operation",
+        "publisher": "Intuit Developer",
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/learn/explore-the-quickbooks-online-api/change-data-capture",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Publish your app",
+        "publisher": "Intuit Developer",
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/go-live/publish-app",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "What to expect during the app review process",
+        "publisher": "Intuit Developer",
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/go-live/list-on-the-app-store/what-to-expect-during-the-review",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit Developer, configure webhooks",
+        "doc": "intuit-dev",
+        "quote": "Even if webhooks are active, you'll only receive change notifications for QuickBooks Online companies that are connected and authorized via OAuth 2.0."
+      },
+      {
+        "reg": "Intuit Developer, configure webhooks",
+        "doc": "intuit-dev",
+        "quote": "Use verifier tokens to validate the webhook notifications from the callback are from Intuit."
+      },
+      {
+        "reg": "Intuit Developer, change data capture",
+        "doc": "intuit-dev",
+        "quote": "CDC operations can track changes within the last 30 days."
+      },
+      {
+        "reg": "Intuit Developer, change data capture",
+        "doc": "intuit-dev",
+        "quote": "Server responses can handle a maximum of 1,000 objects."
+      },
+      {
+        "reg": "Intuit Developer, publish your app",
+        "doc": "intuit-dev",
+        "quote": "The Show Credentials switch appears only after the App Assessment Questionnaire is approved."
+      },
+      {
+        "reg": "Intuit Developer, publish your app",
+        "doc": "intuit-dev",
+        "quote": "If you want to use your app privately, it's now live and functional."
+      },
+      {
+        "reg": "Intuit Developer, app review",
+        "doc": "intuit-dev",
+        "quote": "When you list your app on the QuickBooks App Store, it needs to pass a three-part review."
+      },
+      {
+        "reg": "Intuit Developer, app review",
+        "doc": "intuit-dev",
+        "quote": "Intuit reviews all published apps on an annual basis, or more frequently at Intuit's discretion."
+      }
+    ],
+    "body": "## First: which system owns each record?\n\nMost failed integrations fail here: both systems let people edit the same thing, and the sync can't tell which\nchange wins. Decide the owner of every record before writing any code:\n\n| Record | Usual owner | Direction |\n|---|---|---|\n| Customers and vendors | Shop system (sales and purchasing create them) | Shop → QuickBooks |\n| Items | Shop system (it knows stock, routings, lots) | Shop → QuickBooks |\n| Invoices | Shop system (shipped against the order) | Shop → QuickBooks |\n| Vendor bills | Either; usually entered where the purchase order lives | Shop → QuickBooks |\n| Customer payments, deposits | QuickBooks (they arrive through the bank) | QuickBooks → shop |\n| Chart of accounts, tax codes | QuickBooks (your accountant's) | Read by the shop system |\n\nThe owner is where people edit; the other side shows it read-only. A customer's address changed in QuickBooks is\nthen either sent back or overwritten, by a rule, not by chance.\n\n## How the sync works\n\nIntuit's API is used by an app that the company connects with OAuth 2.0. For changes made in QuickBooks:\n\n- **Webhooks** notify your system when entities change, for companies connected and authorized through OAuth 2.0.\n  Each notification should be checked against the verifier token Intuit gives, so a forged call is rejected.\n- **Change data capture (CDC)** returns everything that changed since a time, up to 30 days back and up to 1,000\n  objects a response. Run it on a schedule as the safety net for any webhook that was missed.\n\nFor changes made in the shop system, it writes to QuickBooks when the event happens (an invoice is approved, a bill\nis posted) and records QuickBooks' ID for the record, so a retry updates instead of duplicating.\n\n## What goes wrong, and how to catch it\n\n- **A post fails** (a closed period, a missing tax code, an item renamed in QuickBooks). It must be logged and shown\n  to a person, never dropped silently. The pattern: [failures flagged, not lost](/patterns/failures-flagged-not-lost).\n- **Totals drift.** Compare open invoices and item counts on both sides every night; a difference is a ticket.\n- **Someone edits on the wrong side.** Make the non-owner side read-only where you can, and alert where you can't.\n\n## Does a private connection need Intuit's review?\n\nTwo levels, from Intuit's developer docs. To get production credentials, an app's App Assessment Questionnaire must\nbe approved; after that, an app used privately is live. Listing on the QuickBooks App Store adds a three-part review\n(technical, a third-party security review, and marketing), and Intuit reviews listed apps at least once a year.\n\nOur own QuickBooks connector isn't live yet: we're planning one for a client's system. These pages describe how such a\nconnector should work, from Intuit's documentation. See also [QuickBooks vs ERP](/manufacturing/quickbooks-vs-erp)\nand [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory)."
   },
   {
     "kind": "manufacturing",
@@ -4728,6 +4872,124 @@
       }
     ],
     "body": "## What QuickBooks Online inventory does\n\nFrom Intuit's help pages, checked on 2 November 2026:\n\n| Feature | QuickBooks Online |\n|---|---|\n| Plans | Plus and Advanced; Simple Start and Essentials can buy an inventory add-on or upgrade |\n| Quantity on hand | Goes down with each invoice or sales receipt, up with each receipt from a vendor |\n| Reordering | Reorder points and low-stock alerts; purchase orders and what's still on order |\n| Valuation | FIFO or moving average cost (MAC), chosen once: it can't be changed later, and an item created before choosing defaults to FIFO |\n| Item types | Inventory, non-inventory (tracked as cost, not quantity), service, and bundles that group items on a sales form |\n| Reports | Stock on hand, best sellers, cost of goods sold |\n\nFor a business that buys finished products and sells them, that is a complete inventory system.\n\n## Where a manufacturer runs out of room\n\nA manufacturer's stock moves through stages QuickBooks Online doesn't model:\n\n- **No raw, in-progress and finished stages.** Material issued to a job isn't stock on the shelf any more, but it isn't a finished part yet either. QuickBooks Online has no [work in progress](/systems/work-in-progress); material sits in stock until someone adjusts it.\n- **No bills of materials or builds.** Turning components into a finished part is an Intuit Enterprise Suite feature, not a QuickBooks Online one. See [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing).\n- **No material set aside per job.** Quantity on hand tells you what's on the shelf, not what is already promised. Without a [stock reservation](/systems/stock-reservation), two jobs can plan on the same bar stock and the second finds out on the floor.\n- **One pool of stock.** Intuit's inventory setup article doesn't describe warehouses, bins, lots or serial numbers. On Intuit's community the usual workarounds are a separate item per location or location codes in item names, which multiplies the item list.\n- **Counts arrive late.** Stock changes when someone enters a transaction. Material taken on the floor and entered at week's end means the number is wrong all week.\n\n## What changes when you add a stock layer\n\nThe usual fix is not to leave QuickBooks but to keep stock movements in an operations system and send QuickBooks the accounting result:\n\n| In the stock layer | In QuickBooks |\n|---|---|\n| Every receipt, issue to a job, return, transfer and count, scanned as it happens | Purchase bills and the inventory asset value |\n| Raw, in-progress and finished quantities per item and location | Cost of goods sold when invoiced |\n| Material reserved against each job, oldest stock first | Nothing: reservations aren't accounting |\n| Lots, heat numbers or serials, and which job used them | Nothing |\n\nThe [QR inventory and order reservations](/services/inventory-and-reservations) system we built for an electronic components trader works this way: whole reels reserved per customer order line, two stores, scanning in and out, with a manager's override needed to ship reserved stock elsewhere ([how the reels and boxes work](/notes/reels-boxes-and-two-stores)). The US build of that system is open as a live demo with sample logins.\n\n## When to stay, when to move\n\nStay on QuickBooks Online inventory if you resell more than you make, have one location, and can count everything in an afternoon. Add a stock layer when material is issued to jobs, when two jobs compete for the same stock, when you need lot or heat traceability, or when the shelf and the books disagree every month. For costing those jobs, see [job costing in QuickBooks](/manufacturing/quickbooks-job-costing)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-online-vs-desktop",
+    "group": "quickbooks",
+    "title": "QuickBooks Online vs Desktop for manufacturers",
+    "question": "Is QuickBooks Online or Desktop better for a manufacturer or distributor?",
+    "answer": "For inventory-heavy work, Desktop Enterprise still does more: Intuit pitches it for manufacturers and wholesalers, with up to 40 users, a million list items and Advanced Inventory on its top plans. QuickBooks Online Plus and Advanced track inventory for resale but not assemblies, and Intuit lists inventory workflows and BOM management for Advanced as coming soon. Online wins on access from anywhere.",
+    "description": "QuickBooks Online vs Desktop Enterprise for manufacturers and distributors: inventory, assemblies, users, and what Intuit says is coming, from Intuit's pages.",
+    "domain": [
+      "manufacturing",
+      "quickbooks"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "QuickBooks Desktop and Online solutions",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/desktop/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "QuickBooks Online pricing",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/pricing/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Set up and track your inventory in QuickBooks Online",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/inventory-management/set-track-inventory-quickbooks-online/L22FZLBGN_US_en_US",
+        "date": "2026-06-17"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit, Desktop and Online solutions (Desktop Enterprise)",
+        "doc": "intuit-plans",
+        "quote": "For companies with complex inventory needs, like manufacturers and wholesalers."
+      },
+      {
+        "reg": "Intuit, Desktop and Online solutions (Desktop Enterprise)",
+        "doc": "intuit-plans",
+        "quote": "Get up to 1 million customers, vendors, and inventory items."
+      },
+      {
+        "reg": "Intuit, Desktop and Online solutions (QuickBooks Online Advanced)",
+        "doc": "intuit-plans",
+        "quote": "Coming soon: Track, value, and move inventory in one connected workflow, BOM management, link sales orders to POs, and more."
+      },
+      {
+        "reg": "Intuit, QuickBooks Online pricing",
+        "doc": "intuit-pricing",
+        "quote": "QuickBooks Desktop Enterprise is a Desktop solution with the capacity to scale up to 40 users."
+      },
+      {
+        "reg": "Intuit help, set up and track inventory in QuickBooks Online",
+        "doc": "intuit-qbo",
+        "quote": "Inventory features are available only for QuickBooks Online Plus and Advanced."
+      },
+      {
+        "reg": "Intuit, Desktop Enterprise Advanced Inventory",
+        "doc": "intuit-desktop",
+        "quote": "Advanced Inventory is included in the Platinum and Diamond subscriptions only."
+      }
+    ],
+    "body": "## The short comparison\n\nFrom Intuit's own pages, read on 3 November 2026:\n\n| | QuickBooks Online Plus / Advanced | QuickBooks Desktop Enterprise |\n|---|---|---|\n| Where it runs | Browser, from anywhere | Installed on your PCs or hosted |\n| Pitched for | Advanced: companies \"needing industry workflows\" and working from anywhere | Complex inventory, \"like manufacturers and wholesalers\" |\n| Users | By plan | Up to 40 |\n| Inventory | Quantity, FIFO or average cost, reorder points (Plus and Advanced) | Plus location tracking down to the bin or pallet with Advanced Inventory (Platinum and Diamond) |\n| Assemblies and BOMs | Not in Online; Intuit lists BOM management for Advanced as coming soon | Assemblies and builds, with subassemblies |\n| Manufacturing orders | In Intuit Enterprise Suite, not Online | Desktop's own assembly builds |\n\nDetails of each are in [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory) and\n[does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing).\n\n## When Online is the better choice\n\n- People need the books from more than one place, and nobody wants to look after a server.\n- You resell finished goods and don't build assemblies.\n- You're coming off an unsupported Desktop version anyway (see\n  [Desktop 2023 end of support](/manufacturing/quickbooks-desktop-end-of-support)).\n\n## When Desktop Enterprise is still the better choice\n\n- You build assemblies from components today and need it to keep working.\n- You track stock by location or bin in QuickBooks itself.\n- You have large lists or many users at once.\n\n## The third option\n\nMany shops don't need QuickBooks to do inventory at all: they keep QuickBooks Online for the books and run stock,\njobs and the floor in a system built for that, which sends QuickBooks the accounting result. Then the Online vs\nDesktop choice is only about accounting. See [connecting QuickBooks to a shop system](/manufacturing/quickbooks-integration)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "quickbooks-vs-erp",
+    "group": "quickbooks",
+    "title": "QuickBooks vs ERP: signs you've outgrown QuickBooks",
+    "question": "When has a manufacturer or distributor outgrown QuickBooks?",
+    "answer": "When the work happens outside it: quotes and job travelers in spreadsheets, stock counted by hand because QuickBooks' numbers lag, jobs costed weeks after they ship, and two people typing the same order. QuickBooks is still fine for the books. The usual fix is to keep it for accounting and add an operations system or ERP for jobs, stock and the floor, rather than replace everything.",
+    "description": "Signs a manufacturer or distributor has outgrown QuickBooks, what to keep in QuickBooks, and when an ERP should replace it, with Intuit's own limits quoted.",
+    "domain": [
+      "manufacturing",
+      "quickbooks",
+      "erp"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Get started with manufacturing orders and assemblies",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/sales-orders/learn-manufacturing-orders-assemblies/L7ffspckB_US_en_US",
+        "date": "2026-08-03"
+      },
+      {
+        "title": "QuickBooks Desktop and Online solutions",
+        "publisher": "Intuit QuickBooks",
+        "url": "https://quickbooks.intuit.com/desktop/",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies",
+        "doc": "intuit-mo",
+        "quote": "Manufacturing features are currently available in Intuit Enterprise Suite."
+      },
+      {
+        "reg": "Intuit help, manufacturing orders and assemblies",
+        "doc": "intuit-mo",
+        "quote": "Multi level bill of materials with sub assemblies aren't supported in Intuit Enterprise Suite."
+      },
+      {
+        "reg": "Intuit, Desktop and Online solutions (QuickBooks Online Advanced)",
+        "doc": "intuit-plans",
+        "quote": "Coming soon: Track, value, and move inventory in one connected workflow, BOM management, link sales orders to POs, and more."
+      }
+    ],
+    "body": "## Seven signs you've outgrown QuickBooks\n\n| Sign | What it costs |\n|---|---|\n| Quotes, routings and travelers live in spreadsheets | The same job typed three times; versions disagree |\n| Stock in QuickBooks is wrong between counts | Shortages found on the floor, not at order time |\n| Two jobs plan on the same material | Nothing in QuickBooks sets stock aside for a job |\n| Job cost arrives after the job ships | Underpriced work keeps being quoted the same way |\n| Nobody outside accounts can see an order's status | Sales calls accounts; accounts walks to the floor |\n| Lots, heats or serials are tracked on paper | A customer's trace question takes a day |\n| Several companies or locations share stock | Workarounds in item names, or one file per company |\n\nOne sign means a workaround; three or more mean the business runs outside its system.\n\n## What QuickBooks still does well\n\nInvoices, bills, bank reconciliation, payroll, sales tax and the reports your accountant reads. Keeping those in\nQuickBooks keeps your accountant's process intact. What QuickBooks wasn't built for is the shop: Intuit's own help\nputs manufacturing orders in Intuit Enterprise Suite rather than QuickBooks Online, without multi-level bills of\nmaterials, and lists BOM management for QuickBooks Online Advanced as coming soon. See\n[does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing) for each edition.\n\n## Add beside QuickBooks, or replace it?\n\n| | Add an operations system beside QuickBooks | Replace QuickBooks with an ERP |\n|---|---|---|\n| Accounting | Stays in QuickBooks | Moves to the ERP's ledger |\n| What's new | Quotes, jobs, stock, purchasing, the floor | Everything, including the close |\n| Effort | Smaller; your accountant's month-end is unchanged | A full migration |\n| Fits | Job shops and distributors whose accounting already works | Multi-company groups, or books that depend on operations detail |\n\nFor the vendors on each side, see [choosing an ERP](/manufacturing/small-business-erp-options); for the case for a\nsystem built to fit, [custom vs off-the-shelf ERP](/manufacturing/custom-vs-off-the-shelf-erp). However it's done,\nthe link between the two systems decides whether it works: see\n[connecting QuickBooks to a shop system](/manufacturing/quickbooks-integration)."
   },
   {
     "kind": "manufacturing",

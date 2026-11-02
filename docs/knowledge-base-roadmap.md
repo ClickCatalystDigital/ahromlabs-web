@@ -69,6 +69,10 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
 4. **QuickBooks pages** (Pujan's next task; manufacturing hub already has three) and **Tally vs custom / migrating
    off Tally** (India). Tally part ✅ built 3 Nov 2026 (deploy pending): `/erp/tally-vs-custom-erp`, quoting Tally's own
    pages (vendor texts checked by `erp.check.ts` `VENDOR_DOCS`); migrating off Tally was already `/erp/tally-migration`.
+4b. **QuickBooks pages (US).** ✅ Built 3 Nov 2026 (deploy pending): quickbooks-vs-erp, quickbooks-desktop-end-of-support,
+   quickbooks-online-vs-desktop, quickbooks-integration, in the manufacturing hub's QuickBooks group, quoting Intuit's
+   help, product and developer pages (developer docs render only in a browser; their text was read there and saved).
+   The pages say our own connector isn't live.
 5. **Case studies with numbers**, one per demo industry (interiors, inventory, boiler, construction): situation,
    what was built, before/after figures only where the client confirms them. Done: on `/work` and each industry page;
    Shanti stays unnamed.

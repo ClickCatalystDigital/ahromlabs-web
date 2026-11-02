@@ -14,6 +14,9 @@ const ALT: Record<string, string> = {
   "quickbooks-job-costing": "A brass balance scale with a machined bracket on one pan and steel weights on the other: estimated against actual job cost.",
   "distributor-inventory-control": "A handheld barcode scanner on a warehouse shelf of labelled cartons, one carton pulled forward with a lot label: counting and tracing stock.",
   "small-business-erp-options": "Five different keys laid in a row on a workbench, one lifted beside a padlock: choosing between systems.",
+  "quickbooks-vs-erp": "A small toolbox overflowing beside a larger open tool chest with labelled drawers: outgrowing a tool.",
+  "quickbooks-desktop-end-of-support": "A desktop computer tower with a paper tag tied to it, beside a closed laptop: an older installed system being retired.",
+  "quickbooks-online-vs-desktop": "A desktop computer and a laptop side by side on a workbench, with the same ledger book open in front of each: two ways to run the same books.",
   // Later pages (docs/us-knowledge-web/architecture.md); their images are already in public/manufacturing.
   "quickbooks-integration": "Two document trays joined by a short brass roller conveyor carrying one sheet across: records passing between a shop system and the accounting system.",
   "rfq-to-quote": "An engineering drawing of a flanged part with the machined part on its corner and a brass magnifying glass: reading a customer RFQ into a quote.",

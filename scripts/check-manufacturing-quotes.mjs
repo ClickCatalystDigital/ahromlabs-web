@@ -17,6 +17,10 @@ const DOCS = {
   odoo: path.join(DIR, "Odoo - Inventory 2026-11-03.txt"),
   fishbowl: path.join(DIR, "Fishbowl - Home 2026-11-03.txt"),
   katana: path.join(DIR, "Katana - Home 2026-11-03.txt"),
+  "intuit-sunset": path.join(DIR, "Intuit - QuickBooks Desktop 2023 service discontinuation policy 2026-11-03.txt"),
+  "intuit-plans": path.join(DIR, "Intuit - QuickBooks Desktop and Online solutions 2026-11-03.txt"),
+  "intuit-pricing": path.join(DIR, "Intuit - QuickBooks Online pricing 2026-11-03.txt"),
+  "intuit-dev": path.join(DIR, "Intuit Developer - QuickBooks Online API docs (browser text) 2026-11-03.txt"),
 };
 
 if (!Object.values(DOCS).every((f) => fs.existsSync(f))) {
