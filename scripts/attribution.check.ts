@@ -1,6 +1,6 @@
-// node scripts/attribution.check.ts — the lead attribution read from the visitor's cookies (src/lib/analytics.ts).
+// npx jiti scripts/attribution.check.ts (runs inside `npm run content:build`) — the lead attribution read from the visitor's cookies (src/lib/analytics.ts).
 import assert from "node:assert";
-import { attributionFrom, cookieIn } from "../src/lib/analytics.ts";
+import { attributionFrom, cookieIn } from "../src/lib/analytics";
 
 const src = encodeURIComponent("gclid=Cj0abc&utm_source=google&utm_medium=cpc&landing=/ibr&at=2026-11-02&evil=x");
 const header = `market=NA; ga_consent=granted; ahrom_src=${src}; _ga=GA1.1.123456789.1730500000`;
