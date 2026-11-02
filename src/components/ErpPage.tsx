@@ -12,6 +12,7 @@ const GUIDE_ORDER = [
   "compliance",
   "vendor-demo-script",
   "tally-migration",
+  "tally-vs-custom-erp",
   "contract-checklist",
   "readiness",
   "selection-matrix",

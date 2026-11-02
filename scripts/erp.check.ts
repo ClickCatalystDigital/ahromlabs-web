@@ -55,13 +55,22 @@ for (const r of requirements) {
 }
 for (const d of departments) if (!requirements.some((r) => r.dept === d.slug)) fail.push(`dept ${d.slug}: no requirements`);
 
+// Vendors' own pages a guide quotes for product facts (never statutory, so not in ERP_DOCS, which every ERP page
+// lists as its sources). Saved next to the statutory texts.
+const VENDOR_DOCS: Record<string, string> = {
+  "tally-buy": "tally-buy-2026-11-03.txt",
+  "tally-integrate": "tally-integrate-2026-11-03.txt",
+  "tally-tdl": "tally-tdl-2026-11-03.txt",
+};
+if (haveSources) for (const [k, f] of Object.entries(VENDOR_DOCS)) if (fs.existsSync(path.join(SOURCES, f))) docText[k] = norm(fs.readFileSync(path.join(SOURCES, f), "utf-8"));
+
 // The /erp and /ai-assistant guides quote the same official texts; each check names its doc.
 const guides = JSON.parse(fs.readFileSync("src/lib/content-data.generated.json", "utf-8")).filter((e: { kind: string }) => e.kind === "erp" || e.kind === "ai-assistant");
 for (const g of guides as { slug: string; checks?: { reg: string; quote: string; doc?: string }[] }[]) {
   for (const c of g.checks ?? []) {
     quotes++;
-    if (!c.doc || !(c.doc in ERP_DOCS)) fail.push(`guide ${g.slug}: check "${c.reg}" needs a doc from ERP_DOCS`);
-    else if (haveSources && !docText[c.doc].includes(norm(c.quote))) fail.push(`guide ${g.slug}, ${c.reg}: quote not found in ${ERP_DOCS[c.doc as keyof typeof ERP_DOCS].file}\n  "${c.quote}"`);
+    if (!c.doc || !(c.doc in ERP_DOCS || c.doc in VENDOR_DOCS)) fail.push(`guide ${g.slug}: check "${c.reg}" needs a doc from ERP_DOCS or VENDOR_DOCS`);
+    else if (haveSources && !docText[c.doc]?.includes(norm(c.quote))) fail.push(`guide ${g.slug}, ${c.reg}: quote not found in ${ERP_DOCS[c.doc as keyof typeof ERP_DOCS]?.file ?? VENDOR_DOCS[c.doc]}\n  "${c.quote}"`);
   }
 }
 
