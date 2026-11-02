@@ -75,7 +75,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "boiler-manufacturer",
-    demo: { url: "https://boiler-erp.ahromlabs.com/demo", markets: ["IN"], label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
+    demo: { url: "https://boiler-erp.ahromlabs.com/demo", usUrl: "https://boiler-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
     client: "A boiler and pressure-vessel manufacturer",
     anonymous: true,
     industry: "Boiler and pressure-vessel manufacturing",
