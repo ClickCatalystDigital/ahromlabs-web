@@ -257,6 +257,27 @@ export const TOOLS = {
     params: { page: z.string().describe("Path such as /ibr/forms, or a full URL"), days, country },
     run: ({ page, days, country: c }) => searchAnalytics("query", days, byCountry(c, [{ dimension: "page", operator: "equals", expression: toUrl(page) }])),
   },
+  gsc_market_report: {
+    description:
+      "Search Console, monthly market report: for each hub (first path segment), impressions and clicks from the US and from India, side by side, busiest first. Use around the 1st of each month to pick the next pages.",
+    params: { days },
+    run: async ({ days }) => {
+      const [us, ind] = await Promise.all([searchAnalytics("page", days, byCountry("usa")), searchAnalytics("page", days, byCountry("ind"))]);
+      const hubs = new Map();
+      const add = (rows, k) => {
+        for (const r of rows) {
+          const hub = "/" + (r.page.split("/")[1] || "");
+          const h = hubs.get(hub) || { hub, us_impressions: 0, us_clicks: 0, in_impressions: 0, in_clicks: 0 };
+          h[`${k}_impressions`] += r.impressions;
+          h[`${k}_clicks`] += r.clicks;
+          hubs.set(hub, h);
+        }
+      };
+      add(us, "us");
+      add(ind, "in");
+      return [...hubs.values()].sort((a, b) => b.us_impressions + b.in_impressions - (a.us_impressions + a.in_impressions));
+    },
+  },
   gsc_inspect: {
     description:
       "Search Console URL Inspection: is each URL indexed, coverage state, last crawl, and Google's chosen canonical. No paths = every URL in the sitemap (about 65; quota is about 2,000 a day).",

@@ -16,7 +16,8 @@
     "google": "node --no-warnings scripts/google-insights.mjs",
     "google:savistar": "GOOGLE_SITE=savistar node --no-warnings scripts/google-insights.mjs",
     "indexnow": "node --no-warnings scripts/indexnow.mjs",
-    "chat:check": "node --no-warnings scripts/check-chat-answers.mjs"
+    "chat:check": "node --no-warnings scripts/check-chat-answers.mjs",
+    "sources:watch": "node scripts/sources-watch.mjs"
   },
   "dependencies": {
     "@cloudflare/ai-search-snippet": "0.0.43",

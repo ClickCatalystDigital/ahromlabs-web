@@ -56,8 +56,8 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
 
 ## 4. Deferred work, in order, with what "done" means
 
-1. **Topic map for every page.** Extend `topics.check.ts` with every kind and its market (IN / NA / common).
-   Done: build fails if any page leans the wrong way; current pages pass or are fixed.
+1. **Topic map for every page.** ✅ Done 3 Nov 2026: every content kind has a market rule in `scripts/topics.check.ts`;
+   an unlisted kind or a page leaning the wrong way fails the build.
 2. **US sales tax hub** (`/sales-tax` or inside manufacturing): nexus (economic thresholds), exemption and resale
    certificates, sales tax on manufacturing inputs, how an ERP should handle it. Sources: state revenue department
    pages and the Streamlined Sales Tax site, quoted and checked. Done: 6–8 guides, a nexus checker tool, links from
@@ -73,12 +73,15 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
    Shanti stays unnamed.
 6. **US distributor inventory** (cycle counting, lot/serial traceability, FIFO valuation, barcodes) and **ERP choice
    for small US firms** (custom vs NetSuite, Acumatica, Odoo, Fishbowl, Katana; facts from vendors' own pages only).
-7. **Source monitoring.** A script that re-fetches every `sources` URL, hashes the text and reports changes (weekly
-   cron or deploy step). Done: replaces the monthly manual IBR/GST/Intuit checks in `docs/owner-todo.md`.
+7. **Source monitoring.** ✅ Done 3 Nov 2026: `npm run sources:watch` re-fetches the 56 cited sources, compares text
+   hashes with `scripts/sources-hashes.json` and lists changes; `--update` saves after re-reading. Sites that refuse
+   scripts (Intuit help pages, Practical Machinist) are listed to check by hand. A few pages change on every fetch
+   (dates on the page): treat a change as "re-read", not "the rule changed". Not yet on a schedule.
 8. **Named reviewers**, one per hub (CA for GST, Authorized Inspector or QA engineer for ASME, lawyer for data
    safety), shown in the byline. Needs Pujan to find them.
-9. **Monthly market report.** Per hub: impressions, clicks, top queries for `usa` and `ind`; pick the next pages
-   from real queries. Done: a `npm run google` command or doc template, run around the 1st of each month.
+9. **Monthly market report.** ✅ Done 3 Nov 2026: `npm run google -- gsc_market_report '{"days":30}'` lists each
+   hub's US and India impressions and clicks; then `gsc_page_queries` with `country` for the queries. Run around the
+   1st of each month and pick the next pages from it.
 10. **Outside links.** Share the calculators and checkers where buyers ask (LinkedIn, welding/manufacturing forums,
     r/manufacturing), finish directory listings, get client reviews. Pujan's part; track in `docs/owner-todo.md`.
 
