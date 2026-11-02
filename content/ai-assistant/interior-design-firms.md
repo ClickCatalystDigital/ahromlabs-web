@@ -23,7 +23,7 @@ A design studio runs on projects, quotations, site visits, a workshop and a lot 
 
 ## What should it answer?
 
-Every question Atelier AI answers today is listed below, with the screen to check each answer against. Atelier AI runs at an Indian studio, so its money questions say GST; a US studio asks the same ones with sales tax. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.
+Every question Atelier AI answers today is listed below, with the screen to check each answer against. Its money questions name the tax its own studio charges; a US studio asks the same ones about sales tax and QuickBooks. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.
 
 ## What should it refuse?
 
