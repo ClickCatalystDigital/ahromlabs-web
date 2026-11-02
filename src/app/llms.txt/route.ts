@@ -61,7 +61,7 @@ Visitors in the US and Canada are shown the US version automatically.
 - [US electronics distribution demo](https://electronics-erp-us.ahromlabs.com/demo): Reel-level inventory and orders for a US component distributor, in USD.
 - [US interior design and furniture demo](https://interiors-erp-us.ahromlabs.com/demo): A US design studio and furniture workshop: estimates, sales tax invoices, projects and the workshop.
 - [US construction demo](https://construction-erp-us.ahromlabs.com/demo): A US general contractor: pay applications with retainage and change orders, job costing, imperial units.
-- Guides written for US buyers: ASME Boiler and Pressure Vessel Code (https://ahromlabs.com/asme) and production software for job shops (https://ahromlabs.com/manufacturing). The AI assistant guides (https://ahromlabs.com/ai-assistant) serve both markets, including US privacy rules.
+- Guides written for US buyers: ASME Boiler and Pressure Vessel Code (https://ahromlabs.com/asme) and production software for job shops (https://ahromlabs.com/manufacturing), US sales tax for manufacturers and distributors (https://ahromlabs.com/sales-tax), and construction billing: pay applications, retainage, lien waivers, change orders and the WIP schedule (https://ahromlabs.com/construction). The AI assistant guides (https://ahromlabs.com/ai-assistant) serve both markets, including US privacy rules.
 
 ## Pages
 
