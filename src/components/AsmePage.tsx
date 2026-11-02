@@ -50,14 +50,15 @@ function asmeHub(group?: AsmeGroup): Hub {
             Material traceability
           </Link>
         </div>
-        {/* The boiler demo is India's for now (src/lib/work.ts); North America gets the call instead. */}
+        {/* Each market's boiler demo: India's (IBR) and North America's (ASME, src/lib/work.ts usUrl). */}
         <p className="mt-4 text-sm text-foreground-secondary" {...only(["IN"])}>
           A boiler manufacturer&apos;s system, from enquiry to dispatch and the IBR folder, with sample logins:{" "}
           <a href="https://boiler-erp.ahromlabs.com/demo" className="text-link focus-ring">try the live demo</a>.
         </p>
         <p className="mt-4 text-sm text-foreground-secondary" {...only(["NA"])}>
-          Fixed price, scope agreed before work starts:{" "}
-          <Link href="/us#pricing" className="text-link focus-ring">see the prices</Link>.
+          A boiler and pressure vessel shop&apos;s system, from inquiry to shipping and the ASME data report package, with
+          sample logins: <a href="https://boiler-erp-us.ahromlabs.com/demo" className="text-link focus-ring">try the live demo</a>.
+          Fixed price, scope agreed before work starts: <Link href="/us#pricing" className="text-link focus-ring">see the prices</Link>.
         </p>
       </>
     ),
