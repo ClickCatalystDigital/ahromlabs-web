@@ -238,7 +238,7 @@ export function HomePage({ market }: { market: MarketCode }) {
         </Reveal>
 
         {/* The free guides are India's statutory and BOQ references; other markets get their prices here. */}
-        {market === "IN" ? <FreeGuides /> : <MarketPricing market={market} />}
+        {market === "IN" ? <FreeGuides /> : <><MarketPricing market={market} /><FreeGuides /></>}
 
         {/* 3. The Ahrom approach */}
         <Reveal>

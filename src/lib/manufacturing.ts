@@ -16,7 +16,7 @@ export const MFG_GROUPS: { slug: MfgGroup; name: string; intro: string; order: s
     slug: "choosing",
     name: "Choosing a system",
     intro: "What a job shop or small plant needs first, and how to test a vendor with your own work.",
-    order: ["job-shop-erp"],
+    order: ["job-shop-erp", "custom-vs-off-the-shelf-erp"],
   },
   {
     slug: "quickbooks",
@@ -28,7 +28,7 @@ export const MFG_GROUPS: { slug: MfgGroup; name: string; intro: string; order: s
     slug: "planning",
     name: "Scheduling and the shop floor",
     intro: "Machines, shifts, due dates and the work in between.",
-    order: ["production-scheduling-software"],
+    order: ["production-scheduling-software", "production-schedule-template", "wip-tracking"],
   },
 ];
 

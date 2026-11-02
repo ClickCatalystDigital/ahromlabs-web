@@ -13,7 +13,7 @@ import { servicePageGraph, serviceFaqGraph, jsonLd } from "@/lib/schema";
 import { getContent } from "@/lib/content";
 import { seoTitle, metaDescription } from "@/lib/seo";
 import { MarketPricing } from "@/components/MarketPricing";
-import { say, type MarketCode } from "@/lib/markets";
+import { marketsFor, only, say, type MarketCode } from "@/lib/markets";
 
 // Families and services share this route; services.ts guarantees the slugs
 // don't collide. Unknown slugs 404 instead of rendering on demand.
@@ -69,6 +69,14 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
     found.kind === "service" ? getContent("industry").filter((i) => i.services?.includes(found.service.slug)) : [];
   const siblings = family ? servicesIn(family) : [];
   const next = found.kind === "service" ? siblings[siblings.indexOf(found.service) + 1] : undefined;
+  // Deeper guides for this service; a missing one fails the build here rather than shipping a dead link.
+  const guides = (found.kind === "service" ? found.service.guides ?? [] : []).map((href) => {
+    const [, hub, slug] = href.split("/");
+    const kind = ({ manufacturing: "manufacturing", "ai-assistant": "ai-assistant", asme: "asme" } as const)[hub as "manufacturing"];
+    const entry = getContent(kind).find((e) => e.slug === slug);
+    if (!entry) throw new Error(`services.ts: ${found.kind === "service" ? found.service.slug : ""} lists guide ${href}, which doesn't exist`);
+    return { href, title: entry.title };
+  });
   const crumbs = [
     { name: "Services", path: "/services" },
     ...(family ? [{ name: family.name, path: familyUrl(family) }] : []),
@@ -114,7 +122,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
             </>
           ) : (
             <>
-              <h1 className="display mt-3 text-5xl text-foreground sm:text-6xl">{found.service.name}</h1>
+              <h1 className="display mt-3 text-5xl text-foreground sm:text-6xl">{market === "NA" && found.service.na ? found.service.na.name : found.service.name}</h1>
               <p className="prose-measure mt-6 text-xl leading-relaxed text-foreground-secondary">{say(market, found.service.plainName)}</p>
             </>
           )}
@@ -177,6 +185,18 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
                 {/* Keep reading: the next page in the family, the industries it's
                     built for, and (for the whole system) its parts. */}
                 <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
+                  {guides.length > 0 && (
+                    <div {...only(guides.every((g) => marketsFor(g.href)?.join() === "NA") ? ["NA"] : undefined)}>
+                      <p className="text-sm font-medium text-foreground-secondary">Guides</p>
+                      <ul className="mt-3 space-y-2">
+                        {guides.map((g) => (
+                          <li key={g.href} {...only(marketsFor(g.href))}>
+                            <Link href={g.href} className="text-link focus-ring">{g.title}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   {industries.length > 0 && (
                     <div>
                       <p className="text-sm font-medium text-foreground-secondary">Industries</p>

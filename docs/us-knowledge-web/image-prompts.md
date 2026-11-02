@@ -4,7 +4,7 @@ Same style and hand-over as the ASME hub (`docs/asme-image-prompts.md`): paste t
 
 File names are fixed. **Status (2 Nov 2026):** done and in `public/manufacturing/`: manufacturing-hub, quickbooks-for-manufacturing, quickbooks-integration, job-shop-scheduling, job-costing, machine-shop-erp, ai-rfq-quoting, custom-vs-off-the-shelf. Convert new ones with `python3 scripts/asme-images.py <folder> manufacturing`.
 
-**Still needed:** `manufacturing-inventory` (Phase 1 page, live without an image until then), then `shop-floor-tracking`, `scheduling-template` and `ai-in-erp` for Phase 2.
+**Still needed (all four pages are live without an image until then):** `manufacturing-inventory`, `shop-floor-tracking`, `scheduling-template`, `ai-in-erp`. For `ai-in-erp`, Claude adds it to the AI hub page's `image:` frontmatter (it lives in `public/ai/`).
 
 ## Core pages (decided 2 Nov; confirmed by Keyword Planner data, see architecture.md)
 

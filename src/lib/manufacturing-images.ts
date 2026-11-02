@@ -16,6 +16,8 @@ const ALT: Record<string, string> = {
   "quickbooks-integration": "Two document trays joined by a short brass roller conveyor carrying one sheet across: records passing between a shop system and the accounting system.",
   "rfq-to-quote": "An engineering drawing of a flanged part with the machined part on its corner and a brass magnifying glass: reading a customer RFQ into a quote.",
   "custom-vs-off-the-shelf-erp": "A ring of identical blank keys beside a key-cutting machine cutting one key: off-the-shelf software against software cut to fit.",
+  "wip-tracking": "A handheld barcode scanner on a stack of parts bins with blank labels, the top bin half full of turned parts: tracking work in progress.",
+  "production-schedule-template": "A paper spreadsheet grid on a clipboard with rows shaded like booked machine time, a pencil and a steel ruler: a schedule template.",
   "production-scheduling-software": "A magnetic planning board with coloured blocks of different lengths along empty rows: scheduling jobs on machines.",
 };
 // Delivered image file name per page, where it differs from the page slug (docs/us-knowledge-web/image-prompts.md).
@@ -25,6 +27,8 @@ const FILE: Record<string, string> = {
   "quickbooks-job-costing": "job-costing",
   "production-scheduling-software": "job-shop-scheduling",
   "rfq-to-quote": "ai-rfq-quoting",
+  "wip-tracking": "shop-floor-tracking",
+  "production-schedule-template": "scheduling-template",
   "custom-vs-off-the-shelf-erp": "custom-vs-off-the-shelf",
 };
 

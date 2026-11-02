@@ -22,7 +22,7 @@ evidence:
   - metric: books lock
     value: enforced at the single point every journal posting passes through
 published: 2026-09-24
-updated: 2026-10-25
+updated: 2026-11-02
 ---
 
 Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At a boiler and pressure-vessel manufacturer Ahrom Labs built for, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.
@@ -50,3 +50,5 @@ With real transactions, not only unit tests. A reverse-charge test that posted r
 ## Boundary
 
 [E-invoicing](/systems/e-invoice) has been researched and deliberately deferred. The system keeps one set of books per legal entity; consolidation across entities isn't built.
+
+Where a business keeps its accounting software instead, the shop system posts to it: see [what QuickBooks does for manufacturing, and how a shop system sits beside it](/manufacturing/quickbooks-for-manufacturing).

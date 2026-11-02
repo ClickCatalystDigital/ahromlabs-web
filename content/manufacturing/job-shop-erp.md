@@ -35,7 +35,7 @@ A job shop makes to order, so the unit of work is the job, not the product. An E
 3. **Job and routing**: the quoted operations become the job's [routing](/systems/routing) and its traveler.
 4. **Material**: stock is reserved for the job, or bought for it, with heat or lot numbers where they matter.
 5. **Schedule**: operations placed on machines with real capacity ([how scheduling works](/manufacturing/production-scheduling-software)).
-6. **Shop floor**: operators record start, finish, quantity and scrap for each operation.
+6. **Shop floor**: operators record start, finish, quantity and scrap for each operation ([WIP tracking](/manufacturing/wip-tracking)).
 7. **Quality**: inspection results and certificates attached to the job.
 8. **Ship and invoice**: packing list, invoice from what shipped, posted to the accounting system.
 9. **Job cost**: actual against quoted, per operation ([a worked example](/manufacturing/quickbooks-job-costing)).
@@ -84,11 +84,11 @@ The last one matters more than it looks: it's what makes leaving possible.
 
 ## Packaged, configurable or built for you
 
-Three routes, each right for some shops:
+Three routes, each right for some shops (compared in more depth in [custom vs off-the-shelf ERP](/manufacturing/custom-vs-off-the-shelf-erp)):
 
 - **Packaged job shop ERP.** Fastest to start if your work fits its model. You adapt to the software, pay per user, and live with its scheduling and reports.
 - **Configurable platform.** A general ERP or low-code base set up for you. More flexible, but someone keeps the configuration working.
-- **Built for your workflow.** Fits exactly and can change as you do. It costs more up front and depends on the builder staying around, so insist on owning the code and data, and a fixed scope per phase.
+- **Built for your workflow.** Fits exactly and can change as you do. It costs more up front and depends on the builder staying around, so get in writing that you can export all your data at any time, what happens to the code and the licence if you stop paying for support, and a fixed scope per phase.
 
 Ahrom Labs builds the third kind: operations systems for manufacturers and distributors, in phases, beside the accounting software you already use. Two things we've built show what "fits the workflow" means in practice: a cutting record where every plate cut puts its usable remnant back into stock, with weights that always add up ([remnants back into stock](/notes/plate-remnants-back-into-stock)), and a customer portal that shows each order's stage from the records departments already keep ([one order, every department](/notes/customer-portal-one-order-every-department)). Both run at a manufacturer in India; our US offer starts with a fixed-price prototype of one workflow, shown below.
 

@@ -63,6 +63,10 @@ export default function ManufacturingHub() {
           </li>
         ))}
         <li className="py-6">
+          <Link href="/manufacturing/production-schedule-template" className="text-link focus-ring text-xl font-medium">Job shop schedule template for Excel</Link>
+          <p className="mt-2 leading-relaxed text-foreground-secondary">Routings by machine with planned days, due-date checks and each machine&apos;s daily load against its shift hours. Free under CC BY 4.0.</p>
+        </li>
+        <li className="py-6">
           <a href="/manufacturing/job-cost-worked-example.xlsx" className="text-link focus-ring text-xl font-medium">Job cost workbook for Excel</a>
           <p className="mt-2 leading-relaxed text-foreground-secondary">The calculator as a spreadsheet: estimated and actual cost per job, the variance and the hours factor, with the worked example filled in. Free under CC BY 4.0.</p>
         </li>

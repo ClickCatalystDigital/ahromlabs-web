@@ -26,7 +26,7 @@ evidence:
   - metric: still to buy
     value: open order lines' shortfall pooled into a procurement order; goods received against it are reserved to waiting orders, earliest dispatch date first
 published: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-02
 ---
 
 An electronics trader's stock isn't "500 of part X". It's reels, each holding a different quantity of one part, packed in boxes, sitting on shelves in more than one place. LS Technologies used to know roughly what it had. The system Ahrom Labs built for them knows each reel.
@@ -58,3 +58,5 @@ Customers see each line of their order as reserved, in procurement or dispatched
 ## Boundary
 
 Reservations hold whole reels, so the last reel can cover more than the line needs. Stock in the partner store never counts as free stock for LS's own orders.
+
+Why a stock layer like this sits beside accounting software rather than inside it: [QuickBooks Online inventory and where manufacturers outgrow it](/manufacturing/quickbooks-online-inventory).

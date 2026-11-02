@@ -162,6 +162,7 @@ export function GET() {
   const mfg =
     `- [Production management software for job shops and small manufacturers](https://ahromlabs.com/manufacturing): Choosing a job shop ERP, what each QuickBooks edition does for manufacturing (checked against Intuit's pages), job costing and finite-capacity scheduling, for US job shops and small manufacturers.\n` +
     `- [Job cost workbook for Excel](https://ahromlabs.com/manufacturing/job-cost-worked-example.xlsx): Estimated vs actual cost for one job (material, setup, run time, outside processing, scrap, rework), margin and the hours-used-per-hour-quoted factor, with a worked example. CC BY 4.0.\n` +
+    `- [Job shop schedule template for Excel](https://ahromlabs.com/manufacturing/job-shop-schedule-template.xlsx): Routings by machine with planned days, flags for operations after the due date or before the previous one, and hours booked per machine per day against shift hours. CC BY 4.0.\n` +
     mfgGuides().map(line("manufacturing")).join("\n");
 
   const body =

@@ -70,7 +70,9 @@ Shop owners on Practical Machinist describe the same path: a sheet with one colu
 - nobody can say when a new order could ship without redoing the whole sheet;
 - the floor's actual progress never makes it back, so the plan slowly turns into fiction.
 
-The last point is the real limit. A schedule needs to know what has actually finished, which means operators recording each operation as they complete it, the same data [job costing](/manufacturing/quickbooks-job-costing) needs.
+The last point is the real limit. A schedule needs to know what has actually finished, which means operators recording each operation as they complete it, the same data [job costing](/manufacturing/quickbooks-job-costing) needs; see [WIP tracking with barcoded travelers](/manufacturing/wip-tracking).
+
+If you're not ready for software, the free [job shop schedule template](/manufacturing/production-schedule-template) does the capacity check in Excel.
 
 ## What to ask a vendor
 

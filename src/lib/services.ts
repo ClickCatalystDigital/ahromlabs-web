@@ -38,6 +38,12 @@ export type Service = {
   proof: { kind: "note" | "pattern"; slug: string }[];
   // Receipts that aren't notes or patterns: a public repo, a live endpoint.
   links?: { href: string; label: string }[];
+  // North America's title and meta description, on pages it adapts (ADAPTIVE.NA in markets.ts): the words US
+  // buyers search for. Google indexes that version, since it crawls from the US.
+  na?: { name: string; description: string };
+  // Guides that go deeper on this service (manufacturing, AI and ASME hubs), shown under it in the markets each
+  // guide is for. Checked to exist at build.
+  guides?: string[];
 };
 
 // Families group services by the part of the business they serve, which is
@@ -136,6 +142,7 @@ export const layers: Layer[] = [
 export const services: Service[] = [
   {
     slug: "custom-erp-crm",
+    guides: ["/manufacturing/job-shop-erp", "/manufacturing/quickbooks-for-manufacturing", "/manufacturing/custom-vs-off-the-shelf-erp"],
     name: "Custom ERP, CRM and operations systems",
     plainName: "One system for the whole business, from enquiry to dispatch",
     shortName: "Custom ERP",
@@ -294,6 +301,7 @@ export const services: Service[] = [
   },
   {
     slug: "custom-ai-assistant",
+    guides: ["/ai-assistant/ai-in-erp"],
     name: "Custom AI assistant over your business data",
     plainName: "An assistant built on your own records that never invents a number",
     shortName: "AI assistant",
@@ -329,6 +337,7 @@ export const services: Service[] = [
   },
   {
     slug: "operational-intelligence",
+    guides: ["/manufacturing/production-scheduling-software", "/manufacturing/wip-tracking"],
     name: "Analytics and operational intelligence",
     plainName: "Your numbers, without anyone building an Excel sheet first",
     shortName: "Analytics",
@@ -555,6 +564,11 @@ export const services: Service[] = [
     name: "QR inventory, multi-store stock and order reservations",
     plainName: "Stock you can scan, set aside for each customer order",
     shortName: "QR inventory",
+    na: {
+      name: "Manufacturing inventory management software",
+      description: "Inventory management software for manufacturers and distributors: every unit QR-labelled, scanned across locations, reserved per order, beside QuickBooks.",
+    },
+    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing"],
     family: "buying-and-stores",
     layer: "operations",
     answer:

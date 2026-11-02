@@ -144,7 +144,7 @@ export function ServicesPage({ market }: { market: MarketCode }) {
           </section>
         ))}
 
-        {market === "IN" ? <FreeGuides heading="Free guides to the work" /> : <MarketPricing market={market} />}
+        {market === "IN" ? <FreeGuides heading="Free guides to the work" /> : <><MarketPricing market={market} /><FreeGuides heading="Free guides to the work" /></>}
 
         <Reveal>
           <section id="engagement" className="section scroll-mt-16 border-t border-line">

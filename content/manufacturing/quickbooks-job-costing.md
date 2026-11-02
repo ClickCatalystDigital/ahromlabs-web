@@ -97,7 +97,7 @@ One owner on Practical Machinist describes the habit that fixes quoting: log est
 
 1. Turn on projects and create one per job.
 2. Assign material bills and outside processing to the project as they arrive.
-3. Have operators record time per job daily, before they clock out; split setup from run if you can.
+3. Have operators record time per job daily, before they clock out; split setup from run if you can ([how shops get operators to scan](/manufacturing/wip-tracking)).
 4. Keep the quoted hours and material per job in a sheet beside it. The free [job cost workbook](/manufacturing/job-cost-worked-example.xlsx) has the columns and formulas, with this example filled in.
 5. Close each job by comparing the two, and feed the hours factor back into the next quote.
 
