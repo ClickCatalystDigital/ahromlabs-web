@@ -28,7 +28,7 @@ image:
 | **Reading documents** | Supplier invoices, purchase orders, freight bills and bank statements turned into draft entries | Every draft goes through a person before it is posted |
 | **Drafting suggestions** | A likely match, a reorder list, a draft reply, a task | The suggestion is read-only until someone accepts it |
 
-These are not hypothetical. Our assistants Atelier AI, Ohm AI and Ember AI answer from live business records this way ([the question library](/ai-assistant/questions) lists every question and whether it's live), and in LS Technologies' system, an electronic components trader's, 88–95% of extracted documents need no correction depending on the type, and every one is still reviewed before it is posted ([AI extraction with a person in the loop](/notes/ai-extraction-human-in-the-loop)).
+These are not hypothetical. Our assistants Atelier AI, Ohm AI, Ember AI and Datum AI answer from live business records this way ([the question library](/ai-assistant/questions) lists every question and whether it's live), and in LS Technologies' system, an electronic components trader's, 88–95% of extracted documents need no correction depending on the type, and every one is still reviewed before it is posted ([AI extraction with a person in the loop](/notes/ai-extraction-human-in-the-loop)).
 
 ## What not to let it do alone
 

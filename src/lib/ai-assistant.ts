@@ -32,7 +32,7 @@ export const ASSISTANT: Record<System, { name: string; system: string; industry:
   "savistar-saag": { name: "Atelier AI", system: "Savistar & Saag, an interior design studio and furniture workshop", industry: "projects", who: "everyone, staff limited to their own tasks and cash entries", demo: "two questions from any sample login" },
   "ls-technologies": { name: "Ohm AI", system: "LS Technologies, an electronic component trader", industry: "trading", who: "LS Technologies' own staff", demo: "two questions from any sample login" },
   "boiler-manufacturer": { name: "Ember AI", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments", demo: "two questions, including live data from the sample company" },
-  "construction-company": { name: "Datum AI", system: "a construction contractor's system, shown on the public demo with sample data", industry: "construction", who: "every login, site engineers and storekeepers without company money, margins or payroll", demo: "two questions from any sample login" },
+  "construction-company": { name: "Datum AI", system: "a construction contractor's system (public demo, sample data)", industry: "construction", who: "every login, site engineers and storekeepers without company money, margins or payroll", demo: "two questions from any sample login" },
 };
 export const SYSTEM_OF: Record<Industry, System> = { projects: "savistar-saag", trading: "ls-technologies", manufacturing: "boiler-manufacturer", construction: "construction-company" };
 
