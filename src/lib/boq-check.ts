@@ -189,7 +189,7 @@ export function quoteTotals(amounts: number[], gstRate: number, interState: bool
   return { subtotal, taxes, total };
 }
 
-// Indian numbering (lakh, crore), from shanti-ops lib/service-expense.mjs.
+// Indian numbering (lakh, crore), from SB Ops' lib/service-expense.mjs.
 const ONES = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
 const TENS = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
 const below100 = (n: number) => (n < 20 ? ONES[n] : `${TENS[Math.floor(n / 10)]}${n % 10 ? ` ${ONES[n % 10]}` : ""}`);

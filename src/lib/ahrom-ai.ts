@@ -1,7 +1,7 @@
 // Ahrom AI's router (docs/ahrom-ai-router-plan.md): the site's own answers as
 // entries, a word-match shortlist, and the questions put to Jev. Pure functions
 // only; the network calls live in src/app/api/ahrom-ai/route.ts. The design is
-// SB Ops' help assistant (shanti-ops/lib/assistant-help.mjs), with the website's
+// SB Ops' help assistant (its lib/assistant-help.mjs), with the website's
 // content as the guide.
 import { getContent } from "./content";
 import { engagementAnswers } from "./engagement";
