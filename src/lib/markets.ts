@@ -64,9 +64,15 @@ const IN_ONLY = [
   "/industries/boiler-pressure-vessel-manufacturing", "/industries/interior-design-and-furniture",
   "/services/compliance-accounting", "/services/tally-integration", "/services/receivables-from-tally", "/services/daily-wage-payroll",
   "/asme/asme-vs-ibr",
+  // The construction hub's India group (src/lib/construction.ts CON_GROUPS; scripts/construction.check.ts keeps these in step).
+  "/construction/ra-bills", "/construction/measurement-book", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts",
 ];
 // North America only: US and Canadian law.
-const NA_ONLY = ["/asme/state-boiler-laws", "/manufacturing", "/sales-tax"];
+const NA_ONLY = [
+  "/asme/state-boiler-laws", "/manufacturing", "/sales-tax",
+  // The construction hub's US group.
+  "/construction/pay-applications", "/construction/retainage", "/construction/lien-waivers", "/construction/change-orders", "/construction/wip-schedule",
+];
 const under = (list: string[], href: string) => list.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`));
 export const marketsFor = (href: string): MarketCode[] | undefined =>
   under(IN_ONLY, href) ? ["IN"] : under(NA_ONLY, href) ? ["NA"] : undefined;

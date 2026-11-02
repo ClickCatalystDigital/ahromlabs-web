@@ -11,6 +11,8 @@ import { mfgGuides, MFG_CHECKED } from "@/lib/manufacturing";
 import { mfgArt } from "@/lib/manufacturing-images";
 import { stGuides, ST_CHECKED } from "@/lib/sales-tax";
 import { stArt } from "@/lib/sales-tax-images";
+import { conGuides, CON_CHECKED } from "@/lib/construction";
+import { conArt } from "@/lib/construction-images";
 import { ERP_CHECKED } from "@/lib/erp";
 import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
@@ -262,7 +264,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes, ...stRoutes];
+  // The construction hub (src/lib/construction.ts).
+  const conImages = (name: string) => {
+    const a = conArt(name);
+    return a ? { images: [`${siteUrl}${a.src}`] } : {};
+  };
+  const con = conGuides();
+  const conUpdated = [CON_CHECKED, ...con.map((g) => g.updated)].sort().at(-1)!;
+  const conRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/construction`, lastModified: changed("construction", conUpdated), changeFrequency: "monthly", priority: 0.8, ...conImages("construction-hub") },
+    ...con.map((g) => ({
+      url: `${siteUrl}/construction/${g.slug}`,
+      lastModified: changed(`construction/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      ...conImages(g.slug),
+    })),
+  ];
+
+  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes, ...stRoutes, ...conRoutes];
   // Pages with a North American version: both URLs listed, each naming the other (hreflang), as in their metadata.
   const abs = (langs: Record<string, string>) => Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${siteUrl}${v === "/" ? "" : v}`]));
   const withAlt = all.map((e) => {

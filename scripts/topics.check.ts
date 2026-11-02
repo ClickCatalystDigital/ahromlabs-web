@@ -18,11 +18,13 @@ function lean(text: string): "IN" | "NA" | null {
 // unlisted kind), so no hub's market is left implicit.
 type Lean = "IN" | "NA" | null;
 const common = (l: Lean) => l === null, notIN = (l: Lean) => l !== "IN", notNA = (l: Lean) => l !== "NA", any = () => true;
-const RULES: Record<ContentKind, { allowed: (l: Lean) => boolean; want: string }> = {
+const RULES: Record<ContentKind, { allowed: (l: Lean, e?: { group?: string }) => boolean; want: string }> = {
   "ai-assistant": { allowed: common, want: "common to India and North America" },
   asme: { allowed: notIN, want: "North American (or common)" },
   manufacturing: { allowed: notIN, want: "North American (or common)" },
   "sales-tax": { allowed: notIN, want: "North American (or common)" },
+  // Both markets: each page leans its own group's way (us: not Indian, india: not North American).
+  construction: { allowed: (l, e) => (e?.group === "india" ? notNA(l) : notIN(l)), want: "its group's market (us or india)" },
   guide: { allowed: notNA, want: "Indian (IBR)" },
   boq: { allowed: notNA, want: "Indian (BOQ)" },
   erp: { allowed: notNA, want: "Indian (ERP requirements)" },
@@ -38,7 +40,7 @@ const kinds = new Set((JSON.parse(readFileSync("src/lib/content-data.generated.j
 for (const kind of kinds) if (!RULES[kind]) fail.push(`content kind "${kind}" has no market rule in scripts/topics.check.ts`);
 for (const [kind, r] of Object.entries(RULES) as [ContentKind, (typeof RULES)[ContentKind]][]) for (const e of getContent(kind)) {
   const l = lean(`${e.answer}\n${e.body}`);
-  if (!r.allowed(l)) fail.push(`${kind}/${e.slug} leans ${l}; this hub is ${r.want}`);
+  if (!r.allowed(l, e)) fail.push(`${kind}/${e.slug} leans ${l}; this hub is ${r.want}`);
 }
 if (fail.length) { console.error(`topics: ${fail.length} page(s) lean the wrong way:\n${fail.join("\n")}`); process.exit(1); }
 console.log(`topics: ${kinds.size} content kinds, every page in its market`);

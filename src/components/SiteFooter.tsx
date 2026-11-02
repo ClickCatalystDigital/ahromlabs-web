@@ -38,6 +38,7 @@ const columns: { title: string; links: { href: string; label: string; markets?: 
       { href: "/asme", label: "ASME code guide" },
       { href: "/manufacturing", label: "Manufacturing software guide" },
       { href: "/sales-tax", label: "US sales tax guide" },
+      { href: "/construction", label: "Construction billing guide" },
     ],
   },
   {

@@ -20,7 +20,7 @@ function contentUrl(entry: ContentEntry): string {
   if (entry.kind === "term") {
     return `${siteUrl}/systems${termHasPage(entry) ? `/${entry.slug}` : `#${entry.slug}`}`;
   }
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax" }[entry.kind];
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction" }[entry.kind];
   return `${siteUrl}/${segment}/${entry.slug}`;
 }
 
@@ -43,6 +43,7 @@ export function GET() {
     ...getContent("ai-assistant"),
     ...getContent("manufacturing"),
     ...getContent("sales-tax"),
+    ...getContent("construction"),
   ].map((entry) => ({
     ...entry,
     url: contentUrl(entry),

@@ -6,6 +6,7 @@ import { questions as aiQuestions, vendorTests } from "@/lib/ai-assistant";
 import { asmeGuides, ASME_EDITION } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
 import { stGuides } from "@/lib/sales-tax";
+import { conGuides } from "@/lib/construction";
 import { DICT } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
@@ -187,6 +188,10 @@ export function GET() {
     `- [US sales tax for manufacturers, distributors and contractors](https://ahromlabs.com/sales-tax): When a business must collect sales tax in another state (physical and economic nexus after South Dakota v. Wayfair), every state's threshold with a checker, resale and exemption certificates, the manufacturing exemption and use tax, quoted from the Streamlined Sales Tax Governing Board and state revenue departments.\n` +
     stGuides().map(line("sales-tax")).join("\n");
 
+  const construction =
+    `- [Construction billing and job cost: guides for contractors](https://ahromlabs.com/construction): US pay applications, retainage, lien waivers, change orders and the WIP schedule; India's running account bills, measurement book, TDS on payments to contractors and GST on works contracts, quoted from the laws and official manuals.\n` +
+    conGuides().map(line("construction")).join("\n");
+
   const body =
     HEADER +
     `\n## Industries\n\n${industries}\n` +
@@ -201,6 +206,7 @@ export function GET() {
     `\n## ASME Boiler and Pressure Vessel Code\n\n${asme}\n` +
     `\n## Manufacturing software (US job shops and small manufacturers)\n\n${mfg}\n` +
     `\n## US sales tax\n\n${salesTax}\n` +
+    `\n## Construction billing (US and India)\n\n${construction}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

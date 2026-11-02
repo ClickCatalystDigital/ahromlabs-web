@@ -5186,5 +5186,450 @@
       }
     ],
     "body": "## What is use tax?\n\nSales tax is collected by the seller; use tax is paid by the buyer when the seller didn't collect. The rate is the\nsame, and the point is the same: a taxable item used in the state is taxed once, wherever it was bought. Texas\ndescribes use tax as complementary to sales tax, on the storage, use or consumption of taxable items in the state.\n\nFor a household, use tax is mostly theory. For a business it's an audit finding waiting to happen, because\nauditors read your purchase ledger, not just your sales.\n\n## When does a business owe it?\n\n| Situation | Example | You owe use tax on |\n|---|---|---|\n| An out-of-state supplier didn't charge your state's tax | Shop supplies from a supplier not registered in your state | The price of the supplies |\n| You bought for resale, then used it yourself | A distributor takes a drill from stock for its own warehouse | The cost of the drill |\n| You bought exempt for manufacturing, then used it another way | Steel bought exempt, used to build a rack for your own plant | The cost of the steel |\n| Exempt equipment used partly for other purposes | A machine also used for your own maintenance parts | The divergent share (Texas) |\n| The supplier charged a lower rate than your location's | Bought at a counter in an area with no local tax | The local tax not charged |\n\nThe Streamlined Sales Tax Governing Board puts the rule in one line: when the seller doesn't collect the tax due,\nthe customer must pay use tax directly to the state unless it can claim an exemption.\n\n## How do you report it?\n\nA business with a sales tax permit reports use tax on its regular sales and use tax return, as taxable purchases;\nTexas has a line for it. A business without a permit files a separate use tax return. If you paid another state's\ntax on the item first, Texas allows a credit for it; check your own state's rule.\n\nThe reverse also works: California lets a buyer that paid sales tax on an item, then resold it before using it,\ntake a deduction when it reports the sale.\n\n## How does a system catch it?\n\nUse tax is missed when nobody looks at the tax line of a vendor bill. The checks are mechanical:\n\n- **Vendor bills with no tax** on taxable items, from vendors not registered in your state: flag for accrual.\n- **Stock issued to internal use**: an issue from resale or exempt stock to maintenance, samples or your own\n  buildings creates a use tax line at cost.\n- **Exempt purchases** carry the reason they were exempt, so a later use that doesn't match it shows up. See\n  [the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) and\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **A monthly accrual report** by state and rate, which goes onto the return.\n\nFor how these fit with the rest of sales tax in an order system, see\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
+  },
+  {
+    "kind": "construction",
+    "slug": "change-orders",
+    "group": "us",
+    "title": "Change orders in construction: pricing, approval, billing",
+    "question": "How should a contractor handle change orders?",
+    "answer": "A change order is a written agreement to change a construction contract's work, price or time. Get the change in writing before doing it, price it with backup, track each from request to approval, and only bill it once approved, as its own line on the schedule of values. On federal jobs, FAR 52.243-4 gives you 30 days to assert an adjustment.",
+    "description": "Change orders for contractors: written orders, pricing and backup, pending vs approved, federal rules under FAR 52.243-4, and billing them on pay apps.",
+    "domain": [
+      "construction",
+      "change-orders"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "FAR 52.243-4, Changes",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.243-4",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "FAR 52.243-4(a)",
+        "doc": "far-52.243-4",
+        "quote": "make changes in the work within the general scope of the contract, including changes-"
+      },
+      {
+        "reg": "FAR 52.243-4(c)",
+        "doc": "far-52.243-4",
+        "quote": "Except as provided in this clause, no order, statement, or conduct of the Contracting Officer shall be treated as a change under this clause or entitle the Contractor to an equitable adjustment."
+      },
+      {
+        "reg": "FAR 52.243-4(d)",
+        "doc": "far-52.243-4",
+        "quote": "no adjustment for any change under paragraph (b) of this clause shall be made for any costs incurred more than 20 days before the Contractor gives written notice as required."
+      },
+      {
+        "reg": "FAR 52.243-4(e)",
+        "doc": "far-52.243-4",
+        "quote": "The Contractor must assert its right to an adjustment under this clause within 30 days after"
+      },
+      {
+        "reg": "FAR 52.243-4(f)",
+        "doc": "far-52.243-4",
+        "quote": "No proposal by the Contractor for an equitable adjustment shall be allowed if asserted after final payment under this contract."
+      }
+    ],
+    "body": "## Why change orders cost contractors money\n\nMost disputes on a job are about changes: extra work done on a verbal OK, priced after the fact, argued about at\ncloseout. The fix is procedural: no change is real until it is written, priced and approved, and every one is\ntracked until it's billed.\n\n## The life of a change\n\n| Stage | What happens | Billed? |\n|---|---|---|\n| Request or notice | The owner asks for a change, or you notify a changed condition (in writing) | No |\n| Proposal | Your price and time, with backup: quantities, labor hours, material quotes, markup | No |\n| Pending | Submitted, not yet approved; work may have started on a directive | No, but tracked |\n| Approved change order | Signed by both sides, with the new price and time | Yes, as its own line |\n| Rejected or disputed | Kept, with the record, for a claim | No |\n\n## What do the federal rules say?\n\nOn federal fixed-price construction (FAR 52.243-4), the contracting officer may order changes within the general\nscope by a written change order. Nothing else counts as a change under the clause except as it provides. If you\ntreat something as a change by notice, costs incurred more than 20 days before your written notice aren't adjusted\n(except for defective specifications). You must assert your right to an adjustment within 30 days of the order or\nnotice, and nothing can be asserted after final payment. Private contracts, such as AIA's general conditions,\nhave their own procedures and deadlines: read the changes article before the job starts.\n\n## How changes flow into billing\n\nAn approved change order is added to the schedule of values as its own line, so the [pay application](/construction/pay-applications)\nshows original contract, approved changes and the revised contract sum. Pending changes are never billed, but they\nbelong on the [WIP schedule](/construction/wip-schedule): their costs are already in the job. Watch any\n[lien waiver](/construction/lien-waivers) you sign that would waive claims for pending changes.\n\n## What your system should keep\n\n- A change log per job: number, description, who asked, date of notice, status, price, days.\n- The backup for each price, linked to the job's cost codes so actual cost can be compared later.\n- Approved changes posted to the contract value and the schedule of values, once.\n- Pending exposure: the total value of unapproved changes per job, reviewed weekly."
+  },
+  {
+    "kind": "construction",
+    "slug": "gst-on-works-contracts",
+    "group": "india",
+    "title": "GST on works contracts: what counts and input tax credit",
+    "question": "How is GST applied to a works contract in India?",
+    "answer": "Under GST, a works contract is a contract for building, construction, repair or similar work on immovable property where goods pass to the client in the course of the work. It is treated as a supply of services, taxed as one composite service on the whole contract value. Input tax credit on works contract services for building your own immovable property is blocked, except for a contractor using them to supply further works contracts.",
+    "description": "GST on works contracts in India: the section 2(119) definition, supply of service under Schedule II, input tax credit rules, and billing RA bills with GST.",
+    "domain": [
+      "construction",
+      "gst",
+      "india"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Works Contracts in GST",
+        "publisher": "GST Council (Directorate General of Taxpayer Services, CBEC)",
+        "url": "https://gstcouncil.gov.in/sites/default/files/e-version-gst-flyers/Work%20Contracts%20in%20GST.pdf",
+        "date": "2017-07-01"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "CGST Act, 2017, section 2(119), as quoted by the GST Council",
+        "doc": "gst-wc",
+        "quote": "“works contract” means a contract for building, construction, fabrication, completion, erection, installation, fitting out, improvement, modification, repair, maintenance, renovation, alteration or commissioning of any immovable property wherein transfer of property in goods (whether as goods or in some other form) is involved in the execution of such contract."
+      },
+      {
+        "reg": "GST Council, Works Contracts in GST",
+        "doc": "gst-wc",
+        "quote": "the term works contract has been restricted to contract for building construction, fabrication etc of any immovable property only."
+      },
+      {
+        "reg": "CGST Act, 2017, section 17(5)(c), as explained by the GST Council",
+        "doc": "gst-wc",
+        "quote": "input tax credit shall not be available in respect of the works contract services when supplied for construction of an immovable property (other than plant and machinery) except where it is an input service for further supply of works contract service."
+      },
+      {
+        "reg": "CGST Act, 2017, Schedule II, paragraph 6(a), as quoted by the GST Council",
+        "doc": "gst-wc",
+        "quote": "works contracts as defined in section 2(119) of the CGST Act, 2017 shall be treated as"
+      }
+    ],
+    "body": "## What is a works contract under GST?\n\nSection 2(119) of the CGST Act, 2017 defines it: a contract for building, construction, fabrication, completion,\nerection, installation, fitting out, improvement, modification, repair, maintenance, renovation, alteration or\ncommissioning of any **immovable property**, where property in goods passes in the course of the work. The GST\nCouncil's note stresses the limit: only work on immovable property qualifies. Painting a car or fabricating a\nmachine with your own material is a composite supply, but not a works contract.\n\nSchedule II, paragraph 6(a) of the Act treats a works contract as a supply of services. So the whole contract\nvalue, materials included, is taxed as one service, not split into goods and labour as under VAT.\n\n## Can you claim input tax credit?\n\n| Who receives the works contract service | Input tax credit |\n|---|---|\n| A business building its own office, factory shed or other immovable property | Blocked (section 17(5)(c)) |\n| The same, for plant and machinery | Allowed: plant and machinery is excluded from the block |\n| A main contractor buying a subcontractor's works contract to supply its own works contract | Allowed |\n\nThe Council's example is a builder engaging a subcontractor for part of the work: the subcontractor charges GST to\nthe main contractor, who can take the credit because it uses the service for its own works contract supply.\n\n## What rate applies?\n\nThe rate depends on the work, the client and the date: rates for works contracts were set by notification and have\nbeen changed since 2017. Take the rate from the current CBIC rate\nnotification for your service, or from your tax adviser, not from an old article.\n\n## How GST sits on an RA bill\n\nEach [running account bill](/construction/ra-bills) is a supply: the contractor issues a tax invoice for the bill's\nvalue, with GST on top. Recoveries for materials supplied by the client need care, because they may change what\nis being supplied; ask your adviser how your contract treats them. Government departments and certain other buyers\nalso deduct TDS under GST, separate from [income-tax TDS](/construction/tds-on-contractor-payments).\n\n## What your system should do\n\n- Classify each contract as a works contract or not, with the place of supply (where the property is).\n- Issue a GST invoice for each RA bill from the [measured](/construction/measurement-book) value.\n- Keep input tax credit apart where it is blocked (your own buildings) and where it is allowed.\n- Reconcile GST invoices with RA bills and payments, so nothing is billed or credited twice."
+  },
+  {
+    "kind": "construction",
+    "slug": "lien-waivers",
+    "group": "us",
+    "title": "Lien waivers: conditional and unconditional, explained",
+    "question": "What is the difference between a conditional and an unconditional lien waiver?",
+    "answer": "A lien waiver is a contractor's or supplier's signed release of its right to file a mechanic's lien, given in exchange for payment. A conditional waiver takes effect only once the payment actually clears; an unconditional waiver is effective when signed, paid or not. Each comes in a progress and a final version, and several states, such as Arizona and Florida, set the wording by statute.",
+    "description": "Lien waivers in US construction: conditional vs unconditional, progress vs final, state statutory forms (Arizona, Florida), and when to sign or ask for each.",
+    "domain": [
+      "construction",
+      "liens"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Arizona Revised Statutes 33-1008, Waiver of lien",
+        "publisher": "Arizona State Legislature",
+        "url": "https://www.azleg.gov/ars/33/01008.htm",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Florida Statutes 713.20, Waiver or release of liens",
+        "publisher": "The Florida Legislature",
+        "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0713/Sections/0713.20.html",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Arizona ARS 33-1008(D)",
+        "doc": "az-33-1008",
+        "quote": "The waiver and release given by any claimant is unenforceable unless it follows substantially the following forms in the following circumstances:"
+      },
+      {
+        "reg": "Arizona ARS 33-1008(D), conditional waiver on progress payment",
+        "doc": "az-33-1008",
+        "quote": "and when the check has been properly endorsed and has been paid by the bank on which it is drawn, this document becomes effective to release any mechanic's lien"
+      },
+      {
+        "reg": "Arizona ARS 33-1008(D), notice on the unconditional forms",
+        "doc": "az-33-1008",
+        "quote": "This document waives rights unconditionally and states that you have been paid for giving up those rights. This document is enforceable against you if you sign it, even if you have not been paid. If you have not been paid, use a conditional release form."
+      },
+      {
+        "reg": "Florida Statutes 713.20(2)",
+        "doc": "fl-713.20",
+        "quote": "A right to claim a lien may not be waived in advance. A lien right may be waived only to the extent of labor, services, or materials furnished."
+      },
+      {
+        "reg": "Florida Statutes 713.20(4), progress payment form",
+        "doc": "fl-713.20",
+        "quote": "This waiver and release does not cover any retention or labor, services, or materials furnished after the date specified."
+      },
+      {
+        "reg": "Florida Statutes 713.20(6)",
+        "doc": "fl-713.20",
+        "quote": "A person may not require a lienor to furnish a lien waiver or release of lien that is different from the forms in subsection (4) or subsection (5)."
+      }
+    ],
+    "body": "## Why lien waivers exist\n\nOn a US private job, anyone who supplied labor or material and wasn't paid can usually file a mechanic's lien\nagainst the property, even if the owner paid the general contractor in full. So owners and lenders ask for a waiver\nfrom the contractor, and from each subcontractor and supplier, for every payment: proof that the money reached them\nand that they give up the lien for what they've been paid.\n\n## The four kinds\n\n| | Progress payment | Final payment |\n|---|---|---|\n| **Conditional** | Releases lien rights through a date, once this payment clears | Releases all lien rights for the job, once the final payment clears |\n| **Unconditional** | Releases lien rights through a date; effective when signed | Releases all lien rights for the job; effective when signed |\n\nArizona's statute uses exactly these four forms and makes a waiver unenforceable unless it follows them\nsubstantially. The conditional forms take effect only when the check has been endorsed and paid by the bank. The\nunconditional forms carry a notice in the statute: they are enforceable even if you haven't been paid, so if you\nhaven't been, use a conditional form.\n\nFlorida takes another approach: lien rights can't be waived in advance, only for work already furnished; its\nstatutory progress form says it doesn't cover retention or later work; and nobody may require a waiver different\nfrom the statutory forms.\n\n## When to sign or ask for which\n\n- **Sending a pay application?** Give a conditional progress waiver with it, for the amount billed, through the\n  billing date.\n- **Payment received and cleared?** Give the unconditional progress waiver for that amount when asked.\n- **Final payment, including [retainage](/construction/retainage)?** Conditional final with the request;\n  unconditional final once paid.\n- **Paying subcontractors?** Collect their waivers for the previous payment before releasing the next one. The\n  owner's lender will ask for them with your next [pay application](/construction/pay-applications).\n\nEach state has its own lien law, deadlines and forms. Use the statutory form where the project's state has one,\nand read any waiver for words that waive more than the payment it's for, such as claims for pending\n[change orders](/construction/change-orders).\n\n## What your system should keep\n\nPer job and per payment: who owes a waiver, which kind, the amount and through-date, whether it came back signed,\nand the file. A subcontractor's next payment should show as blocked until the waiver for the previous one is in."
+  },
+  {
+    "kind": "construction",
+    "slug": "measurement-book",
+    "group": "india",
+    "title": "Measurement book (MB): recording work for payment",
+    "question": "What is a measurement book in construction, and how is it kept?",
+    "answer": "The measurement book (MB) is the record of every quantity of work done, measured on site item by item, from which each running bill and the final bill is paid. In CPWD and most government works, measurements follow the contract's rules of measurement, are test-checked by senior engineers, and are now entered electronically as an e-MB; private contractors keep the same record for their clients and subcontractors.",
+    "description": "The measurement book in Indian construction: what it records, how it is test-checked, e-MB, extra and deviated items, and inadmissible items.",
+    "domain": [
+      "construction",
+      "measurement",
+      "india"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "CPWD Works Manual 2022",
+        "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
+        "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
+        "date": "2022-06-30"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "CPWD Works Manual 2022, para 5.12",
+        "doc": "cpwd",
+        "quote": "All measurements are to be done as per provisions of GCC and abstract of schedule of measurements and payments are to be entered through PFMS portal of CPWD using E-MB module."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.12.1",
+        "doc": "cpwd",
+        "quote": "The procedures on operation of MB i.e writing of MB, Recording of measurements, Movement of MB, Transfer of MB, Review of MB, Loss of MB etc are given in SOP 5/20."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.14",
+        "doc": "cpwd",
+        "quote": "Test Checking of measurements shall be carried out by respective officers as given in SOP 5/24."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.12.3 (inadmissible items)",
+        "doc": "cpwd",
+        "quote": "Inadmissible items claimed but not included in the payment"
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.11",
+        "doc": "cpwd",
+        "quote": "Extra items are those items which are not available in the agreement but are required to complete the work. Deviation means increase or decrease in the quantities of items of work in the agreement."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.6.4 (responsibility for quality of work)",
+        "doc": "cpwd",
+        "quote": "The officer who records/test checks the measurements for an item of work will be responsible for the quality, quantity/ measurements and dimensional accuracy of that item of work."
+      }
+    ],
+    "body": "## What does a measurement book record?\n\nFor each item of the BOQ, every time work is measured: the date, the location (floor, grid, chainage), the\ndimensions taken (number, length, breadth, depth), the quantity worked out, who measured it and who accepted it for\nthe contractor. The quantities, multiplied by the agreement rates, become the\n[running account bill](/construction/ra-bills).\n\n| Item | Location | No. | L (m) | B (m) | D (m) | Qty |\n|---|---|---|---|---|---|---|\n| RCC M25 in columns | Ground floor, C1–C8 | 8 | 0.45 | 0.30 | 3.20 | 3.456 m³ |\n| Brickwork 230 mm | First floor, grid A–D | 1 | 18.40 | 0.23 | 3.00 | 12.696 m³ |\n\nThe figures are made up. How each item is measured (deductions for openings, which faces count) comes from the\ncontract's mode of measurement, usually an IS 1200 part or the department's schedule; see\n[measurement rules for interior BOQs](/boq/measurement-rules) for the same idea applied to interiors.\n\n## Who records and checks it?\n\nIn CPWD works the site engineers record measurements and the officers named in CPWD's standard operating\nprocedures test-check them. The officer who records or test-checks an item is responsible\nfor its quality, quantity and dimensional accuracy, which is why measurements are signed, not just entered.\n\nCPWD now records measurements electronically through its e-MB module on PFMS; the physical MB, where still used,\nhas its own rules for writing, movement, transfer and loss.\n\n## Extra, deviated and inadmissible items\n\n- **Extra items** are needed to complete the work but aren't in the agreement; **deviation** is a change in an\n  agreement item's quantity. Rates beyond the contract's deviation limit are fixed as the general conditions say.\n- **Inadmissible items**: where the contractor claims an item the department won't pay, CPWD still records the\n  measurements, for record only, under a separate heading, so the quantity is known if the claim is admitted later.\n\n## What your system should do\n\n- Measurements entered on site, per BOQ item and location, with dimensions, not only quantities.\n- Who measured, who checked, and the contractor's acceptance, with dates.\n- A running total per item against the BOQ quantity, flagging deviation beyond the contract limit.\n- Extra items held apart until their rate is approved.\n- Each [RA bill](/construction/ra-bills) built from the measurements since the last bill, so nothing is paid twice.\n- The same records feed [TDS](/construction/tds-on-contractor-payments) and [GST](/construction/gst-on-works-contracts) on each bill."
+  },
+  {
+    "kind": "construction",
+    "slug": "pay-applications",
+    "group": "us",
+    "title": "Pay applications (AIA G702 and G703), explained",
+    "question": "How does a construction pay application work?",
+    "answer": "A pay application is a contractor's monthly bill on a construction job: each line of the schedule of values with the work completed this period and before, materials stored on site, the retainage held back, and the amount now due. AIA's G702 is the summary page and G703 the line-by-line continuation sheet; the architect or owner certifies it before payment.",
+    "description": "How a construction pay application works: schedule of values, work completed and stored, retainage and the amount due, with a worked example and federal rules.",
+    "domain": [
+      "construction",
+      "billing"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "FAR 52.232-5, Payments Under Fixed-Price Construction Contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.232-5",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "FAR 52.232-27, Prompt Payment for Construction Contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.232-27",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "FAR 52.232-5(b), progress payments",
+        "doc": "far-52.232-5",
+        "quote": "The Government shall make progress payments monthly as the work proceeds"
+      },
+      {
+        "reg": "FAR 52.232-5(c)(2), contractor certification",
+        "doc": "far-52.232-5",
+        "quote": "All payments due to subcontractors and suppliers from previous payments received under the contract have been made, and timely payments will be made from the proceeds of the payment covered by this certification"
+      },
+      {
+        "reg": "FAR 52.232-5(c)(4), contractor certification",
+        "doc": "far-52.232-5",
+        "quote": "This certification is not to be construed as final acceptance of a subcontractor’s performance."
+      },
+      {
+        "reg": "FAR 52.232-27, prompt payment (improper invoices)",
+        "doc": "far-52.232-27",
+        "quote": "If the invoice does not comply with these requirements, the designated billing office must return it within 7 days after receipt"
+      }
+    ],
+    "body": "## What goes into a pay application?\n\nA US construction contract is usually paid monthly against progress, not on milestones. The contractor bills by\nfilling in the **schedule of values**: the contract sum broken into lines (site work, concrete, steel, electrical\nand so on), agreed at the start. Each month, for every line:\n\n| Column | What it holds |\n|---|---|\n| Scheduled value | The line's share of the contract sum, plus approved [change orders](/construction/change-orders) |\n| Work completed, previous periods | What was billed on earlier applications |\n| Work completed, this period | What was put in place this month |\n| Materials presently stored | Delivered but not yet installed |\n| Total completed and stored | The three above, and its % of the scheduled value |\n| Balance to finish | Scheduled value less total completed and stored |\n| [Retainage](/construction/retainage) | The share held back |\n\nThe American Institute of Architects (AIA) publishes the most used forms: G702 (the application and certificate\nfor payment, one page of totals) and G703 (the continuation sheet, one row per line). They are paid, copyrighted\ndocuments; many owners and general contractors use their own form with the same columns.\n\n## A worked example\n\nA made-up job with a contract sum of $400,000 and 10% retainage. By the end of month three:\n\n| | Amount |\n|---|---|\n| Work completed, previous periods | $90,000 |\n| Work completed, this period | $60,000 |\n| Materials stored on site | $10,000 |\n| Total completed and stored | $160,000 |\n| Retainage (10%) | $16,000 |\n| Total earned less retainage | $144,000 |\n| Less previous certificates ($90,000 less $9,000 retained) | $81,000 |\n| **Current payment due** | **$63,000** |\n| Balance to finish, including retainage | $256,000 |\n\nThe check: this month's $60,000 of work plus $10,000 stored, less 10%, is $63,000.\n\n## Who signs it?\n\nThe contractor certifies the application. The architect (or the\nowner's representative) checks it against the work on site and certifies the amount, which may be less than asked.\nLenders often want [lien waivers](/construction/lien-waivers) from the contractor and the subcontractors paid from\nthe previous application before releasing money.\n\nOn federal jobs, FAR 52.232-5 sets the rules: progress payments monthly on estimates of work accomplished, approved\nby the contracting officer, and a certification with every request, including that subcontractors and suppliers\nhave been paid from previous payments. An invoice missing required items is returned within 7 days.\n\n## What your system should do\n\n- Hold the schedule of values per job, with change orders added as their own lines once approved.\n- Take quantities or percentages from site progress, not typed in at month-end.\n- Carry previous applications forward automatically, so \"previous\" always matches what was certified.\n- Compute retainage per line, at the rate the contract sets, and its release.\n- Produce the pay application in the owner's format and keep each certified version.\n- Feed the same figures to the [WIP schedule](/construction/wip-schedule), so billing and cost are compared per job."
+  },
+  {
+    "kind": "construction",
+    "slug": "ra-bills",
+    "group": "india",
+    "title": "RA bills: how a running account bill works",
+    "question": "What is an RA bill in construction, and what is deducted from it?",
+    "answer": "A running account (RA) bill is a contractor's interim bill for work done and measured so far, paid while the work continues; the final bill closes the contract. Each RA bill is drawn from the measurement book, cumulative to date less earlier bills, and carries deductions: security deposit, TDS, any mobilisation or secured advance being recovered, and other recoveries the contract sets.",
+    "description": "Running account (RA) bills in Indian construction: drawn from the measurement book, security deposit, TDS, advances, final bill.",
+    "domain": [
+      "construction",
+      "billing",
+      "india"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "CPWD Works Manual 2022",
+        "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
+        "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
+        "date": "2022-06-30"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "CPWD Works Manual 2022, para 5.5 (security deposit)",
+        "doc": "cpwd",
+        "quote": "The security deposit shall be deducted from the running bill as well as final bill as per provisions of the GCC."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.10 (secured advance)",
+        "doc": "cpwd",
+        "quote": "Secured advance is a term applied specifically to an advance made on the materials brought at site of work, to a contractor whose contract is for the completed item of work."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.12.5 (advance payments)",
+        "doc": "cpwd",
+        "quote": "Advance payments can be made to the contractor on a running account bill form for the work done and measurements submitted by him, but not checked or work done but not measured"
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.12 (measurement of work)",
+        "doc": "cpwd",
+        "quote": "All measurements are to be done as per provisions of GCC and abstract of schedule of measurements and payments are to be entered through PFMS portal of CPWD using E-MB module."
+      }
+    ],
+    "body": "## What is an RA bill?\n\nOn an item-rate contract, a contractor is paid by measured quantity at the agreed rate for each BOQ item. Waiting\nfor the end of the job would starve the contractor of cash, so the work is billed in stages: the 1st RA bill, the\n2nd, and so on, each for the work measured up to its date, and a final bill when the work is complete. The CPWD\nWorks Manual uses the term throughout, and most private contracts in India follow the same pattern.\n\n## How an RA bill is drawn up\n\nEvery RA bill comes from the [measurement book](/construction/measurement-book), and is cumulative:\n\n| Line | Example (made up) |\n|---|---|\n| Value of work done to date, item by item at agreement rates | ₹48,00,000 |\n| Add: extra and deviated items approved | ₹1,50,000 |\n| Gross value to date | ₹49,50,000 |\n| Less: paid in previous RA bills (gross) | ₹31,00,000 |\n| **Gross value of this bill** | **₹18,50,000** |\n\nThen the deductions, on this bill's value, as the contract sets them:\n\n- **Security deposit**, a percentage of each bill, held until the defects period ends. CPWD deducts it from running\n  bills and the final bill as the general conditions of contract provide.\n- **TDS** under the Income-tax Act; see [TDS on payments to contractors](/construction/tds-on-contractor-payments).\n- **Recovery of advances**: mobilisation advance in instalments, and secured advance on materials once they are\n  built in.\n- **Recoveries for materials issued** by the client, water and electricity, and any penalties.\n\nGST is charged on top of the bill as the contractor's invoice; see [GST on works contracts](/construction/gst-on-works-contracts).\n\n## Advances against an RA bill\n\nThe CPWD manual describes two that change an RA bill's maths:\n\n- **Secured advance:** paid on materials brought to site for an item not yet complete, and recovered from later\n  bills as the material is used.\n- **Advance payment for work done but not yet checked or measured**, paid as a lump sum on the contractor's request,\n  subject to conditions, and adjusted when the measurements are recorded.\n\n## What your system should do\n\n- Hold the BOQ with agreement rates, and take each RA bill from the measurements, never typed totals.\n- Keep every bill cumulative, so this bill is always to-date less previous.\n- Track each deduction by type across bills: security deposit held, advances still to recover, TDS deducted.\n- Mark extra and deviated items until they are approved, so they're billed once.\n- Close with a final bill that releases the security deposit only when the defects period has passed."
+  },
+  {
+    "kind": "construction",
+    "slug": "retainage",
+    "group": "us",
+    "title": "Retainage in construction: how it's held and released",
+    "question": "What is retainage in construction, and when is it released?",
+    "answer": "Retainage is a share of each progress payment, often 5% or 10%, that the owner holds back until the work is complete, as security that the contractor finishes and fixes defects. The general contractor usually holds the same from its subcontractors. The contract sets the rate and release; on federal jobs FAR 52.232-5 caps it at 10% and only for unsatisfactory progress.",
+    "description": "Retainage in construction: what it is, typical rates, federal rules under FAR 52.232-5 and 52.232-27, release at substantial completion, and tracking it.",
+    "domain": [
+      "construction",
+      "billing"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "FAR 52.232-5, Payments Under Fixed-Price Construction Contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.232-5",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "FAR 52.232-27, Prompt Payment for Construction Contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.232-27",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "FAR 52.232-5(e), retainage",
+        "doc": "far-52.232-5",
+        "quote": "If the Contracting Officer finds that satisfactory progress was achieved during any period for which a progress payment is to be made, the Contracting Officer shall authorize payment to be made in full."
+      },
+      {
+        "reg": "FAR 52.232-5(e), retainage",
+        "doc": "far-52.232-5",
+        "quote": "However, if satisfactory progress has not been made, the Contracting Officer may retain a maximum of 10 percent of the amount of the payment until satisfactory progress is achieved."
+      },
+      {
+        "reg": "FAR 52.232-5(e), retainage at substantial completion",
+        "doc": "far-52.232-5",
+        "quote": "shall release to the Contractor all the remaining withheld funds."
+      },
+      {
+        "reg": "FAR 52.232-27, retained amounts",
+        "doc": "far-52.232-27",
+        "quote": "30 days after approval by the Contracting Officer for release to the Contractor."
+      },
+      {
+        "reg": "FAR 52.232-27, subcontract payment clause",
+        "doc": "far-52.232-27",
+        "quote": "A payment clause that obligates the Contractor to pay the subcontractor for satisfactory performance under its subcontract not later than 7 days from receipt of payment out of such amounts as are paid to the Contractor under this contract."
+      }
+    ],
+    "body": "## How does retainage work?\n\nEach [pay application](/construction/pay-applications) shows the work completed to date and holds back a percentage\nof it. The held amount builds up over the job; it is paid when the work is substantially complete (sometimes half\nat that point and the rest at final completion), less anything needed for unfinished or defective work.\n\n| Month | Billed to date | Retained at 10% | Paid to date |\n|---|---|---|---|\n| 1 | $50,000 | $5,000 | $45,000 |\n| 2 | $120,000 | $12,000 | $108,000 |\n| 3 | $160,000 | $16,000 | $144,000 |\n\nThe figures are made up. On a $400,000 job, $40,000 waits for the end, often months after the work it covers.\n\n## What are the rules on federal jobs?\n\nFAR 52.232-5 starts from full payment: where progress is satisfactory, the contracting officer authorizes payment in\nfull. Only when progress isn't satisfactory may the officer retain, up to 10% of the payment, until it is. At\nsubstantial completion the officer keeps only what protects the Government and releases the rest. Retained amounts\nare due as the contract says or, if it's silent, 30 days after the officer approves their release (FAR 52.232-27).\n\nThe same clause makes prime contractors pass payment down: subcontractors are paid for satisfactory work within 7\ndays of the prime receiving payment, and the subcontract may permit retainage on the subcontractor as agreed.\n\n## And on private and state jobs?\n\nThe contract sets the rate and the release, within the state's law: many states have their own retainage and prompt\npayment statutes, for public works and often private jobs too, with caps and release deadlines. Check the law of\nthe state where the project is, and read the contract's retainage clause before signing it.\n\n## Why it matters for cash and records\n\n- **It's money owed to you, in the balance sheet.** Retainage receivable is earned revenue not yet billable. Track it\n  per job, not as one figure.\n- **You hold it too.** Retainage you withhold from subcontractors is a payable that must be released on the same\n  terms.\n- **Release needs paperwork.** Final [lien waivers](/construction/lien-waivers), closeout documents and the punch\n  list usually come before the last payment.\n- **It moves the WIP schedule.** Billing includes retainage; cash doesn't. See the [WIP schedule](/construction/wip-schedule)."
+  },
+  {
+    "kind": "construction",
+    "slug": "tds-on-contractor-payments",
+    "group": "india",
+    "title": "TDS on payments to contractors under the 2025 Act",
+    "question": "How much TDS is deducted on payments to contractors in India?",
+    "answer": "Under the Income-tax Act, 2025, in force from 1 April 2026, a payer deducts tax at 1% on payments to a contractor who is an individual or HUF and 2% to any other contractor, for any work under a contract, including supply of labour. It applies once a single payment exceeds ₹30,000 or the year's total exceeds ₹1,00,000. The rule replaces section 194C of the 1961 Act.",
+    "description": "TDS on contractor payments in India under the Income-tax Act, 2025 (section 393, table serial 6): rates, thresholds, what counts as work, RA bills.",
+    "domain": [
+      "construction",
+      "tds",
+      "india"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Income-tax Act, 2025 (30 of 2025)",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2025/265620.pdf",
+        "date": "2025-08-22"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Income-tax Act, 2025, section 1(3)",
+        "doc": "it-act-2025",
+        "quote": "Save as otherwise provided in this Act, it shall come into force on the 1st April, 2026."
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 393(1), Table, serial 6 (heading)",
+        "doc": "it-act-2025",
+        "quote": "Payments to contractors, fees for professional and technical services, etc."
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 393(1), Table, serial 6(i), rate",
+        "doc": "it-act-2025",
+        "quote": "Rate: (a) 1%, if"
+      },
+      {
+        "reg": "Income-tax Act, 2025, definitions for section 393",
+        "doc": "it-act-2025",
+        "quote": "(47) “work” shall include—"
+      }
+    ],
+    "body": "## What changed in April 2026?\n\nThe Income-tax Act, 2025 replaced the Income-tax Act, 1961 from 1 April 2026. TDS on payments to contractors,\nsection 194C under the old Act, is now a row of the table in section 393: serial number 6, \"Payments to contractors,\nfees for professional and technical services, etc.\" The rates and thresholds below are read from that table.\n\n## Rates and thresholds\n\n| Who pays | Contractor | Rate | Deduct when |\n|---|---|---|---|\n| A designated person (companies, firms, government and others the Act lists) | Individual or HUF | 1% | A single payment is over ₹30,000, or the year's total is over ₹1,00,000 |\n| A designated person | Anyone else (company, firm, LLP) | 2% | Same thresholds |\n| An individual or HUF not otherwise required to deduct (serial 6(ii)) | Any contractor | 2% | Payments for work over ₹50 lakh in the year |\n\n\"Work\" covers any work under a contract, including supplying labour for it. The Act's definition also brings in\nadvertising, broadcasting, carriage of goods or passengers other than by rail, catering, and making a product to a\ncustomer's specification with material bought from that customer, but not with material bought from someone else.\n\nRates in the table can change in a Finance Act. Check the table as amended for the year you pay in.\n\n## How it sits on an RA bill\n\nTDS is deducted from each [running account bill](/construction/ra-bills) at the rate in the table. Whether GST\nshown separately on the invoice is part of the amount follows CBDT's guidance; confirm the position under the 2025\nAct with your adviser. A main contractor paying its subcontractors deducts the same way. The deduction is deposited and reported in the TDS return, and the\ncontractor claims credit for it against its own tax.\n\nGovernment and certain other buyers also deduct TDS under GST, which is separate from income-tax TDS; see\n[GST on works contracts](/construction/gst-on-works-contracts).\n\n## What your system should do\n\n- Hold each contractor's status (individual or HUF, or other) and PAN, which sets the rate.\n- Track payments to each contractor across the year, so the ₹1,00,000 total is caught on the bill that crosses it.\n- Deduct on the base your adviser confirms, and show it as its own line on the\n  [measurement-based bill](/construction/measurement-book).\n- Produce the challan and return data per contractor, and the certificate they need."
+  },
+  {
+    "kind": "construction",
+    "slug": "wip-schedule",
+    "group": "us",
+    "title": "The WIP schedule: over and under billing, explained",
+    "question": "What is a WIP schedule in construction, and how is over or under billing worked out?",
+    "answer": "A WIP (work-in-progress) schedule lists every open job with its contract value, estimated total cost, cost to date, percent complete and billings to date. From those it shows what each job has earned against what was billed: billed ahead is overbilling, behind is underbilling. Banks and surety companies read it to judge a contractor's jobs, and it's the earliest warning of a job losing money.",
+    "description": "The construction WIP schedule: percent complete by cost, earned revenue, over and under billing, a worked example, and what bonding companies look for.",
+    "domain": [
+      "construction",
+      "job-cost"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "body": "## What is on a WIP schedule?\n\nOne row per open job, usually monthly:\n\n| Column | Where it comes from |\n|---|---|\n| Contract value | Original contract plus approved [change orders](/construction/change-orders) |\n| Estimated total cost | The current estimate to complete the job, reviewed by the project manager |\n| Estimated gross profit | Contract value less estimated total cost |\n| Cost to date | Job cost posted so far: labor, material, subcontractors, equipment |\n| Percent complete | Cost to date ÷ estimated total cost (the \"cost-to-cost\" method) |\n| Earned revenue | Contract value × percent complete |\n| Billed to date | Total of the [pay applications](/construction/pay-applications), including [retainage](/construction/retainage) |\n| Over or under billing | Billed to date less earned revenue |\n\n## A worked example\n\nTwo made-up jobs at the end of a month:\n\n| | Job A | Job B |\n|---|---|---|\n| Contract value | $400,000 | $250,000 |\n| Estimated total cost | $340,000 | $215,000 |\n| Cost to date | $170,000 | $129,000 |\n| Percent complete | 50% | 60% |\n| Earned revenue | $200,000 | $150,000 |\n| Billed to date | $230,000 | $120,000 |\n| **Over (under) billing** | **$30,000 over** | **$30,000 under** |\n\nJob A has billed $30,000 more than it has earned: cash is ahead, and that money is owed back in work. Job B has done\n$30,000 more work than it has billed: earned but unbilled, often a sign of slow billing or unapproved changes.\n\n## Why the estimate to complete matters most\n\nPercent complete depends on the estimated total cost. If Job A's estimate is stale and the real figure is $380,000,\nit is about 45% complete, has earned $178,947 and is overbilled by $51,053, with less profit left than the schedule\nsaid. A WIP schedule is only as good as the monthly re-estimate on each job, which is why sureties ask who makes it\nand how.\n\n## What lenders and sureties look for\n\n- Jobs whose estimated gross profit fell since last month (\"profit fade\").\n- Large underbillings, which may be costs that will never be billed.\n- Large overbillings without the cash to match, which may mean the cash was spent elsewhere.\n- Whether the schedule ties to the financial statements.\n\nThis page describes the usual practice; your accountant decides how revenue is recognized under the accounting\nstandard and the tax method you use.\n\n## What your system should do\n\nPost every cost to a job and cost code as it happens (time from the field, material receipts, subcontractor bills),\nkeep the estimate to complete per job up to date, and produce the WIP schedule from the same records as the pay\napplications. Then the month-end WIP is a report, not a spreadsheet assembled from four places."
   }
 ]

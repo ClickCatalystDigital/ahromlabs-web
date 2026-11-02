@@ -58,11 +58,11 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
 
 1. **Topic map for every page.** ✅ Done 3 Nov 2026: every content kind has a market rule in `scripts/topics.check.ts`;
    an unlisted kind or a page leaning the wrong way fails the build.
-2. **US sales tax hub.** ✅ Done 3 Nov 2026: `/sales-tax`, 7 guides, a nexus checker for every state (thresholds quoted from the Streamlined Sales Tax Board's chart, `src/lib/sales-tax-calc.ts`), 99 quotes checked (`scripts/check-sales-tax-quotes.mjs`), market rule NA, linked from the US home (FreeGuides), the footer, two US service pages, and the hub links all four US demos (links from inside the demo apps not done). Originally: nexus (economic thresholds), exemption and resale
+2. **US sales tax hub.** ✅ Built 3 Nov 2026 (committed 533841c; deploy pending Pujan's OK, the auto-mode check blocks `npm run deploy` from a side session): `/sales-tax`, 7 guides, a nexus checker for every state (thresholds quoted from the Streamlined Sales Tax Board's chart, `src/lib/sales-tax-calc.ts`), 99 quotes checked (`scripts/check-sales-tax-quotes.mjs`), market rule NA, linked from the US home (FreeGuides), the footer, two US service pages, and the hub links all four US demos (links from inside the demo apps not done). Originally: nexus (economic thresholds), exemption and resale
    certificates, sales tax on manufacturing inputs, how an ERP should handle it. Sources: state revenue department
    pages and the Streamlined Sales Tax site, quoted and checked. Done: 6–8 guides, a nexus checker tool, links from
    the US home, services and the four US demos' pages; market check NA.
-3. **Construction hub, both markets.** US: pay applications (AIA G702/G703 explained, not reproduced), retainage,
+3. **Construction hub, both markets.** ✅ Built 3 Nov 2026 (deploy pending Pujan's OK): `/construction`, groups `us` (5) and `india` (4), each page listed only in its market (markets.ts) and market-checked per group (topics.check.ts), 38 quotes (`scripts/check-construction-quotes.mjs`); no `/us` version was needed, since the hub index shows each market its own group. Originally: US: pay applications (AIA G702/G703 explained, not reproduced), retainage,
    lien waivers, change orders, job costing, WIP schedule. India: RA bills, measurement book, TDS 194C, GST on works
    contracts. Datum AI and both construction demos show all of it; link them. Done: hub with US and India groups,
    `/us` versions where a page differs, quote checks for Indian law, market check per page.
