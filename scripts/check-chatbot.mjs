@@ -132,6 +132,9 @@ console.log(`\n${CHECKS.length - failed}/${CHECKS.length} found the right passag
 // longer proves what it says.
 const data = JSON.parse(fs.readFileSync(new URL("../src/lib/content-data.generated.json", import.meta.url), "utf-8"));
 const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map((src) => src.url))]);
+// Forums that answer every script with 403 (bot protection) though the page is there: a 403 from these is
+// reported, not counted. Any other status from them still fails.
+const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com"]);
 for (const url of urls) {
   let status = 0;
   try {
@@ -140,6 +143,10 @@ for (const url of urls) {
     status = Number(execFileSync("curl", ["-s", "-L", "-m", "60", "-r", "0-0", "-o", "/dev/null", "-w", "%{http_code}", url], { encoding: "utf-8" }));
     if (status === 206) status = 200;
   } catch {}
+  if (status === 403 && BLOCKS_SCRIPTS.has(new URL(url).hostname)) {
+    console.log(`skip  ${url} (403: this site blocks scripts; check it in a browser)`);
+    continue;
+  }
   if (status !== 200) failed++;
   console.log(`${status === 200 ? "ok  " : "DEAD"}  ${url} (${status || "no answer"})`);
 }
