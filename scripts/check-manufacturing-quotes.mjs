@@ -11,6 +11,12 @@ const DOCS = {
   "intuit-mo": path.join(DIR, "Intuit - Get started with manufacturing orders and assemblies 2026-11-02.txt"),
   "intuit-qbo": path.join(DIR, "Intuit - QuickBooks Online inventory, costing and projects 2026-11-02.txt"),
   "intuit-desktop": path.join(DIR, "Intuit - QuickBooks Desktop Enterprise manufacturing and Advanced Inventory 2026-11-02.txt"),
+  "irs-538": path.join(DIR, "IRS - Publication 538 Accounting Periods and Methods 2026-11-03.txt"),
+  "gs1-upc": path.join(DIR, "GS1 US - How to get a UPC barcode 2026-11-03.txt"),
+  acumatica: path.join(DIR, "Acumatica - Distribution management 2026-11-03.txt"),
+  odoo: path.join(DIR, "Odoo - Inventory 2026-11-03.txt"),
+  fishbowl: path.join(DIR, "Fishbowl - Home 2026-11-03.txt"),
+  katana: path.join(DIR, "Katana - Home 2026-11-03.txt"),
 };
 
 if (!Object.values(DOCS).every((f) => fs.existsSync(f))) {

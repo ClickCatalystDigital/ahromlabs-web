@@ -37,7 +37,7 @@ export type ContentEntry = {
   order?: number;
   // ASME guides (content/asme/): hub group, the question as people search it, an embedded tool.
   // Manufacturing guides (content/manufacturing/) use the same fields with their own groups and tools.
-  group?: "code" | "certification" | "welding" | "design" | "materials" | "bridge" | "choosing" | "quickbooks" | "planning" | "nexus" | "exemptions" | "systems" | "us" | "india";
+  group?: "code" | "certification" | "welding" | "design" | "materials" | "bridge" | "choosing" | "quickbooks" | "planning" | "inventory" | "nexus" | "exemptions" | "systems" | "us" | "india";
   question?: string;
   tool?: "hydrotest" | "shell" | "continuity" | "jobcost" | "schedule" | "nexus";
   published: string;

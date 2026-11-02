@@ -26,6 +26,13 @@ File names are fixed. **Status (2 Nov 2026): all done.** Every page in the hub h
 | `scheduling-template.webp` | Free job shop production schedule template (Excel) | A blank paper spreadsheet grid on a clipboard, a few rows shaded in different soft colours like booked machine time, a pencil and a small steel ruler lying across it. |
 | `ai-in-erp.webp` | AI in ERP: what it can safely do today (in the /ai-assistant hub) | A small brass desk lamp lighting one open steel filing drawer full of blank index cards, one card lifted slightly out of the drawer. |
 
+## Added 3 Nov 2026 (roadmap item 6): generate these
+
+| File | Page | Prompt (after the style block) |
+|---|---|---|
+| `distributor-inventory-control.webp` | Inventory control for distributors: counts, lots, FIFO, barcodes | A handheld barcode scanner resting on a warehouse shelf of labelled cartons, one carton pulled slightly forward showing a blank lot label. |
+| `small-business-erp-options.webp` | Choosing an ERP: NetSuite, Acumatica, Odoo, Fishbowl, Katana | Five different brass and steel keys laid in a row on a wooden workbench, one key lifted beside a closed padlock. |
+
 ## Later or not needed
 
 - `quickbooks-integration.webp`: keep the prompt above, but its page waits for the sandbox connector (integration is a section of the QuickBooks page for now). Generate it whenever convenient.

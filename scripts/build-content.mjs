@@ -20,7 +20,7 @@ const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry:
 const ASME_GROUPS = ["code", "certification", "welding", "design", "materials", "bridge"];
 const ASME_TOOLS = ["hydrotest", "shell", "continuity"];
 // Manufacturing guide groups (src/lib/manufacturing.ts MFG_GROUPS) and their tools.
-const MFG_GROUPS = ["choosing", "quickbooks", "planning"];
+const MFG_GROUPS = ["choosing", "quickbooks", "planning", "inventory"];
 const MFG_TOOLS = ["jobcost", "schedule"];
 // Sales tax guide groups (src/lib/sales-tax.ts ST_GROUPS) and their tools.
 const ST_GROUPS = ["nexus", "exemptions", "systems"];

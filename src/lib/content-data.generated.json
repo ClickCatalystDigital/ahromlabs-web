@@ -4393,6 +4393,55 @@
   },
   {
     "kind": "manufacturing",
+    "slug": "distributor-inventory-control",
+    "group": "inventory",
+    "title": "Inventory control for distributors: counts, lots, FIFO, barcodes",
+    "question": "What inventory control does a small US distributor need?",
+    "answer": "Four things: cycle counts that check a few bins every day instead of one shutdown count a year; lot or serial numbers on what you receive and ship, so a recall finds the customers in minutes; a valuation method, usually FIFO, applied the same way every year; and barcodes scanned at receiving, picking and counting, so stock changes when goods move, not when someone types.",
+    "description": "Inventory control for US distributors: cycle counting, lot and serial traceability, FIFO valuation (IRS Publication 538), barcodes and GS1 numbers.",
+    "domain": [
+      "manufacturing",
+      "inventory",
+      "distribution"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Publication 538, Accounting Periods and Methods",
+        "publisher": "Internal Revenue Service",
+        "url": "https://www.irs.gov/publications/p538",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "How to get a UPC barcode",
+        "publisher": "GS1 US",
+        "url": "https://www.gs1us.org/upcs-barcodes-prefixes/how-to-get-a-upc-barcode",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "IRS Publication 538, inventories (FIFO)",
+        "doc": "irs-538",
+        "quote": "The FIFO (first-in first-out) method assumes the items you purchased or produced first are the first items you sold, consumed, or otherwise disposed of."
+      },
+      {
+        "reg": "GS1 US, How to get a UPC barcode",
+        "doc": "gs1-upc",
+        "quote": "A GS1 Company Prefix allows businesses to get multiple barcodes at a single time, as well as identify locations, mixed cases, create coupons, and create higher levels of packaging like a case or pallet."
+      },
+      {
+        "reg": "GS1 US, How to get a UPC barcode",
+        "doc": "gs1-upc",
+        "quote": "Barcodes from GS1 identify your company as the brand owner of that product, which is a valuable piece of information that retailers look for!"
+      }
+    ],
+    "body": "## Cycle counting instead of one annual count\n\nAn annual physical count shuts the warehouse for a day or two and is wrong again within a week. Cycle counting\ncounts a small set of locations every day, so every item is counted several times a year and errors are found while\nsomeone still remembers why.\n\n| Class | Share of items (typical) | Count | Why |\n|---|---|---|---|\n| A | The few items that are most of the dollar value | Monthly or more | Errors here cost the most |\n| B | The middle | Quarterly | |\n| C | The many cheap items | Once or twice a year | Errors cost little |\n\nRules that keep counts honest:\n\n- **Blind counts.** The counter sees the bin, not the expected quantity.\n- **Count, then compare, then recount.** A difference over a set tolerance gets a second count by someone else\n  before anything is adjusted.\n- **Freeze only the bin, not the warehouse.** Movements into or out of the bin wait until the count is posted.\n- **Every adjustment has a reason** (damaged, miscount, mis-pick, receiving error), so the cause can be fixed.\n\n## Lot and serial traceability\n\nA lot number ties a quantity to a batch from a supplier or a production run; a serial number ties one unit to its\nown history. Record them at receiving and again at shipping, and a recall, a warranty claim or a customer's quality\nquestion becomes a lookup: which customers got lot 24-117, and what else came from that supplier's batch.\n\nWhat it takes: the lot or serial captured at receiving (scanned from the supplier's label where there is one),\nstock held by lot in each location, picking that records which lot went into each order, and returns that come back\nto the same lot. Material reserved for one order should be reserved by lot too; see\n[QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory) for where an accounting system stops.\n\n## FIFO and other valuation methods\n\nThe IRS describes FIFO (first-in first-out) as assuming the items you bought or produced first are the first sold\nor used. When prices are rising, FIFO gives a lower cost of goods sold and a higher closing inventory than LIFO.\nPublication 538 also covers average cost, LIFO (which has its own rules and an election) and changing methods,\nwhich needs IRS consent. Pick a method with your accountant and apply it the same way every year.\n\nFIFO as a valuation method is not the same as picking the oldest stock first. A system should do both: value stock\nby the method you chose, and suggest the oldest lot (or the soonest to expire) when picking.\n\n## Barcodes and GS1 numbers\n\nBarcodes on your own bins and locations need no registration: any internal code works. Barcodes on products you\nsell to retailers are different: retailers expect GS1 numbers, which identify your company as the brand owner. GS1\nUS licenses either a single GTIN for a product or a GS1 Company Prefix that numbers many products, cases and\npallets; its site gives the current prices.\n\nScan at the moments stock moves: receiving against the purchase order, putaway to a bin, picking against the order,\npacking, and counting. A scan that doesn't match (wrong item, wrong lot, over the ordered quantity) should stop the\nperson there, not show up in next month's count.\n\n## What to look for in a system\n\n- Locations and bins, with stock by lot or serial in each.\n- Cycle count plans by ABC class, blind counts and adjustment reasons.\n- Lot capture at receiving and picking, and a trace report both ways (supplier to customer, customer to supplier).\n- Valuation by your chosen method, posted to the books (see [QuickBooks for manufacturing](/manufacturing/quickbooks-for-manufacturing)).\n- Scanning on phones or handhelds at every movement.\n\nFor how the systems that do this compare, see [choosing an ERP](/manufacturing/small-business-erp-options), and for\nbuilding one to fit, [custom vs off-the-shelf ERP](/manufacturing/custom-vs-off-the-shelf-erp)."
+  },
+  {
+    "kind": "manufacturing",
     "slug": "job-shop-erp",
     "group": "choosing",
     "title": "ERP for job shops and small manufacturers: what to look for",
@@ -4679,6 +4728,87 @@
       }
     ],
     "body": "## What QuickBooks Online inventory does\n\nFrom Intuit's help pages, checked on 2 November 2026:\n\n| Feature | QuickBooks Online |\n|---|---|\n| Plans | Plus and Advanced; Simple Start and Essentials can buy an inventory add-on or upgrade |\n| Quantity on hand | Goes down with each invoice or sales receipt, up with each receipt from a vendor |\n| Reordering | Reorder points and low-stock alerts; purchase orders and what's still on order |\n| Valuation | FIFO or moving average cost (MAC), chosen once: it can't be changed later, and an item created before choosing defaults to FIFO |\n| Item types | Inventory, non-inventory (tracked as cost, not quantity), service, and bundles that group items on a sales form |\n| Reports | Stock on hand, best sellers, cost of goods sold |\n\nFor a business that buys finished products and sells them, that is a complete inventory system.\n\n## Where a manufacturer runs out of room\n\nA manufacturer's stock moves through stages QuickBooks Online doesn't model:\n\n- **No raw, in-progress and finished stages.** Material issued to a job isn't stock on the shelf any more, but it isn't a finished part yet either. QuickBooks Online has no [work in progress](/systems/work-in-progress); material sits in stock until someone adjusts it.\n- **No bills of materials or builds.** Turning components into a finished part is an Intuit Enterprise Suite feature, not a QuickBooks Online one. See [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing).\n- **No material set aside per job.** Quantity on hand tells you what's on the shelf, not what is already promised. Without a [stock reservation](/systems/stock-reservation), two jobs can plan on the same bar stock and the second finds out on the floor.\n- **One pool of stock.** Intuit's inventory setup article doesn't describe warehouses, bins, lots or serial numbers. On Intuit's community the usual workarounds are a separate item per location or location codes in item names, which multiplies the item list.\n- **Counts arrive late.** Stock changes when someone enters a transaction. Material taken on the floor and entered at week's end means the number is wrong all week.\n\n## What changes when you add a stock layer\n\nThe usual fix is not to leave QuickBooks but to keep stock movements in an operations system and send QuickBooks the accounting result:\n\n| In the stock layer | In QuickBooks |\n|---|---|\n| Every receipt, issue to a job, return, transfer and count, scanned as it happens | Purchase bills and the inventory asset value |\n| Raw, in-progress and finished quantities per item and location | Cost of goods sold when invoiced |\n| Material reserved against each job, oldest stock first | Nothing: reservations aren't accounting |\n| Lots, heat numbers or serials, and which job used them | Nothing |\n\nThe [QR inventory and order reservations](/services/inventory-and-reservations) system we built for an electronic components trader works this way: whole reels reserved per customer order line, two stores, scanning in and out, with a manager's override needed to ship reserved stock elsewhere ([how the reels and boxes work](/notes/reels-boxes-and-two-stores)). The US build of that system is open as a live demo with sample logins.\n\n## When to stay, when to move\n\nStay on QuickBooks Online inventory if you resell more than you make, have one location, and can count everything in an afternoon. Add a stock layer when material is issued to jobs, when two jobs compete for the same stock, when you need lot or heat traceability, or when the shelf and the books disagree every month. For costing those jobs, see [job costing in QuickBooks](/manufacturing/quickbooks-job-costing)."
+  },
+  {
+    "kind": "manufacturing",
+    "slug": "small-business-erp-options",
+    "group": "choosing",
+    "title": "Choosing an ERP: NetSuite, Acumatica, Odoo, Fishbowl, Katana",
+    "question": "Which ERP should a small US manufacturer or distributor choose?",
+    "answer": "It depends on what runs your business. Fishbowl and Katana add inventory and production beside QuickBooks or Xero; Odoo is a modular suite with its own accounting; Acumatica and NetSuite are cloud ERPs that replace the accounting system too. A custom system fits when your process is the advantage. Test each on one of your own orders before you buy.",
+    "description": "Small business ERP for US manufacturers and distributors: NetSuite, Acumatica, Odoo, Fishbowl and Katana compared from their own pages, and when custom fits.",
+    "domain": [
+      "manufacturing",
+      "erp",
+      "choosing"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "checked": "2026-11-03",
+    "sources": [
+      {
+        "title": "Distribution management",
+        "publisher": "Acumatica",
+        "url": "https://www.acumatica.com/cloud-erp-software/distribution-management/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Inventory",
+        "publisher": "Odoo",
+        "url": "https://www.odoo.com/app/inventory",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Inventory management software for QuickBooks and Xero",
+        "publisher": "Fishbowl",
+        "url": "https://www.fishbowlinventory.com/",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "Katana cloud inventory and manufacturing",
+        "publisher": "Katana",
+        "url": "https://katanamrp.com/",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Acumatica, Distribution management",
+        "doc": "acumatica",
+        "quote": "Track products by lot or serial number, manage product families with matrix attributes such as size and color, and assemble or disassemble kits as demand changes."
+      },
+      {
+        "reg": "Odoo, Inventory",
+        "doc": "odoo",
+        "quote": "Real-time inventory management with all the features: serial numbers, lots, packaging, reservation strategies, cycle counting, KPIs, and more..."
+      },
+      {
+        "reg": "Odoo, Inventory",
+        "doc": "odoo",
+        "quote": "Whether you do perpetual or periodical, Odoo supports multiple valuation methods: FIFO, Average Price, LIFO, Standard price."
+      },
+      {
+        "reg": "Fishbowl, home page",
+        "doc": "fishbowl",
+        "quote": "Seamlessly integrate with QuickBooks Online allowing users to quickly update accounting records"
+      },
+      {
+        "reg": "Fishbowl, home page",
+        "doc": "fishbowl",
+        "quote": "Full-featured inventory tracking, warehouse operations management, and manufacturing"
+      },
+      {
+        "reg": "Katana, home page",
+        "doc": "katana",
+        "quote": "Track lots, serial numbers, and expiry dates from supplier to customer."
+      },
+      {
+        "reg": "Katana, home page",
+        "doc": "katana",
+        "quote": "Katana tracks lot and serial numbers across inventory and production."
+      }
+    ],
+    "body": "## Two kinds of system\n\nThe first question isn't which brand; it's whether your accounting stays where it is.\n\n| | Beside your accounting | Replaces your accounting |\n|---|---|---|\n| What it is | Inventory and production, posting to QuickBooks or Xero | One system for operations and the books |\n| Examples | Fishbowl, Katana | Acumatica, NetSuite, Odoo (with its accounting app) |\n| Your accountant | Keeps QuickBooks | Moves to the new ledger |\n| Effort to start | Lower | Higher: a migration and new close process |\n\n## What each says it does\n\nFrom each vendor's own pages, read on 3 November 2026. Vendors change plans and features often: confirm in a demo.\n\n| System | In its own words (summarised) | Accounting |\n|---|---|---|\n| **Fishbowl** | Inventory tracking, warehouse operations and manufacturing; integrates with QuickBooks Online | Beside QuickBooks or Xero |\n| **Katana** | Lot, serial and expiry tracking from supplier to customer, across inventory and production; barcode-enabled warehouse tasks | Beside QuickBooks and others |\n| **Odoo** | Serial numbers, lots, reservation strategies and cycle counting; FIFO, average, LIFO or standard valuation | Its own, as a separate app |\n| **Acumatica** | Distribution and financial application: lot or serial tracking, matrix items, kits, replenishment and forecasting | Its own |\n| **NetSuite** | Oracle's cloud ERP. Its site refused automated reading when we checked, so we don't summarise its features here: ask for them in writing | Its own |\n\nPricing isn't compared here: most of these quote per user and per module, and several don't publish prices.\n\n## When a custom system fits\n\nOff-the-shelf systems are built for the common process. A system built for you is worth it when the way you work is\nthe reason customers buy from you: an unusual quote, a reservation rule, a trace your customers demand, or several\ncompanies sharing stock. See [custom vs off-the-shelf ERP](/manufacturing/custom-vs-off-the-shelf-erp) for the\ntrade-offs, and [what a job shop ERP must do](/manufacturing/job-shop-erp) for a shop's checklist.\n\n## How to choose in two weeks\n\n1. Write down three of your real orders end to end: quote, purchase, receipt, production or pick, ship, invoice.\n2. Ask each vendor to run them in a demo, on your items, not theirs.\n3. Check the inventory basics from [inventory control for distributors](/manufacturing/distributor-inventory-control):\n   cycle counts, lots, valuation, scanning.\n4. Ask what the [QuickBooks](/manufacturing/quickbooks-for-manufacturing) link posts, and what happens when it fails.\n5. Get data export and the contract's ownership terms in writing before you sign."
   },
   {
     "kind": "manufacturing",

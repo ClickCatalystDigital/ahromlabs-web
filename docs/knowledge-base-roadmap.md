@@ -72,7 +72,7 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
 5. **Case studies with numbers**, one per demo industry (interiors, inventory, boiler, construction): situation,
    what was built, before/after figures only where the client confirms them. Done: on `/work` and each industry page;
    Shanti stays unnamed.
-6. **US distributor inventory** (cycle counting, lot/serial traceability, FIFO valuation, barcodes) and **ERP choice
+6. ✅ Built 3 Nov 2026 (deploy pending): `/manufacturing/distributor-inventory-control` (new group "inventory") and `/manufacturing/small-business-erp-options`, quoting IRS Publication 538, GS1 US and the vendors' own pages (NetSuite's site refused scripts, so the page names it without describing it). Originally: **US distributor inventory** (cycle counting, lot/serial traceability, FIFO valuation, barcodes) and **ERP choice
    for small US firms** (custom vs NetSuite, Acumatica, Odoo, Fishbowl, Katana; facts from vendors' own pages only).
 7. **Source monitoring.** ✅ Done 3 Nov 2026: `npm run sources:watch` re-fetches the 56 cited sources, compares text
    hashes with `scripts/sources-hashes.json` and lists changes; `--update` saves after re-reading. Sites that refuse
