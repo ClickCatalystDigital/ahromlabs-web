@@ -59,7 +59,7 @@ For a shop of 10 to 50 people, a dispatch rule plus a planner who can override i
 
 ## Where AI fits, and where it doesn't
 
-AI is useful around the schedule: reading a new order's drawing or email into a draft routing, warning that a job is drifting late, or explaining in plain words why J-103 moved. It shouldn't decide machine assignments by itself. A schedule must respect hard limits, such as machine hours, routing order and material on hand, and a rule or solver can guarantee those; a language model can't. Our rule: AI drafts and explains, rules and people decide, the same split we use where a suggestion ends up on a quality document ([same confidence, different autonomy](/notes/same-confidence-different-autonomy)).
+AI is useful around the schedule: reading a new order's drawing or email into a draft routing, warning that a job is drifting late, or explaining in plain words why J-103 moved. It shouldn't decide machine assignments by itself. A schedule must respect hard limits, such as machine hours, routing order and material on hand, and a rule or solver can guarantee those; a language model can't. Our rule: AI drafts and explains, rules and people decide, the same split we use where a suggestion ends up on a quality document ([same confidence, different autonomy](/notes/same-confidence-different-autonomy)). More on what AI can safely do across an ERP: [AI in ERP](/ai-assistant/ai-in-erp).
 
 ## Why the spreadsheet stops working
 

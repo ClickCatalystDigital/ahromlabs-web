@@ -80,7 +80,7 @@ Each of these can be checked in an hour with your own data. A vendor that can't 
 9. Post that invoice to QuickBooks once, retry the post, and show there's still one invoice.
 10. Export every record (jobs, routings, stock, costs) to files you can open without the vendor.
 
-The last one matters more than it looks: it's what makes leaving possible.
+The last one matters more than it looks: it's what makes leaving possible. If a vendor leads with AI, add the tests in [AI in ERP: what it can safely do today](/ai-assistant/ai-in-erp).
 
 ## Packaged, configurable or built for you
 

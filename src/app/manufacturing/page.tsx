@@ -72,6 +72,15 @@ export default function ManufacturingHub() {
         </li>
       </ul>
 
+      <GuideH2>AI in the shop</GuideH2>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        AI helps around these systems when it answers from your own records and leaves decisions to people: what&apos;s
+        late, what&apos;s short, what a job cost. See{" "}
+        <Link href="/ai-assistant/ai-in-erp" className="text-link focus-ring">what AI can safely do in an ERP</Link>, and{" "}
+        <Link href="/ai-assistant/manufacturers" className="text-link focus-ring">Ember AI</Link>, the assistant in a
+        manufacturer&apos;s system, with the questions it answers.
+      </p>
+
       {MFG_GROUPS.map((group) => {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (
