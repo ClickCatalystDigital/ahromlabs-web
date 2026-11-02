@@ -8,6 +8,22 @@ import { OpenOnWide } from "@/components/OpenOnWide";
 import { formatDate } from "@/lib/content";
 import { headingId, textOf } from "@/lib/headings";
 import { jsonLd } from "@/lib/schema";
+import { engagements } from "@/lib/work";
+import { only } from "@/lib/markets";
+
+// A link to a demo that has a US build: India's link for India (and UK/EU), the US build for North America, switched
+// by CSS like /work. Used by guide markdown, so a guide just links the India demo.
+const US_DEMO: Record<string, string> = Object.fromEntries(engagements.flatMap((e) => (e.demo?.usUrl ? [[e.demo.url, e.demo.usUrl]] : [])));
+export function DemoLink({ href, ...props }: ComponentProps<"a">) {
+  const us = href && US_DEMO[href];
+  if (!us) return <a className="text-link focus-ring" href={href} {...props} />;
+  return (
+    <>
+      <a className="text-link focus-ring" href={href} {...props} {...only(["IN", "UK", "EU"])} />
+      <a className="text-link focus-ring" href={us} {...props} {...only(["NA"])} />
+    </>
+  );
+}
 
 // Shared frame for the reference hubs (/ibr, /boq), laid out like the industry
 // pages: breadcrumb eyebrow, title and lead, the body beside a sticky contents
@@ -47,7 +63,7 @@ export const guideMarkdown = {
   p: ({ node, ...props }: ComponentProps<"p"> & { node?: unknown }) => <p className="mt-4 leading-relaxed text-foreground-secondary" {...props} />,
   ul: ({ node, ...props }: ComponentProps<"ul"> & { node?: unknown }) => <ul className="mt-4 list-disc space-y-2 pl-5 text-foreground-secondary" {...props} />,
   ol: ({ node, ...props }: ComponentProps<"ol"> & { node?: unknown }) => <ol className="mt-4 list-decimal space-y-3 pl-5 text-foreground-secondary" {...props} />,
-  a: ({ node, ...props }: ComponentProps<"a"> & { node?: unknown }) => <a className="text-link focus-ring" {...props} />,
+  a: ({ node, ...props }: ComponentProps<"a"> & { node?: unknown }) => <DemoLink {...props} />,
   strong: ({ node, ...props }: ComponentProps<"strong"> & { node?: unknown }) => <strong className="font-medium text-foreground" {...props} />,
   // Tables scroll sideways inside their own box on a phone, so the page itself never does.
   table: ({ node, ...props }: ComponentProps<"table"> & { node?: unknown }) => (

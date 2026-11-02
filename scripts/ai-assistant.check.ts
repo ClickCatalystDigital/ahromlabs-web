@@ -45,7 +45,7 @@ if (banned) {
 } else warn.push(`no ${path.join(PRIVATE, "ai-banned-names.txt")}; names not checked`);
 
 // ── Every live look-up in each app has a question; typed counts match the apps ──
-const PREFIX: Record<string, string> = { "savistar-saag": "projects", "ls-technologies": "trading", "boiler-manufacturer": "manufacturing" };
+const PREFIX: Record<string, string> = { "savistar-saag": "projects", "ls-technologies": "trading", "boiler-manufacturer": "manufacturing", "construction-company": "construction" };
 const map = read(path.join(PRIVATE, "ai-lookups.json"));
 const counts: Record<string, number> = {};
 if (map) {
@@ -96,6 +96,9 @@ expect("₹1,25,000 from the Mehtas, 12.5 lakh billed", []);
 expect("47% won, 25 items, 3 left", ["47", "25"]);
 expect("about ₹12.4 lakh outstanding", ["12.4 lakh"]);
 expect("125000300 in total", ["125000300"]);
+// US formats: dollars, US grouping, million.
+expect("$1.25 million billed, $1,250,000 in all", []);
+expect("about $1.2 million billed", ["1.2 million"]);
 
 for (const w of warn) console.warn(`ai-assistant.check: ${w}`);
 if (fail.length) {

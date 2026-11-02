@@ -7,10 +7,10 @@
 
 export type Found = { text: string; value: number; start: number; end: number; ok: boolean };
 
-const SCALE: Record<string, number> = { lakh: 1e5, lakhs: 1e5, lac: 1e5, lacs: 1e5, crore: 1e7, crores: 1e7, cr: 1e7, k: 1e3, thousand: 1e3 };
+const SCALE: Record<string, number> = { lakh: 1e5, lakhs: 1e5, lac: 1e5, lacs: 1e5, crore: 1e7, crores: 1e7, cr: 1e7, k: 1e3, thousand: 1e3, million: 1e6, mn: 1e6, billion: 1e9, bn: 1e9 }; // "m" alone is left out: it is metres as often as millions
 // A number with optional Indian or Western grouping and decimals, then an optional scale word. Grouping must
 // start with 1–3 digits and continue in 2- or 3-digit groups, so a CSV row "Mehta,125000,300" stays two numbers.
-const NUM = /(?:\d{1,3}(?:,\d{2,3})+(?!\d)|\d+)(?:\.\d+)?(?:\s*(lakhs?|lacs?|crores?|cr|thousand|k)\b)?/gi;
+const NUM = /(?:\d{1,3}(?:,\d{2,3})+(?!\d)|\d+)(?:\.\d+)?(?:\s*(lakhs?|lacs?|crores?|cr|thousand|k|million|mn|billion|bn)\b)?/gi;
 
 export function numbersIn(text: string): Omit<Found, "ok">[] {
   return [...text.matchAll(NUM)].map((m) => {

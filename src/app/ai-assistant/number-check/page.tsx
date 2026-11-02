@@ -14,7 +14,7 @@ const image = { src: "/ai/ai-number-check.webp", alt: "A magnifying glass restin
 
 export const metadata: Metadata = {
   title: seoTitle(title),
-  description: "Free check for AI hallucinated numbers: paste an answer and its source data; every figure not in the data is marked. Understands ₹, lakh and crore.",
+  description: "Free check for AI hallucinated numbers: paste an answer and its source data; every figure not in the data is marked. Understands $ and ₹, million, lakh and crore.",
   alternates: { canonical: "/ai-assistant/number-check" },
   openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/number-check", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },
@@ -40,12 +40,12 @@ export default function NumberCheckPage() {
       <GuideH2>How the check works</GuideH2>
       <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-foreground-secondary">
         <li>
-          <strong className="font-medium text-foreground">Any format.</strong> ₹8,72,020, 872020 and 8.7202 lakh are the
-          same number; so are 1.2 crore and 1,20,00,000. Commas, the rupee sign and spaces are ignored.
+          <strong className="font-medium text-foreground">Any format.</strong> $1,250,000, 1250000 and $1.25 million are the
+          same number; so are ₹8,72,020 and 8.7202 lakh, or 1.2 crore and 1,20,00,000. Commas, currency signs and spaces are ignored.
         </li>
         <li>
-          <strong className="font-medium text-foreground">No rounding.</strong> &ldquo;About ₹12.4 lakh&rdquo; against
-          ₹12,43,500 is marked. A rounded figure is one the assistant made (a mild{" "}
+          <strong className="font-medium text-foreground">No rounding.</strong> &ldquo;About $1.2 million&rdquo; against
+          $1,243,500 is marked, as is &ldquo;about ₹12.4 lakh&rdquo; against ₹12,43,500. A rounded figure is one the assistant made (a mild{" "}
           <Link href="/systems/ai-hallucination" className="text-link focus-ring">hallucination</Link>), and the owner should see the real one.
         </li>
         <li>

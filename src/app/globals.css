@@ -781,7 +781,15 @@ main :not(pre) > code {
 }
 @keyframes ai-em-core { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.86); } }
 @keyframes ai-em-spark { 0%, 62% { opacity: 0; transform: translate(0, 0); } 68% { opacity: 0.9; } 100% { opacity: 0; transform: translate(1.6px, -5.5px); } }
+/* Datum's hard hat: rests on the brim, tips forward now and then, nods when a surrounding .group is hovered. */
+.ai-hardhat .hat { transform-box: view-box; transform-origin: 12px 17px; animation: ai-hh-rest 8s ease-in-out infinite; }
+.ai-hardhat .glint { animation: ai-hh-glint 8s ease-in-out infinite; }
+.group:hover .ai-hardhat .hat, .group:focus-visible .ai-hardhat .hat { animation: ai-hh-nod 1.2s ease-in-out infinite; }
+@keyframes ai-hh-rest { 0%, 82%, 100% { transform: rotate(0) translateY(0); } 87% { transform: rotate(-10deg) translateY(-1.2px); } 93% { transform: rotate(2deg) translateY(0); } }
+@keyframes ai-hh-nod { 0%, 100% { transform: rotate(0); } 35% { transform: rotate(-8deg) translateY(-0.8px); } 70% { transform: rotate(3deg); } }
+@keyframes ai-hh-glint { 0%, 40%, 100% { stroke-opacity: .7; } 50% { stroke-opacity: .1; } }
 @media (prefers-reduced-motion: reduce) {
+  .ai-hardhat .hat, .ai-hardhat .glint, .group:hover .ai-hardhat .hat, .group:focus-visible .ai-hardhat .hat,
   .ai-butterfly .wing, .group:hover .ai-butterfly .wing, .group:focus-visible .ai-butterfly .wing, .ai-chip,
   .ai-ember .flame, .ai-ember .core { animation: none; }
   .ai-ember .spark { animation: none; opacity: 0; }

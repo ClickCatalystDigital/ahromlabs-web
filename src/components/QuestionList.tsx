@@ -1,5 +1,5 @@
-import { questionsFor, questionAnchor, ASSISTANT, SYSTEM_OF, DEMO_URL, ROLE_LABEL, KIND_LABEL, STATUS_LABEL, type Question } from "@/lib/ai-assistant";
-import type { Industry } from "@/lib/erp";
+import { DemoLink } from "@/components/GuidePage";
+import { questionsFor, questionAnchor, ASSISTANT, SYSTEM_OF, DEMO_URL, ROLE_LABEL, KIND_LABEL, STATUS_LABEL, type Question, type Industry } from "@/lib/ai-assistant";
 
 // One industry's questions from the AI assistant library: on /ai-assistant/questions and on each industry guide.
 
@@ -37,7 +37,7 @@ export function QuestionList({ industry }: { industry: Industry }) {
     <>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
         Status is {a.name}&apos;s, the assistant in {a.system}, used by {a.who}. Try it on the{" "}
-        <a href={DEMO_URL[sys]} className="text-link focus-ring">public demo</a>: {a.demo}.
+        <DemoLink href={DEMO_URL[sys]}>public demo</DemoLink>: {a.demo}.
       </p>
       {questionsFor(industry).map((q) => (
         <Item key={q.id} q={q} />

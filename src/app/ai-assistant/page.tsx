@@ -4,7 +4,7 @@ import { AiAssistantPage, aiGuides } from "@/components/AiAssistantPage";
 import { GuideH2 } from "@/components/GuidePage";
 import { AssistantMark } from "@/components/AssistantMark";
 import { questions, questionsFor, liveCount, vendorTests, ASSISTANT, SYSTEM_OF, INDUSTRY_LABEL, AI_CHECKED, AI_PUBLISHED } from "@/lib/ai-assistant";
-import type { Industry } from "@/lib/erp";
+import type { Industry } from "@/lib/ai-assistant";
 import { aiAssistantPageGraph } from "@/lib/schema";
 import { seoTitle } from "@/lib/seo";
 
@@ -13,6 +13,7 @@ const INDUSTRIES: { slug: string; industry: Industry }[] = [
   { slug: "manufacturers", industry: "manufacturing" },
   { slug: "trading-distribution", industry: "trading" },
   { slug: "interior-design-firms", industry: "projects" },
+  { slug: "construction-contractors", industry: "construction" },
 ];
 const lead = "An AI assistant on your ERP or books is only useful if its numbers match the reports. The way to get that is to keep the model away from the numbers: it picks which fixed look-up answers the question, and code does the maths. Here is how to tell whether an assistant works that way, a free check for made-up numbers, the questions to ask it and the tests to run on any vendor.";
 

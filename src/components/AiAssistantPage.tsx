@@ -2,8 +2,7 @@ import type { ComponentProps } from "react";
 import Link from "next/link";
 import { GuidePage, type Hub } from "@/components/GuidePage";
 import { formatDate, getContent } from "@/lib/content";
-import { AI_CHECKED, ASSISTANT, DEMO_URL } from "@/lib/ai-assistant";
-import { ERP_DOCS } from "@/lib/erp";
+import { ASSISTANT, DEMO_URL } from "@/lib/ai-assistant";
 
 // The /ai-assistant hub: its byline, the number check, the demo and its boundary, on the shared frame in
 // GuidePage (as ErpPage does for /erp).
@@ -29,7 +28,8 @@ export const AI_HUB: Hub = {
       Checked against the assistants&apos; own code on <time dateTime={checked}>{formatDate(checked)}</time>
     </>
   ),
-  sources: [{ title: ERP_DOCS["dpdp-act-2023"].title, publisher: ERP_DOCS["dpdp-act-2023"].publisher, url: ERP_DOCS["dpdp-act-2023"].url, date: AI_CHECKED }],
+  // No hub-wide source: these pages serve India and North America alike. India's DPDP Act is cited where it applies (data-safety).
+  sources: [],
   cta: (
     <>
       <p className="text-lg text-foreground">

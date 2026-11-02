@@ -5,12 +5,12 @@ import { GuideH2 } from "@/components/GuidePage";
 import { QuestionList } from "@/components/QuestionList";
 import { AssistantMark } from "@/components/AssistantMark";
 import { questions, AI_CHECKED, AI_PUBLISHED, AI_VERSION, INDUSTRY_LABEL, SYSTEM_OF } from "@/lib/ai-assistant";
-import type { Industry } from "@/lib/erp";
+import type { Industry } from "@/lib/ai-assistant";
 import { aiAssistantPageGraph } from "@/lib/schema";
 import { seoTitle } from "@/lib/seo";
 
 const title = "Questions to ask an AI assistant over your business data";
-const lead = `${questions.length} questions owners and staff ask an assistant built on their own records, by industry and role. For each: what should answer it, what to compare the answer with, and whether Ahrom Labs' assistants answer it today. Some should be refused, and a good assistant refuses them.`;
+const lead = `${questions.length} questions owners and staff ask an assistant built on their own records, by industry and role. For each: what should answer it, what to compare the answer with, and whether Ahrom Labs' assistants answer it today. Some should be refused, and a good assistant refuses them. They come from assistants running at Indian firms, so money questions say GST and Tally; in the US the same questions ask about sales tax and QuickBooks.`;
 
 const image = { src: "/ai/ai-question-library.webp", alt: "An open wooden card-index box with cards and tabs.", width: 1086, height: 362 };
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
-const ORDER: Industry[] = ["projects", "trading", "manufacturing"];
+const ORDER: Industry[] = ["projects", "trading", "manufacturing", "construction"];
 
 export default function AiQuestionsPage() {
   const trail = [

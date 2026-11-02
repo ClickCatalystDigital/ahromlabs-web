@@ -7,17 +7,22 @@
 //   - `status` is the truth about Ahrom Labs' assistants today: "live" only where the assistant named in
 //     ASSISTANT answers it now; "off" where it is built but switched off at the client; "not-built" otherwise.
 //   - No marketing figures here; the guides quote only figures already published on the site.
-//   - The boiler manufacturer is never named.
+//   - The boiler manufacturer and the construction contractor are never named.
 
-import type { Industry, Role, Demo } from "./erp";
-import { INDUSTRY_LABEL, ROLE_LABEL, DEMO_URL } from "./erp";
-export { INDUSTRY_LABEL, ROLE_LABEL, DEMO_URL };
+import type { Industry as ErpIndustry, Role, Demo } from "./erp";
+import { INDUSTRY_LABEL as ERP_INDUSTRY_LABEL, ROLE_LABEL, DEMO_URL as ERP_DEMO_URL } from "./erp";
+export { ROLE_LABEL };
+
+// The ERP hub's three industries, plus construction: Datum AI has a library here, the ERP list has no construction column.
+export type Industry = ErpIndustry | "construction";
+export const INDUSTRY_LABEL: Record<Industry, string> = { ...ERP_INDUSTRY_LABEL, construction: "Construction contractors" };
 
 export const AI_PUBLISHED = "2026-10-25";
 export const AI_CHECKED = "2026-10-25"; // statuses checked against each system's code, 25 Oct 2026
 export const AI_VERSION = "1.0";
 
-export type System = Demo["client"];
+export type System = Demo["client"] | "construction-company";
+export const DEMO_URL: Record<System, string> = { ...ERP_DEMO_URL, "construction-company": "https://construction-erp.ahromlabs.com/demo" };
 export type Kind = "data" | "how-to" | "reminder" | "refuse";
 export type Status = "live" | "off" | "not-built";
 
@@ -27,8 +32,9 @@ export const ASSISTANT: Record<System, { name: string; system: string; industry:
   "savistar-saag": { name: "Atelier AI", system: "Savistar & Saag, an interior design studio and furniture workshop", industry: "projects", who: "everyone, staff limited to their own tasks and cash entries", demo: "two questions from any sample login" },
   "ls-technologies": { name: "Ohm AI", system: "LS Technologies, an electronic component trader", industry: "trading", who: "LS Technologies' own staff", demo: "two questions from any sample login" },
   "boiler-manufacturer": { name: "Ember AI", system: "a boiler manufacturer", industry: "manufacturing", who: "staff, each about their own departments", demo: "two questions, including live data from the sample company" },
+  "construction-company": { name: "Datum AI", system: "a construction contractor's system, shown on the public demo with sample data", industry: "construction", who: "every login, site engineers and storekeepers without company money, margins or payroll", demo: "two questions from any sample login" },
 };
-export const SYSTEM_OF: Record<Industry, System> = { projects: "savistar-saag", trading: "ls-technologies", manufacturing: "boiler-manufacturer" };
+export const SYSTEM_OF: Record<Industry, System> = { projects: "savistar-saag", trading: "ls-technologies", manufacturing: "boiler-manufacturer", construction: "construction-company" };
 
 export const KIND_LABEL: Record<Kind, string> = {
   data: "A figure or a list from your records",
@@ -146,6 +152,46 @@ export const questions: Question[] = [
   { id: "manufacturing.project-status", industry: "manufacturing", role: "owner", question: "Is a project delayed?", kind: "data", answer: "The project's stage and dates against plan.", check: "The project's page.", alsoAsked: ["how far along is [project]"], status: "off" },
   { id: "manufacturing.who-owes", industry: "manufacturing", role: "accounts", question: "Which customers owe us the most?", kind: "data", answer: "Outstanding by customer, for those whose department may see money.", check: "The receivables screen.", alsoAsked: ["who has not paid us yet", "hw much does [customer] ow us"], status: "off" },
   { id: "manufacturing.job-cards", industry: "manufacturing", role: "owner", question: "Which job cards are behind schedule?", kind: "data", answer: "Job cards past their planned date, by work centre.", check: "The shop floor's job cards.", status: "not-built" },
+  // ── Construction (Datum AI: a waterproofing and repair contractor with a construction-chemicals trading desk; the
+  // system runs on the public demo with sample data. The US build drops the GST and TDS look-up.) ──
+  { id: "construction.one-site", industry: "construction", role: "owner", question: "How is a named site going?", kind: "data", answer: "That site's work done against the BOQ, milestones done and overdue, the last daily report, running bills and payments, cash at site, supplier orders and project manager visits.", check: "The site's page: BOQ progress, Billing tab and milestones match.", status: "live" },
+  { id: "construction.all-sites", industry: "construction", role: "owner", question: "How are the sites doing?", kind: "data", answer: "Every site, or those with one status (active, on hold, completed), with milestone progress and what is overdue.", check: "The Sites list, same status filter.", status: "live" },
+  { id: "construction.margin", industry: "construction", role: "owner", question: "Is a site making money?", kind: "data", answer: "Contract value, work done, billed, cost to date (material, labour, site cash, machinery), margin so far and projected margin against the estimate, for one site, a client's sites or all of them. Refused to site staff.", check: "The Dashboard row for the site.", status: "live" },
+  { id: "construction.daily-reports", industry: "construction", role: "operations", question: "Did every site send its daily report today?", kind: "data", answer: "Which sites filed today's report, which are missing, and which wait for the project manager to approve.", check: "The Daily reports screen for today.", status: "live" },
+  { id: "construction.milestones", industry: "construction", role: "operations", question: "Which milestones are overdue?", kind: "data", answer: "Open milestones past their due date or coming up, for one site or all, optionally in a period.", check: "The site's milestones.", status: "live" },
+  { id: "construction.site-visits", industry: "construction", role: "operations", question: "When did a project manager last visit a site?", kind: "data", answer: "Site visits by site: who went and when, past or coming up, and how many in a period.", check: "The site's visit log.", status: "live" },
+  { id: "construction.week", industry: "construction", role: "owner", question: "What's on this week?", kind: "data", answer: "Milestones, project manager site visits and tasks in the period, from the calendar's own records.", check: "Today's calendar, same week: every item there is in the answer.", status: "live" },
+  { id: "construction.material-use", industry: "construction", role: "operations", question: "Is a site using more material than the BOQ allows?", kind: "data", answer: "Material used on the site against what the approved work should have used at the BOQ norm, with the excess.", check: "The site's material tab: used against norm.", status: "live" },
+  { id: "construction.stock", industry: "construction", role: "operations", question: "How much of a material is in the godown and at each site?", kind: "data", answer: "Stock per location, and what is below its minimum.", check: "Stores: stock by location, or the daily stock report.", status: "live" },
+  { id: "construction.pending-material", industry: "construction", role: "operations", question: "What material is still to come for a site?", kind: "data", answer: "Open purchase orders for the site or vendor: ordered, minus delivered, plus returned.", check: "The vendor screen's open purchase orders.", status: "live" },
+  { id: "construction.machinery", industry: "construction", role: "operations", question: "Which machines are idle?", kind: "data", answer: "Each owned machine's location, hours run in the last 30 days, how much of its time on site it sat idle, and what is under repair.", check: "The Machinery list.", status: "live" },
+  { id: "construction.site-cash", industry: "construction", role: "accounts", question: "How much cash is at each site?", kind: "data", answer: "Site cash given, spent and in hand per site, and the weekly claims waiting for accounts or payment.", check: "The Site cash screen.", status: "live" },
+  { id: "construction.ra-bills", industry: "construction", role: "accounts", question: "Which running-account bills are not yet certified?", kind: "data", answer: "RA bills per site by status (draft, submitted, certified, paid) with amounts, and work done but not yet billed. Refused to site staff.", check: "The site's Billing tab.", status: "live" },
+  { id: "construction.who-owes", industry: "construction", role: "accounts", question: "Who owes us money, and how late is it?", kind: "data", answer: "RA bills and trading invoices together, per customer, by age: not due, 1–30, 31–60, 61–90 and over 90 days. Refused to site staff.", check: "Finance → Receivables: same customers, same totals.", status: "live" },
+  { id: "construction.billed", industry: "construction", role: "accounts", question: "How much did we invoice this month, and how much GST?", kind: "data", answer: "Invoice lines in the period (quantity × rate), GST split into CGST and SGST, and how much is paid; drafts are not counted.", check: "The invoice register for the month.", status: "live" },
+  { id: "construction.compliance", industry: "construction", role: "accounts", question: "What GST and TDS is due this month?", kind: "data", answer: "Output GST so far, the GSTR-1 and GSTR-3B due dates, what is missing (HSN codes, GSTINs, site GST bills), and TDS deducted with its deposit date. Refused to site staff; not in the US build.", check: "Finance → GST & TDS checklist for the month.", status: "live" },
+  { id: "construction.cash", industry: "construction", role: "accounts", question: "How much cash came in and went out this month?", kind: "data", answer: "The cash book (not the bank) for the period: in, out, net, the running balance and the largest entries.", check: "The cash book for the month.", status: "live" },
+  { id: "construction.bank-balance", industry: "construction", role: "owner", question: "What is our bank balance?", kind: "data", answer: "Each account's balance from its latest uploaded bank statement (not the cash book). Refused to site staff.", check: "The latest statement of each account.", status: "live" },
+  { id: "construction.bank-lines", industry: "construction", role: "accounts", question: "What were the biggest bank payments last month?", kind: "data", answer: "Bank statement lines in the period: money in or out, the largest, or payments to or from someone by name. Refused to site staff.", check: "The bank statement for the month.", status: "live" },
+  { id: "construction.money", industry: "construction", role: "owner", question: "How much money do we have?", kind: "data", answer: "Cash in hand, plus the bank balances from the latest statements, plus what is owed to us, shown separately and together. Refused to site staff.", check: "The cash book, the latest bank statements and Receivables.", status: "live" },
+  { id: "construction.vendor-spend", industry: "construction", role: "accounts", question: "How much have we spent with each supplier?", kind: "data", answer: "Spend per vendor: purchase orders at rate, plus freight, minus returns and cash already paid, with open orders and overcharges.", check: "The vendor screen's totals.", status: "live" },
+  { id: "construction.supplier-rates", industry: "construction", role: "sales", question: "Which supplier has the best rate for a material?", kind: "data", answer: "The rate to use per material (primary supplier, backup, or last purchase), and what open orders still need beyond godown stock.", check: "Orders → Rate card.", status: "live" },
+  { id: "construction.trading-orders", industry: "construction", role: "sales", question: "Which trading orders are waiting to dispatch?", kind: "data", answer: "Construction-chemical orders from inquiry to invoice: open inquiries, quotes sent, confirmed orders waiting to dispatch, invoiced and lost, with value and margin.", check: "The Orders screen, same status.", status: "live" },
+  { id: "construction.open-quotes", industry: "construction", role: "sales", question: "Which quotations are still waiting for a reply?", kind: "data", answer: "Quotations drafted or sent, not accepted or declined, with value including GST and whether they have expired.", check: "BOQ & quotes, filtered to open.", status: "live" },
+  { id: "construction.quotes-won", industry: "construction", role: "sales", question: "How many quotes did we win this month?", kind: "data", answer: "Quotations accepted and declined in the period, by count and value, and the share won.", check: "BOQ & quotes for the month, counted by status.", status: "live" },
+  { id: "construction.client-contact", industry: "construction", role: "sales", question: "When did we last talk to a client, and what was said?", kind: "data", answer: "That client's latest conversations, their sites, quotations and invoices.", check: "The client's page.", status: "live" },
+  { id: "construction.quiet-clients", industry: "construction", role: "sales", question: "Which clients haven't we spoken to in two weeks?", kind: "data", answer: "Clients with an active site and no conversation logged in 14 days, or the number of days asked.", check: "Each client's conversation log.", status: "live" },
+  { id: "construction.overdue-tasks", industry: "construction", role: "sales", question: "Which follow-ups are overdue?", kind: "data", answer: "Follow-up tasks past their due date, due today or this week, for a person or a client.", check: "The task list on Today, filtered to overdue.", status: "live" },
+  { id: "construction.my-notes", industry: "construction", role: "sales", question: "What did I note about a client?", kind: "data", answer: "The notes this person asked the assistant to keep, optionally about one client. (Saving new notes is off on the demo, whose logins are shared.)", check: "The notes list.", status: "live" },
+  { id: "construction.attendance", industry: "construction", role: "operations", question: "Who is on site today?", kind: "data", answer: "Present, half day and absent for one day, with in and out times.", check: "The attendance sheet for that day.", status: "live" },
+  { id: "construction.days-worked", industry: "construction", role: "operations", question: "How many days did a worker work this month?", kind: "data", answer: "Days worked in the period (present 1, half day 0.5) and absences.", check: "The attendance register for the month.", status: "live" },
+  { id: "construction.workforce", industry: "construction", role: "operations", question: "Whose KYC is pending, and which gate passes expire this week?", kind: "data", answer: "Workers with KYC still due, gate passes active, expired or expiring this week, and where workers stay.", check: "Workforce → Employees and Gate passes.", status: "live" },
+  { id: "construction.payroll", industry: "construction", role: "owner", question: "What is the wage bill for last month?", kind: "data", answer: "The wage register for the month: days, gross, PF, ESIC, TDS for subcontractors, advances and net, with what is paid, by person or gang. Refused to site staff.", check: "Workforce → Payroll for the month.", status: "live" },
+  { id: "construction.advances", industry: "construction", role: "accounts", question: "Which advances haven't been recovered yet?", kind: "data", answer: "Advances given to workers, and whether that month's payroll has recovered them. Refused to site staff.", check: "The advances list against the payroll.", status: "live" },
+  { id: "construction.how-ra-bill", industry: "construction", role: "accounts", question: "How do I raise a running-account bill?", kind: "how-to", answer: "The steps from the system's own guide, with a link to the site's Billing tab.", check: "Follow the steps; they work.", status: "live" },
+  { id: "construction.remind", industry: "construction", role: "sales", question: "Remind me to call a client on Friday.", kind: "reminder", answer: "A drafted task for Friday; nothing is saved until the person presses Save.", check: "The task list before and after pressing Save.", status: "live" },
+  { id: "construction.mark-paid", industry: "construction", role: "accounts", question: "Mark a running-account bill paid.", kind: "refuse", answer: "Not done: the assistant only reads. It says where in the app to record it.", check: "The bill is unchanged.", status: "live" },
+  { id: "construction.staff-margin", industry: "construction", role: "operations", question: "Is this site making money? (asked from a site engineer's login)", kind: "refuse", answer: "Refused: site engineers and storekeepers don't see company money, margins or payroll, as on the screens.", check: "The same login can't open the Dashboard either.", status: "live" },
 ];
 
 // Tests to run on any vendor's assistant, in a demo with your own data.

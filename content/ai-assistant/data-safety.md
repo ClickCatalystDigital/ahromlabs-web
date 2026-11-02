@@ -1,16 +1,16 @@
 ---
 kind: ai-assistant
 slug: data-safety
-title: "What an AI assistant sends out, under India's DPDP Act"
+title: "What an AI assistant sends out, and the data laws that apply"
 answer: >
   Ask what is sent to the AI provider with each question. It is one of three things: the question only, the
   question with the rows of the answer, or your records themselves. Ahrom Labs' assistants send the question
-  only by default. Under India's DPDP Act the business stays responsible for safeguards, breach notice and
-  erasure, including at its AI provider; the Rules putting those duties into effect start in May 2027.
-description: "What an AI assistant sends to the AI provider with each question, and what India's DPDP Act and Rules require of the business, with start dates."
+  only by default. In India the DPDP Act keeps the business responsible for safeguards, breach notice and
+  erasure, including at its AI provider, from May 2027; in the US, state privacy laws and the FTC set the rules.
+description: "What an AI assistant sends to the AI provider with each question, and what India's DPDP Act and US privacy rules expect of the business."
 domain: [ai, data-safety, dpdp, selection]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-02
 checked: 2026-10-25
 image:
   src: /ai/ai-data-safety.webp
@@ -26,6 +26,14 @@ sources:
     publisher: Ministry of Electronics and Information Technology, Gazette of India
     url: https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf
     date: 2025-11-13
+  - title: California Consumer Privacy Act (CCPA)
+    publisher: State of California, Office of the Attorney General
+    url: https://oag.ca.gov/privacy/ccpa
+    date: 2026-11-02
+  - title: Data security guidance for business
+    publisher: US Federal Trade Commission
+    url: https://www.ftc.gov/business-guidance/privacy-security/data-security
+    date: 2026-11-02
 checks:
   - reg: Digital Personal Data Protection Act, 2023, section 8(5)
     doc: dpdp-act-2023
@@ -115,3 +123,13 @@ What it means for an assistant, in practice:
 - **Put it in the contract.** Safeguards, breach notice to you, and erasure at the provider, as rule 6(1)(f) and section 8(7) expect.
 
 How the Act applies to your business is a question for your lawyer. The same rules, for the system underneath, are in the [ERP compliance guide](/erp/compliance).
+
+## What applies in the US?
+
+The US has no single federal law for the personal data a business keeps. Instead:
+
+- **State privacy laws.** A growing number of states have their own, California's CCPA the best known. They mostly reach larger businesses and those that buy or sell personal data, and they give people rights to know, delete and opt out.
+- **The FTC.** The Federal Trade Commission can act against a business whose data practices are unfair or deceptive, including security that falls short of what it promised.
+- **Your contracts.** Customers and insurers often ask for security terms of their own.
+
+The practice is the same as in India: know where the model runs, send only what the answer needs, and put safeguards, breach notice and deletion at the provider in the contract. Which laws reach your business is a question for your lawyer.

@@ -10,7 +10,7 @@ answer: >
 description: "An AI assistant for interior designers and furniture workshops: the questions it should answer from your own projects, invoices and orders, and how to check it."
 domain: [ai, interiors, selection]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-02
 checked: 2026-10-25
 image:
   src: /ai/ai-interior-design-firms.webp
@@ -23,7 +23,7 @@ A design studio runs on projects, quotations, site visits, a workshop and a lot 
 
 ## What should it answer?
 
-Every question Atelier AI answers today is listed below, with the screen to check each answer against. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.
+Every question Atelier AI answers today is listed below, with the screen to check each answer against. Atelier AI runs at an Indian studio, so its money questions say GST; a US studio asks the same ones with sales tax. They cut across the whole firm: one project end to end, money owed and billed with the GST split, quotations waiting and won, late workshop orders and on-time delivery, material still to come, attendance and payroll, the cash book and the bank, and whether a project made money.
 
 ## What should it refuse?
 
