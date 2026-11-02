@@ -14,6 +14,7 @@ import { getContent } from "@/lib/content";
 import { seoTitle, metaDescription } from "@/lib/seo";
 import { MarketPricing } from "@/components/MarketPricing";
 import { marketsFor, only, say, type MarketCode } from "@/lib/markets";
+import { languages } from "@/lib/markets";
 
 // Families and services share this route; services.ts guarantees the slugs
 // don't collide. Unknown slugs 404 instead of rendering on demand.
@@ -51,7 +52,7 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
   return {
     title: seoTitle(title),
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: languages(path) },
     openGraph: { type: "website", url: `https://ahromlabs.com${path}`, siteName: "Ahrom Labs", title, description },
     twitter: { card: "summary_large_image", title, description },
   };

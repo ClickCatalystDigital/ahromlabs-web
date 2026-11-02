@@ -33,7 +33,11 @@ function loadGa() {
   // visitors (remarketing, enhanced conversions), the bar and privacy policy must ask for ads too; then grant ad_*.
   w.gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
   w.gtag("js", new Date());
-  w.gtag("config", GA_ID);
+  // The visitor's market (IN or NA, set on <html> before paint from the proxy's cookie), as a user property and on every
+  // event, so reports split India and North America: user dimension "Market" and event dimension "Page market".
+  const market = document.documentElement.dataset.market || "IN";
+  w.gtag("set", "user_properties", { market });
+  w.gtag("config", GA_ID, { market });
   const s = document.createElement("script");
   s.id = "ga-js";
   s.async = true;

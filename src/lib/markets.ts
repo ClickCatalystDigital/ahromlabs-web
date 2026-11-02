@@ -46,8 +46,16 @@ export function leadCountry(cfCountry: string | null | undefined, chosen: Market
 export const ADAPTIVE: Partial<Record<MarketCode, string[]>> = {
   NA: ["/", "/services", "/services/inventory-and-reservations"],
 };
+// Each version has its own public URL (/us/…): visitors get theirs at the shared URL (src/proxy.ts), search engines see
+// both, joined by hreflang (languages() below), so each country's searchers are shown their own.
+const PREFIX: Partial<Record<MarketCode, string>> = { NA: "/us" };
 export const adaptedPath = (market: MarketCode, path: string) =>
-  ADAPTIVE[market]?.includes(path) ? `/${market.toLowerCase()}${path === "/" ? "" : path}` : null;
+  ADAPTIVE[market]?.includes(path) ? `${PREFIX[market]}${path === "/" ? "" : path}` : null;
+/** hreflang alternates for a page with a US version (metadata `alternates.languages`); undefined otherwise. */
+export const languages = (path: string) => {
+  const us = adaptedPath("NA", path);
+  return us ? { "en-IN": path, "en-US": us, "x-default": path } : undefined;
+};
 
 // Bucket B: market-only pages. India-only pages (statutory, Tally and India-specific industries). Hidden from the menu, footer and
 // cards elsewhere; the sitemap keeps them, because Google crawls from the US and must still index them.

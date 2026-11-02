@@ -57,7 +57,7 @@ function asmeHub(group?: AsmeGroup): Hub {
         </p>
         <p className="mt-4 text-sm text-foreground-secondary" {...only(["NA"])}>
           Fixed price, scope agreed before work starts:{" "}
-          <Link href="/#pricing" className="text-link focus-ring">see the prices</Link>.
+          <Link href="/us#pricing" className="text-link focus-ring">see the prices</Link>.
         </p>
       </>
     ),

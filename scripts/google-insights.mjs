@@ -223,6 +223,9 @@ async function pagespeed(url, strategy) {
 // ---------- tools: one table for the connector and the terminal
 
 const days = z.number().int().min(1).max(480).default(28).describe("How many days back (Search data ends two days ago)");
+// Search Console country codes are ISO 3166-1 alpha-3: usa, can, ind. Omitted = every country.
+const country = z.string().regex(/^[a-z]{3}$/).optional().describe("Only searches from this country (ISO alpha-3: usa, can, ind)");
+const byCountry = (c, filters = []) => (c ? [...filters, { dimension: "country", operator: "equals", expression: c }] : filters.length ? filters : undefined);
 
 export const TOOLS = {
   setup_status: {
@@ -241,18 +244,18 @@ export const TOOLS = {
   },
   gsc_queries: {
     description: `Search Console: top Google search queries for ${SITE.domain}, with clicks, impressions, CTR and average position.`,
-    params: { days },
-    run: ({ days }) => searchAnalytics("query", days),
+    params: { days, country },
+    run: ({ days, country: c }) => searchAnalytics("query", days, byCountry(c)),
   },
   gsc_pages: {
     description: "Search Console: pages by Google search clicks and impressions, with CTR and average position.",
-    params: { days },
-    run: ({ days }) => searchAnalytics("page", days),
+    params: { days, country },
+    run: ({ days, country: c }) => searchAnalytics("page", days, byCountry(c)),
   },
   gsc_page_queries: {
     description: "Search Console: the queries one page shows up for. Use to see what a page is really ranking on.",
-    params: { page: z.string().describe("Path such as /ibr/forms, or a full URL"), days },
-    run: ({ page, days }) => searchAnalytics("query", days, [{ dimension: "page", operator: "equals", expression: toUrl(page) }]),
+    params: { page: z.string().describe("Path such as /ibr/forms, or a full URL"), days, country },
+    run: ({ page, days, country: c }) => searchAnalytics("query", days, byCountry(c, [{ dimension: "page", operator: "equals", expression: toUrl(page) }])),
   },
   gsc_inspect: {
     description:

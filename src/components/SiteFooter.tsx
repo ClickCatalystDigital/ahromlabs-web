@@ -18,7 +18,7 @@ const columns: { title: string; links: { href: string; label: string; markets?: 
       { href: "/industries", label: "Industries" },
       { href: "/approach", label: "Approach" },
       { href: "/engagement", label: "Pricing" },
-      { href: "/#pricing", label: "Pricing", markets: ["NA"] },
+      { href: "/us#pricing", label: "Pricing", markets: ["NA"] },
       { href: "/about", label: "About" },
       { href: "/support", label: "Client support" },
       { href: "https://www.linkedin.com/company/ahromlabs", label: "LinkedIn" },

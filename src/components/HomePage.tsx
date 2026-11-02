@@ -189,7 +189,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                   <ul className="mt-4 space-y-2 text-sm leading-snug">
                     <li><Link href="/services" className="text-link focus-ring">How each one works, with the numbers</Link></li>
                     <li><a href="#demos" className="text-link focus-ring">Try a live demo</a></li>
-                    <li><Link href={market === "IN" ? "/engagement" : "/#pricing"} className="text-link focus-ring">Prices</Link></li>
+                    <li><Link href={market === "IN" ? "/engagement" : "/us#pricing"} className="text-link focus-ring">Prices</Link></li>
                     <li><a href="#contact" className="text-link focus-ring">Talk to us</a></li>
                   </ul>
                 </div>

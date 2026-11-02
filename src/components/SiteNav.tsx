@@ -12,7 +12,7 @@ const links: { href: string; label: string; markets?: MarketCode[] }[] = [
   { href: "/work", label: "Work" },
   { href: "/engagement", label: "Pricing" },
   // North America's prices are on its home page (src/app/na/page.tsx); /engagement is India's.
-  { href: "/#pricing", label: "Pricing", markets: ["NA"] },
+  { href: "/us#pricing", label: "Pricing", markets: ["NA"] },
   { href: "/notes", label: "Notes" },
   { href: "/about", label: "About" },
 ];

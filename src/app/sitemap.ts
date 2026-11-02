@@ -5,6 +5,7 @@ import pageDates from "@/lib/page-dates.generated.json";
 import { ibrFormPages, IBR_FORMS_CHECKED } from "@/lib/ibr-forms";
 import { trades, BOQ_CHECKED } from "@/lib/boq";
 import { asmeGuides, ASME_CHECKED } from "@/lib/asme";
+import { adaptedPath, languages } from "@/lib/markets";
 import { asmeArt } from "@/lib/asme-images";
 import { mfgGuides, MFG_CHECKED } from "@/lib/manufacturing";
 import { mfgArt } from "@/lib/manufacturing-images";
@@ -241,5 +242,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes];
+  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes];
+  // Pages with a North American version: both URLs listed, each naming the other (hreflang), as in their metadata.
+  const abs = (langs: Record<string, string>) => Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${siteUrl}${v === "/" ? "" : v}`]));
+  const withAlt = all.map((e) => {
+    const langs = languages(e.url.slice(siteUrl.length) || "/");
+    return langs ? { ...e, alternates: { languages: abs(langs) } } : e;
+  });
+  const us = withAlt.flatMap((e) => {
+    const path = e.url.slice(siteUrl.length) || "/";
+    const usPath = adaptedPath("NA", path);
+    return usPath ? [{ ...e, url: `${siteUrl}${usPath}`, priority: e.priority }] : [];
+  });
+  return [...withAlt, ...us];
 }

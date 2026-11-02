@@ -26,6 +26,9 @@ const AI_CRAWLERS = [
 
 const SITE = "https://ahromlabs.com";
 
+// Search engines and link previews: they get each URL as written (see the market note in proxy()).
+const SEARCH_CRAWLER = /bot\b|bot\/|crawler|spider|slurp|bingpreview|google-inspectiontool|googleother|facebookexternalhit|linkedinbot|embedly|whatsapp|twitterbot|duckduckgo|yandex|baiduspider|applebot/i;
+
 // RFC 8288 Link headers: an agent reading only the HTTP response (not the
 // HTML) still finds the machine-readable surfaces in one hop.
 const DISCOVERY_LINKS = [
@@ -88,9 +91,6 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // The market versions' own paths (src/app/na/) are internal: send people to the public URL.
-  const internal = pathname.match(/^\/na(\/.*)?$/);
-  if (internal) return NextResponse.redirect(new URL(`${internal[1] ?? "/"}?market=us`, request.url), 308);
 
   const markdown = prefersMarkdown(request.headers.get("accept") ?? "");
   if (bot || markdown) {
@@ -121,13 +121,17 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  // Market (docs/markets-plan.md): ?market= beats the visitor's saved choice, which beats Cloudflare's country.
-  // Never a redirect by IP: the same URL is served, and a page with a version for this market is rewritten to
-  // it (src/app/na/). Both versions are prerendered, so the static cache keys them by their own paths.
-  const param = marketFromParam(request.nextUrl.searchParams.get("market"));
+  // Market (docs/markets-plan.md). Each version has its own URL (/us/… for North America, joined by hreflang).
+  // Visitors: ?market= beats their saved choice, which beats Cloudflare's country, and a page with a version for
+  // their market is served at the shared URL (never a redirect by IP); opening a /us page is choosing North America.
+  // Search engines: every URL is what it says (India's at /, North America's at /us), never switched by country,
+  // so Google indexes both and shows each country's searchers their own. Both are prerendered and cached by path.
+  const usPath = /^\/us(\/|$)/.test(pathname);
+  const crawler = SEARCH_CRAWLER.test(ua) || !!bot;
+  const param = marketFromParam(request.nextUrl.searchParams.get("market")) ?? (usPath && !crawler ? "NA" : null);
   const chosen = param ?? marketFromParam(request.cookies.get(CHOICE_COOKIE)?.value);
-  const market = chosen ?? marketOf(request.headers.get("cf-ipcountry"));
-  const adapted = adaptedPath(market, route || "/");
+  const market = crawler ? (usPath ? "NA" : "IN") : (chosen ?? marketOf(request.headers.get("cf-ipcountry")));
+  const adapted = crawler || usPath ? null : adaptedPath(market, route || "/");
   const response = adapted ? NextResponse.rewrite(new URL(`${adapted}${request.nextUrl.search}`, request.url)) : NextResponse.next();
   if (param) response.cookies.set(CHOICE_COOKIE, param, { path: "/", maxAge: 31536000, sameSite: "lax", secure: true });
   if (request.cookies.get(SHOWN_COOKIE)?.value !== market) response.cookies.set(SHOWN_COOKIE, market, { path: "/", sameSite: "lax", secure: true });

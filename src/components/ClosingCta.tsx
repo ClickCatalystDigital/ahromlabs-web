@@ -19,7 +19,7 @@ export function ClosingCta() {
           <Link href="/engagement" className="text-link focus-ring" {...only(["IN"])}>
             Pricing, licensing and support
           </Link>
-          <Link href="/#pricing" className="text-link focus-ring" {...only(["NA"])}>
+          <Link href="/us#pricing" className="text-link focus-ring" {...only(["NA"])}>
             Fixed prices in USD
           </Link>
         </div>

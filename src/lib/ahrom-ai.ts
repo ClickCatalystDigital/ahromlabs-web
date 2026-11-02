@@ -194,7 +194,7 @@ export function entriesFor(market: MarketCode, all: Entry[] = buildEntries()): E
       id: "na/pricing",
       title: "What does it cost? Prices in USD",
       answer: `Fixed prices, agreed before work starts: a working prototype of your main workflow for ${money("NA", p.prototype)} flat in ${p.prototypeWeeks} weeks; a full build from ${money("NA", p.buildFrom)} to ${money("NA", p.buildTo)} in ${p.buildWeeks} weeks; care and changes at ${money("NA", p.care)} a month. The first ${p.foundingCount} US clients get ${p.foundingOff}% off. ${p.pay}`,
-      url: `${site}/#pricing`,
+      url: `${site}/us#pricing`,
       sourceTitle: "Prices",
       core: true,
     },

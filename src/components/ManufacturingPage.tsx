@@ -41,7 +41,7 @@ function mfgHub(group?: MfgGroup): Hub {
           <Link href="/#contact" className="subscribe-submit focus-ring inline-block">
             Talk to us about your shop
           </Link>{" "}
-          <Link href="/#pricing" className="text-link focus-ring">
+          <Link href="/us#pricing" className="text-link focus-ring">
             See the prices
           </Link>
         </div>
