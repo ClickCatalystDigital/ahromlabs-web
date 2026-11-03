@@ -95,3 +95,11 @@ have been paid from previous payments. An invoice missing required items is retu
 - Compute retainage per line, at the rate the contract sets, and its release.
 - Produce the pay application in the owner's format and keep each certified version.
 - Feed the same figures to the [WIP schedule](/construction/wip-schedule), so billing and cost are compared per job.
+
+## Can pay applications go to QuickBooks?
+
+Yes, if the system posts each one as an invoice on the right job. In our construction demo, connected to a
+QuickBooks Online sandbox company, each project becomes a job under its client in QuickBooks, and each pay
+application goes there as an invoice on that job when it is issued; payments follow when marked paid. Job reports
+in QuickBooks then match the project. How the connection works, and who calculates the sales tax, is in
+[connecting QuickBooks Online](/manufacturing/quickbooks-integration).

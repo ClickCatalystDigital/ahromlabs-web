@@ -96,6 +96,13 @@ or untaxed and owing [use tax](/sales-tax/use-tax). A manufacturer claiming the
 [manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) also needs material issues and machine hours
 by job, so exempt purchases can be shown to have been used as claimed.
 
+## What if QuickBooks keeps the books?
+
+Then decide which system calculates the tax. With QuickBooks Online's automated sales tax, QuickBooks works out the
+tax itself from the ship-to address, and charges none for a state it isn't set up to collect in, even when your order
+system did charge it. Set up the same states in both, and compare the two totals on every invoice. Details, from our
+own sandbox tests: [connecting QuickBooks Online](/manufacturing/quickbooks-integration).
+
 ## How to test a vendor's system
 
 Ask for these on your own data, in the demo:

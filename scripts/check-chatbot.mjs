@@ -59,6 +59,9 @@ const CHECKS = [
   ["Can your system produce IBR forms for boilers?", /certificate/i],
   ["How long does it take to make a boiler's IBR folder?", /a few minutes/],
   ["Do you build systems for electronics component traders?", /component/i],
+  // QuickBooks connector (US demos, sandbox company)
+  ["Does your system connect to QuickBooks Online?", /sandbox company|request ID|In QuickBooks/],
+  ["Why does QuickBooks show a different sales tax than our invoice?", /charged \$0 tax|isn't set up to collect|every state where you collect/],
   // Services (/services/*): buyers' own words, including Hinglish
   ["Can you do daily wage payroll for contract labour?", /minus advances/],
   ["We pay our karigar daily wages, can your system calculate it?", /minus advances/],

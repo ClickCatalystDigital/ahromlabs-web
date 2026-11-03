@@ -13,8 +13,8 @@ answer: >
 description: "What QuickBooks Online, Intuit Enterprise Suite and Desktop Enterprise do for manufacturers: BOMs, assemblies, work orders, costing, and where each stops."
 domain: [manufacturing, quickbooks, accounting]
 published: 2026-11-02
-updated: 2026-11-02
-checked: 2026-11-02
+updated: 2026-11-03
+checked: 2026-11-03
 sources:
   - title: Get started with manufacturing orders and assemblies
     publisher: Intuit QuickBooks
@@ -131,14 +131,14 @@ For most small manufacturers the cheapest sound setup is QuickBooks for the book
 | Quotes, jobs, routings, schedule | Shop system | Nothing (stays in operations) |
 | Shop-floor hours, scrap, material used | Shop system | Job cost, and the inventory value at month-end |
 | Customer invoices | Shop system (from the shipped job) | An invoice, posted once |
-| Vendor bills and payments | QuickBooks | Status read back to the shop system |
+| Vendor bills and payments | Either, but only one: usually the shop system, which holds the PO and the receipt | A bill, then its payment |
 | Chart of accounts, tax, payroll | QuickBooks | Nothing |
 
 "Owned by" means people change that record in one place only. Everything that breaks between two systems starts with a record two people can edit in both.
 
 ## Connecting the two without duplicates
 
-Our QuickBooks Online connector is being built; it isn't live yet. The rules it follows are the ones our [TallyPrime connection](/notes/connecting-tallyprime-four-ways) already runs on:
+Our QuickBooks Online connector runs in our four US demos against a QuickBooks sandbox company ([what it sends](/manufacturing/quickbooks-integration)). It follows the rules our [TallyPrime connection](/notes/connecting-tallyprime-four-ways) already runs on:
 
 - **Post once, by our own number.** Each invoice carries the shop system's document number; before posting, the connector checks whether that number already exists, so a retry can't create a second copy.
 - **Read back, don't assume.** After posting, read the record from the accounting system and store its ID and totals ([reconcile against the source of truth](/patterns/reconcile-against-source-of-truth)).

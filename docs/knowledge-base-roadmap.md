@@ -72,7 +72,10 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
 4b. **QuickBooks pages (US).** ✅ Done 3 Nov 2026: quickbooks-vs-erp, quickbooks-desktop-end-of-support,
    quickbooks-online-vs-desktop, quickbooks-integration, in the manufacturing hub's QuickBooks group, quoting Intuit's
    help, product and developer pages (developer docs render only in a browser; their text was read there and saved).
-   The pages say our own connector isn't live.
+   Updated 3 Nov 2026 once the connector ran in all four US demos (sandbox company): what it sends, who calculates
+   sales tax (from our own sandbox tests), payment directions; pay-applications and sales-tax-in-erp link to it.
+   `manufacturing.check.ts` now requires any connector mention to say it runs against a sandbox company; when a
+   client goes live on it, change that rule and the pages together.
 4c. **Pages from search demand (queue item B).** Search Console, 90 days to 3 Nov 2026: India 144 sessions, mostly IBR;
    US a handful ("erp requirements template excel" at position 16.5, landing on the India template). Done 3 Nov 2026:
    `/manufacturing/erp-requirements-checklist` with a US CSV; sharpened `/boq/what-is-a-boq` ("BOQ vs BOM" heading, the

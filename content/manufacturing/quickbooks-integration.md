@@ -69,7 +69,8 @@ change wins. Decide the owner of every record before writing any code:
 | Items | Shop system (it knows stock, routings, lots) | Shop → QuickBooks |
 | Invoices | Shop system (shipped against the order) | Shop → QuickBooks |
 | Vendor bills | Either; usually entered where the purchase order lives | Shop → QuickBooks |
-| Customer payments, deposits | QuickBooks (they arrive through the bank) | QuickBooks → shop |
+| Vendor payments | Wherever they are recorded against the bill | Shop → QuickBooks, or the reverse |
+| Customer payments, deposits | Wherever they are recorded: QuickBooks if they come in through its bank feed, the shop system if staff mark invoices paid there | One direction only, never both |
 | Chart of accounts, tax codes | QuickBooks (your accountant's) | Read by the shop system |
 
 The owner is where people edit; the other side shows it read-only. A customer's address changed in QuickBooks is
@@ -94,12 +95,50 @@ is posted) and records QuickBooks' ID for the record, so a retry updates instead
 - **Totals drift.** Compare open invoices and item counts on both sides every night; a difference is a ticket.
 - **Someone edits on the wrong side.** Make the non-owner side read-only where you can, and alert where you can't.
 
+## Who calculates sales tax: your system or QuickBooks?
+
+Decide this as deliberately as record ownership. With QuickBooks Online's automated sales tax, QuickBooks works out
+the tax on each invoice itself, from the ship-to address and whether each line is taxable, and posts it to its own
+liability account for each tax agency. So the shop system sends the lines, their taxable flags and the ship-to
+address, not a tax amount.
+
+What we saw testing our connector against a QuickBooks Online sandbox company (November 2026): the company was set up
+to collect tax only in Arizona and California, so QuickBooks charged $0 tax to customers in other states. One invoice
+came to $21,959 in our system and $21,200 in QuickBooks: the same lines, without the tax. Nothing errored; the totals
+simply differed. The lessons:
+
+- **Set up every state where you collect** in QuickBooks' sales tax settings, not only in the shop system. QuickBooks
+  can't charge tax for a state it doesn't know you collect in.
+- **Store both totals** (yours and QuickBooks') on each invoice and flag any difference, so a gap is seen the day
+  it happens, not at the return.
+- **Don't post tax twice.** If QuickBooks calculates the tax, leave the shop system's own sales tax payable account
+  out of the account mapping.
+
+For what the shop system itself must track, see [sales tax in an ERP](/sales-tax/sales-tax-in-erp).
+
 ## Does a private connection need Intuit's review?
 
 Two levels, from Intuit's developer docs. To get production credentials, an app's App Assessment Questionnaire must
 be approved; after that, an app used privately is live. Listing on the QuickBooks App Store adds a three-part review
 (technical, a third-party security review, and marketing), and Intuit reviews listed apps at least once a year.
 
-Our own QuickBooks connector isn't live yet: we're planning one for a client's system. These pages describe how such a
-connector should work, from Intuit's documentation. See also [QuickBooks vs ERP](/manufacturing/quickbooks-vs-erp)
-and [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory).
+## What does our connector send?
+
+Our QuickBooks Online connector runs in our four US demos, connected to a QuickBooks sandbox company (November
+2026); it isn't yet running on a client's live books. In each demo:
+
+- **Connecting:** the owner connects QuickBooks once in Settings, reviews the suggested account matches and saves
+  them. Only the owner can connect or disconnect.
+- **Sales:** issued invoices and recorded customer payments go to QuickBooks in the background, each with its
+  customer. In the construction demo, pay applications go too, and each project becomes a job under its client in
+  QuickBooks, so job reports work there.
+- **Purchases:** approved vendor bills go with their vendor; vendor payments go when they name the bill they pay.
+- **Payments with no invoice named:** where the cash book records who paid but not which invoice, the payment
+  arrives in QuickBooks unapplied, for the accountant to match there.
+- **Status on every row:** "In QuickBooks", "QuickBooks failed · Retry" or "Not in QuickBooks · Send", and a count
+  of today's sends and failures. Every call carries a request ID, so a retry can't create a second copy.
+
+Try it in the [boiler](https://boiler-erp-us.ahromlabs.com/demo), [construction](https://construction-erp-us.ahromlabs.com/demo),
+[interiors](https://interiors-erp-us.ahromlabs.com/demo) or [electronics distribution](https://electronics-erp-us.ahromlabs.com/demo)
+demo. See also [QuickBooks vs ERP](/manufacturing/quickbooks-vs-erp) and
+[QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory).

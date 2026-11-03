@@ -40,9 +40,10 @@ for (const g of guides) {
   checkLinks(g.slug, g.body);
   const others = new Set([...g.body.matchAll(/\]\((\/manufacturing\/[^)#?\s]+)/g)].map((m) => m[1]).filter((l) => l !== `/manufacturing/${g.slug}` && !/\.[a-z]+$/.test(l)));
   if (others.size < 2) fail.push(`${g.slug}: links to ${others.size} other manufacturing guide(s); link at least 2`);
-  // The QuickBooks connector isn't built: any mention must say so, and nothing may call it live.
+  // The QuickBooks connector runs only in the US demos against a sandbox company (Nov 2026): any mention must say
+  // so, and nothing may call it live on client books.
   const text = `${g.answer}\n${g.body}`;
-  if (/quickbooks[^.\n]{0,60}connector/i.test(text) && !/connector is being built|isn't live yet/i.test(text)) fail.push(`${g.slug}: mentions a QuickBooks connector without saying it isn't built yet`);
+  if (/quickbooks[^.\n]{0,60}connector/i.test(text) && !/sandbox company/i.test(text)) fail.push(`${g.slug}: mentions a QuickBooks connector without saying it runs against a sandbox company`);
   if (/(live|deployed|in production)[^.\n]{0,40}quickbooks (online )?(connector|integration)|quickbooks (online )?(connector|integration)[^.\n]{0,20}\b(is live|is deployed)/i.test(text)) fail.push(`${g.slug}: describes the QuickBooks connector as live`);
 }
 for (const t of getContent("term").filter((t) => t.domain?.[0] === "manufacturing")) checkLinks(`terms/${t.slug}`, t.body);
