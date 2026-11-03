@@ -13,10 +13,10 @@ const ALT: Record<string, string> = {
   "quickbooks-online-inventory": "Steel shelving with bar stock and tube on the bottom shelf, labelled bins of parts in the middle and boxes and flanges on top: raw material, work in progress and finished goods.",
   "quickbooks-job-costing": "A brass balance scale with a machined bracket on one pan and steel weights on the other: estimated against actual job cost.",
   "distributor-inventory-control": "A handheld barcode scanner on a warehouse shelf of labelled cartons, one carton pulled forward with a lot label: counting and tracing stock.",
-  "small-business-erp-options": "Five different keys laid in a row on a workbench, one lifted beside a padlock: choosing between systems.",
+  "small-business-erp-options": "A row of different keys laid on a wooden board, one lifted beside a padlock: choosing between systems.",
   "quickbooks-vs-erp": "A small toolbox overflowing beside a larger open tool chest with labelled drawers: outgrowing a tool.",
   "quickbooks-desktop-end-of-support": "A desktop computer tower with a paper tag tied to it, beside a closed laptop: an older installed system being retired.",
-  "quickbooks-online-vs-desktop": "A desktop computer and a laptop side by side on a workbench, with the same ledger book open in front of each: two ways to run the same books.",
+  "quickbooks-online-vs-desktop": "A desktop computer and a laptop side by side on a workbench, with the same closed ledger book in front of each: two ways to run the same books.",
   "erp-requirements-checklist": "A clipboard with a printed checklist, some boxes ticked, beside a pen and a machined part: testing a system against a list of requirements.",
   // Later pages (docs/us-knowledge-web/architecture.md); their images are already in public/manufacturing.
   "quickbooks-integration": "Two document trays joined by a short brass roller conveyor carrying one sheet across: records passing between a shop system and the accounting system.",

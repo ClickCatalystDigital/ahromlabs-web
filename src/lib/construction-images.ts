@@ -12,7 +12,7 @@ const ALT: Record<string, string> = {
   "change-orders": "A drawing with a revision cloud marked in red pencil, a ruler and an eraser: a change to the work.",
   "wip-schedule": "A spreadsheet printout of jobs with columns of figures and a few rows highlighted, beside reading glasses: a work-in-progress schedule.",
   "ra-bills": "A stack of bound bill sheets with a calculator and a rubber stamp on a site desk: a running account bill.",
-  "measurement-book": "An open hardbound register with handwritten measurements, a steel measuring tape coiled beside it: a measurement book.",
+  "measurement-book": "An open hardbound register with ruled measurement columns, a steel measuring tape coiled beside it: a measurement book.",
   "tds-on-contractor-payments": "A cheque book, a calculator and a printed payment voucher on a desk: tax deducted from a payment to a contractor.",
   "gst-on-works-contracts": "Bags of cement, steel bars and a builder's level on a slab: goods and services together in a works contract.",
 };

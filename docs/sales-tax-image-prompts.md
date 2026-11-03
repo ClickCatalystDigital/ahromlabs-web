@@ -2,7 +2,7 @@
 
 Same style and hand-over as the ASME hub (`docs/asme-image-prompts.md`): paste the **style block** from that file before each prompt, generate a wide PNG, name it as in the File column but ending `.png`, put them in one folder and give Claude the folder. Claude converts them with `python3 scripts/asme-images.py <folder> sales-tax` (WebP in `public/sales-tax/`, share card in `src/assets/og-art/sales-tax/`). Alt text is in `src/lib/sales-tax-images.ts`; re-check it against each delivered image. No flags, maps with labels or state names in the pictures.
 
-**Status (3 Nov 2026): none generated yet.**
+**Status (3 Nov 2026): all 8 done**, in `public/sales-tax/`.
 
 | File | Page | Prompt (after the style block) |
 |---|---|---|

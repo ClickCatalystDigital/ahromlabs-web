@@ -26,7 +26,7 @@ File names are fixed. **Status (2 Nov 2026): all done.** Every page in the hub h
 | `scheduling-template.webp` | Free job shop production schedule template (Excel) | A blank paper spreadsheet grid on a clipboard, a few rows shaded in different soft colours like booked machine time, a pencil and a small steel ruler lying across it. |
 | `ai-in-erp.webp` | AI in ERP: what it can safely do today (in the /ai-assistant hub) | A small brass desk lamp lighting one open steel filing drawer full of blank index cards, one card lifted slightly out of the drawer. |
 
-## Added 3 Nov 2026 (roadmap item 6): generate these
+## Added 3 Nov 2026 (roadmap item 6): all done 3 Nov
 
 | File | Page | Prompt (after the style block) |
 |---|---|---|

@@ -12,7 +12,7 @@ const ALT: Record<string, string> = {
   "resale-certificates": "A signed certificate in a manila folder held open in a filing drawer of customer files: an exemption certificate kept on file.",
   "manufacturing-sales-tax-exemption": "Bar stock feeding into a lathe chuck, with turned parts below: material that becomes part of a product made for sale.",
   "use-tax": "An opened shipping box with packing paper and a packing slip that shows no tax line: a purchase on which the supplier charged no tax.",
-  "sales-tax-in-erp": "An order form on a clipboard with ship-to address, item lines and a tax line, beside a small stack of filed certificates: sales tax recorded in an order system.",
+  "sales-tax-in-erp": "An order form on a clipboard with address lines, item rows and a total, beside a small stack of filed certificates: sales tax recorded in an order system.",
 };
 
 export type StArt = { src: string; alt: string; width: number; height: number };
