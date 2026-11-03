@@ -33,6 +33,7 @@ export default function BoqItemsPage() {
       lead={lead}
       checked={BOQ_CHECKED}
       art={image.src}
+      artAlt={image.alt}
       updated={BOQ_CHECKED}
       headings={trades.map((t) => t.name)}
     >

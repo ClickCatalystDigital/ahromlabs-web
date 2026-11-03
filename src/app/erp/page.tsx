@@ -37,6 +37,7 @@ export default function ErpHub() {
       title={title}
       lead={lead}
       art={image.src}
+      artAlt={image.alt}
       checked={ERP_CHECKED}
       updated={updated}
     >

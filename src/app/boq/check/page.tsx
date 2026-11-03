@@ -32,6 +32,7 @@ export default function BoqCheckPage() {
       lead={lead}
       checked={BOQ_CHECKED}
       art={image.src}
+      artAlt={image.alt}
       updated={BOQ_CHECKED}
     >
       <BoqCheck />

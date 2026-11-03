@@ -35,6 +35,7 @@ export default function BoqHub() {
       lead={lead}
       checked={BOQ_CHECKED}
       art={image.src}
+      artAlt={image.alt}
       updated={updated}
     >
       <GuideH2>Tools</GuideH2>

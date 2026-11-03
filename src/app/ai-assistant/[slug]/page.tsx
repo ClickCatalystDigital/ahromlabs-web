@@ -68,6 +68,7 @@ export default async function AiGuidePage(props: PageProps<"/ai-assistant/[slug]
       sources={g.sources}
       headings={[...markdownHeadings(g.body), ...(INDUSTRY_OF_GUIDE[g.slug] ? [`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`] : [])]}
       art={g.image?.src}
+      artAlt={g.image?.alt}
     >
       <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
       {INDUSTRY_OF_GUIDE[g.slug] && (

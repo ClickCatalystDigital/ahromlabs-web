@@ -48,6 +48,7 @@ export default function ErpTemplatePage() {
       title={title}
       lead={lead}
       art={image.src}
+      artAlt={image.alt}
       checked={ERP_CHECKED}
       updated={ERP_CHECKED}
       headings={["Download", "The columns, and why each is there", "What it looks like", "How to run a vendor evaluation with it"]}

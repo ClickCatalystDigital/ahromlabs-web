@@ -36,6 +36,7 @@ export default function AiQuestionsPage() {
       title={title}
       lead={lead}
       art={image.src}
+      artAlt={image.alt}
       checked={AI_CHECKED}
       updated={AI_CHECKED}
       headings={ORDER.map((i) => INDUSTRY_LABEL[i])}

@@ -47,6 +47,7 @@ export default function BoqTemplatePage() {
       title={title}
       lead={lead}
       art={image.src}
+      artAlt={image.alt}
       checked={BOQ_CHECKED}
       updated={BOQ_CHECKED}
       headings={["Download", "The columns, and why each is there", "What it looks like", "Why there are no rates", "After you fill it"]}

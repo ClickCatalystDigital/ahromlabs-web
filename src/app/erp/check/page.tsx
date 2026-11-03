@@ -32,6 +32,7 @@ export default function ErpCheckPage() {
       title={title}
       lead={lead}
       art={image.src}
+      artAlt={image.alt}
       checked={ERP_CHECKED}
       updated={ERP_CHECKED}
     >

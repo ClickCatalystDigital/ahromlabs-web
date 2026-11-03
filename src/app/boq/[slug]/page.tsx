@@ -61,6 +61,7 @@ export default async function BoqGuidePage(props: PageProps<"/boq/[slug]">) {
       sources={g.sources}
       headings={markdownHeadings(g.body)}
       art={g.image?.src}
+      artAlt={g.image?.alt}
     >
       <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
       {g.checks && g.checks.length > 0 && <BoqQuotes quotes={g.checks} />}
