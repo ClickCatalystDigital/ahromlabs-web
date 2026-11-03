@@ -16,7 +16,7 @@ export const MFG_GROUPS: { slug: MfgGroup; name: string; intro: string; order: s
     slug: "choosing",
     name: "Choosing a system",
     intro: "What a job shop or small plant needs first, and how to test a vendor with your own work.",
-    order: ["job-shop-erp", "custom-vs-off-the-shelf-erp", "small-business-erp-options"],
+    order: ["job-shop-erp", "custom-vs-off-the-shelf-erp", "small-business-erp-options", "erp-requirements-checklist"],
   },
   {
     slug: "quickbooks",

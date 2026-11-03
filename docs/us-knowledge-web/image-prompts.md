@@ -34,6 +34,7 @@ File names are fixed. **Status (2 Nov 2026): all done.** Every page in the hub h
 | `quickbooks-vs-erp.webp` | QuickBooks vs ERP: signs you've outgrown QuickBooks | A small steel toolbox overflowing with tools beside a larger open tool chest with neatly labelled drawers. |
 | `quickbooks-desktop-end-of-support.webp` | QuickBooks Desktop 2023 end of support | A beige desktop computer tower with a blank paper tag tied to its handle, beside a closed laptop. |
 | `quickbooks-online-vs-desktop.webp` | QuickBooks Online vs Desktop for manufacturers | A desktop computer and a laptop side by side on a workbench, the same closed ledger book in front of each. |
+| `erp-requirements-checklist.webp` | ERP requirements checklist for US manufacturers (Excel) | A clipboard holding a printed checklist with some boxes ticked, a pen beside it and a small machined steel part. |
 | `small-business-erp-options.webp` | Choosing an ERP: NetSuite, Acumatica, Odoo, Fishbowl, Katana | Five different brass and steel keys laid in a row on a wooden workbench, one key lifted beside a closed padlock. |
 
 ## Later or not needed

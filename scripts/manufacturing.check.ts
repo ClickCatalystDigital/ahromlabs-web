@@ -24,8 +24,8 @@ const exists = (href: string) => {
   const [, seg, slug, sub] = p.split("/");
   if (seg === "manufacturing") return !slug || slugs.has(slug);
   if (seg === "services" && slug) return services.some((s) => s.slug === slug) || appRoute(p);
-  const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", systems: "term" };
-  if (kinds[seg] && slug && !sub) return getContent(kinds[seg]).some((e) => e.slug === slug && (seg !== "systems" || e.body.trim().length > 0));
+  const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", "sales-tax": "sales-tax", construction: "construction", systems: "term" };
+  if (kinds[seg] && slug && !sub) return getContent(kinds[seg]).some((e) => e.slug === slug && (seg !== "systems" || e.body.trim().length > 0)) || appRoute(p);
   return appRoute(p);
 };
 const terms = new Set(getContent("term").map((t) => t.slug));

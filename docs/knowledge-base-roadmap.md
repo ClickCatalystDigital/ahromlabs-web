@@ -73,6 +73,14 @@ client component, optionally WebMCP tools in `WebMcpTools.tsx`.
    quickbooks-online-vs-desktop, quickbooks-integration, in the manufacturing hub's QuickBooks group, quoting Intuit's
    help, product and developer pages (developer docs render only in a browser; their text was read there and saved).
    The pages say our own connector isn't live.
+4c. **Pages from search demand (queue item B).** Search Console, 90 days to 3 Nov 2026: India 144 sessions, mostly IBR;
+   US a handful ("erp requirements template excel" at position 16.5, landing on the India template). Done 3 Nov 2026:
+   `/manufacturing/erp-requirements-checklist` with a US CSV; sharpened `/boq/what-is-a-boq` ("BOQ vs BOM" heading, the
+   query ranks 94) and the e-invoice glossary term ("IRN full form", ranks 88). **Backlog, by fit until demand shows**
+   (re-check with `gsc_market_report` monthly; extend existing pages before adding): US: inventory valuation methods,
+   lot vs serial tracking, cycle counting how-to, three-way match, purchase order approvals, order to cash. India: e-way
+   bill rules and TDS on purchases (194Q, now in the 2025 Act's section 393) as guides beyond their glossary terms and
+   ERP requirements; MSME 45-day rule. Both: data migration from Excel, ERP implementation timeline, role-based access.
 5. **Case studies with numbers**, one per demo industry (interiors, inventory, boiler, construction): situation,
    what was built, before/after figures only where the client confirms them. Done: on `/work` and each industry page;
    Shanti stays unnamed.
