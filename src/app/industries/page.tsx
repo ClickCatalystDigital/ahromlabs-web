@@ -54,7 +54,7 @@ export default function IndustriesPage() {
 
         <Reveal>
           <section className="section border-t border-line">
-            <div className="rail grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-3">
+            <div className="rail grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2">
               {industries.map((i) => {
                 const { clients } = resolveIndustryEdges(i);
                 return (
