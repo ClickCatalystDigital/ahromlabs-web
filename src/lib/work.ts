@@ -23,7 +23,8 @@ export type Engagement = {
   // image: an illustration shown above the demo card on the homepage (public/demos, 960x540).
   // markets: only shown there (src/lib/markets.ts) until the demo has that market's words, units and currency.
   // usUrl: the demo's North American build (US company, $, US tax); North American visitors are sent there.
-  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string }; markets?: MarketCode[]; usUrl?: string };
+  // usBlurb: what that build shows, when India's blurb names India-only features (IBR, GST, PF/ESIC).
+  demo?: { url: string; label: string; name: string; blurb: string; image?: { src: string; alt: string }; markets?: MarketCode[]; usUrl?: string; usBlurb?: string };
 };
 
 export const engagements: Engagement[] = [
@@ -75,7 +76,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "boiler-manufacturer",
-    demo: { url: "https://boiler-erp.ahromlabs.com/demo", usUrl: "https://boiler-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
+    demo: { url: "https://boiler-erp.ahromlabs.com/demo", usUrl: "https://boiler-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Boiler manufacturing demo", blurb: "Twelve sample logins, one per department, from enquiry to dispatch and the IBR folder.", usBlurb: "Sample logins for each department, from inquiry to shipping, with production job cards and ASME data reports.", image: { src: "/demos/demo-boiler-manufacturing.webp", alt: "A shell boiler with its valves, gauge and burner: the boiler and pressure-vessel manufacturing ERP demo" } },
     client: "A boiler and pressure-vessel manufacturer",
     anonymous: true,
     industry: "Boiler and pressure-vessel manufacturing",
@@ -101,7 +102,7 @@ export const engagements: Engagement[] = [
   },
   {
     slug: "construction-company",
-    demo: { url: "https://construction-erp.ahromlabs.com/demo", usUrl: "https://construction-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
+    demo: { url: "https://construction-erp.ahromlabs.com/demo", usUrl: "https://construction-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", usBlurb: "Daily reports from the field, pay applications with retainage, change orders and lien waivers, crews and payroll, a supply desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
     client: "A construction company",
     anonymous: true,
     industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",

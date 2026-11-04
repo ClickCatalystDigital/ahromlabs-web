@@ -35,7 +35,7 @@ export default async function ConstructionGuidePage(props: PageProps<"/construct
   return (
     <ConstructionPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, image: art })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, image: art })}
       trail={trail}
       title={g.title}
       lead={g.answer}

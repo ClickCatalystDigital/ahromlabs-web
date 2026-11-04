@@ -7,7 +7,7 @@ import { asmeGuides, ASME_EDITION } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
 import { stGuides } from "@/lib/sales-tax";
 import { conGuides } from "@/lib/construction";
-import { DICT } from "@/lib/markets";
+import { DICT, MARKETS, marketsFor, appliesIn } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
@@ -98,8 +98,29 @@ on the home page or at pujan@ahromlabs.com.
 
 // `answer` comes from YAML folded scalars, so it arrives with embedded newlines
 // that would break one-entry-per-line.
+// A page for one market says so, so an agent answering a US buyer can skip India's RA bills and the other way round.
+const onlyTag = (path: string) => {
+  const m = marketsFor(path);
+  return m ? ` (${m.map((c) => MARKETS[c].label).join(", ")} only)` : "";
+};
 const line = (segment: string) => (entry: ContentEntry) =>
-  `- [${entry.title}](https://ahromlabs.com/${segment}/${entry.slug}): ${entry.answer.replace(/\s+/g, " ").trim()}`;
+  `- [${entry.title}](https://ahromlabs.com/${segment}/${entry.slug})${onlyTag(`/${segment}/${entry.slug}`)}: ${entry.answer.replace(/\s+/g, " ").trim()}`;
+
+// The guide hubs and which markets each applies to: the same split the menus and /knowledge.json use. Each hub's
+// pages are also one Markdown file at /llms/<hub>.txt (scripts/build-markdown.mjs), smaller than /llms-full.txt.
+const HUBS = ["/ibr", "/boq", "/erp", "/asme", "/manufacturing", "/sales-tax", "/construction", "/ai-assistant", "/industries", "/services", "/notes", "/patterns", "/systems"];
+function whereEachApplies() {
+  const group = (label: string, test: (h: string) => boolean) =>
+    `- ${label}: ${HUBS.filter(test).map((h) => `${h} (https://ahromlabs.com/llms${h}.txt)`).join(", ")}`;
+  const one = (code: "IN" | "NA") => (h: string) => appliesIn(h).length === 1 && appliesIn(h)[0] === code;
+  return (
+    `\n## Where each section applies\n\n` +
+    `Some subjects are India's, some are North America's, and many are shared. A page for one market is marked "(India only)" or "(North America only)" below and carries a "markets" field in /knowledge.json; anything unmarked applies in both. Each section's pages in full, as one Markdown file:\n\n` +
+    `${group("India only", one("IN"))}\n` +
+    `${group("North America only", one("NA"))}\n` +
+    `${group("Both (pages inside may be marked for one market, as construction's are)", (h) => appliesIn(h).length > 1)}\n`
+  );
+}
 
 const newestFirst = (a: ContentEntry, b: ContentEntry) => b.published.localeCompare(a.published);
 
@@ -195,6 +216,7 @@ export function GET() {
 
   const body =
     HEADER +
+    whereEachApplies() +
     `\n## Industries\n\n${industries}\n` +
     `\n## Services\n\n${offered}\n` +
     `\n## Clients\n\n${clients}\n` +

@@ -36,7 +36,7 @@ export default async function SalesTaxGuidePage(props: PageProps<"/sales-tax/[sl
   return (
     <SalesTaxPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art })}
       trail={trail}
       title={g.title}
       lead={g.answer}

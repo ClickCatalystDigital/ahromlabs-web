@@ -126,3 +126,18 @@ fs.writeFileSync(
     full.map((f) => f.doc).join("\n\n"),
 );
 console.log(`markdown: wrote public/llms-full.txt (${full.length} pages)`);
+
+// /llms/<section>.txt: the same, one file per first path segment (/llms/asme.txt, /llms/ibr.txt…). llms-full.txt is
+// too big for most agents to read in one go; a section fits. /llms.txt lists them. Gitignored like llms-full.txt.
+const sections = Map.groupBy(full.filter((f) => f.route !== "/"), (f) => f.route.split("/")[1]);
+const LLMS_DIR = path.join(process.cwd(), "public/llms");
+fs.rmSync(LLMS_DIR, { recursive: true, force: true });
+fs.mkdirSync(LLMS_DIR, { recursive: true });
+for (const [name, pages] of sections) {
+  fs.writeFileSync(
+    path.join(LLMS_DIR, `${name}.txt`),
+    `# Ahrom Labs: /${name} as Markdown\n\n> ${pages.length} pages under ${SITE}/${name}. Every section: ${SITE}/llms.txt. The whole site: ${SITE}/llms-full.txt.\n\n` +
+      pages.map((f) => f.doc).join("\n\n"),
+  );
+}
+console.log(`markdown: wrote ${sections.size} section files to public/llms/`);

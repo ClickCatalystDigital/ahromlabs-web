@@ -8,7 +8,7 @@ import { asmeGuides } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
 import { stGuides } from "@/lib/sales-tax";
 import { conGuides } from "@/lib/construction";
-import { marketsFor, only } from "@/lib/markets";
+import { marketsFor, only, shownIn, type MarketCode } from "@/lib/markets";
 
 // The free reference hubs (each shown only in the markets it's for), as one section for the homepage, /about and /services: they bring most of
 // the search traffic, and a footer link alone carries little weight. Counts come from the data files.
@@ -23,7 +23,9 @@ const GUIDES = [
   { href: "/ai-assistant", title: "AI assistants guide", text: `How an assistant on your records should answer, a check for made-up numbers, ${questions.length} questions to ask it and a vendor test.` },
 ];
 
-export function FreeGuides({ heading = "Free guides and tools" }: { heading?: string }) {
+// market: a page prerendered for one market (home, /services) leaves the other market's guides out of its HTML, so a
+// crawler reading /us doesn't find India's IBR guide there. Without it (/about) CSS hides them per visitor.
+export function FreeGuides({ heading = "Free guides and tools", market }: { heading?: string; market?: MarketCode }) {
   return (
     <Reveal>
       <section className="section border-t border-line">
@@ -33,7 +35,7 @@ export function FreeGuides({ heading = "Free guides and tools" }: { heading?: st
             Written from the systems we run, checked against the official texts, and free to use without talking to us.
           </p>
           <ul className="mt-10 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
-            {GUIDES.map((g) => (
+            {GUIDES.filter((g) => !market || shownIn(market, g.href)).map((g) => (
               <li key={g.href} className="border-t border-line pt-5" {...only(marketsFor(g.href))}>
                 <Link href={g.href} className="text-link focus-ring text-lg font-medium">{g.title}</Link>
                 <p className="mt-2 max-w-[52ch] leading-relaxed text-foreground-secondary">{g.text}</p>

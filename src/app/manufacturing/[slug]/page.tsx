@@ -42,7 +42,7 @@ export default async function ManufacturingGuidePage(props: PageProps<"/manufact
   return (
     <ManufacturingPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, published: g.published, updated: g.updated, trail, app: tool?.name, image: art })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: tool?.name, image: art })}
       trail={trail}
       title={g.title}
       lead={g.answer}

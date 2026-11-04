@@ -78,6 +78,19 @@ export const marketsFor = (href: string): MarketCode[] | undefined =>
   under(IN_ONLY, href) ? ["IN"] : under(NA_ONLY, href) ? ["NA"] : undefined;
 export const shownIn = (market: MarketCode, href: string) => marketsFor(href)?.includes(market) ?? true;
 
+// The same split for machines (structured data, /knowledge.json, /llms.txt): a page is for one market, or for
+// every active one. The labels say where a page applies, not where its subject comes from (ASME is shared).
+const ACTIVE = (Object.keys(MARKETS) as MarketCode[]).filter((m) => MARKETS[m].active);
+export const appliesIn = (href: string): MarketCode[] => marketsFor(href) ?? ACTIVE;
+const COUNTRY_NAME: Record<string, string> = { IN: "India", US: "United States", CA: "Canada", GB: "United Kingdom", IE: "Ireland" };
+export const countriesFor = (href: string) =>
+  appliesIn(href).flatMap((m) => MARKETS[m].countries).map((c) => ({ "@type": "Country", name: COUNTRY_NAME[c] ?? c }));
+/** spatialCoverage and inLanguage for a page's structured data: its market's countries and locale, or plain "en" when shared. */
+export function coverage(href: string) {
+  const m = appliesIn(href);
+  return { spatialCoverage: countriesFor(href), inLanguage: m.length === 1 ? DICT[m[0]].locale : "en" };
+}
+
 /** Spread on an element that only some markets should see; CSS in globals.css hides it elsewhere. */
 export const only = (markets: MarketCode[] | undefined) => (markets ? { "data-only": markets.join(" ") } : {});
 

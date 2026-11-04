@@ -3,6 +3,7 @@ import { services, families, servicesIn, serviceUrl, familyUrl, proofHref, type 
 import { engagements } from "./work";
 import { IBR_2026_URL } from "./ibr-forms";
 import { AI_VERSION, AI_CHECKED } from "./ai-assistant";
+import { countriesFor, coverage } from "./markets";
 
 export { IBR_2026_URL };
 
@@ -20,7 +21,8 @@ const postalAddress = {
   addressCountry: "IN",
 } as const;
 
-const areaServed = { "@type": "Country", name: "India" } as const;
+// Every active market (India, the US and Canada); each Service below names only the markets its page is for.
+const areaServed = countriesFor("/");
 
 // Built from the same arrays /services renders, so the catalog can't list a
 // service the page doesn't show: the whole-system ERP at the top, then one
@@ -42,7 +44,7 @@ const offer = (s: Service) => ({
     url: `${siteUrl}${serviceUrl(s)}`,
     image: `${siteUrl}/what-we-build/${s.slug}.webp`,
     provider: { "@id": `${siteUrl}/#organization` },
-    areaServed,
+    areaServed: countriesFor(serviceUrl(s)),
   },
 });
 
@@ -236,6 +238,7 @@ export function articleGraph(entry: ContentEntry, path: string) {
     publisher: { "@id": `${siteUrl}/#organization` },
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntityOfPage: url,
+    ...coverage(path),
     ...(about.length > 0 ? { about } : {}),
     ...(mentions.length > 0 ? { mentions } : {}),
   };
@@ -259,7 +262,7 @@ export function industryGraph(
     description: entry.answer,
     datePublished: entry.published,
     dateModified: entry.updated,
-    audience: { "@type": "BusinessAudience", audienceType: entry.audience },
+    audience: { "@type": "BusinessAudience", audienceType: entry.audience, geographicArea: countriesFor(`/industries/${entry.slug}`) },
     ...(entry.image
       ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${entry.image.src}`, caption: entry.image.alt } }
       : {}),
@@ -398,7 +401,7 @@ export function ibrPageGraph(page: {
         publisher: { "@id": `${siteUrl}/#organization` },
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
-        inLanguage: "en-IN",
+        ...coverage(page.path),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, caption: page.image.alt },
         }),
@@ -525,7 +528,7 @@ function datasetPageGraph(dataset: { "@id": string }, appName: string, page: Hub
         publisher: { "@id": `${siteUrl}/#organization` },
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
-        inLanguage: "en-IN",
+        ...coverage(page.path),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, caption: page.image.alt },
         }),
@@ -619,7 +622,10 @@ const asmeCode = {
   publisher: { "@type": "Organization", name: "The American Society of Mechanical Engineers", url: "https://www.asme.org" },
   url: "https://www.asme.org/codes-standards/bpvc-standards",
 };
-export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null }) {
+// A guide written as an answer to one question carries that pair as its main entity, the form an answer engine quotes.
+const qa = (question: string | undefined, answer: string) =>
+  question ? { mainEntity: { "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } } } : {};
+export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -639,7 +645,8 @@ export function asmePageGraph(page: { path: string; title: string; description: 
         publisher: { "@id": `${siteUrl}/#organization` },
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
-        inLanguage: "en",
+        ...coverage(page.path),
+        ...qa(page.question, page.description),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
         }),
@@ -667,7 +674,7 @@ export function asmePageGraph(page: { path: string; title: string; description: 
 
 // The manufacturing hub (/manufacturing): one TechArticle per guide with its breadcrumb; a page with a tool adds
 // a WebApplication. Written for US job shops and small manufacturers.
-export function mfgPageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null }) {
+export function mfgPageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -685,7 +692,8 @@ export function mfgPageGraph(page: { path: string; title: string; description: s
         publisher: { "@id": `${siteUrl}/#organization` },
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntityOfPage: url,
-        inLanguage: "en-US",
+        ...coverage(page.path),
+        ...qa(page.question, page.description),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
         }),

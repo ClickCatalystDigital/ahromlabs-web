@@ -7,6 +7,7 @@ import { engagements } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { erpRequirementNodes } from "@/lib/erp-json";
 import { aiQuestionNodes } from "@/lib/ai-assistant";
+import { appliesIn } from "@/lib/markets";
 
 // Bare route.ts defaults to dynamic rendering since Next.js 15 — force-static
 // keeps this prerendered at build time, consistent with the rest of the site.
@@ -147,7 +148,9 @@ export function GET() {
     url: `${siteUrl}/about/pujan-motiwala`,
   };
 
-  return NextResponse.json([founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes, ...erpRequirementNodes(), ...aiQuestionNodes()], {
+  // markets: where each node applies (src/lib/markets.ts): ["IN"], ["NA"], or every market when the subject is shared.
+  const nodes = [founderNode, ...content, ...familyNodes, ...serviceNodes, ...clientNodes, ...questionNodes, ...ibrFormNodes, ...boqItemNodes, ...erpRequirementNodes(), ...aiQuestionNodes()];
+  return NextResponse.json(nodes.map((n) => ({ ...n, markets: appliesIn(new URL(n.url).pathname) })), {
     headers: { "Cache-Control": "public, max-age=3600", "Access-Control-Allow-Origin": "*" },
   });
 }

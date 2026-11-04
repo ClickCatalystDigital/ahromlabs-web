@@ -226,7 +226,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                           className="mt-4 aspect-video h-auto w-full object-contain"
                         />
                       )}
-                      <p className="mt-3 max-w-[48ch] leading-relaxed text-foreground-secondary">{e.demo!.blurb}</p>
+                      <p className="mt-3 max-w-[48ch] leading-relaxed text-foreground-secondary">{market === "NA" && e.demo!.usBlurb ? e.demo!.usBlurb : e.demo!.blurb}</p>
                       <a href={demoHref(market, e.demo!.url, e.demo!.usUrl)} className="text-link focus-ring mt-4 inline-block">
                         {e.demo!.label}
                       </a>
@@ -238,7 +238,7 @@ export function HomePage({ market }: { market: MarketCode }) {
         </Reveal>
 
         {/* The free guides are India's statutory and BOQ references; other markets get their prices here. */}
-        {market === "IN" ? <FreeGuides /> : <><MarketPricing market={market} /><FreeGuides /></>}
+        {market === "IN" ? <FreeGuides market={market} /> : <><MarketPricing market={market} /><FreeGuides market={market} /></>}
 
         {/* 3. The Ahrom approach */}
         <Reveal>
