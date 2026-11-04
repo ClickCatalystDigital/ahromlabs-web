@@ -63,7 +63,13 @@ published: 2026-09-24
 demo:
   url: https://electronics-erp.ahromlabs.com/demo
   label: Try the live demo
-updated: 2026-10-25
+video:
+  id: Cb2MgE5OF4o
+  name: "Electronic Component Inventory ERP: a 90-Second Tour (Inventory Ops live demo, sample company)"
+  description: "A tour of Inventory Ops with a made-up component distributor: the master catalog, reels received into boxes with QR labels, scan-cart outward against invoices, transfers between stores, approvals, customers, orders, receivables checked against Tally and the stock summary."
+  duration: PT1M36S
+  uploaded: "2026-11-04"
+updated: 2026-11-04
 ---
 
 ## Can I try it before talking to anyone?

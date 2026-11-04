@@ -25,6 +25,8 @@ export type ContentEntry = {
   image?: { src: string; alt: string; width?: number; height?: number; caption?: string };
   // Industry-only: a public, hands-on demo of the system this page describes.
   demo?: { url: string; label: string };
+  // Industry-only: the demo's narrated tour on YouTube (id is the 11-character video id, duration ISO 8601).
+  video?: { id: string; name: string; description: string; duration: string; uploaded: string };
   evidence?: { metric: string; value: string }[];
   // Guides (content/ibr/, and content/boq/ where `checks` are optional): the official documents it relies on, the verbatim
   // quotes scripts/check-ibr-quotes.mjs checks against them, and when a person

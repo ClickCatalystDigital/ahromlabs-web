@@ -273,13 +273,29 @@ export function industryGraph(
           significantLink: entry.demo.url,
           mainEntity: {
             "@type": "SoftwareApplication",
-            name: "Boiler ERP (live demo)",
+            name: `${entry.title} (live demo)`,
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             url: entry.demo.url,
             description: entry.description ?? entry.answer,
             creator: { "@id": `${siteUrl}/#organization` },
             offers: { "@type": "Offer", price: "0", priceCurrency: "INR", description: "Free live demo with sample data" },
+          },
+        }
+      : {}),
+    ...(entry.video
+      ? {
+          // The demo's narrated tour, embedded on the page.
+          video: {
+            "@type": "VideoObject",
+            name: entry.video.name,
+            description: entry.video.description,
+            thumbnailUrl: `https://i.ytimg.com/vi/${entry.video.id}/maxresdefault.jpg`,
+            uploadDate: entry.video.uploaded,
+            duration: entry.video.duration,
+            contentUrl: `https://www.youtube.com/watch?v=${entry.video.id}`,
+            embedUrl: `https://www.youtube.com/embed/${entry.video.id}`,
+            publisher: { "@id": `${siteUrl}/#organization` },
           },
         }
       : {}),

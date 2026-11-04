@@ -59,6 +59,12 @@ flow:
 demo:
   url: https://boiler-erp.ahromlabs.com/demo
   label: Try the live demo
+video:
+  id: ct2xTwQWuQY
+  name: "Boiler Manufacturing ERP: Every Department in 3 Minutes (SB Ops live demo, sample company)"
+  description: "A tour of SB Ops with a made-up company, Acme Boilers: the owner's view, one late boiler and why, sales, design, bill of materials, procurement, stores, test certificates, job cards, dispatch, accounts, HR and the customer portal."
+  duration: PT3M7S
+  uploaded: "2026-11-04"
 evidence:
   - metric: IBR forms produced
     value: Cover letter and IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950)
@@ -69,7 +75,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-11-01
+updated: 2026-11-04
 ---
 
 ## Can I try it before talking to anyone?

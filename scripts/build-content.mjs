@@ -95,6 +95,13 @@ function loadKind(kind) {
       assertString(frontmatter.demo?.label, "demo.label", relPath);
       if (!/^https:\/\//.test(frontmatter.demo.url)) throw new Error(`content/${relPath}: demo.url must be https`);
     }
+    // The demo's narrated tour on YouTube: embedded under the hero and described as a VideoObject.
+    if (frontmatter.video !== undefined) {
+      for (const k of ["id", "name", "description", "duration"]) assertString(frontmatter.video?.[k], `video.${k}`, relPath);
+      if (!/^[\w-]{11}$/.test(frontmatter.video.id)) throw new Error(`content/${relPath}: video.id must be an 11-character YouTube id`);
+      if (!/^PT(\d+M)?\d+S$/.test(frontmatter.video.duration)) throw new Error(`content/${relPath}: video.duration must look like PT1M35S`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(frontmatter.video.uploaded ?? ""))) throw new Error(`content/${relPath}: video.uploaded must be YYYY-MM-DD`);
+    }
     if (frontmatter.image !== undefined) {
       assertString(frontmatter.image?.src, "image.src", relPath);
       assertString(frontmatter.image?.alt, "image.alt", relPath);

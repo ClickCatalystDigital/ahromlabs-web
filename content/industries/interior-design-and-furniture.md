@@ -52,7 +52,13 @@ published: 2026-09-24
 demo:
   url: https://interiors-erp.ahromlabs.com/demo
   label: Try the live demo
-updated: 2026-10-24
+video:
+  id: 8efhVJB23x0
+  name: "Interior Design and Furniture Workshop ERP: a 1-Minute Tour (DesignerOps live demo, sample company)"
+  description: "A tour of DesignerOps with made-up sister companies Acme Interiors and Acme Furniture: clients, projects with photos and milestones, one project on one page, workshop orders, vendors, daily attendance and one combined finance book."
+  duration: PT1M7S
+  uploaded: "2026-11-04"
+updated: 2026-11-04
 ---
 
 ## Can I try it before talking to anyone?

@@ -141,6 +141,20 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
           )}
         </section>
 
+        {/* The demo's narrated tour; industryGraph describes it as the page's VideoObject. */}
+        {industry.video && (
+          <section className="rail pb-12">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${industry.video.id}`}
+              title={industry.video.name}
+              loading="lazy"
+              allow="encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+              className="aspect-video w-full max-w-4xl rounded-lg border border-line"
+            />
+          </section>
+        )}
+
         {industry.evidence && industry.evidence.length > 0 && (
           <section className="border-t border-line">
             <div className="rail py-10">
