@@ -6,10 +6,10 @@ import { useEffect, useRef, useState } from "react";
  * A muted looping clip that sits still in black and white until its card is
  * hovered or focused, then plays in colour. Screens without hover (phones)
  * play it while the card is mostly in view. Reduced motion: poster only.
- * Decorative: the surrounding link carries the meaning. `base` is the path
- * without extension: <base>.webm (smaller), <base>.mp4 (older Safari), <base>.jpg poster.
+ * `alt` describes what the clip shows, read out like an image's alt text (the link's own text says where it goes).
+ * `base` is the path without extension: <base>.webm (smaller), <base>.mp4 (older Safari), <base>.jpg poster.
  */
-export function HoverVideo({ base }: { base: string }) {
+export function HoverVideo({ base, alt }: { base: string; alt: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -53,7 +53,9 @@ export function HoverVideo({ base }: { base: string }) {
       loop
       playsInline
       preload="none"
-      aria-hidden="true"
+      role="img"
+      aria-label={alt}
+      title={alt}
       className={`mb-6 aspect-[4/5] w-full bg-line object-cover transition-[filter] duration-500 ${playing ? "" : "grayscale"}`}
     >
       <source src={`${base}.webm`} type="video/webm" />

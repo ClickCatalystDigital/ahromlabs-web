@@ -3,7 +3,7 @@ import { services, families, servicesIn, serviceUrl, familyUrl, proofHref, type 
 import { engagements } from "./work";
 import { IBR_2026_URL } from "./ibr-forms";
 import { AI_VERSION, AI_CHECKED } from "./ai-assistant";
-import { countriesFor, coverage } from "./markets";
+import { MARKETS, countriesFor, coverage } from "./markets";
 
 export { IBR_2026_URL };
 
@@ -252,8 +252,11 @@ export function articleGraph(entry: ContentEntry, path: string) {
 export function industryGraph(
   entry: ContentEntry,
   edges: { services: { slug: string }[]; clients: { slug: string; client: string; anonymous?: boolean }[]; notes: ContentEntry[] },
+  market?: "IN" | "NA",
 ) {
-  const url = `${siteUrl}/industries/${entry.slug}`;
+  // A page with a US version is one per market: each names its own URL, countries and currency.
+  const url = `${siteUrl}${market === "NA" ? "/us" : ""}/industries/${entry.slug}`;
+  const area = market ? MARKETS[market].countries.map((c) => ({ "@type": "Country", name: c === "IN" ? "India" : c === "US" ? "United States" : "Canada" })) : countriesFor(`/industries/${entry.slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -263,7 +266,7 @@ export function industryGraph(
     description: entry.answer,
     datePublished: entry.published,
     dateModified: entry.updated,
-    audience: { "@type": "BusinessAudience", audienceType: entry.audience, geographicArea: countriesFor(`/industries/${entry.slug}`) },
+    audience: { "@type": "BusinessAudience", audienceType: entry.audience, geographicArea: area },
     ...(entry.image
       ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${entry.image.src}`, caption: entry.image.alt } }
       : {}),
@@ -280,7 +283,7 @@ export function industryGraph(
             url: entry.demo.url,
             description: entry.description ?? entry.answer,
             creator: { "@id": `${siteUrl}/#organization` },
-            offers: { "@type": "Offer", price: "0", priceCurrency: "INR", description: "Free live demo with sample data" },
+            offers: { "@type": "Offer", price: "0", priceCurrency: market === "NA" ? "USD" : "INR", description: "Free live demo with sample data" },
           },
         }
       : {}),

@@ -44,7 +44,9 @@ export type ContentEntry = {
   tool?: "hydrotest" | "shell" | "continuity" | "jobcost" | "schedule" | "nexus";
   published: string;
   updated: string;
-  body: string;
+  body: string;  // Industry-only: North America's version (content/industries/us/<slug>.md), served at /us/industries/<slug>.
+  // Its fields replace the India page's; see industryFor() in src/lib/industries.ts.
+  na?: Partial<Omit<ContentEntry, "na">> & { title: string; audience: string; answer: string; body: string; updated: string };
 };
 
 // content-data.generated.json is produced by scripts/build-content.mjs (run

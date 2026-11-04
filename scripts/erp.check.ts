@@ -19,7 +19,7 @@ const published = [
   fs.readFileSync("src/lib/services.ts", "utf-8"),
   fs.readFileSync("src/lib/work.ts", "utf-8"),
   ...["notes", "patterns", "industries"].flatMap((d) =>
-    fs.readdirSync(path.join("content", d)).map((f) => fs.readFileSync(path.join("content", d, f), "utf-8")),
+    (fs.readdirSync(path.join("content", d), { recursive: true }) as string[]).filter((f) => f.endsWith(".md")).map((f) => fs.readFileSync(path.join("content", d, f), "utf-8")),
   ),
 ].join("\n");
 

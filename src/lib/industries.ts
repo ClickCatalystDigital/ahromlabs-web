@@ -37,3 +37,10 @@ export function resolveIndustryEdges(industry: ContentEntry): IndustryEdges {
 export function industryForClient(clientSlug: string): ContentEntry | undefined {
   return getContent("industry").find((i) => i.clients?.includes(clientSlug));
 }
+
+// The page as a market sees it: North America gets the US version's fields over the India page's, and no video
+// unless the US version names one (the India tour shows IBR forms and rupees).
+export function industryFor(industry: ContentEntry, market: "IN" | "NA" = "IN"): ContentEntry {
+  if (market !== "NA" || !industry.na) return industry;
+  return { ...industry, video: undefined, ...industry.na };
+}

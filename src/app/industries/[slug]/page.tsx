@@ -6,7 +6,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
-import { resolveIndustryEdges } from "@/lib/industries";
+import { resolveIndustryEdges, industryFor } from "@/lib/industries";
 import { serviceUrl } from "@/lib/services";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
@@ -14,6 +14,7 @@ import { OpenOnWide } from "@/components/OpenOnWide";
 import { headingId, textOf, markdownHeadings } from "@/lib/headings";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { languages } from "@/lib/markets";
 
 // Each industry's ERP requirements guide (content/erp), linked from its page.
 const ERP_GUIDE: Record<string, string> = {
@@ -44,7 +45,7 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
   return {
     title: seoTitle(industry.title),
     description,
-    alternates: { canonical: `/industries/${industry.slug}` },
+    alternates: { canonical: `/industries/${industry.slug}`, languages: languages(`/industries/${industry.slug}`) },
     openGraph: {
       type: "website",
       url,
@@ -86,9 +87,11 @@ const FIGURES: Record<string, typeof Slow> = {
   "interior-design-and-furniture": Hub,
 };
 
-export default async function IndustryPage(props: PageProps<"/industries/[slug]">) {
+// market: "NA" renders North America's version (src/app/us/industries/[slug]); the shared URL is India's.
+export default async function IndustryPage(props: PageProps<"/industries/[slug]"> & { market?: "IN" | "NA" }) {
   const { slug } = await props.params;
-  const industry = getContent("industry").find((i) => i.slug === slug)!;
+  const market = props.market ?? "IN";
+  const industry = industryFor(getContent("industry").find((i) => i.slug === slug)!, market);
   const edges = resolveIndustryEdges(industry);
   // ponytail: stock hairline figures; swap boiler for a custom plate-cut figure later.
   const Figure = FIGURES[industry.slug];
@@ -98,7 +101,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd(industryGraph(industry, edges)) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(industryGraph(industry, edges, industry.na || market === "NA" ? market : undefined)) }}
       />
       <SiteNav />
       <main className="flex-1">
@@ -215,7 +218,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
           <div className="prose-measure lg:order-1">
             <Markdown components={markdownComponents}>{industry.body}</Markdown>
 
-            {ERP_GUIDE[industry.slug] && (
+            {market === "IN" && ERP_GUIDE[industry.slug] && (
               <p className="mt-10 leading-relaxed text-foreground-secondary">
                 Writing down what a system must do before you buy one?{" "}
                 <Link href={`/erp/${ERP_GUIDE[industry.slug]}`} className="text-link focus-ring">

@@ -210,6 +210,25 @@ const terms = loadKind("term");
 const notes = loadKind("note");
 const patterns = loadKind("pattern");
 const industries = loadKind("industry");
+// North America's version of an industry page: content/industries/us/<slug>.md, attached as `na` and served at
+// /us/industries/<slug> (src/lib/markets.ts ADAPTIVE). Its front matter replaces the India page's fields it names;
+// a US page has no video unless it names its own (the India tour shows IBR forms and rupees).
+for (const industry of industries) {
+  const relPath = `industries/us/${industry.slug}.md`;
+  const file = path.join(CONTENT_ROOT, relPath);
+  if (!fs.existsSync(file)) continue;
+  const [, frontmatterBlock, ...bodyParts] = fs.readFileSync(file, "utf-8").split(/^---[ \t]*$/m);
+  const na = loadYaml(frontmatterBlock);
+  for (const k of ["title", "audience", "answer", "description", "updated"]) assertString(na[k], k, relPath);
+  assertString(na.demo?.url, "demo.url", relPath);
+  assertString(na.demo?.label, "demo.label", relPath);
+  if (na.description.trim().length > 160) throw new Error(`content/${relPath}: description is ${na.description.trim().length} chars; keep it to 160`);
+  for (const [i, step] of (na.flow ?? []).entries()) {
+    assertString(step?.step, `flow[${i}].step`, relPath);
+    assertString(step?.detail, `flow[${i}].detail`, relPath);
+  }
+  industry.na = { ...na, answer: na.answer.trim(), description: na.description.trim(), body: bodyParts.join("---").trim() };
+}
 const guides = loadKind("guide");
 const boqGuides = loadKind("boq");
 const erpGuides = loadKind("erp");
@@ -227,7 +246,8 @@ const conGuides = loadKind("construction");
 const patternSlugs = new Set(patterns.map((p) => p.slug));
 const noteSlugs = new Set(notes.map((n) => n.slug));
 const guideSlugs = new Set(guides.map((g) => g.slug));
-for (const entry of [...notes, ...industries]) {
+const usIndustries = industries.filter((i) => i.na).map((i) => ({ ...i.na, kind: "industry", slug: `us/${i.slug}` }));
+for (const entry of [...notes, ...industries, ...usIndustries]) {
   const where = `content/${KIND_DIRS[entry.kind]}/${entry.slug}.md`;
   for (const patternSlug of entry.patterns ?? []) {
     if (!patternSlugs.has(patternSlug)) {
