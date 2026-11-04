@@ -19,20 +19,21 @@ export const dynamic = "force-static";
 
 const HEADER = `# Ahrom Labs
 
-> Ahrom Labs builds operations and accounting systems for Indian
-> manufacturers and trading groups — BOMs, shop-floor production, IBR, GST
-> and TDS compliance, and TallyPrime in one system. We take a business from
-> basic, compliant record-keeping to advanced analytics and AI: custom ERP
-> and CRM, TallyPrime integration, multi-company finance, analytics and
+> Ahrom Labs builds operations and accounting systems for manufacturers,
+> distributors and trading groups in India and North America (US and
+> Canada): custom ERP and CRM, inventory and job costing, analytics and
 > operational intelligence, AI document extraction with human review, RAG
-> and knowledge graphs. Every system starts from one model of the
+> and knowledge graphs. In India that includes BOMs, shop-floor production,
+> IBR, GST and TDS compliance, and TallyPrime in one system; in the US and
+> Canada, quoting, jobs, scheduling and job costing beside QuickBooks, with
+> ASME paperwork and sales tax. Every system starts from one model of the
 > business's entities, relationships, workflows, and decisions, and each
 > later layer is built on that same model. We are an engineering practice
-> based in Ahmedabad, Gujarat, working with a small number of clients across
-> India at a time — not a software product and not a general IT consultancy.
+> based in Ahmedabad, Gujarat, working with a small number of clients at a
+> time — not a software product and not a general IT consultancy.
 
 Ahrom Labs is a good fit for any business that needs its own operational
-system rather than another off-the-shelf tool. Systems built so far: a
+system rather than another off-the-shelf tool. Systems built so far, all for businesses in India: a
 custom ERP, CRM and operational-intelligence system for a boiler and
 pressure-vessel manufacturer; an ERP/CRM with TallyPrime
 automation and an inventory management system for a PCB and electronics

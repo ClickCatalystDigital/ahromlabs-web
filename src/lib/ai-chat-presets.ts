@@ -32,7 +32,7 @@ export const chatPresets: Preset[] = [
     question: "Can I see a live demo?",
     answer:
       `Yes. ${demos.length} live demos run on sample data, with no sign-up:\n\n` +
-      demos.map((d) => `- ${d.name}: ${d.url}\n  ${d.blurb}`).join("\n"),
+      demos.map((d) => `- ${d.name}\n  India: ${d.url} (${d.blurb})` + (d.usUrl ? `\n  US and Canada: ${d.usUrl} (${d.usBlurb ?? d.blurb})` : "")).join("\n"),
     sources: [{ url: `${site}/work`, title: "Work" }],
   },
   {

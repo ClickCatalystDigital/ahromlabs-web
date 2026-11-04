@@ -6,12 +6,12 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { HoverVideo } from "@/components/HoverVideo";
 import { getContent } from "@/lib/content";
-import { resolveIndustryEdges } from "@/lib/industries";
-import { clientInSentence } from "@/lib/work";
+import { resolveIndustryEdges, industryForClient } from "@/lib/industries";
+import { clientInSentence, engagements } from "@/lib/work";
 import { metaDescription } from "@/lib/seo";
 import { marketsFor, only } from "@/lib/markets";
 
-const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture — each backed by a real system in use.");
+const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture, construction — each backed by a real system in use.");
 
 export const metadata: Metadata = {
   title: "Industries we build ERP software for",
@@ -35,6 +35,8 @@ export default function IndustriesPage() {
   // An industry page exists only where a real system was built — the list
   // grows with engagements, never ahead of them.
   const industries = getContent("industry");
+  // ponytail: a client without its own industry page yet links to its /work entry, so the index still lists every industry built for.
+  const unpaged = engagements.filter((e) => !industryForClient(e.slug));
 
   return (
     <>
@@ -72,6 +74,17 @@ export default function IndustriesPage() {
                   </Link>
                 );
               })}
+              {unpaged.map((e) => (
+                <Link key={e.slug} href={`/work#${e.slug}`} className="focus-ring block">
+                  {e.demo?.image && (
+                    // eslint-disable-next-line @next/next/no-img-element -- same frame as HoverVideo's poster
+                    <img src={e.demo.image.src} alt={e.demo.image.alt} loading="lazy" className="mb-6 aspect-[4/5] w-full bg-line object-cover grayscale" />
+                  )}
+                  <h2 className="text-lg font-medium text-foreground">{e.industry}</h2>
+                  <p className="mt-2 leading-relaxed text-foreground-secondary">{e.built}</p>
+                  <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}</p>
+                </Link>
+              ))}
             </div>
           </section>
         </Reveal>
