@@ -76,10 +76,8 @@ export default function IndustriesPage() {
               })}
               {unpaged.map((e) => (
                 <Link key={e.slug} href={`/work#${e.slug}`} className="focus-ring block">
-                  {e.demo?.image && (
-                    // eslint-disable-next-line @next/next/no-img-element -- same frame as HoverVideo's poster
-                    <img src={e.demo.image.src} alt={e.demo.image.alt} loading="lazy" className="mb-6 aspect-[4/5] w-full bg-line object-cover grayscale" />
-                  )}
+                  {/* public/industries/<client slug>.{jpg,webm,mp4}, the same frame as the industry pages' cards. */}
+                  <HoverVideo base={`/industries/${e.slug}`} />
                   <h2 className="text-lg font-medium text-foreground">{e.industry}</h2>
                   <p className="mt-2 leading-relaxed text-foreground-secondary">{e.built}</p>
                   <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}</p>
