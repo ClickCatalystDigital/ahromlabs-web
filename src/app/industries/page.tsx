@@ -9,7 +9,7 @@ import { getContent } from "@/lib/content";
 import { resolveIndustryEdges, industryForClient } from "@/lib/industries";
 import { clientInSentence, engagements } from "@/lib/work";
 import { metaDescription } from "@/lib/seo";
-import { marketsFor, only } from "@/lib/markets";
+import { only } from "@/lib/markets";
 
 const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture, construction — each backed by a real system in use.");
 
@@ -33,7 +33,8 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   // An industry page exists only where a real system was built — the list
-  // grows with engagements, never ahead of them.
+  // grows with engagements, never ahead of them. Every card shows in both markets
+  // (North America sees the Indian implementations too, marked "in India").
   const industries = getContent("industry");
   // ponytail: a client without its own industry page yet links to its /work entry, so the index still lists every industry built for.
   const unpaged = engagements.filter((e) => !industryForClient(e.slug));
@@ -61,14 +62,13 @@ export default function IndustriesPage() {
                     key={i.slug}
                     href={`/industries/${i.slug}`}
                     className="focus-ring block"
-                    {...only(marketsFor(`/industries/${i.slug}`))}
                   >
                     <HoverVideo base={`/industries/${i.slug}`} />
                     <h2 className="text-lg font-medium text-foreground">{i.title}</h2>
                     <p className="mt-2 leading-relaxed text-foreground-secondary">{i.answer}</p>
                     {clients.length > 0 && (
                       <p className="mt-3 text-sm text-foreground-secondary">
-                        Built for {clients.map(clientInSentence).join(", ")}
+                        Built for {clients.map(clientInSentence).join(", ")}<span {...only(["NA"])}> in India</span>
                       </p>
                     )}
                   </Link>
@@ -80,7 +80,7 @@ export default function IndustriesPage() {
                   <HoverVideo base={`/industries/${e.slug}`} />
                   <h2 className="text-lg font-medium text-foreground">{e.industry}</h2>
                   <p className="mt-2 leading-relaxed text-foreground-secondary">{e.built}</p>
-                  <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}</p>
+                  <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}<span {...only(["NA"])}> in India</span></p>
                 </Link>
               ))}
             </div>
