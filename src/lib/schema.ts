@@ -120,6 +120,7 @@ export const orgGraph = {
         "https://clutch.co/profile/ahrom-labs",
         "https://www.instagram.com/ahromlabs/",
         "https://www.goodfirms.co/company/ahromlabs",
+        "https://www.designrush.com/agency/profile/ahromlabs",
       ],
     },
     // The public MCP server. The registry has no per-server page, so Glama and

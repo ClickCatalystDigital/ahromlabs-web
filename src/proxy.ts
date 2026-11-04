@@ -91,6 +91,19 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Crawlers that pull URLs out of our Markdown by regex keep the punctuation after a link:
+  // "[MAWP](https://ahromlabs.com/asme/mawp);" is fetched as /asme/mawp); (the links themselves are valid).
+  // Sent on with a 301 only when the cleaned path is a real page, i.e. it has a Markdown twin.
+  const trimmed = pathname.replace(/[)\].,:;!?'"]+$/, "");
+  if (trimmed && trimmed !== pathname) {
+    try {
+      const { env } = await getCloudflareContext({ async: true });
+      const twin = await env.ASSETS?.fetch(new URL(`/md${trimmed}.md`, request.url));
+      if (twin?.ok) return NextResponse.redirect(new URL(`${trimmed}${request.nextUrl.search}`, request.url), 301);
+    } catch {
+      // next dev without the Cloudflare context: falls through to the 404.
+    }
+  }
 
   const markdown = prefersMarkdown(request.headers.get("accept") ?? "");
   if (bot || markdown) {
