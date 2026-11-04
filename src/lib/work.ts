@@ -126,3 +126,13 @@ export const engagements: Engagement[] = [
 // For use mid-sentence: "Built for a boiler and pressure-vessel manufacturer".
 export const clientInSentence = (e: Engagement) =>
   e.anonymous ? e.client.charAt(0).toLowerCase() + e.client.slice(1) : e.client;
+
+// How far a service has got, worked out from the clients above and its demos, so a page, /knowledge.json and /llms.txt
+// can't claim more than they show: in production for clients (every client above runs in India), a sample demo, or
+// neither yet. A new client or demo changes the label by itself.
+export function serviceStatus(s: Pick<Service, "slug" | "demos">) {
+  const clients = engagements.filter((e) => e.services.includes(s.slug)).length;
+  const demo = (s.demos?.length ?? 0) > 0;
+  const live = clients > 0 ? `In production at ${clients} client${clients === 1 ? "" : "s"} in India` : "Not yet in production for a client";
+  return { clients, demo, label: demo ? `${live}; a sample demo shows it` : live };
+}

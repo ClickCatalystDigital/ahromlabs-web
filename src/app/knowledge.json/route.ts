@@ -3,7 +3,7 @@ import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrForms, formName } from "@/lib/ibr-forms";
 import { boqItems, trades, IS, SPEC, UNIT_LABEL } from "@/lib/boq";
 import { services, families, serviceUrl, familyUrl } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { engagements, serviceStatus } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { erpRequirementNodes } from "@/lib/erp-json";
 import { aiQuestionNodes } from "@/lib/ai-assistant";
@@ -62,6 +62,9 @@ export function GET() {
     steps: s.steps,
     questions: s.questions,
     evidence: s.evidence,
+    // In production for how many clients, and whether a sample demo shows it (src/lib/work.ts serviceStatus).
+    status: serviceStatus(s).label,
+    productionClients: serviceStatus(s).clients,
     proof: s.proof.map(ref),
     // Graph edges in both directions, so an agent can walk service → client → industry.
     clients: engagements.filter((e) => e.services.includes(s.slug)).map((e) => e.slug),

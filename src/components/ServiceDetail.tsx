@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { type Service, resolveProof, proofHref } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { engagements, serviceStatus } from "@/lib/work";
 import { requirements } from "@/lib/erp";
 import { demoHref, say, type MarketCode } from "@/lib/markets";
 
@@ -23,6 +23,10 @@ export function ServiceDetail({ service, market = "IN" }: { service: Service; ma
       <p className="mt-4 leading-relaxed text-foreground-secondary">
         <span className="font-medium text-foreground">Who it&apos;s for: </span>
         {t(service.forWhom)}
+      </p>
+      <p className="mt-2 leading-relaxed text-foreground-secondary">
+        <span className="font-medium text-foreground">Status: </span>
+        {serviceStatus(service).label}.
       </p>
 
       {demos.length > 0 && (

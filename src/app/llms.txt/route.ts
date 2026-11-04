@@ -9,7 +9,7 @@ import { stGuides } from "@/lib/sales-tax";
 import { conGuides } from "@/lib/construction";
 import { DICT, MARKETS, marketsFor, appliesIn } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { engagements, serviceStatus } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { MCP_URL } from "@/lib/ai-search";
 
@@ -138,7 +138,7 @@ export function GET() {
     .join("\n");
 
   // The whole system first, then each family with its services under it.
-  const serviceLine = (s: (typeof services)[number]) => `- [${s.name}](https://ahromlabs.com${serviceUrl(s)}): ${s.plainName}. ${s.answer}`;
+  const serviceLine = (s: (typeof services)[number]) => `- [${s.name}](https://ahromlabs.com${serviceUrl(s)}): ${s.plainName}. ${s.answer} Status: ${serviceStatus(s).label}.`;
   const offered = [
     ...services.filter((s) => s.family === null).map(serviceLine),
     ...families.map(
