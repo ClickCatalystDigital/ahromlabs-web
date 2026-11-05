@@ -58,6 +58,9 @@ Batch 1 is in progress. After it, batches go cluster by cluster, so each finishe
 | 1 *(running)* | construction/pay-applications, construction/lien-waivers, asme/u-stamp, asme/mtr, manufacturing/quickbooks-for-manufacturing | Sets the style across sections |
 | 2 | construction/retainage, change-orders, wip-schedule (no sources yet), the `/construction` hub, **new: construction industry page (India + US)** | Completes US billing; the industry page becomes the cluster's hub and links to all of it |
 | 3 | construction/ra-bills, measurement-book, gst-on-works-contracts, tds-on-contractor-payments (+ mobilisation advance, retention money and final bill folded into `ra-bills`) | Completes India billing: Datum AI's first full knowledge base |
+| 3a | **new:** construction glossary terms (short `/systems` pages): RA bill, retainage, measurement book, lien waiver, pay application, schedule of values, change order, WIP / over-under billing | Gives the glossary links something to point at; each term links back to its guide |
+| 3b | **new (US):** mechanics lien and preliminary notice deadlines by state, prompt payment acts by state, sales tax for contractors (in `/sales-tax`), certified payroll (Davis-Bacon; a guide only, the demo doesn't do it) | US contractor questions no existing page answers |
+| 3c | **new (India):** labour cess (BOCW, 1%), contract labour compliance (CLRA, PF/ESIC for contractors), price escalation clauses (CPWD clause 10CC), performance bank guarantee and defect liability period | India contractor questions no existing page answers |
 | 4 | asme/section-viii, section-i-vs-iv, stamps, data-reports, authorized-inspector | ASME code basics: the most-searched questions |
 | 5 | asme/section-ix, wps-pqr-wpq, welder-qualification, welder-continuity, p-numbers | ASME welding cluster |
 | 6 | asme/mawp, shell-thickness, hydrostatic-test, joint-efficiency, pwht | ASME design and test (the pages with calculators) |
@@ -74,7 +77,8 @@ Batch 1 is in progress. After it, batches go cluster by cluster, so each finishe
 | 19–21 | Glossary: the 40 thin terms, by the cluster that mentions them (ASME terms with batch 9, etc.) | After the glossary auto-linking sends traffic to them |
 | Later | Construction: material vs BOQ norms, site control from the phone, job cost and margin per site (into existing pages where they fit) | Agreed order after billing |
 
-New pages in this plan: only the construction industry page (batch 2) and the electronics US version (batch 13),
+New pages in this plan: the construction industry page (batch 2), the construction glossary terms and the 8 new
+contractor pages (batches 3a–3c, added 5 Nov so Datum AI can answer what contractors ask), and the electronics US version (batch 13),
 because nothing existing covers them. Anything else research turns up goes into the existing page it belongs to.
 
 ## Other SEO work, in order
