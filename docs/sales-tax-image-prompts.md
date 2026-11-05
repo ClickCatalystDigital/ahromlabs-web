@@ -14,3 +14,9 @@ Same style and hand-over as the ASME hub (`docs/asme-image-prompts.md`): paste t
 | `manufacturing-sales-tax-exemption.webp` | Sales tax exemptions for manufacturers | Steel bar stock entering the chuck of a small lathe, with a few freshly turned parts on a tray below. |
 | `use-tax.webp` | Use tax for businesses | An opened cardboard shipping box with crumpled packing paper and a blank packing slip resting on top. |
 | `sales-tax-in-erp.webp` | How an ERP should handle US sales tax | A clipboard with a blank order form showing address lines, item rows and one total line, beside a small stack of filed certificates held by a binder clip. |
+
+## New page (5 Nov 2026)
+
+| File | Page | Prompt (after the style block) |
+|---|---|---|
+| `contractors-sales-tax.webp` | Sales tax for contractors: materials, labor and real property | An open steel toolbox with a blank printed receipt tucked under its handle and a few coins on the lid. |

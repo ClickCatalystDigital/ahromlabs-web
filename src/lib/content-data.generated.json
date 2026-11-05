@@ -92,6 +92,19 @@
   },
   {
     "kind": "term",
+    "slug": "change-order",
+    "title": "Change order",
+    "answer": "A signed amendment to a construction contract that changes its scope, price or time; the US term for what Indian contracts call a variation order.",
+    "domain": [
+      "operations"
+    ],
+    "order": 24,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "How change orders are priced, approved and billed is in [change orders in construction](/construction/change-orders); the Indian equivalent is a [variation order](/systems/variation-order)."
+  },
+  {
+    "kind": "term",
     "slug": "cross-department-process",
     "title": "Cross-department process",
     "answer": "A workflow that spans more than one team, such as sales handing off to fulfillment, modeled as one continuous process rather than as separate steps in separate tools.",
@@ -339,6 +352,19 @@
   },
   {
     "kind": "term",
+    "slug": "lien-waiver",
+    "title": "Lien waiver",
+    "answer": "A signed release in which a contractor, subcontractor or supplier gives up its right to file a mechanics lien for the amount paid; conditional waivers take effect only once the payment clears, unconditional ones at signing.",
+    "domain": [
+      "operations"
+    ],
+    "order": 21,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "The four kinds, and the states that prescribe their wording, are in [lien waivers explained](/construction/lien-waivers)."
+  },
+  {
+    "kind": "term",
     "slug": "manufacturers-data-report",
     "title": "Manufacturer's Data Report",
     "answer": "The ASME form that records a stamped boiler or vessel as built, such as U-1A or P-2: design conditions, materials, thicknesses, joints, examination and test pressure, signed by the manufacturer and the Authorized Inspector.",
@@ -417,6 +443,19 @@
   },
   {
     "kind": "term",
+    "slug": "measurement-book",
+    "title": "Measurement book (MB)",
+    "answer": "The register in which work done on an Indian contract is measured and recorded, item by item against the BOQ, and checked by the engineer in charge; the basis for every running account bill.",
+    "domain": [
+      "operations"
+    ],
+    "order": 20,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "What goes into an MB entry and who signs it is in [the measurement book](/construction/measurement-book)."
+  },
+  {
+    "kind": "term",
     "slug": "mrp",
     "title": "MRP (material requirements planning)",
     "answer": "Working out what material to buy or make, how much and when, from orders, bills of materials, stock on hand and lead times.",
@@ -469,6 +508,19 @@
   },
   {
     "kind": "term",
+    "slug": "over-under-billing",
+    "title": "Over and under billing",
+    "answer": "The gap between what a contractor has billed on a job and what it has earned by percentage of completion: billing ahead of progress is over billing (a liability), behind it is under billing (an asset).",
+    "domain": [
+      "operations"
+    ],
+    "order": 25,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "How a work-in-progress schedule finds both is in [the WIP schedule](/construction/wip-schedule)."
+  },
+  {
+    "kind": "term",
     "slug": "p-number",
     "title": "P-number",
     "answer": "ASME Section IX's grouping of base metals with similar welding behaviour, so one procedure or welder test covers every material in the group: P-No. 1 for carbon steel, P-No. 8 for austenitic stainless.",
@@ -479,6 +531,19 @@
     "published": "2026-11-01",
     "updated": "2026-11-01",
     "body": "Filler metals have F-numbers and A-numbers; all three are in [P-numbers, F-numbers and A-numbers](/asme/p-numbers)."
+  },
+  {
+    "kind": "term",
+    "slug": "pay-application",
+    "title": "Pay application",
+    "answer": "A US contractor's periodic request for payment, usually on AIA forms G702 and G703: the value of work completed and materials stored to date, less retainage and earlier payments, certified by the architect.",
+    "domain": [
+      "operations"
+    ],
+    "order": 22,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "A line-by-line worked example is in [pay applications (AIA G702 and G703)](/construction/pay-applications)."
   },
   {
     "kind": "term",
@@ -508,6 +573,19 @@
   },
   {
     "kind": "term",
+    "slug": "ra-bill",
+    "title": "RA bill (running account bill)",
+    "answer": "An interim bill a contractor raises during the work in India, for the quantity measured so far less what earlier bills already claimed, with deductions such as security deposit, advances recovered and tax deducted at source shown on the bill.",
+    "domain": [
+      "operations"
+    ],
+    "order": 18,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "How one is built from the measurement book, with previous, this-bill and up-to-date quantities, is in [RA bills: how a running account bill works](/construction/ra-bills)."
+  },
+  {
+    "kind": "term",
     "slug": "relationship",
     "title": "Relationship",
     "answer": "A defined connection between two entities, such as which customer placed which order. Relationships are modeled directly, not inferred from matching IDs across separate tables.",
@@ -518,6 +596,19 @@
     "published": "2026-08-29",
     "updated": "2026-08-29",
     "body": ""
+  },
+  {
+    "kind": "term",
+    "slug": "retainage",
+    "title": "Retainage",
+    "answer": "A share of each progress payment, often 5–10% in US contracts, that the owner holds back until the work is complete, to secure completion and corrections; called retention or security deposit in India.",
+    "domain": [
+      "operations"
+    ],
+    "order": 19,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "How it is calculated, capped by state law and released is in [retainage in construction](/construction/retainage)."
   },
   {
     "kind": "term",
@@ -570,6 +661,19 @@
     "published": "2026-11-02",
     "updated": "2026-11-02",
     "body": "A [bill of materials](/systems#bill-of-materials) says what a part is made of; the routing says how. It is what turns a quote into a schedule and a job cost: the same operations and times price the job, place it on machines and become the estimate that actual time is compared against. No QuickBooks edition models routings; see [does QuickBooks work for manufacturing](/manufacturing/quickbooks-for-manufacturing) and [production scheduling software](/manufacturing/production-scheduling-software)."
+  },
+  {
+    "kind": "term",
+    "slug": "schedule-of-values",
+    "title": "Schedule of values",
+    "answer": "The breakdown of a contract sum into lines of work, each with its scheduled value, against which every pay application reports the percentage complete; it becomes the G703 continuation sheet.",
+    "domain": [
+      "operations"
+    ],
+    "order": 23,
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "How it drives each pay application is in [pay applications (AIA G702 and G703)](/construction/pay-applications)."
   },
   {
     "kind": "term",
