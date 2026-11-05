@@ -6491,6 +6491,119 @@
   },
   {
     "kind": "construction",
+    "slug": "bank-guarantee-defect-liability",
+    "group": "india",
+    "title": "Performance guarantee, security deposit and defect liability",
+    "metaTitle": "Performance guarantee and defect liability period",
+    "related": [
+      "/construction/ra-bills",
+      "/construction/price-escalation-clause",
+      "/services/compliance-accounting",
+      "/systems/msme-payment-rule",
+      "/industries/construction-company"
+    ],
+    "question": "What performance guarantee and security deposit does a contractor give on a CPWD work, and when are they returned?",
+    "answer": "On a CPWD work the contractor gives a performance guarantee, usually 5% of the tendered amount as a bank guarantee or other listed instrument, valid to the stipulated completion date plus at least 6 months, and returned after the completion certificate. Security deposit, 2.5%, is deducted from bills and refunded after the defect liability period, 12 months from completion (6 months on works up to ₹10 lakh), or once the final bill is passed.",
+    "description": "Performance guarantee, security deposit and defect liability on CPWD works: amounts, forms, validity, release against a bank guarantee and refund.",
+    "domain": [
+      "construction",
+      "billing",
+      "india"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)",
+        "publisher": "Central Public Works Department, Government of India (copy published by IIT Kanpur)",
+        "url": "https://iitk.ac.in/iwd/file/2026/18-Civil-D2-2026-27/GCC-2023.pdf",
+        "date": "2023-09-22"
+      },
+      {
+        "title": "CPWD Works Manual 2022",
+        "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
+        "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
+        "date": "2022-06-30"
+      },
+      {
+        "title": "CPWD circulars: General Conditions of Contract (amendments to GCC 2023)",
+        "publisher": "Central Public Works Department",
+        "url": "https://cpwd.gov.in/AllCirculars.aspx?Type=24",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "GCC 2023, Clause 1(i) (performance guarantee)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The contractor shall submit an irrevocable Performance Guarantee at specified percentage of the tendered amount as mentioned in Schedule 'E'"
+      },
+      {
+        "reg": "GCC 2023, Clause 1(i) (forms)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "This Guarantee shall be in the form of Insurance Surety Bonds, Account Payee Demand Draft, Fixed Deposit Receipt or Bank Guarantee from any of the Commercial Banks."
+      },
+      {
+        "reg": "GCC 2023, Clause 1(ii) (validity)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "shall be initially valid up to the stipulated date of completion plus minimum 6 months beyond that."
+      },
+      {
+        "reg": "GCC 2023, Clause 1(ii) (return)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "After recording of the completion certificate for the work by the competent authority, the performance guarantee shall be returned to the contractor, without any interest."
+      },
+      {
+        "reg": "GCC 2023, Clause 1(iii)(a)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Failure by the contractor to extend the validity of the Performance Guarantee as described herein above, in which event the Engineer-in-Charge may claim the full amount of the Performance Guarantee."
+      },
+      {
+        "reg": "GCC 2023, Clause 1 (forfeiture on determination)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "In the event of the contract being determined or rescinded under provision of any of the Clause/Condition of the agreement, the performance guarantee shall stand forfeited in full"
+      },
+      {
+        "reg": "GCC 2023, Schedule E",
+        "doc": "cpwd-gcc-2023",
+        "quote": "(ii) Performance Guarantee : 5% of tendered value. (iii) Security Deposit : 2.5% of tendered value."
+      },
+      {
+        "reg": "GCC 2023, Clause 1A (security deposit)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "to deduct a sum at the rate of 2.5% of the gross amount of each running and final bill till the sum deducted will amount to security deposit of 2.5% of the tendered amount of the work."
+      },
+      {
+        "reg": "GCC 2023, Clause 1A",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The security deposit as deducted above can be released against bank guarantee issued by a scheduled bank, on its accumulations to a minimum of Rs. 5 lac"
+      },
+      {
+        "reg": "GCC 2023, Clause 17 (defect liability)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "if any defect, shrinkage or other faults appear in the work within twelve months (six months in the case of work costing Rs. Ten lacs and below except road work) after a certificate final or otherwise of its completion"
+      },
+      {
+        "reg": "GCC 2023, Clause 17 (refund of security deposit)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The security deposit of the contractor shall not be refunded before the expiry of twelve months (six months in the case of work costing Rs. Ten lacs and below except road work) after the issue of the certificate final or otherwise, of completion of work, or till the final bill has been prepared and passed whichever is later."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.2(2)",
+        "doc": "cpwd",
+        "quote": "PG shall be 5% of the contract amount or as prescribed from time to time"
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.5.3 (bank guarantees)",
+        "doc": "cpwd",
+        "quote": "The bank guarantee submitted by agencies for various purposes such as earnest money deposit/ performance guarantee/security deposit/ mobilization advance/ Milestone(s) shall be effectively monitored."
+      }
+    ],
+    "body": "## What is a performance guarantee?\n\nA performance guarantee is security the contractor gives the client, at the start of the contract, that it will\nperform the contract; the client can claim it if the contractor doesn't. On CPWD works, Clause 1 of the General\nConditions of Contract 2023 requires an irrevocable performance guarantee at the percentage in Schedule E of the\ntendered amount, on top of the other deposits in the contract, within the period Schedule F allows after the letter\nof acceptance. Schedule E of GCC 2023 sets it at 5% of the tendered value.\n\n## In what form can a performance guarantee be given?\n\nAs an insurance surety bond, an account payee demand draft, a fixed deposit receipt, or a bank guarantee from any\ncommercial bank, under Clause 1. If a bank can't pay against a fixed deposit receipt given as part of the guarantee,\nthe loss falls on the contractor, who must make it good on demand.\n\n## How long must a performance guarantee be valid?\n\nUp to the stipulated date of completion plus at least 6 months, and longer if the time for completion is extended:\nthe contractor must get its validity extended to cover the extended time. If it doesn't, the Engineer-in-Charge may\nclaim the full amount. The CPWD Works Manual 2022 put it differently (valid at least sixty days beyond completion of\nall contractual obligations), and CPWD amended Clause 1 and Schedule E by a circular on 27 February 2026; check the\nversion of the GCC your contract names.\n\n## When is the performance guarantee returned or forfeited?\n\nIt's returned, without interest, once the competent authority records the completion certificate. The client can\nclaim it only for amounts it's entitled to under the contract: the full amount if the contractor fails to extend its\nvalidity, or an amount the contractor owes and hasn't paid within 30 days of a notice. If the contract is determined\nor rescinded, the whole guarantee is forfeited. On contracts that include maintenance after construction, half of it\nis kept as security deposit and returned year by year.\n\n## What is the difference between a performance guarantee and a security deposit?\n\nThe performance guarantee is given once, up front, and returned at completion; the security deposit is built up from\nthe bills and kept until the defect liability period has run. On CPWD works, 2.5% of the gross amount of each running\nand final bill is deducted until the deposit reaches 2.5% of the tendered amount (Clause 1A). Private contracts call\nit retention money and set their own rate; see [RA bills](/construction/ra-bills) for how it comes off each bill.\n\n| | Performance guarantee | Security deposit |\n|---|---|---|\n| Amount (CPWD) | 5% of tendered value | 2.5% of tendered value |\n| How given | Up front: bank guarantee, surety bond, FDR or DD | Deducted from each running and final bill |\n| Returned | After the completion certificate | After the defect liability period, or when the final bill is passed, whichever is later |\n\n## Can the security deposit be released against a bank guarantee?\n\nYes. Under Clause 1A, the security deposit deducted from bills can be released against a bank guarantee from a\nscheduled bank once at least ₹5 lakh has built up; each guarantee except the last must be for at least ₹5 lakh, and\nits validity must follow Clause 17 and any extension of time. That frees cash during the job, using the contractor's\nbank guarantee limits instead.\n\n## What is the defect liability period?\n\nThe time after completion during which the contractor must make good, at its own cost, defects that appear in the\nwork from faulty materials or workmanship: twelve months after the completion certificate, or six months for works\ncosting ₹10 lakh or less (except road works), under Clause 17. If the contractor doesn't fix them after written\nnotice, the Engineer-in-Charge can have them fixed by others and recover the cost from any money due to the\ncontractor or from the security deposit.\n\n## When is the security deposit refunded?\n\nNot before the defect liability period ends, or until the final bill has been prepared and passed, whichever is\nlater. For road works, half may be refunded after six months and the rest after twelve, if the Engineer-in-Charge\nthinks half is enough to cover the contractor's liabilities. CPWD issued an advisory on releasing security deposit on\n18 November 2025; ask the division for the current procedure.\n\n## What does this look like on a ₹2 crore work?\n\nA made-up CPWD work with a tendered amount of ₹2,00,00,000, stipulated completion 31 December 2026, actual\ncompletion certificate 15 January 2027 (within an extension granted):\n\n| Item | Amount | Held until |\n|---|---|---|\n| Performance guarantee, 5% (bank guarantee) | ₹10,00,000 | Completion certificate (15 January 2027); validity at least 6 months beyond the extended completion date |\n| Security deposit, 2.5%, from bills | ₹5,00,000 | 15 January 2028, or when the final bill is passed, if later |\n| Security deposit released against a bank guarantee | ₹5,00,000 | The guarantee then stays in place instead of the cash |\n\n## How should a contractor track guarantees and deposits?\n\n- Every bank guarantee with its amount, purpose (performance, security deposit, mobilisation advance), bank, expiry\n  and the date it must be extended to.\n- Security deposit deducted per bill, the running total against the cap, and any release against a guarantee.\n- The completion certificate date, the defect liability period, defects notified and fixed, and the refund date.\n- Bank guarantee commission and limits used, per job.\n\nThe CPWD Works Manual itself asks divisions to monitor bank guarantees given for earnest money, performance,\nsecurity deposit, mobilisation advance and milestones; a contractor needs the same list from its side. The\n[construction demo](/industries/construction-company) doesn't track bank guarantees, security deposits or the defect\nliability period yet; those are parts we'd build, from the same RA bills and completion dates. For the price side of\na long contract, see the [price escalation clause](/construction/price-escalation-clause)."
+  },
+  {
+    "kind": "construction",
     "slug": "certified-payroll",
     "group": "us",
     "title": "Certified payroll under Davis-Bacon: WH-347 explained",
@@ -6721,6 +6834,149 @@
   },
   {
     "kind": "construction",
+    "slug": "contract-labour-compliance",
+    "group": "india",
+    "title": "Contract labour compliance for contractors: licence, wages, PF",
+    "metaTitle": "Contract labour compliance: licence, wages, PF",
+    "related": [
+      "/construction/labour-cess",
+      "/construction/tds-on-contractor-payments",
+      "/services/daily-wage-payroll",
+      "/construction/measurement-book",
+      "/industries/construction-company"
+    ],
+    "question": "What contract labour, PF and ESIC rules does a construction contractor in India have to follow?",
+    "answer": "Contract labour now falls under the Occupational Safety, Health and Working Conditions Code, 2020, which repeals the Contract Labour (Regulation and Abolition) Act, 1970. A contractor with 50 or more contract workers needs a licence, valid five years; it pays wages through the bank and tells the principal employer, who must pay if the contractor doesn't. Under the Code on Social Security, PF applies at 20 employees and ESIC at 10.",
+    "description": "Contract labour compliance in India under the OSH Code: who needs a licence, wages and the principal employer's duty, core work, returns, PF and ESIC.",
+    "domain": [
+      "construction",
+      "labour",
+      "india"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "The Occupational Safety, Health and Working Conditions Code, 2020 (37 of 2020)",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2020/222112.pdf",
+        "date": "2020-09-29"
+      },
+      {
+        "title": "Occupational Safety, Health and Working Conditions (Central) Rules, 2026 (G.S.R. 345(E))",
+        "publisher": "Ministry of Labour and Employment, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2026/272379.pdf",
+        "date": "2026-05-08"
+      },
+      {
+        "title": "The Code on Social Security, 2020 (36 of 2020)",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2020/222111.pdf",
+        "date": "2020-09-29"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "OSH Code, 2020, section 143(1)(h) (repeal)",
+        "doc": "osh-code",
+        "quote": "The Contract Labour (Regulation and Abolition) Act, 1970"
+      },
+      {
+        "reg": "OSH Code, 2020, section 45(1)",
+        "doc": "osh-code",
+        "quote": "every establishment in which fifty or more contract labour are employed or were employed on any day of the preceding twelve months through contract"
+      },
+      {
+        "reg": "OSH Code, 2020, section 45(1)(ii)",
+        "doc": "osh-code",
+        "quote": "every manpower supply contractor who has employed, on any day of the preceding twelve months, fifty or more contract labour."
+      },
+      {
+        "reg": "OSH Code, 2020, section 45(2)",
+        "doc": "osh-code",
+        "quote": "This Part shall not apply to the establishment in which work only of an intermittent or casual nature is performed"
+      },
+      {
+        "reg": "OSH Code, 2020, section 47(1)",
+        "doc": "osh-code",
+        "quote": "undertake or execute the work through contract labour, except under and in accordance with a licence"
+      },
+      {
+        "reg": "OSH Code, 2020, section 55(1)",
+        "doc": "osh-code",
+        "quote": "A contractor shall be responsible for payment of wages to each contract labour employed by him"
+      },
+      {
+        "reg": "OSH Code, 2020, section 55(2)",
+        "doc": "osh-code",
+        "quote": "Every contractor shall, make the disbursement of wages referred to in sub-section (1) through bank transfer or electronic mode and inform the principal employer electronically the amount so paid by such mode"
+      },
+      {
+        "reg": "OSH Code, 2020, section 55(3)",
+        "doc": "osh-code",
+        "quote": "the principal employer shall be liable to make payment of the wages in full or the unpaid balance due"
+      },
+      {
+        "reg": "OSH Code, 2020, section 57(1)",
+        "doc": "osh-code",
+        "quote": "employment of contract labour in core activities of any establishment is prohibited"
+      },
+      {
+        "reg": "OSH Code, 2020, section 2, core activity",
+        "doc": "osh-code",
+        "quote": "civil and other constructional works, including maintenance"
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026 (supersession)",
+        "doc": "osh-rules-2026",
+        "quote": "Contract Labour (Regulation and Abolition) Central Rules, 1971"
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026, licence validity",
+        "doc": "osh-rules-2026",
+        "quote": "Licence issued under this rule shall be valid for five years."
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026, licence fee table",
+        "doc": "osh-rules-2026",
+        "quote": "No license is required up to 49 contract labour"
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026, unpaid wages",
+        "doc": "osh-rules-2026",
+        "quote": "In case contractor fails to make payment of wages to the contract labour within seven days of completion of wage period, then the principal employer shall take necessary action and make payment of wages in full or the unpaid balance dues"
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026, half-yearly return",
+        "doc": "osh-rules-2026",
+        "quote": "Every contractor shall send half-yearly return in FORM-XVIII electronically"
+      },
+      {
+        "reg": "OSH (Central) Rules, 2026, work order",
+        "doc": "osh-rules-2026",
+        "quote": "The contractor shall intimate within fifteen days of the receipt of a contract work order about the details of the contract work order"
+      },
+      {
+        "reg": "Code on Social Security, 2020, First Schedule (Employees' Provident Fund)",
+        "doc": "ss-code",
+        "quote": "Every establishment in which twenty or more employees are employed."
+      },
+      {
+        "reg": "Code on Social Security, 2020, First Schedule (Employees' State Insurance)",
+        "doc": "ss-code",
+        "quote": "Every establishment in which ten or more persons are"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 2(27), employer",
+        "doc": "ss-code",
+        "quote": "(d) contractor; and"
+      }
+    ],
+    "body": "## Which law governs contract labour in construction now?\n\nThe Occupational Safety, Health and Working Conditions Code, 2020 (the OSH Code). It repeals the Contract Labour\n(Regulation and Abolition) Act, 1970, and the OSH (Central) Rules, 2026, published on 8 May 2026, replace the Contract\nLabour Central Rules, 1971. PF, ESIC and the building workers' cess now sit in the Code on Social Security, 2020. The\nCentral Rules apply where the Central Government is the appropriate government; states make their own rules for the\nrest, so check the state's rules for your site.\n\n## Does a construction contractor need a contract labour licence?\n\nYes, once it employs 50 or more contract workers. The contract labour part of the OSH Code applies to every\nestablishment that employed 50 or more contract workers through contract on any day of the preceding twelve months,\nand to every manpower supply contractor that employed 50 or more. A contractor it applies to can't supply or engage\ncontract labour, or execute work through it, without a licence. Under the Central Rules no licence is needed up to 49\ncontract workers, and a licence is valid for five years, applied for online.\n\nIt doesn't apply where the work is only intermittent or casual, but work done for more than 120 days in the preceding\ntwelve months, or seasonal work for more than 60 days a year, doesn't count as intermittent.\n\n## Who pays contract workers, and what if the contractor doesn't?\n\nThe contractor pays the wages of each worker it employs, through a bank transfer or other electronic mode, and tells\nthe principal employer electronically what it paid. If the contractor doesn't pay in time, or pays short, the\nprincipal employer must pay the wages in full or the unpaid balance, and can recover it from the contractor. Under the\nCentral Rules, when wages aren't paid within seven days of the end of the wage period, the principal employer pays\nwithin fifteen days and recovers the amount from the contractor.\n\n| | Contractor | Principal employer |\n|---|---|---|\n| Licence (50 or more contract workers) | Holds it | Engages only licensed contractors |\n| Wages | Pays, by bank transfer, and reports to the principal employer | Pays if the contractor doesn't, and recovers |\n| Work order | Reports it within 15 days of receiving it | |\n| Returns | Half-yearly, in Form XVIII | |\n\n## Can contract labour be used for core work?\n\nNot in an establishment's core activities, with exceptions. The Code prohibits contract labour in the core activity of\nany establishment, but allows it where that work is ordinarily done through contractors, where it doesn't need\nfull-time workers for most of the day, or for a sudden increase in work that has to be finished in a set time. Civil\nand other construction work, including maintenance, isn't treated as a core activity of an establishment that isn't\nset up for it, so a factory or office hiring a contractor to build or repair is not affected.\n\n## When do PF and ESIC apply to a contractor?\n\nPF applies to every establishment with twenty or more employees, and ESIC to every establishment with ten or more\npersons (other than a seasonal factory), under the First Schedule of the Code on Social Security. The Code counts a\ncontractor as an employer, and a worker hired through a contractor for an establishment's work is treated as employed\nin it. So a contractor's site gangs and office staff can bring it over these thresholds, and its compliance matters to\nthe principal employer too.\n\n## What records should a contractor keep for contract labour?\n\n- Each worker's identity and KYC, with the site they work on.\n- Attendance per day per site, which sets the days paid.\n- Wages, deductions and the bank transfer that paid them, per wage period.\n- PF and ESIC contributions, where the thresholds are crossed.\n- The licence number and validity, work orders reported, and the half-yearly returns.\n\nA made-up gang of 12 workers at ₹700 a day for 26 days earns ₹2,18,400 for the month; paid by bank transfer within\nseven days of the end of the wage period, with the amount reported to the principal employer, the contractor has met\nits wage duty for that period.\n\n## How does this connect to labour cess and TDS?\n\nSeparately. [Labour cess](/construction/labour-cess) is 1% of the cost of construction paid to the building workers'\nwelfare board; income-tax [TDS on payments to contractors](/construction/tds-on-contractor-payments) is deducted\nfrom what a principal employer pays the contractor. Neither replaces the contractor's duty to pay its workers.\n\nIn the [construction demo](/industries/construction-company), each worker's KYC is captured on a phone (Aadhaar's\nlast four digits only, PAN, bank, UAN), attendance is marked per site, and the monthly wage register works out days,\nPF and ESIC for workers on the company's rolls, TDS for subcontractors, advances and gang totals; gate passes need\ncomplete KYC. It doesn't track contract labour licences, work-order reporting or the half-yearly return; those are\nparts we'd build. See [daily-wage payroll](/services/daily-wage-payroll)."
+  },
+  {
+    "kind": "construction",
     "slug": "gst-on-works-contracts",
     "group": "india",
     "title": "GST on works contracts: rate, ITC and GST TDS",
@@ -6830,6 +7086,118 @@
       }
     ],
     "body": "## What is a works contract under GST?\n\nA works contract is a contract for building, construction, fabrication, completion, erection, installation, fitting\nout, improvement, modification, repair, maintenance, renovation, alteration or commissioning of any **immovable\nproperty**, where property in goods passes in the course of the work (section 2(119) of the CGST Act, 2017). The GST\nCouncil's note stresses the limit: only work on immovable property qualifies. Painting a car or fabricating a\nmachine with your own material is a composite supply, but not a works contract.\n\n## Is a works contract a supply of goods or of services?\n\nOf services. Schedule II, paragraph 6(a) of the CGST Act treats a works contract as a supply of services, so the\nwhole contract value, materials included, is taxed as one service, not split into goods and labour as it was under\nVAT and service tax.\n\n## What is the GST rate on a works contract?\n\nGenerally 18%: 9% CGST plus 9% SGST (or 18% IGST), with lower rates only for the works a rate notification names.\nThe rates are in serial number 3 of Notification 11/2017-Central Tax (Rate), as amended. The GST Council's 2017 note\nlisted the general entry at 9% + 9% and lower entries at 6% + 6% for works such as roads and bridges for public use,\nlow-cost housing and some government works. Those lower entries have been changed several times since; from 22\nSeptember 2025, Notification 15/2025-Central Tax (Rate) moved items (vii), (viii) and (x) of serial 3 to 9% CGST.\nTake the rate for your contract from the notification as it stands on the date of supply, or from your tax adviser,\nnot from an old article.\n\n## Can the client claim input tax credit on my bill?\n\nNot when the client uses your works contract to build its own immovable property, such as an office or a factory\nshed: section 17(5)(c) blocks that credit, except for plant and machinery. A main contractor that buys a\nsubcontractor's works contract to supply its own works contract can take the credit.\n\n| Who receives the works contract service | Input tax credit |\n|---|---|\n| A business building its own office, factory shed or other immovable property | Blocked (section 17(5)(c)) |\n| The same, for plant and machinery | Allowed: plant and machinery is excluded from the block |\n| A main contractor buying a subcontractor's works contract to supply its own works contract | Allowed |\n\n## Can a contractor claim ITC on cement, steel and other inputs?\n\nYes, when they go into a works contract you supply to a client: you charge GST on that supply and set the credit\nagainst it. Section 17(5)(d) blocks credit only for goods and services used to construct immovable property on your\nown account, such as your own office or godown (other than plant or machinery).\n\n## What is GST TDS, and when does the client deduct it?\n\nTax deducted at source under section 51 of the CGST Act: government departments, local authorities, government\nagencies and other notified persons deduct 1% CGST plus 1% SGST from payments for\na contract whose taxable value exceeds ₹2.5 lakh. It's worked out on the value excluding GST, and the deductor pays it\nto the government within ten days after the end of the month. It isn't deducted when the supplier's location and the\nplace of supply are in a state other than the one where the recipient is registered. It is separate from\n[income-tax TDS](/construction/tds-on-contractor-payments); both can come off the same bill.\n\nOn a ₹18,50,000 RA bill to a state department, GST TDS is ₹18,500 CGST plus ₹18,500 SGST: ₹37,000.\n\n## Which state's GST applies to a works contract?\n\nThe state where the property is. The GST Council's note says the place of supply \"would be where the immovable\nproperty is located\" when supplier and recipient are both in India. So a Gujarat contractor working on a site in\nMaharashtra charges IGST to a client registered in Gujarat; CGST plus SGST apply where the contractor and the site are in\nthe same state.\n\n## When is GST due on an RA bill?\n\nAt the time of supply: for services, the earlier of the invoice date (if the invoice is issued in time) and the date\npayment is received (section 13). Each [running account bill](/construction/ra-bills) is a supply, so the contractor\nissues a tax invoice for the bill's value with GST on top.\n\n| Line | ₹ |\n|---|---|\n| Gross value of RA bill #3 | 18,50,000 |\n| CGST 9% | 1,66,500 |\n| SGST 9% | 1,66,500 |\n| **Invoice value** | **21,83,000** |\n\nThe figures are made up.\n\n## Is GST payable on a mobilisation advance or on security deposit?\n\nAsk your adviser before you decide. For services, receiving a payment can fix the time of supply, but whether an\ninterest-bearing mobilisation advance is a payment for the supply is argued both ways. Security deposit is deducted\nfrom a bill whose full value has already been invoiced; how a deposit that is later forfeited is taxed is a separate\nquestion, and practitioners disagree on it.\n\n## What should a contractor's system do for GST?\n\n- Classify each contract as a works contract or not, with the place of supply (where the property is).\n- Issue a GST invoice for each RA bill from the [measured](/construction/measurement-book) value.\n- Keep input tax credit apart where it is blocked (your own buildings) and where it is allowed.\n- Record the GST TDS each government client deducts against the bill it belongs to.\n- Reconcile GST invoices with RA bills and payments, so nothing is billed or credited twice.\n\nIn the [construction demo](/industries/construction-company), RA bills and trading invoices carry HSN or SAC codes\nand the CGST and SGST or IGST split, and the month's GST checklist shows output tax and the GSTR-1 summary by\ncustomer and HSN, with what's missing and the due dates. It doesn't yet record GST TDS deducted by clients or tag\ninput tax credit as blocked or allowed; those are parts we'd build."
+  },
+  {
+    "kind": "construction",
+    "slug": "labour-cess",
+    "group": "india",
+    "title": "Labour cess on construction: the 1% BOCW cess explained",
+    "related": [
+      "/construction/ra-bills",
+      "/construction/contract-labour-compliance",
+      "/services/compliance-accounting",
+      "/services/daily-wage-payroll",
+      "/industries/construction-company"
+    ],
+    "question": "What is labour cess on construction in India, who pays it and how is it collected?",
+    "answer": "Labour cess (the building and other construction workers' cess) is 1% of the cost of construction, excluding land, paid by the employer carrying out building or other construction work to the state's Building Workers' Welfare Board. It now sits in section 100 of the Code on Social Security, 2020, which repeals the 1996 Cess Act, and the 1% rate was notified under it on 8 May 2026. Government and PSU clients deduct it from contractors' bills.",
+    "description": "Labour cess (BOCW cess) in India: 1% of construction cost under the Code on Social Security, who pays, advance payment, deduction from bills and penalties.",
+    "domain": [
+      "construction",
+      "labour",
+      "india"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "Notification S.O. 2322(E), 8 May 2026 (cess at one per cent under section 100(1))",
+        "publisher": "Ministry of Labour and Employment, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2026/272359.pdf",
+        "date": "2026-05-08"
+      },
+      {
+        "title": "The Code on Social Security, 2020 (36 of 2020)",
+        "publisher": "Ministry of Law and Justice, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2020/222111.pdf",
+        "date": "2020-09-29"
+      },
+      {
+        "title": "Social Security (Central) Rules, 2026 (G.S.R. 344(E))",
+        "publisher": "Ministry of Labour and Employment, Gazette of India",
+        "url": "https://egazette.gov.in/WriteReadData/2026/272366.pdf",
+        "date": "2026-05-08"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "Code on Social Security, 2020, section 100(1)",
+        "doc": "ss-code",
+        "quote": "There shall be levied and collected a cess for the purposes of social security and welfare of building workers at such rate not exceeding two per cent. but not less than one per cent. of the cost of construction incurred by an employer"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 100(1), Explanation",
+        "doc": "ss-code",
+        "quote": "the cost of construction shall not include"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 100(2)",
+        "doc": "ss-code",
+        "quote": "including deduction at source in relation to a building or other construction work of a Government or of a public sector undertaking"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 103(1) (self-assessment)",
+        "doc": "ss-code",
+        "quote": "The employer shall, within sixty days or such period as may be notified by the Central Government of the completion of his each building and other construction work, pay such cess"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 104 (penalty)",
+        "doc": "ss-code",
+        "quote": "impose on such employer a penalty not exceeding the amount of cess"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 2(6), building or other construction work",
+        "doc": "ss-code",
+        "quote": "but does not include any building or other construction work which is related to any factory or mine or any building or other construction work employing less than ten workers in the preceding twelve months"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 2(6)",
+        "doc": "ss-code",
+        "quote": "total cost of such work does not exceed fifty lakhs rupees or such higher amount and employing more than such number of workers as may be notified by the appropriate Government"
+      },
+      {
+        "reg": "Code on Social Security, 2020, section 164(1) (repeal)",
+        "doc": "ss-code",
+        "quote": "The Building and Other Construction Workers' Welfare Cess Act, 1996"
+      },
+      {
+        "reg": "Notification S.O. 2322(E), 8 May 2026",
+        "doc": "cess-2026",
+        "quote": "the Central Government hereby specifies a cess at the rate of one per cent. of the cost of construction incurred by an employer on building or other construction work"
+      },
+      {
+        "reg": "Social Security (Central) Rules, 2026, rule 41(2)(a)",
+        "doc": "ss-rules-2026",
+        "quote": "The cess levied under sub-section (1) of section 100 shall be paid by an employer in advance, on the basis of his self-assessment duly certified by a chartered engineer at the time of approval or before the commencement of the work."
+      },
+      {
+        "reg": "Social Security (Central) Rules, 2026, rule 41(2)(d)",
+        "doc": "ss-rules-2026",
+        "quote": "such Government or the public sector undertaking shall deduct, or cause to be deducted, the cess payable at the notified rates from the bills paid for such works."
+      },
+      {
+        "reg": "Social Security (Central) Rules, 2026, rule 41(2)(d)",
+        "doc": "ss-rules-2026",
+        "quote": "This deducted cess shall be deposited with the respective State Building Workers' Welfare Board within a period of thirty days from the date of such deduction"
+      },
+      {
+        "reg": "Social Security (Central) Rules, 2026, interest",
+        "doc": "ss-rules-2026",
+        "quote": "at the rate of one percent per month or part thereof comprised in the period from the due date until the date of actual payment."
+      }
+    ],
+    "body": "## What is labour cess on construction?\n\nLabour cess is a levy of 1% of the cost of construction, paid by whoever carries out building or other construction\nwork, to fund the social security and welfare of building workers through each state's Building Workers' Welfare\nBoard. It's often called BOCW cess, after the Building and Other Construction Workers' Welfare Cess Act, 1996, which\nfirst levied it.\n\n## What law levies labour cess now?\n\nSection 100 of the Code on Social Security, 2020, which repeals the 1996 Cess Act. On 8 May 2026 the Ministry of Labour notified the rate under section 100(1) as one per\ncent of the cost of construction, replacing the 1996 notification (S.O. 2899) that had set the same 1%. The Code allows\na rate between 1% and 2%; the notified rate is the minimum.\n\n## Who pays labour cess?\n\nThe employer carrying out the building or other construction work, which under the Code includes a contractor. In\npractice the owner who gets the building approved pays it in advance, and on government and PSU works the client\ndeducts it from the contractor's bills. Who bears the cost between owner and contractor is a matter for the contract,\nso read the tender's terms before you price.\n\n## Which works are covered, and which aren't?\n\nBuilding or other construction work is defined widely: buildings, streets, roads, railways, airfields, irrigation,\ndrainage, power lines, water works, pipelines, towers, dams, bridges, tunnels and more, including construction,\nalteration, repair, maintenance and demolition. It doesn't include:\n\n- Work related to a factory or a mine.\n- Work that employed fewer than ten workers in the preceding twelve months.\n- An individual's (or group's) own house costing no more than ₹50 lakh, or a higher amount notified, within the\n  worker numbers the government notifies.\n\n## How is the cost of construction worked out?\n\nAll the cost of construction incurred by the employer, except the cost of land and any compensation paid to workers\nor their families under the Code's employee compensation chapter. The Social Security (Central) Rules, 2026 have the\nemployer self-assess it using the state PWD's or CPWD's schedule of rates, another applicable schedule, or the figures\nfiled with RERA for a building, for the year the work started, certified by a chartered engineer.\n\n| Item | Amount |\n|---|---|\n| Total project cost | ₹2,60,00,000 |\n| Less cost of land | ₹60,00,000 |\n| Cost of construction | ₹2,00,00,000 |\n| **Cess at 1%** | **₹2,00,000** |\n\nThe figures are made up.\n\n## When is labour cess paid?\n\nIn advance, at approval or before work starts, on a self-assessment certified by a chartered engineer. Where a local\nauthority approves the building, the approval application must carry proof that the cess has been paid online to\nthe Welfare Board; a project expected to run more than a year can pay for the first year's construction cost and the\nrest as it falls due. Within sixty days of completing the work, the employer pays the balance on its final\nself-assessment and files a return.\n\n## How is labour cess deducted from a contractor's bills?\n\nOn works for a government or a public sector undertaking, the client deducts the cess at the notified rate from the\nbills it pays and deposits it with the state's Welfare Board within thirty days. On a ₹18,50,000\n[RA bill](/construction/ra-bills), 1% is ₹18,500, deducted alongside TDS and security deposit. Keep each deduction\nagainst its bill, so the final self-assessment counts what was already paid.\n\n## What if labour cess is paid late or short?\n\nThe employer owes interest at 1% a month, or part of a month, from the due date until it's paid. If the amount in an\nassessment order isn't paid by its date, the cess is treated as in arrears and the authority can impose a penalty of\nup to the amount of the cess, after giving the employer a hearing.\n\n## Is labour cess the same as GST or TDS?\n\nNo. It's a separate levy under labour law, paid to the Building Workers' Welfare Board, not a tax under the GST or\nincome-tax laws. A government client may take all three off the same bill: income-tax TDS, GST TDS and labour cess.\n\n## What should a contractor's system track for labour cess?\n\n- Each job's cost of construction, excluding land, and who bears the cess under the contract.\n- Cess paid in advance, deducted from each RA bill, and still due on completion.\n- Deposit and return dates, so nothing attracts interest.\n- The state Welfare Board each job's cess goes to.\n\nThe [construction demo](/industries/construction-company) doesn't track labour cess: RA bills carry GST, and payroll\nhandles PF, ESIC and TDS for subcontractors, but cess paid or deducted per bill isn't recorded. That would be a part\nwe'd build. For the workers themselves, see [contract labour compliance](/construction/contract-labour-compliance)."
   },
   {
     "kind": "construction",
@@ -7351,6 +7719,98 @@
       }
     ],
     "body": "## What goes into a pay application?\n\nA pay application is the contractor's monthly bill against progress: for every line of the schedule of values it\nshows the work completed before this period, the work completed this period, materials stored, the total to date,\nthe [retainage](/construction/retainage) held, and the amount now due. US construction contracts are usually paid\nthis way rather than on milestones.\n\nThe American Institute of Architects (AIA) publishes the most used forms, G702 and G703. They are paid, copyrighted\ndocuments (AIA offers free partial samples of [G702](https://aiacontracts.com/samples/aia-g702-1992-pay-application-sample.pdf) and [G703](https://aiacontracts.com/samples/aia-g703-1992-continuation-sheet-sample.pdf)); many owners and general contractors use their own form with the same\ncolumns and arithmetic.\n\n## What is the difference between G702 and G703?\n\nG702 is the summary: one page of totals that the contractor signs to apply for payment and the architect signs to\ncertify it. G703 is the continuation sheet: one row per line of the schedule of values. [AIA's instructions](https://help.aiacontracts.com/hc/en-us/articles/1500009308302-Instructions-G703-1992-Continuation-Sheet) have the\ncontractor fill in G703 first and carry its totals to G702, then sign G702 and send both to the architect.\n\n| | G702, Application and Certificate for Payment | G703, Continuation Sheet |\n|---|---|---|\n| What it holds | Contract sum, change orders, totals, retainage, previous certificates, payment due | Each schedule of values line with its scheduled value, work and stored materials |\n| Who signs | Contractor (application, notarized) and architect (certificate) | Nobody separately; it is attached to G702 |\n| Change orders | Summarized in a change order box and line 2 | Usually listed as their own lines |\n\n## What is a schedule of values, and who prepares it?\n\nThe schedule of values is the contract sum broken into lines (general conditions, concrete, steel, electrical and\nso on) that every pay application bills against. The contractor prepares it and submits it to the architect at the\nstart of the job, as the general conditions require; AIA [doesn't publish](https://help.aiacontracts.com/hc/en-us/articles/1500009387461-summary-g702-1992-application-and-certificate-for-payment) a standard schedule of values form. AIA's\ninstructions say the breakdown, whether by sections of work or by subcontractor, should stay consistent through the\nproject.\n\nIts total must equal the original contract sum. Owners and architects watch for **front-loading**: early items\nvalued high so the contractor is paid ahead of the work. Agree the lines and values before the first application;\nchanging them later is harder than getting them right.\n\n## How do you fill in G703, column by column?\n\n| Column | Holds | Rule |\n|---|---|---|\n| A | Item number | |\n| B | Description of work | |\n| C | Scheduled value | Starts at the original contract sum; change orders are usually added as their own lines |\n| D | Work completed, from previous application | Previous D plus previous E |\n| E | Work completed, this period | Includes stored material from earlier periods now installed |\n| F | Materials presently stored | Not in D or E; value moves to E as the material is installed |\n| G | Total completed and stored to date | D + E + F, with % complete (G ÷ C) |\n| H | Balance to finish | C − G |\n| I | Retainage, if the rate varies by line | Only needed where variable retainage applies |\n\nA worked G703 on a made-up $400,000 contract with one approved $20,000 change order, at the end of month three:\n\n| Item | C Scheduled | D Previous | E This period | F Stored | G To date | % | H Balance |\n|---|---|---|---|---|---|---|---|\n| 1 General conditions | $40,000 | $12,000 | $4,000 | | $16,000 | 40% | $24,000 |\n| 2 Concrete | $120,000 | $60,000 | $30,000 | | $90,000 | 75% | $30,000 |\n| 3 Structural steel | $140,000 | $18,000 | $20,000 | $10,000 | $48,000 | 34% | $92,000 |\n| 4 Electrical | $100,000 | | $6,000 | | $6,000 | 6% | $94,000 |\n| CO 1 Added canopy | $20,000 | | | | | 0% | $20,000 |\n| **Total** | **$420,000** | **$90,000** | **$60,000** | **$10,000** | **$160,000** | **38%** | **$260,000** |\n\n## How is retainage calculated on a pay application?\n\nRetainage is a percentage of the work completed (columns D + E) plus a percentage of the materials stored (column\nF); the two rates can differ if the contract says so. G702 then takes it off the total to date and deducts what was\ncertified before. With 10% on both, the totals above go onto G702 like this:\n\n| G702 line | Calculation | Amount |\n|---|---|---|\n| 1 Original contract sum | | $400,000 |\n| 2 Net change by change orders | | $20,000 |\n| 3 Contract sum to date | Line 1 ± 2 | $420,000 |\n| 4 Total completed and stored to date | G703 column G | $160,000 |\n| 5a Retainage on completed work | 10% × (D + E) = 10% × $150,000 | $15,000 |\n| 5b Retainage on stored material | 10% × F = 10% × $10,000 | $1,000 |\n| 5 Total retainage | 5a + 5b | $16,000 |\n| 6 Total earned less retainage | Line 4 − line 5 | $144,000 |\n| 7 Less previous certificates for payment | Line 6 of the last certificate: $90,000 − $9,000 | $81,000 |\n| 8 **Current payment due** | Line 6 − line 7 | **$63,000** |\n| 9 Balance to finish, including retainage | Line 3 − line 6 | $276,000 |\n\nCheck: this period's $60,000 of work plus $10,000 stored is $70,000; less 10% is $63,000. If the contract retains\nnothing on stored material, line 5b is zero and line 8 becomes $64,000. When retainage is reduced (for example at\n50% complete), line 5 falls and the release shows up as extra payment on line 8, so the reduction must be written in\nthe contract or approved in writing first.\n\n## Can you bill for stored materials?\n\nUsually yes, if the contract allows it and you can prove the material exists and is yours to sell to the owner.\nStored material goes in column F at its value; it is not deducted when the owner pays for it, only moved to column E\nas it is installed. Owners and lenders typically ask for the supplier's invoice, photos, proof of insurance, and for\nmaterial stored off site, a bill of sale or other proof of title.\n\nOn federal jobs, [FAR 52.232-5](https://www.acquisition.gov/far/52.232-5) lets the contracting officer count material delivered to the site. Material held\nelsewhere counts only if the contract specifically allows it and the contractor gives satisfactory evidence that it\nhas acquired title and that the material will be used on the contract.\n\n## Does a G702 need to be notarized?\n\nThe G702 form has a notary block under the contractor's signature, and [AIA's instructions](https://help.aiacontracts.com/hc/en-us/articles/1500009308242-Instructions-G702-1992-Application-and-Certificate-for-Payment) say the contractor should\nsign it and have it notarized. Whether a notarized signature is legally required depends on the contract and the\nowner; many owners and lenders insist on it, some accept electronic signatures without it. Check the contract's\npayment section before the first application rather than finding out when it is returned.\n\n## What is a pencil draft, and when is a pay application due?\n\nA pencil draft (or pencil copy) is an unsigned draft of the pay application sent to the owner's representative or\narchitect a few days before the real one, so they can agree the percentages before anything is notarized. It is\ncommon practice, not something the AIA forms require. The contract sets the period the application covers, the day\nit is due each month and how long the owner has to pay; a late or rejected application usually waits for the next\ncycle, which can cost a month of cash.\n\nOn federal jobs the due date is set by [FAR 52.232-27](https://www.acquisition.gov/far/52.232-27): a progress payment is due 14 days after the designated billing\noffice receives a proper payment request, and a request that isn't proper must be returned within 7 days with the\nreasons.\n\n## Who approves a pay application, and can they approve less?\n\nThe architect (or the owner's representative where there is no architect) checks the application against the work\non site and certifies the amount due, which may be less than applied for. AIA's instructions say the architect then\ninitials every figure changed on G702 and G703 and attaches an explanation; the owner pays the amount certified.\nLenders often want [lien waivers](/construction/lien-waivers) from the contractor and from the subcontractors paid\nfrom the previous application before releasing money.\n\nOn federal jobs, FAR 52.232-5 sets the rules: progress payments monthly on estimates of work accomplished, approved\nby the contracting officer, with an itemization of the amounts by element of work, a listing of each subcontractor's\nwork, subcontract value and previous payments, and a certification with every request or payment isn't made. The\ncertification says, among other things, that subcontractors and suppliers have been paid from previous payments.\n\n## Why do pay applications get rejected?\n\nMost rejections come from a handful of causes:\n\n- **The arithmetic doesn't tie.** G703 totals don't match G702, or line 7 isn't line 6 of the last certificate.\n- **Percent complete ahead of the site.** The architect sees less work in place than billed.\n- **Stored material without proof.** No invoice, title or insurance, or it's off site without contract approval.\n- **Unapproved change orders billed.** Only executed [change orders](/construction/change-orders) belong in column C.\n- **Missing lien waivers** for the previous payment, from the contractor or subcontractors.\n- **Missing signature, notarization or certification**, or the wrong period.\n- **A changed schedule of values** that no longer matches the approved one.\n\nEach of these is cheaper to prevent with a pencil draft than to fix after the application is returned.\n\n## What should pay application software do?\n\nWhen comparing systems, check that it can:\n\n- Hold the schedule of values per job, locked once approved, with change orders added as their own lines.\n- Take quantities or percentages from site progress, not typed in at month-end.\n- Carry each certified application forward, so column D and line 7 always match what was certified, including any\n  amount the architect cut.\n- Compute retainage per line, with separate rates for work and stored material, and its reduction and release.\n- Move stored material to installed when it is used, without double counting.\n- Track the lien waivers owed per application, and block payment of a subcontractor until theirs is in.\n- Produce the application in the owner's format, and keep each submitted and certified version.\n- Feed the same figures to the [WIP schedule](/construction/wip-schedule), so billing and cost are compared per job.\n\nOur [US construction demo](https://construction-erp-us.ahromlabs.com/demo) runs G702/G703-style pay applications on\na schedule of values with 10% retainage, change orders and lien waivers per pay application; it has no WIP\nschedule.\n\n## Can pay applications go to QuickBooks?\n\nYes, if the system posts each one as an invoice on the right job. In our construction demo, connected to a\nQuickBooks Online sandbox company, each project becomes a job under its client in QuickBooks, and each pay\napplication goes there as an invoice on that job when it is issued; payments follow when marked paid. Job reports\nin QuickBooks then match the project. How the connection works, and who calculates the sales tax, is in\n[connecting QuickBooks Online](/manufacturing/quickbooks-integration)."
+  },
+  {
+    "kind": "construction",
+    "slug": "price-escalation-clause",
+    "group": "india",
+    "title": "Price escalation in CPWD contracts: clause 10CC worked out",
+    "metaTitle": "Price escalation clause 10CC, worked out",
+    "related": [
+      "/construction/ra-bills",
+      "/construction/measurement-book",
+      "/boq/what-is-a-boq",
+      "/services/compliance-accounting",
+      "/industries/construction-company"
+    ],
+    "question": "How does the price escalation clause (10CC) work in a CPWD contract, and how is escalation calculated?",
+    "answer": "Clause 10CC of CPWD's General Conditions of Contract 2023 adjusts the contract price each quarter for rises and falls in the prices of cement, steel, labour, fuel and other materials. It applies to 85% of the work done in the quarter, split by the component percentages in Schedule F, and moves each component by the change in its index since the last date for tenders. Where 10CC doesn't apply, clause 10C pays only for changes caused by new laws.",
+    "description": "Price escalation in CPWD contracts: the clause 10CC formula, base date, quarterly bills, Schedule F components, indices, downward adjustment, clause 10C.",
+    "domain": [
+      "construction",
+      "billing",
+      "india"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)",
+        "publisher": "Central Public Works Department, Government of India (copy published by IIT Kanpur)",
+        "url": "https://iitk.ac.in/iwd/file/2026/18-Civil-D2-2026-27/GCC-2023.pdf",
+        "date": "2023-09-22"
+      },
+      {
+        "title": "CPWD circulars: General Conditions of Contract (amendments to GCC 2023)",
+        "publisher": "Central Public Works Department",
+        "url": "https://cpwd.gov.in/AllCirculars.aspx?Type=24",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "GCC 2023, Clause 10CC",
+        "doc": "cpwd-gcc-2023",
+        "quote": "If the prices of materials and/or wages of labour required for execution of the work increase, the contractor shall be compensated for such increase as per provisions detailed below and the amount of the contract shall accordingly be varied"
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC",
+        "doc": "cpwd-gcc-2023",
+        "quote": "such compensation for escalation in prices and wages shall be available only for the work done during the stipulated period of the contract including the justified period extended under the provisions of clause 5 of the contract without any action under clause 2."
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC(i) (base date)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The base date for working out such escalation shall be the last stipulated date of receipt of tenders including extension, if any."
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC(ii)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Cost of work for which escalation is applicable (W) = 0.85M"
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC(iii)(a)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The compensation for escalation shall be worked out at quarterly intervals"
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC(iii)(e)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "the variation in the rate for an unskilled Mazdoor alone shall form the basis for working out the escalation compensation payable on the labour component."
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC(iv) (downward adjustment)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "there shall be a downward adjustment of the cost of work so that such price of materials and/or wages of labour shall be deductible from the cost of work under this contract"
+      },
+      {
+        "reg": "GCC 2023, Clause 10CC (indices)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Wholesale Price Index for Pozzolana Cement published by office of the Economic Adviser"
+      },
+      {
+        "reg": "GCC 2023, Clause 10C",
+        "doc": "cpwd-gcc-2023",
+        "quote": "increases as a direct result of the coming into force of any fresh, law or statutory rule or order (but not due to any variation of rate in GST applicable on such material(s) being considered under this clause)"
+      },
+      {
+        "reg": "GCC 2023, Clause 10C proviso",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Where provisions of clause 10CC are applicable, provisions of clause 10C will not be applicable."
+      }
+    ],
+    "body": "## What is a price escalation clause?\n\nA price escalation clause adjusts a fixed-price contract for changes in the cost of materials and labour while the\nwork is done, so a contractor isn't ruined by a steel price jump on a long job and the client gets the benefit when\nprices fall. In CPWD contracts it is Clause 10CC of the General Conditions of Contract 2023: the contract amount is\n\"varied\" by a formula worked out every quarter, both up and down. Private contracts often copy it or write their own.\n\n## Does every CPWD contract have clause 10CC?\n\nNo: the NIT approving authority marks it applicable or not applicable in Schedule F for each work, and sets the\ncomponent percentages there. Where 10CC applies, Clause 10C doesn't; where 10CC isn't applicable, 10C applies instead.\nCheck Schedule F of your contract first.\n\n## What does clause 10CC cover, and for which period?\n\nWork done during the stipulated period of the contract, plus any extension justified under Clause 5 without action\nunder Clause 2 (the clause for the contractor's own delay). So escalation stops for work done during a delay the\ncontractor caused. The base date for every index is the last stipulated date for receipt of tenders, including any\nextension.\n\n## How is the cost of work for escalation worked out?\n\nFrom the quarter's bills, in four parts, then 85% of the total:\n\n| Part | What it is |\n|---|---|\n| C | Gross value of work done in the quarter (A, to this quarter, less B, to last quarter) |\n| F | Secured advance paid in the quarter less secured advance recovered |\n| I | Other advance payments made in the quarter less those recovered |\n| J | Amounts paid at market rates for deviations and extra items under Clause 12 |\n| M | C + F + I − J |\n| **W** | **0.85 × M**, the cost of work on which escalation is worked out |\n\nItems paid at market rates under Clause 12 are taken out because their rates are already current.\n\n## What is the 10CC formula?\n\nEscalation for the quarter is W times each component's percentage times the change in its index since the base\ndate, added up:\n\nVW = W × (1/100) × [CP × (CI − CO)/CO + LP × (LI − LO)/LO + CMP × (CMI − CMO)/CMO + EMP × (EMI − EMO)/EMO + FP × (FI − FO)/FO + SP × (SI − SO)/SO + BP × (BI − BO)/BO]\n\nCP, LP, CMP, EMP, FP, SP and BP are the percentages of cement, labour, other civil materials, E&M materials, fuel,\nsteel and bitumen in Schedule F; the \"O\" values are the indices on the base date and the \"I\" values those for the\nquarter. During a maintenance period, only labour, civil and E&M materials and bitumen count.\n\n## Which indices does clause 10CC use?\n\nFor materials, the wholesale price indices published by the Office of the Economic Adviser (for example the index for\nPozzolana cement, mild steel long products, high speed diesel and bitumen). For labour, the minimum daily wage of an\nunskilled adult mazdoor fixed under law: whatever happens to other wage categories, only the unskilled rate counts.\n\n## How is 10CC escalation calculated, in numbers?\n\nA made-up quarter: gross value of work done ₹48,00,000, secured advance paid ₹4,00,000 and recovered ₹2,00,000, no\nother advances or deviation items at market rates.\n\n| | ₹ |\n|---|---|\n| C, work done in the quarter | 48,00,000 |\n| F, secured advance (4,00,000 − 2,00,000) | 2,00,000 |\n| M = C + F | 50,00,000 |\n| W = 0.85 × M | 42,50,000 |\n\nSchedule F: cement 10%, labour 25%, steel 15%. Index changes since the base date: cement 140 → 147 (+5%), unskilled\nwage ₹700 → ₹735 (+5%), steel 150 → 144 (−4%).\n\nVW = 42,50,000 × (10 × 5% + 25 × 5% − 15 × 4%) ÷ 100 = 42,50,000 × 1.15 ÷ 100 = **₹48,875** payable for the quarter.\n\nSteel's fall reduces the escalation: the clause works both ways.\n\n## When is escalation paid?\n\nQuarterly, on the bills paid in the three calendar months of each quarter, with the date the contractor submitted each\nbill deciding which quarter it falls in. The first payment is made three months after the month in which the\ncommencement letter is issued; the last period may be shorter than three months, ending on completion.\n\n## Can escalation reduce what the contractor is paid?\n\nYes. If prices or wages fall, the cost of work is adjusted downward by the same formula and the amount is deducted.\n\n## What is the difference between clause 10C and clause 10CC?\n\nClause 10C pays (or recovers) only price changes caused directly by a new law, statutory rule or order after the\ntender date, such as a change in minimum wages, and not changes in GST rates. Clause 10CC follows market indices.\nA contract has one or the other, as Schedule F says.\n\n## What should a contractor's system do for escalation?\n\n- Hold the base date, the Schedule F percentages and the base indices for each contract.\n- Group bills by quarter on their submission date, and separate secured advance, other advances and Clause 12 items.\n- Record the quarter's indices and work out VW, ready to claim.\n- Stop the calculation for work done in a delay not justified under Clause 5.\n\nThe [construction demo](/industries/construction-company) builds [RA bills](/construction/ra-bills) from\nmeasurements against the BOQ, but doesn't calculate price escalation; a 10CC claim worked out from the same bills and\nthe published indices would be a part we'd build. Its \"escalation\" means chasing overdue payments, not this clause.\nFor how measured work becomes those bills, see the [measurement book](/construction/measurement-book)."
   },
   {
     "kind": "construction",

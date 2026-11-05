@@ -61,6 +61,12 @@ const DOCS = {
     "usc-31-3903": "31 USC 3903 Prompt Payment Act regulations",
     "cfr-29-5.5": "29 CFR 5.5 Contract provisions and related matters",
     "dol-dbra": "DOL WH-347 instructions and Davis-Bacon page",
+    // Batch 3c: India labour codes (in force from 21 November 2025), cess.
+    "ss-code": "Code on Social Security 2020 Gazette",
+    "osh-code": "OSH Code 2020 Gazette",
+    "ss-rules-2026": "Social Security (Central) Rules 2026 G.S.R. 344(E)",
+    "osh-rules-2026": "OSH (Central) Rules 2026 G.S.R. 345(E)",
+    "cess-2026": "Gazette S.O. 2322(E) 8 May 2026 BOCW cess one per cent",
   }).map(([k, name]) => [k, `Construction/sources/${name} 2026-11-05.txt`])),
   msmed: "ERP/sources/msmed-act-2006.txt",
 };

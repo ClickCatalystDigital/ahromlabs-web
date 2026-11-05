@@ -65,6 +65,7 @@ const IN_ONLY = [
   "/asme/asme-vs-ibr",
   // The construction hub's India group (src/lib/construction.ts CON_GROUPS; scripts/construction.check.ts keeps these in step).
   "/construction/ra-bills", "/construction/measurement-book", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts",
+  "/construction/labour-cess", "/construction/contract-labour-compliance", "/construction/price-escalation-clause", "/construction/bank-guarantee-defect-liability",
 ];
 // North America only: US and Canadian law.
 const NA_ONLY = [
