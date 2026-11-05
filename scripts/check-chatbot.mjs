@@ -137,7 +137,7 @@ const data = JSON.parse(fs.readFileSync(new URL("../src/lib/content-data.generat
 const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map((src) => src.url))]);
 // Sites that turn scripts away (403, a 404, or no answer at all) though the page opens in a browser, each checked
 // by hand on 5 Nov 2026: a refusal from these is reported, not counted. A 200 or a 5xx from them still counts.
-const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.ftc.gov", "www.meity.gov.in"]);
+const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.ftc.gov", "www.meity.gov.in", "leginfo.legislature.ca.gov"]);
 // curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
 // certificate, which macOS curl fetches and Node does not. One byte is enough.
 function statusOf(url) {
