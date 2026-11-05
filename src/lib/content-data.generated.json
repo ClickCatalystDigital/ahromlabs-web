@@ -6501,24 +6501,43 @@
     "kind": "construction",
     "slug": "gst-on-works-contracts",
     "group": "india",
-    "title": "GST on works contracts: what counts and input tax credit",
+    "title": "GST on works contracts: rate, ITC and GST TDS",
+    "related": [
+      "/construction/ra-bills",
+      "/construction/tds-on-contractor-payments",
+      "/systems/reverse-charge",
+      "/notes/statutory-rates-across-systems",
+      "/services/compliance-accounting"
+    ],
     "question": "How is GST applied to a works contract in India?",
-    "answer": "Under GST, a works contract is a contract for building, construction, repair or similar work on immovable property where goods pass to the client in the course of the work. It is treated as a supply of services, taxed as one composite service on the whole contract value. Input tax credit on works contract services for building your own immovable property is blocked, except for a contractor using them to supply further works contracts.",
-    "description": "GST on works contracts in India: the section 2(119) definition, supply of service under Schedule II, input tax credit rules, and billing RA bills with GST.",
+    "answer": "Under GST, a works contract is a contract for building, construction, repair or similar work on immovable property where goods pass to the client in the course of the work. It is a supply of services, taxed as one composite service on the whole value, generally at 18% (9% CGST + 9% SGST) where the property is. Government clients deduct GST TDS (1% CGST + 1% SGST) on contracts over ₹2.5 lakh, and input tax credit is blocked for building your own premises.",
+    "description": "GST on works contracts in India: the 2(119) definition, the 18% rate and the September 2025 change, ITC under 17(5), GST TDS under section 51, and RA bills.",
     "domain": [
       "construction",
       "gst",
       "india"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "Works Contracts in GST",
         "publisher": "GST Council (Directorate General of Taxpayer Services, CBEC)",
         "url": "https://gstcouncil.gov.in/sites/default/files/e-version-gst-flyers/Work%20Contracts%20in%20GST.pdf",
         "date": "2017-07-01"
+      },
+      {
+        "title": "Central Goods and Services Tax Act, 2017 (as updated to 30.09.2020)",
+        "publisher": "Central Board of Indirect Taxes and Customs",
+        "url": "https://cbic-gst.gov.in/pdf/CGST-Act-Updated-30092020.pdf",
+        "date": "2020-09-30"
+      },
+      {
+        "title": "Notification No. 15/2025-Central Tax (Rate), 17 September 2025 (G.S.R. 663(E))",
+        "publisher": "Ministry of Finance, Gazette of India (copy hosted by the Bombay Chartered Accountants' Society)",
+        "url": "https://bcasonline.org/wp-content/uploads/2025/09/No.15-2025-Central-Tax-Rate.pdf",
+        "date": "2025-09-17"
       }
     ],
     "checks": [
@@ -6533,17 +6552,62 @@
         "quote": "the term works contract has been restricted to contract for building construction, fabrication etc of any immovable property only."
       },
       {
+        "reg": "CGST Act, 2017, Schedule II, paragraph 6(a), as quoted by the GST Council",
+        "doc": "gst-wc",
+        "quote": "works contracts as defined in section 2(119) of the CGST Act, 2017 shall be treated as"
+      },
+      {
         "reg": "CGST Act, 2017, section 17(5)(c), as explained by the GST Council",
         "doc": "gst-wc",
         "quote": "input tax credit shall not be available in respect of the works contract services when supplied for construction of an immovable property (other than plant and machinery) except where it is an input service for further supply of works contract service."
       },
       {
-        "reg": "CGST Act, 2017, Schedule II, paragraph 6(a), as quoted by the GST Council",
+        "reg": "GST Council, Works Contracts in GST (rate)",
         "doc": "gst-wc",
-        "quote": "works contracts as defined in section 2(119) of the CGST Act, 2017 shall be treated as"
+        "quote": "The rate of GST for Works Contract service has been prescribed in serial number 3 of Notification No. 11/2017-Central Tax (Rate)"
+      },
+      {
+        "reg": "GST Council, Works Contracts in GST (place of supply)",
+        "doc": "gst-wc",
+        "quote": "The place of supply would be where the immovable property is located."
+      },
+      {
+        "reg": "CGST Act, 2017, section 17(5)(d)",
+        "doc": "cgst-act",
+        "quote": "goods or services or both received by a taxable person for construction of an immovable property (other than plant or machinery) on his own account including when such goods or services or both are used in the course or furtherance of business."
+      },
+      {
+        "reg": "CGST Act, 2017, section 51(1)",
+        "doc": "cgst-act",
+        "quote": "to deduct tax at the rate of one per cent. from the payment made or credited to the supplier"
+      },
+      {
+        "reg": "CGST Act, 2017, section 51(1)",
+        "doc": "cgst-act",
+        "quote": "where the total value of such supply, under a contract, exceeds two lakh and fifty thousand rupees:"
+      },
+      {
+        "reg": "CGST Act, 2017, section 51(1), Explanation",
+        "doc": "cgst-act",
+        "quote": "the value of supply shall be taken as the amount excluding the central tax, State tax, Union territory tax, integrated tax and cess indicated in the invoice."
+      },
+      {
+        "reg": "CGST Act, 2017, section 13(2)(a)",
+        "doc": "cgst-act",
+        "quote": "the date of issue of invoice by the supplier, if the invoice is issued within the period prescribed under"
+      },
+      {
+        "reg": "Notification No. 15/2025-Central Tax (Rate)",
+        "doc": "cgst-rate-15-2025",
+        "quote": "with effect from the 22nd day of September, 2025"
+      },
+      {
+        "reg": "Notification No. 15/2025-Central Tax (Rate), serial number 3",
+        "doc": "cgst-rate-15-2025",
+        "quote": "against item (vii), for the entry in column (4), the entry “9” shall be substituted;"
       }
     ],
-    "body": "## What is a works contract under GST?\n\nSection 2(119) of the CGST Act, 2017 defines it: a contract for building, construction, fabrication, completion,\nerection, installation, fitting out, improvement, modification, repair, maintenance, renovation, alteration or\ncommissioning of any **immovable property**, where property in goods passes in the course of the work. The GST\nCouncil's note stresses the limit: only work on immovable property qualifies. Painting a car or fabricating a\nmachine with your own material is a composite supply, but not a works contract.\n\nSchedule II, paragraph 6(a) of the Act treats a works contract as a supply of services. So the whole contract\nvalue, materials included, is taxed as one service, not split into goods and labour as under VAT.\n\n## Can you claim input tax credit?\n\n| Who receives the works contract service | Input tax credit |\n|---|---|\n| A business building its own office, factory shed or other immovable property | Blocked (section 17(5)(c)) |\n| The same, for plant and machinery | Allowed: plant and machinery is excluded from the block |\n| A main contractor buying a subcontractor's works contract to supply its own works contract | Allowed |\n\nThe Council's example is a builder engaging a subcontractor for part of the work: the subcontractor charges GST to\nthe main contractor, who can take the credit because it uses the service for its own works contract supply.\n\n## What rate applies?\n\nThe rate depends on the work, the client and the date: rates for works contracts were set by notification and have\nbeen changed since 2017. Take the rate from the current CBIC rate\nnotification for your service, or from your tax adviser, not from an old article.\n\n## How GST sits on an RA bill\n\nEach [running account bill](/construction/ra-bills) is a supply: the contractor issues a tax invoice for the bill's\nvalue, with GST on top. Recoveries for materials supplied by the client need care, because they may change what\nis being supplied; ask your adviser how your contract treats them. Government departments and certain other buyers\nalso deduct TDS under GST, separate from [income-tax TDS](/construction/tds-on-contractor-payments).\n\n## What your system should do\n\n- Classify each contract as a works contract or not, with the place of supply (where the property is).\n- Issue a GST invoice for each RA bill from the [measured](/construction/measurement-book) value.\n- Keep input tax credit apart where it is blocked (your own buildings) and where it is allowed.\n- Reconcile GST invoices with RA bills and payments, so nothing is billed or credited twice."
+    "body": "## What is a works contract under GST?\n\nA works contract is a contract for building, construction, fabrication, completion, erection, installation, fitting\nout, improvement, modification, repair, maintenance, renovation, alteration or commissioning of any **immovable\nproperty**, where property in goods passes in the course of the work (section 2(119) of the CGST Act, 2017). The GST\nCouncil's note stresses the limit: only work on immovable property qualifies. Painting a car or fabricating a\nmachine with your own material is a composite supply, but not a works contract.\n\n## Is a works contract a supply of goods or of services?\n\nOf services. Schedule II, paragraph 6(a) of the CGST Act treats a works contract as a supply of services, so the\nwhole contract value, materials included, is taxed as one service, not split into goods and labour as it was under\nVAT and service tax.\n\n## What is the GST rate on a works contract?\n\nGenerally 18%: 9% CGST plus 9% SGST (or 18% IGST), with lower rates only for the works a rate notification names.\nThe rates are in serial number 3 of Notification 11/2017-Central Tax (Rate), as amended. The GST Council's 2017 note\nlisted the general entry at 9% + 9% and lower entries at 6% + 6% for works such as roads and bridges for public use,\nlow-cost housing and some government works. Those lower entries have been changed several times since; from 22\nSeptember 2025, Notification 15/2025-Central Tax (Rate) moved items (vii), (viii) and (x) of serial 3 to 9% CGST.\nTake the rate for your contract from the notification as it stands on the date of supply, or from your tax adviser,\nnot from an old article.\n\n## Can the client claim input tax credit on my bill?\n\nNot when the client uses your works contract to build its own immovable property, such as an office or a factory\nshed: section 17(5)(c) blocks that credit, except for plant and machinery. A main contractor that buys a\nsubcontractor's works contract to supply its own works contract can take the credit.\n\n| Who receives the works contract service | Input tax credit |\n|---|---|\n| A business building its own office, factory shed or other immovable property | Blocked (section 17(5)(c)) |\n| The same, for plant and machinery | Allowed: plant and machinery is excluded from the block |\n| A main contractor buying a subcontractor's works contract to supply its own works contract | Allowed |\n\n## Can a contractor claim ITC on cement, steel and other inputs?\n\nYes, when they go into a works contract you supply to a client: you charge GST on that supply and set the credit\nagainst it. Section 17(5)(d) blocks credit only for goods and services used to construct immovable property on your\nown account, such as your own office or godown (other than plant or machinery).\n\n## What is GST TDS, and when does the client deduct it?\n\nTax deducted at source under section 51 of the CGST Act: government departments, local authorities, government\nagencies and other notified persons deduct 1% CGST plus 1% SGST from payments for\na contract whose taxable value exceeds ₹2.5 lakh. It's worked out on the value excluding GST, and the deductor pays it\nto the government within ten days after the end of the month. It isn't deducted when the supplier's location and the\nplace of supply are in a state other than the one where the recipient is registered. It is separate from\n[income-tax TDS](/construction/tds-on-contractor-payments); both can come off the same bill.\n\nOn a ₹18,50,000 RA bill to a state department, GST TDS is ₹18,500 CGST plus ₹18,500 SGST: ₹37,000.\n\n## Which state's GST applies to a works contract?\n\nThe state where the property is. The GST Council's note says the place of supply \"would be where the immovable\nproperty is located\" when supplier and recipient are both in India. So a Gujarat contractor working on a site in\nMaharashtra charges IGST to a client registered in Gujarat; CGST plus SGST apply where the contractor and the site are in\nthe same state.\n\n## When is GST due on an RA bill?\n\nAt the time of supply: for services, the earlier of the invoice date (if the invoice is issued in time) and the date\npayment is received (section 13). Each [running account bill](/construction/ra-bills) is a supply, so the contractor\nissues a tax invoice for the bill's value with GST on top.\n\n| Line | ₹ |\n|---|---|\n| Gross value of RA bill #3 | 18,50,000 |\n| CGST 9% | 1,66,500 |\n| SGST 9% | 1,66,500 |\n| **Invoice value** | **21,83,000** |\n\nThe figures are made up.\n\n## Is GST payable on a mobilisation advance or on security deposit?\n\nAsk your adviser before you decide. For services, receiving a payment can fix the time of supply, but whether an\ninterest-bearing mobilisation advance is a payment for the supply is argued both ways. Security deposit is deducted\nfrom a bill whose full value has already been invoiced; how a deposit that is later forfeited is taxed is a separate\nquestion, and practitioners disagree on it.\n\n## What should a contractor's system do for GST?\n\n- Classify each contract as a works contract or not, with the place of supply (where the property is).\n- Issue a GST invoice for each RA bill from the [measured](/construction/measurement-book) value.\n- Keep input tax credit apart where it is blocked (your own buildings) and where it is allowed.\n- Record the GST TDS each government client deducts against the bill it belongs to.\n- Reconcile GST invoices with RA bills and payments, so nothing is billed or credited twice.\n\nIn the [construction demo](/industries/construction-company), RA bills and trading invoices carry HSN or SAC codes\nand the CGST and SGST or IGST split, and the month's GST checklist shows output tax and the GSTR-1 summary by\ncustomer and HSN, with what's missing and the due dates. It doesn't yet record GST TDS deducted by clients or tag\ninput tax credit as blocked or allowed; those are parts we'd build."
   },
   {
     "kind": "construction",
@@ -6731,23 +6795,36 @@
     "slug": "measurement-book",
     "group": "india",
     "title": "Measurement book (MB): recording work for payment",
+    "related": [
+      "/construction/ra-bills",
+      "/boq/measurement-rules",
+      "/systems/bill-of-quantities",
+      "/systems/measurement-basis",
+      "/industries/construction-company"
+    ],
     "question": "What is a measurement book in construction, and how is it kept?",
     "answer": "The measurement book (MB) is the record of every quantity of work done, measured on site item by item, from which each running bill and the final bill is paid. In CPWD and most government works, measurements follow the contract's rules of measurement, are test-checked by senior engineers, and are now entered electronically as an e-MB; private contractors keep the same record for their clients and subcontractors.",
-    "description": "The measurement book in Indian construction: what it records, how it is test-checked, e-MB, extra and deviated items, and inadmissible items.",
+    "description": "The measurement book in Indian construction: what an entry records, test checks, e-MB, extra and deviated items under GCC Clause 12, and how it feeds RA bills.",
     "domain": [
       "construction",
       "measurement",
       "india"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "CPWD Works Manual 2022",
         "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
         "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
         "date": "2022-06-30"
+      },
+      {
+        "title": "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)",
+        "publisher": "Central Public Works Department, Government of India (copy published by IIT Kanpur)",
+        "url": "https://iitk.ac.in/iwd/file/2026/18-Civil-D2-2026-27/GCC-2023.pdf",
+        "date": "2023-09-22"
       }
     ],
     "checks": [
@@ -6777,12 +6854,32 @@
         "quote": "Extra items are those items which are not available in the agreement but are required to complete the work. Deviation means increase or decrease in the quantities of items of work in the agreement."
       },
       {
+        "reg": "CPWD Works Manual 2022, para 5.11",
+        "doc": "cpwd",
+        "quote": "The rates for deviated items beyond the limit specified in schedule F of the agreement as well as those of extra items shall be worked out in the manner prescribed in clause 12 of GCC."
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.11 (time limits)",
+        "doc": "cpwd",
+        "quote": "Engineer-in-Charge within his own competency"
+      },
+      {
         "reg": "CPWD Works Manual 2022, para 5.6.4 (responsibility for quality of work)",
         "doc": "cpwd",
         "quote": "The officer who records/test checks the measurements for an item of work will be responsible for the quality, quantity/ measurements and dimensional accuracy of that item of work."
+      },
+      {
+        "reg": "GCC 2023, Clause 7",
+        "doc": "cpwd-gcc-2023",
+        "quote": "the interim or running account bills shall be submitted by the contractor for the work executed on the basis of such recorded measurements on the format of the Department"
+      },
+      {
+        "reg": "GCC 2023, Clause 12.2 (extra items)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "In the case of extra item(s) (items which are not available in the contract), the contractor"
       }
     ],
-    "body": "## What does a measurement book record?\n\nFor each item of the BOQ, every time work is measured: the date, the location (floor, grid, chainage), the\ndimensions taken (number, length, breadth, depth), the quantity worked out, who measured it and who accepted it for\nthe contractor. The quantities, multiplied by the agreement rates, become the\n[running account bill](/construction/ra-bills).\n\n| Item | Location | No. | L (m) | B (m) | D (m) | Qty |\n|---|---|---|---|---|---|---|\n| RCC M25 in columns | Ground floor, C1–C8 | 8 | 0.45 | 0.30 | 3.20 | 3.456 m³ |\n| Brickwork 230 mm | First floor, grid A–D | 1 | 18.40 | 0.23 | 3.00 | 12.696 m³ |\n\nThe figures are made up. How each item is measured (deductions for openings, which faces count) comes from the\ncontract's mode of measurement, usually an IS 1200 part or the department's schedule; see\n[measurement rules for interior BOQs](/boq/measurement-rules) for the same idea applied to interiors.\n\n## Who records and checks it?\n\nIn CPWD works the site engineers record measurements and the officers named in CPWD's standard operating\nprocedures test-check them. The officer who records or test-checks an item is responsible\nfor its quality, quantity and dimensional accuracy, which is why measurements are signed, not just entered.\n\nCPWD now records measurements electronically through its e-MB module on PFMS; the physical MB, where still used,\nhas its own rules for writing, movement, transfer and loss.\n\n## Extra, deviated and inadmissible items\n\n- **Extra items** are needed to complete the work but aren't in the agreement; **deviation** is a change in an\n  agreement item's quantity. Rates beyond the contract's deviation limit are fixed as the general conditions say.\n- **Inadmissible items**: where the contractor claims an item the department won't pay, CPWD still records the\n  measurements, for record only, under a separate heading, so the quantity is known if the claim is admitted later.\n\n## What your system should do\n\n- Measurements entered on site, per BOQ item and location, with dimensions, not only quantities.\n- Who measured, who checked, and the contractor's acceptance, with dates.\n- A running total per item against the BOQ quantity, flagging deviation beyond the contract limit.\n- Extra items held apart until their rate is approved.\n- Each [RA bill](/construction/ra-bills) built from the measurements since the last bill, so nothing is paid twice.\n- The same records feed [TDS](/construction/tds-on-contractor-payments) and [GST](/construction/gst-on-works-contracts) on each bill."
+    "body": "## What is a measurement book (MB)?\n\nThe measurement book is the record of every quantity of work measured on site, item by item, from which each\n[running account bill](/construction/ra-bills) and the final bill is paid. CPWD's general conditions say running\nbills are submitted \"on the basis of such recorded measurements\", so a quantity that isn't in the MB isn't billed.\nPrivate contractors keep the same record for their own clients and, in the other direction, for the subcontractors\nthey pay.\n\n## What details go into an MB entry?\n\nFor each BOQ item, every time it's measured: the date, the location (floor, grid, chainage), the dimensions taken\n(number, length, breadth, depth), the quantity worked out, who measured it and who accepted it for the contractor.\n\n| Item | Location | No. | L (m) | B (m) | D (m) | Qty |\n|---|---|---|---|---|---|---|\n| RCC M25 in columns | Ground floor, C1–C8 | 8 | 0.45 | 0.30 | 3.20 | 3.456 m³ |\n| Brickwork 230 mm | First floor, grid A–D | 1 | 18.40 | 0.23 | 3.00 | 12.696 m³ |\n\nThe figures are made up. How each item is measured (deductions for openings, which faces count) comes from the\ncontract's mode of measurement, usually an IS 1200 part or the department's schedule; see\n[measurement rules for interior BOQs](/boq/measurement-rules) for the same idea applied to interiors.\n\n## Who records and test-checks measurements?\n\nOn CPWD works, site engineers record the measurements and the officers named in CPWD's standard operating procedure\nSOP 5/24 test-check them. The officer who records or test-checks an item is responsible for its quality, quantity and\ndimensional accuracy, which is why measurements are signed, not just entered. The contractor (or its representative)\naccepts each measurement, so a disagreement is settled before the bill, not after it.\n\n## What is an e-MB?\n\nCPWD's electronic measurement book: measurements and payments are entered through its e-MB module on PFMS, the\ngovernment's financial management system. Where a physical MB is still used, CPWD's SOP 5/20 sets the rules for\nwriting it, recording measurements, moving and transferring it, reviewing it and what to do if it's lost.\n\n## How does the MB become an RA bill?\n\nThe abstract adds up each item to date, multiplies by the agreement rate, and takes off what was paid in earlier\nbills; the difference is this bill. An item \"PU membrane\", BOQ quantity 500 m² at ₹850:\n\n| | Quantity | Amount |\n|---|---|---|\n| Previous bills | 300 m² | ₹2,55,000 |\n| This bill | 180 m² | ₹1,53,000 |\n| Up to date | 480 m² | ₹4,08,000 |\n\nEvery bill is cumulative, so a mistake in one measurement is corrected in the next bill's up-to-date figure rather\nthan lost. The [RA bill page](/construction/ra-bills) shows the deductions that follow.\n\n## What are extra and deviated items?\n\nExtra items are needed to complete the work but aren't in the agreement; a deviation is an increase or decrease in an\nagreement item's quantity. Quantities within the deviation limit in the contract's Schedule F are paid at the\nagreement rate; beyond it, and for extra items, the rate is worked out as Clause 12 of the general conditions\nprescribes. The CPWD manual gives the Engineer-in-Charge 30 days to decide a claim within his own powers, longer when\nit goes to a higher authority.\n\nIf the same PU membrane item reaches 640 m² against 500 m² in the BOQ, it's 28% over. Whether the excess is paid at\nthe BOQ rate or a new one depends on the Schedule F limit for that work.\n\n## What happens to items the department won't pay?\n\nThey are still measured and recorded, under a separate heading as inadmissible items claimed but not included in the\npayment, so the quantity is on record if the claim is accepted later.\n\n## Can work be paid before it is measured?\n\nOn conditions. CPWD's rules allow an advance on a running bill for work measured but not yet checked, or done but\nnot yet measured, adjusted once the measurements are recorded; see [RA bills](/construction/ra-bills).\n\n## What should a contractor's system keep for measurements?\n\n- Measurements entered on site, per BOQ item and location, with the dimensions, not only the quantity.\n- Who measured, who checked, and the contractor's acceptance, with dates.\n- A running total per item against the BOQ quantity, flagging deviation beyond the contract's limit.\n- Extra items held apart until their rate is approved.\n- Each [RA bill](/construction/ra-bills) built from the measurements since the last bill, so nothing is paid twice.\n- The same records feeding [TDS](/construction/tds-on-contractor-payments) and\n  [GST](/construction/gst-on-works-contracts) on each bill.\n\nIn the [construction demo](/industries/construction-company), measurements are recorded per BOQ line with the date,\nquantity, a note and who measured, entered by hand or filled from approved daily reports; once work is reported\nagainst a line only its quantity can change, and quantities beyond the BOQ are flagged. It doesn't yet record\ndimensions (number × length × breadth × depth), test checks or the contractor's acceptance; those are parts we'd build."
   },
   {
     "kind": "construction",
@@ -6898,16 +6995,17 @@
     "kind": "construction",
     "slug": "ra-bills",
     "group": "india",
-    "title": "RA bills: how a running account bill works",
+    "title": "RA bills: deductions, advances and the final bill",
     "related": [
       "/construction/measurement-book",
-      "/ai-assistant/construction-contractors",
-      "/systems/bill-of-quantities",
-      "/services/custom-erp-crm"
+      "/construction/tds-on-contractor-payments",
+      "/systems/msme-payment-rule",
+      "/services/compliance-accounting",
+      "/industries/construction-company"
     ],
-    "question": "What is an RA bill in construction, and what is deducted from it?",
-    "answer": "A running account (RA) bill is a contractor's interim bill for work done and measured so far, paid while the work continues; the final bill closes the contract. Each RA bill is drawn from the measurement book, cumulative to date less earlier bills, and carries deductions: security deposit, TDS, any mobilisation or secured advance being recovered, and other recoveries the contract sets.",
-    "description": "Running account (RA) bills in Indian construction: drawn from the measurement book, security deposit, TDS, advances, final bill.",
+    "question": "What is an RA bill in construction, what is deducted from it, and how are advances and the final bill handled?",
+    "answer": "A running account (RA) bill is a contractor's interim bill for work measured so far, paid as an advance against the final bill while the work goes on. Each is drawn from the measurement book, to date less earlier bills, with GST on top and deductions taken off: security deposit (2.5% of each bill on CPWD works), TDS, GST TDS on government work, and recovery of any mobilisation or secured advance. The final bill closes the contract.",
+    "description": "RA bills in Indian construction: drawn from the MB, security deposit, mobilisation and secured advance, TDS, GST, payment deadlines and the final bill.",
     "domain": [
       "construction",
       "billing",
@@ -6915,16 +7013,124 @@
     ],
     "published": "2026-11-03",
     "updated": "2026-11-05",
-    "checked": "2026-11-03",
+    "checked": "2026-11-05",
     "sources": [
+      {
+        "title": "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)",
+        "publisher": "Central Public Works Department, Government of India (copy published by IIT Kanpur)",
+        "url": "https://iitk.ac.in/iwd/file/2026/18-Civil-D2-2026-27/GCC-2023.pdf",
+        "date": "2023-09-22"
+      },
+      {
+        "title": "CPWD circulars: General Conditions of Contract (amendments to GCC 2023)",
+        "publisher": "Central Public Works Department",
+        "url": "https://cpwd.gov.in/AllCirculars.aspx?Type=24",
+        "date": "2026-11-05"
+      },
       {
         "title": "CPWD Works Manual 2022",
         "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
         "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
         "date": "2022-06-30"
+      },
+      {
+        "title": "Micro, Small and Medium Enterprises Development Act, 2006",
+        "publisher": "Gazette of India (Ministry of MSME copy)",
+        "url": "https://samadhaan.msme.gov.in/WriteReadData/DocumentFile/MSMED2006act.pdf",
+        "date": "2006-06-16"
       }
     ],
     "checks": [
+      {
+        "reg": "GCC 2023, Clause 1A (recovery of security deposit)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "to deduct a sum at the rate of 2.5% of the gross amount of each running and final bill till the sum deducted will amount to security deposit of 2.5% of the tendered amount of the work."
+      },
+      {
+        "reg": "GCC 2023, Clause 1A",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The security deposit as deducted above can be released against bank guarantee issued by a scheduled bank, on its accumulations to a minimum of Rs. 5 lac"
+      },
+      {
+        "reg": "GCC 2023, Clause 7 (running bills)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "No payment shall be made for work, estimated to cost Rs. twenty lacs or less till after the whole of the work shall have been completed and certificate of completion given."
+      },
+      {
+        "reg": "GCC 2023, Clause 7",
+        "doc": "cpwd-gcc-2023",
+        "quote": "An amount of ad-hoc payment not less than 75% of the net amount of the bill under check, shall be made within 10 working days of submission of the bill"
+      },
+      {
+        "reg": "GCC 2023, Clause 7",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The remaining payment is also to be made after final checking of the bill within 28 working days of submission of bill by the contractor."
+      },
+      {
+        "reg": "GCC 2023, Clause 7",
+        "doc": "cpwd-gcc-2023",
+        "quote": "a simple interest @ 5% (five percent) per annum shall be paid to the contractor from the date of expiry of prescribed time limit."
+      },
+      {
+        "reg": "GCC 2023, Clause 7",
+        "doc": "cpwd-gcc-2023",
+        "quote": "All such interim payments shall be regarded as payment by way of advances against final payment only"
+      },
+      {
+        "reg": "GCC 2023, Clause 9 (final bill)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "within three months of physical completion of the work or within one month of the date of the final certificate of completion furnished by the Engineer-in-Charge whichever is earlier."
+      },
+      {
+        "reg": "GCC 2023, Clause 9",
+        "doc": "cpwd-gcc-2023",
+        "quote": "No further claims shall be made by the contractor after submission of the final bill and these shall be deemed to have been waived and extinguished."
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(i) (secured advance)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "up to 75% of the assessed value of any materials, which are in the opinion of the Engineer-in- charge non-perishable, non-fragile and non-combustible"
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(i)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "When materials on account of which an advance has been made under this subclause are incorporated in the work, the amount of such advance shall be recovered/deducted from the next payment made under any of the clause or clauses of this contract."
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(i)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "No secured advance, shall however, be paid on high-risk materials such as ordinary glass, sand, petrol, diesel."
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(ii) (mobilisation advance)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Mobilization advances not exceeding 10% of the tendered amount may be given, if requested by the contractor in writing within six months of the order to commence the work."
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(ii)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The amount of any installment shall not exceed 5% of the tendered amount of the work."
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(iii)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The mobilization advance in (ii) above bear simple interest at the rate of 8 percent per annum"
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(iii)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "Recovery of such sums advanced shall be made by the deduction from the contractors bills commencing after first ten percent of the gross value of the work is executed and paid"
+      },
+      {
+        "reg": "GCC 2023, Clause 10B(iii)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "the entire advance is recovered by the time eighty percent of the gross value of the contract is executed and paid"
+      },
+      {
+        "reg": "GCC 2023, Clause 17 (defect liability and refund of security deposit)",
+        "doc": "cpwd-gcc-2023",
+        "quote": "The security deposit of the contractor shall not be refunded before the expiry of twelve months (six months in the case of work costing Rs. Ten lacs and below except road work) after the issue of the certificate final or otherwise, of completion of work, or till the final bill has been prepared and passed whichever is later."
+      },
       {
         "reg": "CPWD Works Manual 2022, para 5.5 (security deposit)",
         "doc": "cpwd",
@@ -6936,17 +7142,17 @@
         "quote": "Secured advance is a term applied specifically to an advance made on the materials brought at site of work, to a contractor whose contract is for the completed item of work."
       },
       {
-        "reg": "CPWD Works Manual 2022, para 5.12.5 (advance payments)",
-        "doc": "cpwd",
-        "quote": "Advance payments can be made to the contractor on a running account bill form for the work done and measurements submitted by him, but not checked or work done but not measured"
-      },
-      {
         "reg": "CPWD Works Manual 2022, para 5.12 (measurement of work)",
         "doc": "cpwd",
         "quote": "All measurements are to be done as per provisions of GCC and abstract of schedule of measurements and payments are to be entered through PFMS portal of CPWD using E-MB module."
+      },
+      {
+        "reg": "MSMED Act, 2006, section 15",
+        "doc": "msmed",
+        "quote": "Provided that in no case the period agreed upon between the supplier and the buyer in writing shall exceed forty-five days from the day of acceptance or the day of deemed acceptance."
       }
     ],
-    "body": "## What is an RA bill?\n\nOn an item-rate contract, a contractor is paid by measured quantity at the agreed rate for each BOQ item. Waiting\nfor the end of the job would starve the contractor of cash, so the work is billed in stages: the 1st RA bill, the\n2nd, and so on, each for the work measured up to its date, and a final bill when the work is complete. The CPWD\nWorks Manual uses the term throughout, and most private contracts in India follow the same pattern.\n\n## How an RA bill is drawn up\n\nEvery RA bill comes from the [measurement book](/construction/measurement-book), and is cumulative:\n\n| Line | Example (made up) |\n|---|---|\n| Value of work done to date, item by item at agreement rates | ₹48,00,000 |\n| Add: extra and deviated items approved | ₹1,50,000 |\n| Gross value to date | ₹49,50,000 |\n| Less: paid in previous RA bills (gross) | ₹31,00,000 |\n| **Gross value of this bill** | **₹18,50,000** |\n\nThen the deductions, on this bill's value, as the contract sets them:\n\n- **Security deposit**, a percentage of each bill, held until the defects period ends. CPWD deducts it from running\n  bills and the final bill as the general conditions of contract provide.\n- **TDS** under the Income-tax Act; see [TDS on payments to contractors](/construction/tds-on-contractor-payments).\n- **Recovery of advances**: mobilisation advance in instalments, and secured advance on materials once they are\n  built in.\n- **Recoveries for materials issued** by the client, water and electricity, and any penalties.\n\nGST is charged on top of the bill as the contractor's invoice; see [GST on works contracts](/construction/gst-on-works-contracts).\n\n## Advances against an RA bill\n\nThe CPWD manual describes two that change an RA bill's maths:\n\n- **Secured advance:** paid on materials brought to site for an item not yet complete, and recovered from later\n  bills as the material is used.\n- **Advance payment for work done but not yet checked or measured**, paid as a lump sum on the contractor's request,\n  subject to conditions, and adjusted when the measurements are recorded.\n\n## What your system should do\n\n- Hold the BOQ with agreement rates, and take each RA bill from the measurements, never typed totals.\n- Keep every bill cumulative, so this bill is always to-date less previous.\n- Track each deduction by type across bills: security deposit held, advances still to recover, TDS deducted.\n- Mark extra and deviated items until they are approved, so they're billed once.\n- Close with a final bill that releases the security deposit only when the defects period has passed."
+    "body": "## What is an RA bill?\n\nA running account (RA) bill is an interim bill for the work measured so far, paid while the work continues; the\nfinal bill closes the contract. On an item-rate contract the contractor is paid by measured quantity at the agreed\nrate for each BOQ item, so the work is billed in stages: the 1st RA bill, the 2nd, and so on. CPWD's general\nconditions treat every such payment as an advance against the final payment, so an RA bill doesn't mean the work has\nbeen accepted. Most private contracts in India follow the same pattern, with the rates and deductions their own\ncontract sets.\n\n## How is an RA bill calculated?\n\nFrom the [measurement book](/construction/measurement-book), cumulatively: the value of all work measured to date at\nthe agreement rates, plus approved extra and deviated items, less the gross of all earlier bills. The deductions are\nthen taken from this bill's value.\n\n| Line | Example (made up) |\n|---|---|\n| Value of work done to date, item by item at agreement rates | ₹48,00,000 |\n| Add: extra and deviated items approved | ₹1,50,000 |\n| Gross value to date | ₹49,50,000 |\n| Less: gross of previous RA bills | ₹31,00,000 |\n| **Gross value of this bill** | **₹18,50,000** |\n\n## Which works are paid by RA bills on CPWD contracts?\n\nWorks estimated to cost more than ₹20 lakh. Under Clause 7 of CPWD's General Conditions of Contract 2023, a work\nestimated at ₹20 lakh or less is paid only after the whole work is completed and the completion certificate given.\nBigger works are billed monthly on recorded measurements, on the date the Engineer-in-Charge fixes, and a bill is due\nonly once the work done since the last one reaches the minimum set in the contract's Schedule F.\n\n## What is deducted from an RA bill?\n\nUp to five things, each set by the contract or the law:\n\n- **Security deposit (retention money):** a percentage of each bill held until the defects period ends.\n- **Income-tax TDS** at 1% or 2%: see [TDS on payments to contractors](/construction/tds-on-contractor-payments).\n- **GST TDS**, when the client is a government department or agency: 1% CGST plus 1% SGST; see\n  [GST on works contracts](/construction/gst-on-works-contracts).\n- **Recovery of advances:** mobilisation advance with its interest, and secured advance once the material is used.\n- **Recoveries for materials the client issued**, water, electricity, and any penalties the contract allows.\n\n## How much security deposit is deducted from an RA bill?\n\nOn CPWD works, 2.5% of the gross amount of each running and final bill, until 2.5% of the tendered amount has been\nheld (GCC Clause 1A). On a ₹2 crore work that is ₹5 lakh in all; a ₹18,50,000 bill gives up ₹46,250. Private\ncontracts usually call it retention money and set their own rate. CPWD lets the deposit be released against a bank\nguarantee from a scheduled bank once at least ₹5 lakh has built up.\n\n## When is the security deposit refunded?\n\nAfter the defect liability period, or once the final bill is passed, whichever is later. Under GCC Clause 17 that\nperiod is 12 months after the completion certificate, or 6 months for works costing ₹10 lakh or less (except road\nworks); the contractor must make good defects that appear in it, and the department can pay for them from the\ndeposit. Clause 1 and the release of security deposit have been amended by CPWD circulars since 2023; check the\ncontract's own GCC version.\n\n## What is a mobilisation advance, and how is it recovered?\n\nAn advance to set up the work (site office, labour camp, testing lab, godown, plant and machinery, shuttering), up to\n10% of the tendered amount, when the contract provides for it. Under GCC Clause 10B it's asked for in writing within\nsix months of the order to start, paid in instalments of no more than 5% each (the next only after the last is shown\nto be used), and carries simple interest at 8% a year. Recovery starts once 10% of the work's gross value has been\nexecuted and paid, in proportion to each bill, so that all of it is back by the time 80% has been executed and paid.\n\nOn a ₹2 crore work with a ₹20 lakh advance, recovery runs over the ₹1.4 crore of work between 10% and 80%: 14.29% of\neach bill's gross value. Interest is charged on the amount still outstanding up to each recovery.\n\n## What is a secured advance?\n\nAn advance on materials brought to site for work not yet done: up to 75% of the assessed value of materials that are\nnon-perishable, non-fragile and non-combustible, properly stored and not yet built in (GCC Clause 10B). When the\nmaterial is used in the work, the advance is recovered from the next payment. It isn't paid on high-risk materials\nsuch as ordinary glass, sand, petrol or diesel; perishable or fragile materials qualify only with insurance and the\nEngineer-in-Charge's approval. Cement and steel on site assessed at ₹4,00,000 give an advance of ₹3,00,000, recovered\nin full from the bill in which they are built in.\n\n## What does a full RA bill look like with every deduction?\n\nRA bill #3 on a made-up ₹2 crore CPWD-style work, contractor a company, client a government department:\n\n| Line | ₹ |\n|---|---|\n| Gross value of this bill | 18,50,000 |\n| Add GST at 18% (the contractor's tax invoice) | 3,33,000 |\n| **Invoice value** | **21,83,000** |\n| Less security deposit, 2.5% of the gross | 46,250 |\n| Less mobilisation advance recovered (14.29% of the gross) | 2,64,286 |\n| Less interest on the advance outstanding (₹18,42,857 × 8% × 31 days) | 12,521 |\n| Less income-tax TDS at 2% on the value excluding GST | 37,000 |\n| Less GST TDS, 1% CGST + 1% SGST | 37,000 |\n| **Net payable** | **17,85,943** |\n\nThe figures are made up; the days of interest are illustrative. Recovery of the advance started on bill #2, so\n₹1,57,143 of it had already come back.\n\n## How soon must an RA bill be paid?\n\nOn CPWD works, at least 75% of the net bill as an ad-hoc payment within 10 working days of submission, and the rest\nafter final checking within 28 working days (GCC Clause 7). If a bill that's in order isn't paid within 45 days of\nsubmission, the department pays simple interest at 5% a year from the end of the time limit. On the bill above, the\nad-hoc payment is at least ₹13,39,457.\n\nFor a private client: if you're a registered micro or small enterprise, the MSMED Act caps the agreed credit period\nat 45 days from acceptance; see the [MSME payment rule](/systems/msme-payment-rule).\n\n## When must the final bill be submitted and paid?\n\nWithin three months of physical completion, or one month of the final completion certificate, whichever is earlier\n(GCC Clause 9). Once it's submitted, no further claims can be made: they are treated as waived. The undisputed items,\nand disputed ones at the approved quantity and rate, are paid within three months of the bill being received, with\n5% a year interest if the department is late on a bill submitted in time. Work completed on 15 January 2027 with the\nfinal certificate on 10 March 2027 needs its final bill by 10 April 2027.\n\n## Can I get paid before the work is measured?\n\nSometimes. The CPWD manual allows advance payments on a running bill for work measured but not yet checked, or done\nbut not yet measured, on conditions, adjusted when the measurements are recorded. GCC Clause 7 also lets the\nEngineer-in-Charge pay 75% of the assessed value of a building floor's work up to lintel or slab level without\ndetailed measurement, adjusted in the next bill.\n\n## What should a contractor's system track on RA bills?\n\n- The BOQ with agreement rates, and each RA bill taken from the measurements, never typed totals.\n- Every bill cumulative, so this bill is always to date less previous.\n- Each deduction by type across bills: security deposit held, advances still to recover with their interest, TDS and\n  GST TDS deducted.\n- Extra and deviated items kept apart until approved, so they're billed once.\n- Due dates for the ad-hoc payment, the balance and the final bill, and the refund date of the security deposit.\n\nThe [construction demo](/industries/construction-company) builds each RA bill from measurements against the BOQ\n(previous, this bill and up to date per line, the GST split and the amount in words, as a PDF), moves it from draft\nto submitted, certified and paid, and flags quantities beyond the BOQ. It doesn't yet take security deposit, TDS,\nGST TDS or advance recoveries off the bill, or produce a separate final bill; those are parts we'd build."
   },
   {
     "kind": "construction",
@@ -7191,23 +7397,36 @@
     "slug": "tds-on-contractor-payments",
     "group": "india",
     "title": "TDS on payments to contractors under the 2025 Act",
+    "related": [
+      "/construction/ra-bills",
+      "/construction/gst-on-works-contracts",
+      "/systems/tds-on-purchases",
+      "/services/daily-wage-payroll",
+      "/notes/statutory-rates-across-systems"
+    ],
     "question": "How much TDS is deducted on payments to contractors in India?",
-    "answer": "Under the Income-tax Act, 2025, in force from 1 April 2026, a payer deducts tax at 1% on payments to a contractor who is an individual or HUF and 2% to any other contractor, for any work under a contract, including supply of labour. It applies once a single payment exceeds ₹30,000 or the year's total exceeds ₹1,00,000. The rule replaces section 194C of the 1961 Act.",
-    "description": "TDS on contractor payments in India under the Income-tax Act, 2025 (section 393, table serial 6): rates, thresholds, what counts as work, RA bills.",
+    "answer": "Under the Income-tax Act, 2025, in force from 1 April 2026, a payer deducts tax at 1% on payments to a contractor who is an individual or HUF and 2% to any other contractor, for any work under a contract, including supply of labour. It applies once a single payment exceeds ₹30,000 or the year's total exceeds ₹1,00,000. The rule replaces section 194C of the 1961 Act: it is now section 393(1), Table serial 6.",
+    "description": "TDS on contractor payments under the Income-tax Act, 2025 (section 393, serial 6): who deducts, 1% or 2%, the ₹30,000 and ₹1 lakh limits, and RA bills.",
     "domain": [
       "construction",
       "tds",
       "india"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "Income-tax Act, 2025 (30 of 2025)",
         "publisher": "Ministry of Law and Justice, Gazette of India",
         "url": "https://egazette.gov.in/WriteReadData/2025/265620.pdf",
         "date": "2025-08-22"
+      },
+      {
+        "title": "CPWD Works Manual 2022",
+        "publisher": "Central Public Works Department, Government of India (copy published by NDMC)",
+        "url": "https://www.ndmc.gov.in/departments/Departments/Finance/nodal_cell/CPWD%20Works%20Manual%202022.pdf",
+        "date": "2022-06-30"
       }
     ],
     "checks": [
@@ -7227,12 +7446,47 @@
         "quote": "Rate: (a) 1%, if"
       },
       {
-        "reg": "Income-tax Act, 2025, definitions for section 393",
+        "reg": "Income-tax Act, 2025, section 393(1), Table, serial 6(i), what is paid",
+        "doc": "it-act-2025",
+        "quote": "carrying out any work"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 393(1), Table, serial 6(i), what is paid",
+        "doc": "it-act-2025",
+        "quote": "(including supply of"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 393(1), Table, serial 6(ii), threshold",
+        "doc": "it-act-2025",
+        "quote": "Fifty lakh rupees."
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 402(11), designated person",
+        "doc": "it-act-2025",
+        "quote": "“designated person”, for the purposes of section 393(1) [Table: Sl. No. 6 (i)], means—"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 402(11)(l)",
+        "doc": "it-act-2025",
+        "quote": "has total sales, gross receipts or turnover from business or profession carried on by him exceeding one crore rupees in case of business or fifty lakh rupees in case of profession"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 402(47), work",
         "doc": "it-act-2025",
         "quote": "(47) “work” shall include—"
+      },
+      {
+        "reg": "Income-tax Act, 2025, section 402(47)(e)",
+        "doc": "it-act-2025",
+        "quote": "manufacturing or supplying a product according to the requirement or specification of a customer by using material purchased from––"
+      },
+      {
+        "reg": "CPWD Works Manual 2022, para 5.18.4 (written under the 1961 Act)",
+        "doc": "cpwd",
+        "quote": "Under Section 194C of the Income Tax Act, 1961, deduction of income tax is required to be made at source by disbursing officers from payments made to contractors."
       }
     ],
-    "body": "## What changed in April 2026?\n\nThe Income-tax Act, 2025 replaced the Income-tax Act, 1961 from 1 April 2026. TDS on payments to contractors,\nsection 194C under the old Act, is now a row of the table in section 393: serial number 6, \"Payments to contractors,\nfees for professional and technical services, etc.\" The rates and thresholds below are read from that table.\n\n## Rates and thresholds\n\n| Who pays | Contractor | Rate | Deduct when |\n|---|---|---|---|\n| A designated person (companies, firms, government and others the Act lists) | Individual or HUF | 1% | A single payment is over ₹30,000, or the year's total is over ₹1,00,000 |\n| A designated person | Anyone else (company, firm, LLP) | 2% | Same thresholds |\n| An individual or HUF not otherwise required to deduct (serial 6(ii)) | Any contractor | 2% | Payments for work over ₹50 lakh in the year |\n\n\"Work\" covers any work under a contract, including supplying labour for it. The Act's definition also brings in\nadvertising, broadcasting, carriage of goods or passengers other than by rail, catering, and making a product to a\ncustomer's specification with material bought from that customer, but not with material bought from someone else.\n\nRates in the table can change in a Finance Act. Check the table as amended for the year you pay in.\n\n## How it sits on an RA bill\n\nTDS is deducted from each [running account bill](/construction/ra-bills) at the rate in the table. Whether GST\nshown separately on the invoice is part of the amount follows CBDT's guidance; confirm the position under the 2025\nAct with your adviser. A main contractor paying its subcontractors deducts the same way. The deduction is deposited and reported in the TDS return, and the\ncontractor claims credit for it against its own tax.\n\nGovernment and certain other buyers also deduct TDS under GST, which is separate from income-tax TDS; see\n[GST on works contracts](/construction/gst-on-works-contracts).\n\n## What your system should do\n\n- Hold each contractor's status (individual or HUF, or other) and PAN, which sets the rate.\n- Track payments to each contractor across the year, so the ₹1,00,000 total is caught on the bill that crosses it.\n- Deduct on the base your adviser confirms, and show it as its own line on the\n  [measurement-based bill](/construction/measurement-book).\n- Produce the challan and return data per contractor, and the certificate they need."
+    "body": "## What replaced section 194C?\n\nSection 393(1) of the Income-tax Act, 2025: TDS on payments to contractors is now serial number 6 of the table in\nthat section, \"Payments to contractors, fees for professional and technical services, etc.\" The 2025 Act replaced\nthe Income-tax Act, 1961 from 1 April 2026, so payments made from that date are reported under section 393, not\n194C. Older documents, such as the CPWD Works Manual 2022, still refer to section 194C.\n\n## What is the TDS rate on payments to contractors?\n\n1% when the contractor is an individual or a Hindu undivided family (HUF), and 2% for any other contractor (a\ncompany, firm or LLP), under Table serial 6(i). The contractor's status, from its PAN, sets the rate.\n\n| Paid to | Rate | On a ₹5,00,000 bill |\n|---|---|---|\n| A proprietor (individual) or HUF | 1% | ₹5,000 |\n| A company, firm or LLP | 2% | ₹10,000 |\n\n## When does TDS apply to a contractor payment?\n\nWhen a single payment exceeds ₹30,000, or the payments to that contractor in the year add up to more than ₹1,00,000.\nPayments to a subcontractor of ₹25,000, ₹28,000, ₹32,000 and ₹20,000 run to ₹25,000, ₹53,000, ₹85,000 and ₹1,05,000:\nthe third payment is over ₹30,000 on its own, and the fourth takes the year past ₹1,00,000. How the earlier payments\nare treated once the total crosses the limit is a question for your adviser.\n\n## Who has to deduct TDS from a contractor?\n\nA \"designated person\", as section 402 of the Act defines it for serial 6(i): the Central or a State Government, local\nauthorities, corporations set up by law, companies, co-operative societies, housing and development authorities,\nregistered societies, trusts, universities, foreign governments and enterprises, firms, and individuals, HUFs and\nothers whose sales, gross receipts or turnover in the previous year was over ₹1 crore (business) or ₹50 lakh\n(profession).\n\nOther individuals and HUFs deduct under serial 6(ii) instead: 2% on payments for work, but only once their payments\nin the year pass ₹50 lakh.\n\n| Payer | Contractor | Rate | Deduct when |\n|---|---|---|---|\n| A designated person | Individual or HUF | 1% | One payment over ₹30,000, or the year's total over ₹1,00,000 |\n| A designated person | Anyone else | 2% | Same limits |\n| An individual or HUF not otherwise required to deduct | Any contractor | 2% | Payments for work over ₹50 lakh in the year |\n\n## What counts as \"work\" for contractor TDS?\n\nAny work under a contract, including supplying labour to carry it out. The Act's definition also brings in\nadvertising, broadcasting and telecasting, carriage of goods or passengers by any mode other than rail, catering, and\nmaking or supplying a product to a customer's specification with material bought from that customer. Making a product\nto specification with material bought from someone else isn't work for this purpose; that is a purchase of goods.\n\n## Does a main contractor deduct TDS from its subcontractors?\n\nYes, the same way, if it is a designated person: 1% or 2% on each subcontractor's bills once the limits are crossed.\nThe main contractor suffers TDS on its own bills from the client and deducts it from what it pays its subs; each claims\ncredit for what was deducted from it.\n\n## Is TDS deducted on the GST part of the bill?\n\nIt depends on the guidance under the Act, so confirm with your adviser whether to deduct on the bill's value with or\nwithout the GST shown separately on the invoice, and set your system to match.\n\n## How does TDS sit on an RA bill?\n\nIt's deducted from each [running account bill](/construction/ra-bills) at the rate in the table, on the bill's value.\nOn a ₹18,50,000 RA bill to a company contractor, income-tax TDS at 2% is ₹37,000. A government client may also deduct\nGST TDS of ₹37,000 (1% CGST + 1% SGST) from the same bill; that is a separate deduction under the GST law, covered in\n[GST on works contracts](/construction/gst-on-works-contracts).\n\n## What happens after TDS is deducted?\n\nThe payer deposits it, reports it in its TDS statement and gives the contractor a certificate; the contractor claims\ncredit for it against its own tax. Check the deposit and filing dates for the year in the rules under the 2025 Act.\n\n## Did the rates change in 2026?\n\nThe rates and limits above are read from the table in section 393 as enacted. Rates can be changed by a Finance Act,\nso check the table as amended for the year you pay in.\n\n## What should a contractor's system do for TDS?\n\n- Hold each contractor's PAN and status (individual or HUF, or other), which sets the rate.\n- Track payments to each contractor through the year, so the ₹1,00,000 total is caught on the bill that crosses it.\n- Deduct on the base your adviser confirms, and show TDS as its own line on the\n  [measurement-based bill](/construction/measurement-book).\n- Record TDS clients deduct from your own bills, so the credit can be matched before you file.\n- Produce the deposit and return data per contractor, and the certificate each one needs.\n\nIn the [construction demo](/industries/construction-company), the monthly wage register deducts 1% TDS from\nsubcontractors' wages once they pass the limits, and the TDS register lists deductions by quarter with deposit and\nreturn dates; the return itself stays in Tally. The demo still labels these deductions \"194C\", and it doesn't yet\nrecord TDS that clients deduct from the contractor's own RA bills; those are changes we'd make."
   },
   {
     "kind": "construction",

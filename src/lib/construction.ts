@@ -20,7 +20,7 @@ export const CON_GROUPS: { slug: string; name: string; intro: string; market: "N
   {
     slug: "india",
     name: "Contractors in India",
-    intro: "Running bills against the measurement book, TDS on payments to contractors and GST on works contracts.",
+    intro: "Running bills against the measurement book, with security deposit, advances and the final bill, TDS on payments to contractors and GST on works contracts.",
     market: "IN",
     order: ["ra-bills", "measurement-book", "tds-on-contractor-payments", "gst-on-works-contracts"],
   },
