@@ -71,6 +71,7 @@ const NA_ONLY = [
   "/asme/state-boiler-laws", "/manufacturing", "/sales-tax",
   // The construction hub's US group.
   "/construction/pay-applications", "/construction/retainage", "/construction/lien-waivers", "/construction/change-orders", "/construction/wip-schedule",
+  "/construction/mechanics-lien-deadlines", "/construction/prompt-payment-acts", "/construction/certified-payroll",
 ];
 const under = (list: string[], href: string) => list.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`));
 export const marketsFor = (href: string): MarketCode[] | undefined =>

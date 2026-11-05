@@ -22,6 +22,8 @@ const DOCS = {
   "ca-wayfair": `CDTFA - Wayfair use tax collection ${D}.txt`,
   "ca-mfg": `CDTFA - Manufacturing exemption guide ${D}.txt`,
   "ca-pub103": `CDTFA - Publication 103 Sales for Resale ${D}.txt`,
+  "tx-3.291": "Texas 34 TAC 3.291 Contractors 2026-11-05.txt",
+  "ca-1521": "CDTFA Regulation 1521 Construction contractors 2026-11-05.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(DIR, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

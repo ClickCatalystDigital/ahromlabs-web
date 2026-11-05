@@ -15,7 +15,7 @@ export const CON_GROUPS: { slug: string; name: string; intro: string; market: "N
     name: "Contractors in the US",
     intro: "Getting paid on a US job: pay applications, retainage, lien waivers, change orders and the WIP schedule, and what each state allows.",
     market: "NA",
-    order: ["pay-applications", "retainage", "lien-waivers", "change-orders", "wip-schedule"],
+    order: ["pay-applications", "retainage", "lien-waivers", "mechanics-lien-deadlines", "prompt-payment-acts", "change-orders", "wip-schedule", "certified-payroll"],
   },
   {
     slug: "india",

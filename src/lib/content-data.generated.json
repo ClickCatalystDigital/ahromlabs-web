@@ -5833,6 +5833,116 @@
   },
   {
     "kind": "sales-tax",
+    "slug": "contractors-sales-tax",
+    "group": "exemptions",
+    "title": "Sales tax for contractors: lump-sum vs separated contracts",
+    "related": [
+      "/construction/pay-applications",
+      "/construction/change-orders",
+      "/industries/construction-company",
+      "/services/custom-erp-crm"
+    ],
+    "question": "Do contractors charge sales tax, or pay it on their materials?",
+    "answer": "Usually a contractor who builds or repairs real property pays sales tax on its materials and doesn't charge it to the customer, because the contractor is the consumer of what it installs. Texas and California follow that rule for lump-sum contracts. But a contract that states the materials separately can make the contractor the retailer of them, collecting tax from the customer instead, so how the contract is written changes who pays.",
+    "description": "Sales tax for contractors: consumer of materials or retailer, lump-sum vs separated contracts in Texas and California, equipment, use tax and certificates.",
+    "domain": [
+      "sales-tax",
+      "construction"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "34 Texas Administrative Code 3.291, Contractors",
+        "publisher": "Legal Information Institute, Cornell Law School (Texas Comptroller of Public Accounts rule)",
+        "url": "https://www.law.cornell.edu/regulations/texas/34-Tex-Admin-Code-SS-3-291",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Regulation 1521, Construction Contractors",
+        "publisher": "California Department of Tax and Fee Administration",
+        "url": "https://www.cdtfa.ca.gov/lawguides/vol1/sutr/1521.html",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Use Tax",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/use-tax.php",
+        "date": "2026-11-03"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "34 TAC 3.291(a), lump-sum contract",
+        "doc": "tx-3.291",
+        "quote": "A contract in which the agreed contract price is one lump-sum amount and in which the charges for incorporated materials are not separate from any charges for skill and labor"
+      },
+      {
+        "reg": "34 TAC 3.291(a), separated contract",
+        "doc": "tx-3.291",
+        "quote": "A contract in which the agreed contract price is divided into a separately stated agreed contract price for incorporated materials and a separately stated amount for all skill and labor"
+      },
+      {
+        "reg": "34 TAC 3.291(b)(3)(A), lump-sum contracts",
+        "doc": "tx-3.291",
+        "quote": "A contractor who performs lump-sum contracts owes tax on all materials, consumable items, equipment, taxable services, and other taxable items that are used by the contractor or incorporated into a customer's property."
+      },
+      {
+        "reg": "34 TAC 3.291(b)(3)(A)",
+        "doc": "tx-3.291",
+        "quote": "The contractor shall not collect from a customer any amount represented to be tax on a lump-sum charge or on any portion of the charge"
+      },
+      {
+        "reg": "34 TAC 3.291(b)(4)(A), separated contracts",
+        "doc": "tx-3.291",
+        "quote": "a contractor who performs a separated contract is a retailer of all materials that are physically incorporated into the realty that is being improved."
+      },
+      {
+        "reg": "34 TAC 3.291(b)(4)(A)",
+        "doc": "tx-3.291",
+        "quote": "The tax rate must be applied to the agreed contract price of materials, or to the price of the materials to the contractor, whichever is greater."
+      },
+      {
+        "reg": "34 TAC 3.291(b)(1), equipment",
+        "doc": "tx-3.291",
+        "quote": "A contractor must pay sales tax at the time of purchase, lease, or rental on the sales price of equipment used to perform a contract."
+      },
+      {
+        "reg": "34 TAC 3.291(b)(3)(C)",
+        "doc": "tx-3.291",
+        "quote": "A contractor who purchases items that are specifically intended for use in a lump-sum contract may not issue resale certificates in lieu of tax for such items."
+      },
+      {
+        "reg": "34 TAC 3.291(b)(3)(B)",
+        "doc": "tx-3.291",
+        "quote": "performs nonresidential real property repair, restoration, and remodeling services and resells taxable items as part of those taxable services"
+      },
+      {
+        "reg": "CDTFA Regulation 1521(b)(2)(A)",
+        "doc": "ca-1521",
+        "quote": "Construction contractors are consumers of materials which they furnish and install in the performance of construction contracts."
+      },
+      {
+        "reg": "CDTFA Regulation 1521(b)(2)(B)",
+        "doc": "ca-1521",
+        "quote": "Construction contractors are retailers of fixtures which they furnish and install in the performance of construction contracts and tax applies to their sales of the fixtures."
+      },
+      {
+        "reg": "CDTFA Regulation 1521(a)(8)",
+        "doc": "ca-1521",
+        "quote": "A lump sum contract does not become a time and material contract when the amounts attributable to materials, fixtures, labor, or tax are separately stated in the invoice."
+      },
+      {
+        "reg": "Texas Comptroller, Use Tax",
+        "doc": "tx-use",
+        "quote": "If the seller does not have a permit or fails to charge sales and use tax, the purchaser must pay the use tax directly to our office unless an exemption applies."
+      }
+    ],
+    "body": "## Do contractors charge sales tax?\n\nUsually not on a construction contract: a contractor who improves real property is generally the consumer of the\nmaterials it installs, so it pays sales tax when it buys them and doesn't add tax to its bill. California's rule says\nso directly: \"Construction contractors are consumers of materials which they furnish and install in the performance\nof construction contracts.\" The exceptions come from how the contract is written and what is installed, and they\ndiffer by state.\n\n## What is the difference between a lump-sum and a separated contract?\n\nA lump-sum contract has one price for materials and labor together; a separated contract states the price of the\nincorporated materials apart from the price of all skill and labor. Texas defines both (34 TAC 3.291), and the\ndifference decides who owes the tax:\n\n| | Lump-sum contract | Separated contract |\n|---|---|---|\n| Contractor is | The consumer of the materials | The retailer of the materials |\n| Tax on materials | Paid by the contractor to its supplier | Collected by the contractor from the customer |\n| Contractor buys materials | Tax paid; no resale certificate for items bought for the job | May give suppliers a resale certificate |\n| Tax on the bill | None; tax can't be shown on any part of the charge | On the materials price (or the contractor's cost, if higher) |\n| Sales tax permit | Not needed for this alone | Needed, and the contractor files returns |\n\nA guaranteed-maximum contract that doesn't break out materials and all labor counts as lump-sum in Texas.\n\n## How does it work on a Texas job, in numbers?\n\nTake a made-up $200,000 commercial job with $60,000 of materials, at an assumed 8% combined rate:\n\n- **Lump-sum:** the contractor pays $4,800 tax to its suppliers on the $60,000 of materials and bills $200,000 with no\n  tax line. The tax is a cost of the job, so it belongs in the bid.\n- **Separated:** the contract states materials at $70,000 (cost plus markup) and labor at $130,000. The contractor buys\n  the materials on a resale certificate and charges the customer $5,600 tax on the $70,000, which it reports and pays\n  to the state. Tax applies to the agreed materials price or the contractor's cost, whichever is greater.\n\nThe rate is made up for the example; use the rate for the job's location.\n\n## Does a contractor pay tax on tools and equipment?\n\nYes. In Texas a contractor pays sales tax when it buys, leases or rents equipment used on a contract, under either\nkind of contract, and owes use tax on equipment from an out-of-state seller that didn't charge Texas tax. Separately\nstating an equipment charge to the customer doesn't make it a rental to the customer.\n\n## What about consumables like forms, tape and fuel?\n\nIn Texas they're taxed when the contractor buys them, because they're used up on the job rather than built in: things\nlike non-reusable concrete forms, drop cloths, barricade tape, natural gas and electricity. On a separated contract a\ncontractor can pass consumables through on a resale certificate only if title goes to the customer when it takes\nthem and they're marked as the customer's.\n\n## Is repair and remodeling work taxed differently?\n\nIn Texas, yes: nonresidential repair, restoration and remodeling is a taxable service under its own rule (34 TAC\n3.357), while new construction and residential repair fall under the contractor rule. New construction includes the\ninitial finish-out of a new building and new square footage added to an existing one; moving interior walls within\nexisting space is remodeling. Check which rule a job falls under before you price it.\n\n## How does California treat contractors?\n\nAs consumers of the materials they install, and as retailers of fixtures they install. Regulation 1521 covers lump\nsum, time and material and cost-plus contracts. Stating materials, labor or tax separately on an invoice doesn't turn a\nlump-sum contract into a time and material contract; under a time and material contract, a contractor who bills the\ncustomer \"sales tax\" on marked-up materials is assumed to be the retailer of them. Fixtures (built-in items that keep\ntheir identity, listed in the regulation) are taxed as sales by the contractor.\n\n## When does a contractor owe use tax?\n\nWhen it uses materials or equipment on which no tax was paid: bought from an out-of-state supplier that didn't charge\nthe tax, or bought tax-free on a resale certificate and then built in under a lump-sum contract. The contractor reports\nuse tax itself for the period the items were used. See [use tax](/sales-tax/use-tax) for how it's reported, and\n[resale certificates](/sales-tax/resale-certificates) for when you can buy tax-free.\n\n## Can a contractor buy tax-free for an exempt customer?\n\nSometimes, with the customer's certificate. In Texas a contractor improving realty for an organization exempt under\nTax Code 151.309 or 151.310 may claim the exemption on purchases for that job, with properly completed exemption\ncertificates, and a contract can instead have the exempt customer buy the materials itself. If the comptroller later\nfinds the organization isn't exempt, the contractor owes the tax, penalties and interest, so keep the certificate and\nthe proof of exemption with the job.\n\n## What should a contractor's system record for sales tax?\n\n- Each contract's type (lump-sum or separated, or the state's equivalent), set before billing.\n- Materials bought per job, with the tax paid or the resale certificate used.\n- Use tax due on materials that went untaxed into lump-sum work, by period.\n- Tax charged on separated contracts and supply sales, by the job's location.\n- Exemption certificates per job for exempt customers.\n\nSee [sales tax in your ERP](/sales-tax/sales-tax-in-erp) for the general case. The\n[construction demo](/industries/construction-company)'s US build bills pay applications with no sales tax, treating\nthe contractor as paying tax on its materials, and charges sales tax on supply invoices from its materials desk. It\ndoesn't switch a contract between lump-sum and separated treatment or work out use tax; those are parts we'd build.\nThis guide explains the rules from the texts cited; your state's revenue department and your tax adviser decide how\nthey apply to a job."
+  },
+  {
+    "kind": "sales-tax",
     "slug": "economic-nexus-thresholds",
     "group": "nexus",
     "tool": "nexus",
@@ -6381,6 +6491,118 @@
   },
   {
     "kind": "construction",
+    "slug": "certified-payroll",
+    "group": "us",
+    "title": "Certified payroll under Davis-Bacon: WH-347 explained",
+    "related": [
+      "/construction/pay-applications",
+      "/construction/prompt-payment-acts",
+      "/manufacturing/quickbooks-integration",
+      "/services/custom-erp-crm",
+      "/industries/construction-company"
+    ],
+    "question": "What is certified payroll on a Davis-Bacon job, and what does a contractor have to submit?",
+    "answer": "Certified payroll is the weekly payroll report a contractor and each sub must submit on a federal or federally assisted construction contract over $2,000 covered by the Davis-Bacon and Related Acts. It lists every laborer and mechanic, their classification, hours, rates, fringe benefits, deductions and pay, with a signed Statement of Compliance that each was paid at least the prevailing wage. DOL's Form WH-347 is optional; the weekly report isn't.",
+    "description": "Certified payroll on Davis-Bacon jobs: who files, weekly WH-347 reports, the Statement of Compliance, prevailing wages, overtime, records and penalties.",
+    "domain": [
+      "construction",
+      "payroll"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "Instructions for Completing Davis-Bacon and Related Acts Weekly Certified Payroll Form, WH-347",
+        "publisher": "U.S. Department of Labor, Wage and Hour Division",
+        "url": "https://www.dol.gov/agencies/whd/forms/wh347",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Davis-Bacon and Related Acts",
+        "publisher": "U.S. Department of Labor, Wage and Hour Division",
+        "url": "https://www.dol.gov/agencies/whd/government-contracts/construction",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "29 CFR 5.5, Contract provisions and related matters",
+        "publisher": "Electronic Code of Federal Regulations",
+        "url": "https://www.ecfr.gov/current/title-29/subtitle-A/part-5/subpart-A/section-5.5",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "40 U.S.C. 3142 (Davis-Bacon Act) and 3145 (Copeland Act)",
+        "publisher": "Legal Information Institute, Cornell Law School",
+        "url": "https://www.law.cornell.edu/uscode/text/40/3142",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "40 U.S.C. 3142(a)",
+        "doc": "usc-40-3142",
+        "quote": "The advertised specifications for every contract in excess of $2,000, to which the Federal Government or the District of Columbia is a party, for construction, alteration, or repair, including painting and decorating, of public buildings and public works"
+      },
+      {
+        "reg": "40 U.S.C. 3145(a)",
+        "doc": "usc-40-3145",
+        "quote": "The regulations shall include a provision that each contractor and subcontractor each week must furnish a statement on the wages paid each employee during the prior week."
+      },
+      {
+        "reg": "DOL, Davis-Bacon and Related Acts",
+        "doc": "dol-dbra",
+        "quote": "The Davis-Bacon and Related Acts apply to contractors and subcontractors performing on federally funded or assisted contracts in excess of $2,000 for the construction, alteration, or repair (including painting and decorating) of public buildings or public works."
+      },
+      {
+        "reg": "DOL, Davis-Bacon and Related Acts (overtime)",
+        "doc": "dol-dbra",
+        "quote": "For prime contracts in excess of $100,000, contractors and subcontractors must also, under the provisions of the Contract Work Hours and Safety Standards Act, as amended, pay laborers and mechanics, including guards and watchmen, at least one and one-half times their regular rate of pay for all hours worked over 40 in a workweek."
+      },
+      {
+        "reg": "DOL, Davis-Bacon and Related Acts (2023 final rule)",
+        "doc": "dol-dbra",
+        "quote": "The final rule took effect on October 23, 2023."
+      },
+      {
+        "reg": "DOL, WH-347 instructions",
+        "doc": "dol-dbra",
+        "quote": "While use of Form WH-347 itself is optional, covered contractors and subcontractors performing work on Federal or federally assisted construction contracts are required by the DBRA regulations and the contract clauses to submit payroll information on a weekly basis."
+      },
+      {
+        "reg": "DOL, WH-347 instructions (fringe benefits)",
+        "doc": "dol-dbra",
+        "quote": "or by paying workers cash in lieu of fringe benefits."
+      },
+      {
+        "reg": "29 CFR 5.5(a)(3)(ii)(A)",
+        "doc": "cfr-29-5.5",
+        "quote": "The contractor or subcontractor must submit weekly, for each week in which any DBA- or Related Acts-covered work is performed, certified payrolls"
+      },
+      {
+        "reg": "29 CFR 5.5(a)(3)(ii)(A)",
+        "doc": "cfr-29-5.5",
+        "quote": "The prime contractor is responsible for the submission of all certified payrolls by all subcontractors."
+      },
+      {
+        "reg": "29 CFR 5.5(a)(3)(i)(B)",
+        "doc": "cfr-29-5.5",
+        "quote": "daily and weekly number of hours actually worked in total and on each covered contract; deductions made; and actual wages paid."
+      },
+      {
+        "reg": "29 CFR 5.5(a)(3)(ii)(C)",
+        "doc": "cfr-29-5.5",
+        "quote": "falsification of any of the above certifications may subject the contractor or subcontractor to civil or criminal prosecution under 18 U.S.C. 1001 and 31 U.S.C. 3729"
+      },
+      {
+        "reg": "29 CFR 5.5(a)(3)(ii)(G)",
+        "doc": "cfr-29-5.5",
+        "quote": "The contractor or subcontractor must preserve all certified payrolls during the course of the work and for a period of 3 years after all the work on the prime contract is completed."
+      }
+    ],
+    "body": "## What is certified payroll?\n\nCertified payroll is a weekly payroll report, signed under a statement of compliance, that a contractor files on a\nconstruction job covered by the Davis-Bacon and Related Acts. It shows every laborer and mechanic who worked on the\ncontract that week, the work they did, their hours and what they were paid, so the agency can check that each got at\nleast the prevailing wage set for the job. The law behind it, the Copeland Act, says each contractor and subcontractor\n\"each week must furnish a statement on the wages paid each employee during the prior week\".\n\n## Which jobs need certified payroll?\n\nFederal and federally funded or assisted contracts over $2,000 for construction, alteration or repair, including\npainting and decorating, of public buildings or public works. \"Related Acts\" are the laws under which federal\nagencies help pay for construction through grants, loans, loan guarantees and insurance, so a state or city job\npaid partly with federal money can be covered too. The contract says so: it carries the Davis-Bacon clauses and the\nwage determination for the job.\n\n## Who has to submit it?\n\nEvery contractor and subcontractor with laborers or mechanics on the covered work, weekly, for each week in which\ncovered work is done. Payrolls go to the federal agency when it is a party to the contract, or otherwise to the\napplicant, sponsor or owner that keeps the records for the agency. The prime contractor is responsible for getting\nevery sub's certified payroll in, so a late or wrong payroll from a sub is the prime's problem too.\n\n## Do I have to use Form WH-347?\n\nNo, but you must report the same information weekly. DOL's WH-347 is optional; a covered contractor can use its own\nformat or an electronic system the agency or prime allows, as long as it has every required field and the signed\nStatement of Compliance (page 2 of WH-347, or a document with identical wording). Each weekly payroll is numbered,\nstarting at 1 for the project, and the last one is marked final.\n\n## What goes on a certified payroll?\n\nFor each worker: name, Social Security number, last known address, telephone number and email, the classification of\nthe work actually done, the hourly rate paid including fringe benefits, the daily and weekly hours worked in total\nand on each covered contract, deductions made, and the actual wages paid. The payroll also names the project, the\ncontract number, the wage determination numbers that apply, and the week-ending date.\n\n## What does the Statement of Compliance certify?\n\nThat the payroll is accurate and complete, that the required records are kept, and that each laborer and mechanic,\nincluding registered apprentices, was paid at least the required prevailing wage, including fringe benefits, for the\nwork done. Falsifying it can bring civil or criminal prosecution under 18 U.S.C. 1001 and the False Claims Act\n(31 U.S.C. 3729).\n\n## How are prevailing wages and fringe benefits paid?\n\nAt no less than the rate for each worker's classification on the job's wage determination, which the Department of\nLabor sets from local prevailing wages. The fringe part can be paid into bona fide benefit plans, or as cash in lieu\nof fringe benefits. A made-up example: a classification at $38.50 an hour plus $14.20 in fringe, paid entirely in\ncash, for 40 hours in a week:\n\n| | Amount |\n|---|---|\n| Base wages, 40 hours × $38.50 | $1,540.00 |\n| Fringe paid in cash, 40 hours × $14.20 | $568.00 |\n| **Gross for the week** | **$2,108.00** |\n\nA worker doing work in more than one classification may be paid the rate for each for the time actually worked in\nit, if the payroll records show that time accurately.\n\n## Is overtime required on Davis-Bacon jobs?\n\nOn prime contracts over $100,000, yes: the Contract Work Hours and Safety Standards Act requires laborers and\nmechanics, including guards and watchmen, to be paid at least one and a half times their regular rate for every hour\nover 40 in a workweek. The Fair Labor Standards Act's overtime rules may also apply.\n\n## How long must certified payroll records be kept?\n\nDuring the work and for 3 years after all the work on the prime contract is completed. The underlying payroll records\nmust be kept for the same period, and an electronic system used to submit payrolls must give the contractor, the\nagency and DOL access to them for at least 3 years.\n\n## Did the Davis-Bacon rules change recently?\n\nYes. DOL's final rule updating the Davis-Bacon regulations took effect on 23 October 2023. On 24 June 2024 a federal\ncourt in the Northern District of Texas enjoined three of its provisions nationwide (on material suppliers, on-site\ntime of delivery truck drivers, and applying the clauses by operation of law when an agency left them out of a\ncontract); the rest of the rule is in effect. Check DOL's page for the current status before relying on those three.\n\n## What should a contractor's system do for certified payroll?\n\nKeep, per worker and per day, the job, the classification of the work done and the hours, so the weekly payroll can\nbe built rather than retyped:\n\n- Each job flagged as covered, with its wage determination and the rate per classification.\n- Daily hours per worker per classification and per job, from the field.\n- Rates paid, fringe paid in cash or into plans, deductions and net pay, per week.\n- A weekly payroll per job in WH-347 layout, numbered, with the Statement of Compliance for signature.\n- Subcontractors' weekly payrolls received and checked by the prime.\n\nThe same jobs, crews and hours feed each job's [pay applications](/construction/pay-applications) and the payments to\nsubs that [prompt payment acts](/construction/prompt-payment-acts) time, so they belong in one system.\n\nThe [construction demo](/industries/construction-company)'s US build has daily attendance per worker and job and a\nmonthly pay register with crew totals; payroll taxes stay with the payroll provider. It doesn't do certified payroll:\nno wage determinations, classifications per hour of work, weekly WH-347 reports or subcontractor payroll tracking.\nThat would be a part we'd build for a contractor on federal work."
+  },
+  {
+    "kind": "construction",
     "slug": "change-orders",
     "group": "us",
     "title": "Change orders in construction: pricing, approval, billing",
@@ -6883,6 +7105,145 @@
   },
   {
     "kind": "construction",
+    "slug": "mechanics-lien-deadlines",
+    "group": "us",
+    "title": "Mechanics lien deadlines and preliminary notices by state",
+    "metaTitle": "Mechanics lien and preliminary notice deadlines",
+    "related": [
+      "/construction/lien-waivers",
+      "/construction/retainage",
+      "/construction/prompt-payment-acts",
+      "/industries/construction-company",
+      "/services/custom-erp-crm"
+    ],
+    "question": "When must a contractor send a preliminary notice and file a mechanics lien?",
+    "answer": "It depends on the state and your place in the chain. In California a sub sends a preliminary notice within 20 days of starting and records a lien within 90 days of completion (30 days after a notice of completion); in Florida the notice to owner is due within 45 days and the lien within 90 days of last work; Texas counts to the 15th day of a later month; New York allows 8 months. On federal jobs you claim against the payment bond instead.",
+    "description": "Mechanics lien and preliminary notice deadlines in California, Texas, Florida and New York, the Miller Act on federal jobs, worked dates and how to track them.",
+    "domain": [
+      "construction",
+      "liens"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "California Civil Code 8204, 8412, 8414 and 8460",
+        "publisher": "California Legislative Information",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=8414.",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Texas Property Code chapter 53 (53.052, 53.056, 53.158)",
+        "publisher": "Texas Legislature",
+        "url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.53.htm",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Florida Statutes 713.06 and 713.08",
+        "publisher": "The Florida Legislature",
+        "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0713/Sections/0713.08.html",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "New York Lien Law 10, Filing of notice of lien",
+        "publisher": "New York State Senate",
+        "url": "https://www.nysenate.gov/legislation/laws/LIE/10",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "40 U.S.C. 3133 (Miller Act), Rights of persons furnishing labor or material",
+        "publisher": "Legal Information Institute, Cornell Law School",
+        "url": "https://www.law.cornell.edu/uscode/text/40/3133",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "California Civil Code 8204(a)",
+        "doc": "ca-8204",
+        "quote": "A preliminary notice shall be given not later than 20 days after the claimant has first furnished work on the work of improvement."
+      },
+      {
+        "reg": "California Civil Code 8204(a)",
+        "doc": "ca-8204",
+        "quote": "The claimant shall, however, be entitled to record a lien, give a stop payment notice, and assert a claim against a payment bond only for work performed within 20 days prior to the service of the preliminary notice, and at any time thereafter."
+      },
+      {
+        "reg": "California Civil Code 8412",
+        "doc": "ca-8412-8460",
+        "quote": "A direct contractor may not enforce a lien unless the contractor records a claim of lien after the contractor completes the direct contract, and before the earlier of the following times:"
+      },
+      {
+        "reg": "California Civil Code 8412(b)",
+        "doc": "ca-8412-8460",
+        "quote": "Sixty days after the owner records a notice of completion or cessation."
+      },
+      {
+        "reg": "California Civil Code 8414(b)",
+        "doc": "ca-8412-8460",
+        "quote": "Thirty days after the owner records a notice of completion or cessation."
+      },
+      {
+        "reg": "California Civil Code 8460(a)",
+        "doc": "ca-8412-8460",
+        "quote": "The claimant shall commence an action to enforce a lien within 90 days after recordation of the claim of lien."
+      },
+      {
+        "reg": "Texas Property Code 53.052(a)(1)",
+        "doc": "tx-53.052",
+        "quote": "not later than the 15th day of the fourth month after the month in which the original contractor's work was completed, terminated, or abandoned"
+      },
+      {
+        "reg": "Texas Property Code 53.052(b)",
+        "doc": "tx-53.052",
+        "quote": "a claimant other than an original contractor claiming the lien must file an affidavit with the county clerk not later than the 15th day of the fourth month after the later of:"
+      },
+      {
+        "reg": "Texas Property Code 53.056(a-1)(1)",
+        "doc": "tx-53",
+        "quote": "for projects other than residential construction projects, not later than the 15th day of the third month after the month during which:"
+      },
+      {
+        "reg": "Texas Property Code 53.158(a)",
+        "doc": "tx-53.052",
+        "quote": "suit must be brought to foreclose the lien not later than the first anniversary of the last day a claimant may file the lien affidavit under Section 53.052."
+      },
+      {
+        "reg": "Florida Statutes 713.06(2)(a)",
+        "doc": "fl-713.06",
+        "quote": "The notice must be served before commencing, or not later than 45 days after commencing, to furnish his or her labor, services, or materials"
+      },
+      {
+        "reg": "Florida Statutes 713.08(5)",
+        "doc": "fl-713.08",
+        "quote": "The claim of lien may be recorded at any time during the progress of the work or thereafter but not later than 90 days after the final furnishing of the labor or services or materials by the lienor."
+      },
+      {
+        "reg": "New York Lien Law 10(1)",
+        "doc": "ny-lien-10",
+        "quote": "within eight months after the completion of the contract, or the final performance of the work, or the final furnishing of the materials"
+      },
+      {
+        "reg": "New York Lien Law 10(1)",
+        "doc": "ny-lien-10",
+        "quote": "where the notice of lien is for retainage, the notice of lien may be filed within ninety days after the date the retainage was due to be released"
+      },
+      {
+        "reg": "40 U.S.C. 3133(b)(2)",
+        "doc": "usc-40-3133",
+        "quote": "may bring a civil action on the payment bond on giving written notice to the contractor within 90 days from the date on"
+      },
+      {
+        "reg": "40 U.S.C. 3133(b)(4)",
+        "doc": "usc-40-3133",
+        "quote": "An action brought under this subsection must be brought no later than one year after the day on which the last of the labor was performed or material was supplied by the person bringing the action."
+      }
+    ],
+    "body": "## What is a mechanics lien?\n\nA mechanics lien is a claim against the property itself for unpaid work or materials on it: if the bill isn't paid,\nthe claimant can ask a court to have the property sold to pay it. Every state has its own lien statute, and each has\ndeadlines. Miss one and the lien is lost, even if the money is owed. Many states also require some claimants to send\na notice early in the job (a preliminary notice, notice to owner or notice of claim) to keep the right to a lien.\n\n## What is a preliminary notice, and who has to send one?\n\nA preliminary notice tells the owner, and usually the general contractor and lender, that you're working on the\nproject and may claim a lien if you aren't paid. Subcontractors and suppliers usually have to send it; a general\ncontractor with a contract directly with the owner often doesn't. It isn't a lien and it isn't a\n[lien waiver](/construction/lien-waivers); it only keeps the right open.\n\n## What are the deadlines in California, Texas, Florida and New York?\n\n| State | Preliminary notice | Lien deadline | Suit to enforce |\n|---|---|---|---|\n| California | Within 20 days of first furnishing work (Civil Code 8204) | Direct contractor: after completing its contract, before the earlier of 90 days after completion of the project and 60 days after a notice of completion (8412). Others: before the earlier of 90 days after completion and 30 days after a notice of completion (8414) | Within 90 days of recording the lien (8460) |\n| Texas | Subs and suppliers: notice of claim by the 15th day of the third month after the month the work or materials were provided (2nd month on residential projects) (Property Code 53.056) | Lien affidavit by the 15th day of the fourth month after the month work was completed (third month on residential projects) (53.052) | Within one year of the last day to file the affidavit (53.158) |\n| Florida | Notice to owner before starting or within 45 days of starting, for those not in contract with the owner (Statutes 713.06) | Within 90 days after final furnishing of labor, services or materials (713.08) | As the statute sets |\n| New York | Not required by Lien Law 10 | Within 8 months after completion or final furnishing; 4 months for a single-family home; 90 days after retainage was due for a retainage lien (Lien Law 10) | As the statute sets |\n\nThese are the main deadlines only. Each statute has its own form, service rules and exceptions, so read the state's\ntext, or ask a construction lawyer, before relying on a date.\n\n## How do you count a California lien deadline?\n\nFrom completion, or from the owner's notice of completion if one is recorded, whichever gives the earlier date. A\nsubcontractor on a project completed on 1 June 2026, where the owner records a notice of completion on 10 June, must\nrecord its lien by 10 July 2026: 30 days after the notice, which is earlier than 30 August, 90 days after completion.\nThe general contractor has until 9 August, 60 days after the notice. Each then has 90 days after recording to sue.\n\n## What happens if a California preliminary notice is late?\n\nYou don't lose everything, but you lose the work before it. A late notice still protects work done within the 20 days\nbefore it was served and after. A sub that started on 2 March 2026 should have served notice by 22 March; serving on\n1 April protects only work from 12 March onward.\n\n## How do you count a Texas lien deadline?\n\nBy months, not days: to the 15th day of a month after the month the work was done. A subcontractor on a commercial\njob that provided labor in March 2026 and wasn't paid must send its notice of claim by 15 June 2026 (the third month\nafter March) and, if work ended that month, file its lien affidavit by 15 July 2026 (the fourth month). A suit to\nforeclose must follow by 15 July 2027.\n\n## How long do you have in Florida and New York?\n\nFlorida: 90 days after you last furnished labor, services or materials, with the notice to owner served within 45\ndays of starting. Work that started on 2 March and ended on 1 June 2026 needs notice by 16 April and the claim of\nlien recorded by 30 August 2026. New York: 8 months after completion or your last work, so work last done on 1 June\n2026 can be liened until 1 February 2027 (1 October 2026 for a single-family home).\n\n## Can you put a lien on a federal project?\n\nThe remedy on a federal job is the prime contractor's payment bond, under the Miller Act, rather than a lien on the\nproperty. A sub or supplier with a contract directly with the prime can sue on the bond once it hasn't\nbeen paid in full 90 days after its last work. A second-tier sub or supplier, in contract with a sub but not the prime,\nmust first give the prime written notice within 90 days of its last work. Any suit must be brought within one year of\nthe last labor or material.\n\n## Can a lien be filed for unpaid retainage?\n\nYes, where the statute allows it, often on its own clock. In New York a lien for [retainage](/construction/retainage)\ncan be filed within 90 days after the date the retainage was due to be released; in Texas a sub claiming a lien for\nretainage has its own affidavit deadline, counted from the month the original contract was completed, terminated or\nabandoned (Property Code 53.052(d)).\n\n## How should a contractor track lien deadlines?\n\nFrom the dates the system already has: the day each job and each sub started, the last day each worked or delivered,\ncompletion, any notice of completion, and the state of the project. From them, every deadline can be worked out per\njob and per party:\n\n- Preliminary notices due and sent, per sub and supplier, with proof of service.\n- Lien deadlines per job, counted under that state's rule, with a reminder well before each.\n- Lien waivers received against each payment, so nobody is paid without one.\n- Retainage still held, with its release date and any lien deadline for it.\n\nThe [construction demo](/industries/construction-company)'s US build tracks lien waivers per pay application, ours\nand our subs' and suppliers', conditional or unconditional. It doesn't yet send preliminary notices or work out lien\ndeadlines by state; those are parts we'd build."
+  },
+  {
+    "kind": "construction",
     "slug": "pay-applications",
     "group": "us",
     "title": "Pay applications (AIA G702 and G703), explained",
@@ -6990,6 +7351,170 @@
       }
     ],
     "body": "## What goes into a pay application?\n\nA pay application is the contractor's monthly bill against progress: for every line of the schedule of values it\nshows the work completed before this period, the work completed this period, materials stored, the total to date,\nthe [retainage](/construction/retainage) held, and the amount now due. US construction contracts are usually paid\nthis way rather than on milestones.\n\nThe American Institute of Architects (AIA) publishes the most used forms, G702 and G703. They are paid, copyrighted\ndocuments (AIA offers free partial samples of [G702](https://aiacontracts.com/samples/aia-g702-1992-pay-application-sample.pdf) and [G703](https://aiacontracts.com/samples/aia-g703-1992-continuation-sheet-sample.pdf)); many owners and general contractors use their own form with the same\ncolumns and arithmetic.\n\n## What is the difference between G702 and G703?\n\nG702 is the summary: one page of totals that the contractor signs to apply for payment and the architect signs to\ncertify it. G703 is the continuation sheet: one row per line of the schedule of values. [AIA's instructions](https://help.aiacontracts.com/hc/en-us/articles/1500009308302-Instructions-G703-1992-Continuation-Sheet) have the\ncontractor fill in G703 first and carry its totals to G702, then sign G702 and send both to the architect.\n\n| | G702, Application and Certificate for Payment | G703, Continuation Sheet |\n|---|---|---|\n| What it holds | Contract sum, change orders, totals, retainage, previous certificates, payment due | Each schedule of values line with its scheduled value, work and stored materials |\n| Who signs | Contractor (application, notarized) and architect (certificate) | Nobody separately; it is attached to G702 |\n| Change orders | Summarized in a change order box and line 2 | Usually listed as their own lines |\n\n## What is a schedule of values, and who prepares it?\n\nThe schedule of values is the contract sum broken into lines (general conditions, concrete, steel, electrical and\nso on) that every pay application bills against. The contractor prepares it and submits it to the architect at the\nstart of the job, as the general conditions require; AIA [doesn't publish](https://help.aiacontracts.com/hc/en-us/articles/1500009387461-summary-g702-1992-application-and-certificate-for-payment) a standard schedule of values form. AIA's\ninstructions say the breakdown, whether by sections of work or by subcontractor, should stay consistent through the\nproject.\n\nIts total must equal the original contract sum. Owners and architects watch for **front-loading**: early items\nvalued high so the contractor is paid ahead of the work. Agree the lines and values before the first application;\nchanging them later is harder than getting them right.\n\n## How do you fill in G703, column by column?\n\n| Column | Holds | Rule |\n|---|---|---|\n| A | Item number | |\n| B | Description of work | |\n| C | Scheduled value | Starts at the original contract sum; change orders are usually added as their own lines |\n| D | Work completed, from previous application | Previous D plus previous E |\n| E | Work completed, this period | Includes stored material from earlier periods now installed |\n| F | Materials presently stored | Not in D or E; value moves to E as the material is installed |\n| G | Total completed and stored to date | D + E + F, with % complete (G ÷ C) |\n| H | Balance to finish | C − G |\n| I | Retainage, if the rate varies by line | Only needed where variable retainage applies |\n\nA worked G703 on a made-up $400,000 contract with one approved $20,000 change order, at the end of month three:\n\n| Item | C Scheduled | D Previous | E This period | F Stored | G To date | % | H Balance |\n|---|---|---|---|---|---|---|---|\n| 1 General conditions | $40,000 | $12,000 | $4,000 | | $16,000 | 40% | $24,000 |\n| 2 Concrete | $120,000 | $60,000 | $30,000 | | $90,000 | 75% | $30,000 |\n| 3 Structural steel | $140,000 | $18,000 | $20,000 | $10,000 | $48,000 | 34% | $92,000 |\n| 4 Electrical | $100,000 | | $6,000 | | $6,000 | 6% | $94,000 |\n| CO 1 Added canopy | $20,000 | | | | | 0% | $20,000 |\n| **Total** | **$420,000** | **$90,000** | **$60,000** | **$10,000** | **$160,000** | **38%** | **$260,000** |\n\n## How is retainage calculated on a pay application?\n\nRetainage is a percentage of the work completed (columns D + E) plus a percentage of the materials stored (column\nF); the two rates can differ if the contract says so. G702 then takes it off the total to date and deducts what was\ncertified before. With 10% on both, the totals above go onto G702 like this:\n\n| G702 line | Calculation | Amount |\n|---|---|---|\n| 1 Original contract sum | | $400,000 |\n| 2 Net change by change orders | | $20,000 |\n| 3 Contract sum to date | Line 1 ± 2 | $420,000 |\n| 4 Total completed and stored to date | G703 column G | $160,000 |\n| 5a Retainage on completed work | 10% × (D + E) = 10% × $150,000 | $15,000 |\n| 5b Retainage on stored material | 10% × F = 10% × $10,000 | $1,000 |\n| 5 Total retainage | 5a + 5b | $16,000 |\n| 6 Total earned less retainage | Line 4 − line 5 | $144,000 |\n| 7 Less previous certificates for payment | Line 6 of the last certificate: $90,000 − $9,000 | $81,000 |\n| 8 **Current payment due** | Line 6 − line 7 | **$63,000** |\n| 9 Balance to finish, including retainage | Line 3 − line 6 | $276,000 |\n\nCheck: this period's $60,000 of work plus $10,000 stored is $70,000; less 10% is $63,000. If the contract retains\nnothing on stored material, line 5b is zero and line 8 becomes $64,000. When retainage is reduced (for example at\n50% complete), line 5 falls and the release shows up as extra payment on line 8, so the reduction must be written in\nthe contract or approved in writing first.\n\n## Can you bill for stored materials?\n\nUsually yes, if the contract allows it and you can prove the material exists and is yours to sell to the owner.\nStored material goes in column F at its value; it is not deducted when the owner pays for it, only moved to column E\nas it is installed. Owners and lenders typically ask for the supplier's invoice, photos, proof of insurance, and for\nmaterial stored off site, a bill of sale or other proof of title.\n\nOn federal jobs, [FAR 52.232-5](https://www.acquisition.gov/far/52.232-5) lets the contracting officer count material delivered to the site. Material held\nelsewhere counts only if the contract specifically allows it and the contractor gives satisfactory evidence that it\nhas acquired title and that the material will be used on the contract.\n\n## Does a G702 need to be notarized?\n\nThe G702 form has a notary block under the contractor's signature, and [AIA's instructions](https://help.aiacontracts.com/hc/en-us/articles/1500009308242-Instructions-G702-1992-Application-and-Certificate-for-Payment) say the contractor should\nsign it and have it notarized. Whether a notarized signature is legally required depends on the contract and the\nowner; many owners and lenders insist on it, some accept electronic signatures without it. Check the contract's\npayment section before the first application rather than finding out when it is returned.\n\n## What is a pencil draft, and when is a pay application due?\n\nA pencil draft (or pencil copy) is an unsigned draft of the pay application sent to the owner's representative or\narchitect a few days before the real one, so they can agree the percentages before anything is notarized. It is\ncommon practice, not something the AIA forms require. The contract sets the period the application covers, the day\nit is due each month and how long the owner has to pay; a late or rejected application usually waits for the next\ncycle, which can cost a month of cash.\n\nOn federal jobs the due date is set by [FAR 52.232-27](https://www.acquisition.gov/far/52.232-27): a progress payment is due 14 days after the designated billing\noffice receives a proper payment request, and a request that isn't proper must be returned within 7 days with the\nreasons.\n\n## Who approves a pay application, and can they approve less?\n\nThe architect (or the owner's representative where there is no architect) checks the application against the work\non site and certifies the amount due, which may be less than applied for. AIA's instructions say the architect then\ninitials every figure changed on G702 and G703 and attaches an explanation; the owner pays the amount certified.\nLenders often want [lien waivers](/construction/lien-waivers) from the contractor and from the subcontractors paid\nfrom the previous application before releasing money.\n\nOn federal jobs, FAR 52.232-5 sets the rules: progress payments monthly on estimates of work accomplished, approved\nby the contracting officer, with an itemization of the amounts by element of work, a listing of each subcontractor's\nwork, subcontract value and previous payments, and a certification with every request or payment isn't made. The\ncertification says, among other things, that subcontractors and suppliers have been paid from previous payments.\n\n## Why do pay applications get rejected?\n\nMost rejections come from a handful of causes:\n\n- **The arithmetic doesn't tie.** G703 totals don't match G702, or line 7 isn't line 6 of the last certificate.\n- **Percent complete ahead of the site.** The architect sees less work in place than billed.\n- **Stored material without proof.** No invoice, title or insurance, or it's off site without contract approval.\n- **Unapproved change orders billed.** Only executed [change orders](/construction/change-orders) belong in column C.\n- **Missing lien waivers** for the previous payment, from the contractor or subcontractors.\n- **Missing signature, notarization or certification**, or the wrong period.\n- **A changed schedule of values** that no longer matches the approved one.\n\nEach of these is cheaper to prevent with a pencil draft than to fix after the application is returned.\n\n## What should pay application software do?\n\nWhen comparing systems, check that it can:\n\n- Hold the schedule of values per job, locked once approved, with change orders added as their own lines.\n- Take quantities or percentages from site progress, not typed in at month-end.\n- Carry each certified application forward, so column D and line 7 always match what was certified, including any\n  amount the architect cut.\n- Compute retainage per line, with separate rates for work and stored material, and its reduction and release.\n- Move stored material to installed when it is used, without double counting.\n- Track the lien waivers owed per application, and block payment of a subcontractor until theirs is in.\n- Produce the application in the owner's format, and keep each submitted and certified version.\n- Feed the same figures to the [WIP schedule](/construction/wip-schedule), so billing and cost are compared per job.\n\nOur [US construction demo](https://construction-erp-us.ahromlabs.com/demo) runs G702/G703-style pay applications on\na schedule of values with 10% retainage, change orders and lien waivers per pay application; it has no WIP\nschedule.\n\n## Can pay applications go to QuickBooks?\n\nYes, if the system posts each one as an invoice on the right job. In our construction demo, connected to a\nQuickBooks Online sandbox company, each project becomes a job under its client in QuickBooks, and each pay\napplication goes there as an invoice on that job when it is issued; payments follow when marked paid. Job reports\nin QuickBooks then match the project. How the connection works, and who calculates the sales tax, is in\n[connecting QuickBooks Online](/manufacturing/quickbooks-integration)."
+  },
+  {
+    "kind": "construction",
+    "slug": "prompt-payment-acts",
+    "group": "us",
+    "title": "Prompt payment acts: how fast contractors must be paid",
+    "related": [
+      "/construction/pay-applications",
+      "/construction/retainage",
+      "/construction/mechanics-lien-deadlines",
+      "/manufacturing/quickbooks-integration",
+      "/industries/construction-company"
+    ],
+    "question": "How quickly must an owner pay a contractor, and a contractor pay its subs, under prompt payment laws?",
+    "answer": "Prompt payment laws set how fast each tier must pay and what it owes if it's late. On federal jobs a progress payment is due 14 days after a proper request and subs are paid within 7 days of the prime. In Texas a private owner pays within 35 days and the contractor pays subs within 7; California sets 30 days and 7; New York 30 days after approval and 7. Late money carries interest, often 1% to 2% a month.",
+    "description": "Prompt payment acts in construction: federal, Texas, California, New York and Florida deadlines for owners and subs, interest on late pay, an example.",
+    "domain": [
+      "construction",
+      "billing"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "FAR 52.232-27, Prompt Payment for Construction Contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.232-27",
+        "date": "2026-11-03"
+      },
+      {
+        "title": "31 U.S.C. 3903 and 3905, Prompt Payment Act",
+        "publisher": "Legal Information Institute, Cornell Law School",
+        "url": "https://www.law.cornell.edu/uscode/text/31/3905",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Texas Property Code chapter 28 and Government Code chapter 2251",
+        "publisher": "Texas Legislature",
+        "url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.28.htm",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "California Civil Code 8800, 8812, 8814 and Business and Professions Code 7108.5",
+        "publisher": "California Legislative Information",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7108.5.",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "New York General Business Law 756, 756-a and 757",
+        "publisher": "New York State Senate",
+        "url": "https://www.nysenate.gov/legislation/laws/GBS/756-A",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Florida Statutes 715.12 and 255.073",
+        "publisher": "The Florida Legislature",
+        "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0715/Sections/0715.12.html",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "FAR 52.232-27(a)(1)(i)(A)",
+        "doc": "far-52.232-27",
+        "quote": "The due date for making such payments is 14 days after the designated billing office receives a proper payment request."
+      },
+      {
+        "reg": "31 U.S.C. 3903(a)(6)(A)(i)",
+        "doc": "usc-31-3903",
+        "quote": "a period of more than 14 days after receipt of the payment request by the place or person designated by the agency to first receive such requests"
+      },
+      {
+        "reg": "31 U.S.C. 3905(b)(1)",
+        "doc": "usc-31-3905",
+        "quote": "a payment clause which obligates the prime contractor to pay the subcontractor for satisfactory performance under its subcontract within 7 days out of such amounts as are paid to the prime contractor by the agency under such contract"
+      },
+      {
+        "reg": "Texas Property Code 28.002(a)",
+        "doc": "tx-pr-28",
+        "quote": "not later than the 35th day after the date the owner receives the request."
+      },
+      {
+        "reg": "Texas Property Code 28.002(b)",
+        "doc": "tx-pr-28",
+        "quote": "The payment required by this subsection must be made not later than the seventh day after the date the contractor receives the owner's payment."
+      },
+      {
+        "reg": "Texas Property Code 28.004(b)",
+        "doc": "tx-pr-28",
+        "quote": "An unpaid amount bears interest at the rate of 1-1/2 percent each month."
+      },
+      {
+        "reg": "Texas Government Code 2251.022(a)",
+        "doc": "tx-gv-2252",
+        "quote": "A vendor who receives a payment from a governmental entity shall pay a subcontractor the appropriate share of the payment not later than the 10th day after the date the vendor receives the payment."
+      },
+      {
+        "reg": "California Civil Code 8800(a)",
+        "doc": "ca-civ-8800",
+        "quote": "the owner shall pay the direct contractor, within 30 days after notice demanding payment pursuant to the contract is given, any progress payment due as to which there is no good faith dispute between them."
+      },
+      {
+        "reg": "California Civil Code 8800(b)",
+        "doc": "ca-civ-8800",
+        "quote": "the owner may withhold from the progress payment an amount not in excess of 150 percent of the disputed amount."
+      },
+      {
+        "reg": "California Civil Code 8800(c)",
+        "doc": "ca-civ-8800",
+        "quote": "An owner that violates this section is liable to the direct contractor for a penalty of 2 percent per month on the amount wrongfully withheld"
+      },
+      {
+        "reg": "California Business and Professions Code 7108.5(a)",
+        "doc": "ca-7108.5-8814",
+        "quote": "A prime contractor or subcontractor shall pay to any subcontractor, not later than seven days after receipt of each progress payment, unless otherwise agreed to in writing"
+      },
+      {
+        "reg": "California Business and Professions Code 7108.5(b)",
+        "doc": "ca-7108.5-8814",
+        "quote": "a penalty, payable to the subcontractor, of 2 percent of the amount due per month for every month that payment is not made."
+      },
+      {
+        "reg": "California Civil Code 8814(a)",
+        "doc": "ca-7108.5-8814",
+        "quote": "within 10 days after receiving all or part of a retention payment, pay to each subcontractor from whom retention has been withheld that subcontractor's share of the payment."
+      },
+      {
+        "reg": "New York General Business Law 756-a(2)(a)(i)",
+        "doc": "ny-gbs-756",
+        "quote": "Upon delivery of an invoice and all contractually required documentation, an owner shall approve or disapprove all or a portion of such invoice within twelve business days."
+      },
+      {
+        "reg": "New York General Business Law 756-a(3)(a)(ii)",
+        "doc": "ny-gbs-756",
+        "quote": "Payment of an interim or final invoice shall be due from the owner not later than thirty days after approval of the invoice."
+      },
+      {
+        "reg": "New York General Business Law 756-a(3)(b)(ii)",
+        "doc": "ny-lien-10",
+        "quote": "seven days after receipt of good funds for each interim or final payment, provided all contractually required documentation and waivers are received."
+      },
+      {
+        "reg": "New York General Business Law 757(2)",
+        "doc": "ny-gbs-757",
+        "quote": "stating that a party to the contract cannot suspend performance under the contract if another party to the contract fails to make prompt payments under the contract."
+      },
+      {
+        "reg": "Florida Statutes 715.12(5)(a)",
+        "doc": "fl-715.12",
+        "quote": "shall bear interest at the rate specified in s. 55.03 plus an additional 12 percent per annum, computed beginning on the 14th day after payment is due pursuant to subsection (4)."
+      },
+      {
+        "reg": "Florida Statutes 255.073(2)",
+        "doc": "fl-255.073",
+        "quote": "the undisputed portion must be paid by the date required under the contract or by 20 business days after receipt of the request, whichever is earlier."
+      },
+      {
+        "reg": "Florida Statutes 255.073(3)",
+        "doc": "fl-255.073",
+        "quote": "the contractor shall remit payment due to those subcontractors and suppliers within 10 days after the contractor’s receipt of payment."
+      }
+    ],
+    "body": "## What is a prompt payment act?\n\nA prompt payment act is a law that sets how quickly an owner must pay its contractor, and each contractor its subs\nand suppliers, and what is owed when a payment is late. The federal government has one for its own contracts, and\nmany states have their own, some for public jobs only and some for private jobs too. The contract usually sets the\nbilling cycle; the act puts a ceiling on how long payment can take and adds interest or a penalty after it.\n\n## How fast must the federal government pay a contractor?\n\nWithin 14 days after the designated billing office receives a proper payment request for a progress payment, under\nFAR 52.232-27 and the Prompt Payment Act (31 U.S.C. 3903); interest runs on an approved payment left unpaid after\nthat. The prime must pay its subs for satisfactory work within 7 days of being paid (31 U.S.C. 3905), and the\nsubcontract must say so.\n\n## What are the deadlines in Texas, California, New York and Florida?\n\n| State | Owner pays the contractor | Contractor pays its subs | If late |\n|---|---|---|---|\n| Texas, private | 35 days after a written payment request (Property Code 28.002) | 7 days after receiving the owner's payment | 1.5% a month (28.004) |\n| Texas, public | Overdue on the 31st day after the later of delivery, completion or invoice (Government Code 2251.021) | 10 days after receiving payment (2251.022) | As chapter 2251 sets |\n| California, private | 30 days after notice demanding payment, unless agreed otherwise in writing (Civil Code 8800) | 7 days after each progress payment, unless agreed otherwise in writing (Business and Professions Code 7108.5) | 2% a month, owner and contractor alike |\n| New York, private, $150,000 and up | Approve or reject within 12 business days; pay within 30 days of approval (General Business Law 756-a) | 7 days after receiving good funds, once documents and waivers are in | As article 35-E sets |\n| Florida, private | When the contract says, once the request, payment from above and waivers are in (Statutes 715.12) | Same rule, once the contractor has been paid for that work | Statutory rate plus 12% a year, from the 14th day after due |\n| Florida, public | Undisputed portion by the contract date or 20 business days after the request, whichever is earlier (255.073) | 10 days after the contractor is paid; 7 days for a sub paying its subs | As the statute sets |\n\nThese are the main payment deadlines only; each act has its own exceptions, definitions and project thresholds.\n\n## Can an owner hold back part of a payment?\n\nYes, for a good-faith dispute, but only so much. In California an owner may withhold no more than 150% of the\ndisputed amount from a progress payment, and a contractor the same from its sub. In Texas the withholding in a\ngood-faith dispute is capped at the difference in dispute (110% of it on detached homes up to a quadruplex). In New\nYork an owner who rejects part of an invoice must say in writing which items aren't approved and why.\n\n## How is interest on a late payment worked out?\n\nAt the statute's rate, from the day after the payment was due. A $43,200 progress payment on a Texas private job,\ndue 35 days after the request and paid a month late, carries 1.5% for that month: $648. In California the same\namount wrongfully withheld for a month costs the owner 2%, $864. Florida's private-job rate is the statutory judgment\nrate plus 12% a year, starting 14 days after the payment was due.\n\n## Can a contractor stop work if it isn't paid?\n\nIn some states, after notice. In Texas a contractor or sub may suspend work on the 10th day after giving the owner\n(and the lender, where required) written notice that an undisputed payment hasn't been received; that right doesn't\napply to single-family homes up to a quadruplex or to public jobs. In New York a contract clause saying a party can't\nsuspend work when the other doesn't pay promptly is void (General Business Law 757).\n\n## Do prompt payment rules cover retainage?\n\nUsually, with their own deadlines. In California the owner pays retention within 45 days after completion and the\ncontractor passes each sub's share on within 10 days of receiving it (Civil Code 8812, 8814); in New York retainage is\nreleased within 30 days of final approval. See [retainage](/construction/retainage) for each state's caps.\n\n## Can the contract override the prompt payment law?\n\nPartly, and less than most contractors think. California's 30-day and 7-day rules give way to a different written\nagreement; Texas makes an attempted waiver of chapter 28 void, apart from a longer period allowed on single-family\nhomes; in New York the contract governs except where the article says otherwise, and payment terms that differ from\nits payment sections are void. Read the contract's payment clause against the state's act before signing.\n\n## What should a contractor track to enforce prompt payment?\n\nThe dates the law counts from, per pay application: when the request was delivered, when it was approved, when the\nowner paid, and when each sub was paid from it. With those, the system can flag a late payment, work out the\ninterest, and show that you paid your own subs on time, which matters when you are the one being chased.\n\n- The date each [pay application](/construction/pay-applications) was submitted and approved.\n- Payments received against each application, and payments made to each sub from it.\n- The state of the project, so the right deadline and rate apply.\n- Disputed items, with the written reason, kept apart from undisputed amounts.\n\nIn the [construction demo](/industries/construction-company), receivables are aged from the due date (not due,\n1–30, 31–60, 61–90, over 90 days), each overdue bill becomes a weekly follow-up for its project manager, and anything\npast 30 days goes to the director. It doesn't work out statutory interest or track the deadline for paying each sub;\nthose are parts we'd build. Missed deadlines also matter for liens: see\n[mechanics lien deadlines](/construction/mechanics-lien-deadlines)."
   },
   {
     "kind": "construction",
