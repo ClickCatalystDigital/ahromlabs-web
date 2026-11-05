@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Checks every quote in the ASME guides (content/asme/*.md frontmatter `checks`) word for word against the
 // free official text it cites, like scripts/check-boq-quotes.mjs. The ASME Code itself is copyrighted and never
-// quoted; the documents here are ASME's public certification handbook, price guide and FAQ, and the IBR 2026 Gazette (for the
+// quoted; the documents here are ASME's public certification pages and handbook, the National Board's public pages and NB-264, and the IBR 2026 Gazette (for the
 // India pages). Without the source files the check is skipped with a warning, so any machine can still build.
 import fs from "node:fs";
 import path from "node:path";
@@ -13,6 +13,21 @@ const DOCS = {
   "asme-price-guide": path.join(ASME, "ASME - Price Guide for Certifications (BPV and common fees) 2026-11-05.txt"),
   "asme-faq": path.join(ASME, "ASME - Certification FAQ (scheduling and demonstration excerpts) 2026-11-05.txt"),
   "ibr-2026": path.join(IBR, "IBR 2026 - Gazette No 596 2026-10-01.txt"),
+  // Batches 4–9 (docs/batch-plans/asme.md): ASME and National Board public pages, read 2026-11-05.
+  ...Object.fromEntries(Object.entries({
+    "asme-bpv-cert": "ASME - Boiler and Pressure Vessel Certification page 2026-11-05",
+    "asme-forms": "ASME - Data Report Forms page 2026-11-05",
+    "asme-aia": "ASME - Authorized Inspection Agency Accreditation page 2026-11-05",
+    "asme-books": "ASME - Required Code Books page 2026-11-05",
+    "asme-faq-full": "ASME - Certification FAQ full page 2026-11-05",
+    "nb-registration": "NBBI - Data Report Registration page 2026-11-05",
+    "nb-about": "NBBI - About Us page 2026-11-05",
+    "nb-accreditation": "NBBI - Accreditation page 2026-11-05",
+    "nb-r-stamp": "NBBI - R Certificate of Authorization page 2026-11-05",
+    "nb-commission": "NBBI - Commissioned Inspectors page 2026-11-05",
+    "nb-264": "NBBI - NB-264 Criteria for ASME Registration Rev 19",
+    "nb-stamping": "NBBI - Synopsis Stamping Requirements by Jurisdiction 2024",
+  }).map(([k, f]) => [k, path.join(ASME, `${f}.txt`)])),
 };
 
 if (!Object.values(DOCS).every((f) => fs.existsSync(f))) {

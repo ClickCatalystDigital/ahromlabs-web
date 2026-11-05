@@ -3889,18 +3889,31 @@
     "slug": "authorized-inspector",
     "group": "certification",
     "title": "Authorized Inspector and AIA: who inspects ASME work",
+    "related": [
+      "/asme/quality-control-manual",
+      "/asme/u-stamp",
+      "/asme/welder-continuity",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What does an ASME Authorized Inspector do?",
-    "answer": "An Authorized Inspector is the independent third party on every stamped ASME boiler or vessel. They work for an Authorized Inspection Agency (usually an insurance company or a state), hold a National Board commission, check the design, materials, welding and NDE, witness the pressure test and sign the data report. No signature, no stamp.",
-    "description": "The ASME Authorized Inspector (AI) and Inspection Agency (AIA): who they are, the National Board commission, what they check and sign.",
+    "answer": "An Authorized Inspector is the independent third party on a stamped ASME boiler or vessel. They work for an Authorized Inspection Agency accredited by ASME (usually an insurance company, sometimes a state), hold the National Board's Authorized Inspector commission, check the design, materials, welding and NDE, witness the pressure test and sign the data report. No signature, no stamp.",
+    "description": "The ASME Authorized Inspector and Inspection Agency: QAI-1 accreditation, the National Board AI commission, what they check and sign, and hold points.",
     "domain": [
       "asme",
       "certification",
       "inspection"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
+      {
+        "title": "Authorized Inspection Agency Accreditation",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Authorized-Inspection-Agency-Accreditation",
+        "date": "2026-11-05"
+      },
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
         "publisher": "ASME",
@@ -3908,10 +3921,28 @@
         "date": "2023-05-12"
       },
       {
-        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
+        "title": "Frequently Asked Questions (Certification and Accreditation)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Commissioned Inspectors",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=392",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "About Us (accreditation of inspection organizations)",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "R Certificate of Authorization",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=115&ID=160",
+        "date": "2026-11-05"
       }
     ],
     "checks": [
@@ -3919,9 +3950,49 @@
         "reg": "ASME BPV-GUI-03, section 1",
         "doc": "asme-handbook",
         "quote": "for most of the ASME Certificates of Authorization to use the ASME Certification Mark, an agreement with an ASME Accredited Authorized Inspection Agency (AIA) is required."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The AIA representative, known as the Authorized Inspector is appointed by the Authorized Inspection Agency."
+      },
+      {
+        "reg": "ASME AIA Accreditation",
+        "doc": "asme-aia",
+        "quote": "Accredited Authorized Inspection Agencies (AIAs) are responsible for performing inspections of ASME pressure equipment during the manufacturing process."
+      },
+      {
+        "reg": "ASME AIA Accreditation",
+        "doc": "asme-aia",
+        "quote": "An Authorized Inspection Agency (AIA) is an organization that meets the criteria of the ASME QAI-1 standard, \"Qualifications for Authorized Inspection\"."
+      },
+      {
+        "reg": "ASME FAQ, Boiler and Pressure Vessel Certification",
+        "doc": "asme-faq-full",
+        "quote": "Most AIAs operate worldwide."
+      },
+      {
+        "reg": "NBBI Commissioned Inspectors",
+        "doc": "nb-commission",
+        "quote": "The National Board Authorized Inspector Commission (AI) is issued to individuals who have been qualified to perform inspections of boilers and pressure vessels as required by the American Society of Mechanical Engineers Boiler and Pressure Vessel Code (ASME BPV Code)."
+      },
+      {
+        "reg": "NBBI Commissioned Inspectors",
+        "doc": "nb-commission",
+        "quote": "The Commission Card must be renewed annually."
+      },
+      {
+        "reg": "NBBI Commissioned Inspectors",
+        "doc": "nb-commission",
+        "quote": "A National Board commissioned inspector is an individual who has met the education, experience, employment, and examination requirements as outlined in NB-263, RCI-1, Rules for Commissioned Inspectors."
+      },
+      {
+        "reg": "NBBI R Certificate of Authorization",
+        "doc": "nb-r-stamp",
+        "quote": "have and maintain an inspection agreement with an Authorized Inspection Agency;"
       }
     ],
-    "body": "## The people and the organizations\n\n- **Authorized Inspection Agency (AIA)**: an organization accredited by ASME to provide inspection for Code construction. Most are insurance companies that write boiler and machinery cover; some are state or provincial jurisdictions acting as their own agency.\n- **Authorized Inspector (AI)**: the agency's employee who does the inspecting. They hold a National Board commission with the endorsement for new construction, earned through education, experience and an examination.\n- **AI Supervisor**: the agency's senior inspector who oversees the AI and takes part in joint reviews and audits.\n\nA shop can't hire an AI on its own; it signs an inspection agreement with an agency, which assigns the inspector. Most ASME certificates require that agreement before ASME will schedule a [joint review](/asme/u-stamp).\n\n## What the Inspector does on a job\n\n- Reviews the design calculations and drawings for Code compliance.\n- Checks material against its [MTR](/asme/mtr) and its marking.\n- Checks that every weld is made to a qualified [WPS](/asme/wps-pqr-wpq) by a qualified welder, and that welders are in [continuity](/asme/welder-continuity).\n- Reviews NDE results and heat treatment records.\n- Witnesses the [hydrostatic or pneumatic test](/asme/hydrostatic-test).\n- Signs the [data report](/asme/data-reports) and authorizes the stamping.\n\nThe shop's quality control manual names the Inspector's hold points: the steps where work stops until the AI has seen it.\n\n## The Inspector is not the shop's QC\n\nThe AI checks that the shop's system worked; they don't run it. If the shop's own inspection is missing, the AI reports it as a nonconformity rather than doing it for them.\n\n## Repairs in service\n\nRepairs and alterations to equipment already installed are inspected by a National Board commissioned inspector under the NBIC, with the repair company holding the National Board R stamp. See [National Board registration and the R stamp](/asme/national-board-registration)."
+    "body": "## What does an ASME Authorized Inspector do?\n\nAn Authorized Inspector (AI) independently checks that a Code boiler, vessel or part was built to the Code, then\ncertifies the data report so the item can be stamped. They review the design, check materials and welding, review\nNDE and heat treatment, witness the pressure test and sign the [data report](/asme/data-reports). ASME's handbook\nsays that for most certificates \"an agreement with an ASME Accredited Authorized Inspection Agency (AIA) is\nrequired\", which is why there is an Inspector on nearly every stamped job.\n\n## Who employs the Authorized Inspector?\n\nAn Authorized Inspection Agency (AIA) accredited by ASME. ASME's [accreditation page](https://www.asme.org/certification-accreditation/Authorized-Inspection-Agency-Accreditation) says an AIA is an\norganization that meets the criteria of ASME's QAI-1 standard, \"Qualifications for Authorized Inspection\", and that\nAIAs are responsible for inspections of ASME pressure equipment during manufacture. Most are insurance companies\nthat write boiler and machinery cover; some are state or provincial jurisdictions acting as their own agency. ASME\npublishes the list of accredited agencies with its downloadable resources.\n\n## What commission does an Authorized Inspector hold?\n\nThe National Board Authorized Inspector Commission (AI). The National Board's [commissioned inspectors page](https://www.nationalboard.org/Index.aspx?pageID=392)\ndescribes two commissions: the AI, for inspections required by the ASME Code during construction, and the Inservice\nInspector Commission (IS), for periodic inspections of equipment in operation. Each is earned by meeting the\neducation, experience, employment and examination requirements of NB-263, RCI-1, Rules for Commissioned Inspectors,\nand the commission card is renewed every year.\n\n## Can a shop hire an Authorized Inspector directly?\n\nNo. A shop signs an inspection agreement with an AIA, and the agency assigns the Inspector. ASME's handbook says the\nAIA representative \"is appointed by the Authorized Inspection Agency\", and ASME won't schedule a shop's joint review\nuntil the agency confirms the agreement. If a certificate holder changes agency, ASME's FAQ says it must tell ASME's\nConformity Assessment Department straight away, or risk losing its certification. See\n[how to get the U stamp](/asme/u-stamp).\n\n## Which certificates don't need an inspection agency?\n\nThe Section IV H certificate for cast iron and cast aluminum boilers, and the Section XIII pressure relief device\ncertificates (V, HV, UV, UD, UV3, UD3, TV, TD), per the table in ASME's handbook. The UM certificate needs one\nindirectly, because it is only issued alongside a U or S certificate. Every other boiler and vessel certificate needs\nan AIA agreement. See [ASME stamps](/asme/stamps).\n\n## Do inspection agencies work outside the US?\n\nYes. ASME's FAQ says most AIAs operate worldwide and points to its list of agencies for local offices and contacts.\nThat is how a shop in India or elsewhere gets an Inspector for U or S work; see\n[buying from India](/asme/buying-from-india).\n\n## What does the Inspector check on a job?\n\nOn a stamped job the Inspector, in outline:\n\n- reviews the design calculations and drawings for Code compliance;\n- checks material against its [MTR](/asme/mtr) and its marking;\n- checks that every weld is made to a qualified [WPS](/asme/wps-pqr-wpq) by a qualified welder in [continuity](/asme/welder-continuity);\n- reviews NDE results and heat treatment records;\n- witnesses the [hydrostatic or pneumatic test](/asme/hydrostatic-test);\n- signs the data report and authorizes stamping.\n\nA common check is to pick one weld and walk it back: weld number on the weld map, the welder's stamp, that welder's\nqualification and continuity, the WPS, the PQR behind it, and the filler and base metal certificates.\n\n## What are hold points?\n\nHold points are the steps in the shop's [quality control manual](/asme/quality-control-manual) where work stops until\nthe Inspector has seen it: typically material review, fit-up of critical joints, NDE review, the PWHT chart and the\nhydro test. The manual and the inspection plan for the job name them, and the Inspector signs each one off.\n\n## Is the Authorized Inspector the shop's quality control?\n\nNo. The Inspector checks that the shop's system worked; the shop runs it. If the shop's own inspection is missing,\nthe Inspector raises it as a nonconformity rather than doing it for them. The Inspector also sits on the review team\nat the shop's ASME joint review, alongside the ASME Designee.\n\n## Who inspects repairs to equipment in service?\n\nA National Board commissioned inspector, for work done by a holder of the National Board's R certificate under the\nNational Board Inspection Code. The National Board's [R certificate page](https://www.nationalboard.org/Index.aspx?pageID=115&ID=160) requires an R holder to keep an\ninspection agreement with an Authorized Inspection Agency too. See\n[National Board registration and the R stamp](/asme/national-board-registration).\n\n## What should a shop's records give the Inspector?\n\nEverything the Inspector checks should come from records the shop already keeps, linked once: each weld to its\nwelders, WPS and NDE report, each part to its heat number and MTR. Our US boiler demo prints that as one ASME record\npackage, with the weld map, WPS and PQR, QW-322 continuity, MTRs by heat number, NDE, PWHT and hydro records, and the\nInspector's name and agency on the data report layout. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4037,9 +4108,16 @@
     "slug": "data-reports",
     "group": "certification",
     "title": "ASME data reports: U-1, U-1A, U-2, P-2 and H-2 forms",
+    "related": [
+      "/asme/national-board-registration",
+      "/asme/authorized-inspector",
+      "/services/document-extraction",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/notes/ibr-statutory-folder-from-bom"
+    ],
     "question": "What is an ASME U-1A form?",
-    "answer": "A Manufacturer's Data Report is the record of what a stamped boiler or pressure vessel is: its design conditions, materials, thicknesses, joints, examinations and test pressure, signed by the manufacturer and the Authorized Inspector. U-1 and U-1A are for Section VIII Division 1 vessels, U-2 for parts, P-2 and P-3 for Section I boilers, H-2 for heating boilers.",
-    "description": "ASME Manufacturer's Data Reports: which form for which item (U-1, U-1A, U-2, A-1, P-2, P-3, H-2), what goes in them, who signs, and National Board registration.",
+    "answer": "A Manufacturer's Data Report is the signed record of what a stamped boiler or pressure vessel is: design conditions, materials, thicknesses, joints, examinations and test pressure, certified by the manufacturer and the Authorized Inspector. U-1A is the alternative form for single-chamber Section VIII Division 1 vessels; U-1 covers the rest, U-2 parts, A-1 Division 2, P-2 and P-3 Section I boilers, H-2 heating boilers.",
+    "description": "ASME Manufacturer's Data Reports: which form (U-1, U-1A, U-2, A-1, K-1, P-2, P-3, H-2), the 2025 forms, who signs, and National Board filing rules.",
     "domain": [
       "asme",
       "certification",
@@ -4047,22 +4125,106 @@
     ],
     "published": "2026-11-01",
     "updated": "2026-11-05",
-    "checked": "2026-11-01",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "ASME Data Report Forms",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
-        "title": "Registration",
+        "title": "Manufacturer's Data Report Registration",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "NB-264, Criteria for ASME Registration (Revision 19)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Registration/NB-264.pdf",
+        "date": "2025-05-10"
+      },
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
       }
     ],
-    "body": "## Which form\n\nASME publishes the forms free on its website as fillable PDFs. The ones most shops use:\n\n| Item | Form |\n|---|---|\n| Section VIII Div. 1 vessel | U-1, or U-1A (alternative form for single-chamber vessels) |\n| Part of a Div. 1 vessel built by another shop | U-2 or U-2A (partial data report) |\n| Plate heat exchanger | U-1P |\n| Supplementary sheet, shell-and-tube heat exchanger | U-5 |\n| Section VIII Div. 2 vessel | A-1 (A-2 for parts) |\n| Section VIII Div. 3 vessel | K-1 |\n| Section I boiler, except watertube and electric | P-2 (P-2A electric) |\n| Section I watertube boilers, superheaters, waterwalls, economizers | P-3 |\n| Section I fabricated piping | P-4A |\n| Section IV boiler, except watertube and cast | H-2 (H-3 watertube) |\n| Section XIII relief valve or rupture disk | UV-1, HV-1, UD-1 or TV-1 (certificates of conformance) |\n\nThe 2025 forms became mandatory with the 2025 Code on 1 January 2026; see [ASME Code editions](/asme/editions).\n\n## What goes in a U-1A\n\nThe report describes the vessel as built, not as quoted:\n\n- manufacturer, purchaser and installation location, serial numbers;\n- design pressure, [MAWP](/asme/mawp) and coincident temperature, and the [MDMT](/asme/impact-testing);\n- for each shell and head: material specification and grade, nominal and corrosion thickness, inside diameter, length, [joint efficiency](/asme/joint-efficiency) and type, radiography;\n- nozzles and openings, with their reinforcement;\n- heat treatment ([PWHT](/asme/pwht)) and impact testing;\n- the [hydrostatic or pneumatic test pressure](/asme/hydrostatic-test);\n- code cases used, and parts from other shops (with their U-2 reports attached);\n- certification by the manufacturer and by the [Authorized Inspector](/asme/authorized-inspector).\n\n## The data report package\n\nBehind the one-page report sits the file the Inspector checked: calculations, drawings, [MTRs](/asme/mtr), weld map, [WPS, PQR and welder qualifications](/asme/wps-pqr-wpq), NDE reports, heat treatment charts and the test record. Assembling that file at the end of a job is where most shops lose days; building it as the job runs is what the software we write does.\n\n## Registration and keeping it\n\nSection VIII Division 1 requires the manufacturer to keep a copy of the data report for a period set by the Code, or to register it with the National Board, which keeps it permanently. Many US jurisdictions require National Board registration for the item to be installed; the National Board asks for reports within 30 days of certification. See [National Board registration](/asme/national-board-registration).\n\n## In India\n\nThe IBR equivalents are the maker's certificate (Form IV Part A) and the Inspecting Authority's certificate (Form I); see [IBR Form I Part A](/ibr/forms#form-i-part-a), [boiler registration documents](/ibr/registration-documents) and [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 1",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report for Pressure Vessels (Alternative Form for Single Chamber, Completely Shop- or Field-Fabricated Vessels Only)"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 1",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Partial Data Report (Alternative Form)"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 1",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report Supplementary Sheet Shell-and-Tube Heat Exchangers"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section I",
+        "doc": "asme-forms",
+        "quote": "Manufacturers' Data Report for All Types of Boilers Except Watertube and Electric"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section I",
+        "doc": "asme-forms",
+        "quote": "Manufacturers' Data Report for Fabricated Piping"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section IV",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report for All types of Boilers Except Watertube and those Made of Cast Iron"
+      },
+      {
+        "reg": "ASME Data Report Forms, legend",
+        "doc": "asme-forms",
+        "quote": "* Revised or new in the 2025 BPVC Edition."
+      },
+      {
+        "reg": "ASME Data Report Forms, legend",
+        "doc": "asme-forms",
+        "quote": "** Form no longer included in Code"
+      },
+      {
+        "reg": "ASME Data Report Forms, note",
+        "doc": "asme-forms",
+        "quote": "Users of these forms should keep track of the font and field size when filling in data in order to meet regulatory or customer needs."
+      },
+      {
+        "reg": "NBBI Data Report Registration, form revisions",
+        "doc": "nb-registration",
+        "quote": "The 2025 revisions to the ASME BPV Code and NBIC report forms became mandatory on January 1, 2026."
+      },
+      {
+        "reg": "NBBI Data Report Registration, form revisions",
+        "doc": "nb-registration",
+        "quote": "All data report forms submitted to the National Board for registration on outdated forms will be returned for correction."
+      },
+      {
+        "reg": "NBBI Data Report Registration, paper forms",
+        "doc": "nb-registration",
+        "quote": "Data report forms must be in the exact format and have the same content as those found in the ASME BPV Code and the NBIC."
+      },
+      {
+        "reg": "NBBI Data Report Registration, paper forms",
+        "doc": "nb-registration",
+        "quote": "There must also be space for the company representative and authorized inspector to initial each page."
+      },
+      {
+        "reg": "NB-264 Revision 19, submitting registration forms",
+        "doc": "nb-264",
+        "quote": "The timeframe in which registration forms will be submitted to NBBI following certification by the Inspector or CI shall not exceed 30 days."
+      }
+    ],
+    "body": "## What is a Manufacturer's Data Report?\n\nA Manufacturer's Data Report is the signed record of a stamped boiler, vessel or part as built: who made it and for\nwhom, design conditions, materials, thicknesses, joints, examinations, heat treatment and test pressure, certified\nby the manufacturer and by the [Authorized Inspector](/asme/authorized-inspector). It is what the stamp points to:\nthe nameplate says the item is a Code item, and the data report says what that item is. Section VIII Division 1 sets\nits data report rules in UG-120 (2025 Edition).\n\n## Which data report form do I use?\n\nThe form follows the Code section and the kind of item. ASME publishes them free as fillable PDFs on its\n[data report forms page](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms); the ones most shops use:\n\n| Item | Form |\n|---|---|\n| Section VIII Div. 1 vessel | U-1, or U-1A (alternative form for single-chamber vessels) |\n| Part of a Div. 1 vessel built by another shop | U-2 or U-2A (partial data report) |\n| Plate heat exchanger | U-1P |\n| Supplementary sheet, shell-and-tube heat exchanger | U-5 |\n| Owner's design conditions | U-DR-1 (single chamber) or U-DR-2 (multi-chamber) |\n| Section VIII Div. 2 vessel | A-1 (A-2 for parts) |\n| Section VIII Div. 3 vessel | K-1 (K-2 for parts) |\n| Section I boiler, except watertube and electric | P-2 (P-2A electric) |\n| Section I watertube boilers, superheaters, waterwalls, economizers | P-3 |\n| Section I parts and fabricated piping | P-4 and P-4A |\n| Section IV boiler, except watertube and cast iron | H-2 (H-3 watertube, H-5 and H-5A cast iron and cast aluminum) |\n| Section XIII relief valve or rupture disk | Certificates of conformance (UV-1, UD-1 and others) |\n| B31.1 power piping | CC-1 and CC-2 certificates of compliance |\n\n## What is the difference between U-1 and U-1A?\n\nU-1A is the shorter alternative to U-1 for a single-chamber vessel. ASME's 2025 form is titled for \"Single Chamber,\nCompletely Shop- or Field-Fabricated Vessels Only\", so it now covers field-fabricated single-chamber vessels too.\nUse U-1 for multi-chamber vessels such as heat exchangers (with the U-5 supplementary sheet for shell-and-tube units).\n\n## What goes in a U-1A?\n\nThe report describes the vessel as built, not as quoted:\n\n- manufacturer, purchaser and installation location, serial and National Board numbers;\n- design pressure, [MAWP](/asme/mawp) at its coincident temperature, and the [MDMT](/asme/impact-testing);\n- for each shell and head: material specification and grade, nominal thickness and corrosion allowance, inside diameter, length, [joint efficiency](/asme/joint-efficiency) and type, extent of radiography;\n- nozzles and openings, with their reinforcement;\n- heat treatment ([PWHT](/asme/pwht)) and impact testing;\n- the [hydrostatic or pneumatic test pressure](/asme/hydrostatic-test);\n- code cases used, and parts from other shops, with their U-2 reports attached;\n- certification by the manufacturer and by the Authorized Inspector.\n\n## Which edition of the forms must I use?\n\nThe 2025 forms, for anything built to the 2025 Code. The National Board's [registration page](https://www.nationalboard.org/Index.aspx?pageID=9) says the 2025\nrevisions to the ASME and NBIC report forms became mandatory on 1 January 2026, and that reports on outdated forms\nare returned for correction. ASME's forms page stars the forms revised or new in the 2025 Edition (U-1, U-1A, U-2,\nP-7, H-2 among them) and marks the metric versions such as P-2M and P-3M with a double star: \"Form no longer included\nin Code\". See [ASME Code editions](/asme/editions).\n\n## Can I make my own layout of the form?\n\nNot for a report sent on paper to the National Board: it must be in the exact format and content of the form in the\nCode and the NBIC, with National Board minimum font sizes, and a multi-page report must repeat its header and leave\nspace for the company representative and the Authorized Inspector to initial each page. ASME's own forms page warns\nusers to keep track of font and field size. A shop's software can still assemble the data and fill the official\nform, or send it through the National Board's Electronic Data Transfer (EDT).\n\n## Who signs the data report?\n\nThe manufacturer's representative certifies that the item meets the Code, and the Authorized Inspector certifies\nthat they inspected it; for a registered item the registration form bears the Inspector's signature and National\nBoard commission number. Without the Inspector's signature the item can't be stamped.\n\n## How long must the shop keep the data report?\n\nDivision 1 requires the manufacturer to keep a copy for a period set in UG-120, or to register it with the National\nBoard, which keeps it permanently. Registration also means an owner can get a copy at any later inspection, repair or\nsale. See [National Board registration](/asme/national-board-registration).\n\n## How soon must a data report be filed with the National Board?\n\nWithin 30 days of certification. The National Board's criteria for registration (NB-264, Revision 19) require a\nmanufacturer authorized to register to submit registration forms no more than 30 days after the Inspector certifies\nthe item. Many US jurisdictions require registration before installation; see\n[US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## What sits behind the one-page report?\n\nThe file the Inspector checked: calculations, drawings, [MTRs](/asme/mtr), weld map,\n[WPS, PQR and welder qualifications](/asme/wps-pqr-wpq), NDE reports, heat treatment charts and the test record.\nAssembling that file at the end of a job is where most shops lose days. Our US boiler demo builds it as the job runs\nand prints it as one record package: a Form U-1A or P-2 layout (our own, carrying the form's fields, not ASME's form;\nfile the official form or use EDT), the weld map with welder stamps, WPS and PQR, QW-322 continuity, MTRs by heat\nnumber, NDE, PWHT and the hydro test. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing).\n\n## What is the Indian equivalent?\n\nUnder IBR 2026 the equivalents are the maker's certificate (Form IV Part A) and the Inspecting Authority's\ncertificate (Form I); see [IBR Form I Part A](/ibr/forms#form-i-part-a), [boiler registration documents](/ibr/registration-documents)\nand [ASME vs IBR 2026](/asme/asme-vs-ibr)."
   },
   {
     "kind": "asme",
@@ -4467,34 +4629,96 @@
     "title": "ASME Section I vs IV: power vs heating boilers",
     "related": [
       "/asme/bpvc-sections",
+      "/asme/hydrostatic-test",
       "/ibr/small-industrial-boilers",
-      "/industries/boiler-pressure-vessel-manufacturing"
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
     ],
     "question": "What is the difference between ASME Section I and Section IV boilers?",
-    "answer": "Section IV covers heating boilers: steam boilers up to 15 psi (1 bar), and hot water boilers up to 160 psi (11 bar) and 250 °F (121 °C). Anything above those limits is a power boiler under Section I, which has stricter design, material, examination and inspection rules. The stamps differ too: S for Section I power boilers, H for Section IV heating boilers.",
-    "description": "ASME Section I power boilers vs Section IV heating boilers: the pressure and temperature limits, stamps, data reports and what changes for the shop.",
+    "answer": "Section IV covers heating boilers: steam boilers up to 15 psi (1 bar), and hot water boilers up to 160 psi (11 bar) and 250 °F (121 °C). Anything above those limits is a power boiler under Section I, which has stricter design, material, examination and inspection rules. The certificates differ too: S (with A, E, M and PP) for Section I, H and HLW for Section IV.",
+    "description": "ASME Section I power boilers vs Section IV heating boilers: pressure and temperature limits, S and H certificates, data reports, code books and hydro test.",
     "domain": [
       "asme",
       "boilers"
     ],
     "published": "2026-11-01",
     "updated": "2026-11-05",
-    "checked": "2026-11-01",
+    "checked": "2026-11-05",
     "sources": [
       {
-        "title": "Boiler and Pressure Vessel Certification (designators S, A, E, M, PP, H, HLW)",
+        "title": "Boiler and Pressure Vessel Certification (certificates offered)",
         "publisher": "ASME",
         "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
         "title": "ASME Data Report Forms",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
+        "date": "2023-05-12"
+      },
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Sections I and IV)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
       }
     ],
-    "body": "## Where the line is\n\n| | Section IV (heating boilers) | Section I (power boilers) |\n|---|---|---|\n| Steam boilers | Up to 15 psi (1 bar) | Above 15 psi (1 bar) |\n| Hot water boilers | Up to 160 psi (11 bar) and 250 °F (121 °C) | Above 160 psi (11 bar) or above 250 °F (121 °C) |\n| Typical use | Space heating, domestic hot water | Process steam, power generation, high-temperature hot water |\n| Certification designator | H (HLW for lined potable water heaters) | S, with A for assembly, E for electric, M for miniature, PP for boiler piping |\n| Main data reports | H-2, H-3 (H-5 and H-5A for cast iron and cast aluminum) | P-2, P-3, P-4 |\n\nSection IV allows cast iron and cast aluminum sectional boilers, which Section I does not, and its rules are simpler throughout because the energy stored at low pressure is much smaller.\n\n## What changes for the shop\n\n- **Design**: Section I has its own formulas (Part PG) and sets thicknesses for drums, headers and tubes in the hot zone; Section IV's are simpler and include minimum thicknesses.\n- **Examination**: more volumetric examination of welds in Section I.\n- **Testing**: a Section I boiler is hydrostatically tested to at least 1.5 times its maximum allowable working pressure (PG-99); the [hydrostatic test guide](/asme/hydrostatic-test) has a calculator.\n- **Piping**: boiler external piping, from the boiler to the first stop valve and beyond as the Code defines it, is part of the Section I boiler and is built to [B31.1](/asme/b31-1-vs-b31-3) by a holder of a Section I certificate that covers it (S, A or PP).\n- **Inspection**: both need an [Authorized Inspector](/asme/authorized-inspector), except Section IV cast iron and cast aluminum boilers, whose certificate needs no inspection agency agreement (see [ASME stamps](/asme/stamps)).\n\n## In India\n\nBoilers in India are registered under the Indian Boiler Regulations, 2026, whichever ASME section they were designed to. How the two fit together is in [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME certification page, Section I certificates",
+        "doc": "asme-bpv-cert",
+        "quote": "PP - Pressure Piping"
+      },
+      {
+        "reg": "ASME certification page, Section IV certificates",
+        "doc": "asme-bpv-cert",
+        "quote": "H - Heating Boilers/Cast Iron Sectional Heating Boiler"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section I",
+        "doc": "asme-forms",
+        "quote": "Manufacturers' Data Report for All Types of Boilers Except Watertube and Electric"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section I",
+        "doc": "asme-forms",
+        "quote": "Manufacturers' Data Report for Watertube Boilers, Superheaters, Waterwalls, and Economizers"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section IV",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report for All types of Boilers Except Watertube and those Made of Cast Iron"
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 2",
+        "doc": "asme-handbook",
+        "quote": "The H (Cast Iron and/or Cast Aluminum) Certificate of Authorization is issued for 1 year."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 2",
+        "doc": "asme-handbook",
+        "quote": "The Joint Review is conducted by an ASME Designee appointed by ASME (No Authorized Inspection Agency involvement is required)."
+      },
+      {
+        "reg": "ASME Required Code Books, PP and S certificates",
+        "doc": "asme-books",
+        "quote": "Pressure Piping and Power Boilers Code Books Required BPVC Section I-Rules for Construction of Power Boilers"
+      }
+    ],
+    "body": "## Where is the line between a Section I and a Section IV boiler?\n\nThe line is pressure and temperature: Section IV covers steam boilers up to 15 psi (1 bar) and hot water boilers up\nto 160 psi (11 bar) and 250 °F (121 °C); anything above either limit is a power boiler under Section I. Section IV\nstates its limits in its scope paragraph (HG-101 in the 2025 Edition).\n\n| | Section IV (heating boilers) | Section I (power boilers) |\n|---|---|---|\n| Steam boilers | Up to 15 psi (1 bar) | Above 15 psi (1 bar) |\n| Hot water boilers | Up to 160 psi (11 bar) and 250 °F (121 °C) | Above 160 psi (11 bar) or above 250 °F (121 °C) |\n| Typical use | Space heating, domestic hot water | Process steam, power generation, high-temperature hot water |\n| ASME certificates | H; HLW for lined potable water heaters | S, plus A (assembly), E (electric), M (miniature), PP (pressure piping) |\n| Main data reports | H-2, H-3; H-5 and H-5A for cast iron and cast aluminum | P-2, P-3, P-4 family |\n\nThe certificates are as ASME's [certification page](https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification) lists them. Section IV allows cast iron and cast\naluminum sectional boilers, which Section I does not, and its rules are simpler throughout because far less energy\nis stored at low pressure.\n\n## Which certificate does each kind of boiler need?\n\nA power boiler is built and stamped by an S certificate holder; a heating boiler by an H holder. Section I also has\nA for assembling power boilers, E for electric boilers, M for miniature boilers and PP for boiler external piping;\nSection IV has HLW for lined potable water heaters. Parts makers without design responsibility can hold PRT in both\nsections. Each is a separate certificate with its own joint review, though ASME's FAQ says an S holder can add A or PP\nwithout a full new review. See [ASME stamps](/asme/stamps).\n\n## Which data report does each use?\n\nA Section I boiler is reported on Form P-2 (all types except watertube and electric), P-2A (electric) or P-3\n(watertube boilers, superheaters, waterwalls and economizers), with P-4 for parts and P-4A for fabricated piping. A\nSection IV boiler uses H-2 (all types except watertube and cast iron), H-3 (watertube) or the H-5 and H-5A master\ndata reports for cast iron and cast aluminum. All are free fillable PDFs on ASME's\n[data report forms page](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms); see [data reports](/asme/data-reports).\n\n## Does a Section IV boiler need an Authorized Inspector?\n\nYes, except a cast iron or cast aluminum boiler. The H certificate for cast iron and cast aluminum boilers needs no\ninspection agency agreement: ASME's handbook says it is issued for one year, renewed by an annual joint review led by\nan ASME Designee with no Authorized Inspection Agency involved. Every other Section IV and Section I certificate needs\nan agreement with an ASME-accredited agency, whose [Authorized Inspector](/asme/authorized-inspector) inspects the\nboiler and signs its data report.\n\n## What changes for the shop between Section I and Section IV?\n\nSection I is stricter at every step:\n\n- **Design**: Section I has its own formulas in Part PG (PG-27 for cylindrical shells and tubes) and sets thicknesses\n  for drums, headers and tubes; Section IV's rules are simpler and include minimum thicknesses.\n- **Examination**: more volumetric examination of welds under Section I.\n- **Testing**: a Section I boiler is hydrostatically tested to at least 1.5 times its maximum allowable working\n  pressure (PG-99); Section IV sets its own, lower test.\n- **Code books**: ASME's [required list](https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books) for an S certificate is Section I, Section II Parts A to D,\n  Section V, Section IX, B31.1 Power Piping and CA-1; for H and HLW (except cast iron) it is Section II Parts A, B and\n  C, Section IV, Section IX and CA-1; for cast iron H, Section IV and CA-1.\n\n## What hydrostatic test does a Section I boiler need?\n\nAt least 1.5 times its MAWP (PG-99): a firetube boiler with an MAWP of 150 psi is tested to at least 225 psi, with\nthe Authorized Inspector present. The [hydrostatic test guide](/asme/hydrostatic-test) has a calculator for Section I\nand Section VIII.\n\n## Who builds the boiler external piping?\n\nA holder of a Section I certificate that covers it: S, A or PP. Boiler external piping runs from the boiler to the\nfirst stop valve and beyond, as Section I defines it; it is designed to [B31.1](/asme/b31-1-vs-b31-3) but is part of\nthe Section I boiler, inspected by the Authorized Inspector. That is why B31.1 is on the required code book list for\nthose certificates.\n\n## How does this work in India?\n\nBoilers in India are registered under the Indian Boiler Regulations, 2026, whichever ASME section they were designed\nto; IBR draws its own lines for small industrial boilers. How the two fit together is in\n[ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## What does our software keep for a Section I boiler?\n\nOur US boiler demo prints the ASME record package for a firetube boiler from the job's records: a Form P-2 layout\n(our own, carrying the form's fields, not a copy of ASME's form), the weld map, WPS and PQR, QW-322 welder continuity,\nMTRs by heat number, NDE, PWHT and the hydro test at 1.5 × MAWP. There are no Section IV jobs in the demo. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4585,12 +4809,13 @@
     "related": [
       "/asme/bpvc-sections",
       "/asme/data-reports",
+      "/asme/state-boiler-laws",
       "/industries/boiler-pressure-vessel-manufacturing",
       "/services/material-traceability"
     ],
     "question": "What is the difference between ASME Section VIII Division 1 and Division 2?",
-    "answer": "Section VIII sets the rules for pressure vessels. Division 1 is design by rule with a larger safety margin and is used for most vessels. Division 2 allows thinner walls in return for more design analysis, stricter material and examination rules, and a certified design report. Division 3 is for very high pressures, usually above 10,000 psi (690 bar).",
-    "description": "ASME Section VIII Division 1, 2 and 3 compared: design margin, analysis, examination, paperwork and stamps, and how to choose for a pressure vessel.",
+    "answer": "Section VIII sets the rules for pressure vessels in three Divisions. Division 1 designs by rule with a design factor of 3.5 on tensile strength and covers most vessels. Division 2 uses a factor of 2.4, so walls are thinner, in return for more analysis, a User's Design Specification and a certified design report. Division 3 is for very high pressures. Each needs its own certificate: U, U2 or U3.",
+    "description": "ASME Section VIII Divisions 1, 2 and 3 compared: design factor, analysis, U vs U2 stamps, data reports, and when a vessel needs the U stamp at all.",
     "domain": [
       "asme",
       "pressure-vessels",
@@ -4598,22 +4823,72 @@
     ],
     "published": "2026-11-01",
     "updated": "2026-11-05",
-    "checked": "2026-11-01",
+    "checked": "2026-11-05",
     "sources": [
       {
-        "title": "Boiler and Pressure Vessel Certification (certification designators U, UM, U2, U3)",
+        "title": "Boiler and Pressure Vessel Certification (certificates offered)",
         "publisher": "ASME",
         "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
         "title": "ASME Data Report Forms",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Divisions 1, 2 and 3)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "NB-370 Synopsis: Stamping Requirements by Jurisdiction",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/asme_requirements.pdf",
+        "date": "2024-06-14"
       }
     ],
-    "body": "## What Section VIII covers\n\nSection VIII is the Code's pressure vessel section: tanks, columns, reactors, heat exchangers, receivers and similar vessels that hold internal or external pressure. Division 1 itself excludes some equipment, for example vessels designed for 15 psi (1 bar) or less, and very small vessels (6 in, 152 mm, inside diameter or less), which is why many low-pressure tanks are built to other standards. Fired equipment that generates steam belongs to [Section I](/asme/section-i-vs-iv).\n\n## The three Divisions side by side\n\n| | Division 1 | Division 2 | Division 3 |\n|---|---|---|---|\n| Approach | Design by rule: formulas and charts | Design by rule or by analysis (stress analysis, finite elements) | Design by analysis, fracture mechanics |\n| Typical use | Most vessels | Large, thick or high-pressure vessels where thinner walls save money | Very high pressure, usually above 10,000 psi (690 bar) |\n| Design margin on tensile strength | 3.5 | 2.4 | Based on yield, with further checks |\n| Owner's input | Design conditions on the order | A User's Design Specification | A User's Design Specification |\n| Design certification | The manufacturer | A Manufacturer's Design Report, certified as the Division requires | As Division 2, plus more |\n| Certification designator | U (UM for miniature vessels) | U2 | U3 |\n| Data report | U-1 or U-1A | A-1 | K-1 |\n\nThe smaller margin is the reason Division 2 exists: the same vessel needs less steel. The price is engineering. Division 2 demands more analysis, more examination of welds and materials, and documents that Division 1 doesn't, so it pays off mainly on large, thick or alloy vessels where steel is the bigger cost.\n\n## How to choose\n\n- **Start with Division 1** unless there's a reason not to. More shops hold a U certificate, more inspectors know it, and the paperwork is lighter.\n- **Consider Division 2** when the wall gets thick (a rough sign: shells over about 2 in, 50 mm), the material is expensive, or the vessel is cyclic and needs a fatigue assessment anyway.\n- **Division 3** is a specialist field (isostatic presses, high-pressure reactors).\n\nA shop can only stamp what its certificate covers: a U certificate does not allow Division 2 work. See [ASME stamps](/asme/stamps).\n\n## What a Division 1 vessel's paperwork looks like\n\nThe design calculations ([shell thickness](/asme/shell-thickness), [heads](/asme/heads), nozzles, flanges), material certificates ([MTRs](/asme/mtr)), welding procedures and welder qualifications ([WPS, PQR and WPQ](/asme/wps-pqr-wpq)), examination reports, the [hydrostatic test](/asme/hydrostatic-test) record, and finally the [Manufacturer's Data Report](/asme/data-reports), signed by the manufacturer and the [Authorized Inspector](/asme/authorized-inspector). ASME's 2025 forms list for Division 1 also includes User's Design Requirements forms (U-DR-1 and U-DR-2) for the owner's design conditions."
+    "checks": [
+      {
+        "reg": "ASME certification page, Section VIII Division 2",
+        "doc": "asme-bpv-cert",
+        "quote": "U2 - Pressure Vessels (Alternative Rules for Pressure Vessels)"
+      },
+      {
+        "reg": "ASME certification page, Section VIII Division 3",
+        "doc": "asme-bpv-cert",
+        "quote": "U3 - High Pressure Vessels"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 1",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report for Pressure Vessels (Alternative Form for Single Chamber, Completely Shop- or Field-Fabricated Vessels Only)"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 1",
+        "doc": "asme-forms",
+        "quote": "User's Design Requirements for Single Chamber Pressure Vessels"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section VIII Division 3",
+        "doc": "asme-forms",
+        "quote": "Manufacturer's Data Report for High Pressure Vessels"
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "BPVC Section VIII-Rules for Construction of Pressure Vessels Division 1"
+      }
+    ],
+    "body": "## What does ASME Section VIII cover?\n\nSection VIII is the Code's pressure vessel section: tanks, columns, reactors, heat exchangers, receivers and other\nvessels that hold internal or external pressure, in three Divisions. Fired equipment that generates steam belongs to\n[Section I](/asme/section-i-vs-iv) instead. Division 1's scope paragraph (U-1 in the 2025 Edition) excludes some\nequipment outright, among them vessels for 15 psi (1 bar) or less and vessels of 6 in (152 mm) inside diameter or\nless, which is why many low-pressure tanks are built to other standards. The Code text is ASME's and paid; this\nguide cites paragraphs and explains them, and your copy of the [2025 Edition](https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025) is the authority.\n\n## What is the difference between Division 1 and Division 2?\n\nThe difference is the design margin and the engineering that pays for a smaller one. Division 1 sets allowable\nstresses with a design factor of 3.5 on tensile strength and designs mostly by formula; Division 2 uses 2.4 and\ndesigns by rule or by analysis, with stricter material and examination rules and more paperwork.\n\n| | Division 1 | Division 2 | Division 3 |\n|---|---|---|---|\n| Approach | Design by rule: formulas and charts | Design by rule or by analysis (stress analysis, finite elements) | Design by analysis, with fracture mechanics |\n| Design factor on tensile strength | 3.5 | 2.4 | Based on yield, with further checks |\n| Typical use | Most vessels | Large, thick or alloy vessels where steel is the bigger cost | Very high pressure, generally above 10,000 psi (690 bar) |\n| Owner's input | Design conditions on the order, or ASME's U-DR-1 / U-DR-2 forms | A User's Design Specification | A User's Design Specification |\n| Design certification | The manufacturer | A Manufacturer's Design Report, certified as the Division requires | As Division 2, and more |\n| ASME certificate | U (UM for miniature vessels) | U2 | U3 |\n| Data report | U-1 or U-1A | A-1 | K-1 |\n\nThe certificate names and forms are from ASME's [certification page](https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification) and [data report forms list](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms). The same vessel needs less steel\nunder Division 2, so it pays mainly on large, thick or expensive-alloy vessels; elsewhere the extra analysis and\nexamination cost more than the steel saved.\n\n## When is Division 3 used?\n\nDivision 3 is for very high pressure, generally above 10,000 psi (690 bar): isostatic presses, high-pressure\nreactors, some hydrogen storage. It designs by analysis with fracture mechanics, needs the U3 certificate, and is\nreported on Form K-1 (K-2 for parts). It is a specialist field, and few shops hold the certificate.\n\n## How do I choose between Division 1 and Division 2?\n\nStart with Division 1 unless the vessel gives a reason not to. More shops hold the U certificate, more inspectors\nknow it, and the owner's paperwork is lighter. Consider Division 2 when:\n\n- the wall gets thick (a rough sign: shells over about 2 in, 50 mm);\n- the material is expensive (stainless, nickel alloys, clad plate), so thinner walls save real money;\n- the vessel is cyclic and needs a fatigue assessment anyway.\n\nThe Division also decides who can build it: a fabricator with only a U certificate can't build or stamp a Division 2\nvessel.\n\n## Can a shop with a U certificate build Division 2 vessels?\n\nNo. Division 2 vessels need the U2 certificate, which ASME lists separately from U, with its own required code books\n(Section VIII Division 2 instead of Division 1). A U holder that wants Division 2 work applies for U2 and goes through a\njoint review for it. See [ASME stamps](/asme/stamps) and [how to get the U stamp](/asme/u-stamp).\n\n## Does a vessel under 15 psi need a U stamp?\n\nNot under Section VIII: Division 1's scope excludes vessels for 15 psi (1 bar) or less, so there is nothing to stamp\nthem to. A buyer can still ask for Code construction in the order, and the law where the vessel is installed sets\nits own scope. Check the jurisdiction's rules before assuming a small or low-pressure vessel is exempt; see\n[US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## Can a vessel be built to Section VIII without the U stamp?\n\nA shop can design to the Section VIII formulas without a certificate, but the vessel isn't a Code vessel: there is no\nAuthorized Inspector, no Manufacturer's Data Report and no Certification Mark, and it can't be registered with the\nNational Board. Whether that is acceptable is a legal question for the place of installation. The National Board's\n[stamping table](https://www.nationalboard.org/SiteDocuments/Synopsis/asme_requirements.pdf) (2024 Synopsis) lists the ASME stamps each jurisdiction requires: most list\nU, while some do not include it (Florida, Louisiana, Montana, New Mexico, South Dakota and West Virginia among them),\nand Idaho lists none.\n\n## What paperwork does a Division 1 vessel need?\n\nA Division 1 vessel's file holds:\n\n- the design calculations: [shell thickness](/asme/shell-thickness), [heads](/asme/heads), nozzles and openings, flanges, supports;\n- material certificates ([MTRs](/asme/mtr)) traced to each part by heat number;\n- welding procedures and welder qualifications ([WPS, PQR and WPQ](/asme/wps-pqr-wpq)), with each welder's [continuity](/asme/welder-continuity);\n- NDE reports, heat treatment charts and the [hydrostatic test](/asme/hydrostatic-test) record;\n- the [Manufacturer's Data Report](/asme/data-reports), U-1 or U-1A, signed by the manufacturer and the [Authorized Inspector](/asme/authorized-inspector).\n\nASME also publishes User's Design Requirements forms, U-DR-1 for single-chamber and U-DR-2 for multi-chamber\nvessels, for the owner to state design conditions.\n\n## What does our software keep for a Section VIII vessel?\n\nOur US boiler demo builds the record package for a Division 1 vessel from the job's own records: a Form U-1A layout\n(our own, carrying the form's fields, not a copy of ASME's form), the weld map with welder stamps, WPS and PQR,\nQW-322 continuity, MTRs by heat number, NDE, PWHT and the hydro test record. It covers Division 1 vessels and\nSection I boilers, not Division 2. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4690,22 +4965,29 @@
     "slug": "stamps",
     "group": "certification",
     "title": "ASME stamps list: U, U2, S, H, PP, UV and R explained",
+    "related": [
+      "/asme/u-stamp",
+      "/asme/national-board-registration",
+      "/asme/state-boiler-laws",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What do the ASME U, S and R stamps mean?",
-    "answer": "An ASME stamp is the ASME Certification Mark with a designator showing what the item is built to: U for a Section VIII Division 1 pressure vessel, U2 for Division 2, S for a Section I power boiler, H for a heating boiler, UV for a relief valve. Only a holder of that certificate may apply it. The R stamp is the National Board's, for repairs.",
-    "description": "Every ASME certification designator (U, UM, U2, U3, S, A, E, M, PP, H, HLW, PRT, RP, T, V, HV, UV, UD) and the National Board R, VR, NR and NB marks.",
+    "answer": "An ASME stamp is the ASME Certification Mark with a designator showing what the item is built to: U for a Section VIII Division 1 pressure vessel, U2 for Division 2, S for a Section I power boiler, H for a heating boiler, UV for a pressure vessel relief valve. Only a holder of that certificate may apply it. The R stamp is the National Board's, for repairs and alterations, and NB means the item is registered with the National Board.",
+    "description": "ASME stamps explained: U, U2, U3, S, A, PP, H, HLW, PRT and the Section XIII valve letters, plus the National Board's NB, R, VR, NR and T/O marks.",
     "domain": [
       "asme",
       "certification"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
       {
-        "title": "Boiler and Pressure Vessel Certification",
+        "title": "Boiler and Pressure Vessel Certification (certificates offered)",
         "publisher": "ASME",
         "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
@@ -4714,16 +4996,46 @@
         "date": "2023-05-12"
       },
       {
-        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
-        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
-        "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
-        "date": "2026-11-01"
+        "title": "Frequently Asked Questions (Certification and Accreditation)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions",
+        "date": "2026-11-05"
       },
       {
-        "title": "Registration",
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Certified Companies (Certificate Holder Search)",
+        "publisher": "ASME",
+        "url": "https://access.asme.org/caconnect/certified-companies",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Accreditation (R, VR, NR and T/O)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=115",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "R Certificate of Authorization",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=115&ID=160",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Manufacturer's Data Report Registration (NB mark)",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "NB-370 Synopsis: Stamping Requirements by Jurisdiction",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/asme_requirements.pdf",
+        "date": "2024-06-14"
       }
     ],
     "checks": [
@@ -4736,9 +5048,64 @@
         "reg": "ASME BPV-GUI-03, section 1",
         "doc": "asme-handbook",
         "quote": "the PRT Certificate is for Manufacturers of parts who do not perform or assume any design responsibility for the parts they manufacture."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "Note that a UM Certificate can only be issued to Applicants during the period that a valid U or S Certificate is held."
+      },
+      {
+        "reg": "ASME FAQ, Single Certification Mark",
+        "doc": "asme-faq-full",
+        "quote": "Instead of 28 separate Certification Marks, there will now be this single comprehensive mark."
+      },
+      {
+        "reg": "ASME FAQ, Single Certification Mark",
+        "doc": "asme-faq-full",
+        "quote": "The old Code Symbol Stamps for ASME BPVC Sections I, IV, VIII, X, and XII (U, S, PP, etc.) were discontinued on January 31, 2013."
+      },
+      {
+        "reg": "ASME FAQ, Single Certification Mark",
+        "doc": "asme-faq-full",
+        "quote": "The Certification Designator must appear directly below the Certification Mark, however it may be printed rather than stamped."
+      },
+      {
+        "reg": "ASME FAQ, General",
+        "doc": "asme-faq-full",
+        "quote": "Visit the ASME Certificate Holder Search which will provide a list of ASME certified companies."
+      },
+      {
+        "reg": "ASME certification page, Section XIII certificates",
+        "doc": "asme-bpv-cert",
+        "quote": "UV - Pressure Vessel Pressure Relief Valves"
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "CA-1 Conformity Assessment Requirements"
+      },
+      {
+        "reg": "NBBI Accreditation",
+        "doc": "nb-accreditation",
+        "quote": "Authorized repair organizations are issued an NBBI stamp that is applied to the equipment nameplate."
+      },
+      {
+        "reg": "NBBI Data Report Registration, NB Mark",
+        "doc": "nb-registration",
+        "quote": "The NB mark is used by manufacturers to identify items registered with the National Board."
+      },
+      {
+        "reg": "NBBI R Certificate of Authorization, fees",
+        "doc": "nb-r-stamp",
+        "quote": "The certificate fee for the R Certificate of Authorization is $1150 USD for a three-year period."
+      },
+      {
+        "reg": "NB-370 Synopsis, stamping table title",
+        "doc": "nb-stamping",
+        "quote": "STAMPING REQUIREMENTS BY JURISDICTION"
       }
     ],
-    "body": "## One mark, many designators\n\nSince the early 2010s there has been one **ASME Certification Mark** (the cloverleaf), stamped together with a **designator**: the letters that say which section and which kind of work the item was built to. People still say \"U stamp\" for the mark with the U designator, and this guide does too.\n\n## ASME designators\n\nASME's certification page lists these, with how long each certificate lasts and whether it needs an agreement with an Authorized Inspection Agency (from ASME's informational handbook):\n\n| Section | Designator | For | Valid | Inspection agency |\n|---|---|---|---|---|\n| I | S | Power boilers | 3 years | Yes |\n| I | A | Assembly of power boilers | 3 years | Yes |\n| I | E | Electric boilers | 3 years | Yes |\n| I | M | Miniature boilers | 3 years | Yes |\n| I | PP | Pressure piping (boiler external piping) | 3 years | Yes |\n| IV | H | Heating boilers (not cast iron or aluminum) | 3 years | Yes |\n| IV | H | Cast iron and cast aluminum heating boilers | 1 year | No |\n| IV | HLW | Lined potable water heaters | 3 years | Yes |\n| VIII-1 | U | Pressure vessels | 3 years | Yes |\n| VIII-1 | UM | Miniature pressure vessels (needs a U or S too) | 1 year | Through the U or S |\n| VIII-2 | U2 | Pressure vessels, alternative rules | 3 years | Yes |\n| VIII-3 | U3 | High-pressure vessels | 3 years | Yes |\n| X | RP | Fiber-reinforced plastic vessels | 3 years | Yes |\n| XII | T | Transport tanks | 3 years | Yes |\n| I, IV, VIII-1, VIII-2, XII | PRT | Parts, without design responsibility | 3 years | Yes |\n| XIII | V, HV, UV, UD, UV3, UD3, TV, TD | Relief valves and devices | 3 years | No |\n\nPRT is for parts makers who build to someone else's design: the certificate holder who buys the part takes design responsibility. Relief device certificates have their own review route; see [Section XIII](/asme/section-xiii).\n\n## National Board marks\n\nThese are not ASME's; they come from the National Board of Boiler and Pressure Vessel Inspectors:\n\n- **NB**: the item's data report is registered with the National Board. Many US jurisdictions require it; see [National Board registration](/asme/national-board-registration).\n- **R**: repairs and alterations to boilers and pressure vessels in service, under the NBIC.\n- **VR**: repair of pressure relief valves.\n- **NR**: repairs and replacements at nuclear facilities.\n- **T/O**: testing of pressure relief valves.\n\n## What the stamp means to a buyer\n\nA stamp says the item was built under an accepted quality system and inspected by an [Authorized Inspector](/asme/authorized-inspector), and that a [data report](/asme/data-reports) exists for it. It says nothing about whether the design suits your process; that is set by the design conditions you specify. To get a stamp, see [how to get the U stamp](/asme/u-stamp)."
+    "body": "## What do the ASME stamp letters mean?\n\nThe letters are the **designator** stamped under the ASME Certification Mark (the cloverleaf), and they say which\nCode section and what kind of work the item was built to: U for a Section VIII Division 1 vessel, S for a Section I\npower boiler, H for a heating boiler, and so on. ASME's handbook says the mark \"can only be used by a company that\nholds a valid Certificate of Authorization\", so the letters also tell you the maker held that certificate. People\nstill say \"U stamp\" for the mark with the U designator, and this guide does too.\n\n## What happened to the old Code symbol stamps?\n\nASME replaced its 28 separate Code symbol stamps with one Certification Mark used together with a designator. Its\n[FAQ](https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions) says the old stamps for Sections I, IV, VIII, X and XII were discontinued on 31 January 2013 and must be\nreturned to ASME, and that the designator must appear directly below the mark, though it may be printed rather than\nstamped. An older nameplate with a U inside the cloverleaf means the same as the new mark with U below it.\n\n## Which ASME certificates and designators are there?\n\nASME's [certification page](https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification) lists these for the boiler and pressure vessel Code; how long each lasts and whether\nit needs an agreement with an Authorized Inspection Agency are from ASME's handbook (Exhibit A):\n\n| Section | Designator | For | Valid | Inspection agency |\n|---|---|---|---|---|\n| I | S | Power boilers | 3 years | Yes |\n| I | A | Assembly of power boilers | 3 years | Yes |\n| I | E | Electric boilers | 3 years | Yes |\n| I | M | Miniature boilers | 3 years | Yes |\n| I | PP | Pressure piping (boiler external piping) | 3 years | Yes |\n| IV | H | Heating boilers (not cast iron or aluminum) | 3 years | Yes |\n| IV | H | Cast iron and cast aluminum heating boilers | 1 year | No |\n| IV | HLW | Lined potable water heaters | 3 years | Yes |\n| VIII-1 | U | Pressure vessels | 3 years | Yes |\n| VIII-1 | UM | Miniature pressure vessels (needs a U or S too) | 1 year | Through the U or S |\n| VIII-2 | U2 | Pressure vessels, alternative rules | 3 years | Yes |\n| VIII-3 | U3 | High-pressure vessels | 3 years | Yes |\n| X | RP | Fiber-reinforced plastic vessels | 3 years | Yes |\n| XII | T | Transport tanks | 3 years | Yes |\n| I, IV, VIII-1, VIII-2, XII | PRT | Parts, without design responsibility | 3 years | Yes |\n| XIII | V, HV, UV, UD, UV3, UD3, TV, TD | Relief valves and other pressure relief devices | 3 years | No |\n\nEvery certificate also needs the Code books ASME lists for it; since the CA-1 standard (ASME's Conformity Assessment\nRequirements) appears on every list, a shop buys that too. See [how to get the U stamp](/asme/u-stamp).\n\n## What is the difference between the U and U2 stamp?\n\nU is for vessels built to Section VIII Division 1 and U2 for Division 2, the alternative rules with a smaller design\nmargin and more analysis. They are separate certificates with separate joint reviews, and a U holder can't stamp a\nDivision 2 vessel. See [Section VIII Division 1 vs 2](/asme/section-viii).\n\n## What is a PRT certificate?\n\nPRT is for a maker of parts who builds to someone else's design: in the handbook's words, for \"Manufacturers of parts\nwho do not perform or assume any design responsibility for the parts they manufacture.\" The certificate holder who\nbuys the part takes design responsibility, and the part comes with a partial data report.\n\n## What are the UM, V and UV stamps?\n\nUM is for miniature pressure vessels and can only be held alongside a valid U or S certificate; it is issued for one\nyear. The Section XIII letters are for pressure relief devices: V for boiler relief valves, HV for heating boiler\nsafety valves, UV for pressure vessel relief valves, UD for nonreclosing devices such as rupture disks, UV3 and UD3\nfor high-pressure vessels, TV and TD for transport tanks. Their reviews are run through the National Board and their\ncapacities certified by test; see [Section XIII](/asme/section-xiii).\n\n## What is the R stamp?\n\nThe R stamp is not ASME's: it is the National Board's certificate for repairs and alterations to boilers, pressure\nvessels and other pressure-retaining items already in service, done under the National Board Inspection Code (NBIC).\nThe National Board's [R certificate page](https://www.nationalboard.org/Index.aspx?pageID=115&ID=160) says a holder must keep an inspection agreement with an Authorized\nInspection Agency, a written quality system to the NBIC and the current NBIC, and that the certificate costs $1,150\nfor three years. Its sister programs are:\n\n- **VR**: repair of pressure relief valves;\n- **NR**: repair and replacement of nuclear components;\n- **T/O**: in-service testing of pressure relief valves.\n\nThe National Board's [accreditation page](https://www.nationalboard.org/Index.aspx?pageID=115) notes that authorized repair organizations are issued an NBBI stamp applied\nto the nameplate.\n\n## What does NB on a nameplate mean?\n\nNB means the item's data report is registered with the National Board, which keeps it permanently; the nameplate\ncarries the NB mark and a National Board number. The National Board's [registration page](https://www.nationalboard.org/Index.aspx?pageID=9) says the NB mark is\nused by manufacturers to identify items registered with it. Many US jurisdictions require registration; see\n[National Board registration](/asme/national-board-registration).\n\n## Which stamps does my state require?\n\nEach state sets its own list. The National Board's [stamping table](https://www.nationalboard.org/SiteDocuments/Synopsis/asme_requirements.pdf) (2024 Synopsis) gives, per jurisdiction, the\nNational Board and ASME stamps it requires. Most states list all ASME stamps or a long list that includes U and S;\nFlorida, Louisiana and Montana list boiler stamps without U; Wyoming lists only U, U2, U3 and UV; Idaho lists none.\nNB registration is listed for Arizona, North Dakota, Washington and West Virginia, among others. Confirm with the\nstate's chief inspector; see [US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## How do I check that a company really holds a stamp?\n\nUse ASME's [Certificate Holder Search](https://access.asme.org/caconnect/certified-companies), which ASME's FAQ points to for exactly this: it lists certified companies\nwith their certificates, filterable by country and certificate. Ask the supplier for a copy of the certificate too,\nand check the designator, scope (shop or field) and expiry date cover your order. For repair firms, the National\nBoard's Manufacturer and Repair Directory lists R, VR and NR holders.\n\n## What does a stamp tell a buyer?\n\nA stamp says the item was built under an ASME-accepted quality system, inspected by an\n[Authorized Inspector](/asme/authorized-inspector), and documented on a [data report](/asme/data-reports). It doesn't\nsay the design suits your process: that is set by the design conditions you specify in the order."
   },
   {
     "kind": "asme",
