@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { ServicesPage } from "@/components/ServicesPage";
 import { metaDescription } from "@/lib/seo";
 import { languages } from "@/lib/markets";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 // North America's services page at /us/services, also served at /services to North American visitors (src/proxy.ts).
 const description = metaDescription("Custom operations software for manufacturers and distributors: inventory and orders, CRM and estimates, purchasing, multi-company finance, analytics and AI assistants on one system.");
 
 export const metadata: Metadata = {
-  title: "Services: custom ERP, CRM, analytics and AI",
+  title: "Custom ERP that works beside QuickBooks",
   description,
   alternates: { canonical: "/us/services", languages: languages("/services") },
   openGraph: { type: "website", url: "https://ahromlabs.com/us/services", siteName: "Ahrom Labs", title: "Services | Ahrom Labs", description },
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function Services() {
-  return <ServicesPage market="NA" />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/us/services", "Custom ERP that works beside QuickBooks", description, "us/services")) }} />
+      <ServicesPage market="NA" />
+    </>
+  );
 }

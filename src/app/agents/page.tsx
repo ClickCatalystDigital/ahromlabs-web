@@ -4,6 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MCP_URL, MCP_REPO_URL } from "@/lib/ai-search";
 import { metaDescription } from "@/lib/seo";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 // One HTML page for agents and the people wiring them up: the site's MCP server and its machine-readable
 // files, so a browsing tool that reads only HTML still finds them. Lists only what exists (see
@@ -32,6 +33,7 @@ const FILES = [
 export default function AgentsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/agents", "MCP server and files for AI agents", description, "agents")) }} />
       <SiteNav />
       <main className="flex-1">
         <article className="rail pt-16 pb-24 md:pt-24">

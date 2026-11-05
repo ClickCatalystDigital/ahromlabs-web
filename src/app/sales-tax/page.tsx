@@ -12,7 +12,7 @@ const lead =
 
 export const metadata: Metadata = {
   title: { absolute: "US sales tax guide: nexus, exemptions and certificates" },
-  description: "When a US business must collect sales tax in another state, every state's economic nexus threshold, resale certificates, the manufacturing exemption and use tax.",
+  description: "When a US business must collect sales tax in another state: every state's economic nexus threshold, resale certificates, the manufacturing exemption, use tax.",
   alternates: { canonical: "/sales-tax" },
   openGraph: { type: "website", url: "https://ahromlabs.com/sales-tax", siteName: "Ahrom Labs", title, description: lead },
   twitter: { card: "summary_large_image", title, description: lead },

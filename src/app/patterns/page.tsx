@@ -4,6 +4,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { getContent, formatDate } from "@/lib/content";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Engineering patterns for business software",
@@ -28,6 +29,7 @@ export default function PatternsPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/patterns", "Engineering patterns for business software", String(metadata.description), "patterns")) }} />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { type Service, resolveProof, proofHref } from "@/lib/services";
-import { engagements, serviceStatus } from "@/lib/work";
+import { engagements, serviceStatus, NOT_LIVE } from "@/lib/work";
 import { requirements } from "@/lib/erp";
 import { demoHref, say, type MarketCode } from "@/lib/markets";
 
@@ -127,7 +127,7 @@ export function ServiceDetail({ service, market = "IN" }: { service: Service; ma
                   <Link href={`/work#${c.slug}`} className="text-link focus-ring">
                     {c.client}
                   </Link>{" "}
-                  <span className="text-foreground-secondary"> — {c.industry}</span>
+                  <span className="text-foreground-secondary"> — {c.industry}{c.live === false && ` (${NOT_LIVE})`}</span>
                 </li>
               ))}
             </ul>

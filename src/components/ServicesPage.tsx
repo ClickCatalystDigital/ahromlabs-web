@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import Image from "next/image";
-import { services, layers, families, servicesIn, serviceUrl, familyUrl, type Service } from "@/lib/services";
+import { services, layers, families, servicesIn, serviceUrl, familyUrl, type Service, artAlt } from "@/lib/services";
 import { MarketPricing } from "@/components/MarketPricing";
 import { MARKETS, say, shownIn, type MarketCode } from "@/lib/markets";
 
@@ -25,7 +25,7 @@ function ServiceCard({ service, market, wide = false }: { service: Service; mark
         {/* Decorative; the heading names the service. */}
         <Image
           src={`/what-we-build/${service.slug}.webp`}
-          alt=""
+          alt={artAlt(service.slug)}
           width={1086}
           height={362}
           sizes={wide ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"}
@@ -79,7 +79,7 @@ export function ServicesPage({ market }: { market: MarketCode }) {
           {/* Decorative: the whole set on one pegboard. Page colour baked into the file. */}
           <Image
             src="/what-we-build/services.webp"
-            alt=""
+            alt={artAlt("services")}
             width={1086}
             height={362}
             sizes="(min-width: 1024px) 40vw, 100vw"

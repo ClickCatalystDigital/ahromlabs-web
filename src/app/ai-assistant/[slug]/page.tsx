@@ -10,6 +10,8 @@ import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { aiAssistantPageGraph } from "@/lib/schema";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { linkTerms } from "@/lib/glossary-links";
+import { relatedLinks } from "@/lib/related";
 
 // Unknown slugs 404. /ai-assistant/questions, /number-check and /vendor-test are their own routes;
 // build-content.mjs keeps a guide from taking those slugs.
@@ -28,7 +30,7 @@ export async function generateMetadata(props: PageProps<"/ai-assistant/[slug]">)
   const g = get((await props.params).slug);
   const description = metaDescription(g.description ?? g.answer);
   return {
-    title: seoTitle(g.title),
+    title: seoTitle(g.metaTitle ?? g.title),
     description,
     alternates: { canonical: `/ai-assistant/${g.slug}` },
     openGraph: {
@@ -66,11 +68,12 @@ export default async function AiGuidePage(props: PageProps<"/ai-assistant/[slug]
       checked={g.checked!}
       updated={g.updated}
       sources={g.sources}
+      related={relatedLinks(g.related, path)}
       headings={[...markdownHeadings(g.body), ...(INDUSTRY_OF_GUIDE[g.slug] ? [`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`] : [])]}
       art={g.image?.src}
       artAlt={g.image?.alt}
     >
-      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
+      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{linkTerms(g.body)}</Markdown>
       {INDUSTRY_OF_GUIDE[g.slug] && (
         <section>
           <GuideH2>

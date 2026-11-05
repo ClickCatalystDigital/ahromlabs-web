@@ -3,6 +3,11 @@ kind: asme
 slug: section-viii
 group: code
 title: "ASME Section VIII: Division 1 vs 2 vs 3"
+related:
+  - /asme/bpvc-sections
+  - /asme/data-reports
+  - /industries/boiler-pressure-vessel-manufacturing
+  - /services/material-traceability
 question: "What is the difference between ASME Section VIII Division 1 and Division 2?"
 answer: >
   Section VIII sets the rules for pressure vessels. Division 1 is design by rule with a larger safety margin and
@@ -12,7 +17,7 @@ answer: >
 description: "ASME Section VIII Division 1, 2 and 3 compared: design margin, analysis, examination, paperwork and stamps, and how to choose for a pressure vessel."
 domain: [asme, pressure-vessels, design]
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-05
 checked: 2026-11-01
 sources:
   - title: "Boiler and Pressure Vessel Certification (certification designators U, UM, U2, U3)"

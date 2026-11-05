@@ -5,10 +5,11 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { services, resolveProof, proofHref, serviceUrl } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { engagements, NOT_LIVE } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 import { metaDescription } from "@/lib/seo";
 import { only } from "@/lib/markets";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 const description = metaDescription("Systems Ahrom Labs has built for LS Technologies, Savistar & Saag, and a boiler and pressure-vessel manufacturer — ERP, CRM, TallyPrime integration, AI document extraction and manufacturing operations.");
 
@@ -35,6 +36,7 @@ const serviceName = (slug: string) => services.find((s) => s.slug === slug)!.nam
 export default function WorkPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/work", "Work: clients and the systems we built for them", description, "work")) }} />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
@@ -53,11 +55,14 @@ export default function WorkPage() {
                 <div className="rail prose-measure">
                   <p className="text-sm font-medium text-foreground-secondary">{e.industry}</p>
                   <h2 className="display mt-2 text-3xl text-foreground sm:text-4xl">{e.client}</h2>
+                  {e.live === false && <p className="mt-2 text-sm font-medium text-foreground-secondary">Status: {NOT_LIVE}.</p>}
                   <p className="mt-6 text-lg leading-relaxed text-foreground">{e.built}</p>
                   {industry && (
                     <p className="mt-3">
                       <Link href={`/industries/${industry.slug}`} className="text-link focus-ring">
-                        {industry.title}
+                        {/* North America gets the US version at this URL (src/proxy.ts), so it reads its title. */}
+                        <span {...only(industry.na ? ["IN"] : undefined)}>{industry.title}</span>
+                        {industry.na && <span {...only(["NA"])}>{industry.na.title}</span>}
                       </Link>
                     </p>
                   )}

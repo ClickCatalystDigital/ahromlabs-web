@@ -2,6 +2,7 @@
 kind: pattern
 slug: compute-blockers-on-read
 title: Compute "what's blocking this" on every read, and observe before you enforce
+metaTitle: "Compute what is blocking work on every read"
 answer: >
   To show why a workflow step is blocked and by what, compute the blocker fresh
   on every read from the step's declared predecessor and live signals — never
@@ -17,7 +18,7 @@ evidence:
   - metric: consistency check
     value: flags a step marked done while its own predecessor isn't
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-05
 ---
 
 ## Context

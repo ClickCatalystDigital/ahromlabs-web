@@ -12,6 +12,8 @@ export type Engagement = {
   client: string;
   // Client asked not to be named: `client` is a description, not a business name.
   anonymous?: boolean;
+  // Built but not yet running at the client: shown as such, and not counted as "in production" anywhere.
+  live?: false;
   industry: string;
   built: string;
   // Service slugs from services.ts — typed so a rename breaks the build.
@@ -105,6 +107,7 @@ export const engagements: Engagement[] = [
     demo: { url: "https://construction-erp.ahromlabs.com/demo", usUrl: "https://construction-erp-us.ahromlabs.com/demo", markets: ["IN", "NA"], label: "Try the live demo", name: "Construction company demo", blurb: "Daily reports from the phone, running bills with GST, stores, site cash, workforce payroll with PF / ESIC, a trading desk, and two free questions to the Datum AI assistant.", usBlurb: "Daily reports from the field, pay applications with retainage, change orders and lien waivers, crews and payroll, a supply desk, and two free questions to the Datum AI assistant.", image: { src: "/demos/demo-construction-contractor.webp", alt: "A roll of waterproofing membrane, chemical buckets and a cement bag, a trowel, blocks and a hard hat: the construction contractor demo" } },
     client: "A construction company",
     anonymous: true,
+    live: false,
     industry: "Construction — a waterproofing and repair contractor that also trades construction chemicals",
     built:
       "One AI-powered operations system for a contractor that executes work on site and trades construction chemicals: daily progress reports, site attendance, BOQ and running-account bills, stores for the godown and every site, site cash, workforce KYC and payroll, receivables and GST, a director dashboard, trading from quote to e-way bill, and Datum AI, an assistant that answers from the live data.",
@@ -123,6 +126,9 @@ export const engagements: Engagement[] = [
   },
 ];
 
+// Said wherever a client that isn't live yet is listed, so no page implies it runs in production.
+export const NOT_LIVE = "built, not yet live at the client";
+
 // For use mid-sentence: "Built for a boiler and pressure-vessel manufacturer".
 export const clientInSentence = (e: Engagement) =>
   e.anonymous ? e.client.charAt(0).toLowerCase() + e.client.slice(1) : e.client;
@@ -131,7 +137,7 @@ export const clientInSentence = (e: Engagement) =>
 // can't claim more than they show: in production for clients (every client above runs in India), a sample demo, or
 // neither yet. A new client or demo changes the label by itself.
 export function serviceStatus(s: Pick<Service, "slug" | "demos">) {
-  const clients = engagements.filter((e) => e.services.includes(s.slug)).length;
+  const clients = engagements.filter((e) => e.live !== false && e.services.includes(s.slug)).length;
   const demo = (s.demos?.length ?? 0) > 0;
   const live = clients > 0 ? `In production at ${clients} client${clients === 1 ? "" : "s"} in India` : "Not yet in production for a client";
   return { clients, demo, label: demo ? `${live}; a sample demo shows it` : live };

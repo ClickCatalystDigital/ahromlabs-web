@@ -3,6 +3,7 @@ kind: manufacturing
 slug: distributor-inventory-control
 group: inventory
 title: "Inventory control for distributors: counts, lots, FIFO, barcodes"
+metaTitle: "Distributor inventory control: counts, lots, FIFO, barcodes"
 question: "What inventory control does a small US distributor need?"
 answer: >
   Four things: cycle counts that check a few bins every day instead of one shutdown count a year; lot or serial
@@ -12,7 +13,7 @@ answer: >
 description: "Inventory control for US distributors: cycle counting, lot and serial traceability, FIFO valuation (IRS Publication 538), barcodes and GS1 numbers."
 domain: [manufacturing, inventory, distribution]
 published: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-05
 checked: 2026-11-03
 sources:
   - title: "Publication 538, Accounting Periods and Methods"

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type Family, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
+import { type Family, servicesIn, serviceUrl, familyUrl, artAlt } from "@/lib/services";
 
 // The pages of one family as illustrated cards: the overview, then each service.
 // Every card is a real link to its own URL, not a client-side switch, so each
@@ -33,7 +33,7 @@ export function FamilyPicker({ family, active }: { family: Family; active: strin
                 {/* Decorative; the label names the page. */}
                 <Image
                   src={c.image}
-                  alt=""
+                  alt={artAlt(c.image)}
                   width={1086}
                   height={362}
                   sizes="(min-width: 1024px) 180px, (min-width: 640px) 30vw, 45vw"

@@ -2,6 +2,7 @@
 kind: erp
 slug: tally-migration
 title: "Moving from Tally to an ERP: what to migrate and how to check it"
+metaTitle: "Moving from Tally to an ERP: what to migrate and check"
 answer: >
   Decide first whether Tally stays as the books or goes. Then move masters, opening balances, outstanding bills,
   stock with its batches, and the history people actually look up, each checked against its source: count the
@@ -10,7 +11,7 @@ answer: >
 description: "How to move from Tally to an ERP in India: keep Tally or replace it, what to migrate, how to check each import, and the audit-trail rule at cutover."
 domain: [erp, tally, migration]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/tally-to-erp-migration.webp

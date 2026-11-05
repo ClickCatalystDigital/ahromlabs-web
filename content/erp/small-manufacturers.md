@@ -2,6 +2,12 @@
 kind: erp
 slug: small-manufacturers
 title: "ERP for small manufacturers in India: the requirements that matter most"
+metaTitle: "ERP for small manufacturers in India: key requirements"
+related:
+  - /erp/readiness
+  - /erp/tally-vs-custom-erp
+  - /industries/boiler-pressure-vessel-manufacturing
+  - /notes/tally-vs-erpnext-vs-custom-erp
 answer: >
   A small Indian manufacturer needs an ERP that works from its existing Excel BOMs, tracks material down to the
   plate or batch it cuts from, sets stock aside for each order, costs jobs from what was actually used, and keeps
@@ -9,7 +15,7 @@ answer: >
 description: "ERP requirements for small manufacturers in India: BOM import, traceability, remnants, job costing, reservations, GST or Tally, e-invoice."
 domain: [erp, manufacturing, requirements]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-small-manufacturers.webp

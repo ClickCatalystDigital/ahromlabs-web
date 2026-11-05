@@ -21,7 +21,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const url = `https://ahromlabs.com/us/industries/${slug}`;
   return {
     ...meta,
-    title: seoTitle(na.title),
+    title: seoTitle(na.metaTitle ?? na.title),
     description,
     alternates: { canonical: `/us/industries/${slug}`, languages: languages(`/industries/${slug}`) },
     openGraph: { ...meta.openGraph, url, title: na.title, description },

@@ -2,6 +2,7 @@
 kind: boq
 slug: material-specifications
 title: "Board standards for an interior BOQ: IS 303, IS 710 and others"
+metaTitle: "Board standards for an interior BOQ: IS 303, IS 710"
 answer: >
   An interior BOQ names the board by its Indian Standard and grade, because "plywood" alone can be
   priced as the cheapest sheet in the market. IS 303 covers general-purpose plywood (MR, and BWR,
@@ -10,7 +11,7 @@ answer: >
 description: The Indian Standards for plywood, block board and particle board, and how to write a joinery BOQ line that can't be substituted.
 domain: [interiors, boq, materials]
 published: 2026-10-23
-updated: 2026-10-24
+updated: 2026-11-05
 checked: 2026-10-23
 image:
   src: /boq/interior-board-types.webp

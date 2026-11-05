@@ -1,5 +1,6 @@
 ---
 title: ERP software for ASME boiler and pressure vessel manufacturers
+metaTitle: ERP for ASME boiler and pressure vessel shops
 audience: Boiler and pressure vessel fabricators in the US and Canada
 answer: >
   Ahrom Labs builds the operations system an ASME boiler and pressure vessel shop

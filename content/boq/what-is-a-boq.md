@@ -2,6 +2,11 @@
 kind: boq
 slug: what-is-a-boq
 title: What is a BOQ? BOQ vs estimate, quotation and BOM
+related:
+  - /boq/how-to-make-an-interior-boq
+  - /erp/interior-design-firms
+  - /industries/interior-design-and-furniture
+  - /systems/bill-of-quantities
 answer: >
   A bill of quantities (BOQ) lists every item of work with its description, unit and quantity,
   measured from the drawings before anyone prices it. Contractors fill in the rates, so three
@@ -10,7 +15,7 @@ answer: >
 description: What a BOQ is in interior work, and how it differs from an estimate, a quotation, a BOM, a rate analysis and a schedule of rates.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-11-03
+updated: 2026-11-05
 checked: 2026-10-23
 image:
   src: /boq/boq-estimate-and-quotation.webp

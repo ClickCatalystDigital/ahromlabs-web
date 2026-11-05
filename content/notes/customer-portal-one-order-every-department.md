@@ -2,6 +2,7 @@
 kind: note
 slug: customer-portal-one-order-every-department
 title: "What a customer sees: one boiler order through every department"
+metaTitle: "Customer portal: one boiler order through every department"
 description: How a manufacturer's customers follow their own order, approve drawings and download documents, from the same records the factory works in.
 answer: >
   At a boiler manufacturer Ahrom Labs built for, each customer gets a login that
@@ -23,7 +24,7 @@ evidence:
   - metric: also running at
     value: LS Technologies — each line of a customer PO with its status and progress, no stock figures, suppliers or costs
 published: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-05
 ---
 
 A customer who has ordered a boiler waits months for it, and in that time they ring the sales engineer to ask where it is. The sales engineer rings Production, Production checks with Stores, and the answer comes back a day later, already out of date. At one boiler and pressure-vessel manufacturer, the operations system Ahrom Labs built now answers that question directly, to the customer, from the same records the factory works in.

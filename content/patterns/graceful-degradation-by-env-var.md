@@ -2,6 +2,7 @@
 kind: pattern
 slug: graceful-degradation-by-env-var
 title: Optional integrations should degrade the specific feature, not the app
+metaTitle: "Optional integrations degrade a feature, not the app"
 answer: >
   Optional integrations shouldn't be a hard requirement at startup — check
   each one's config where it's actually used, and decide what happens per
@@ -18,7 +19,7 @@ evidence:
   - metric: behavior when the AI extraction key is missing
     value: always rejects just the extraction call
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

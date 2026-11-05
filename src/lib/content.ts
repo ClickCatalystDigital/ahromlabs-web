@@ -6,6 +6,10 @@ export type ContentEntry = {
   kind: ContentKind;
   slug: string;
   title: string;
+  // Guides: 3–5 related pages on this site, at least two outside the guide's own section (src/lib/related.ts).
+  related?: string[];
+  // Short <title> for search results (≤ 60 characters, checked at build) when the headline is longer.
+  metaTitle?: string;
   answer: string;
   domain?: string[];
   systems?: string[];

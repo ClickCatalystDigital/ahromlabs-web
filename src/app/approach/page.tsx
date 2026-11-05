@@ -4,9 +4,10 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Approach: map the business, then build the system",
+  title: "Approach: map the business, then build",
   description:
     "How Ahrom Labs maps your business before automating it, and builds the whole workflow once instead of a patch per department.",
   alternates: { canonical: "/approach" },
@@ -60,6 +61,7 @@ const sections = [
 export default function ApproachPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/approach", "Approach: map the business, then build the system", String(metadata.description), "approach")) }} />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">

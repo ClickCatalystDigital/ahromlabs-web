@@ -2,6 +2,7 @@
 kind: pattern
 slug: human-confirmed-extraction
 title: AI drafts, a person confirms — never auto-post extracted data
+metaTitle: "AI drafts, a person confirms: no auto-posting"
 answer: >
   AI-based document extraction is fast but not perfect — even a good system
   leaves some share of documents needing correction. Post nothing
@@ -16,7 +17,7 @@ evidence:
   - metric: bank statement zero-correction rate (hardest document type)
     value: 89%
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

@@ -17,7 +17,7 @@ const lead = `${requirements.length} ERP requirements in ${departments.length} d
 const image = { src: "/erp/erp-requirements-checklist.webp", alt: "A long checklist sheet with tick boxes, the first few ticked, and a pen beside it.", width: 1086, height: 362 };
 
 export const metadata: Metadata = {
-  title: seoTitle(title),
+  title: seoTitle("ERP requirements checklist for Indian businesses"),
   description: "ERP requirements checklist for Indian manufacturers and traders: testable requirements by department, with vendor demo tests and quoted GST and MCA rules.",
   alternates: { canonical: "/erp/requirements" },
   openGraph: { type: "website", url: "https://ahromlabs.com/erp/requirements", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },

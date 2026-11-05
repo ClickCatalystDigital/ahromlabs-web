@@ -2,6 +2,7 @@
 kind: pattern
 slug: fail-closed-preserve-visibility
 title: Fail-closed doesn't have to mean fail-invisible — pick the blocking mechanism deliberately
+metaTitle: "Fail closed without failing invisible"
 answer: >
   A security-critical control needs default-deny, but the naive way to
   enforce "blocked" — disabling the underlying service entirely — can also
@@ -10,7 +11,7 @@ answer: >
   blocking detection, so a blocked resource can still be found and requested.
 domain: [reliability, access-control]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

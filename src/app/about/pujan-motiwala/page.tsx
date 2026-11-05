@@ -15,7 +15,7 @@ import { jsonLd, siteUrl } from "@/lib/schema";
 const path = "/about/pujan-motiwala";
 const title = "Pujan Motiwala, founder of Ahrom Labs";
 const description =
-  "Pujan Motiwala founded Ahrom Labs in Ahmedabad: nine years in data science and process mapping, now building the operations and AI systems Indian manufacturers run on.";
+  "Pujan Motiwala founded Ahrom Labs in Ahmedabad after nine years in data science and process mapping. He builds operations and AI systems for manufacturers.";
 
 export const metadata: Metadata = {
   title,

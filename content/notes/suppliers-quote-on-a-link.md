@@ -2,6 +2,7 @@
 kind: note
 slug: suppliers-quote-on-a-link
 title: Suppliers quote on a link, not a login, and see their PO when it's issued
+metaTitle: "Supplier quotes on a link, not a login"
 description: How a manufacturer's suppliers quote, see the PO and record dispatch through one private link, while conversations stay on WhatsApp and phone.
 answer: >
   At a boiler manufacturer Ahrom Labs built for, each supplier gets one private
@@ -22,7 +23,7 @@ evidence:
   - metric: what Stores sees
     value: the PO line marked On the way, with the LR number and transporter, before the goods arrive
 published: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-05
 ---
 
 Buying for a boiler means hundreds of lines (plates, tubes, valves, fittings), each quoted by two or three suppliers. At one boiler and pressure-vessel manufacturer, that used to mean quotes arriving as WhatsApp photos, PDFs and phone calls, typed into a spreadsheet by the buyer to compare them, and then a round of calls to ask whether the material had left. The operations system Ahrom Labs built changed where the numbers land, not how people talk.

@@ -2,6 +2,11 @@
 kind: erp
 slug: compliance
 title: "Indian compliance requirements for an ERP: audit trail, e-invoice, e-way bill, MSME, TDS"
+metaTitle: "ERP compliance in India: e-invoice, e-way bill, MSME, TDS"
+related:
+  - /ibr/2026-changes
+  - /notes/statutory-rates-across-systems
+  - /services/compliance-accounting
 answer: >
   An ERP used in India has to meet rules the business is bound by: an audit trail that can't be switched off
   for companies keeping books in software (from 1 April 2023), e-invoices above ₹5 crore turnover, reporting to
@@ -10,7 +15,7 @@ answer: >
 description: "The Indian rules an ERP must meet in 2026, by turnover: audit trail, e-invoice (IRN), 30-day IRP limit, e-way bill, MSME 45 days, TDS on goods, DPDP."
 domain: [erp, compliance, gst]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-compliance-audit-trail.webp

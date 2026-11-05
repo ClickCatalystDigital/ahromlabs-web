@@ -26,7 +26,8 @@ export async function generateMetadata(props: PageProps<"/ibr/forms/[form]">): P
   // The summary alone is a short line; the old name and the regulation are what people search with.
   const description = metaDescription(`${f.summary}${f.old ? ` It was ${f.old.form} under IBR 1950.` : ""} Prescribed by regulation ${f.regulation} of the Indian Boiler Regulations, 2026.`);
   return {
-    title: seoTitle(title),
+    // The full title reads past 60 characters for every form: the search result gets the form and its old name.
+    title: seoTitle(title.length <= 60 ? title : f.old ? `IBR ${formName(f)} (formerly ${f.old.form})` : `IBR ${formName(f)}`),
     description,
     alternates: { canonical: `/ibr/forms/${f.slug}` },
     openGraph: { type: "article", url: `https://ahromlabs.com/ibr/forms/${f.slug}`, siteName: "Ahrom Labs", title, description },

@@ -2,6 +2,7 @@
 kind: pattern
 slug: replay-queued-payload-through-existing-handler
 title: Queue the original request, replay it through the same handler on approval
+metaTitle: "Replay queued requests through the same handler"
 answer: >
   Some actions need approval before taking effect, but duplicating business
   logic for "pending" vs. "approved" versions of the same action doubles
@@ -14,7 +15,7 @@ evidence:
   - metric: replay mechanism
     value: queued request payload replayed through the same handler function real-time requests use, not a separate approval-path implementation
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

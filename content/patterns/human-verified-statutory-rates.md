@@ -2,6 +2,7 @@
 kind: pattern
 slug: human-verified-statutory-rates
 title: Keep statutory rates in one human-approved registry that deployments pull from — don't scrape them
+metaTitle: "One human-approved registry for statutory rates"
 answer: >
   GST, TDS, PF, ESI, income-tax and professional-tax rates change a few times
   a year and must be right. Keep them in one central registry where a person
@@ -17,7 +18,7 @@ evidence:
   - metric: automated scraping
     value: none — no reliable official rates API exists
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-05
 ---
 
 ## Context

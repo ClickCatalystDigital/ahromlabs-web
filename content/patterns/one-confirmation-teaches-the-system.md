@@ -2,6 +2,7 @@
 kind: pattern
 slug: one-confirmation-teaches-the-system
 title: Let one deliberate human correction teach the system — but only for narrowly trusted error shapes
+metaTitle: "One human correction teaches the system"
 answer: >
   When imported data carries typos — TINNER for THINNER, PALTE for PLATE —
   suggest a correction only for two trusted shapes, one-character edits and
@@ -17,7 +18,7 @@ evidence:
   - metric: false positive caught before shipping
     value: PALTE ≈ VALVE at the same plain edit distance as PALTE ≈ PLATE
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-05
 ---
 
 ## Context

@@ -12,7 +12,7 @@ answer: >
 description: "Sourcing ASME-stamped vessels and boilers from India: certificate checks, the AI, NB registration, IBR 2026 export inspection and what to ask."
 domain: [asme, sourcing, india]
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-05
 checked: 2026-11-01
 sources:
   - title: "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)"
@@ -51,7 +51,7 @@ India has a large base of fabricators building boilers, pressure vessels and hea
 
 ## Boilers: the IBR side
 
-For a boiler, the Indian Boiler Regulations add a step at home. Regulation 4 of IBR 2026 lets an Indian Inspecting Authority inspect a boiler meant for export, through its stages of construction, against a foreign code such as ASME, and certify it in Form I Part A. That certificate is for India's records; it doesn't replace the ASME stamp or the Authorized Inspector. See [ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form I Part A](/ibr/forms/form-i-part-a).
+For a boiler, the Indian Boiler Regulations add a step at home. Regulation 4 of IBR 2026 lets an Indian Inspecting Authority inspect a boiler meant for export, through its stages of construction, against a foreign code such as ASME, and certify it in Form I Part A. That certificate is for India's records; it doesn't replace the ASME stamp or the Authorized Inspector. See [ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form I Part A](/ibr/forms#form-i-part-a).
 
 ## Managing the order
 

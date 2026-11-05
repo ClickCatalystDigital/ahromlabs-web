@@ -2,6 +2,7 @@
 kind: note
 slug: reels-boxes-and-two-stores
 title: Reels, boxes and two stores — stock you can scan and set aside for each order
+metaTitle: "Reel-level inventory across two stores, scanned"
 description: How LS Technologies tracks every component reel by QR across two stores, and reserves stock for each customer order before it ships.
 answer: >
   For LS Technologies, an electronic components trader, Ahrom Labs built an
@@ -26,7 +27,7 @@ evidence:
   - metric: still to buy
     value: open order lines' shortfall pooled into a procurement order; goods received against it are reserved to waiting orders, earliest dispatch date first
 published: 2026-10-20
-updated: 2026-11-02
+updated: 2026-11-05
 ---
 
 An electronics trader's stock isn't "500 of part X". It's reels, each holding a different quantity of one part, packed in boxes, sitting on shelves in more than one place. LS Technologies used to know roughly what it had. The system Ahrom Labs built for them knows each reel.

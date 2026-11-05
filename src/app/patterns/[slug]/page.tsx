@@ -24,7 +24,7 @@ export async function generateMetadata(props: PageProps<"/patterns/[slug]">): Pr
   const url = `https://ahromlabs.com/patterns/${pattern.slug}`;
 
   return {
-    title: seoTitle(pattern.title),
+    title: seoTitle(pattern.metaTitle ?? pattern.title),
     description,
     alternates: { canonical: `/patterns/${pattern.slug}` },
     openGraph: {

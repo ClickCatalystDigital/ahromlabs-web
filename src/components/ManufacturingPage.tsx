@@ -43,6 +43,12 @@ function mfgHub(group?: MfgGroup): Hub {
           </Link>{" "}
           <Link href="/us#pricing" className="text-link focus-ring">
             See the prices
+          </Link>{" "}
+          <Link href="/services/inventory-and-reservations" className="text-link focus-ring">
+            Inventory and reservations
+          </Link>{" "}
+          <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">
+            ERP for fabricators
           </Link>
         </div>
         {usDemo?.usUrl && (

@@ -2,6 +2,7 @@
 kind: erp
 slug: selection-matrix
 title: "ERP selection matrix for India: Tally, ERPNext, Odoo, SAP Business One or custom"
+metaTitle: "ERP selection matrix: Tally, ERPNext, Odoo, SAP B1, custom"
 answer: >
   TallyPrime, ERPNext, Odoo and SAP Business One all handle Indian e-invoicing in some form; they differ in how
   they're licensed, where they run, and how far they bend to your process. A custom system fits the process
@@ -10,7 +11,7 @@ answer: >
 description: "ERP selection criteria for India: TallyPrime, ERPNext, Odoo, SAP Business One and custom, compared on licence, hosting, e-invoice and fit."
 domain: [erp, selection, comparison]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-selection-matrix.webp

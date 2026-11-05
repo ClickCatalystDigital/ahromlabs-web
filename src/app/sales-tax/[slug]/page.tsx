@@ -8,6 +8,8 @@ import { NEXUS_STATES, stGuide, stGuides } from "@/lib/sales-tax";
 import { stArt } from "@/lib/sales-tax-images";
 import { mfgPageGraph } from "@/lib/schema";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { linkTerms } from "@/lib/glossary-links";
+import { relatedLinks } from "@/lib/related";
 
 // Unknown slugs 404.
 export const dynamicParams = false;
@@ -20,7 +22,7 @@ export async function generateMetadata(props: PageProps<"/sales-tax/[slug]">): P
   const g = stGuide((await props.params).slug)!;
   const description = metaDescription(g.description ?? g.answer);
   return {
-    title: seoTitle(g.title),
+    title: seoTitle(g.metaTitle ?? g.title),
     description,
     alternates: { canonical: `/sales-tax/${g.slug}` },
     openGraph: { type: "article", url: `https://ahromlabs.com/sales-tax/${g.slug}`, siteName: "Ahrom Labs", title: g.title, description, publishedTime: g.published, modifiedTime: g.updated, authors: ["Pujan Motiwala"] },
@@ -36,19 +38,20 @@ export default async function SalesTaxGuidePage(props: PageProps<"/sales-tax/[sl
   return (
     <SalesTaxPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art, sources: g.sources })}
       trail={trail}
       title={g.title}
       lead={g.answer}
       checked={g.checked!}
       updated={g.updated}
       sources={g.sources}
+      related={relatedLinks(g.related, path)}
       headings={markdownHeadings(g.body)}
       art={art?.src}
       artAlt={art?.alt}
     >
       {g.tool === "nexus" && <NexusCheck />}
-      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{g.body}</Markdown>
+      <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{linkTerms(g.body)}</Markdown>
       {g.tool === "nexus" && <ThresholdTable />}
       {g.checks && g.checks.length > 0 && <StQuotes quotes={g.checks} />}
     </SalesTaxPage>

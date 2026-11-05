@@ -7,10 +7,10 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { HoverVideo } from "@/components/HoverVideo";
 import { getContent } from "@/lib/content";
 import { resolveIndustryEdges, industryForClient } from "@/lib/industries";
-import { clientInSentence, engagements } from "@/lib/work";
+import { clientInSentence, engagements, NOT_LIVE } from "@/lib/work";
 import { metaDescription } from "@/lib/seo";
 import { only } from "@/lib/markets";
-import { jsonLd, siteUrl } from "@/lib/schema";
+import { jsonLd, pageDateOf, siteUrl } from "@/lib/schema";
 
 const description = metaDescription("Industries Ahrom Labs has built operational systems for — boiler and pressure-vessel manufacturing, electronics-component trading, interior design and furniture, construction — each backed by a real system in use.");
 
@@ -62,6 +62,7 @@ export default function IndustriesPage() {
     name: "Industries we build ERP software for",
     description,
     isPartOf: { "@id": `${siteUrl}/#website` },
+    ...(pageDateOf("industries") ? { dateModified: pageDateOf("industries") } : {}),
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: cards.length,
@@ -84,14 +85,14 @@ export default function IndustriesPage() {
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">
           <h1 className="display text-5xl text-foreground sm:text-6xl">Industries</h1>
           <p className="prose-measure mt-6 text-lg leading-relaxed text-foreground-secondary sm:text-xl">
-            Every industry below has a real system behind it, built by us and in use. Each page
+            Every industry below has a real system behind it, built by us for a real business. Each page
             covers the problems that business actually has, what we built, and the engineering
             notes with the numbers.
           </p>
         </section>
 
         <Reveal>
-          <section className="section border-t border-line">
+          <section className="border-t border-line pt-10 pb-24 md:pt-12 md:pb-32">
             <div className="rail grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2">
               {industries.map((i) => {
                 const { clients } = resolveIndustryEdges(i);
@@ -125,7 +126,7 @@ export default function IndustriesPage() {
                   <HoverVideo base={`/industries/${e.slug}`} alt={CLIP_ALT[e.slug]} />
                   <h2 className="text-lg font-medium text-foreground">{e.industry}</h2>
                   <p className="mt-2 leading-relaxed text-foreground-secondary">{e.built}</p>
-                  <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}<span {...only(["NA"])}> in India</span></p>
+                  <p className="mt-3 text-sm text-foreground-secondary">Built for {clientInSentence(e)}<span {...only(["NA"])}> in India</span>{e.live === false && `, ${NOT_LIVE.replace("built, ", "")}`}</p>
                 </Link>
               ))}
             </div>

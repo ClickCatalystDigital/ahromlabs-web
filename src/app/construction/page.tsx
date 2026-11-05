@@ -13,7 +13,7 @@ const lead =
 
 export const metadata: Metadata = {
   title: { absolute: "Construction billing guides: pay apps, retainage, RA bills" },
-  description: "Construction billing for contractors: pay applications, retainage, lien waivers, change orders and WIP in the US; RA bills, measurement book, TDS and GST in India.",
+  description: "Construction billing guides: pay applications, retainage, lien waivers, change orders and WIP in the US; RA bills, measurement book, TDS and GST in India.",
   alternates: { canonical: "/construction" },
   openGraph: { type: "website", url: "https://ahromlabs.com/construction", siteName: "Ahrom Labs", title, description: lead },
   twitter: { card: "summary_large_image", title, description: lead },

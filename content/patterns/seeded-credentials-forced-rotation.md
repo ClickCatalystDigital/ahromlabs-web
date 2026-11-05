@@ -2,6 +2,7 @@
 kind: pattern
 slug: seeded-credentials-forced-rotation
 title: Zero-config first run — seed default logins, force rotation through the UI
+metaTitle: "Seed default logins, force rotation on first use"
 answer: >
   A new client instance needs to be usable immediately, not blocked on
   manual account provisioning. Auto-create the schema and seed default
@@ -11,7 +12,7 @@ answer: >
 domain: [reliability, configuration]
 systems: [savistar-ops]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

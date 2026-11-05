@@ -6,7 +6,7 @@
 import { getContent } from "./content";
 import { engagementAnswers } from "./engagement";
 import { services, families, serviceUrl, familyUrl } from "./services";
-import { engagements } from "./work";
+import { engagements, NOT_LIVE } from "./work";
 import { chatPresets } from "./ai-chat-presets";
 import { DICT, money, say, shownIn, type MarketCode } from "./markets";
 import { MATERIALS } from "./asme-items";
@@ -79,7 +79,7 @@ export function buildEntries(): Entry[] {
   }
   for (const e of engagements) {
     // An anonymous client's `client` is a description, never a name, so it is safe to show.
-    out.push({ id: `client/${e.slug}`, title: `${e.client} (${e.industry})`, answer: `${e.client}: ${e.built}`, url: `${site}/work#${e.slug}`, sourceTitle: "Work", core: true });
+    out.push({ id: `client/${e.slug}`, title: `${e.client} (${e.industry})`, answer: `${e.client}: ${e.built}${e.live === false ? ` Status: ${NOT_LIVE}.` : ""}`, url: `${site}/work#${e.slug}`, sourceTitle: "Work", core: true });
   }
   // One entry for "which industries / who have you worked with?": no single page says it in a sentence.
   out.push({

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { engagementAnswers } from "@/lib/engagement";
 import { metaDescription } from "@/lib/seo";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 const description = metaDescription("What a custom ERP costs in India, how long it takes, whether it works with Tally, software licence and data use, hosting, AMC and what happens when requirements change — answered plainly by Ahrom Labs.");
 
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 export default function EngagementPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/engagement", "Custom ERP cost, timelines and AMC terms", description, "engagement")) }} />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">

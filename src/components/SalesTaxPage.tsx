@@ -44,6 +44,9 @@ function stHub(group?: string): Hub {
           </Link>{" "}
           <Link href="/us#pricing" className="text-link focus-ring">
             See the prices
+          </Link>{" "}
+          <Link href="/services/custom-erp-crm" className="text-link focus-ring">
+            Custom ERP beside QuickBooks
           </Link>
         </div>
         {usDemos.length > 0 && (

@@ -2,6 +2,7 @@
 kind: erp
 slug: trading-distribution
 title: "ERP for trading and distribution businesses in India: what to require"
+metaTitle: "ERP for trading and distribution firms in India"
 answer: >
   A trading or distribution business needs stock tracked by the unit it picks and ships, reserved against each
   customer order so nothing is sold twice, moved by scanning across stores, purchase documents read in without
@@ -10,7 +11,7 @@ answer: >
 description: "ERP requirements for trading and distribution in India: unit-level stock, reservations, scanning, AI-read bills, Tally posting, e-invoice, TDS."
 domain: [erp, trading, requirements]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-trading-distribution.webp

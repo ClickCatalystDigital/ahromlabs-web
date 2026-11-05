@@ -48,6 +48,10 @@ function asmeHub(group?: AsmeGroup): Hub {
           </Link>{" "}
           <Link href="/services/material-traceability" className="text-link focus-ring">
             Material traceability
+          </Link>{" "}
+          {/* North America gets the US version (ASME, QuickBooks) at this URL. */}
+          <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">
+            ERP for boiler and pressure vessel shops
           </Link>
         </div>
         {/* Each market's boiler demo: India's (IBR) and North America's (ASME, src/lib/work.ts usUrl). */}

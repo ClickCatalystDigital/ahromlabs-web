@@ -2,6 +2,11 @@
 kind: erp
 slug: interior-design-firms
 title: "ERP for interior design firms and fit-out businesses: what to require"
+metaTitle: "ERP for interior design and fit-out firms: requirements"
+related:
+  - /boq/how-to-make-an-interior-boq
+  - /industries/interior-design-and-furniture
+  - /services/multi-company-finance
 answer: >
   An interior design or fit-out business needs quotations built from a BOQ, projects that show what each is
   waiting on, vendor and freight charges checked against agreed rates, labour logged against each job and
@@ -10,7 +15,7 @@ answer: >
 description: "ERP requirements for interior design and fit-out firms in India: BOQ quotations, project blockers, vendor rate checks, payroll, two companies."
 domain: [erp, interiors, requirements]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-interior-design-firms.webp

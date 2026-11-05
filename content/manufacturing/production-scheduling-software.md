@@ -3,6 +3,7 @@ kind: manufacturing
 slug: production-scheduling-software
 group: planning
 title: "Production scheduling software for job shops: machines, shifts and due dates"
+metaTitle: "Production scheduling software for job shops"
 question: "What does production scheduling software do in a job shop?"
 answer: >
   Production scheduling software places each job's operations on the machines that can run them, in routing
@@ -13,7 +14,7 @@ description: "How production scheduling software works in a job shop: finite cap
 domain: [manufacturing, scheduling]
 tool: schedule
 published: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 checked: 2026-11-02
 sources:
   - title: Machine scheduling (forum discussion)

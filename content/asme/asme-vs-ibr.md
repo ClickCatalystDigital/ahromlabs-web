@@ -3,6 +3,10 @@ kind: asme
 slug: asme-vs-ibr
 group: bridge
 title: "ASME vs IBR 2026: how the two boiler codes fit together"
+related:
+  - /ibr/2026-changes
+  - /ibr/small-industrial-boilers
+  - /industries/boiler-pressure-vessel-manufacturing
 question: "Does IBR accept ASME boilers and materials?"
 answer: >
   In India a boiler is registered under the Indian Boiler Regulations, 2026, whatever code it was designed to.
@@ -12,7 +16,7 @@ answer: >
 description: "ASME BPVC vs IBR 2026 side by side: who approves, inspects and stamps, the forms, and every place IBR 2026 accepts ASME, quoted from the Gazette."
 domain: [asme, ibr, boilers, india]
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-05
 checked: 2026-11-01
 sources:
   - title: Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)
@@ -68,7 +72,7 @@ Quoted from the Gazette below:
 
 - **Parts IBR doesn't cover** may be designed, made, inspected and certified to the ASME Code (among others), with the Inspecting Authority's permission (regulation 3(4)).
 - **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).
-- **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms/form-i-part-a).
+- **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms#form-i-part-a).
 - **Exemption** of a boiler or component built to an international code, ASME included, on conditions (regulation 5).
 - **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30); the [materials list](/asme/items) shows which common ones it names. See [Section II](/asme/section-ii).
 - **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).

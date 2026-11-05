@@ -29,7 +29,9 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      // As soon as the top is 10% into the screen: a share of the section (the old threshold: 0.25) never
+      // arrives for a section taller than the screen, which left /industries' cards hidden above the fold.
+      { rootMargin: "0px 0px -10% 0px" }
     );
 
     observer.observe(node);

@@ -37,6 +37,9 @@ function conHub(group?: string): Hub {
         <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
           <Link href="/#contact" className="subscribe-submit focus-ring inline-block">
             Talk to us about your projects
+          </Link>{" "}
+          <Link href="/services/custom-erp-crm" className="text-link focus-ring">
+            Custom ERP and operations systems
           </Link>
         </div>
         {demo && (

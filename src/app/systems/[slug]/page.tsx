@@ -31,7 +31,7 @@ export async function generateMetadata(props: PageProps<"/systems/[slug]">): Pro
   const url = `https://ahromlabs.com/systems/${term.slug}`;
 
   return {
-    title: seoTitle(term.title),
+    title: seoTitle(term.metaTitle ?? term.title),
     description,
     alternates: { canonical: `/systems/${term.slug}` },
     openGraph: {

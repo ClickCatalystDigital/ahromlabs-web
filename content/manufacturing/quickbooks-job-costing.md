@@ -3,6 +3,7 @@ kind: manufacturing
 slug: quickbooks-job-costing
 group: quickbooks
 title: "Job costing in QuickBooks for manufacturers: estimated vs actual"
+metaTitle: "QuickBooks job costing for manufacturers: estimate vs actual"
 question: "Can QuickBooks do job costing for a manufacturer?"
 answer: >
   QuickBooks Online Plus, Advanced and Intuit Enterprise Suite do job costing through projects: each customer
@@ -14,7 +15,7 @@ description: "Job costing in QuickBooks for machine shops and fabricators: what 
 domain: [manufacturing, quickbooks, job-costing]
 tool: jobcost
 published: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 checked: 2026-11-02
 sources:
   - title: Create projects in QuickBooks Online or Intuit Enterprise Suite

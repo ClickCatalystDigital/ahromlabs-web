@@ -32,13 +32,15 @@ const READ_WITH: Record<string, [string, string][]> = {
   plumbing: [["/boq/measurement-rules", "How interior work is measured (IS 1200)"]],
 };
 const pageTitle = (name: string) => `${name} BOQ items: units, measurement, specs`;
+// The <title>: the same, shortened for a long trade name so it fits a search result (60 characters).
+const metaTitle = (name: string) => (pageTitle(name).length <= 60 ? pageTitle(name) : `${name} BOQ items: units and specs`);
 
 export async function generateMetadata(props: PageProps<"/boq/items/[trade]">): Promise<Metadata> {
   const t = tradeBySlug((await props.params).trade)!;
   const title = pageTitle(t.name);
   const description = `${t.name} in an interior BOQ: ${tradeItems(t.slug).map((i) => i.name.toLowerCase()).join(", ")}. Unit, measurement, IS standard, specs.`.slice(0, 160);
   return {
-    title: seoTitle(title),
+    title: seoTitle(metaTitle(t.name)),
     description,
     alternates: { canonical: `/boq/items/${t.slug}` },
     openGraph: { type: "article", url: `https://ahromlabs.com/boq/items/${t.slug}`, siteName: "Ahrom Labs", title, description },

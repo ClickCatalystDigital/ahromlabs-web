@@ -2,6 +2,7 @@
 kind: pattern
 slug: reference-rate-anomaly-detection
 title: Flag deviations from a known reference rate, don't manually audit every charge
+metaTitle: "Flag charges that deviate from a reference rate"
 answer: >
   Incoming billed amounts can't all be manually audited line by line.
   Compare each charge against a known reference rate and automatically flag
@@ -11,7 +12,7 @@ answer: >
 domain: [reliability, finance]
 systems: [savistar-ops]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

@@ -2,6 +2,7 @@
 kind: pattern
 slug: failures-flagged-not-lost
 title: Classify failures before retrying — transient errors retry, real rejections wait for a person
+metaTitle: "Classify failures before retrying them"
 answer: >
   A voucher push can fail because the target system is briefly unreachable,
   or because the voucher is genuinely invalid — two different problems
@@ -16,7 +17,7 @@ evidence:
   - metric: retry behavior for structural errors
     value: none — held with reason attached until a person resolves it
 published: 2026-08-29
-updated: 2026-10-25
+updated: 2026-11-05
 ---
 
 ## Context

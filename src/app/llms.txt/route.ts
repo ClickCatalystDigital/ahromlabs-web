@@ -9,7 +9,7 @@ import { stGuides } from "@/lib/sales-tax";
 import { conGuides } from "@/lib/construction";
 import { DICT, MARKETS, marketsFor, appliesIn } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
-import { engagements, serviceStatus } from "@/lib/work";
+import { engagements, serviceStatus, NOT_LIVE } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { MCP_URL } from "@/lib/ai-search";
 
@@ -150,7 +150,7 @@ export function GET() {
   ].join("\n");
 
   const clients = engagements
-    .map((e) => `- [${e.client}](https://ahromlabs.com/work#${e.slug}) (${e.industry}): ${e.built}`)
+    .map((e) => `- [${e.client}](https://ahromlabs.com/work#${e.slug}) (${e.industry}${e.live === false ? `; ${NOT_LIVE}` : ""}): ${e.built}`)
     .join("\n");
 
   const working = engagementAnswers

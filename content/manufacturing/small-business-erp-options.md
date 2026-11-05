@@ -3,6 +3,10 @@ kind: manufacturing
 slug: small-business-erp-options
 group: choosing
 title: "Choosing an ERP: NetSuite, Acumatica, Odoo, Fishbowl, Katana"
+related:
+  - /manufacturing/erp-requirements-checklist
+  - /manufacturing/custom-vs-off-the-shelf-erp
+  - /services/custom-erp-crm
 question: "Which ERP should a small US manufacturer or distributor choose?"
 answer: >
   It depends on what runs your business. Fishbowl and Katana add inventory and production beside QuickBooks or
@@ -12,7 +16,7 @@ answer: >
 description: "Small business ERP for US manufacturers and distributors: NetSuite, Acumatica, Odoo, Fishbowl and Katana compared from their own pages, and when custom fits."
 domain: [manufacturing, erp, choosing]
 published: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-05
 checked: 2026-11-03
 sources:
   - title: Distribution management

@@ -3,7 +3,7 @@ import { getContent, termHasPage, type ContentEntry } from "@/lib/content";
 import { ibrForms, formName } from "@/lib/ibr-forms";
 import { boqItems, trades, IS, SPEC, UNIT_LABEL } from "@/lib/boq";
 import { services, families, serviceUrl, familyUrl } from "@/lib/services";
-import { engagements, serviceStatus } from "@/lib/work";
+import { engagements, serviceStatus, NOT_LIVE } from "@/lib/work";
 import { engagementAnswers } from "@/lib/engagement";
 import { erpRequirementNodes } from "@/lib/erp-json";
 import { aiQuestionNodes } from "@/lib/ai-assistant";
@@ -67,7 +67,7 @@ export function GET() {
     productionClients: serviceStatus(s).clients,
     proof: s.proof.map(ref),
     // Graph edges in both directions, so an agent can walk service → client → industry.
-    clients: engagements.filter((e) => e.services.includes(s.slug)).map((e) => e.slug),
+    clients: engagements.filter((e) => e.live !== false && e.services.includes(s.slug)).map((e) => e.slug),
     industries: getContent("industry").filter((i) => i.services?.includes(s.slug)).map((i) => i.slug),
     url: `${siteUrl}${serviceUrl(s)}`,
   }));
@@ -88,6 +88,7 @@ export function GET() {
     title: e.client,
     answer: e.built,
     industry: e.industry,
+    status: e.live === false ? NOT_LIVE : "in production",
     services: e.services,
     highlights: e.highlights,
     proof: e.proof.map(ref),

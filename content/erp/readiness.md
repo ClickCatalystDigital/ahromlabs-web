@@ -2,6 +2,11 @@
 kind: erp
 slug: readiness
 title: "Is your business ready for an ERP? A 10-question self-check"
+related:
+  - /erp/implementation-plan
+  - /erp/tally-vs-custom-erp
+  - /notes/outgrown-tally-signs
+  - /services/custom-erp-crm
 answer: >
   A business is ready for an ERP when someone owns each process, the masters are clean enough to load, the
   owner will decide disputes between departments, and people will record work where it happens. Ten questions,
@@ -9,7 +14,7 @@ answer: >
 description: "ERP readiness checklist for Indian manufacturers and traders: ten questions on processes, masters, owners and data, and what to fix first."
 domain: [erp, readiness, selection]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-readiness.webp

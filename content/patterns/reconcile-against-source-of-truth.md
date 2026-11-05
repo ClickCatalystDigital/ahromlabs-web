@@ -2,6 +2,7 @@
 kind: pattern
 slug: reconcile-against-source-of-truth
 title: After writing to an external system, verify against it — don't trust your own write
+metaTitle: "Verify against the external system after writing"
 answer: >
   After writing to an external system of record, don't trust your own write
   as fact — read back from the authoritative system and update your own
@@ -10,7 +11,7 @@ answer: >
 domain: [reliability, accounting-integration]
 systems: [ls-crm]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

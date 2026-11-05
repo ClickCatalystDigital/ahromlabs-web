@@ -1,5 +1,6 @@
 ---
 title: Software for interior design firms and custom furniture shops
+metaTitle: Software for interior design firms and furniture shops
 audience: Interior design firms, design-build studios and custom furniture shops in the US and Canada
 answer: >
   Ahrom Labs builds the system an interior design studio and its furniture

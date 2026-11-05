@@ -10,7 +10,7 @@ answer: >
 description: "How each interior trade is measured for a BOQ in India: IS 1200 rules for floors, ceilings, paint and woodwork, and the bases for modular work."
 domain: [interiors, boq, measurement]
 published: 2026-10-24
-updated: 2026-10-24
+updated: 2026-11-05
 checked: 2026-10-24
 image:
   src: /boq/l-shaped-kitchen-measured.webp
@@ -20,7 +20,7 @@ image:
 sources:
   - title: "IS 1200 (Part 10), ceiling and linings, public copy of the 1973 edition"
     publisher: Bureau of Indian Standards, via Public.Resource.Org
-    url: https://archive.org/download/gov.in.is.1200.10.1973/is.1200.10.1973.txt
+    url: https://archive.org/details/gov.in.is.1200.10.1973
     date: 1973-01-01
   - title: "IS 1200 (Part 11), paving, floor finishes, dado and skirting, public copy of the 1977 edition"
     publisher: Bureau of Indian Standards, via Public.Resource.Org

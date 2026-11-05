@@ -2,6 +2,7 @@
 kind: note
 slug: accounting-inside-the-manufacturing-erp
 title: GST, TDS and the general ledger inside a manufacturing ERP, with Tally optional
+metaTitle: "GST, TDS and the ledger inside a manufacturing ERP"
 answer: >
   A boiler manufacturer's operations system is also its book of record: chart of
   accounts, journal posting, GSTR-1, GSTR-3B, ITC reconciliation, TDS, reverse
@@ -22,7 +23,7 @@ evidence:
   - metric: books lock
     value: enforced at the single point every journal posting passes through
 published: 2026-09-24
-updated: 2026-11-02
+updated: 2026-11-05
 ---
 
 Most Indian manufacturers run operations in one place and accounts in Tally, and spend the month reconciling the two. At a boiler and pressure-vessel manufacturer Ahrom Labs built for, the original plan was the same: operations in the new system, accounting left to a separate package. That was reversed in August 2026. Here's what the system does now, and the case for building it this way.

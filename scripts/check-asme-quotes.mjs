@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Checks every quote in the ASME guides (content/asme/*.md frontmatter `checks`) word for word against the
 // free official text it cites, like scripts/check-boq-quotes.mjs. The ASME Code itself is copyrighted and never
-// quoted; the documents here are ASME's public certification handbook and the IBR 2026 Gazette (for the
+// quoted; the documents here are ASME's public certification handbook, price guide and FAQ, and the IBR 2026 Gazette (for the
 // India pages). Without the source files the check is skipped with a warning, so any machine can still build.
 import fs from "node:fs";
 import path from "node:path";
@@ -10,6 +10,8 @@ const ASME = process.env.ASME_SOURCES ?? "/Users/pujan/Developer/FOLDER SAMPLE -
 const IBR = process.env.IBR_SOURCES ?? "/Users/pujan/Developer/FOLDER SAMPLE - FOR APP/IBR 2026/sources";
 const DOCS = {
   "asme-handbook": path.join(ASME, "ASME BPV-GUI-03 Informational Handbook 2023-05-12.txt"),
+  "asme-price-guide": path.join(ASME, "ASME - Price Guide for Certifications (BPV and common fees) 2026-11-05.txt"),
+  "asme-faq": path.join(ASME, "ASME - Certification FAQ (scheduling and demonstration excerpts) 2026-11-05.txt"),
   "ibr-2026": path.join(IBR, "IBR 2026 - Gazette No 596 2026-10-01.txt"),
 };
 

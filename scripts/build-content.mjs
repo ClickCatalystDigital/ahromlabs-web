@@ -123,6 +123,18 @@ function loadKind(kind) {
       frontmatter.description = description;
     }
 
+    // Related pages: site paths only. Whether each page exists is checked at prerender (src/lib/related.ts).
+    assertArrayIfPresent(frontmatter.related, "related", relPath);
+    for (const r of frontmatter.related ?? []) {
+      if (typeof r !== "string" || !r.startsWith("/")) throw new Error(`content/${relPath}: related "${r}" must be a path on this site, starting with /`);
+    }
+
+    // Search results show about 60 characters of a title: a longer headline needs a short metaTitle.
+    const shownTitle = frontmatter.metaTitle ?? frontmatter.title;
+    if (shownTitle.length > 60) {
+      throw new Error(`content/${relPath}: title is ${shownTitle.length} chars; add a metaTitle of 60 or fewer`);
+    }
+
     // Guides restate regulations, not our engagements, so every one names its
     // official sources and quotes the text it relies on; scripts/check-ibr-quotes.mjs
     // then checks each quote against the Gazette.
@@ -222,6 +234,7 @@ for (const industry of industries) {
   for (const k of ["title", "audience", "answer", "description", "updated"]) assertString(na[k], k, relPath);
   assertString(na.demo?.url, "demo.url", relPath);
   assertString(na.demo?.label, "demo.label", relPath);
+  if ((na.metaTitle ?? na.title).length > 60) throw new Error(`content/${relPath}: title is ${(na.metaTitle ?? na.title).length} chars; add a metaTitle of 60 or fewer`);
   if (na.description.trim().length > 160) throw new Error(`content/${relPath}: description is ${na.description.trim().length} chars; keep it to 160`);
   for (const [i, step] of (na.flow ?? []).entries()) {
     assertString(step?.step, `flow[${i}].step`, relPath);
@@ -280,6 +293,9 @@ const PAGE_SOURCES = {
   about: ["src/app/about/page.tsx", "src/app/about/opengraph-image.tsx"],
   "about/pujan-motiwala": ["src/app/about/pujan-motiwala"],
   agents: ["src/app/agents"],
+  // North America's versions: their own page file plus what the India page is built from.
+  us: ["src/app/us/page.tsx", "src/components/HomePage.tsx", "src/lib/work.ts", "src/lib/markets.ts"],
+  "us/services": ["src/app/us/services", "src/components/ServicesPage.tsx", "src/lib/services.ts", "src/lib/markets.ts"],
 };
 // Content pages too: the page's own file plus the code that renders it, so a
 // same-day edit, or a change in shared code (a client's name in work.ts, the IBR

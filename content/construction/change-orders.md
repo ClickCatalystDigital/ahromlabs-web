@@ -3,6 +3,11 @@ kind: construction
 slug: change-orders
 group: us
 title: "Change orders in construction: pricing, approval, billing"
+related:
+  - /construction/retainage
+  - /ai-assistant/construction-contractors
+  - /systems/variation-order
+  - /boq/variation-orders
 question: "How should a contractor handle change orders?"
 answer: >
   A change order is a written agreement to change a construction contract's work, price or time. Get the change in
@@ -12,7 +17,7 @@ answer: >
 description: "Change orders for contractors: written orders, pricing and backup, pending vs approved, federal rules under FAR 52.243-4, and billing them on pay apps."
 domain: [construction, change-orders]
 published: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-05
 checked: 2026-11-03
 sources:
   - title: "FAR 52.243-4, Changes"

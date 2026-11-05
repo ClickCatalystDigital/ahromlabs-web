@@ -8,8 +8,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { FreeGuides } from "@/components/FreeGuides";
 import { MarketPricing } from "@/components/MarketPricing";
 import heroImage from "../../public/hero.webp";
-import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
-import { engagements } from "@/lib/work";
+import { services, families, servicesIn, serviceUrl, familyUrl, artAlt } from "@/lib/services";
+import { engagements, NOT_LIVE } from "@/lib/work";
 import { industryForClient } from "@/lib/industries";
 import { DICT, say, shownIn, type MarketCode, demoHref } from "@/lib/markets";
 
@@ -75,7 +75,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                   desktops fetch it first. */}
               <Image
                 src={heroImage}
-                alt=""
+                alt={"A person smiling at a table, tablet and stylus in hand"}
                 fetchPriority="high"
                 className="h-auto w-full max-w-md object-contain lg:max-w-none lg:w-full"
               />
@@ -133,7 +133,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                   {/* Decorative art; the page background colour is baked into the files. */}
                   <Image
                     src={`/what-we-build/${erp.slug}.webp`}
-                    alt=""
+                    alt={artAlt(erp.slug)}
                     width={1086}
                     height={362}
                     sizes="(min-width: 768px) 50vw, 100vw"
@@ -155,7 +155,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                     <Link href={familyUrl(f)} className="focus-ring block">
                       <Image
                         src={f.image}
-                        alt=""
+                        alt={artAlt(f.image)}
                         width={1086}
                         height={362}
                         sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
@@ -180,7 +180,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                 {/* Sixth card: fills the 3-column row and holds the ways on from here. */}
                 <div className="border-t border-line pt-6">
                   <Link href="/services" className="focus-ring block">
-                    <Image src="/what-we-build/services.webp" alt="" width={1086} height={362} sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw" className="mb-5 h-auto w-full" />
+                    <Image src="/what-we-build/services.webp" alt={artAlt("services")} width={1086} height={362} sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw" className="mb-5 h-auto w-full" />
                     <h3 className="text-lg font-medium text-foreground">
                       Not sure where to start?{" "}
                       <span className="mt-1 block text-sm font-normal text-foreground-secondary">Every service, prices and demos</span>
@@ -333,7 +333,7 @@ export function HomePage({ market }: { market: MarketCode }) {
                       className="focus-ring block border-t border-line pt-6"
                     >
                       <h3 className="text-lg font-medium text-foreground">{e.client}</h3>
-                      <p className="mt-1 text-sm text-foreground-secondary">{e.industry}</p>
+                      <p className="mt-1 text-sm text-foreground-secondary">{e.industry}{e.live === false && ` (${NOT_LIVE})`}</p>
                       <p className="mt-3 leading-relaxed text-foreground-secondary">{say(market, e.highlights[0])}</p>
                     </Link>
                   );

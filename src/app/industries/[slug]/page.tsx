@@ -15,6 +15,7 @@ import { headingId, textOf, markdownHeadings } from "@/lib/headings";
 import { Slow, Drawer, Hub } from "@lucasmarkes/hairline/react";
 import { seoTitle, metaDescription } from "@/lib/seo";
 import { languages } from "@/lib/markets";
+import { linkTerms } from "@/lib/glossary-links";
 
 // Each industry's ERP requirements guide (content/erp), linked from its page.
 const ERP_GUIDE: Record<string, string> = {
@@ -43,7 +44,7 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]">): 
   const description = metaDescription(industry.description ?? industry.answer);
 
   return {
-    title: seoTitle(industry.title),
+    title: seoTitle(industry.metaTitle ?? industry.title),
     description,
     alternates: { canonical: `/industries/${industry.slug}`, languages: languages(`/industries/${industry.slug}`) },
     openGraph: {
@@ -216,7 +217,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
             </nav>
           )}
           <div className="prose-measure lg:order-1">
-            <Markdown components={markdownComponents}>{industry.body}</Markdown>
+            <Markdown components={markdownComponents}>{linkTerms(industry.body)}</Markdown>
 
             {market === "IN" && ERP_GUIDE[industry.slug] && (
               <p className="mt-10 leading-relaxed text-foreground-secondary">

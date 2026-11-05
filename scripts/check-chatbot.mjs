@@ -135,19 +135,29 @@ console.log(`\n${CHECKS.length - failed}/${CHECKS.length} found the right passag
 // longer proves what it says.
 const data = JSON.parse(fs.readFileSync(new URL("../src/lib/content-data.generated.json", import.meta.url), "utf-8"));
 const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map((src) => src.url))]);
-// Forums that answer every script with 403 (bot protection) though the page is there: a 403 from these is
-// reported, not counted. Any other status from them still fails.
-const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com"]);
-for (const url of urls) {
-  let status = 0;
+// Sites that turn scripts away (403, a 404, or no answer at all) though the page opens in a browser, each checked
+// by hand on 5 Nov 2026: a refusal from these is reported, not counted. A 200 or a 5xx from them still counts.
+const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.ftc.gov", "www.meity.gov.in"]);
+// curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
+// certificate, which macOS curl fetches and Node does not. One byte is enough.
+function statusOf(url) {
   try {
-    // curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
-    // certificate, which macOS curl fetches and Node does not. One byte is enough.
-    status = Number(execFileSync("curl", ["-s", "-L", "-m", "60", "-r", "0-0", "-o", "/dev/null", "-w", "%{http_code}", url], { encoding: "utf-8" }));
-    if (status === 206) status = 200;
-  } catch {}
-  if (status === 403 && BLOCKS_SCRIPTS.has(new URL(url).hostname)) {
-    console.log(`skip  ${url} (403: this site blocks scripts; check it in a browser)`);
+    const status = Number(execFileSync("curl", ["-s", "-L", "-m", "60", "-r", "0-0", "-o", "/dev/null", "-w", "%{http_code}", url], { encoding: "utf-8" }));
+    return status === 206 ? 200 : status;
+  } catch {
+    return 0;
+  }
+}
+for (const url of urls) {
+  // No answer or a server error is often the network or a busy server, not a dead page: two more tries,
+  // 10 seconds apart, before it counts. A 404 or 410 counts at once.
+  let status = statusOf(url);
+  for (let tries = 0; tries < 2 && (status === 0 || status >= 500); tries++) {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10_000);
+    status = statusOf(url);
+  }
+  if ([0, 403, 404].includes(status) && BLOCKS_SCRIPTS.has(new URL(url).hostname)) {
+    console.log(`skip  ${url} (${status || "no answer"}: this site blocks scripts; check it in a browser)`);
     continue;
   }
   if (status !== 200) failed++;

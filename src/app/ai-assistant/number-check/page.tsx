@@ -14,7 +14,7 @@ const image = { src: "/ai/ai-number-check.webp", alt: "A magnifying glass restin
 
 export const metadata: Metadata = {
   title: seoTitle(title),
-  description: "Free check for AI hallucinated numbers: paste an answer and its source data; every figure not in the data is marked. Understands $ and ₹, million, lakh and crore.",
+  description: "Free check for numbers an AI made up: paste an answer and its source data, and every figure not in the data is marked. Reads $, ₹, million, lakh and crore.",
   alternates: { canonical: "/ai-assistant/number-check" },
   openGraph: { type: "website", url: "https://ahromlabs.com/ai-assistant/number-check", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },

@@ -8,7 +8,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
 import { FamilyPicker } from "@/components/FamilyPicker";
 import { ServiceDetail } from "@/components/ServiceDetail";
-import { families, services, servicesIn, serviceUrl, familyUrl, type Family, type Service } from "@/lib/services";
+import { families, services, servicesIn, serviceUrl, familyUrl, type Family, type Service, artAlt } from "@/lib/services";
 import { servicePageGraph, serviceFaqGraph, jsonLd } from "@/lib/schema";
 import { getContent } from "@/lib/content";
 import { seoTitle, metaDescription } from "@/lib/seo";
@@ -133,7 +133,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
             // object sits mid-canvas, so a 16:9 crop frames it without cutting it.
             <Image
               src={art}
-              alt=""
+              alt={artAlt(art)}
               width={1086}
               height={362}
               sizes="(min-width: 1024px) 40vw, 100vw"
@@ -155,7 +155,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
                   {/* Decorative; the heading beside it names the service. */}
                   <Image
                     src={`/what-we-build/${s.slug}.webp`}
-                    alt=""
+                    alt={artAlt(s.slug)}
                     width={1086}
                     height={362}
                     sizes="(min-width: 768px) 30vw, 100vw"

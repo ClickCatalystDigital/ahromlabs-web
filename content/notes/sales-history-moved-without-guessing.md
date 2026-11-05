@@ -2,6 +2,7 @@
 kind: note
 slug: sales-history-moved-without-guessing
 title: Moving five years of sales history into one CRM, without guessing a single customer
+metaTitle: "Moving five years of sales history into one CRM"
 description: How a manufacturer's old CRM diary, quotation register and Excel order tracker moved into one sales system, with every doubtful row held for review.
 answer: >
   At a boiler manufacturer Ahrom Labs built for, sales history lived in an old
@@ -23,7 +24,7 @@ evidence:
   - metric: rows given made-up content
     value: none — 214 organisations with no note text were skipped, not given a placeholder
 published: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-05
 ---
 
 A sales team's memory is its history: who asked for what, what was quoted, what was promised on the last call. At one boiler and pressure-vessel manufacturer, that history sat in three places: an old CRM's diary, the same CRM's quotation register, and an Excel sheet tracking every order and payment. The operations system Ahrom Labs built needed all of it in one place, so a salesperson opening a customer sees everything that customer has ever asked for.

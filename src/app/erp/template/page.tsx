@@ -17,7 +17,7 @@ const image = { src: "/erp/erp-requirements-template.webp", alt: "A clipboard ho
 
 export const metadata: Metadata = {
   title: seoTitle(title),
-  description: `Free ERP requirements template (Excel) for Indian manufacturers and traders: ${requirements.length} testable requirements, priority and vendor-answer dropdowns, automatic vendor scoring.`,
+  description: `Free ERP requirements template in Excel for Indian manufacturers and traders: ${requirements.length} testable requirements, priorities and automatic vendor scoring.`,
   alternates: { canonical: "/erp/template" },
   openGraph: { type: "website", url: "https://ahromlabs.com/erp/template", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },
   twitter: { card: "summary_large_image", title, description: lead },

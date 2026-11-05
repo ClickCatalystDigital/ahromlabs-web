@@ -2,6 +2,7 @@
 kind: pattern
 slug: local-agent-cloud-db
 title: Route through a local agent, not a direct API, when the target system is local-only
+metaTitle: "Reach local-only systems through a local agent"
 answer: >
   When the system you need to integrate with only exposes a local interface —
   like TallyPrime's local-only XML gateway — route through a small agent
@@ -18,7 +19,7 @@ evidence:
   - metric: master data sync
     value: 24 hours
 published: 2026-08-29
-updated: 2026-10-25
+updated: 2026-11-05
 ---
 
 ## Context

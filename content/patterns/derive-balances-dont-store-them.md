@@ -2,6 +2,7 @@
 kind: pattern
 slug: derive-balances-dont-store-them
 title: Compute a balance from source transactions at read time, don't store a running total
+metaTitle: "Derive balances from transactions, never store them"
 answer: >
   An outstanding balance — partial deliveries, payroll advances — can be
   tracked as a running total updated on each transaction, or computed fresh
@@ -11,7 +12,7 @@ answer: >
 domain: [architecture, finance]
 systems: [savistar-ops]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

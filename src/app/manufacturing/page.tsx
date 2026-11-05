@@ -11,7 +11,7 @@ const lead =
   "Production management software tracks an order from quote to shipped part: the job, its routing through the machines, the material it uses, the hours it takes and what it really cost. For a job shop or a plant of 10 to 200 people, the best system is the one that fits how your work moves, keeps QuickBooks for the books where it already works, and can be tested on one of your real jobs before you buy. These guides explain each piece, with free tools.";
 
 export const metadata: Metadata = {
-  title: { absolute: "Production management software for job shops: a buyer's guide" },
+  title: { absolute: "Production software for job shops: a buyer's guide" },
   description: "How production management software works for job shops and small manufacturers: choosing an ERP, QuickBooks for manufacturing, job costing and scheduling.",
   alternates: { canonical: "/manufacturing" },
   openGraph: { type: "website", url: "https://ahromlabs.com/manufacturing", siteName: "Ahrom Labs", title, description: lead },

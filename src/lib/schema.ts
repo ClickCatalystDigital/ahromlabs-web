@@ -1,6 +1,7 @@
 import type { ContentEntry } from "./content";
 import { services, families, servicesIn, serviceUrl, familyUrl, proofHref, type Service } from "./services";
 import { engagements } from "./work";
+import pageDates from "./page-dates.generated.json";
 import { IBR_2026_URL } from "./ibr-forms";
 import { AI_VERSION, AI_CHECKED } from "./ai-assistant";
 import { MARKETS, countriesFor, coverage } from "./markets";
@@ -203,6 +204,44 @@ export function jsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
+// Breadcrumbs: Home › section › page. A WebPage carries them as `breadcrumb`; an article or a term is not a
+// page, so it goes out in an @graph beside a BreadcrumbList.
+type Crumb = { name: string; path: string };
+function breadcrumbList(crumbs: Crumb[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Home", path: "" }, ...crumbs].map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${siteUrl}${c.path}` })),
+  };
+}
+function withBreadcrumb<T extends Record<string, unknown>>(node: T, crumbs: Crumb[]) {
+  const { "@context": _context, ...rest } = node;
+  return { "@context": "https://schema.org", "@graph": [rest, breadcrumbList(crumbs)] };
+}
+const SECTION: Record<string, Crumb> = {
+  notes: { name: "Engineering notes", path: "/notes" },
+  patterns: { name: "Patterns", path: "/patterns" },
+};
+
+// The pages with no content entry behind them (home, services, work, about…): a WebPage with the date their
+// sources were last committed (src/lib/page-dates.generated.json, written by scripts/build-content.mjs).
+export function pageDateOf(route: string): string | undefined {
+  return (pageDates as Record<string, string>)[route];
+}
+export function webPageGraph(path: string, name: string, description: string, route = path.replace(/^\//, "")) {
+  const url = `${siteUrl}${path}`;
+  const date = pageDateOf(route);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#page`,
+    url,
+    name,
+    description,
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    ...(date ? { dateModified: date } : {}),
+  };
+}
+
 // author/publisher/isPartOf are @id references, not inline copies: orgGraph is on
 // every page via the root layout, so they resolve there. That linkage is the whole
 // reason the site-wide graph carries stable @ids.
@@ -225,7 +264,8 @@ export function articleGraph(entry: ContentEntry, path: string) {
       name: e.client,
       url: `${siteUrl}/work#${e.slug}`,
     }));
-  return {
+  const section = SECTION[path.split("/")[1]];
+  return withBreadcrumb({
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "@id": `${url}#article`,
@@ -242,7 +282,7 @@ export function articleGraph(entry: ContentEntry, path: string) {
     ...coverage(path),
     ...(about.length > 0 ? { about } : {}),
     ...(mentions.length > 0 ? { mentions } : {}),
-  };
+  }, section ? [section, { name: entry.title, path }] : [{ name: entry.title, path }]);
 }
 
 // An industry page is a WebPage *about* the services it describes, for a named
@@ -264,6 +304,7 @@ export function industryGraph(
     url,
     name: entry.title,
     description: entry.answer,
+    breadcrumb: breadcrumbList([{ name: "Industries", path: "/industries" }, { name: entry.title, path: url.slice(siteUrl.length) }]),
     datePublished: entry.published,
     dateModified: entry.updated,
     audience: { "@type": "BusinessAudience", audienceType: entry.audience, geographicArea: area },
@@ -361,7 +402,7 @@ export function termSetGraph(
 // /systems rather than redefining it.
 export function termGraph(entry: ContentEntry) {
   const url = `${siteUrl}/systems/${entry.slug}`;
-  return {
+  return withBreadcrumb({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     "@id": `${url}#term`,
@@ -372,7 +413,7 @@ export function termGraph(entry: ContentEntry) {
     dateModified: entry.updated,
     inDefinedTermSet: { "@id": `${siteUrl}/systems#glossary` },
     publisher: { "@id": `${siteUrl}/#organization` },
-  };
+  }, [{ name: "Systems glossary", path: "/systems" }, { name: entry.title, path: `/systems/${entry.slug}` }]);
 }
 
 // The regulation every /ibr page restates. Declared once, referenced by @id, so
@@ -462,6 +503,7 @@ export function servicePageGraph(
     name,
     description,
     isPartOf: { "@id": `${siteUrl}/#website` },
+    ...(pageDateOf("services") ? { dateModified: pageDateOf("services") } : {}),
     ...(image
       ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteUrl}${image.src}`, caption: image.caption } }
       : {}),
@@ -645,7 +687,11 @@ const asmeCode = {
 // A guide written as an answer to one question carries that pair as its main entity, the form an answer engine quotes.
 const qa = (question: string | undefined, answer: string) =>
   question ? { mainEntity: { "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } } } : {};
-export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string }) {
+// The official texts a guide is checked against, as the article's citations (the same list the page shows).
+type Cited = { title: string; publisher: string; url: string; date: string };
+const citations = (sources: Cited[] | undefined) =>
+  sources?.length ? { citation: sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: { "@type": "Organization", name: s.publisher } })) } : {};
+export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string; sources?: Cited[] }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -667,6 +713,7 @@ export function asmePageGraph(page: { path: string; title: string; description: 
         mainEntityOfPage: url,
         ...coverage(page.path),
         ...qa(page.question, page.description),
+        ...citations(page.sources),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
         }),
@@ -694,7 +741,7 @@ export function asmePageGraph(page: { path: string; title: string; description: 
 
 // The manufacturing hub (/manufacturing): one TechArticle per guide with its breadcrumb; a page with a tool adds
 // a WebApplication. Written for US job shops and small manufacturers.
-export function mfgPageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string }) {
+export function mfgPageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string; sources?: Cited[] }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -714,6 +761,7 @@ export function mfgPageGraph(page: { path: string; title: string; description: s
         mainEntityOfPage: url,
         ...coverage(page.path),
         ...qa(page.question, page.description),
+        ...citations(page.sources),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },
         }),

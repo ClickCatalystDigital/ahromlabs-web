@@ -2,6 +2,11 @@
 kind: erp
 slug: contract-checklist
 title: "ERP contract checklist: code ownership, licence, AMC and your data"
+metaTitle: "ERP contract checklist: code, licence, AMC and data"
+related:
+  - /erp/implementation-plan
+  - /erp/readiness
+  - /engagement
 answer: >
   Before a custom ERP is built, settle in writing who owns the code, what the licence covers and for how long,
   what the annual maintenance contract includes and costs, how changes are priced, how fast support answers, and
@@ -9,7 +14,7 @@ answer: >
 description: "ERP contract checklist for India: code ownership, licence term, AMC scope and cost, change pricing, support time, data export and DPDP terms."
 domain: [erp, contracts, selection]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-contract-ownership.webp

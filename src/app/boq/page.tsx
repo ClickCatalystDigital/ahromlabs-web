@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoTitle } from "@/lib/seo";
 import Link from "next/link";
 import { BoqPage, boqGuides } from "@/components/BoqPage";
 import { GuideH2 } from "@/components/GuidePage";
@@ -11,7 +12,7 @@ const lead = `How to write a bill of quantities for interior work in India that 
 const image = { src: "/boq/interior-boq-measuring.webp", alt: "A tape measure with its blade drawn out across a ruled sheet, a pencil beside it.", width: 1086, height: 362 };
 
 export const metadata: Metadata = {
-  title,
+  title: seoTitle(title),
   description: "Interior BOQ format in Excel, free: 41 ready lines with units, IS standards and measurement rules, guides, and a checker that flags vague lines.",
   alternates: { canonical: "/boq" },
   openGraph: { type: "website", url: "https://ahromlabs.com/boq", siteName: "Ahrom Labs", title, description: lead, images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }] },

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClosingCta } from "@/components/ClosingCta";
 import { FreeGuides } from "@/components/FreeGuides";
 import Image from "next/image";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 // One illustration beside a section's text, same layout as the /services hero.
 // Page colour is baked into the file.
@@ -23,7 +24,7 @@ function Illustration({ name, alt }: { name: string; alt: string }) {
 }
 
 export const metadata: Metadata = {
-  title: "About: industrial systems engineering in Ahmedabad",
+  title: { absolute: "About Ahrom Labs: systems engineering, Ahmedabad" },
   description:
     "Ahrom Labs is an industrial systems engineering practice: we map how a factory or trading house actually runs, then build the systems it runs on.",
   alternates: { canonical: "/about" },
@@ -46,6 +47,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/about", "About: industrial systems engineering in Ahmedabad", String(metadata.description), "about")) }} />
       <SiteNav />
       <main className="flex-1">
         <section className="rail pt-16 pb-8 md:pt-24 md:pb-12">

@@ -2,6 +2,7 @@
 kind: pattern
 slug: separate-machine-from-human-identity
 title: Make a machine credential structurally unable to pass as a human one
+metaTitle: "Keep machine credentials apart from human ones"
 answer: >
   A system with both human users and machine/service clients needs a
   leaked machine credential to be unable to impersonate a human. Machine
@@ -10,7 +11,7 @@ answer: >
   excludes that credential type — structurally impossible, not just policy.
 domain: [access-control, architecture]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

@@ -2,6 +2,7 @@
 kind: note
 slug: statutory-rates-across-systems
 title: Keeping GST, TDS and income-tax rates current across every system
+metaTitle: "Keeping GST, TDS and income-tax rates current"
 answer: >
   Ahrom Labs keeps statutory rates — GST by HSN code, vendor TDS, income-tax and
   professional-tax slabs, PF and ESI — in one registry built to serve every
@@ -22,7 +23,7 @@ evidence:
   - metric: A wrong approved rate
     value: Retracted with a reason; the original and its approval kept
 published: 2026-09-24
-updated: 2026-10-25
+updated: 2026-11-05
 ---
 
 ## Why not fetch tax rates automatically?

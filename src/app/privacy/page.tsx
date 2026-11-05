@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { metaDescription } from "@/lib/seo";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 const description = metaDescription("How Ahrom Labs collects and uses personal data: website forms, business outreach by email and WhatsApp, meetings, analytics and the systems we build for clients.");
 
@@ -26,6 +27,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function PrivacyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/privacy", "Privacy policy", description, "privacy")) }} />
       <SiteNav />
       <main className="flex-1">
         <article className="rail pt-16 pb-24 md:pt-24">

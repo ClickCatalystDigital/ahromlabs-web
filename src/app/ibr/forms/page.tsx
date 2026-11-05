@@ -89,7 +89,7 @@ export default function IbrFormsPage() {
           </thead>
           <tbody className="text-foreground-secondary">
             {renamed.map((f) => (
-              <tr key={f.slug} className="border-b border-line align-top">
+              <tr key={f.slug} id={f.slug} className="scroll-mt-24 border-b border-line align-top">
                 <td className="py-3 pr-6">{oldName(f.old!.form)}</td>
                 <td className="py-3 [overflow-wrap:anywhere]">
                   <span className="font-medium">{link(f)}</span>{" "}

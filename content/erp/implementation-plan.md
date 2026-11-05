@@ -2,6 +2,7 @@
 kind: erp
 slug: implementation-plan
 title: "ERP implementation plan: phases from mapping the business to go-live"
+metaTitle: "ERP implementation plan: phases from mapping to go-live"
 answer: >
   A custom ERP goes live in phases, each in use before the next starts: a short modeling phase that maps the
   business and ends with a dated, fixed-price plan; then the records that must be right; then the daily work of
@@ -10,7 +11,7 @@ answer: >
 description: "ERP implementation plan for Indian manufacturers and traders: phases from modeling to go-live, migration, acceptance tests, timeline and cost."
 domain: [erp, implementation, planning]
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-05
 checked: 2026-10-25
 image:
   src: /erp/erp-implementation-phases.webp

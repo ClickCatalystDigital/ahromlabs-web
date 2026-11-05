@@ -5,6 +5,8 @@ import { markdownHeadings } from "@/lib/headings";
 import { getContent } from "@/lib/content";
 import { ibrPageGraph } from "@/lib/schema";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { linkTerms } from "@/lib/glossary-links";
+import { relatedLinks } from "@/lib/related";
 
 // Unknown slugs 404 rather than render on demand (see notes/[slug]). /ibr/forms
 // is its own route; build-content.mjs keeps a guide from taking that slug.
@@ -20,7 +22,7 @@ export async function generateMetadata(props: PageProps<"/ibr/[slug]">): Promise
   const g = get((await props.params).slug);
   const description = metaDescription(g.description ?? g.answer);
   return {
-    title: seoTitle(g.title),
+    title: seoTitle(g.metaTitle ?? g.title),
     description,
     alternates: { canonical: `/ibr/${g.slug}` },
     openGraph: {
@@ -59,10 +61,11 @@ export default async function IbrGuidePage(props: PageProps<"/ibr/[slug]">) {
       checked={g.checked!}
       updated={g.updated}
       sources={g.sources}
+      related={relatedLinks(g.related, path)}
       headings={markdownHeadings(g.body)}
       image={g.image && { src: g.image.src, alt: g.image.alt, width: g.image.width!, height: g.image.height!, caption: g.image.caption! }}
     >
-      <Markdown components={ibrMarkdown}>{g.body}</Markdown>
+      <Markdown components={ibrMarkdown}>{linkTerms(g.body)}</Markdown>
       <IbrQuotes quotes={g.checks!} />
     </IbrPage>
   );

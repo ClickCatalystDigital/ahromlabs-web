@@ -2,6 +2,7 @@
 kind: pattern
 slug: auto-match-only-when-mutually-unique
 title: Auto-apply a match only when it's mutually unique — everything else goes to a person
+metaTitle: "Auto-match only when the match is mutually unique"
 answer: >
   When matching two lists — bank statement lines to ledger entries — apply a
   match automatically only if exactly one candidate exists on each side within
@@ -17,7 +18,7 @@ evidence:
   - metric: self-check assertions
     value: 8, including "ambiguous candidates stay low confidence"
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-05
 ---
 
 ## Context

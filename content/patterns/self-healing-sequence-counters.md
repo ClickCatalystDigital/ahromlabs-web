@@ -2,6 +2,7 @@
 kind: pattern
 slug: self-healing-sequence-counters
 title: Re-derive a sequence counter from the data itself before trusting it
+metaTitle: "Re-derive sequence counters from the data"
 answer: >
   A sequential ID scheme backed by a mutable counter table can desync from
   manual edits or partial writes. Before incrementing, re-derive the
@@ -14,7 +15,7 @@ evidence:
   - metric: resync check before each allocation
     value: max(stored counter, highest numeric suffix already in the table)
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

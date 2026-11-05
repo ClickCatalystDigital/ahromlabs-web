@@ -3,6 +3,7 @@ kind: manufacturing
 slug: quickbooks-online-inventory
 group: quickbooks
 title: "QuickBooks Online inventory: what it tracks and where manufacturers outgrow it"
+metaTitle: "QuickBooks Online inventory: limits for manufacturers"
 question: "Is QuickBooks Online inventory management enough for a manufacturer?"
 answer: >
   QuickBooks Online Plus and Advanced track how many of each item you have, what it's worth (FIFO or moving
@@ -13,7 +14,7 @@ answer: >
 description: "QuickBooks Online inventory for manufacturers: plans, FIFO or average cost, reorder points, and the gaps: WIP, job reservations, locations, lots and BOMs."
 domain: [manufacturing, quickbooks, inventory]
 published: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 checked: 2026-11-02
 sources:
   - title: Set up and track your inventory in QuickBooks Online

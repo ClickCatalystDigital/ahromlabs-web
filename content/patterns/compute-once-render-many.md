@@ -2,6 +2,7 @@
 kind: pattern
 slug: compute-once-render-many
 title: One computed result, several renderers — never recalculate a report per format
+metaTitle: "Compute a report once, render it many ways"
 answer: >
   A report shown on screen, returned as JSON and exported as PDF should come
   from one computation, with each format only rendering its result. Register
@@ -15,7 +16,7 @@ evidence:
   - metric: calculations per report
     value: 1, shared by the JSON route, the screen and the PDF
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-11-05
 ---
 
 ## Context

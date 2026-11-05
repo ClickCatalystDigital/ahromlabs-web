@@ -3,6 +3,11 @@ kind: construction
 slug: ra-bills
 group: india
 title: "RA bills: how a running account bill works"
+related:
+  - /construction/measurement-book
+  - /ai-assistant/construction-contractors
+  - /systems/bill-of-quantities
+  - /services/custom-erp-crm
 question: "What is an RA bill in construction, and what is deducted from it?"
 answer: >
   A running account (RA) bill is a contractor's interim bill for work done and measured so far, paid while the work
@@ -12,7 +17,7 @@ answer: >
 description: "Running account (RA) bills in Indian construction: drawn from the measurement book, security deposit, TDS, advances, final bill."
 domain: [construction, billing, india]
 published: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-05
 checked: 2026-11-03
 sources:
   - title: CPWD Works Manual 2022

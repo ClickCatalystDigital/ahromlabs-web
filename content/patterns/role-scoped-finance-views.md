@@ -2,6 +2,7 @@
 kind: pattern
 slug: role-scoped-finance-views
 title: Scope financial visibility by role at the query layer, not just the UI
+metaTitle: "Scope finance visibility by role in the query"
 answer: >
   Don't rely on hiding UI elements to protect financial data from the wrong
   role — enforce the boundary where the data is fetched. Staff cash
@@ -16,7 +17,7 @@ evidence:
   - metric: bank visibility for staff
     value: none — every bank API route rejects staff requests
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context

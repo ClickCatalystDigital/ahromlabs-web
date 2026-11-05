@@ -767,3 +767,31 @@ export const servicesIn = (f: Pick<Family, "slug">) => services.filter((s) => s.
     if (servicesIn(f).length === 0) throw new Error(`services.ts: family "${f.slug}" has no services`);
   }
 }
+
+// What each illustration in public/what-we-build shows: its alt text wherever it appears (the object stands for
+// the service; the heading beside it says which).
+const ART_ALT: Record<string, string> = {
+  "bom-from-excel": "A rolled drawing of a bill-of-materials tree, held flat by a stamp",
+  "buying-and-stores": "A wooden supply crate with a shipping tag",
+  "compliance-accounting": "A rubber stamp beside a freshly stamped document",
+  "custom-ai-assistant": "A desk lamp casting a pool of light",
+  "custom-erp-crm": "A row of meshing gears turning on one frame",
+  "customer-portal": "A round porthole window with bolts around its rim",
+  "daily-wage-payroll": "A punch clock with a time card",
+  "document-extraction": "A magnifying glass over an invoice marked with a tick",
+  "inventory-and-reservations": "A labelled reel of electronic components",
+  "making-and-delivering": "A bench vise holding a steel bar",
+  "material-traceability": "A steel plate with a corner cut out and its labelled offcut beside it",
+  "money-and-people": "A bound ledger with a fountain pen",
+  "multi-company-finance": "A ring of different keys",
+  "operational-intelligence": "A pressure gauge with its needle mid-dial",
+  "rag-knowledge-graphs": "An open card-index drawer full of filed cards",
+  "receivables-from-tally": "A balance scale",
+  "sales-crm": "An open notebook on a wooden stand with a ribbon marker",
+  "seeing-and-asking": "A brass telescope on a stand",
+  "selling-and-customers": "A service bell on an order slip",
+  services: "A pegboard holding a bell, keys, a stamp, a gauge and a reel",
+  "supplier-portal": "An envelope tied with string and sealed with wax",
+  "tally-integration": "Two pipes joined by a bolted flange",
+};
+export const artAlt = (src: string) => ART_ALT[src.split("/").pop()!.replace(/\.webp$/, "")] ?? "";

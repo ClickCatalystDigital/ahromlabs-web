@@ -2,6 +2,7 @@
 kind: note
 slug: tally-vs-erpnext-vs-custom-erp
 title: "Tally, ERPNext, Odoo or a custom ERP: how a manufacturer should choose"
+metaTitle: "Tally vs ERPNext vs Odoo vs custom ERP: how to choose"
 answer: >
   Stay on TallyPrime if the need is accounting with simple stock. Choose ERPNext
   or Odoo when your processes match what they ship. Build custom when the
@@ -20,7 +21,7 @@ evidence:
   - metric: A boiler manufacturer's accounting decision
     value: ERPNext integration planned → own ledger built, Tally kept as optional sync
 published: 2026-09-24
-updated: 2026-10-25
+updated: 2026-11-05
 ---
 
 Ahrom Labs builds custom systems, so this isn't a neutral comparison — which is exactly why it starts with when you shouldn't hire us. The choice is rarely "which software is best"; it's which one matches how much of your business is standard.

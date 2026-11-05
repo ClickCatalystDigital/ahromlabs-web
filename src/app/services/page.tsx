@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ServicesPage } from "@/components/ServicesPage";
 import { metaDescription } from "@/lib/seo";
 import { languages } from "@/lib/markets";
+import { jsonLd, webPageGraph } from "@/lib/schema";
 
 const description = metaDescription("Custom ERP and CRM, TallyPrime integration, multi-company finance, AI document extraction and document search for Indian manufacturers and traders.");
 
@@ -25,5 +26,10 @@ export const metadata: Metadata = {
 
 // India's /services. North America's is src/app/na/services/page.tsx, served here by src/proxy.ts.
 export default function Services() {
-  return <ServicesPage market="IN" />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageGraph("/services", "Services: custom ERP, CRM, analytics and AI", description, "services")) }} />
+      <ServicesPage market="IN" />
+    </>
+  );
 }

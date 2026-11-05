@@ -10,6 +10,7 @@ import { articleGraph, jsonLd } from "@/lib/schema";
 import { services, serviceUrl } from "@/lib/services";
 import { engagements, clientInSentence } from "@/lib/work";
 import { seoTitle, metaDescription } from "@/lib/seo";
+import { linkTerms } from "@/lib/glossary-links";
 
 // Any slug outside generateStaticParams 404s. Left at the default (true), an
 // unknown slug rendered on demand, hit `find(...)!` on undefined and returned a
@@ -27,7 +28,7 @@ export async function generateMetadata(props: PageProps<"/notes/[slug]">): Promi
   const url = `https://ahromlabs.com/notes/${note.slug}`;
 
   return {
-    title: seoTitle(note.title),
+    title: seoTitle(note.metaTitle ?? note.title),
     description,
     alternates: { canonical: `/notes/${note.slug}` },
     openGraph: {
@@ -101,7 +102,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
 
         <section className="section border-t border-line">
           <div className="rail prose-measure">
-            <Markdown components={markdownComponents}>{note.body}</Markdown>
+            <Markdown components={markdownComponents}>{linkTerms(note.body)}</Markdown>
 
             {note.evidence && note.evidence.length > 0 && (
               <dl className="mt-12 grid grid-cols-1 gap-x-12 gap-y-6 border-t border-line pt-8 sm:grid-cols-2">

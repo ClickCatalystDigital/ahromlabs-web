@@ -109,6 +109,7 @@ export function GuidePage(props: {
   art?: string; // a /what-we-build-style illustration beside the title (page colour baked in)
   artAlt?: string; // describe the art for image search (ASME hub); omitted, it stays decorative
   sources?: GuideSource[];
+  related?: { href: string; title: string }[]; // relatedLinks() from src/lib/related.ts
   children: ReactNode;
 }) {
   const { hub } = props;
@@ -200,6 +201,19 @@ export function GuidePage(props: {
 
             <div className="prose-measure lg:order-1">
               {props.children}
+
+              {props.related && props.related.length > 0 && (
+                <nav aria-label="Related" className="mt-14 border-t border-line pt-8">
+                  <h2 className="text-sm font-medium text-foreground-secondary">Related</h2>
+                  <ul className="mt-3 space-y-2">
+                    {props.related.map((l) => (
+                      <li key={l.href}>
+                        <Link href={l.href} className="text-link focus-ring">{l.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
 
               <div className="mt-14 border-t border-line pt-8">{hub.cta}</div>
 

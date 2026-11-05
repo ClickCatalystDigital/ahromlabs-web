@@ -2,6 +2,7 @@
 kind: pattern
 slug: unconfirmed-inferences-stay-read-only
 title: Mark inferred rules unconfirmed, and keep them read-only until a person confirms them
+metaTitle: "Inferred rules stay read-only until confirmed"
 answer: >
   A system can infer relationships from existing data — implicit orderings
   baked into config — that look plausible but were never confirmed by a
@@ -10,7 +11,7 @@ answer: >
   actually confirms them, rather than letting the inference stand in.
 domain: [reliability, data-modeling]
 published: 2026-08-29
-updated: 2026-08-29
+updated: 2026-11-05
 ---
 
 ## Context
