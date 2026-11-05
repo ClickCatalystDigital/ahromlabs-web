@@ -36,6 +36,31 @@ export default function ConstructionHub() {
       art={art?.src}
       artAlt={art?.alt}
     >
+      <section {...only(["NA"])}>
+        <GuideH2>How does a contractor get paid on a US job?</GuideH2>
+        <p className="mt-4 leading-relaxed text-foreground-secondary">
+          By a monthly <Link href="/construction/pay-applications" className="text-link focus-ring">pay application</Link>{" "}
+          against the schedule of values, less{" "}
+          <Link href="/construction/retainage" className="text-link focus-ring">retainage</Link> (5% or 10%, capped by
+          some states), with <Link href="/construction/lien-waivers" className="text-link focus-ring">lien waivers</Link>{" "}
+          exchanged for each payment and <Link href="/construction/change-orders" className="text-link focus-ring">change
+          orders</Link> billed only once approved. The{" "}
+          <Link href="/construction/wip-schedule" className="text-link focus-ring">WIP schedule</Link> then shows, job by
+          job, whether billing is ahead of the work or behind it.
+        </p>
+      </section>
+      <section {...only(["IN"])}>
+        <GuideH2>How does a contractor get paid in India?</GuideH2>
+        <p className="mt-4 leading-relaxed text-foreground-secondary">
+          By <Link href="/construction/ra-bills" className="text-link focus-ring">running account bills</Link> drawn
+          from the <Link href="/construction/measurement-book" className="text-link focus-ring">measurement book</Link>,
+          less security deposit, <Link href="/construction/tds-on-contractor-payments" className="text-link focus-ring">TDS</Link>{" "}
+          and any advance being recovered, with{" "}
+          <Link href="/construction/gst-on-works-contracts" className="text-link focus-ring">GST</Link> on top, and a
+          final bill that closes the contract.
+        </p>
+      </section>
+
       {CON_GROUPS.map((group) => {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (
@@ -54,12 +79,22 @@ export default function ConstructionHub() {
         );
       })}
 
-      <GuideH2>See it in a working system</GuideH2>
+      <GuideH2>What software do contractors use for billing and job cost?</GuideH2>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
-        The <DemoLink href={demo}>construction demo</DemoLink> is a sample contractor&apos;s system with daily reports
-        from site, bills, stores, site cash and payroll, with a login per role. Its assistant,{" "}
-        <Link href="/ai-assistant/construction-contractors" className="text-link focus-ring">Datum AI</Link>, answers
-        questions from the project records and shows where each answer came from.
+        Usually the books (<span {...only(["IN"])}>Tally</span><span {...only(["NA"])}>QuickBooks</span>) plus
+        spreadsheets for everything that happens on site. We build the{" "}
+        <Link href="/industries/construction-company" className="text-link focus-ring">operations system for construction
+        contractors</Link> that starts on site, with daily reports, measurements, bills, stores, site cash and each site&apos;s
+        cost, and hands the books what they need, as a{" "}
+        <Link href="/services/custom-erp-crm" className="text-link focus-ring">custom ERP</Link>. It was built for a
+        waterproofing and repair contractor, and is built, not yet live at the client.
+      </p>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        The <DemoLink href={demo}>construction demo</DemoLink> runs it on a sample contractor with a login per role:{" "}
+        <span {...only(["IN"])}>RA bills with GST, measurements, stores, site cash and payroll with PF and ESIC</span>
+        <span {...only(["NA"])}>pay applications with retainage, change orders, lien waivers and crew pay</span>. Its
+        assistant, <Link href="/ai-assistant/construction-contractors" className="text-link focus-ring">Datum AI</Link>,
+        answers questions from the project records with the same figures as the screens.
       </p>
     </ConstructionPage>
   );

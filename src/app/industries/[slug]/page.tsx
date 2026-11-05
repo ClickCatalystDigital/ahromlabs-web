@@ -8,6 +8,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges, industryFor } from "@/lib/industries";
 import { serviceUrl } from "@/lib/services";
+import { NOT_LIVE } from "@/lib/work";
 import { industryGraph, jsonLd } from "@/lib/schema";
 import { FlowFigure } from "@/components/FlowFigure";
 import { OpenOnWide } from "@/components/OpenOnWide";
@@ -284,6 +285,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                           <Link href={`/work#${c.slug}`} className="text-link focus-ring">
                             {c.client}
                           </Link>
+                          {c.live === false && <span className="text-sm text-foreground-secondary">, {NOT_LIVE}</span>}
                         </li>
                       ))}
                     </ul>

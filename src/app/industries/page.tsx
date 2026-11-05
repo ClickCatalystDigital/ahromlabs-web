@@ -115,6 +115,7 @@ export default function IndustriesPage() {
                     {clients.length > 0 && (
                       <p className="mt-3 text-sm text-foreground-secondary">
                         Built for {clients.map(clientInSentence).join(", ")}<span {...only(["NA"])}> in India</span>
+                        {clients.some((c) => c.live === false) && `, ${NOT_LIVE.replace("built, ", "")}`}
                       </p>
                     )}
                   </Link>

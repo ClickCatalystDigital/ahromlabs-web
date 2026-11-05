@@ -2111,6 +2111,179 @@
   },
   {
     "kind": "industry",
+    "slug": "construction-company",
+    "title": "ERP software for construction contractors in India",
+    "audience": "Civil, waterproofing and repair contractors in India",
+    "answer": "Ahrom Labs builds the operations system a construction contractor runs on: daily site reports from the phone, attendance, the contract BOQ, measurements and running-account bills with GST, stores for the godown and every site, site cash, workforce KYC and payroll with PF and ESIC, receivables, and each site's margin against its estimate, with Datum AI answering from the same records. Built for a waterproofing and repair contractor; not yet live there.",
+    "description": "Construction ERP for Indian contractors: daily site reports, BOQ and RA bills with GST, stores per site, site cash, PF/ESIC payroll and Datum AI.",
+    "domain": [
+      "construction",
+      "billing",
+      "site-operations"
+    ],
+    "clients": [
+      "construction-company"
+    ],
+    "services": [
+      "custom-erp-crm",
+      "operational-intelligence",
+      "custom-ai-assistant",
+      "daily-wage-payroll",
+      "compliance-accounting",
+      "tally-integration"
+    ],
+    "notes": [
+      "assistant-that-answers-from-your-ledger",
+      "statutory-rates-across-systems",
+      "tally-voucher-posting"
+    ],
+    "patterns": [
+      "derive-balances-dont-store-them",
+      "role-scoped-finance-views",
+      "graceful-degradation-by-env-var"
+    ],
+    "flow": [
+      {
+        "step": "Enquiry and quotation",
+        "detail": "Client, site visit and a quotation built from the rate library, with a GST PDF."
+      },
+      {
+        "step": "Site BOQ",
+        "detail": "The accepted quotation becomes the site's contract BOQ, with a material norm per unit."
+      },
+      {
+        "step": "Daily report",
+        "detail": "The site engineer marks attendance, then reports work done against BOQ lines, material used from site stock, machine hours and photos."
+      },
+      {
+        "step": "PM approval",
+        "detail": "Only approved reports count toward the site's progress."
+      },
+      {
+        "step": "Measurement",
+        "detail": "Quantities measured against the BOQ, or filled from approved work."
+      },
+      {
+        "step": "RA bill",
+        "detail": "Previous, this bill and up-to-date quantities per line, CGST and SGST or IGST, amount in words, as a PDF."
+      },
+      {
+        "step": "Certified and paid",
+        "detail": "Draft, submitted, certified and paid; paid lands in the cash book."
+      },
+      {
+        "step": "Receivables and Tally",
+        "detail": "Ageing with weekly follow-ups, the month's GST checklist, and a Tally import file with the site as cost centre."
+      }
+    ],
+    "demo": {
+      "url": "https://construction-erp.ahromlabs.com/demo",
+      "label": "Try the live demo"
+    },
+    "video": {
+      "id": "HhpkIdZf1X4",
+      "name": "Construction Contractor ERP: a 90-Second Tour (SiteBook live demo, sample company)",
+      "description": "A tour of SiteBook with a made-up waterproofing and repair contractor: the contract BOQ with work reported done, daily site reports, site cash, workforce attendance, stores across godown and sites, material trading and one combined finance book.",
+      "duration": "PT1M23S",
+      "uploaded": "2026-11-04"
+    },
+    "evidence": [
+      {
+        "metric": "Sample sites in the demo",
+        "value": "4, from basement waterproofing to a pool epoxy lining, one losing money"
+      },
+      {
+        "metric": "RA bill",
+        "value": "Previous, this bill and up to date per BOQ line, GST split, amount in words, PDF"
+      },
+      {
+        "metric": "Daily stock sheet",
+        "value": "Opening, receipt, dispatch and closing per material, per location"
+      },
+      {
+        "metric": "Datum AI",
+        "value": "Answers from the live records with the same figures as the screens"
+      }
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "body": "## Can I try it before talking to anyone?\n\nYes. A live demo runs at [construction-erp.ahromlabs.com](https://construction-erp.ahromlabs.com/demo) with a made-up contractor, Northstone Infra of Ahmedabad, which does waterproofing and repair work and trades construction chemicals. It has four sites with about two and a half months of history: a basement waterproofing job at Mehta Delta Towers, a hotel terrace, a podium slab repair with column jacketing, and a club's pool epoxy lining, one of them losing money. Leave your name and email, pick a login (director, project manager, site engineer, storekeeper or accountant) and use the real screens; each login sees what that role works with. The data resets every night, so nothing you do reaches anyone.\n\n## What does a contractor need that Tally or a spreadsheet doesn't give?\n\nWork measured against the BOQ, cost per site and bills built from the measurements. Tally keeps the books well, but it doesn't know which BOQ line was done today, what material went into which site, or whether a site is spending more than its estimate. A contractor's records start on site, so the system starts there: daily reports, attendance and material used, which then feed the RA bills, the site's cost and the accounts.\n\n## Can site engineers report from the phone?\n\nYes: one daily report per site per day, built for a phone. The engineer marks attendance first (present, half day or absent, one tap per worker), then fills the report: quantity done against each BOQ line, labour by trade (filled from attendance), material used from the site's own stock, weather, issues and up to six photos. The project manager approves it or sends it back with a note, and only approved work counts toward the site's progress.\n\n## How are RA bills made?\n\nFrom measurements against the contract BOQ, never typed totals. A site's BOQ is copied from the client's accepted quotation; once work is reported against a line, only its quantity can change, so past bills keep their meaning. Measurements are recorded against the BOQ or filled from approved work, and the next [RA bill](/construction/ra-bills) takes everything not yet billed: previous, this bill and up-to-date quantities and amounts per line, CGST and SGST or IGST by place of supply, and the amount in words, as a PDF. Bills move from draft to submitted, certified and paid, and paid goes into the cash book. Quantities measured beyond the BOQ are flagged for the client's approval. See [the measurement book](/construction/measurement-book) for the record behind the bill.\n\n## Is each site making money?\n\nThe director dashboard shows it per site: contract value, value of approved work, billed, cost to date and margin. Cost to date is material used on site, labour from attendance and wages, site cash spent and machine days. Against the value of approved work it gives the margin so far; scaled to the whole contract, it projects where the site will finish against its estimate. Sites are marked on track, over budget or losing money, next to what needs attention today: reports waiting for approval, sites low on cash, materials below minimum.\n\n## How is material controlled across the godown and sites?\n\nMaterial arrives into the godown from suppliers and is transferred to sites; each site holds its own stock, and material used is taken from it on the daily report. Nothing can be sent or used that isn't there. The daily stock report has the columns of a stores register kept in Excel: opening, receipt, dispatch and closing per material, for one location or all, as CSV or print. Material used is also compared with the BOQ norm, so over-consumption on a site shows up the same week.\n\n## How is site cash (kharchi) accounted for?\n\nEach site's in-charge holds a cash float and records spends from the phone with a photo of the receipt and, for a GST bill, the shop's GSTIN; anything entered three days late is flagged, and a site can't spend more cash than it holds. Every Thursday the site submits the week's spends as one claim; accounts approve or return it, approved claims go out in a bank upload file, and paying a claim tops the site's cash back up and lands in the finance book.\n\n## How are workers on record and paid?\n\nEach worker's KYC is captured on a phone: Aadhaar (only the last four digits are kept), PAN, bank, UAN and photos of the documents, and the same phone or Aadhaar can't be added twice. The monthly wage register works out days from attendance, PF and ESIC for workers on the company's rolls, TDS for subcontractors past the limits, advances and totals per gang, and each worker is paid once a month. Gate passes need complete KYC, record where the worker stays and print as an ID card. See [daily-wage payroll](/services/daily-wage-payroll).\n\n## Does it work with Tally, GST and TDS?\n\nTally stays the statutory book; the system keeps project cost. Invoices, RA bills, supplier receipts and repaid site cash download as a Tally import file, with the site as the cost centre. The month's GST checklist shows output tax and the GSTR-1 summary by customer and HSN from the system's own bills, and what's missing (HSN, GSTIN, site bills without the shop's GSTIN). The TDS register lists deductions from subcontractor wages with deposit and return dates. See [GST on works contracts](/construction/gst-on-works-contracts) and [TDS on payments to contractors](/construction/tds-on-contractor-payments).\n\n## What does Datum AI answer?\n\nDatum AI sits in the corner of every screen and answers in plain words, in English or Hinglish, with the same figures the screens show: which sites are over budget, who hasn't sent today's report, how much PU membrane is in the godown, who owes us money past 60 days, whose KYC is pending, which machines are idle. The model only picks which look-up to run; the numbers come from the system's own queries. Site engineers never see money, margins or payroll through it. The demo gives two free questions; see [Datum AI for contractors](/ai-assistant/construction-contractors).\n\n## What else is in it?\n\nA trading desk for construction chemicals (rate card with backup suppliers, quotes with options, a credit gate before dispatch, part deliveries, GST invoices and an e-way bill task for accounts), machinery with QR labels and idle days, receivables ageing with weekly follow-ups and escalation to the director after 30 days, and a weekly progress report for the client built from the approved daily reports.\n\n## What should a contractor ask any software vendor?\n\n1. **Are RA bills built from measurements**, or does someone type the totals?\n2. **Does each site's cost come from real material issues, attendance and site cash**, or from estimates?\n3. **Does the site engineer's report work on a cheap phone on site**, with photos and attendance?\n4. **Can site staff be kept away from company money and margins**, enforced on the server, not just hidden?\n5. **Does it hand Tally what accounts needs**, without retyping, and keep project cost apart?\n\n## Boundary\n\nThe system was built for a waterproofing and repair contractor that also trades construction chemicals; it is built, not yet live at the client. Everything above is shown on sample data in the demo. It doesn't yet deduct security deposit, TDS, GST TDS or mobilisation and secured advances on RA bills, work out price escalation, or produce a WIP schedule; those are parts we'd build for a contractor who needs them.",
+    "na": {
+      "title": "Construction software for subcontractors and specialty contractors",
+      "metaTitle": "Construction ERP for specialty contractors",
+      "audience": "Specialty contractors and subcontractors in the US and Canada",
+      "answer": "Ahrom Labs builds the operations system a specialty contractor runs on: daily reports from the field, crew attendance, the schedule of values, change orders, pay applications with retainage and lien waivers, yard and job stock, site cash, crew pay and each job's margin against its estimate, with Datum AI answering from the same records and pay applications going to QuickBooks Online. Built for a waterproofing and repair contractor; not yet live there.",
+      "description": "Software for US specialty contractors: daily reports, schedule of values, pay apps with retainage, change orders, lien waivers, crews and job cost.",
+      "demo": {
+        "url": "https://construction-erp-us.ahromlabs.com/demo",
+        "label": "Try the live demo"
+      },
+      "services": [
+        "custom-erp-crm",
+        "operational-intelligence",
+        "custom-ai-assistant"
+      ],
+      "notes": [
+        "assistant-that-answers-from-your-ledger"
+      ],
+      "flow": [
+        {
+          "step": "Inquiry and estimate",
+          "detail": "Client, site visit and an estimate built from the rate library, as a PDF."
+        },
+        {
+          "step": "Schedule of values",
+          "detail": "The accepted estimate becomes the job's schedule of values, with a material norm per unit."
+        },
+        {
+          "step": "Daily report",
+          "detail": "The superintendent marks attendance, then reports work done against each line, material used from job stock, equipment hours and photos."
+        },
+        {
+          "step": "PM approval",
+          "detail": "Only approved reports count toward the job's progress."
+        },
+        {
+          "step": "Change orders",
+          "detail": "A change order is its own estimate; once accepted, its lines join the schedule of values and are billed apart."
+        },
+        {
+          "step": "Pay application",
+          "detail": "Previous, this period and stored materials per line, retainage, current payment due, as a G702/G703-style PDF."
+        },
+        {
+          "step": "Lien waivers and payment",
+          "detail": "Conditional or unconditional waivers ticked off per pay app; certified and paid lands in the cash book."
+        },
+        {
+          "step": "QuickBooks Online",
+          "detail": "Issued invoices, pay applications and payments sent with each project as a job under its client."
+        }
+      ],
+      "evidence": [
+        {
+          "metric": "Sample jobs in the demo",
+          "value": "4, from a garage waterproofing job to a pool epoxy lining, one losing money"
+        },
+        {
+          "metric": "Pay application",
+          "value": "Original sum, net change by change orders, stored materials, retainage, current payment due"
+        },
+        {
+          "metric": "Lien waivers",
+          "value": "Ours, our subs' and suppliers', conditional or unconditional, per pay app"
+        },
+        {
+          "metric": "QuickBooks Online",
+          "value": "Invoices, pay applications and payments, against an Intuit sandbox company in the demo"
+        }
+      ],
+      "updated": "2026-11-05",
+      "body": "## Can I try it before talking to anyone?\n\nYes. A live demo runs at [construction-erp-us.ahromlabs.com](https://construction-erp-us.ahromlabs.com/demo) with a made-up contractor, Northstone Builders of Garland, Texas, a waterproofing and concrete restoration contractor with a supply division. It has four jobs: a garage waterproofing job at Halvorsen Tower with an approved change order, a hotel roof deck, a podium deck repair with column jacketing, and a club pool lining that's finished, one of them losing money. Leave your name and email, pick a login (director, project manager, site engineer, storekeeper or accountant) and use the real screens in dollars, imperial units and US dates. The data resets every night, so nothing you do reaches anyone.\n\n## What does a specialty contractor need that QuickBooks alone doesn't give?\n\nWork measured against the schedule of values, cost per job and pay applications built from that work. QuickBooks keeps the books, but it doesn't know which line of the schedule was done today, what material went to which job, or whether a job is spending more than its estimate. A contractor's records start in the field, so the system starts there: daily reports, attendance and material used, which feed the pay applications, the job's cost and the books.\n\n## Can crews report from the field on a phone?\n\nYes: one daily report per job per day, built for a phone. Attendance comes first (present, half day or absent, one tap per person), then the report: quantity done against each line of the schedule of values, labor by trade (filled from attendance), material used from the job's own stock, weather, issues and up to six photos. The project manager approves it or sends it back with a note, and only approved work counts toward the job's progress.\n\n## How are pay applications made?\n\nFrom work measured against the schedule of values. A job's schedule of values is copied from the owner's accepted estimate or entered line by line. Work is measured against each line, or filled from approved daily reports, and stored materials are added per line. The [pay application](/construction/pay-applications) shows scheduled value, previous, this period, stored materials, % complete and balance to finish, holds [retainage](/construction/retainage), works out the current payment due and downloads as a G702/G703-style PDF with the architect's certificate. Line 7, less previous certificates, is recomputed from each earlier application, so certified amounts never drift.\n\n## How are change orders handled?\n\nA change order is raised as its own estimate against the accepted contract estimate; once accepted, its lines join the schedule of values labeled CO 1, CO 2 and are billed apart, so the pay application shows the original contract sum, the net change by change orders and the revised sum. Draft and sent change orders stay pending and are never billed. On the sample tower job, change order 1 adds $6,504 to a $245,856 schedule of values. See [change orders](/construction/change-orders).\n\n## Are lien waivers tracked?\n\nYes, per pay application: ours to the owner, and each sub's and supplier's for the money they were paid, conditional on progress until paid and then unconditional, with the date each came in. See [lien waivers](/construction/lien-waivers) for the four types and the states with statutory forms.\n\n## Is each job making money?\n\nThe director dashboard shows it per job: contract value, value of approved work, billed, cost to date and margin. Cost to date is material used, labor from attendance and pay, site cash spent and equipment days. Against the value of approved work it gives the margin so far; scaled to the whole contract, it projects where the job will finish against its estimate. Jobs are marked on track, over budget or losing money, next to what needs attention today.\n\n## Does it work with QuickBooks Online?\n\nYes. QuickBooks Online stays the books: issued invoices, pay applications and payments go across with each project as a job under its client, supplier bills for goods received at the yard and the payments against them go too, and every record shows whether it is in QuickBooks. QuickBooks works out the sales tax on supply invoices. In the demo it is connected to an Intuit sandbox company. See [connecting QuickBooks Online to an operations system](/manufacturing/quickbooks-integration).\n\n## How are crews paid?\n\nEach worker's onboarding is captured on a phone: photo, photo ID, I-9, W-4 (or W-9 for a 1099 subcontractor) and direct deposit, with photos of the documents. The monthly pay register works out days from attendance at each person's rate, less advances, with totals per crew, and each worker is paid once a month. Payroll taxes stay with your payroll provider. Gate passes need complete onboarding and print as an ID badge.\n\n## What does Datum AI answer?\n\nDatum AI sits in the corner of every screen and answers with the same figures the screens show: which jobs are over budget, who hasn't sent today's report, what's in the yard, who owes us past 60 days, which equipment is idle. The model only picks which look-up to run; the numbers come from the system's own queries. Field staff never see money, margins or payroll through it. The demo gives two free questions; see [Datum AI for contractors](/ai-assistant/construction-contractors).\n\n## What else is in it?\n\nYard and job stock with receipts, transfers and a daily stock sheet per location; site cash per job with receipt photos and a weekly claim; equipment with QR labels and idle days; receivables by age with weekly follow-ups and escalation to the director after 30 days; a weekly progress report for the owner built from the approved daily reports; and a supply desk that quotes from a rate card with backup suppliers, holds shipping until terms are met, and invoices with sales tax.\n\n## What should a contractor ask any software vendor?\n\n1. **Are pay applications built from measured work on the schedule of values**, or typed in?\n2. **Are change orders kept apart until approved**, and billed as their own lines?\n3. **Is retainage held per application, on stored materials too**, and recomputed, not carried by hand?\n4. **Does job cost come from real material, labor and site cash**, or from estimates?\n5. **Does it work beside QuickBooks Online**, without double entry?\n\n## Boundary\n\nThe system was built for a waterproofing and repair contractor in India that also trades construction chemicals; it is built, not yet live at the client. This North American version is the same code with US terms, pay applications, change orders, lien waivers, onboarding and QuickBooks Online, shown here on a sample company, and it has not yet been used by a US or Canadian contractor. It doesn't yet produce a WIP schedule, bill a retainage release, track retainage held from subcontractors or keep a change log with notice dates; those are parts we'd build."
+    }
+  },
+  {
+    "kind": "industry",
     "slug": "electronics-component-trading",
     "title": "Software for electronics-component importers and traders",
     "audience": "Electronics-component importers, traders and distributors",
@@ -6212,27 +6385,52 @@
     "group": "us",
     "title": "Change orders in construction: pricing, approval, billing",
     "related": [
-      "/construction/retainage",
-      "/ai-assistant/construction-contractors",
+      "/construction/pay-applications",
+      "/construction/wip-schedule",
+      "/boq/variation-orders",
       "/systems/variation-order",
-      "/boq/variation-orders"
+      "/industries/construction-company"
     ],
     "question": "How should a contractor handle change orders?",
-    "answer": "A change order is a written agreement to change a construction contract's work, price or time. Get the change in writing before doing it, price it with backup, track each from request to approval, and only bill it once approved, as its own line on the schedule of values. On federal jobs, FAR 52.243-4 gives you 30 days to assert an adjustment.",
-    "description": "Change orders for contractors: written orders, pricing and backup, pending vs approved, federal rules under FAR 52.243-4, and billing them on pay apps.",
+    "answer": "A change order is a written agreement changing a construction contract's work, price or time, signed by owner and contractor (AIA's form is G701); a construction change directive (G714) orders changed work before the price is agreed. Get every change in writing before doing it, price it with backup, and bill it only once approved, as its own line on the pay application. Federal jobs give 30 days to assert an adjustment.",
+    "description": "Change orders: getting them in writing, change directives, pricing with backup, federal and Texas rules, and billing approved changes on the pay app.",
     "domain": [
       "construction",
       "change-orders"
     ],
     "published": "2026-11-03",
     "updated": "2026-11-05",
-    "checked": "2026-11-03",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "FAR 52.243-4, Changes",
         "publisher": "Acquisition.gov (General Services Administration)",
         "url": "https://www.acquisition.gov/far/52.243-4",
         "date": "2026-11-03"
+      },
+      {
+        "title": "FAR 52.236-2, Differing Site Conditions",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/52.236-2",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Texas Property Code 28.0091, Unsigned change order",
+        "publisher": "Texas Legislature",
+        "url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.28.htm",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Summary: G714–2017, Construction Change Directive",
+        "publisher": "AIA Contract Documents",
+        "url": "https://help.aiacontracts.com/hc/en-us/articles/1500009448081",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Changes to the Contract: Differences Between Change Orders and Construction Change Directives",
+        "publisher": "AIA Contract Documents",
+        "url": "https://learn.aiacontracts.com/articles/6449229-changes-to-the-contract-differences-between-change-orders-and-construction-change-directives/",
+        "date": "2026-11-05"
       }
     ],
     "checks": [
@@ -6240,6 +6438,11 @@
         "reg": "FAR 52.243-4(a)",
         "doc": "far-52.243-4",
         "quote": "make changes in the work within the general scope of the contract, including changes-"
+      },
+      {
+        "reg": "FAR 52.243-4(b)",
+        "doc": "far-52.243-4",
+        "quote": "Any other written or oral order (which, as used in this paragraph (b), includes direction, instruction, interpretation, or determination) from the Contracting Officer that causes a change shall be treated as a change order under this clause; Provided, that the Contractor gives the Contracting Officer written notice stating-"
       },
       {
         "reg": "FAR 52.243-4(c)",
@@ -6260,9 +6463,39 @@
         "reg": "FAR 52.243-4(f)",
         "doc": "far-52.243-4",
         "quote": "No proposal by the Contractor for an equitable adjustment shall be allowed if asserted after final payment under this contract."
+      },
+      {
+        "reg": "FAR 52.236-2(a)",
+        "doc": "far-52.236-2",
+        "quote": "The Contractor shall promptly, and before the conditions are disturbed, give a written notice to the Contracting Officer of-"
+      },
+      {
+        "reg": "FAR 52.236-2(d)",
+        "doc": "far-52.236-2",
+        "quote": "No request by the Contractor for an equitable adjustment to the contract for differing site conditions shall be allowed if made after final payment under this contract."
+      },
+      {
+        "reg": "Texas Property Code 28.0091(a)(2)",
+        "doc": "tx-pr-28",
+        "quote": "exceeds 10 percent of the contractor's or subcontractor's original contract amount."
+      },
+      {
+        "reg": "Texas Property Code 28.0091(b)",
+        "doc": "tx-pr-28",
+        "quote": "A contractor or subcontractor who elects not to proceed with additional work as provided by this section is not responsible for damages associated with the election not to proceed."
+      },
+      {
+        "reg": "AIA, Summary of G714–2017",
+        "doc": "aia-g714sum",
+        "quote": "G714–2017 is a directive for changes in the Work for use where the owner and contractor have not agreed on proposed changes in the contract sum or contract time."
+      },
+      {
+        "reg": "AIA, change orders vs construction change directives",
+        "doc": "aia-covccd",
+        "quote": "the owner can issue a construction change directive without the contractor’s signature."
       }
     ],
-    "body": "## Why change orders cost contractors money\n\nMost disputes on a job are about changes: extra work done on a verbal OK, priced after the fact, argued about at\ncloseout. The fix is procedural: no change is real until it is written, priced and approved, and every one is\ntracked until it's billed.\n\n## The life of a change\n\n| Stage | What happens | Billed? |\n|---|---|---|\n| Request or notice | The owner asks for a change, or you notify a changed condition (in writing) | No |\n| Proposal | Your price and time, with backup: quantities, labor hours, material quotes, markup | No |\n| Pending | Submitted, not yet approved; work may have started on a directive | No, but tracked |\n| Approved change order | Signed by both sides, with the new price and time | Yes, as its own line |\n| Rejected or disputed | Kept, with the record, for a claim | No |\n\n## What do the federal rules say?\n\nOn federal fixed-price construction (FAR 52.243-4), the contracting officer may order changes within the general\nscope by a written change order. Nothing else counts as a change under the clause except as it provides. If you\ntreat something as a change by notice, costs incurred more than 20 days before your written notice aren't adjusted\n(except for defective specifications). You must assert your right to an adjustment within 30 days of the order or\nnotice, and nothing can be asserted after final payment. Private contracts, such as AIA's general conditions,\nhave their own procedures and deadlines: read the changes article before the job starts.\n\n## How changes flow into billing\n\nAn approved change order is added to the schedule of values as its own line, so the [pay application](/construction/pay-applications)\nshows original contract, approved changes and the revised contract sum. Pending changes are never billed, but they\nbelong on the [WIP schedule](/construction/wip-schedule): their costs are already in the job. Watch any\n[lien waiver](/construction/lien-waivers) you sign that would waive claims for pending changes.\n\n## What your system should keep\n\n- A change log per job: number, description, who asked, date of notice, status, price, days.\n- The backup for each price, linked to the job's cost codes so actual cost can be compared later.\n- Approved changes posted to the contract value and the schedule of values, once.\n- Pending exposure: the total value of unapproved changes per job, reviewed weekly."
+    "body": "## What is a change order in construction?\n\nA change order is a written agreement between owner and contractor that changes the work, the contract price, the\ncontract time, or all three. It is signed by both (and usually the architect), and once signed its amount is added to\nthe contract sum. AIA's standard form is G701; many owners use their own form with the same content: what changes,\nthe price, the days, and the signatures.\n\nMost disputes on a job are about changes: extra work done on a verbal OK, priced after the fact, argued about at\ncloseout. The fix is procedural: no change is real until it is written, priced and approved, and every one is tracked\nuntil it is billed.\n\n## What's the difference between a change order and a construction change directive?\n\nA change order is agreed by both sides; a construction change directive orders the work to go ahead before the price\nor time is agreed. AIA describes its G714 directive as for use where the owner and contractor \"have not agreed on\nproposed changes in the contract sum or contract time\", and under AIA's general conditions the owner can issue one\nwithout the contractor's signature. You do the work, keep the cost records, and the price is settled later, by a\nchange order once it's agreed.\n\n| | Change order (G701) | Change directive (G714) |\n|---|---|---|\n| Price and time | Agreed | Not yet agreed |\n| Contractor signs | Yes | No |\n| Work starts | After signing | On the directive |\n| Billed | Once signed, as its own line | Once agreed and turned into a change order (or as the contract says) |\n\n## Do I have to do extra work without a signed change order?\n\nIt depends on the contract and the state, but in Texas you may refuse once unsigned work gets too big. Since\n1 September 2023, a Texas contractor or sub may decline owner-directed additional work without a written, fully\nexecuted change order once that work, plus earlier unsigned owner-directed work, exceeds 10% of the original contract\namount, and isn't liable for damages for declining (Property Code 28.0091). On a $400,000 contract the line is\n$40,000: with $36,000 of unsigned work already done, a new $6,000 directive takes it to $42,000, and the contractor may\ndecline it.\n\nOn federal jobs, a written or oral order from the contracting officer that changes the work counts as a change order\nonly if you give written notice saying you regard it as one.\n\n## Will I get paid for work done on a verbal OK?\n\nOften not without a fight. A verbal approval is hard to prove at closeout, and contracts usually say changes must be\nin writing. Get the scope and price in writing before you start, even as an email, and keep dated photos, daily\nreports and costs for any work done before the paperwork caught up.\n\n## How do I price a change order?\n\nBuild it from quantities, labor hours at your rates, material quotes and equipment, then add overhead and profit as\nthe contract allows, with the backup attached:\n\n| Line | Amount |\n|---|---|\n| Labor: 40 hours × $65 | $2,600 |\n| Material (supplier quote attached) | $3,400 |\n| Equipment rental | $500 |\n| Subtotal | $6,500 |\n| Overhead and profit, 15% | $975 |\n| **Change order** | **$7,475**, 3 days added |\n\nThe figures are made up. Ask for the time as well as the money: a change that adds work but no days can leave you\npaying liquidated damages for a delay the owner caused.\n\n## How long do I have to claim a change?\n\nAs the contract says; on federal jobs under FAR 52.243-4, you must assert your right to an adjustment within 30 days\nof the change order or your notice. Costs incurred more than 20 days before your written notice aren't adjusted\n(except for defective specifications), and nothing can be claimed after final payment. Under that rule, notice given\non 1 March 2026 covers costs from 9 February 2026 onward. Private contracts, such as AIA's general conditions, have\ntheir own deadlines: read the changes article before the job starts.\n\n## What about hidden or different site conditions?\n\nGive written notice promptly, before you disturb them. On federal jobs FAR 52.236-2 requires notice \"before the\nconditions are disturbed\" of subsurface or latent conditions that differ materially from the contract, or unusual\nunknown ones; if they do differ, the contract is adjusted in writing. No request is allowed after final payment.\n\n## Can I bill a pending change order?\n\nNo: bill only approved changes, each as its own line on the schedule of values, so the\n[pay application](/construction/pay-applications) shows the original contract sum, net change by change orders and\nthe revised sum. Pending changes are tracked, not billed, and they belong on the\n[WIP schedule](/construction/wip-schedule), because their costs are already in the job.\n\n| | Amount |\n|---|---|\n| Original contract sum | $400,000 |\n| CO 1, approved | $12,000 |\n| CO 2, pending | $8,500 (tracked, not billed) |\n| CO 3, rejected | $4,000 (kept for the record) |\n| **Revised contract sum** | **$412,000** |\n\n## Can signing a lien waiver give up a pending change order?\n\nIt can. A waiver that releases all claims through a date may release the extra work you haven't been paid for yet;\nread what each [lien waiver](/construction/lien-waivers) covers, and list pending changes as an exception where the\nform allows.\n\n## What should a contractor's system keep for change orders?\n\n- A change log per job: number, description, who asked, date of notice, status, price and days.\n- The backup for each price, linked to the job's cost codes, so actual cost can be compared later.\n- Approved changes added to the contract value and the schedule of values, once.\n- Pending exposure: the total of unapproved changes per job, reviewed weekly.\n\nIn the [construction demo](/industries/construction-company)'s US build, a change order is raised as its own estimate\nagainst the accepted contract estimate; once accepted, its lines join the schedule of values labeled CO 1, CO 2 and\nare billed apart on the pay application. On the sample tower job, change order 1 adds $6,504 to a $245,856 schedule\nof values. It doesn't yet keep a change log with notice dates and days, or change directives billed before a price is\nagreed; those are parts we'd build."
   },
   {
     "kind": "construction",
@@ -6719,17 +6952,24 @@
     "kind": "construction",
     "slug": "retainage",
     "group": "us",
-    "title": "Retainage in construction: how it's held and released",
-    "question": "What is retainage in construction, and when is it released?",
-    "answer": "Retainage is a share of each progress payment, often 5% or 10%, that the owner holds back until the work is complete, as security that the contractor finishes and fixes defects. The general contractor usually holds the same from its subcontractors. The contract sets the rate and release; on federal jobs FAR 52.232-5 caps it at 10% and only for unsatisfactory progress.",
-    "description": "Retainage in construction: what it is, typical rates, federal rules under FAR 52.232-5 and 52.232-27, release at substantial completion, and tracking it.",
+    "title": "Retainage in construction: rates, state caps and release",
+    "related": [
+      "/construction/pay-applications",
+      "/construction/lien-waivers",
+      "/manufacturing/quickbooks-integration",
+      "/industries/construction-company",
+      "/services/custom-erp-crm"
+    ],
+    "question": "What is retainage in construction, how much can be held, and when is it released?",
+    "answer": "Retainage is a share of each progress payment, often 5% or 10%, that the owner holds back until the work is complete, as security that the contractor finishes and fixes defects; the general contractor usually holds the same from its subs. Several states cap it at 5%, including California and New York on private jobs, and set a deadline to release it after completion. On federal jobs it is withheld only for unsatisfactory progress.",
+    "description": "Retainage explained: typical rates, federal rules, state caps in California, New York, Texas and Florida, release deadlines, and tracking it per job.",
     "domain": [
       "construction",
       "billing"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
     "sources": [
       {
         "title": "FAR 52.232-5, Payments Under Fixed-Price Construction Contracts",
@@ -6742,6 +6982,54 @@
         "publisher": "Acquisition.gov (General Services Administration)",
         "url": "https://www.acquisition.gov/far/52.232-27",
         "date": "2026-11-03"
+      },
+      {
+        "title": "FAR 32.103, Progress payments under construction contracts",
+        "publisher": "Acquisition.gov (General Services Administration)",
+        "url": "https://www.acquisition.gov/far/32.103",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "31 U.S.C. 3905, Payment provisions relating to construction contracts",
+        "publisher": "Legal Information Institute, Cornell Law School",
+        "url": "https://www.law.cornell.edu/uscode/text/31/3905",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "California Civil Code 8800, 8811 and 8812",
+        "publisher": "California Legislative Information",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=8811.",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "California Public Contract Code 7201",
+        "publisher": "California Legislative Information",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PCC&sectionNum=7201.",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "New York General Business Law 756, 756-c and 757",
+        "publisher": "New York State Senate",
+        "url": "https://www.nysenate.gov/legislation/laws/GBS/756-C",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Texas Property Code chapter 28 and section 53.101",
+        "publisher": "Texas Legislature",
+        "url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.28.htm",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Texas Government Code 2252.032",
+        "publisher": "Texas Legislature",
+        "url": "https://statutes.capitol.texas.gov/Docs/GV/htm/GV.2252.htm",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Florida Statutes 255.078, Public construction retainage",
+        "publisher": "The Florida Legislature",
+        "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0255/Sections/0255.078.html",
+        "date": "2026-11-05"
       }
     ],
     "checks": [
@@ -6761,17 +7049,142 @@
         "quote": "shall release to the Contractor all the remaining withheld funds."
       },
       {
+        "reg": "FAR 32.103",
+        "doc": "far-32.103",
+        "quote": "Retainage should not be used as a substitute for good contract management, and the contracting officer should not withhold funds without cause."
+      },
+      {
+        "reg": "FAR 32.103",
+        "doc": "far-32.103",
+        "quote": "may be adjusted as the contract approaches completion to recognize better than expected performance"
+      },
+      {
+        "reg": "FAR 32.103",
+        "doc": "far-32.103",
+        "quote": "Upon completion of all contract requirements, retained amounts shall be paid promptly."
+      },
+      {
         "reg": "FAR 52.232-27, retained amounts",
         "doc": "far-52.232-27",
         "quote": "30 days after approval by the Contracting Officer for release to the Contractor."
       },
       {
-        "reg": "FAR 52.232-27, subcontract payment clause",
-        "doc": "far-52.232-27",
-        "quote": "A payment clause that obligates the Contractor to pay the subcontractor for satisfactory performance under its subcontract not later than 7 days from receipt of payment out of such amounts as are paid to the Contractor under this contract."
+        "reg": "31 U.S.C. 3905(b)(1), subcontract payment clause",
+        "doc": "usc-31-3905",
+        "quote": "a payment clause which obligates the prime contractor to pay the subcontractor for satisfactory performance under its subcontract within 7 days out of such amounts as are paid to the prime contractor by the agency under such contract"
+      },
+      {
+        "reg": "California Civil Code 8811(a)",
+        "doc": "ca-civ-8811",
+        "quote": "This section is applicable to a contract relating to a private work of improvement entered into on or after January 1, 2026."
+      },
+      {
+        "reg": "California Civil Code 8811(b)(1)(A)",
+        "doc": "ca-civ-8811",
+        "quote": "shall not exceed 5 percent of the payment."
+      },
+      {
+        "reg": "California Civil Code 8811(b)(1)(B)",
+        "doc": "ca-civ-8811",
+        "quote": "In no event shall the total retention proceeds withheld exceed 5 percent of the contract price."
+      },
+      {
+        "reg": "California Civil Code 8811(b)(1)(C)",
+        "doc": "ca-civ-8811",
+        "quote": "the percentage of the retention payment withheld shall not exceed the percentage specified in the contract between the owner and the direct contractor."
+      },
+      {
+        "reg": "California Civil Code 8811(b)(3)",
+        "doc": "ca-civ-8811",
+        "quote": "Paragraph (1) does not apply to an owner, direct contractor, or subcontractor on a residential project if the project is not mixed-use and does not exceed four stories."
+      },
+      {
+        "reg": "California Civil Code 8812(a)",
+        "doc": "ca-civ-8812",
+        "quote": "the owner shall, within 45 days after completion of the work of improvement, pay the retention to the contractor."
+      },
+      {
+        "reg": "California Civil Code 8812(c)",
+        "doc": "ca-civ-8812",
+        "quote": "the owner may withhold from final payment an amount not in excess of 150 percent of the disputed amount."
+      },
+      {
+        "reg": "California Civil Code 8800(c)",
+        "doc": "ca-civ-8800",
+        "quote": "An owner that violates this section is liable to the direct contractor for a penalty of 2 percent per month on the amount wrongfully withheld"
+      },
+      {
+        "reg": "California Public Contract Code 7201(b)(1)",
+        "doc": "ca-pcc-7201",
+        "quote": "The retention proceeds withheld from any payment by a public entity from the original contractor, by the original contractor from any subcontractor, and by a subcontractor from any subcontractor thereunder shall not exceed 5 percent of the payment."
+      },
+      {
+        "reg": "New York General Business Law 756-c",
+        "doc": "ny-gbs-756-c",
+        "quote": "an owner may retain no more than five per centum of the contract sum as retainage."
+      },
+      {
+        "reg": "New York General Business Law 756-c",
+        "doc": "ny-gbs-756-c",
+        "quote": "in no case shall retainage exceed the actual percentage retained by the owner."
+      },
+      {
+        "reg": "New York General Business Law 756-c",
+        "doc": "ny-gbs-756-c",
+        "quote": "Retainage shall be released by the owner to the contractor no later than thirty days after the final approval of the work under a construction contract."
+      },
+      {
+        "reg": "New York General Business Law 756-c",
+        "doc": "ny-gbs-756-c",
+        "quote": "shall be subject to the payment of interest at the rate of one percent per month on the date retention was due and owing."
+      },
+      {
+        "reg": "New York General Business Law 757(5)",
+        "doc": "ny-gbs-757",
+        "quote": "in an amount exceeding five percent of the contract sum."
+      },
+      {
+        "reg": "New York General Business Law 756(1)",
+        "doc": "ny-gbs-756",
+        "quote": "equals or exceeds one hundred fifty thousand dollars."
+      },
+      {
+        "reg": "Texas Property Code 53.101(a)",
+        "doc": "tx-pr-53",
+        "quote": "for 30 days after the work under the contract is completed, the owner shall reserve:"
+      },
+      {
+        "reg": "Texas Property Code 28.002(a)",
+        "doc": "tx-pr-28",
+        "quote": "not later than the 35th day after the date the owner receives the request."
+      },
+      {
+        "reg": "Texas Property Code 28.004(b)",
+        "doc": "tx-pr-28",
+        "quote": "An unpaid amount bears interest at the rate of 1-1/2 percent each month."
+      },
+      {
+        "reg": "Texas Government Code 2252.032(b)(2)",
+        "doc": "tx-gv-2252",
+        "quote": "if the total value of a public works contract is $5 million or more, a governmental entity may not withhold retainage in an amount that exceeds five percent of the contract price"
+      },
+      {
+        "reg": "Texas Government Code 2252.032(b)(1)",
+        "doc": "tx-gv-2252",
+        "quote": "including materials and equipment delivered on site to be installed"
+      },
+      {
+        "reg": "Florida Statutes 255.078(1)",
+        "doc": "fl-255.078",
+        "quote": "a public entity may withhold from each progress payment made to the contractor an amount not exceeding 5 percent of the payment as retainage."
+      },
+      {
+        "reg": "Florida Statutes 255.078(6)",
+        "doc": "fl-255.078",
+        "quote": "if the total cost of the construction services purchased as identified in the contract is $200,000 or less."
       }
     ],
-    "body": "## How does retainage work?\n\nEach [pay application](/construction/pay-applications) shows the work completed to date and holds back a percentage\nof it. The held amount builds up over the job; it is paid when the work is substantially complete (sometimes half\nat that point and the rest at final completion), less anything needed for unfinished or defective work.\n\n| Month | Billed to date | Retained at 10% | Paid to date |\n|---|---|---|---|\n| 1 | $50,000 | $5,000 | $45,000 |\n| 2 | $120,000 | $12,000 | $108,000 |\n| 3 | $160,000 | $16,000 | $144,000 |\n\nThe figures are made up. On a $400,000 job, $40,000 waits for the end, often months after the work it covers.\n\n## What are the rules on federal jobs?\n\nFAR 52.232-5 starts from full payment: where progress is satisfactory, the contracting officer authorizes payment in\nfull. Only when progress isn't satisfactory may the officer retain, up to 10% of the payment, until it is. At\nsubstantial completion the officer keeps only what protects the Government and releases the rest. Retained amounts\nare due as the contract says or, if it's silent, 30 days after the officer approves their release (FAR 52.232-27).\n\nThe same clause makes prime contractors pass payment down: subcontractors are paid for satisfactory work within 7\ndays of the prime receiving payment, and the subcontract may permit retainage on the subcontractor as agreed.\n\n## And on private and state jobs?\n\nThe contract sets the rate and the release, within the state's law: many states have their own retainage and prompt\npayment statutes, for public works and often private jobs too, with caps and release deadlines. Check the law of\nthe state where the project is, and read the contract's retainage clause before signing it.\n\n## Why it matters for cash and records\n\n- **It's money owed to you, in the balance sheet.** Retainage receivable is earned revenue not yet billable. Track it\n  per job, not as one figure.\n- **You hold it too.** Retainage you withhold from subcontractors is a payable that must be released on the same\n  terms.\n- **Release needs paperwork.** Final [lien waivers](/construction/lien-waivers), closeout documents and the punch\n  list usually come before the last payment.\n- **It moves the WIP schedule.** Billing includes retainage; cash doesn't. See the [WIP schedule](/construction/wip-schedule)."
+    "body": "## What is retainage in construction?\n\nRetainage (also called retention) is part of each progress payment that the owner holds back until the job is\nfinished, as security that the contractor completes the work and fixes defects. Each\n[pay application](/construction/pay-applications) bills the work completed and stored to date, takes off the\nretainage percentage, and the balance is paid. The amount held builds up over the job and is paid at the end. The\ngeneral contractor usually holds the same percentage from each subcontractor, so retainage runs down the whole chain.\n\n## How much retainage is normal?\n\nOften 5% or 10% of each payment, as the contract sets it, and less where the state caps it. Some contracts lower the\nrate later in the job; federal rules allow the amount withheld to be adjusted as the contract nears completion. Agree\nthe rate before the job starts and read the contract's retainage clause before you sign it.\n\nA made-up $400,000 job at 10%, at the end of month three:\n\n| Line | Amount |\n|---|---|\n| Work completed to date | $160,000 |\n| Materials stored on site | $8,000 |\n| Total completed and stored | $168,000 |\n| Less retainage at 10% | $16,800 |\n| Total earned less retainage | $151,200 |\n| Less previous certificates | $108,000 |\n| **Current payment due** | **$43,200** |\n\nOver the whole job, $40,000 waits for the end, often months after the work it covers. The same job under a California\nprivate contract signed in 2026 could hold at most 5%: $8,400 at this point and $20,000 over the job.\n\n## Which states cap retainage, and at what rate?\n\nCalifornia, New York, Texas and Florida each have rules, in different shapes:\n\n| State | Private jobs | Public jobs | Release |\n|---|---|---|---|\n| California | 5% of each payment and 5% of the contract price in total, for contracts signed from 1 January 2026 (Civil Code 8811); not on residential projects of four stories or fewer that aren't mixed-use | 5% (Public Contract Code 7201) | Owner pays within 45 days after completion (Civil Code 8812) |\n| New York | 5% of the contract sum on projects of $150,000 or more (General Business Law 756, 756-c, 757) | Not covered by these sections | Within 30 days after final approval; 1% a month interest if late |\n| Texas | The owner must reserve 10% until 30 days after completion, for lien claimants (Property Code 53.101); the contract's own retainage is separate | 10% under $5 million, 5% at $5 million or more (Government Code 2252.032) | As the contract says; payment requests are due within 35 days (Property Code 28.002) |\n| Florida | As the contract says | 5% of each payment on contracts over $200,000 (Statutes 255.078) | Same time limits as any payment request |\n\nFor any other state, read that state's own statute for where the project is. In New York, a private contract clause\nasking for more than 5% is void under General Business Law 757.\n\n## What are the rules on federal jobs?\n\nFederal contracting officers pay in full when progress is satisfactory and may hold back up to 10% only when it isn't\n(FAR 52.232-5). FAR 32.103 adds that retainage \"should not be used as a substitute for good contract management\". At\nsubstantial completion the officer keeps only what protects the Government and releases the rest; retained amounts are\ndue as the contract says or, if it's silent, 30 days after the officer approves their release (FAR 52.232-27).\n\n## When must retainage be released?\n\nWhen the contract says, and no later than the state's deadline. In California the owner must pay the retention within\n45 days after the work is completed; in New York within 30 days after final approval of the work; on federal jobs\nwithin 30 days of the contracting officer approving release when the contract is silent. Release usually needs\npaperwork first: final [lien waivers](/construction/lien-waivers), closeout documents and a finished punch list.\n\n## Can the owner keep retainage for punch-list items or a dispute?\n\nOnly a limited amount. In California, if there is a good-faith dispute, the owner may withhold no more than 150% of the\ndisputed amount from final payment. On the $400,000 job with $20,000 retained and $3,000 of punch-list work disputed,\nthe owner may hold $4,500 and must pay the other $15,500 within 45 days of completion.\n\n## Can a GC hold more retainage from a sub than the owner holds from the GC?\n\nNot in California or New York: a subcontract's retainage percentage can't exceed the one in the owner's contract with\nthe GC. On federal jobs the prime contractor must pay subs for satisfactory work within 7 days of being paid (31 U.S.C.\n3905), and the subcontract may permit retainage on the sub as agreed.\n\n## What happens if the owner pays late?\n\nThe owner owes interest or a penalty at the rate the state sets. In Texas an unpaid amount bears interest at 1.5% a\nmonth, so a $43,200 payment made a month late costs the owner $648. In California an owner who wrongfully withholds a\nprogress payment owes 2% a month; in New York, retainage released late carries 1% a month.\n\n## Does retainage apply to stored materials?\n\nYes on a standard pay application: retainage is taken on the total completed and stored, so stored materials carry it\ntoo. Texas caps the rate on public jobs per line of the schedule of values, \"including materials and equipment\ndelivered on site to be installed\".\n\n## How should a contractor track retainage?\n\nPer job and per subcontractor, from the pay applications, never as one figure in the books:\n\n- **Retainage receivable** is money you've billed and earned but can't collect yet. It sits inside \"billed to date\" on\n  the [WIP schedule](/construction/wip-schedule); cash collected doesn't include it.\n- **Retainage payable** is what you hold from each sub, released on the same terms once the owner pays you.\n- **Release dates**: completion, final approval and the state's deadline, so a late release is chased with interest.\n- **Release paperwork**: lien waivers, closeout documents and the punch list, tracked per job.\n\nThe [construction demo](/industries/construction-company)'s US build holds retainage on every pay application, on\nwork completed and stored materials, at a rate set per application. It doesn't yet bill a retainage release or track\nretainage held from subcontractors; those are parts we'd build for a contractor."
   },
   {
     "kind": "construction",
@@ -6826,16 +7239,65 @@
     "slug": "wip-schedule",
     "group": "us",
     "title": "The WIP schedule: over and under billing, explained",
+    "related": [
+      "/manufacturing/wip-tracking",
+      "/manufacturing/quickbooks-job-costing",
+      "/systems/work-in-progress",
+      "/construction/change-orders",
+      "/industries/construction-company"
+    ],
     "question": "What is a WIP schedule in construction, and how is over or under billing worked out?",
-    "answer": "A WIP (work-in-progress) schedule lists every open job with its contract value, estimated total cost, cost to date, percent complete and billings to date. From those it shows what each job has earned against what was billed: billed ahead is overbilling, behind is underbilling. Banks and surety companies read it to judge a contractor's jobs, and it's the earliest warning of a job losing money.",
-    "description": "The construction WIP schedule: percent complete by cost, earned revenue, over and under billing, a worked example, and what bonding companies look for.",
+    "answer": "A WIP (work-in-progress) schedule lists every open job with its contract value, estimated total cost, cost to date, percent complete and billings to date. Percent complete is cost to date over estimated total cost; earned revenue is that share of the contract value. Billed more than earned is overbilling, less is underbilling. Banks and surety companies read it to judge a contractor's jobs, and it's the earliest warning of a job losing money.",
+    "description": "The construction WIP schedule: cost-to-cost percent complete, earned revenue, over and under billing, profit fade, the tax rule, and what sureties check.",
     "domain": [
       "construction",
       "job-cost"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
-    "body": "## What is on a WIP schedule?\n\nOne row per open job, usually monthly:\n\n| Column | Where it comes from |\n|---|---|\n| Contract value | Original contract plus approved [change orders](/construction/change-orders) |\n| Estimated total cost | The current estimate to complete the job, reviewed by the project manager |\n| Estimated gross profit | Contract value less estimated total cost |\n| Cost to date | Job cost posted so far: labor, material, subcontractors, equipment |\n| Percent complete | Cost to date ÷ estimated total cost (the \"cost-to-cost\" method) |\n| Earned revenue | Contract value × percent complete |\n| Billed to date | Total of the [pay applications](/construction/pay-applications), including [retainage](/construction/retainage) |\n| Over or under billing | Billed to date less earned revenue |\n\n## A worked example\n\nTwo made-up jobs at the end of a month:\n\n| | Job A | Job B |\n|---|---|---|\n| Contract value | $400,000 | $250,000 |\n| Estimated total cost | $340,000 | $215,000 |\n| Cost to date | $170,000 | $129,000 |\n| Percent complete | 50% | 60% |\n| Earned revenue | $200,000 | $150,000 |\n| Billed to date | $230,000 | $120,000 |\n| **Over (under) billing** | **$30,000 over** | **$30,000 under** |\n\nJob A has billed $30,000 more than it has earned: cash is ahead, and that money is owed back in work. Job B has done\n$30,000 more work than it has billed: earned but unbilled, often a sign of slow billing or unapproved changes.\n\n## Why the estimate to complete matters most\n\nPercent complete depends on the estimated total cost. If Job A's estimate is stale and the real figure is $380,000,\nit is about 45% complete, has earned $178,947 and is overbilled by $51,053, with less profit left than the schedule\nsaid. A WIP schedule is only as good as the monthly re-estimate on each job, which is why sureties ask who makes it\nand how.\n\n## What lenders and sureties look for\n\n- Jobs whose estimated gross profit fell since last month (\"profit fade\").\n- Large underbillings, which may be costs that will never be billed.\n- Large overbillings without the cash to match, which may mean the cash was spent elsewhere.\n- Whether the schedule ties to the financial statements.\n\nThis page describes the usual practice; your accountant decides how revenue is recognized under the accounting\nstandard and the tax method you use.\n\n## What your system should do\n\nPost every cost to a job and cost code as it happens (time from the field, material receipts, subcontractor bills),\nkeep the estimate to complete per job up to date, and produce the WIP schedule from the same records as the pay\napplications. Then the month-end WIP is a report, not a spreadsheet assembled from four places."
+    "updated": "2026-11-05",
+    "checked": "2026-11-05",
+    "sources": [
+      {
+        "title": "26 U.S.C. 460, Special rules for long-term contracts",
+        "publisher": "Legal Information Institute, Cornell Law School",
+        "url": "https://www.law.cornell.edu/uscode/text/26/460",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Revenue Procedure 2025-32 (inflation adjustments for 2026)",
+        "publisher": "Internal Revenue Service",
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "SBA Form 994F, Schedule of Work in Process",
+        "publisher": "U.S. Small Business Administration",
+        "url": "https://www.sba.gov/document/sba-form-994f-schedule-work-process",
+        "date": "2026-11-05"
+      }
+    ],
+    "checks": [
+      {
+        "reg": "26 U.S.C. 460(b)(1)(A), percentage of completion",
+        "doc": "usc-26-460",
+        "quote": "the percentage of completion shall be determined by comparing costs allocated to the contract under subsection (c) and incurred before the close of the taxable year with the estimated total contract costs"
+      },
+      {
+        "reg": "26 U.S.C. 460(e)(1)(B)(i), exception for small construction contracts",
+        "doc": "usc-26-460",
+        "quote": "who estimates (at the time such contract is entered into) that such contract will be completed within the 2-year period beginning on the contract commencement date of such contract"
+      },
+      {
+        "reg": "Rev. Proc. 2025-32, section 448(c) gross receipts test for 2026",
+        "doc": "irs-rp-2025-32",
+        "quote": "does not exceed $32,000,000."
+      },
+      {
+        "reg": "SBA Form 994F",
+        "doc": "sba-994f",
+        "quote": "Small businesses seeking a surety bond use this form to list any work they’re currently performing."
+      }
+    ],
+    "body": "## What is a WIP schedule?\n\nA WIP (work-in-progress) schedule is a monthly list of every open job showing what each has earned against what it\nhas billed. One row per job:\n\n| Column | Where it comes from |\n|---|---|\n| Contract value | Original contract plus approved [change orders](/construction/change-orders) |\n| Estimated total cost | The current estimate to complete the job, reviewed by the project manager |\n| Estimated gross profit | Contract value less estimated total cost |\n| Cost to date | Job cost posted so far: labor, material, subcontractors, equipment |\n| Percent complete | Cost to date ÷ estimated total cost |\n| Earned revenue | Contract value × percent complete |\n| Billed to date | Total of the [pay applications](/construction/pay-applications), including [retainage](/construction/retainage) |\n| Over or under billing | Billed to date less earned revenue |\n\n## How do you calculate percent complete?\n\nDivide cost to date by the estimated total cost: the cost-to-cost method. It is the same comparison the federal tax\nlaw uses for the percentage of completion method, which compares costs incurred before the end of the year \"with the\nestimated total contract costs\" (26 U.S.C. 460). A job with $170,000 spent of an estimated $340,000 is 50% complete.\n\n## How do you work out over and under billing?\n\nEarned revenue is contract value times percent complete; billed to date less earned revenue is the over or under\nbilling. Two made-up jobs at the end of a month:\n\n| | Job A | Job B |\n|---|---|---|\n| Contract value | $400,000 | $250,000 |\n| Estimated total cost | $340,000 | $215,000 |\n| Cost to date | $170,000 | $129,000 |\n| Percent complete | 50% | 60% |\n| Earned revenue | $200,000 | $150,000 |\n| Billed to date | $230,000 | $120,000 |\n| **Over (under) billing** | **$30,000 over** | **$30,000 under** |\n\n## What is overbilling, and is it bad?\n\nOverbilling is billing ahead of the work earned: Job A has billed $30,000 more than it has earned, so its cash is\nahead and that money is owed back in work. Some overbilling is normal, since a schedule of values often bills set-up\nand early items ahead. A large overbilling without the cash to match it can mean the cash was spent elsewhere, which is\nwhat a surety looks for.\n\n## What is underbilling?\n\nUnderbilling is work earned but not yet billed: Job B has done $30,000 more work than it has billed. It is often slow\nbilling or [change orders](/construction/change-orders) not yet approved, and sometimes cost that will never be billed\nbecause the job is losing money.\n\n## Where do over and under billings go on the balance sheet?\n\nOverbillings are usually shown as a liability (billings in excess of costs and estimated earnings) and underbillings\nas an asset (costs and estimated earnings in excess of billings). The totals on the WIP schedule, $30,000 each in the\nexample, should tie to the balance sheet; your accountant decides the presentation under the accounting standard you\nreport under.\n\n## Why does the estimate to complete matter most?\n\nBecause percent complete depends on it. If Job A's estimate is stale and the real figure is $380,000, the job is about\n45% complete, has earned $178,947 and is overbilled by $51,053, with less profit left than the schedule said. A WIP\nschedule is only as good as the monthly re-estimate on each job, which is why sureties ask who makes it and how.\n\n## What is profit fade?\n\nProfit fade is a job's estimated gross profit falling from month to month as the estimate to complete grows. Job A\nshowed $60,000 of gross profit last month ($400,000 less $340,000). This month the project manager raises the estimated\ntotal cost to $360,000: gross profit is now $40,000, a $20,000 fade, and the same $170,000 of cost makes the job 47%\ncomplete, so earned revenue drops to $188,889 and the overbilling grows to $41,111.\n\n## Why do sureties and banks ask for a WIP schedule?\n\nIt shows, job by job, whether the company is making the margin it bid and whether its billing is ahead of or behind\nthe work. The SBA's surety bond program asks for it on its own form: \"Small businesses seeking a surety bond use this\nform to list any work they're currently performing\" (SBA Form 994F, Schedule of Work in Process). Lenders and sureties\nlook for:\n\n- Jobs whose estimated gross profit fell since last month.\n- Large underbillings, which may be costs that will never be billed.\n- Large overbillings without the cash to match.\n- Whether the schedule ties to the financial statements.\n\n## Do small contractors have to use percentage of completion for taxes?\n\nNot for every job. The federal rule exempts a construction contract the contractor expects to finish within 2 years,\nif its average annual gross receipts for the 3 prior years pass the section 448(c) test: $32 million for tax years\nbeginning in 2026 (Revenue Procedure 2025-32). Residential construction contracts have their own exception. A\ncontractor with $18 million of average receipts and a 14-month job may use another method for that job; one with $40\nmillion may not. Your tax adviser decides the method.\n\n## Does retainage count as billed?\n\nYes. Billed to date includes the retainage held on each pay application; cash collected doesn't. A job can be\nunderbilled on the WIP schedule and still short of cash, because part of what it billed is retainage waiting for the\nend of the job.\n\n## How often should a WIP schedule be updated?\n\nMonthly, at the same close as the books, with a fresh estimate to complete from each project manager. Post every cost\nto a job and cost code as it happens (time from the field, material receipts, subcontractor bills) and produce the WIP\nschedule from the same records as the pay applications, so the month-end WIP is a report, not a spreadsheet\nassembled from four places.\n\nThe [construction demo](/industries/construction-company) shows the inputs per site (contract value, value of\napproved work, billed, cost to date and margin against the estimate) but has no WIP schedule: no estimate to complete\nand no over and under billing column. A WIP schedule built from those records is something we'd build for a\ncontractor. See also [WIP tracking for job shops](/manufacturing/wip-tracking) for the manufacturing side.\n\nThis page describes the usual practice; your accountant decides how revenue is recognized under the accounting\nstandard and the tax method you use."
   }
 ]

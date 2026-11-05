@@ -7,13 +7,13 @@ import { getContent, type ContentEntry } from "./content";
 // scripts/check-construction-quotes.mjs; AIA documents are paid and are explained, never reproduced.
 
 export const CON_PUBLISHED = "2026-11-03";
-export const CON_CHECKED = "2026-11-03";
+export const CON_CHECKED = "2026-11-05";
 
 export const CON_GROUPS: { slug: string; name: string; intro: string; market: "NA" | "IN"; order: string[] }[] = [
   {
     slug: "us",
     name: "Contractors in the US",
-    intro: "Getting paid on a US job: pay applications, retainage, lien waivers, change orders and the WIP schedule.",
+    intro: "Getting paid on a US job: pay applications, retainage, lien waivers, change orders and the WIP schedule, and what each state allows.",
     market: "NA",
     order: ["pay-applications", "retainage", "lien-waivers", "change-orders", "wip-schedule"],
   },

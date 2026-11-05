@@ -44,7 +44,7 @@ export function leadCountry(cfCountry: string | null | undefined, chosen: Market
 // Pages that have their own version in a market, prerendered at /<market>/<path> (src/app/na/) and served
 // at the same URL by a rewrite in the proxy. Add a path here and a page under src/app/na/ together.
 export const ADAPTIVE: Partial<Record<MarketCode, string[]>> = {
-  NA: ["/", "/services", "/services/inventory-and-reservations", "/industries/boiler-pressure-vessel-manufacturing", "/industries/interior-design-and-furniture"],
+  NA: ["/", "/services", "/services/inventory-and-reservations", "/industries/boiler-pressure-vessel-manufacturing", "/industries/interior-design-and-furniture", "/industries/construction-company"],
 };
 // Each version has its own public URL (/us/…): visitors get theirs at the shared URL (src/proxy.ts), search engines see
 // both, joined by hreflang (languages() below), so each country's searchers are shown their own.
