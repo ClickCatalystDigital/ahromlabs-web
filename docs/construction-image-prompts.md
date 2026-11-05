@@ -2,7 +2,7 @@
 
 Same style and hand-over as the ASME hub (`docs/asme-image-prompts.md`): paste the **style block** from that file before each prompt, generate a wide PNG, name it as in the File column but ending `.png`, put them in one folder and give Claude the folder. Claude converts them with `python3 scripts/asme-images.py <folder> construction`. Alt text is in `src/lib/construction-images.ts`; re-check it against each delivered image. The hub serves India and North America: keep the pictures free of country-specific motifs (brand imagery is global).
 
-**Status (3 Nov 2026): all 10 done**, in `public/construction/`.
+**Status (5 Nov 2026): all 17 done**, in `public/construction/` (the 7 new pages show their image once each page exists).
 
 | File | Page | Prompt (after the style block) |
 |---|---|---|

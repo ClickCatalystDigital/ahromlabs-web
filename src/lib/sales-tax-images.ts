@@ -12,6 +12,7 @@ const ALT: Record<string, string> = {
   "resale-certificates": "A signed certificate in a manila folder held open in a filing drawer of customer files: an exemption certificate kept on file.",
   "manufacturing-sales-tax-exemption": "Bar stock feeding into a lathe chuck, with turned parts below: material that becomes part of a product made for sale.",
   "use-tax": "An opened shipping box with packing paper and a packing slip that shows no tax line: a purchase on which the supplier charged no tax.",
+  "contractors-sales-tax": "An open navy toolbox with a hammer, a wrench and a tape measure, a receipt tucked under the handle and coins on the lid: sales tax on a contractor's materials and work.",
   "sales-tax-in-erp": "An order form on a clipboard with address lines, item rows and a total, beside a small stack of filed certificates: sales tax recorded in an order system.",
 };
 

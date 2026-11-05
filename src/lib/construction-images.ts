@@ -15,6 +15,13 @@ const ALT: Record<string, string> = {
   "measurement-book": "An open hardbound register with ruled measurement columns, a steel measuring tape coiled beside it: a measurement book.",
   "tds-on-contractor-payments": "A cheque book, a calculator and a printed payment voucher on a desk: tax deducted from a payment to a contractor.",
   "gst-on-works-contracts": "Bags of cement, steel bars and a builder's level on a slab: goods and services together in a works contract.",
+  "mechanics-lien-deadlines": "A desk calendar with several dates circled in navy, a pencil and a brass hourglass: the deadlines for lien notices and claims.",
+  "prompt-payment-acts": "A stopwatch leaning on a closed envelope beside a short stack of coins: how fast a contractor must be paid.",
+  "certified-payroll": "A clipboard holding a blank weekly time sheet, a white hard hat and a pen: a weekly certified payroll report.",
+  "labour-cess": "An open navy cash box full of coins with a white hard hat beside it: the labour welfare cess on construction cost.",
+  "contract-labour-compliance": "Four blank ID badges on lanyards hanging from a hook rail, a hard hat on the shelf below: workers hired through a labour contractor.",
+  "price-escalation-clause": "A brass balance scale with a steel beam on one pan and coins on the other, a cement bag behind it: material prices weighed against the contract rate.",
+  "bank-guarantee-defect-liability": "A rolled document tied with a navy ribbon on a closed hardbound contract, a brass padlock beside it: a bank guarantee securing the contractor's obligations.",
 };
 
 export type ConArt = { src: string; alt: string; width: number; height: number };
