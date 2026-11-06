@@ -3,6 +3,12 @@ kind: manufacturing
 slug: custom-vs-off-the-shelf-erp
 group: choosing
 title: "Custom vs off-the-shelf ERP for a small manufacturer"
+related:
+  - /manufacturing/job-shop-erp
+  - /notes/tally-vs-erpnext-vs-custom-erp
+  - /services/custom-erp-crm
+  - /patterns/derive-balances-dont-store-them
+  - /manufacturing/small-business-erp-options
 question: "Should a small manufacturer build a custom ERP or buy one off the shelf?"
 answer: >
   Buy off the shelf if your work fits a standard package, you can live with its scheduling and reports, and
@@ -12,8 +18,8 @@ answer: >
 description: "Custom vs off-the-shelf ERP for small manufacturers: when each wins, the real costs over five years, one-builder risk, and questions to ask before you sign."
 domain: [manufacturing, erp, build-vs-buy]
 published: 2026-11-02
-updated: 2026-11-02
-checked: 2026-11-02
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
   - title: ERP systems (forum discussion)
     publisher: Practical Machinist
@@ -25,7 +31,9 @@ sources:
     date: 2026-11-02
 ---
 
-## The short version
+## Should a small manufacturer build a custom ERP or buy one?
+
+Buy when your work fits a package; build, in phases, when your workflow is the advantage. The trade-offs side by side:
 
 | Off-the-shelf wins when | Custom wins when |
 |---|---|
@@ -37,18 +45,18 @@ sources:
 
 Ahrom Labs builds custom systems, so read the rest knowing that. We've tried to make the case for buying as fairly as the case for building.
 
-## What shop owners say
+## What do shop owners who have done both say?
 
-Owners debating this on Practical Machinist split along predictable lines:
+They split along predictable lines, in threads on Practical Machinist:
 
 - **For building:** custom software is cheaper to change than custom machinery; shops that built their own say they adjust it constantly and that order entry got much faster.
 - **Against building:** large custom builds can cost far more and take far longer than planned; cheap builders sometimes don't finish; one shop that had a contractor build its system was glad of it but wouldn't advise writing your own.
 - **Against buying big:** packages carry modules you never use, and the scheduling is often the weak part.
 - **Middle paths:** low-code tools (Airtable, FileMaker), open-source ERPs (ERPNext, Odoo), or a configurable package with in-house customization.
 
-## The costs to compare, over five years
+## What does each cost over five years?
 
-Compare the same things on both sides, not a license price against a build quote:
+A package's cost grows with users every year; a phased custom build costs most up front and then a care plan. Compare the same lines on both sides, not a license price against a build quote:
 
 | Cost | Off-the-shelf | Custom |
 |---|---|---|
@@ -58,11 +66,18 @@ Compare the same things on both sides, not a license price against a build quote
 | Your time | Fitting your process to the package | Defining and testing what gets built |
 | Leaving | Exporting data, usually in the vendor's format | Depends on the contract: get this in writing |
 
+A worked example for a made-up 15-person shop. The package: 15 users × $150 a month for five years is $135,000,
+plus $25,000 to implement: $160,000 (illustrative; get real quotes). Built in phases by Ahrom Labs at our published US
+prices: a $1,500 two-week prototype of one workflow, a first build of $7,500 to $15,000, and a $350 a month care plan
+(hosting, support and small changes), so $37,500 over five years at the top of the build range, plus whatever later
+phases you choose. Then add the costs neither quote shows: on the package side, a person keeping a side spreadsheet
+5 hours a week at $35 an hour ($9,100 a year); on the custom side, what moving would cost if the builder stopped.
+
 The hidden cost on the off-the-shelf side is the workaround: the spreadsheet that runs beside the ERP because it can't model one thing, and the person who keeps it. On the custom side it is dependence on one builder.
 
-## Reducing the risk of custom
+## How do you reduce the risk of a custom build?
 
-If you build, these protect you:
+With six protections, all of which belong in the contract:
 
 1. **Phases with a fixed scope and price each.** A prototype of one workflow on your own data first, then the build; never one large open-ended project.
 2. **Your data, exportable any time,** in plain files, without asking.
@@ -71,7 +86,9 @@ If you build, these protect you:
 5. **Acceptance tests you write:** two or three of your real jobs, run end to end before go-live, like the [ten tests in our job shop ERP guide](/manufacturing/job-shop-erp).
 6. **Keep the accounting system you trust.** A shop system that posts to QuickBooks is a smaller, safer project than one that replaces it ([QuickBooks beside a shop system](/manufacturing/quickbooks-for-manufacturing)).
 
-## Questions to ask a builder
+## What should you ask a builder before signing?
+
+Five questions, and the answers should be specific:
 
 - Show me a system you built that's been running for over a year, and let me talk to its owner.
 - What happens on day one if you disappear? Where is the code and who can deploy it?

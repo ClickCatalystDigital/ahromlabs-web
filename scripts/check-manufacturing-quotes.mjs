@@ -21,6 +21,15 @@ const DOCS = {
   "intuit-plans": path.join(DIR, "Intuit - QuickBooks Desktop and Online solutions 2026-11-03.txt"),
   "intuit-pricing": path.join(DIR, "Intuit - QuickBooks Online pricing 2026-11-03.txt"),
   "intuit-dev": path.join(DIR, "Intuit Developer - QuickBooks Online API docs (browser text) 2026-11-03.txt"),
+  "intuit-partner": path.join(DIR, "Intuit Developer - App Partner Program FAQ 2026-11-06.txt"),
+  "intuit-mo-track": path.join(DIR, "Intuit - Plan and track production with manufacturing orders 2026-11-06.txt"),
+  "intuit-lots": path.join(DIR, "Intuit - Use serial or lot numbers Desktop Enterprise 2026-11-06.txt"),
+  "intuit-adv-inv": path.join(DIR, "Intuit - Desktop Enterprise Advanced Inventory 2026-11-06.txt"),
+  "intuit-ent-pricing": path.join(DIR, "Intuit - Desktop Enterprise pricing 2026-11-06.txt"),
+  "intuit-pricing-1106": path.join(DIR, "Intuit - QuickBooks Online pricing 2026-11-06.txt"),
+  // Sales tax texts quoted from the requirements checklist, read from the sales tax sources folder.
+  "sst-exemptions": path.join(DIR, "..", "..", "Sales tax", "sources", "SST - Exemptions 2026-11-03.txt"),
+  "tx-remote": path.join(DIR, "..", "..", "Sales tax", "sources", "Texas Comptroller - Remote Sellers 2026-11-03.txt"),
 };
 
 if (!Object.values(DOCS).every((f) => fs.existsSync(f))) {
