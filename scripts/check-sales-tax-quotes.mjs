@@ -31,6 +31,7 @@ const DOCS = {
   "wayfair-lii": "Cornell LII - South Dakota v Wayfair opinion 2026-11-07.txt",
   "ky-hb757": "Kentucky General Assembly - 2026 HB 757 2026-11-07.txt",
   "ky-ch161": "Kentucky Acts 2026 Chapter 161 (HB 757) 2026-11-07.txt",
+  "sst-f0003": "SST - Certificate of Exemption F0003 2026-11-05.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(DIR, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

@@ -3,18 +3,32 @@ kind: sales-tax
 slug: resale-certificates
 group: exemptions
 title: "Resale and exemption certificates: what to collect"
+related:
+  - /sales-tax/manufacturing-sales-tax-exemption
+  - /industries/electronics-component-trading
+  - /services/sales-crm
+  - /manufacturing/erp-requirements-checklist
+  - /sales-tax/sales-tax-in-erp
 question: "How do resale and exemption certificates work for a US seller?"
 answer: >
   A resale or exemption certificate is the buyer's signed statement that a purchase isn't taxable: bought to resell,
   or exempt for another reason, such as use in manufacturing. When you accept a valid certificate in good faith, you
   don't collect tax on that sale. You keep it on file against the customer; nobody sends it to the state until an
   auditor asks for it.
-description: "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined certificate, drop shipments, and keeping them on file."
+description: "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined form F0003, drop shipments, and keeping them on file."
 domain: [sales-tax, exemptions]
 published: 2026-11-03
-updated: 2026-11-03
-checked: 2026-11-03
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
+  - title: "Streamlined Sales Tax Certificate of Exemption (form F0003)"
+    publisher: Streamlined Sales Tax Governing Board
+    url: https://www.streamlinedsalestax.org/docs/default-source/forms/exemption-certificateb926a7ab4a0d43e1ad4fe8eb19e79cbb.pdf?sfvrsn=857843d_5
+    date: "2026-11-05"
+  - title: Sales and Use Tax
+    publisher: Texas Comptroller of Public Accounts
+    url: https://comptroller.texas.gov/taxes/sales/
+    date: "2026-11-07"
   - title: Publication 103, Sales for Resale
     publisher: California Department of Tax and Fee Administration
     url: https://cdtfa.ca.gov/formspubs/pub103/
@@ -28,6 +42,15 @@ sources:
     url: https://comptroller.texas.gov/taxes/publications/94-124.php
     date: "2026-11-03"
 checks:
+  - reg: Streamlined Sales Tax Certificate of Exemption (F0003)
+    doc: sst-f0003
+    quote: "Do not send this form to the Streamlined Sales Tax Governing Board."
+  - reg: Streamlined Sales Tax Certificate of Exemption (F0003)
+    doc: sst-f0003
+    quote: "Not all states allow all exemptions listed on this form."
+  - reg: Texas Comptroller, Sales and Use Tax
+    doc: tx-sales
+    quote: "for a maximum combined rate of 8.25 percent"
   - reg: California CDTFA, Publication 103
     doc: ca-pub103
     quote: "When a seller accepts a valid resale certificate in good faith and in a timely manner, the seller does not owe tax on that sale."
@@ -56,6 +79,9 @@ checks:
 
 ## What is the difference between a resale and an exemption certificate?
 
+The reason: a resale certificate says the buyer will sell the item on; an exemption certificate says the purchase is
+exempt for another reason, such as use in manufacturing.
+
 | Certificate | The buyer says | Typical buyers of a manufacturer or distributor |
 |---|---|---|
 | Resale | "I will sell this item, or it becomes part of something I sell" | Distributors, dealers, other manufacturers buying components |
@@ -65,7 +91,17 @@ Both do the same thing for you as the seller: with a valid certificate on file, 
 is no longer your liability. Without one, an auditor treats the sale as taxable and bills you for the tax you
 didn't charge, plus interest.
 
+## What is the Streamlined Certificate of Exemption (F0003)?
+
+The one multistate form the Streamlined member states accept, for resale and the other exemptions it lists. The
+[form itself](https://www.streamlinedsalestax.org/docs/default-source/forms/exemption-certificateb926a7ab4a0d43e1ad4fe8eb19e79cbb.pdf?sfvrsn=857843d_5)
+says it goes to the seller, never to the Board, and that not every state allows every exemption on it: the buyer is
+responsible for being eligible in the state it claims. The buyer ticks a box if the certificate is for a single purchase
+and names that invoice or purchase order.
+
 ## Which form do you accept?
+
+The Streamlined certificate in member states, and each other state's own form or a multistate one elsewhere:
 
 - **Streamlined states.** The Streamlined Sales Tax exemption certificate is accepted by all 24 member states, for
   resale and the other exemptions it lists. Not every member allows every exemption on it, and some want a
@@ -101,6 +137,18 @@ When you buy from a supplier who ships straight to your customer, the supplier n
 Streamlined states, a drop shipper that receives a completed certificate from you is not liable for the tax on what
 it delivers to your customer, and the ID number you give may be one issued by another state. Outside Streamlined,
 check the delivery state's own rule for drop shipments.
+
+## What happens if a customer's certificate doesn't cover a state you ship to?
+
+The sale into that state is taxable to you, and an auditor bills the tax you didn't charge plus interest. A worked
+example: a made-up distributor sells $180,000 a year to one dealer, $60,000 of it shipped to Texas, where no
+certificate is on file. At the Texas maximum combined rate of 8.25%, that's $4,950 of tax for the year, unless a valid
+certificate is obtained in time. The fix is mechanical: the order system checks the ship-to state against the
+certificates on file before the invoice is issued.
+
+Our demos don't hold certificates yet: the electronics and boiler demos send each line as taxable or not to
+QuickBooks. We'd build certificate storage and the ship-to check for a distributor that sells for resale across
+states.
 
 ## Where do certificates go?
 

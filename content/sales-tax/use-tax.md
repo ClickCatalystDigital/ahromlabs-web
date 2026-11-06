@@ -3,6 +3,12 @@ kind: sales-tax
 slug: use-tax
 group: exemptions
 title: "Use tax for businesses: when you owe it yourself"
+related:
+  - /sales-tax/manufacturing-sales-tax-exemption
+  - /systems/three-way-match
+  - /services/custom-erp-crm
+  - /manufacturing/distributor-inventory-control
+  - /sales-tax/sales-tax-in-erp
 question: "When does a business owe use tax on its purchases?"
 answer: >
   Use tax is the other half of sales tax: when you buy something taxable for your own use and the seller doesn't
@@ -12,9 +18,13 @@ answer: >
 description: "Use tax for US businesses: what it is, when you owe it on purchases, goods bought exempt and then used, how it's reported, and credit for tax paid elsewhere."
 domain: [sales-tax, use-tax]
 published: 2026-11-03
-updated: 2026-11-03
-checked: 2026-11-03
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
+  - title: Sales and Use Tax
+    publisher: Texas Comptroller of Public Accounts
+    url: https://comptroller.texas.gov/taxes/sales/
+    date: "2026-11-07"
   - title: Use Tax
     publisher: Texas Comptroller of Public Accounts
     url: https://comptroller.texas.gov/taxes/sales/use-tax.php
@@ -32,6 +42,9 @@ sources:
     url: https://comptroller.texas.gov/taxes/publications/94-124.php
     date: "2026-11-03"
 checks:
+  - reg: Texas Comptroller, Sales and Use Tax
+    doc: tx-sales
+    quote: "Texas imposes a 6.25 percent state sales and use tax on all retail sales, leases and rentals of most goods, as well as taxable services"
   - reg: Texas Comptroller, Use Tax
     doc: tx-use
     quote: "Use tax is a nonrecurring tax that is complementary to sales tax and is imposed on the storage, use, or other consumption of tangible personal property or a taxable service in Texas."
@@ -63,6 +76,8 @@ auditors read your purchase ledger, not just your sales.
 
 ## When does a business owe it?
 
+Whenever it uses something taxable on which the seller didn't charge its state's tax. The usual cases:
+
 | Situation | Example | You owe use tax on |
 |---|---|---|
 | An out-of-state supplier didn't charge your state's tax | Shop supplies from a supplier not registered in your state | The price of the supplies |
@@ -73,6 +88,18 @@ auditors read your purchase ledger, not just your sales.
 
 The Streamlined Sales Tax Governing Board puts the rule in one line: when the seller doesn't collect the tax due,
 the customer must pay use tax directly to the state unless it can claim an exemption.
+
+## How much use tax do you owe, and what if another state's tax was paid?
+
+The same rate as the sales tax where you use the item, less any sales tax you already paid on it elsewhere (where your
+state gives that credit, as Texas does). Worked examples at a made-up Texas plant where state and local tax total
+8.25% (the 6.25% state rate plus 2% local):
+
+| Purchase | Tax charged by the seller | Use tax owed |
+|---|---:|---:|
+| $4,000 of shop supplies from an out-of-state supplier | $0 | $330.00 |
+| The same supplies, with the supplier's own state's 6% charged ($240) | $240.00 | $90.00 |
+| A $1,800 drill taken from resale stock for the warehouse | $0 (bought for resale) | $148.50 |
 
 ## How do you report it?
 

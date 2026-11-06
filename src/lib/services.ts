@@ -568,23 +568,25 @@ export const services: Service[] = [
       name: "Manufacturing inventory management software",
       description: "Inventory management software for manufacturers and distributors: every unit QR-labelled, scanned across locations, reserved per order, beside QuickBooks.",
     },
-    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing", "/sales-tax/economic-nexus-thresholds"],
+    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/distributor-inventory-control", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing", "/sales-tax/economic-nexus-thresholds"],
     family: "buying-and-stores",
     layer: "operations",
     answer:
-      "We build inventory systems that track each physical unit — a reel, a box, a plate — with its own QR label, moved by scanning from a phone across more than one store. Staff entries wait for a manager's approval, stock is reserved against each customer order line, and the shortfall becomes a procurement order.",
+      "We build inventory systems that track each physical unit — a reel, a box, a plate — with its own QR label, moved by scanning from a phone across more than one store. Staff entries wait for a manager's approval, stock is reserved against each customer order line, and the shortfall is listed for purchasing to turn into a procurement order.",
     forWhom:
       "Traders and distributors who know roughly what's in stock, but not which reel, box or shelf, or which of it is already promised to a customer.",
     steps: [
       "Each reel or box gets its own number and QR label the moment it's received.",
       "Stock moves by scanning with a phone or scanner: in, out, and between stores.",
       "Staff entries wait for a manager's approval; managers' own entries go through at once.",
-      "Stock is reserved against customer order lines, and the shortfall becomes a procurement order.",
+      "Stock is reserved against customer order lines; what's still short is listed for purchasing to order.",
     ],
     questions: [
       { q: "Why track each reel instead of a quantity?", a: "Customers order quantities, but the store ships reels of different sizes. Knowing each reel tells you which ones can fill an order." },
       { q: "Can we hold stock in more than one place?", a: "Yes. LS Technologies runs two stores, one at a partner's site, and every move between them is logged reel by reel." },
       { q: "Can stock promised to one customer go to another?", a: "Not without a manager's override. A reserved reel shows as reserved the moment it's scanned." },
+      { q: "Does it work for a manufacturer, not just a distributor?", a: "Yes. In the boiler and pressure vessel system, stock and plate offcuts are reserved against each job's bill of materials before anything is bought, and only the shortfall goes to purchasing." },
+      { q: "Does it work with QuickBooks Online?", a: "In the US demos, yes, against an Intuit sandbox company: invoices, payments, vendor bills and bill payments are sent to QuickBooks, which works out the sales tax." },
     ],
     demos: [
       { client: "ls-technologies", as: "Sign in as Store staff to scan reels; as Owner to see reservations" },
@@ -593,7 +595,7 @@ export const services: Service[] = [
       { metric: "Live reels moved to a two-store model", value: "5,256, none lost" },
       { metric: "How stock moves", value: "Scan into a cart with a phone camera or scanner" },
       { metric: "Reservations", value: "Whole reels per customer PO line, oldest first; shipping one elsewhere needs a manager's override" },
-      { metric: "Built for", value: "LS Technologies (electronics trading)" },
+      { metric: "Built for", value: "LS Technologies (electronics trading, India); a US demo runs on sample data" },
     ],
     proof: [
       { kind: "note", slug: "reels-boxes-and-two-stores" },

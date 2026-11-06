@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
+// Each section heading is the buyer's question its guides answer (the group names stay as labels elsewhere).
+const GROUP_QUESTIONS: Record<string, string> = {
+  nexus: "When do you have to collect sales tax in another state?",
+  exemptions: "Which sales and purchases are exempt, and how do you prove it?",
+  systems: "What should your order system record for sales tax?",
+};
+
 export default function SalesTaxHub() {
   const guides = stGuides();
   const updated = [ST_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
@@ -34,7 +41,7 @@ export default function SalesTaxHub() {
       art={art?.src}
       artAlt={art?.alt}
     >
-      <GuideH2>Free tool</GuideH2>
+      <GuideH2>Is there a free way to check where you must collect?</GuideH2>
       <ul className="mt-6 divide-y divide-line border-y border-line">
         <li className="py-6">
           <Link href="/sales-tax/economic-nexus-thresholds" className="text-link focus-ring text-xl font-medium">Economic nexus checker</Link>
@@ -49,7 +56,7 @@ export default function SalesTaxHub() {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (
           <div key={group.slug}>
-            <GuideH2>{group.name}</GuideH2>
+            <GuideH2>{GROUP_QUESTIONS[group.slug] ?? group.name}</GuideH2>
             <p className="mt-4 leading-relaxed text-foreground-secondary">{group.intro}</p>
             <ul className="mt-6 divide-y divide-line border-y border-line">
               {list.map((g) => (
@@ -63,11 +70,23 @@ export default function SalesTaxHub() {
         );
       })}
 
-      <GuideH2>Related guides</GuideH2>
+      <GuideH2>Where does sales tax meet job costing and inventory?</GuideH2>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
         For a manufacturer, sales tax sits beside job costing and inventory: see the{" "}
         <Link href="/manufacturing" className="text-link focus-ring">manufacturing software guide</Link>, including{" "}
         <Link href="/manufacturing/quickbooks-for-manufacturing" className="text-link focus-ring">what QuickBooks does for a manufacturer</Link>.
+      </p>
+      <GuideH2>Can a system hold certificates and report sales by state?</GuideH2>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        Yes, if it&apos;s built to: a{" "}
+        <Link href="/services/custom-erp-crm" className="text-link focus-ring">system built around your orders</Link>{" "}
+        can keep each customer&apos;s certificates with their states, check every order&apos;s ship-to state against them,
+        and total sales by state for the nexus checker. Our US demos for{" "}
+        <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">boiler shops</Link>{" "}
+        and{" "}
+        <Link href="/industries/electronics-component-trading" className="text-link focus-ring">component distributors</Link>{" "}
+        leave the tax to QuickBooks Online&apos;s automated sales tax today; certificates and the sales-by-state report are
+        what we&apos;d build.
       </p>
     </SalesTaxPage>
   );

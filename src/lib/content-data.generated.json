@@ -8322,17 +8322,36 @@
     "slug": "resale-certificates",
     "group": "exemptions",
     "title": "Resale and exemption certificates: what to collect",
+    "related": [
+      "/sales-tax/manufacturing-sales-tax-exemption",
+      "/industries/electronics-component-trading",
+      "/services/sales-crm",
+      "/manufacturing/erp-requirements-checklist",
+      "/sales-tax/sales-tax-in-erp"
+    ],
     "question": "How do resale and exemption certificates work for a US seller?",
     "answer": "A resale or exemption certificate is the buyer's signed statement that a purchase isn't taxable: bought to resell, or exempt for another reason, such as use in manufacturing. When you accept a valid certificate in good faith, you don't collect tax on that sale. You keep it on file against the customer; nobody sends it to the state until an auditor asks for it.",
-    "description": "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined certificate, drop shipments, and keeping them on file.",
+    "description": "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined form F0003, drop shipments, and keeping them on file.",
     "domain": [
       "sales-tax",
       "exemptions"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-07",
+    "checked": "2026-11-07",
     "sources": [
+      {
+        "title": "Streamlined Sales Tax Certificate of Exemption (form F0003)",
+        "publisher": "Streamlined Sales Tax Governing Board",
+        "url": "https://www.streamlinedsalestax.org/docs/default-source/forms/exemption-certificateb926a7ab4a0d43e1ad4fe8eb19e79cbb.pdf?sfvrsn=857843d_5",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Sales and Use Tax",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/",
+        "date": "2026-11-07"
+      },
       {
         "title": "Publication 103, Sales for Resale",
         "publisher": "California Department of Tax and Fee Administration",
@@ -8353,6 +8372,21 @@
       }
     ],
     "checks": [
+      {
+        "reg": "Streamlined Sales Tax Certificate of Exemption (F0003)",
+        "doc": "sst-f0003",
+        "quote": "Do not send this form to the Streamlined Sales Tax Governing Board."
+      },
+      {
+        "reg": "Streamlined Sales Tax Certificate of Exemption (F0003)",
+        "doc": "sst-f0003",
+        "quote": "Not all states allow all exemptions listed on this form."
+      },
+      {
+        "reg": "Texas Comptroller, Sales and Use Tax",
+        "doc": "tx-sales",
+        "quote": "for a maximum combined rate of 8.25 percent"
+      },
       {
         "reg": "California CDTFA, Publication 103",
         "doc": "ca-pub103",
@@ -8394,7 +8428,7 @@
         "quote": "The reason the purchase is exempt from tax;"
       }
     ],
-    "body": "## What is the difference between a resale and an exemption certificate?\n\n| Certificate | The buyer says | Typical buyers of a manufacturer or distributor |\n|---|---|---|\n| Resale | \"I will sell this item, or it becomes part of something I sell\" | Distributors, dealers, other manufacturers buying components |\n| Exemption | \"This purchase is exempt for another reason\" | Manufacturers buying production equipment or materials, nonprofits, government, farms |\n\nBoth do the same thing for you as the seller: with a valid certificate on file, the sale is not taxable and the tax\nis no longer your liability. Without one, an auditor treats the sale as taxable and bills you for the tax you\ndidn't charge, plus interest.\n\n## Which form do you accept?\n\n- **Streamlined states.** The Streamlined Sales Tax exemption certificate is accepted by all 24 member states, for\n  resale and the other exemptions it lists. Not every member allows every exemption on it, and some want a\n  state-specific ID number. See [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax).\n- **Other states.** Each has its own form or accepts a multistate one: California's general resale certificate is\n  CDTFA-230; in Texas, the back of Form 01-339 is the Texas Sales and Use Tax Exemption Certificate.\n\nA certificate is good for the kind of goods it describes. California's guidance is that the property may be listed\nitem by item or by a general description; if a customer buys something it doesn't normally sell, ask for a\ncertificate that names that property.\n\n## What must a certificate say?\n\nEach state sets its fields, but they usually include:\n\n- the buyer's name, address and sales tax permit or registration number\n- a description of the items, or the type of items, bought tax-free\n- the reason the purchase is exempt (resale, manufacturing, an exempt organization)\n- the buyer's signature and the date\n\nTexas lists the description, the reason, and the signature and date for a manufacturing exemption certificate.\n\n## Do you have to check the buyer's number?\n\nIn Streamlined states, the seller doesn't have to verify the buyer's ID number (the Board notes Georgia as the\nexception). You do have to accept it in good faith: a certificate for goods that obviously don't fit the buyer's\nbusiness, such as office furniture \"for resale\" from a machine shop, isn't one. The buyer carries the penalty for\nmisusing a certificate, and California says intentional misuse can be prosecuted.\n\n## How do drop shipments work?\n\nWhen you buy from a supplier who ships straight to your customer, the supplier needs your resale certificate. In\nStreamlined states, a drop shipper that receives a completed certificate from you is not liable for the tax on what\nit delivers to your customer, and the ID number you give may be one issued by another state. Outside Streamlined,\ncheck the delivery state's own rule for drop shipments.\n\n## Where do certificates go?\n\nNot to the state. The buyer gives the certificate to the seller and keeps a copy; the seller keeps it on file and\nproduces it in an audit. In practice that means each certificate should sit on the customer's record with:\n\n- which states it covers, and which exemption\n- the date received, and an expiry or renewal date where the state sets one\n- the customer's ship-to states, so an order to a state with no certificate on file is taxed\n\nManufacturers claiming exemption on their own purchases do the same in reverse: see\n[the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption), and for exempt purchases later used\nanother way, [use tax](/sales-tax/use-tax). How an order system should hold all this:\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
+    "body": "## What is the difference between a resale and an exemption certificate?\n\nThe reason: a resale certificate says the buyer will sell the item on; an exemption certificate says the purchase is\nexempt for another reason, such as use in manufacturing.\n\n| Certificate | The buyer says | Typical buyers of a manufacturer or distributor |\n|---|---|---|\n| Resale | \"I will sell this item, or it becomes part of something I sell\" | Distributors, dealers, other manufacturers buying components |\n| Exemption | \"This purchase is exempt for another reason\" | Manufacturers buying production equipment or materials, nonprofits, government, farms |\n\nBoth do the same thing for you as the seller: with a valid certificate on file, the sale is not taxable and the tax\nis no longer your liability. Without one, an auditor treats the sale as taxable and bills you for the tax you\ndidn't charge, plus interest.\n\n## What is the Streamlined Certificate of Exemption (F0003)?\n\nThe one multistate form the Streamlined member states accept, for resale and the other exemptions it lists. The\n[form itself](https://www.streamlinedsalestax.org/docs/default-source/forms/exemption-certificateb926a7ab4a0d43e1ad4fe8eb19e79cbb.pdf?sfvrsn=857843d_5)\nsays it goes to the seller, never to the Board, and that not every state allows every exemption on it: the buyer is\nresponsible for being eligible in the state it claims. The buyer ticks a box if the certificate is for a single purchase\nand names that invoice or purchase order.\n\n## Which form do you accept?\n\nThe Streamlined certificate in member states, and each other state's own form or a multistate one elsewhere:\n\n- **Streamlined states.** The Streamlined Sales Tax exemption certificate is accepted by all 24 member states, for\n  resale and the other exemptions it lists. Not every member allows every exemption on it, and some want a\n  state-specific ID number. See [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax).\n- **Other states.** Each has its own form or accepts a multistate one: California's general resale certificate is\n  CDTFA-230; in Texas, the back of Form 01-339 is the Texas Sales and Use Tax Exemption Certificate.\n\nA certificate is good for the kind of goods it describes. California's guidance is that the property may be listed\nitem by item or by a general description; if a customer buys something it doesn't normally sell, ask for a\ncertificate that names that property.\n\n## What must a certificate say?\n\nEach state sets its fields, but they usually include:\n\n- the buyer's name, address and sales tax permit or registration number\n- a description of the items, or the type of items, bought tax-free\n- the reason the purchase is exempt (resale, manufacturing, an exempt organization)\n- the buyer's signature and the date\n\nTexas lists the description, the reason, and the signature and date for a manufacturing exemption certificate.\n\n## Do you have to check the buyer's number?\n\nIn Streamlined states, the seller doesn't have to verify the buyer's ID number (the Board notes Georgia as the\nexception). You do have to accept it in good faith: a certificate for goods that obviously don't fit the buyer's\nbusiness, such as office furniture \"for resale\" from a machine shop, isn't one. The buyer carries the penalty for\nmisusing a certificate, and California says intentional misuse can be prosecuted.\n\n## How do drop shipments work?\n\nWhen you buy from a supplier who ships straight to your customer, the supplier needs your resale certificate. In\nStreamlined states, a drop shipper that receives a completed certificate from you is not liable for the tax on what\nit delivers to your customer, and the ID number you give may be one issued by another state. Outside Streamlined,\ncheck the delivery state's own rule for drop shipments.\n\n## What happens if a customer's certificate doesn't cover a state you ship to?\n\nThe sale into that state is taxable to you, and an auditor bills the tax you didn't charge plus interest. A worked\nexample: a made-up distributor sells $180,000 a year to one dealer, $60,000 of it shipped to Texas, where no\ncertificate is on file. At the Texas maximum combined rate of 8.25%, that's $4,950 of tax for the year, unless a valid\ncertificate is obtained in time. The fix is mechanical: the order system checks the ship-to state against the\ncertificates on file before the invoice is issued.\n\nOur demos don't hold certificates yet: the electronics and boiler demos send each line as taxable or not to\nQuickBooks. We'd build certificate storage and the ship-to check for a distributor that sells for resale across\nstates.\n\n## Where do certificates go?\n\nNot to the state. The buyer gives the certificate to the seller and keeps a copy; the seller keeps it on file and\nproduces it in an audit. In practice that means each certificate should sit on the customer's record with:\n\n- which states it covers, and which exemption\n- the date received, and an expiry or renewal date where the state sets one\n- the customer's ship-to states, so an order to a state with no certificate on file is taxed\n\nManufacturers claiming exemption on their own purchases do the same in reverse: see\n[the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption), and for exempt purchases later used\nanother way, [use tax](/sales-tax/use-tax). How an order system should hold all this:\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
   },
   {
     "kind": "sales-tax",
@@ -8624,16 +8658,24 @@
     "slug": "streamlined-sales-tax",
     "group": "nexus",
     "title": "Streamlined Sales Tax: member states and free services",
+    "metaTitle": "Streamlined Sales Tax: member states and free filing",
+    "related": [
+      "/sales-tax/economic-nexus-thresholds",
+      "/sales-tax/resale-certificates",
+      "/manufacturing/quickbooks-integration",
+      "/services/custom-erp-crm",
+      "/industries/electronics-component-trading"
+    ],
     "question": "What is the Streamlined Sales Tax Agreement, and who can use its free services?",
     "answer": "The Streamlined Sales and Use Tax Agreement is a set of uniform sales tax rules that 24 states follow: 23 full members and Tennessee as an associate. A seller can register in all of them with one free application and use one exemption certificate, and a remote seller can have a certified provider calculate, file and pay the tax in those states at the states' cost.",
-    "description": "Streamlined Sales Tax: the 24 member states, one free registration, one exemption certificate, and free certified provider services for remote sellers.",
+    "description": "Streamlined Sales Tax: the 24 member states, one free registration, one exemption certificate, and free certified-provider filing for remote sellers.",
     "domain": [
       "sales-tax",
       "streamlined"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-07",
+    "checked": "2026-11-07",
     "sources": [
       {
         "title": "State Information",
@@ -8667,6 +8709,16 @@
       }
     ],
     "checks": [
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Free sales tax services (when a CSP may charge)",
+        "doc": "sst-free",
+        "quote": "To process non-taxable transactions if the non-taxable transactions exceed 30% of all transactions processed annually for a"
+      },
+      {
+        "reg": "Streamlined Sales Tax Governing Board, Free sales tax services",
+        "doc": "sst-free",
+        "quote": "Exactor (a subsidiary of Intuit)"
+      },
       {
         "reg": "Streamlined Sales Tax Governing Board, State Information (full member state)",
         "doc": "sst-states",
@@ -8703,13 +8755,20 @@
         "quote": "You do not need to be registered through the Streamlined Sales Tax ® Registration System to use the Streamlined Exemption Certificate."
       }
     ],
-    "body": "## Which states are in Streamlined Sales Tax?\n\nAs the Governing Board lists them on 3 November 2026:\n\n| Status | States |\n|---|---|\n| Full members (23) | Arkansas, Georgia, Indiana, Iowa, Kansas, Kentucky, Michigan, Minnesota, Nebraska, Nevada, New Jersey, North Carolina, North Dakota, Ohio, Oklahoma, Rhode Island, South Dakota, Utah, Vermont, Washington, West Virginia, Wisconsin, Wyoming |\n| Associate member (1) | Tennessee |\n| Not members | Every other state, including California, Texas, New York, Florida, Illinois and Pennsylvania |\n\nA full member's laws already follow the agreement; an associate has substantially complied. The states with the\nmost manufacturing and distribution sales, California, Texas and New York, are not members, so a growing seller\ndeals with them directly whatever it does in Streamlined states.\n\n## What do member states have in common?\n\nThe agreement standardizes how sales tax works, not the rates. Member states share definitions of products, a\nsingle state-level administration, simpler rate structures and other uniform rules. When the Supreme\nCourt decided South Dakota v. Wayfair, it pointed to South Dakota's membership as one reason its law did not burden\ninterstate sellers unduly.\n\nFor a seller, three things follow:\n\n- **One registration.** The Streamlined Sales Tax Registration System registers you in any or all member states\n  with one application, free. You still file a return with each state you register in.\n- **One exemption certificate.** The Streamlined exemption certificate is accepted by all 24 member states, and you\n  don't need to be registered through Streamlined to use it. See\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **Published taxability and rates.** Each member state publishes a taxability matrix and rate and boundary files\n  in a common format, which is what a tax engine loads.\n\n## Can a remote seller get sales tax filing for free?\n\nYes, in member states, for remote sellers. The Board contracts with certified service providers (CSPs); on\n3 November 2026 it lists Avalara, TaxCloud, Sovos, AccurateTax and Avior as offering the free service. A seller\nthat is a \"CSP-compensated seller\" in a member state gets, at the state's cost:\n\n- setup and integration of the provider's system with yours\n- tax calculated on each sale\n- returns prepared and filed, and the tax remitted\n- help with that state's notices and audits\n\nTo qualify in a state, you register through the Streamlined system, contract with a CSP under the Streamlined\ncontract, and in the 12 months before registering had no fixed place of business there for more than 30 days, less\nthan $50,000 of property and of payroll there, under 25% of your total property or payroll there, and weren't\ncollecting there to qualify as a state supplier. A remote seller that only has to collect because it passed the\neconomic threshold qualifies. The provider may charge for states where you don't qualify, for non-member states and\nfor extra services.\n\n## Is it worth registering through Streamlined?\n\nFor a manufacturer or distributor that has passed the threshold in several member states and has no presence\nthere, usually yes: one registration, and a provider files those states for free. It doesn't help with California,\nTexas or New York. Check where you are over with the [nexus checker](/sales-tax/economic-nexus-thresholds), and\nsee [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp) for connecting a provider to your order\nsystem."
+    "body": "## Which states are in Streamlined Sales Tax?\n\nTwenty-four: 23 full members and Tennessee as an associate member, as the Governing Board lists them on 5 November\n2026:\n\n| Status | States |\n|---|---|\n| Full members (23) | Arkansas, Georgia, Indiana, Iowa, Kansas, Kentucky, Michigan, Minnesota, Nebraska, Nevada, New Jersey, North Carolina, North Dakota, Ohio, Oklahoma, Rhode Island, South Dakota, Utah, Vermont, Washington, West Virginia, Wisconsin, Wyoming |\n| Associate member (1) | Tennessee |\n| Not members | Every other state, including California, Texas, New York, Florida, Illinois and Pennsylvania |\n\nA full member's laws already follow the agreement; an associate has substantially complied. The states with the\nmost manufacturing and distribution sales, California, Texas and New York, are not members, so a growing seller\ndeals with them directly whatever it does in Streamlined states.\n\n## What do member states have in common?\n\nThe agreement standardizes how sales tax works, not the rates. Member states share definitions of products, a\nsingle state-level administration, simpler rate structures and other uniform rules. When the Supreme\nCourt decided South Dakota v. Wayfair, it pointed to South Dakota's membership as one reason its law did not burden\ninterstate sellers unduly.\n\nFor a seller, three things follow:\n\n- **One registration.** The Streamlined Sales Tax Registration System registers you in any or all member states\n  with one application, free. You still file a return with each state you register in.\n- **One exemption certificate.** The Streamlined exemption certificate is accepted by all 24 member states, and you\n  don't need to be registered through Streamlined to use it. See\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **Published taxability and rates.** Each member state publishes a taxability matrix and rate and boundary files\n  in a common format, which is what a tax engine loads.\n\n## Can a remote seller get sales tax filing for free?\n\nYes, in member states, for remote sellers. The Board contracts with certified service providers (CSPs); on\n5 November 2026 it lists Avalara, TaxCloud, Sovos, AccurateTax and Avior as offering the free service. A seller\nthat is a \"CSP-compensated seller\" in a member state gets, at the state's cost:\n\n- setup and integration of the provider's system with yours\n- tax calculated on each sale\n- returns prepared and filed, and the tax remitted\n- help with that state's notices and audits\n\nTo qualify in a state, you register through the Streamlined system, contract with a CSP under the Streamlined\ncontract, and in the 12 months before registering had no fixed place of business there for more than 30 days, less\nthan $50,000 of property and of payroll there, under 25% of your total property or payroll there, and weren't\ncollecting there to qualify as a state supplier. A remote seller that only has to collect because it passed the\neconomic threshold qualifies. The provider may charge for states where you don't qualify, for non-member states and\nfor extra services.\n\n## Can a certified provider charge a distributor that sells mostly for resale?\n\nYes, in part. The Board's [free services page](https://www.streamlinedsalestax.org/for-businesses/free-sales-tax-services)\nlets a provider charge to process non-taxable transactions when they exceed 30% of all the transactions it processes\nfor that seller in a member state in a year. A worked example: a made-up remote seller is over the threshold in Ohio,\nIndiana, Michigan, Kentucky, Georgia and Washington, with no presence in any of them. One free registration covers all\nsix, and a provider files them at the states' cost. But if 70% of its Ohio transactions are sales for resale, the\nprovider may charge for processing those in Ohio. Ask each provider for its price on non-taxable volume before you\nsign.\n\n## Is Intuit a certified service provider?\n\nNot for the free service. The Board lists Exactor, an Intuit subsidiary, among the providers whose systems are\ncertified but that don't currently offer free services under the Streamlined contract. QuickBooks Online's\nautomated sales tax works out the tax inside QuickBooks; it isn't one of the providers offering the free service.\n\n## Is it worth registering through Streamlined?\n\nFor a manufacturer or distributor that has passed the threshold in several member states and has no presence\nthere, usually yes: one registration, and a provider files those states for free. It doesn't help with California,\nTexas or New York. Check where you are over with the [nexus checker](/sales-tax/economic-nexus-thresholds), and\nsee [how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp) for connecting a provider to your order\nsystem."
   },
   {
     "kind": "sales-tax",
     "slug": "use-tax",
     "group": "exemptions",
     "title": "Use tax for businesses: when you owe it yourself",
+    "related": [
+      "/sales-tax/manufacturing-sales-tax-exemption",
+      "/systems/three-way-match",
+      "/services/custom-erp-crm",
+      "/manufacturing/distributor-inventory-control",
+      "/sales-tax/sales-tax-in-erp"
+    ],
     "question": "When does a business owe use tax on its purchases?",
     "answer": "Use tax is the other half of sales tax: when you buy something taxable for your own use and the seller doesn't charge your state's tax, you owe the same tax yourself. It catches untaxed purchases from out-of-state suppliers, and goods bought tax-free for resale or manufacturing that you then use another way. A registered business usually reports it on its regular sales tax return.",
     "description": "Use tax for US businesses: what it is, when you owe it on purchases, goods bought exempt and then used, how it's reported, and credit for tax paid elsewhere.",
@@ -8718,9 +8777,15 @@
       "use-tax"
     ],
     "published": "2026-11-03",
-    "updated": "2026-11-03",
-    "checked": "2026-11-03",
+    "updated": "2026-11-07",
+    "checked": "2026-11-07",
     "sources": [
+      {
+        "title": "Sales and Use Tax",
+        "publisher": "Texas Comptroller of Public Accounts",
+        "url": "https://comptroller.texas.gov/taxes/sales/",
+        "date": "2026-11-07"
+      },
       {
         "title": "Use Tax",
         "publisher": "Texas Comptroller of Public Accounts",
@@ -8747,6 +8812,11 @@
       }
     ],
     "checks": [
+      {
+        "reg": "Texas Comptroller, Sales and Use Tax",
+        "doc": "tx-sales",
+        "quote": "Texas imposes a 6.25 percent state sales and use tax on all retail sales, leases and rentals of most goods, as well as taxable services"
+      },
       {
         "reg": "Texas Comptroller, Use Tax",
         "doc": "tx-use",
@@ -8778,7 +8848,7 @@
         "quote": "The manufacturer must calculate and remit tax on the amount of divergent use of the equipment."
       }
     ],
-    "body": "## What is use tax?\n\nSales tax is collected by the seller; use tax is paid by the buyer when the seller didn't collect. The rate is the\nsame, and the point is the same: a taxable item used in the state is taxed once, wherever it was bought. Texas\ndescribes use tax as complementary to sales tax, on the storage, use or consumption of taxable items in the state.\n\nFor a household, use tax is mostly theory. For a business it's an audit finding waiting to happen, because\nauditors read your purchase ledger, not just your sales.\n\n## When does a business owe it?\n\n| Situation | Example | You owe use tax on |\n|---|---|---|\n| An out-of-state supplier didn't charge your state's tax | Shop supplies from a supplier not registered in your state | The price of the supplies |\n| You bought for resale, then used it yourself | A distributor takes a drill from stock for its own warehouse | The cost of the drill |\n| You bought exempt for manufacturing, then used it another way | Steel bought exempt, used to build a rack for your own plant | The cost of the steel |\n| Exempt equipment used partly for other purposes | A machine also used for your own maintenance parts | The divergent share (Texas) |\n| The supplier charged a lower rate than your location's | Bought at a counter in an area with no local tax | The local tax not charged |\n\nThe Streamlined Sales Tax Governing Board puts the rule in one line: when the seller doesn't collect the tax due,\nthe customer must pay use tax directly to the state unless it can claim an exemption.\n\n## How do you report it?\n\nA business with a sales tax permit reports use tax on its regular sales and use tax return, as taxable purchases;\nTexas has a line for it. A business without a permit files a separate use tax return. If you paid another state's\ntax on the item first, Texas allows a credit for it; check your own state's rule.\n\nThe reverse also works: California lets a buyer that paid sales tax on an item, then resold it before using it,\ntake a deduction when it reports the sale.\n\n## How does a system catch it?\n\nUse tax is missed when nobody looks at the tax line of a vendor bill. The checks are mechanical:\n\n- **Vendor bills with no tax** on taxable items, from vendors not registered in your state: flag for accrual.\n- **Stock issued to internal use**: an issue from resale or exempt stock to maintenance, samples or your own\n  buildings creates a use tax line at cost.\n- **Exempt purchases** carry the reason they were exempt, so a later use that doesn't match it shows up. See\n  [the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) and\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **A monthly accrual report** by state and rate, which goes onto the return.\n\nFor how these fit with the rest of sales tax in an order system, see\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
+    "body": "## What is use tax?\n\nSales tax is collected by the seller; use tax is paid by the buyer when the seller didn't collect. The rate is the\nsame, and the point is the same: a taxable item used in the state is taxed once, wherever it was bought. Texas\ndescribes use tax as complementary to sales tax, on the storage, use or consumption of taxable items in the state.\n\nFor a household, use tax is mostly theory. For a business it's an audit finding waiting to happen, because\nauditors read your purchase ledger, not just your sales.\n\n## When does a business owe it?\n\nWhenever it uses something taxable on which the seller didn't charge its state's tax. The usual cases:\n\n| Situation | Example | You owe use tax on |\n|---|---|---|\n| An out-of-state supplier didn't charge your state's tax | Shop supplies from a supplier not registered in your state | The price of the supplies |\n| You bought for resale, then used it yourself | A distributor takes a drill from stock for its own warehouse | The cost of the drill |\n| You bought exempt for manufacturing, then used it another way | Steel bought exempt, used to build a rack for your own plant | The cost of the steel |\n| Exempt equipment used partly for other purposes | A machine also used for your own maintenance parts | The divergent share (Texas) |\n| The supplier charged a lower rate than your location's | Bought at a counter in an area with no local tax | The local tax not charged |\n\nThe Streamlined Sales Tax Governing Board puts the rule in one line: when the seller doesn't collect the tax due,\nthe customer must pay use tax directly to the state unless it can claim an exemption.\n\n## How much use tax do you owe, and what if another state's tax was paid?\n\nThe same rate as the sales tax where you use the item, less any sales tax you already paid on it elsewhere (where your\nstate gives that credit, as Texas does). Worked examples at a made-up Texas plant where state and local tax total\n8.25% (the 6.25% state rate plus 2% local):\n\n| Purchase | Tax charged by the seller | Use tax owed |\n|---|---:|---:|\n| $4,000 of shop supplies from an out-of-state supplier | $0 | $330.00 |\n| The same supplies, with the supplier's own state's 6% charged ($240) | $240.00 | $90.00 |\n| A $1,800 drill taken from resale stock for the warehouse | $0 (bought for resale) | $148.50 |\n\n## How do you report it?\n\nA business with a sales tax permit reports use tax on its regular sales and use tax return, as taxable purchases;\nTexas has a line for it. A business without a permit files a separate use tax return. If you paid another state's\ntax on the item first, Texas allows a credit for it; check your own state's rule.\n\nThe reverse also works: California lets a buyer that paid sales tax on an item, then resold it before using it,\ntake a deduction when it reports the sale.\n\n## How does a system catch it?\n\nUse tax is missed when nobody looks at the tax line of a vendor bill. The checks are mechanical:\n\n- **Vendor bills with no tax** on taxable items, from vendors not registered in your state: flag for accrual.\n- **Stock issued to internal use**: an issue from resale or exempt stock to maintenance, samples or your own\n  buildings creates a use tax line at cost.\n- **Exempt purchases** carry the reason they were exempt, so a later use that doesn't match it shows up. See\n  [the manufacturing exemption](/sales-tax/manufacturing-sales-tax-exemption) and\n  [resale and exemption certificates](/sales-tax/resale-certificates).\n- **A monthly accrual report** by state and rate, which goes onto the return.\n\nFor how these fit with the rest of sales tax in an order system, see\n[how an ERP should handle sales tax](/sales-tax/sales-tax-in-erp)."
   },
   {
     "kind": "construction",
