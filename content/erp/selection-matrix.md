@@ -3,6 +3,12 @@ kind: erp
 slug: selection-matrix
 title: "ERP selection matrix for India: Tally, ERPNext, Odoo, SAP Business One or custom"
 metaTitle: "ERP selection matrix: Tally, ERPNext, Odoo, SAP B1, custom"
+related:
+  - /erp/tally-vs-custom-erp
+  - /erp/vendor-demo-script
+  - /notes/tally-vs-erpnext-vs-custom-erp
+  - /notes/outgrown-tally-signs
+  - /services/custom-erp-crm
 answer: >
   TallyPrime, ERPNext, Odoo and SAP Business One all handle Indian e-invoicing in some form; they differ in how
   they're licensed, where they run, and how far they bend to your process. A custom system fits the process
@@ -11,8 +17,8 @@ answer: >
 description: "ERP selection criteria for India: TallyPrime, ERPNext, Odoo, SAP Business One and custom, compared on licence, hosting, e-invoice and fit."
 domain: [erp, selection, comparison]
 published: 2026-10-25
-updated: 2026-11-05
-checked: 2026-10-25
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /erp/erp-selection-matrix.webp
   alt: "A balance scale with one box on each pan, level."
@@ -49,9 +55,9 @@ sources:
     date: 2026-10-25
 ---
 
-## How to use this matrix
+## How should I use an ERP selection matrix?
 
-Don't pick a system from a feature table, this one included. Every option below can be made to look good in a demo. Pick from your own requirements:
+For the first cut only: which options to invite at all. Don't pick a system from a feature table, this one included. Every option below can be made to look good in a demo. Pick from your own requirements:
 
 1. Build your list with the [requirements builder](/erp/check) and set a priority on each line.
 2. Send the same [Excel template](/erp/template) to each option, one copy per vendor. It scores Yes, Partly and No against your priorities.
@@ -59,7 +65,9 @@ Don't pick a system from a feature table, this one included. Every option below 
 
 The table below is for the first cut: which options to invite at all. Each fact is from the product's own documentation, linked under sources.
 
-## The matrix
+## How do Tally, ERPNext, Odoo, SAP Business One and custom compare?
+
+On licence, hosting, Indian compliance and fit, from each product's own documentation:
 
 | | TallyPrime | ERPNext | Odoo | SAP Business One | Custom-built |
 |---|---|---|---|---|---|
@@ -73,7 +81,9 @@ The table below is for the first cut: which options to invite at all. Each fact 
 
 "Check it meets the rule" means the product's documentation we read doesn't say, in plain terms, that the edit log meets the [audit-trail rule](/erp/compliance): a log of every change with its date that can't be disabled. Ask the vendor to show it.
 
-## When each one tends to fit
+## When does each option tend to fit?
+
+By where the business's work happens:
 
 - **TallyPrime alone**: accounting-led businesses whose operations fit in its inventory, and who mainly need GST done right. When it stops being enough is in [seven signs you've outgrown Tally](/notes/outgrown-tally-signs).
 - **ERPNext or Odoo**: businesses whose processes are close to the standard modules, with a partner or in-house developer to configure and maintain them.
@@ -82,6 +92,6 @@ The table below is for the first cut: which options to invite at all. Each fact 
 
 The longer comparison for manufacturers is [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
 
-## What the matrix leaves out
+## What does the matrix leave out?
 
 Price, deliberately: licence, implementation and maintenance costs change by edition, users and partner, and a number here would be wrong for most readers. Get quotes against the same requirements list, and settle ownership and data export before signing: see the [contract checklist](/erp/contract-checklist). Ahrom Labs builds custom systems, so read this page as a builder's view; the facts about each product are from its own documentation.

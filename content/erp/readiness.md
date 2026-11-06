@@ -14,8 +14,8 @@ answer: >
 description: "ERP readiness checklist for Indian manufacturers and traders: ten questions on processes, masters, owners and data, and what to fix first."
 domain: [erp, readiness, selection]
 published: 2026-10-25
-updated: 2026-11-05
-checked: 2026-10-25
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /erp/erp-readiness.webp
   alt: "A hand placing the top block on a small pyramid of building blocks."
@@ -23,9 +23,9 @@ image:
   height: 362
 ---
 
-## The ten questions
+## What are the ten readiness questions?
 
-Answer each yes or no. Each no is something to fix before, or as the first phase of, any system.
+Ten yes-or-no questions on processes, owners, masters, stock, compliance and Tally; each no is something to fix before, or as the first phase of, any system.
 
 1. **Can you draw how an order moves**, from enquiry to payment, with who does what at each step? If not, that map is the first piece of work; a system built on the wrong picture makes the workarounds faster.
 2. **Does each process have one owner** who can say how it should work? Without one, the system inherits every disagreement.
@@ -38,12 +38,14 @@ Answer each yes or no. Each no is something to fix before, or as the first phase
 9. **Have you decided about Tally?** Keep it as the books, or move the books into the new system. See [moving from Tally](/erp/tally-migration).
 10. **Can you name the first thing the system must get right?** The records that must be right come first; everything else is a later phase.
 
-## Scoring it
+## How do I score the answers?
+
+Count the yes answers:
 
 - **8 to 10 yes:** ready. Write your requirements with the [builder](/erp/check) and start talking to vendors.
 - **5 to 7:** ready if the first phase is mapping the business and cleaning masters, not building screens.
 - **Under 5:** start with the map. Buying a system before the processes are decided is how ERP projects stall.
 
-## Why this order
+## Why fix these before buying software?
 
-Ahrom Labs starts every engagement with a short modeling phase that answers most of these questions: what exists, who owns it, which records must be right, and what each phase delivers. You keep the model and the plan whether or not you continue. See [how an engagement runs](/engagement) and the [requirements checklist](/erp/requirements).
+Because systems fail more often from undecided questions than from code. Ahrom Labs starts every engagement with a short modeling phase that answers most of these questions: what exists, who owns it, which records must be right, and what each phase delivers. You keep the model and the plan whether or not you continue. See [how an engagement runs](/engagement) and the [requirements checklist](/erp/requirements).

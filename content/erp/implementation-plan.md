@@ -3,6 +3,12 @@ kind: erp
 slug: implementation-plan
 title: "ERP implementation plan: phases from mapping the business to go-live"
 metaTitle: "ERP implementation plan: phases from mapping to go-live"
+related:
+  - /erp/contract-checklist
+  - /erp/tally-migration
+  - /engagement
+  - /services/custom-erp-crm
+  - /notes/sales-history-moved-without-guessing
 answer: >
   A custom ERP goes live in phases, each in use before the next starts: a short modeling phase that maps the
   business and ends with a dated, fixed-price plan; then the records that must be right; then the daily work of
@@ -11,8 +17,8 @@ answer: >
 description: "ERP implementation plan for Indian manufacturers and traders: phases from modeling to go-live, migration, acceptance tests, timeline and cost."
 domain: [erp, implementation, planning]
 published: 2026-10-25
-updated: 2026-11-05
-checked: 2026-10-25
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /erp/erp-implementation-phases.webp
   alt: "A path of five stepping stones leading to a flag."
@@ -20,11 +26,13 @@ image:
   height: 362
 ---
 
-## Why phases, each in use before the next
+## Why run an ERP project in phases?
 
-ERP projects in Indian SMEs usually fail the same way: people go back to Excel and WhatsApp because the system doesn't match how the business runs, and the old data turns out messier than anyone planned for. Phases that each go live and get used before the next one starts catch both early. You never pay for months of work you can't see, and a wrong assumption costs a phase, not the project.
+So that each phase is in use before the next one starts, which catches a wrong assumption early. ERP projects in Indian SMEs usually fail the same way: people go back to Excel and WhatsApp because the system doesn't match how the business runs, and the old data turns out messier than anyone planned for. Phases that each go live and get used before the next one starts catch both early. You never pay for months of work you can't see, and a wrong assumption costs a phase, not the project.
 
-## The phases
+## What are the phases of an ERP implementation?
+
+Modeling first, then the records that must be right, then everything else, each going live before the next:
 
 | Phase | What it delivers | Done when |
 |---|---|---|
@@ -36,22 +44,22 @@ ERP projects in Indian SMEs usually fail the same way: people go back to Excel a
 
 The order inside phase 2 comes from the map: whatever the business can least afford to get wrong goes first.
 
-## Data migration is its own piece of work
+## How should data migration be handled?
 
-Migration is scoped and quoted separately, before it starts, rather than discovered halfway. Every import is checked against its source, doubtful rows are held for a person, and each import is tagged so it can be removed as one batch. See [moving from Tally](/erp/tally-migration).
+As its own piece of work: migration is scoped and quoted separately, before it starts, rather than discovered halfway. Every import is checked against its source, doubtful rows are held for a person, and each import is tagged so it can be removed as one batch. See [moving from Tally](/erp/tally-migration).
 
-## The requirements are the acceptance tests
+## How do I test each phase before signing it off?
 
-Every line on the [requirements checklist](/erp/requirements) has a test. Before a phase is signed off, run the tests for the lines it covers, on your own data. The same tests made the [vendor demo script](/erp/vendor-demo-script); using them again at go-live is how you find out whether what was shown is what was built.
+With the requirements themselves: every line on the [requirements checklist](/erp/requirements) has a test. Before a phase is signed off, run the tests for the lines it covers, on your own data. The same tests made the [vendor demo script](/erp/vendor-demo-script); using them again at go-live is how you find out whether what was shown is what was built.
 
-## How long it takes
+## How long does an ERP implementation take?
 
 It depends on how new the problem is. Something already built for another business can ship in days or weeks; genuinely new ground takes a couple of months, delivered in phases so part of it is in use early. The modeling phase ends with a date for each phase, so you know the timeline before you commit to the build.
 
-## What it costs
+## What does a custom ERP cost in India?
 
 Published 2026 guides from other firms put a custom ERP for a small Indian manufacturer at roughly ₹3–15 lakh, and a fuller build for a mid-sized manufacturer at ₹15–40 lakh. Those are market figures, not a price list: two businesses that both want "an ERP" can need very different systems, which is why the price is fixed per phase only after the modeling phase. Maintenance after go-live usually runs as an annual contract. Ahrom Labs' terms, and the sources for those ranges, are on the [engagement page](/engagement); what to settle in the contract is in the [contract checklist](/erp/contract-checklist).
 
-## Your plan, in one line per phase
+## What should the written plan look like?
 
-Write the plan as a table: phase, what it delivers, the requirement lines it covers, the acceptance tests, the date, the price. If a vendor can't fill that table before the build, the plan isn't ready.
+One line per phase. Write the plan as a table: phase, what it delivers, the requirement lines it covers, the acceptance tests, the date, the price. If a vendor can't fill that table before the build, the plan isn't ready.

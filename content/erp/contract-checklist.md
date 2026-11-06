@@ -7,6 +7,8 @@ related:
   - /erp/implementation-plan
   - /erp/readiness
   - /engagement
+  - /services/custom-erp-crm
+  - /ai-assistant/data-safety
 answer: >
   Before a custom ERP is built, settle in writing who owns the code, what the licence covers and for how long,
   what the annual maintenance contract includes and costs, how changes are priced, how fast support answers, and
@@ -14,8 +16,8 @@ answer: >
 description: "ERP contract checklist for India: code ownership, licence term, AMC scope and cost, change pricing, support time, data export and DPDP terms."
 domain: [erp, contracts, selection]
 published: 2026-10-25
-updated: 2026-11-05
-checked: 2026-10-25
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /erp/erp-contract-ownership.webp
   alt: "A signed document with ticked lines, a fountain pen and a key resting on it."
@@ -32,9 +34,9 @@ checks:
     quote: A Data Fiduciary may engage, appoint, use or otherwise involve a Data Processor to process personal data on its behalf for any activity related to offering of goods or services to Data Principals only under a valid contract
 ---
 
-## Two ownership models, both fair if stated
+## Who owns the code of a custom ERP?
 
-Custom software in India is sold in one of two ways, and buyers often don't find out which until they try to leave.
+Either you or the vendor, and the contract should say which. Custom software in India is sold in one of two ways, and buyers often don't find out which until they try to leave.
 
 | | You own the code | The vendor licenses it |
 |---|---|---|
@@ -45,7 +47,9 @@ Custom software in India is sold in one of two ways, and buyers often don't find
 
 Neither is wrong. What is wrong is not knowing which one you signed.
 
-## Clauses to settle before the build
+## Which clauses should an ERP contract settle before the build?
+
+Eight, from code ownership to personal data:
 
 1. **Ownership.** Who owns the source code and the software. If it's licensed, what the licence covers and for how long. ([requirement](/erp/requirements#contract-ownership))
 2. **Your data.** That you can export all your business data, in standard formats, at any time, including at the end. Data you can't take out ties you tighter than any clause. ([requirement](/erp/requirements#nonfunctional-data-export))
@@ -56,9 +60,9 @@ Neither is wrong. What is wrong is not knowing which one you signed.
 7. **Hosting and storage.** Who pays for the server and the storage, and whether storage costs are passed on at the provider's price.
 8. **Personal data.** If the vendor processes personal data on your behalf (staff, customers, contacts), the Digital Personal Data Protection Act, 2023 requires a valid contract for that: section 8(2). Name the vendor's duties for safeguards and breach intimation in it.
 
-## How Ahrom Labs does it
+## How does Ahrom Labs handle code, maintenance and data?
 
-Stated plainly, as on the [engagement page](/engagement):
+Ahrom Labs owns the code and licenses it to you while the maintenance contract runs, and your data is yours. Stated plainly, as on the [engagement page](/engagement):
 
 - **Ahrom Labs owns the code.** You get a working system and a licence to use it for as long as the annual maintenance contract runs; the source code stays with Ahrom Labs. If the contract stops, the licence ends with it.
 - **Your data is yours** and can be exported at any time.

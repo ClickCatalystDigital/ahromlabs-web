@@ -2,6 +2,12 @@
 kind: erp
 slug: tally-vs-custom-erp
 title: "Tally vs a custom ERP: keep it, extend it, or replace it"
+related:
+  - /erp/tally-migration
+  - /notes/outgrown-tally-signs
+  - /notes/tally-voucher-posting
+  - /services/tally-integration
+  - /services/custom-erp-crm
 answer: >
   Keep TallyPrime for accounts, GST and TDS if that is where your work happens. When sales, stores, production or
   projects run in Excel beside it, the usual answer is not to replace Tally but to build the operations system next
@@ -10,8 +16,8 @@ answer: >
 description: "Tally vs a custom ERP for Indian businesses: when TallyPrime is enough, when to build beside it and post vouchers, when to replace it, and the audit-trail rule."
 domain: [erp, tally]
 published: 2026-11-03
-updated: 2026-11-03
-checked: 2026-11-03
+updated: 2026-11-06
+checked: 2026-11-06
 sources:
   - title: Buy TallyPrime Silver & Gold
     publisher: Tally Solutions
@@ -57,7 +63,7 @@ stock. Most Indian accountants know it, your CA can read it, and it runs on one 
 (Silver) or many (Gold). For a business whose work is buying, selling and keeping books, it is hard to beat on cost
 and familiarity.
 
-## Where it stops
+## Where does Tally stop being enough?
 
 The trouble starts when the work around the books lives elsewhere: enquiries in WhatsApp, quotations in Word,
 production in Excel, site measurements on paper, stock reserved for orders in someone's head. Then the same
@@ -65,7 +71,9 @@ invoice is typed twice, the numbers in Tally arrive days after the work, and nob
 order's status. The note [seven signs a business has outgrown Tally](/notes/outgrown-tally-signs) lists them with
 what fixed each.
 
-## Three ways forward
+## What are the options besides replacing Tally?
+
+Three: customise Tally with TDL, build an operations system beside it that posts vouchers into it, or replace it.
 
 | | Keep Tally, customise it | Build beside Tally | Replace Tally |
 |---|---|---|---|
@@ -80,7 +88,9 @@ integration with outside systems over its interfaces. How the voucher link is bu
 is in [connecting to TallyPrime four ways](/notes/connecting-tallyprime-four-ways) and
 [posting vouchers into Tally](/notes/tally-voucher-posting).
 
-## How to decide
+## How do I decide between them?
+
+By where your work is recorded today:
 
 1. List where each step of your work is recorded today, from enquiry to payment.
 2. If almost everything is already in Tally, customise it.
@@ -91,14 +101,14 @@ is in [connecting to TallyPrime four ways](/notes/connecting-tallyprime-four-way
 Whichever you pick, test it with the [vendor demo script](/erp/vendor-demo-script) on your own transactions, and
 score the options with the [selection matrix](/erp/selection-matrix).
 
-## The audit-trail rule applies either way
+## Does the audit-trail rule apply to Tally and to a custom ERP?
 
-For a company, the Companies (Accounts) Rules require accounting software that records an audit trail of every
+Yes, to both. For a company, the Companies (Accounts) Rules require accounting software that records an audit trail of every
 transaction, with an edit log, and that the audit trail can't be disabled. Check that your Tally setup meets it,
 and a custom system that holds books, or posts entries that become books, must meet it too. See
 [ERP compliance in India](/erp/compliance).
 
-## What it costs
+## What does each option cost?
 
 Tally's prices are on its site and change with each plan; a system beside it is a project. For how we scope one
 and what you own, see [how an engagement works](/engagement). The cost that's easy to miss is the one you
