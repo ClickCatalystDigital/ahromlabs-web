@@ -4733,35 +4733,78 @@
     "slug": "national-board-registration",
     "group": "certification",
     "title": "National Board registration, the NB mark and the R stamp",
+    "related": [
+      "/asme/data-reports",
+      "/asme/state-boiler-laws",
+      "/asme/stamps",
+      "/services/document-extraction",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "What is National Board registration for a pressure vessel?",
-    "answer": "National Board registration files a stamped boiler's or vessel's data report with the National Board of Boiler and Pressure Vessel Inspectors, which keeps it permanently; the item then carries the NB mark. Most US jurisdictions require it for installation. The National Board also runs the R stamp program for repairs and alterations under its inspection code, the NBIC.",
-    "description": "National Board registration and the NB mark, the NBIC, and the R, VR, NR and T/O stamps for repairs, relief valves and testing, explained for shops and owners.",
+    "answer": "National Board registration files a stamped boiler's or vessel's data report with the National Board of Boiler and Pressure Vessel Inspectors, which keeps it permanently; the item then carries the NB mark and a National Board number. Many US jurisdictions require it for installation. The National Board also runs the R stamp program for repairs and alterations under its inspection code, the NBIC.",
+    "description": "National Board registration and the NB mark: NB-264, the 30-day rule, EDT, 2025 forms, the NBIC's four Parts, and the R, VR, NR and T/O programs.",
     "domain": [
       "asme",
       "certification",
       "national-board"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "Registration",
+        "title": "Manufacturer's Data Report Registration",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
-        "title": "Accreditation programs for repairs, alterations and relief valve testing (R, VR, NR, T/O)",
+        "title": "NB-264, Criteria for ASME Registration (Revision 19)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Registration/NB-264.pdf",
+        "date": "2025-05-10"
+      },
+      {
+        "title": "About Us",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=102",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
-        "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
-        "publisher": "ASME",
-        "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
-        "date": "2023-05-12"
+        "title": "National Board Inspection Code (NBIC)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=4",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "NBIC 2025 Edition Changes",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=4&ID=493",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "NBIC Report Forms",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=113&ID=171",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "Accreditation (R, VR, NR and T/O)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=115",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "R Certificate of Authorization",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=115&ID=160",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "34 Pa. Code § 3a.21, Stamping",
+        "publisher": "Pennsylvania Department of Labor and Industry",
+        "url": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/034/chapter3a/s3a.21.html",
+        "date": "2026-11-06"
       }
     ],
     "checks": [
@@ -4769,9 +4812,69 @@
         "reg": "ASME BPV-GUI-03, section 1",
         "doc": "asme-handbook",
         "quote": "registration of data report forms may be required by the legal authority of a state or municipality of the United States or province of Canada."
+      },
+      {
+        "reg": "NBBI Data Report Registration",
+        "doc": "nb-registration",
+        "quote": "There is no charge to become authorized to register, but there is a fee for each item registered."
+      },
+      {
+        "reg": "NBBI Data Report Registration",
+        "doc": "nb-registration",
+        "quote": "Registration represents the culmination of a three-step process: the design and construction of an item in accordance with the ASME Code, inspection by an NBBI Commissioned Inspector, and final documentation certifying compliance with the ASME Code."
+      },
+      {
+        "reg": "NBBI Data Report Registration, NB Mark",
+        "doc": "nb-registration",
+        "quote": "The NB mark is used by manufacturers to identify items registered with the National Board."
+      },
+      {
+        "reg": "NB-264 Revision 19, submitting registration forms",
+        "doc": "nb-264",
+        "quote": "The timeframe in which registration forms will be submitted to NBBI following certification by the Inspector or CI shall not exceed 30 days."
+      },
+      {
+        "reg": "NBBI About Us",
+        "doc": "nb-about",
+        "quote": "The National Board members are the chief boiler inspectors representing most U.S. states and provinces/territories of Canada, as well as many major cities in the United States."
+      },
+      {
+        "reg": "NBBI NBIC page",
+        "doc": "nb-nbic",
+        "quote": "The NBIC is adopted into law by most US and Canadian jurisdictions."
+      },
+      {
+        "reg": "NBBI NBIC 2025 Edition Changes",
+        "doc": "nb-nbic-2025",
+        "quote": "“Quality System” has been changed to “Quality Management System” throughout."
+      },
+      {
+        "reg": "NBBI NBIC Report Forms",
+        "doc": "nb-forms",
+        "quote": "NB-66, Report of Repair"
+      },
+      {
+        "reg": "NBBI NBIC Report Forms",
+        "doc": "nb-forms",
+        "quote": "NB-229, Report of Alteration"
+      },
+      {
+        "reg": "NBBI R Certificate of Authorization, fees",
+        "doc": "nb-r-stamp",
+        "quote": "The certificate fee for the R Certificate of Authorization is $1150 USD for a three-year period."
+      },
+      {
+        "reg": "NBBI R Certificate of Authorization, new issuances",
+        "doc": "nb-r-stamp",
+        "quote": "have a written quality system that complies with the requirements of the current edition of the National Board Inspection Code (NBIC), NB-415, and includes the expected scope of activities;"
+      },
+      {
+        "reg": "34 Pa. Code § 3a.21(b)",
+        "doc": "pa-3a-21",
+        "quote": "A boiler or unfired pressure vessel built to the ASME Code must be stamped with the appropriate ASME symbol, the manufacturer’s information in accordance with stamping requirements of the code of construction, and its National Board registration number."
       }
     ],
-    "body": "## Who the National Board is\n\nThe National Board of Boiler and Pressure Vessel Inspectors is made up of the chief boiler inspectors of US states and Canadian provinces. ASME writes the construction code; the National Board commissions inspectors, keeps the registry of built items, and writes the code for equipment once it's in service, the **National Board Inspection Code (NBIC)**.\n\n## Registration and the NB mark\n\nRegistration is the last step after design and construction and inspection: the manufacturer sends the signed [data report](/asme/data-reports) to the National Board, which keeps it on permanent record, and the nameplate carries the **NB** mark with a National Board number.\n\n- A manufacturer becomes **authorized to register** by meeting the National Board's criteria (its document NB-264). Authorization is free; each registered item has a fee.\n- Reports are filed on paper or electronically, within 30 days of certification, on current forms.\n- Registration is required by most US jurisdictions for pressure equipment to be installed. Check the jurisdiction for the place of installation; see [US and Canadian boiler laws](/asme/state-boiler-laws).\n\nFor an owner, registration means a lost data report can always be replaced, which matters at every later inspection, repair or sale.\n\n## The NBIC\n\nThe NBIC has four parts: installation, inspection, repairs and alterations, and pressure relief devices. It is the rulebook for the equipment's life after the ASME stamp.\n\n## R, VR, NR and T/O\n\n| Stamp | For |\n|---|---|\n| R | Repairs and alterations to boilers and pressure vessels |\n| VR | Repair of pressure relief valves |\n| NR | Repairs and replacements of nuclear components |\n| T/O | Testing of pressure relief valves |\n\nA company gets one by having its quality system manual evaluated and showing it works, much like an ASME [joint review](/asme/u-stamp). R-stamp work is accepted by a National Board commissioned inspector, and the holder keeps an agreement with an inspection agency. Repairs are recorded on NBIC forms (R-1 for a repair, R-2 for an alteration) and, for registered items, filed with the National Board too."
+    "body": "## What is National Board registration for a pressure vessel?\n\nIt is the filing of a stamped item's Manufacturer's Data Report with the National Board of Boiler and Pressure Vessel\nInspectors (NBBI), which keeps it as a permanent record; the nameplate then carries the NB mark and a National Board\nnumber. The National Board describes registration as \"the culmination of a three-step process\": construction to the\nASME Code, inspection by a National Board commissioned inspector, and the documentation certifying compliance.\n\n## Who is the National Board?\n\nThe body of the chief boiler inspectors of most US states and Canadian provinces and territories, and many large US\ncities. ASME writes the construction code; the National Board commissions inspectors, keeps the registry of built\nitems, and writes the code for equipment once it's in service, the National Board Inspection Code (NBIC).\n\n## Is National Board registration required?\n\nIn many jurisdictions, yes. ASME's handbook warns that registration \"may be required by the legal authority of a\nstate or municipality of the United States or province of Canada\". Pennsylvania, for example, requires an ASME boiler\nor unfired pressure vessel to be stamped with \"its National Board registration number\" (34 Pa. Code §3a.21(b)), and\nCalifornia requires new air tanks to be National Board registered. Check the jurisdiction for the place of\ninstallation; see [US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## How does a manufacturer become authorized to register?\n\nBy meeting the National Board's criteria in NB-264 and applying online. The National Board says: \"There is no charge\nto become authorized to register, but there is a fee for each item registered.\" The manufacturer's quality control\nmanual then says how registration numbers are controlled, who submits the forms and how fast.\n\n## How soon must a data report be registered?\n\nWithin 30 days of certification. NB-264 (Revision 19) says the time between the Inspector's certification and\nsubmitting the registration forms \"shall not exceed 30 days\".\n\n## How are data reports filed?\n\nOn paper (the original report, in the exact format of the Code's form) or through the National Board's Electronic\nData Transfer (EDT) system. Since 1 January 2026 items built to the 2025 Code must be on the 2025 forms; reports on\noutdated forms are returned. See [data reports](/asme/data-reports).\n\n## What does the NB mark on a nameplate mean?\n\nThat the item's data report is on file with the National Board. In the National Board's words, \"The NB mark is used by\nmanufacturers to identify items registered with the National Board.\" For an owner, it means a lost data report can\nalways be replaced, which matters at every later inspection, repair or sale.\n\n## What is the NBIC?\n\nThe National Board Inspection Code: the rules for pressure equipment after it is built, in four Parts: Part 1\nInstallation, Part 2 Inspection, Part 3 Repairs and Alterations, and Part 4 Pressure Relief Devices. The National Board\nsays the NBIC \"is adopted into law by most US and Canadian jurisdictions\", and it is published every two years; the\ncurrent edition is 2025.\n\n## What changed in the 2025 NBIC?\n\nAmong hundreds of revisions, the National Board's summary says \"Quality System\" became \"Quality Management System\"\nthroughout, and new supplements were added for classifying repairs and alterations (Supplement 10) and for engineered\nrepairs and alterations (Supplement 11). Check the (25) markers in your copy for the details.\n\n## What are the R, VR, NR and T/O stamps?\n\n| Stamp | For |\n|---|---|\n| R | Repairs and alterations to boilers, pressure vessels and other pressure-retaining items |\n| VR | Repair of pressure relief valves |\n| NR | Repair and replacement of nuclear components |\n| T/O | In-service testing of pressure relief valves |\n\n## How does a company get the R stamp, and what does it cost?\n\nBy having an inspection agreement with an Authorized Inspection Agency, a written quality system that meets the\ncurrent NBIC and NB-415, the current NBIC itself and the construction code for its scope, then passing an on-site\nreview, which can be held together with an ASME joint review. The National Board's page gives the certificate fee as\n$1,150 for three years, plus a one-time $150 for the loan of the steel R stamp for new holders.\n\n## Which forms record a repair or alteration?\n\nNBIC Form R-1, Report of Repair (NB-66), and Form R-2, Report of Alteration (NB-229), both available through EDT; R-3\nreports parts fabricated by welding and R-4 is a supplementary sheet. For registered items, the R-1 or R-2 is filed\nwith the National Board too.\n\n## What does our software keep for registration?\n\nOur US boiler demo records each job's National Board number on its ASME record package and data report layout, with\nthe full record behind it. It doesn't file through EDT; a shop files the official form there or on paper. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4886,23 +4989,48 @@
     "slug": "quality-control-manual",
     "group": "certification",
     "title": "The ASME quality control manual: what it must cover",
+    "related": [
+      "/asme/u-stamp",
+      "/asme/authorized-inspector",
+      "/services/material-traceability",
+      "/services/operational-intelligence",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "What should an ASME quality control manual include?",
-    "answer": "An ASME quality control manual describes, in English, how the shop meets every Code requirement in its scope: who has authority, how drawings and calculations are controlled, how material is received and traced, welding, NDE, heat treatment, calibration, nonconformities, inspection and records. The joint review checks the manual, then checks the shop works the way it says.",
-    "description": "What an ASME quality control manual must cover for a U or S certificate: the elements Section VIII lists and how the joint review tests it.",
+    "answer": "An ASME quality control manual describes, in English, how the shop meets every Code requirement in its scope: who has authority, how drawings and calculations are controlled, how material is received and traced, welding, NDE, heat treatment, calibration, nonconformities, inspection and records. The joint review checks the manual against ASME's checklist, then watches the shop work the way it says.",
+    "description": "What an ASME quality control manual must cover for a U or S certificate, ASME's review checklist, the English rule, CA-1, and how the joint review tests it.",
     "domain": [
       "asme",
       "certification",
       "quality"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
         "publisher": "ASME",
         "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
         "date": "2023-05-12"
+      },
+      {
+        "title": "Frequently Asked Questions (Certification and Accreditation)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "BPVC Section VIII Division 1 (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
       }
     ],
     "checks": [
@@ -4915,9 +5043,34 @@
         "reg": "ASME BPV-GUI-03, section 3",
         "doc": "asme-handbook",
         "quote": "The Manual need not follow the format of this Guide."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The written description and documentation which support understanding of the program must be in English."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The Applicant is required to indicate the corresponding cross references to the provisions in their written description (QC Manual) which address these elements."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "they may be demonstrated using current work, a mock-up, or a combination of the two."
+      },
+      {
+        "reg": "ASME FAQ, Boiler and Pressure Vessel Certification",
+        "doc": "asme-faq-full",
+        "quote": "ASME does not provide consulting services to develop a Quality Control System that will meet the requirements of the ASME Boiler and Pressure Vessel Code."
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "CA-1 Conformity Assessment Requirements"
       }
     ],
-    "body": "## What it is for\n\nThe manual is the written description of the shop's quality control system. ASME doesn't certify a product; it certifies that the shop has a system that will keep producing Code items, and the manual is how that system is described. At the [joint review](/asme/u-stamp) the team reads the manual, then watches the shop do what it says.\n\n## The elements\n\nFor Section VIII Division 1 the elements are listed in its quality control system appendix (Mandatory Appendix 10 in recent editions); Section I and the others have equivalents. In outline:\n\n| Element | What the manual says |\n|---|---|\n| Authority and responsibility | Who is responsible for quality, and that they can stop work |\n| Organization | An org chart showing the quality function's independence |\n| Drawings, calculations and specifications | How they are prepared or received, checked, approved, revised and issued |\n| Material control | Receiving, checking against the [MTR](/asme/mtr), marking and [traceability](/asme/mtr) through cutting |\n| Examination and inspection program | What is checked, when, and the Inspector's hold points |\n| Correction of nonconformities | How a nonconformity is recorded, decided and closed |\n| Welding | [WPS, PQR and WPQ](/asme/wps-pqr-wpq) control, welder identification, [continuity](/asme/welder-continuity) |\n| Nondestructive examination | Procedures to [Section V](/asme/section-v), personnel qualification |\n| Heat treatment | Procedures and records, including [PWHT](/asme/pwht) charts |\n| Calibration | Gauges and test equipment, intervals and records |\n| Records retention | Which records are kept, where, for how long |\n| Sample forms | Every form the manual refers to |\n| Inspection of vessels and parts | How the Authorized Inspector is given access and information |\n| Relief valves | How they are inspected, where in scope |\n\nASME also gives applicants a checklist to cross-reference each element to the manual's paragraphs; the completed checklist goes to the review team.\n\n## What makes a manual pass\n\n- **It describes this shop.** A bought template with another company's job titles and forms fails the moment the team asks someone to show a step.\n- **Every form exists and is used.** The forms in the manual are the forms on the shop floor.\n- **Records join up.** A reviewer picks a weld on the demonstration item and follows it to the welder, their qualification, the WPS, the PQR, the filler metal and the NDE report. Each link has to be there.\n\nThat last test is the one most shops find hardest on paper and easiest in software: a record per weld, heat number and welder, linked once, rather than files cross-referenced by hand."
+    "body": "## What should an ASME quality control manual include?\n\nEvery element of the quality control system the Code lists for the shop's scope, described as the shop actually works.\nASME's handbook puts it plainly: the applicant \"must address each element of the QCS in the Code\", but \"need only\ndemonstrate those elements within the intended scope of activities that apply to their program\". For Section VIII\nDivision 1 the elements are listed in its quality control system appendix (Mandatory Appendix 10); Section I and the\nother construction sections have equivalents. In outline:\n\n| Element | What the manual says |\n|---|---|\n| Authority and responsibility | Who is responsible for quality, and that they can stop work |\n| Organization | An org chart showing the quality function's independence |\n| Drawings, calculations and specifications | How they are prepared or received, checked, approved, revised and issued |\n| Material control | Receiving, checking against the [MTR](/asme/mtr), marking and traceability through cutting |\n| Examination and inspection program | What is checked, when, and the Inspector's hold points |\n| Correction of nonconformities | How a nonconformity is recorded, decided and closed |\n| Welding | [WPS, PQR and WPQ](/asme/wps-pqr-wpq) control, welder identification, [continuity](/asme/welder-continuity) |\n| Nondestructive examination | Procedures to [Section V](/asme/section-v), personnel qualification |\n| Heat treatment | Procedures and records, including [PWHT](/asme/pwht) charts |\n| Calibration | Gauges and test equipment, intervals and records |\n| Records retention | Which records are kept, where, for how long |\n| Sample forms | Every form the manual refers to |\n| Inspection of vessels and parts | How the Authorized Inspector is given access and information |\n\n## Does the manual have to follow ASME's format?\n\nNo. The handbook says \"The Manual need not follow the format of this Guide.\" What it must do is cover every element\nfor the scope, and the shop must show where: ASME's review checklist (below) maps each element to the manual's own\nparagraphs.\n\n## Does the manual have to be in English?\n\nYes. The handbook requires that \"The written description and documentation which support understanding of the\nprogram must be in English.\" A shop in India or elsewhere may run the floor in another language, but the manual and\nthe documents the review team reads are in English.\n\n## What is ASME's review checklist?\n\nThe \"Guide for ASME Review Teams for Review of Applicants\": a checklist of the quality control system's elements for\nthe certificate applied for. ASME has four: one for pressure relief devices, one for RP (Section X), one for cast iron\nand cast aluminum H boilers, and a General checklist for A, M, PP, S, E, H, HLW, U, UM, U2, U3, PRT and T. The\napplicant fills in, against each element, the paragraph of its manual that addresses it, and gives the completed\nguide to the review team.\n\n## What is CA-1 and does the manual need it?\n\nCA-1 is ASME's Conformity Assessment Requirements standard, which ASME now lists among the required code books for\nevery boiler and pressure vessel certificate. Buy it with the Code sections for your scope and check the manual\nagainst both; where the 2025 construction section and CA-1 place a quality system requirement is worth confirming with\nyour Authorized Inspection Agency before the review.\n\n## Can I buy a quality control manual template?\n\nYou can, but it has to describe your shop, and ASME won't write it for you: its FAQ says \"ASME does not provide\nconsulting services to develop a Quality Control System\". A bought template with another company's job titles and\nforms fails the moment the team asks someone to show a step. Every form in the manual should be the form used on the\nshop floor.\n\n## How does the joint review test the manual?\n\nIt reads the manual, then watches the shop do what it says. The handbook describes an on-site evaluation of both the\nwritten description and \"a demonstration of implementation of the program\", which may use \"current work, a mock-up,\nor a combination of the two\". A reviewer typically picks a weld on the demonstration item and follows it to the welder,\ntheir qualification and continuity, the WPS, the PQR, the filler metal and the NDE report; each link has to be there.\nSee [how to get the U stamp](/asme/u-stamp).\n\n## Who checks the manual is followed after certification?\n\nThe [Authorized Inspector](/asme/authorized-inspector), on every job and at the agency's periodic audits, and the\nnext joint review at renewal. The manual's hold points are where the Inspector signs off, so the manual and the job's\ninspection plan should name the same ones.\n\n## How should records be kept so the manual works?\n\nSo that each link is recorded once: a record per weld, heat number and welder, joined to the job, rather than files\ncross-referenced by hand. That is the test most shops find hardest on paper. Our US boiler demo keeps nonconformities\n(with a QC verification step before an NCR can close), incoming inspection, hold points and the welding and\nmaterial records on each job, and prints the job's ASME record package from them. See\n[material traceability](/services/material-traceability)."
   },
   {
     "kind": "asme",
@@ -5177,25 +5330,61 @@
     "slug": "section-v",
     "group": "code",
     "title": "ASME Section V: nondestructive examination",
+    "related": [
+      "/asme/joint-efficiency",
+      "/asme/welder-qualification",
+      "/services/document-extraction",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What is ASME Section V?",
-    "answer": "ASME Section V sets how nondestructive examinations are done: radiography, ultrasonic, magnetic particle, liquid penetrant, visual and leak testing, each in its own Article. It covers the method, not the verdict: which welds are examined and what counts as a rejectable flaw come from the construction section, such as Section VIII or Section I.",
-    "description": "ASME Section V explained: its Articles for RT, UT, MT, PT, VT and leak testing, who sets acceptance criteria, and how NDE personnel are qualified.",
+    "answer": "ASME Section V sets how nondestructive examinations are done: radiography, ultrasonic, magnetic particle, liquid penetrant, visual and leak testing, each in its own Article. It covers the method, not the verdict: which welds are examined, how much, and what counts as a rejectable flaw come from the construction section, such as Section VIII or Section I.",
+    "description": "ASME Section V explained: its Articles for RT, UT, MT, PT, VT and leak testing, who sets acceptance, how NDE personnel are qualified, and the NDE report.",
     "domain": [
       "asme",
       "nde"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section V: Nondestructive Examination)",
+        "title": "BPVC Section V: Nondestructive Examination (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-v-bpvc-section-v-nondestructive-examination",
         "date": "2025-07-01"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
+        "publisher": "Central Boilers Board, Department for Promotion of Industry and Internal Trade",
+        "url": "https://egazette.gov.in/WriteReadData/2026/276813.pdf",
+        "date": "2026-10-01"
       }
     ],
-    "body": "## Method in Section V, verdict in the construction section\n\nA radiograph is taken the way Section V says: film or digital, source and geometry, image quality indicators, density. Whether the indication on it is acceptable is judged by the construction section: in Section VIII Division 1, for example, full radiography is judged under UW-51 and spot radiography under UW-52. That split is why an NDE procedure cites Section V and the report cites Section VIII.\n\n## The main Articles\n\n| Article | Method |\n|---|---|\n| 1 | General requirements |\n| 2 | Radiographic examination (RT), film and digital |\n| 4 | Ultrasonic examination (UT) of welds, including phased array and TOFD |\n| 6 | Liquid penetrant examination (PT) |\n| 7 | Magnetic particle examination (MT) |\n| 9 | Visual examination (VT) |\n| 10 | Leak testing |\n| 23 | Material specifications for NDE (adopted ASTM standards) |\n\n## Personnel\n\nThe construction sections require NDE personnel to be qualified and certified to a written practice. In US and Canadian shops that is usually the employer's written practice to ASNT's SNT-TC-1A, with Level I, II and III personnel. IBR 2026 accepts ASNT certificates alongside the Indian Society for Non-destructive Testing's; see [ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## Where it meets the rest of the Code\n\n- How much radiography a joint gets changes its **joint efficiency** and so its required thickness: see [joint efficiency and radiography](/asme/joint-efficiency).\n- NDE reports go into the vessel's file and are listed on the [data report](/asme/data-reports) package.\n- A welder can be qualified by radiography instead of bend tests for most processes; see [welder qualification](/asme/welder-qualification)."
+    "checks": [
+      {
+        "reg": "ASME Section V product page, description",
+        "doc": "asme-v",
+        "quote": "Explore ASME BPVC Section V for clear NDE standards and specifications."
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "BPVC Section V-Nondestructive Examination"
+      },
+      {
+        "reg": "IBR 2026, regulation 7",
+        "doc": "ibr-2026",
+        "quote": "Level-III NDT Certificates from Indian Society for Non-destructive Testing(I.S.N.T.) or American Society for Non-destructive Testing( A.S.N.T.)"
+      }
+    ],
+    "body": "## What is ASME Section V?\n\nSection V is the Code's book of nondestructive examination methods: how radiography, ultrasonic, magnetic particle,\nliquid penetrant, visual and leak testing are performed, written so that every construction section can point to one\nset of methods. ASME describes it as its \"NDE standards and specifications\". The Code text is ASME's and paid; this\nguide cites its Articles, and your 2025 Section V is the authority.\n\n## Does Section V say whether a weld passes?\n\nNo. Section V covers the method; the verdict comes from the construction section. A radiograph is taken as Section V\nsays (film or digital, source and geometry, image quality indicators, density), but whether an indication on it is\nacceptable is judged by, for example, Section VIII Division 1's UW-51 for full radiography or UW-52 for spot\nradiography. That split is why an NDE procedure cites Section V and the NDE report cites Section VIII.\n\n## Which Article covers which method?\n\n| Article | Method |\n|---|---|\n| 1 | General requirements |\n| 2 | Radiographic examination (RT), film and digital |\n| 4 | Ultrasonic examination (UT) of welds, including phased array and time-of-flight diffraction |\n| 5 | Ultrasonic examination of materials |\n| 6 | Liquid penetrant examination (PT) |\n| 7 | Magnetic particle examination (MT) |\n| 9 | Visual examination (VT) |\n| 10 | Leak testing |\n\nSection V has further Articles for other methods (eddy current, acoustic emission and more) and a second subsection\nthat adopts ASTM standards for NDE.\n\n## Who decides how much of a vessel is examined?\n\nThe construction section and the designer. Division 1 makes full radiography mandatory in some cases (UW-11) and\notherwise lets the designer choose, and the choice sets the [joint efficiency](/asme/joint-efficiency) and so the\nwall thickness. Section I sets its own examination for boilers.\n\n## How are NDE personnel qualified?\n\nTo a written practice, as the construction section requires. In US and Canadian shops that is usually the employer's\nwritten practice to ASNT's SNT-TC-1A, with Level I, II and III personnel; the construction section names the standards\nit accepts. India's IBR 2026 accepts Level III certificates from the Indian Society for Non-destructive Testing or the\nAmerican Society for Non-destructive Testing; see [ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## Does a shop need Section V for an ASME certificate?\n\nYes, if it welds. ASME lists Section V among the required code books for the U and S certificates, and allows it to be\nleft out only if welding, brazing and fusing aren't in the shop's scope. See [BPVC sections](/asme/bpvc-sections).\n\n## Can a welder be qualified by radiography?\n\nYes, for most processes: Section IX allows radiography or ultrasonic examination of the test coupon in place of bend\ntests, with Section V setting the method. GMAW short-circuit welders are bend-tested. See\n[welder qualification](/asme/welder-qualification).\n\n## What should an NDE report show?\n\nThe method and procedure, the Section V and construction-code references, the welds or areas examined, the extent\n(full, spot), the technique, the examiner and their level, the date, the results with any indications, and the\nacceptance decision. NDE reports go in the vessel's file and the [data report](/asme/data-reports) records the extent\nof radiography.\n\n## What does our software keep for NDE?\n\nOur US boiler demo records each NDE report (method, extent, welds covered, examiner and level, date, result), links\nit to the seams on the weld map, and prints both in the job's ASME record package. The demo has no film or image\nstorage. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -5291,44 +5480,82 @@
     "slug": "section-xiii",
     "group": "code",
     "title": "ASME Section XIII: relief valves and overpressure protection",
+    "related": [
+      "/asme/mawp",
+      "/asme/stamps",
+      "/asme/national-board-registration",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/systems/nbic"
+    ],
     "question": "What is ASME Section XIII?",
-    "answer": "Section XIII, first published in the 2021 Edition, holds the Code's rules for pressure relief devices: relief valves, rupture disks and pin devices, how their capacity is certified and how they are marked. The construction sections still say when a boiler or vessel needs protection; Section XIII says what the device must be.",
-    "description": "ASME Section XIII explained: why relief device rules moved there in 2021, the UV, V, HV and UD stamps, capacity certification and what stayed in Section VIII.",
+    "answer": "Section XIII, first published in the 2021 Edition, holds the Code's rules for pressure relief devices: relief valves, rupture disks and pin devices, how their capacity is certified and how they are marked. The construction sections still say when a boiler or vessel needs protection and at what pressure; Section XIII says what the device must be. Device makers hold V, HV, UV, UD and related certificates.",
+    "description": "ASME Section XIII explained: why relief device rules moved there in 2021, V, HV, UV and UD certificates, capacity tests, and what stays with the designer.",
     "domain": [
       "asme",
       "relief-devices"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2021 ASME Boiler and Pressure Vessel Code (new Section XIII: Rules for Overpressure Protection)",
+        "title": "BPVC Section XIII: Rules for Overpressure Protection (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2021",
-        "date": "2021-07-01"
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-xiii-bpvc-section-xiii-rules-overpressure-protection",
+        "date": "2025-07-01"
       },
       {
-        "title": "Boiler and Pressure Vessel Certification (Section XIII designators)",
+        "title": "Boiler and Pressure Vessel Certification (certificates offered)",
         "publisher": "ASME",
         "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
       },
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
         "publisher": "ASME",
         "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
         "date": "2023-05-12"
+      },
+      {
+        "title": "National Board Inspection Code (NBIC)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=4",
+        "date": "2026-11-06"
       }
     ],
     "checks": [
       {
+        "reg": "ASME Section XIII product page, description",
+        "doc": "asme-xiii",
+        "quote": "BPVC Section XIII sets requirements for design, materials, inspection, testing, and marking of pressure relief valves, rupture disks, and related devices."
+      },
+      {
+        "reg": "ASME certification page, Section XIII certificates",
+        "doc": "asme-bpv-cert",
+        "quote": "UV - Pressure Vessel Pressure Relief Valves"
+      },
+      {
+        "reg": "ASME certification page, Section XIII certificates",
+        "doc": "asme-bpv-cert",
+        "quote": "UD - Pressure Vessel Pressure Relief Devices"
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 2",
+        "doc": "asme-handbook",
+        "quote": "ASME will notify the ASME Designated Organization, The National Board of Boiler and Pressure Vessel Inspectors, to appoint an ASME Designee to conduct the review."
+      },
+      {
         "reg": "ASME BPV-GUI-03, section 2",
         "doc": "asme-handbook",
         "quote": "it is necessary that all required capacity certification tests be scheduled within ninety days from the date of the review. If the tests are not successfully completed within six months from the date of the review, a new review must be conducted."
+      },
+      {
+        "reg": "NBBI NBIC page",
+        "doc": "nb-nbic",
+        "quote": "The NBIC is adopted into law by most US and Canadian jurisdictions."
       }
     ],
-    "body": "## Why it exists\n\nUntil 2021 each construction section carried its own relief device rules: Section VIII Division 1 in its UG-125 series of paragraphs, Section IV and Section I in theirs. The 2021 Edition gathered the device rules into one new section so that a valve maker works to one book. The construction sections kept the requirement to protect the equipment and point to Section XIII for the device. In older drawings and data sheets you'll still see \"UG-125\"; on new work the device side is Section XIII.\n\n## The device stamps\n\n| Designator | Device |\n|---|---|\n| V | Boiler pressure relief valves |\n| HV | Heating boiler safety valves |\n| UV | Pressure vessel pressure relief valves |\n| UD | Pressure vessel nonreclosing devices (rupture disks and similar) |\n| UV3, UD3 | High-pressure vessel devices (Division 3) |\n| TV, TD | Transport tank devices |\n\nUnlike a vessel certificate, these need no agreement with an inspection agency. Instead, the National Board appoints the reviewer, and the device's relieving capacity has to be certified by test at an accepted laboratory; the time limits for those tests are quoted below. See [ASME stamps](/asme/stamps) for the full list.\n\n## What stays with the vessel designer\n\nThe construction section still decides:\n\n- that the vessel or boiler needs protection, and from what (a blocked outlet, a fire, a failed control);\n- the set pressure, normally not above the [MAWP](/asme/mawp);\n- how far pressure may rise while the device relieves: in Division 1, generally 10% or 3 psi (0.2 bar) above MAWP for one device, 16% with several, 21% for fire.\n\n## Repairs\n\nSetting and repairing relief valves in service is not ASME Section XIII work. It is done under the National Board's VR program; see [National Board registration and the R stamp](/asme/national-board-registration)."
+    "body": "## What is ASME Section XIII?\n\nSection XIII, Rules for Overpressure Protection, is the Code's section for pressure relief devices; ASME says it \"sets\nrequirements for design, materials, inspection, testing, and marking of pressure relief valves, rupture disks, and\nrelated devices\". It was first published in the 2021 Edition, and the current one is 2025. The Code text is ASME's and\npaid; this guide cites paragraphs and your 2025 book is the authority.\n\n## Why did the relief valve rules move to Section XIII?\n\nSo that a device maker works to one book. Until 2021 each construction section carried its own relief device rules:\nSection VIII Division 1 in its UG-125 series, Sections I and IV in theirs. The 2021 Edition gathered the device rules\ninto Section XIII, and the construction sections kept the requirement to protect the equipment, pointing to Section\nXIII for the device. Older drawings and data sheets still say \"UG-125\"; on new Division 1 work the vessel side is in\nthe UG-150 series and the device side in Section XIII.\n\n## Which certificates does Section XIII use?\n\n| Designator | Device |\n|---|---|\n| V | Boiler pressure relief valves |\n| HV | Heating boiler safety valves |\n| UV | Pressure vessel pressure relief valves |\n| UD | Pressure vessel pressure relief devices (rupture disks and similar nonreclosing devices) |\n| UV3, UD3 | High-pressure vessel (Division 3) valves and devices |\n| TV, TD | Transport tank valves and devices |\n\nThe list is as ASME's [certification page](https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification) gives it. See [ASME stamps](/asme/stamps) for the full set.\n\n## How does a relief valve maker get certified?\n\nThrough a review led by the National Board, not an inspection agency. ASME's handbook says that for these\ncertificates ASME \"will notify the ASME Designated Organization, The National Board of Boiler and Pressure Vessel\nInspectors, to appoint an ASME Designee to conduct the review\", and no Authorized Inspection Agency agreement is\nneeded. The device's relieving capacity must also be certified by test at an ASME-accepted laboratory: the tests must\nbe scheduled within 90 days of the review and completed within six months, or the review is repeated.\n\n## What stays with the vessel or boiler designer?\n\nThe construction section still decides:\n\n- that the vessel or boiler needs protection, and from what (a blocked outlet, a fire, a failed control);\n- the set pressure, normally not above the [MAWP](/asme/mawp);\n- how far pressure may rise while the device relieves: in Division 1, generally 10% or 3 psi above MAWP for one device, 16% or 4 psi with several, and 21% for fire.\n\nThe designer sizes the device for the worst relieving case and specifies it; the device maker certifies its capacity\nand marks it.\n\n## Can a vessel be protected without a relief valve?\n\nIn defined cases. Division 1 allows overpressure protection by system design, where the vessel can't be\noverpressured by the system it sits in, under conditions the Code sets and the owner documents. It is the owner's\nresponsibility and needs the jurisdiction's acceptance in many states; check your 2025 Division 1 and the\njurisdiction before relying on it.\n\n## Who repairs relief valves in service?\n\nNot a Section XIII certificate holder as such: repair and resetting of valves in service is done under the National\nBoard's VR program to Part 4 of the National Board Inspection Code, which the National Board says is adopted into law\nby most US and Canadian jurisdictions. In-service testing has its own T/O program. See\n[National Board registration and the R stamp](/asme/national-board-registration).\n\n## What does our software keep for relief devices?\n\nOur US boiler demo records each boiler's safety valves (size, set pressure, capacity) on its data report layout in\nthe ASME record package. It doesn't size or certify valves. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -5533,18 +5760,50 @@
     "slug": "state-boiler-laws",
     "group": "bridge",
     "title": "US and Canadian boiler laws: who requires ASME",
+    "metaTitle": "US state boiler laws: which ASME edition each requires",
+    "related": [
+      "/asme/national-board-registration",
+      "/asme/editions",
+      "/asme/buying-from-india",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/manufacturing/erp-requirements-checklist"
+    ],
     "question": "Is the ASME Code required by law in the US?",
-    "answer": "The ASME Code isn't a federal law in the US. Most states, and every Canadian province, make it law by adopting it in their own boiler and pressure vessel acts, with their own inspection, registration and permit rules, and some don't regulate every kind of vessel. Check the jurisdiction where the equipment will be installed.",
-    "description": "How US states and Canadian provinces make the ASME Code law: adoption, inspection, National Board registration, Canada's CRN.",
+    "answer": "The ASME Code isn't a federal law in the US. States, some cities and Canadian provinces make it law by adopting it in their own boiler and pressure vessel rules, often at a named edition, with their own scope, stamping, National Board registration and inspection rules. Some don't regulate pressure vessels at all. Check the jurisdiction where the equipment will be installed.",
+    "description": "Which US states and Canadian provinces require the ASME Code, which edition each names (2026 NB Synopsis), stamps, NB registration, CRNs and joint reviews.",
     "domain": [
       "asme",
       "law",
       "north-america"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
+      {
+        "title": "NB-370 Synopsis of Boiler and Pressure Vessel Laws, Rules and Regulations",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/ViewAllSynopses.aspx",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "NB-370 Synopsis: NBIC and ASME Code Editions by Jurisdiction (2026)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/code_edition.pdf",
+        "date": "2026-01-13"
+      },
+      {
+        "title": "NB-370 Synopsis: Stamping Requirements by Jurisdiction (2024)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/asme_requirements.pdf",
+        "date": "2024-06-14"
+      },
+      {
+        "title": "NB-370 Synopsis: Tabulation of ASME Boiler and Pressure Vessel Codes (2025)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/asme_tab.pdf",
+        "date": "2025-10-31"
+      },
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
         "publisher": "ASME",
@@ -5552,25 +5811,141 @@
         "date": "2023-05-12"
       },
       {
-        "title": "Registration",
-        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
-        "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "title": "Ohio Admin. Code 4101:4-3-01 (eff. 1 Jul 2024)",
+        "publisher": "Ohio Board of Building Standards (via Cornell LII)",
+        "url": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-4101-4-3-01",
+        "date": "2024-07-01"
+      },
+      {
+        "title": "Mich. Admin. Code R. 339.5204, ASME code adoption by reference (eff. 3 May 2023)",
+        "publisher": "Michigan Department of Licensing and Regulatory Affairs (via Cornell LII)",
+        "url": "https://www.law.cornell.edu/regulations/michigan/Mich-Admin-Code-R-339-5204",
+        "date": "2023-05-03"
+      },
+      {
+        "title": "16 Tex. Admin. Code § 65.2, Definitions",
+        "publisher": "Texas Department of Licensing and Regulation (via Cornell LII)",
+        "url": "https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-65-2",
+        "date": "2024-12-01"
+      },
+      {
+        "title": "8 CCR §§ 453–454, Unfired Pressure Vessel Safety Orders",
+        "publisher": "California Department of Industrial Relations",
+        "url": "https://www.dir.ca.gov/title8/454.html",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "34 Pa. Code Chapter 3a, Boiler and Unfired Pressure Vessel Regulations",
+        "publisher": "Pennsylvania Department of Labor and Industry",
+        "url": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/034/chapter3a/chap3atoc.html",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "Request for a Canadian Registration Number (CRN) in Multiple Jurisdictions",
+        "publisher": "ABSA, the pressure equipment safety authority (Alberta)",
+        "url": "https://www.absa.ca/media/2234/national-application-form.pdf",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "Guidelines for the Registration of Non-Nuclear Fittings in the Province of Ontario (January 2026)",
+        "publisher": "Technical Standards and Safety Authority (Ontario)",
+        "url": "https://www.tssa.org/sites/default/files/2026-02/Fittings-Guidelines-Jan%202026%20Rev%203.pdf",
+        "date": "2026-01-01"
       }
     ],
     "checks": [
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "registration of data report forms may be required by the legal authority of a state or municipality of the United States or province of Canada."
+      },
       {
         "reg": "ASME BPV-GUI-03, section 3",
         "doc": "asme-handbook",
         "quote": "(1) United States: Alaska, Delaware, Hawaii, Louisiana, Minnesota, Nebraska, Oklahoma, Texas, Washington"
       },
       {
-        "reg": "ASME BPV-GUI-03, section 1",
+        "reg": "ASME BPV-GUI-03, section 3",
         "doc": "asme-handbook",
-        "quote": "registration of data report forms may be required by the legal authority of a state or municipality of the United States or province of Canada."
+        "quote": "(1) United States: Idaho, Wyoming, Puerto Rico and the Virgin Islands."
+      },
+      {
+        "reg": "NB-370 Synopsis page",
+        "doc": "nb-synopsis",
+        "quote": "Synopsis data is subject to change. Users are advised to consult the jurisdiction’s chief inspection officer to avoid misinterpretation and ensure compliance with regulatory requirements."
+      },
+      {
+        "reg": "NB-370 Synopsis, editions table",
+        "doc": "nb-editions",
+        "quote": "2026 National Board Synopsis of Boiler and Pressure Vessel Laws, Rules and Regulations"
+      },
+      {
+        "reg": "NB-370 Synopsis, stamping table",
+        "doc": "nb-stamping",
+        "quote": "***Except for refinery and oilfield locations require an R stamp."
+      },
+      {
+        "reg": "NB-370 Synopsis, tabulation of codes",
+        "doc": "nb-tabulation",
+        "quote": "* On a conditional basis. Contact the jurisdiction for specific details."
+      },
+      {
+        "reg": "NBBI About Us",
+        "doc": "nb-about",
+        "quote": "The National Board members are the chief boiler inspectors representing most U.S. states and provinces/territories of Canada, as well as many major cities in the United States."
+      },
+      {
+        "reg": "Ohio Admin. Code 4101:4-3-01(B)",
+        "doc": "oh-4101-4-3-01",
+        "quote": "The board of building standards adopts existing published standards by year of issue as shown in \"Table 4-3-01\" of the Administrative Code as well as amendments, supplements, and addenda subsequently published prior to issuance of the next edition by the same authority"
+      },
+      {
+        "reg": "Mich. Admin. Code R. 339.5204(1)",
+        "doc": "mi-339-5204",
+        "quote": "A boiler, blow down vessel, and expansion tank must be constructed as prescribed by these rules and the ASME boiler and pressure vessel code, section I, II, III, IV, V, VIII, IX, X, XI, 2019 edition"
+      },
+      {
+        "reg": "16 Tex. Admin. Code § 65.2(4)",
+        "doc": "tx-65-2",
+        "quote": "ASME--The American Society of Mechanical Engineers Boiler and Pressure Vessel Code, code cases, and interpretations adopted by the council of the society."
+      },
+      {
+        "reg": "8 CCR § 453",
+        "doc": "ca-453",
+        "quote": "ASME Code: The American Society of Mechanical Engineers' Boiler and Pressure Vessel Code."
+      },
+      {
+        "reg": "8 CCR § 454(a)",
+        "doc": "ca-454",
+        "quote": "all air tanks for new installations shall be constructed, inspected and stamped in compliance with the ASME Code"
+      },
+      {
+        "reg": "34 Pa. Code § 3a.4",
+        "doc": "pa-3a-4",
+        "quote": "The Department adopts and incorporates by reference the following codes:"
+      },
+      {
+        "reg": "34 Pa. Code § 3a.1, definition of ASME Code",
+        "doc": "pa-3a",
+        "quote": "2004 edition and its published cases and interpretations issued by ASME."
+      },
+      {
+        "reg": "34 Pa. Code § 3a.21(b)",
+        "doc": "pa-3a-21",
+        "quote": "A boiler or unfired pressure vessel built to the ASME Code must be stamped with the appropriate ASME symbol, the manufacturer’s information in accordance with stamping requirements of the code of construction, and its National Board registration number."
+      },
+      {
+        "reg": "ABSA, CRN application form",
+        "doc": "absa-crn",
+        "quote": "Boilers, Pressure Vessels or Fittings to be Registered in Multiple Provincial or Territorial Jurisdictions in Canada"
+      },
+      {
+        "reg": "TSSA, Fittings Guidelines (January 2026)",
+        "doc": "tssa-fittings",
+        "quote": "The Canadian Registration Number (CRN) shall be identified whenever physically possible."
       }
     ],
-    "body": "## How the Code becomes law\n\nASME is a standards body, not a regulator. The Code gets legal force when a **jurisdiction** (a state, a province, sometimes a city) adopts it in its boiler and pressure vessel law. The law then says which equipment is covered, which Code edition, who inspects it in service, and what has to be registered or permitted before it's operated.\n\nWhat varies between jurisdictions:\n\n- **Scope**: some regulate boilers and pressure vessels; some only boilers; many exempt small or low-pressure vessels.\n- **Registration**: most US jurisdictions require the item's data report to be registered with the [National Board](/asme/national-board-registration) before installation.\n- **Inspection in service**: by state inspectors or by insurance company inspectors holding National Board commissions, on set intervals.\n- **Installation permits and operating certificates**.\n\n## Who leads ASME reviews where\n\nJurisdictions also take part in certifying shops. ASME's handbook lists the states where the jurisdiction appoints the team leader for a [joint review](/asme/u-stamp) (Alaska, Delaware, Hawaii, Louisiana, Minnesota, Nebraska, Oklahoma, Texas and Washington), and says ASME appoints for Idaho, Wyoming, Puerto Rico, the Virgin Islands and all Canadian provinces, and the National Board for the remaining states.\n\n## Canada\n\nIn Canada each province or territory regulates pressure equipment, generally by adopting CSA B51, which in turn uses the ASME Code. A design is registered with the province before construction and gets a **Canadian Registration Number (CRN)**, and fittings need one too. A vessel stamped to ASME but without a CRN can't be installed.\n\n## How to check a jurisdiction\n\n1. Find the state or provincial boiler and pressure vessel office for the installation site; the National Board keeps a listing of every jurisdiction's requirements and contacts.\n2. Confirm: is this equipment in scope, which edition, is NB registration required, what inspection before first use.\n3. Put the answers in the purchase order, so the [data report](/asme/data-reports) and nameplate come out right the first time.\n\nThis page doesn't list each state's rules: they change, and the jurisdiction's own office is the source. For buying from a shop outside the US, see [buying from India](/asme/buying-from-india)."
+    "body": "## Is the ASME Code required by law in the US?\n\nNot federally: the Code gets legal force when a state, a city or a Canadian province adopts it in its own boiler and\npressure vessel rules. Pennsylvania's rule is typical in form: \"The Department adopts and incorporates by reference\nthe following codes\", with the ASME Code on the list. The adopting rule then says which equipment is covered, which\nedition applies, who inspects it in service, and what must be stamped, registered or permitted before it runs.\n\n## Which ASME edition does each state require?\n\nEach sets its own, and many lag the current 2025 Edition. The National Board's 2026 Synopsis lists the edition each\njurisdiction reports (ASME edition, with the NBIC edition in brackets):\n\n| Jurisdiction | ASME edition | NBIC |\n|---|---|---|\n| Alabama | Current | Current |\n| Alaska | 2013 | Current |\n| Arizona | 2007 | 2019 |\n| California | 2023 | Current (2004 for refineries) |\n| Colorado | 2023 | 2023 |\n| Delaware | 2019 | Current |\n| Florida | 2017 | 2017 |\n| Georgia | 2019 | 2021 |\n| Illinois | 2023 | 2023 |\n| Indiana | 2015 | 2019 |\n| Iowa | 2021 | 2021 |\n| Louisiana | 2004 | 2004 |\n| Maryland | 2019 | 2019 |\n| Massachusetts | 2021 | 2021 |\n| Michigan | 2019 | 2019 |\n| Minnesota | Current | Current |\n| Missouri | 2019 | 2019 |\n| New Jersey | 2015 | Current |\n| New York | Current | – |\n| North Carolina | Current | Current |\n| North Dakota | 2025 | 2025 |\n| Ohio | 2023 | 2023 |\n| Oklahoma | Current | Current |\n| Oregon | 2023 | 2023 |\n| Pennsylvania | 2010 | 2011 |\n| Rhode Island | 2025 | 2025 |\n| Tennessee | Current | Current |\n| Texas | Current | Current |\n| Washington | Current | Current |\n| Wisconsin | 2010 | 2011 |\n| Wyoming | 1968 | – |\n\nThe National Board adds its own caveat: \"Synopsis data is subject to change\", and users should consult the\njurisdiction's chief inspector. Most of these rules govern what may be installed and inspected; a new item built to a\nlater edition is often accepted, but confirm it in writing before you build. Code cases have their own column in the\nSynopsis, with some states accepting them only \"on a conditional basis\".\n\n## What do the state rules themselves say?\n\nFive read in full on 6 November 2026:\n\n- **Ohio**: OAC 4101:4-3-01 (effective 1 July 2024) adopts Sections I to XI and the code case book at the 2023\n  edition, plus \"amendments, supplements, and addenda subsequently published prior to issuance of the next edition\".\n- **Michigan**: R 339.5204 (effective 3 May 2023) requires \"A boiler, blow down vessel, and expansion tank\" to be built\n  to the 2019 edition and B31.1 2018. Its scope names those items, not pressure vessels in general.\n- **Texas**: 16 TAC §65.2 defines ASME as the Code, code cases and interpretations \"adopted by the council of the\n  society\", with no year: effectively the current edition. The Texas rules are the Board of Boiler Rules', for boilers.\n- **California**: 8 CCR §453 defines the ASME Code with no edition, and §454(a) requires new air tanks to be\n  \"constructed, inspected and stamped in compliance with the ASME Code\" and, except UM vessels, registered with the\n  National Board.\n- **Pennsylvania**: 34 Pa. Code §3a.1 still defines the ASME Code as the 2004 edition with its cases and\n  interpretations, older than the Synopsis entry, and §3a.21(b) requires the ASME stamp and the National Board\n  registration number on every ASME boiler and unfired pressure vessel, plus a Pennsylvania keystone serial number.\n\n## Which states don't require the U stamp?\n\nThose that don't regulate unfired pressure vessels. The National Board's stamping table (2024 Synopsis) lists the ASME\nstamps each jurisdiction requires: Florida, Louisiana, Montana, New Mexico, South Dakota and West Virginia list\nboiler stamps without U; Idaho lists none; Wyoming lists only U, U2, U3 and UV. A buyer in those states may still\nwant the U stamp for insurance, resale or a plant standard.\n\n## Which states require National Board registration?\n\nMany, in different ways. The stamping table lists the NB mark as a requirement for Arizona, North Dakota, Washington\nand West Virginia among others; Pennsylvania requires the National Board number on the stamping; California requires\nregistration of new air tanks. ASME's handbook says registration \"may be required by the legal authority of a state\nor municipality\". See [National Board registration](/asme/national-board-registration).\n\n## Do cities have their own boiler rules?\n\nSome large ones do. The Synopsis lists separate entries for cities and counties including Chicago, Detroit, Los\nAngeles, Miami and Miami-Dade, Milwaukee, New Orleans, New York City, Omaha, Seattle, Spokane, St. Louis and\nWashington, D.C., several with their own editions; New York City's entry is the 1986 edition. Check the city as well\nas the state.\n\n## Who leads a shop's ASME joint review in each state?\n\nASME's handbook says the jurisdiction appoints the team leader in Alaska, Delaware, Hawaii, Louisiana, Minnesota,\nNebraska, Oklahoma, Texas and Washington; ASME appoints for Idaho, Wyoming, Puerto Rico, the Virgin Islands and all\nCanadian provinces; and the National Board appoints for the remaining states. See [how to get the U stamp](/asme/u-stamp).\n\n## How does Canada regulate pressure equipment?\n\nProvince by province, with designs registered and given a Canadian Registration Number (CRN) under CSA B51. Alberta's\nABSA handles national applications for \"Boilers, Pressure Vessels or Fittings to be Registered in Multiple Provincial\nor Territorial Jurisdictions in Canada\", and Ontario's TSSA guidelines for fittings (January 2026, citing CSA B51:24)\nrequire that \"The Canadian Registration Number (CRN) shall be identified whenever physically possible.\" The National\nBoard's tabulation shows most provinces requiring the ASME construction sections by law, with Québec the exception for\nmost sections. Register the design in each province where the equipment will go before it is built.\n\n## How do I check a jurisdiction before ordering?\n\n1. Find the jurisdiction's chief inspector on the National Board's [Synopsis page](https://www.nationalboard.org/ViewAllSynopses.aspx), which has an entry per state, province and city.\n2. Confirm: is this equipment in scope, which edition, is NB registration required, are code cases accepted, what inspection or permit before first use.\n3. Put the answers in the purchase order, so the [data report](/asme/data-reports) and nameplate come out right the first time.\n\nThe National Board's members are those chief inspectors, which is why its Synopsis is the starting point. For buying\nfrom a shop outside the US, see [buying from India](/asme/buying-from-india).\n\n## What does our software keep for jurisdiction rules?\n\nOur US boiler demo records the Code edition and National Board number on each job's ASME record package. The demo\ncompany is in Ohio, whose rule adopts the 2023 edition plus later supplements, while the demo files its jobs to 2025:\na real shop would confirm the edition with its jurisdiction. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",

@@ -44,6 +44,9 @@ const DOCS = {
     "nb-forms": "NBBI - NBIC Report Forms page 2026-11-06",
     "nb-synopsis": "NBBI - NB-370 Synopsis page 2026-11-06",
     "nb-editions": "NBBI - Synopsis NBIC and ASME Code Editions by Jurisdiction 2026",
+    "nb-tabulation": "NBBI - Synopsis Tabulation of ASME Codes by Jurisdiction 2025",
+    "absa-crn": "ABSA - CRN application form multiple jurisdictions 2026-11-06",
+    "tssa-fittings": "TSSA - Fittings registration guidelines Jan 2026 2026-11-06",
     // State rules (Ohio, Michigan, Texas from Cornell LII: the official sites refused automated reads).
     "pa-3a": "Pennsylvania - 34 Pa Code ch 3a contents and definitions 2026-11-06",
     "pa-3a-4": "Pennsylvania - 34 Pa Code 3a.4 Adoption of National standards 2026-11-06",
