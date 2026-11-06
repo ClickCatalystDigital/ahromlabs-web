@@ -7,7 +7,9 @@ answer: >
 domain: [operations]
 order: 20
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-07
 ---
 
-What goes into an MB entry and who signs it is in [the measurement book](/construction/measurement-book).
+It matters because a running bill is paid only for what the measurement book shows: on CPWD and most government works, measurements follow the contract's rules, are test-checked by senior engineers, and are now entered electronically as an e-MB. Private contractors keep the same record for their clients and subcontractors, and disputes are settled from it.
+
+What goes into an MB entry and who signs it is in [the measurement book](/construction/measurement-book); how it becomes a bill is in [RA bills](/construction/ra-bills), and how interior work is measured in [measurement rules](/boq/measurement-rules).

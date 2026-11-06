@@ -7,7 +7,9 @@ answer: >
 domain: [operations]
 order: 7
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-07
 ---
 
-It comes from section 15 of the MSMED Act, 2006. Under the Income-tax Act, 2025, section 37(2)(g), an amount paid to such a supplier beyond that time limit is deductible only when actually paid. How it applies to a particular business is a question for a CA. See the [MSME requirements](/erp/requirements#purchase-msme-due-dates).
+It matters for both cash and tax: section 15 of the MSMED Act, 2006 caps the agreed period at 45 days from acceptance, section 16 adds compound interest on late payment, and under the Income-tax Act, 2025, section 37(2)(g), an amount paid beyond the limit is deductible only when actually paid. The ERP has to know which suppliers are micro or small enterprises and show each bill's due date.
+
+See [ERP compliance in India](/erp/compliance) and the [MSME requirements](/erp/requirements#purchase-msme-due-dates). How it applies to a particular business is a question for a CA.
