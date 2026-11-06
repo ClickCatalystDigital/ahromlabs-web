@@ -8,7 +8,9 @@ answer: >
 domain: [truth]
 order: 14
 published: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-07
 ---
 
-In Ahrom Labs' assistants a small model only chooses which fixed look-up answers a question; code runs it. The look-ups each assistant has are listed, with the screen to check each against, in the [question library](/ai-assistant/questions). The opposite approach is [text-to-SQL](/systems/text-to-sql).
+It matters because it keeps the maths out of the AI model: the figure an assistant gives is the figure the screen gives, because the same code produces both, and a buyer can check any answer against the screen it names.
+
+In Ahrom Labs' assistants a small model only chooses which fixed look-up answers a question; code runs it. The look-ups each assistant has are listed, with the screen to check each against, in the [question library](/ai-assistant/questions); the design is in [how it works](/ai-assistant/how-it-works) and the opposite approach is [text-to-SQL](/systems/text-to-sql).
