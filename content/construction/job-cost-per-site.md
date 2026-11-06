@@ -19,7 +19,7 @@ answer: >
 description: "Job cost and margin per site: which costs belong to a construction contract under AS 7, margin to date, projected cost, losing sites, and a worked example."
 domain: [construction, job-cost, india]
 published: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-06
 sources:
   - title: "Accounting Standard (AS) 7, Construction Contracts (revised 2002)"

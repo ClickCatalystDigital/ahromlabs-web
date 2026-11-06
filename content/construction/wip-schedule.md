@@ -18,7 +18,7 @@ answer: >
 description: "The construction WIP schedule: cost-to-cost percent complete, earned revenue, over and under billing, profit fade, the tax rule, and what sureties check."
 domain: [construction, job-cost]
 published: 2026-11-03
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-05
 sources:
   - title: "26 U.S.C. 460, Special rules for long-term contracts"

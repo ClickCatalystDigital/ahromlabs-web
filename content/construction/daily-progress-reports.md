@@ -18,7 +18,7 @@ answer: >
 description: "Daily progress reports for Indian contractors: what a DPR records, CPWD's site order book, cement register and hindrances, approval, photos and weekly reports."
 domain: [construction, site-operations, india]
 published: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-06
 sources:
   - title: CPWD Works Manual 2022
