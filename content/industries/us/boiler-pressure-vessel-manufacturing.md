@@ -53,7 +53,7 @@ evidence:
   - metric: Live plate-cut test
     value: 346.1 lb plate → 280.4 lb used + 34.6 lb remnant + 31.2 lb scrap
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-07
 ---
 
 ## Can I try it before talking to anyone?
