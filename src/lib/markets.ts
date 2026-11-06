@@ -66,6 +66,7 @@ const IN_ONLY = [
   // The construction hub's India group (src/lib/construction.ts CON_GROUPS; scripts/construction.check.ts keeps these in step).
   "/construction/ra-bills", "/construction/measurement-book", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts",
   "/construction/labour-cess", "/construction/contract-labour-compliance", "/construction/price-escalation-clause", "/construction/bank-guarantee-defect-liability",
+  "/construction/daily-progress-reports", "/construction/material-consumption-vs-boq", "/construction/job-cost-per-site",
 ];
 // North America only: US and Canadian law.
 const NA_ONLY = [

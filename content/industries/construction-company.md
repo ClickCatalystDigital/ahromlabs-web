@@ -60,7 +60,7 @@ evidence:
   - metric: Datum AI
     value: Answers from the live records with the same figures as the screens
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-06
 ---
 
 ## Can I try it before talking to anyone?
@@ -73,7 +73,7 @@ Work measured against the BOQ, cost per site and bills built from the measuremen
 
 ## Can site engineers report from the phone?
 
-Yes: one daily report per site per day, built for a phone. The engineer marks attendance first (present, half day or absent, one tap per worker), then fills the report: quantity done against each BOQ line, labour by trade (filled from attendance), material used from the site's own stock, weather, issues and up to six photos. The project manager approves it or sends it back with a note, and only approved work counts toward the site's progress.
+Yes: one daily report per site per day, built for a phone. The engineer marks attendance first (present, half day or absent, one tap per worker), then fills the report: quantity done against each BOQ line, labour by trade (filled from attendance), material used from the site's own stock, weather, issues and up to six photos. The project manager approves it or sends it back with a note, and only approved work counts toward the site's progress. See [daily progress reports](/construction/daily-progress-reports) for what a report should record and the site records CPWD works keep.
 
 ## How are RA bills made?
 
@@ -81,11 +81,11 @@ From measurements against the contract BOQ, never typed totals. A site's BOQ is 
 
 ## Is each site making money?
 
-The director dashboard shows it per site: contract value, value of approved work, billed, cost to date and margin. Cost to date is material used on site, labour from attendance and wages, site cash spent and machine days. Against the value of approved work it gives the margin so far; scaled to the whole contract, it projects where the site will finish against its estimate. Sites are marked on track, over budget or losing money, next to what needs attention today: reports waiting for approval, sites low on cash, materials below minimum.
+The director dashboard shows it per site: contract value, value of approved work, billed, cost to date and margin. Cost to date is material used on site, labour from attendance and wages, site cash spent and machine days. Against the value of approved work it gives the margin so far; scaled to the whole contract, it projects where the site will finish against its estimate. Sites are marked on track, over budget or losing money, next to what needs attention today: reports waiting for approval, sites low on cash, materials below minimum. See [job cost and margin per site](/construction/job-cost-per-site) for the method.
 
 ## How is material controlled across the godown and sites?
 
-Material arrives into the godown from suppliers and is transferred to sites; each site holds its own stock, and material used is taken from it on the daily report. Nothing can be sent or used that isn't there. The daily stock report has the columns of a stores register kept in Excel: opening, receipt, dispatch and closing per material, for one location or all, as CSV or print. Material used is also compared with the BOQ norm, so over-consumption on a site shows up the same week.
+Material arrives into the godown from suppliers and is transferred to sites; each site holds its own stock, and material used is taken from it on the daily report. Nothing can be sent or used that isn't there. The daily stock report has the columns of a stores register kept in Excel: opening, receipt, dispatch and closing per material, for one location or all, as CSV or print. Material used is also compared with the BOQ norm, so over-consumption on a site shows up the same week; see [material consumption against BOQ](/construction/material-consumption-vs-boq).
 
 ## How is site cash (kharchi) accounted for?
 

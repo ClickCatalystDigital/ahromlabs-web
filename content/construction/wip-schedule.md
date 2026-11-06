@@ -18,7 +18,7 @@ answer: >
 description: "The construction WIP schedule: cost-to-cost percent complete, earned revenue, over and under billing, profit fade, the tax rule, and what sureties check."
 domain: [construction, job-cost]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-06
 checked: 2026-11-05
 sources:
   - title: "26 U.S.C. 460, Special rules for long-term contracts"
@@ -143,6 +143,19 @@ million may not. Your tax adviser decides the method.
 Yes. Billed to date includes the retainage held on each pay application; cash collected doesn't. A job can be
 underbilled on the WIP schedule and still short of cash, because part of what it billed is retainage waiting for the
 end of the job.
+
+## How is the cost of each job built up?
+
+From every cost posted to the job as it happens: labor from the field's time records at each person's cost rate,
+material issued to the job at its purchase price, subcontractor bills, equipment (owned equipment at a day or hour
+rate, rented equipment at its invoice) and job-site expenses. Head office costs stay out unless the contract
+reimburses them. The WIP schedule's cost to date is this total, so a cost posted to the wrong job moves two rows at
+once: one job looks more complete and the other less.
+
+In the [construction demo](/industries/construction-company)'s US build, each job's cost to date on the director
+dashboard is material used, labor from attendance and pay, site cash spent and equipment days, set against the value
+of approved work; once 5% of the work is done it projects the final cost at the same cost rate and marks the job on
+track, over budget or losing money. Subcontractor bills aren't added to a job's cost yet.
 
 ## How often should a WIP schedule be updated?
 

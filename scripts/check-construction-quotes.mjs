@@ -69,6 +69,7 @@ const DOCS = {
     "cess-2026": "Gazette S.O. 2322(E) 8 May 2026 BOCW cess one per cent",
   }).map(([k, name]) => [k, `Construction/sources/${name} 2026-11-05.txt`])),
   msmed: "ERP/sources/msmed-act-2006.txt",
+  "icai-as7": "Construction/sources/ICAI AS 7 Construction Contracts 2026-11-06.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(ROOT, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

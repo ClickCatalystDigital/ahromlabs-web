@@ -34,3 +34,14 @@ the file exists, and its alt text goes into `src/lib/construction-images.ts` whe
 
 The new sales tax page for contractors has its prompt in `docs/sales-tax-image-prompts.md`. The construction industry
 page needs no new picture: its card uses the aerial site clip already in `public/industries/construction-company.*`.
+
+## Construction after billing (batch 4, 6 Nov 2026): 3 to make
+
+Same style block and hand-over as above. Each page shows its image once the file exists; add its alt text to
+`src/lib/construction-images.ts` when the image arrives.
+
+| File | Page | Prompt (after the style block) |
+|---|---|---|
+| `daily-progress-reports.webp` | Daily progress reports and site records (India) | A smartphone lying on a closed site order book, a white hard hat and a pencil beside it. |
+| `material-consumption-vs-boq.webp` | Material consumption vs BOQ norms (India) | Three cement bags and a short bundle of steel bars beside a clipboard with a blank tally sheet, a weighing scale in front. |
+| `job-cost-per-site.webp` | Job cost and margin per site (India) | A small stack of coins on an open ledger with a few columns ruled, a calculator and a hard hat beside it. |
