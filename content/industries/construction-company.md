@@ -60,7 +60,7 @@ evidence:
   - metric: Datum AI
     value: Answers from the live records with the same figures as the screens
 published: 2026-11-05
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 ## Can I try it before talking to anyone?
