@@ -2,6 +2,12 @@
 kind: ai-assistant
 slug: data-safety
 title: "What an AI assistant sends out, and the data laws that apply"
+related:
+  - /ai-assistant/how-it-works
+  - /erp/compliance
+  - /erp/contract-checklist
+  - /services/custom-ai-assistant
+  - /systems/role-based-access
 answer: >
   Ask what is sent to the AI provider with each question. It is one of three things: the question only, the
   question with the rows of the answer, or your records themselves. Ahrom Labs' assistants send the question
@@ -10,8 +16,8 @@ answer: >
 description: "What an AI assistant sends to the AI provider with each question, and what India's DPDP Act and US privacy rules expect of the business."
 domain: [ai, data-safety, dpdp, selection]
 published: 2026-10-25
-updated: 2026-11-02
-checked: 2026-10-25
+updated: 2026-11-07
+checked: 2026-11-07
 image:
   src: /ai/ai-data-safety.webp
   alt: "A closed steel lockbox with a key in the lock."

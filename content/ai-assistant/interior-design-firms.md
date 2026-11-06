@@ -2,6 +2,11 @@
 kind: ai-assistant
 slug: interior-design-firms
 title: "AI assistant for interior design firms: what it answers"
+related:
+  - /ai-assistant/how-it-works
+  - /erp/interior-design-firms
+  - /industries/interior-design-and-furniture
+  - /notes/assistant-that-answers-from-your-ledger
 answer: >
   An interior design firm's assistant should answer how each project is going, who owes money, which workshop
   orders are late, what material is still to come and whether a project made money, all from the firm's own
@@ -10,8 +15,8 @@ answer: >
 description: "An AI assistant for interior designers and furniture workshops: the questions it should answer from your own projects, invoices and orders, and how to check it."
 domain: [ai, interiors, selection]
 published: 2026-10-25
-updated: 2026-11-02
-checked: 2026-10-25
+updated: 2026-11-07
+checked: 2026-11-07
 image:
   src: /ai/ai-interior-design-firms.webp
   alt: "A fan of fabric and wood-veneer swatches beside a rolled tape measure."
@@ -29,12 +34,12 @@ Every question Atelier AI answers today is listed below, with the screen to chec
 
 Advice ("should we raise our design fee?") and anything a login can't see on the screens. A site supervisor asking for payroll should get a refusal, not a figure.
 
-## How Atelier AI does it
+## How does Atelier AI do it?
 
 [Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. "Remind me to call them on Friday" drafts a task that is saved only when the person presses Save.
 
 You can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.
 
-## How to check a vendor's
+## How do I check a vendor's assistant?
 
 Run the [vendor test](/ai-assistant/vendor-test) on a copy of your own projects, and paste its written answers into the [number check](/ai-assistant/number-check) with the finance screen beside them. If the assistant comes with a new system, the [ERP guide for interior design firms](/erp/interior-design-firms) lists what the system itself should do.

@@ -2,6 +2,12 @@
 kind: ai-assistant
 slug: ai-in-erp
 title: "AI in ERP: what it can safely do today"
+related:
+  - /ai-assistant/how-it-works
+  - /ai-assistant/data-safety
+  - /erp/vendor-demo-script
+  - /services/custom-ai-assistant
+  - /notes/same-confidence-different-autonomy
 answer: >
   AI in an ERP is safe and useful today in three jobs: answering questions from your own records through fixed,
   read-only look-ups; reading documents such as invoices and purchase orders into drafts a person checks; and
@@ -11,8 +17,8 @@ answer: >
 description: "AI in ERP explained for owners: the three safe uses today, what not to let it do alone, AI-native claims, and how to test any ERP's AI before buying."
 domain: [ai, erp, selection]
 published: 2026-11-02
-updated: 2026-11-02
-checked: 2026-11-02
+updated: 2026-11-07
+checked: 2026-11-07
 image:
   src: /ai/ai-in-erp.webp
   alt: "A brass desk lamp lighting an open steel card-index drawer, one card raised: finding the one right record."
@@ -20,7 +26,9 @@ image:
   height: 362
 ---
 
-## Three jobs AI does well in an ERP
+## What can AI safely do in an ERP today?
+
+Three jobs: answering questions from the records, reading documents into drafts a person approves, and drafting suggestions that stay read-only until someone accepts them.
 
 | Job | What it looks like | What keeps it safe |
 |---|---|---|
@@ -28,9 +36,11 @@ image:
 | **Reading documents** | Supplier invoices, purchase orders, freight bills and bank statements turned into draft entries | Every draft goes through a person before it is posted |
 | **Drafting suggestions** | A likely match, a reorder list, a draft reply, a task | The suggestion is read-only until someone accepts it |
 
-These are not hypothetical. Our assistants Atelier AI, Ohm AI, Ember AI and Datum AI answer from live business records this way ([the question library](/ai-assistant/questions) lists every question and whether it's live), and in LS Technologies' system, an electronic components trader's, 88–95% of extracted documents need no correction depending on the type, and every one is still reviewed before it is posted ([AI extraction with a person in the loop](/notes/ai-extraction-human-in-the-loop)).
+These are not hypothetical. Our assistants Atelier AI, Ohm AI and Ember AI answer from live business records this way, and Datum AI does the same on the construction demo's sample records ([the question library](/ai-assistant/questions) lists every question and whether it's live), and in LS Technologies' system, an electronic components trader's, 88–95% of extracted documents need no correction depending on the type, and every one is still reviewed before it is posted ([AI extraction with a person in the loop](/notes/ai-extraction-human-in-the-loop)).
 
-## What not to let it do alone
+## What should AI never do alone in an ERP?
+
+Anything that changes the books or commits the business:
 
 - **Post accounting entries.** An entry that's 99% right is a wrong ledger. Extraction drafts; a person approves.
 - **Set prices or quote.** Pricing rules belong in code you can read; AI can draft the inputs, such as quantities read from a drawing.
@@ -39,15 +49,15 @@ These are not hypothetical. Our assistants Atelier AI, Ohm AI, Ember AI and Datu
 
 The rule of thumb: AI drafts and explains; code and people decide anything that changes a record.
 
-## "AI-native ERP" and other claims
+## What does "AI-native ERP" actually mean?
 
-Vendors now describe ERPs as AI-native, AI-first or agentic. The label tells you little. Three questions tell you a lot:
+On its own, very little; three questions about it tell you more. Vendors now describe ERPs as AI-native, AI-first or agentic. The label tells you little. Three questions tell you a lot:
 
 1. **What can the AI change without a person?** Listing, drafting and answering are low risk. Posting, ordering and emailing customers are not.
 2. **Where do its numbers come from?** A model writing its own database queries, or summarising rows, will occasionally produce a figure that's nearly right ([AI hallucination](/systems/ai-hallucination)). A fixed look-up gives the same figure as the report every time.
 3. **What happens when it doesn't know?** A good assistant says "the data doesn't have that". A weak one answers anyway.
 
-## How to test it before you buy
+## How do I test an ERP's AI before buying?
 
 Bring your own questions and your own documents to the demo:
 
