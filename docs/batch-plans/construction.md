@@ -809,3 +809,23 @@ this month". **Gap:** the demo labels everything "194C" (`lib/payroll-calc.js`, 
    is a 2020 consolidation and the consolidated rate notification wasn't found officially.
 6. **Demo labels TDS as 194C** after the 2025 Act replaced it; US QuickBooks sync exists on `demo-us` but isn't in the
    demo's own feature text, so don't claim it until checked live.
+
+---
+
+## Batch 4: construction after billing (planned 6 Nov 2026)
+
+The roadmap's "Later" row: material vs BOQ norms, site control from the phone, and job cost and margin per site.
+Checked against the existing pages first. Nothing covers material consumption or daily site records, and the WIP
+schedule is US-only (it doesn't cover an Indian contractor's per-site cost), so three new India guides are needed. The
+rest is folded into existing pages. That makes one batch of 5:
+
+| # | Page | New or folded | Primary sources | What the demo really does (structonova-ops) |
+|---|---|---|---|---|
+| 1 | `construction/material-consumption-vs-boq` (India) | New | CPWD GCC 2023 Clause 38 (theoretical consumption: steel +3% wastage, pipes and cables +5%, sheets +10%, variation per Schedule F); CPWD Works Manual 5.7 (cement register) | `lib/material-recon.js`: norm per BOQ line, expected = approved work × norm, actual = issues on daily reports, flagged beyond ±10% |
+| 2 | `construction/daily-progress-reports` (India) | New | CPWD Works Manual 5.7 (site order book, cement register, online inspection register), 5.15 (hindrances written in the site order book; physical hindrance register dropped for NITs from 19.2.2019); GCC 2023 (contractor's representative signs the site order book) | `lib/dpr.js`, `lib/site-attendance.js`, `lib/geo.js`, `lib/wpr.js`: one report per site per day from the phone, PM approval, photos, attendance flagged away from the site pin, weekly client report |
+| 3 | `construction/job-cost-per-site` (India) | New | ICAI AS 7 (contract costs: direct, attributable, chargeable; excluded costs; stage of completion; expected loss recognised at once) | `lib/mis-math.js`: cost = material + labour + site cash + machine days; margin to date = approved work − cost; projected cost = cost ÷ progress once 5% is done |
+| 4 | `construction/wip-schedule` (US) | Folded: one H2 on building job cost per job | (existing sources) | Same dashboard maths in the US build |
+| 5 | `industries/construction-company.md` (India) | Folded: link the three new guides from the sections they belong to | — | — |
+
+No US daily report page: no US statute governs daily reports, and the US industry page already describes them.
+Images for pages 1–3 go into `docs/construction-image-prompts.md`; each page shows its image once the file exists.
