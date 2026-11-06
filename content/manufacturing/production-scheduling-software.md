@@ -5,7 +5,6 @@ group: planning
 title: "Production scheduling software for job shops: machines, shifts and due dates"
 metaTitle: "Production scheduling software for job shops"
 related:
-  - /systems/finite-capacity-scheduling
   - /manufacturing/production-schedule-template
   - /industries/boiler-pressure-vessel-manufacturing
   - /ai-assistant/manufacturers

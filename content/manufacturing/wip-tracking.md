@@ -6,8 +6,6 @@ title: "WIP tracking with barcoded job travelers"
 metaTitle: "WIP tracking in a job shop with barcoded travelers"
 related:
   - /systems/work-in-progress
-  - /systems/job-traveler
-  - /systems/state-transition
   - /construction/wip-schedule
   - /manufacturing/quickbooks-job-costing
 question: "How do you track work in progress on a shop floor?"

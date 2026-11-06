@@ -6,7 +6,6 @@ title: "Free job shop production schedule template (Excel)"
 related:
   - /manufacturing/production-scheduling-software
   - /systems/routing
-  - /systems/finite-capacity-scheduling
   - /construction/wip-schedule
   - /manufacturing/quickbooks-job-costing
 question: "Is there a free production scheduling template in Excel for a job shop?"
