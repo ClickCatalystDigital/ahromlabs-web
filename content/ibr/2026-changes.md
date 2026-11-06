@@ -2,6 +2,12 @@
 kind: guide
 slug: 2026-changes
 title: What changed with the Boilers Act 2025 and IBR 2026
+related:
+  - /ibr/registration-documents
+  - /ibr/record-keeping
+  - /asme/asme-vs-ibr
+  - /industries/boiler-pressure-vessel-manufacturing
+  - /notes/ibr-statutory-folder-from-bom
 answer: >
   The Indian Boiler Regulations, 2026 replaced the Indian Boiler Regulations, 1950 on
   1 October 2026, under the Boilers Act, 2025. The folder's forms were renumbered — the
@@ -10,8 +16,8 @@ answer: >
 description: IBR 2026 replaced IBR 1950 on 1 October 2026. What changed for boiler makers — renumbered forms, electronic filing, record keeping, recognition.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-10-17
-checked: 2026-10-17
+updated: 2026-11-06
+checked: 2026-11-06
 sources:
   - title: The Boilers Act, 2025 (No. 12 of 2025)
     publisher: Ministry of Law and Justice, Gazette of India, Extraordinary, Part II—Section 1

@@ -2,6 +2,12 @@
 kind: guide
 slug: record-keeping
 title: How long boiler records must be kept under IBR 2026
+related:
+  - /ibr/registration-documents
+  - /ibr/2026-changes
+  - /systems/ibr-statutory-folder
+  - /systems/material-test-certificate
+  - /industries/boiler-pressure-vessel-manufacturing
 answer: >
   Regulation 308 of IBR 2026 sets three retention periods for a boiler's certificates
   and approved drawings: the Inspecting Authority keeps them at least 3 years after
@@ -10,8 +16,8 @@ answer: >
 description: Who keeps a boiler's IBR certificates and drawings, and for how long, under regulation 308 of IBR 2026 — 3 years, 5 years, or the boiler's life.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-10-25
-checked: 2026-10-17
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /ibr/ibr-record-keeping.webp
   alt: "How long boiler records are kept under IBR 2026, regulation 308: the Inspecting Authority keeps certificates and approved drawings for at least 3 years after registration; the manufacturer keeps records and drawings for the boiler, economiser or steam pipe for at least 5 years; the owner keeps the boiler's certificates and approved drawings for its entire life and passes them to any new owner."

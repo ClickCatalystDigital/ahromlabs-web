@@ -2,6 +2,12 @@
 kind: guide
 slug: registration-documents
 title: "Boiler registration under IBR 2026: documents checklist"
+related:
+  - /ibr/record-keeping
+  - /ibr/small-industrial-boilers
+  - /notes/ibr-statutory-folder-from-bom
+  - /asme/data-reports
+  - /industries/boiler-pressure-vessel-manufacturing
 answer: >
   Under regulation 8 of IBR 2026, a boiler's registration application goes to the Chief
   Inspector with four sets of documents: the Inspecting Authority's certificate (Form I
@@ -10,8 +16,8 @@ answer: >
 description: "Checklist for a boiler registration application under IBR 2026: the four document sets, Forms I Part B or C, IV Part A and V Part A, and what follows."
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-11-01
-checked: 2026-10-17
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /ibr/ibr-registration-steps.webp
   alt: "Seven steps to register a boiler under IBR 2026: 1, submit the application with Form I Part B or C, Form IV Part A, drawings, and Form V Parts A and B; 2, the Inspector checks the boiler at site; 3, hydraulic test; 4, provisional order in Form X; 5, registry number engraved on the front plate within one month, for example GT above 1234; 6, steam test, entered in Form XI; 7, certificate for use in Form XII. Regulations 8, 300, 301 and 310."

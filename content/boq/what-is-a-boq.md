@@ -7,6 +7,7 @@ related:
   - /erp/interior-design-firms
   - /industries/interior-design-and-furniture
   - /systems/bill-of-quantities
+  - /construction/ra-bills
 answer: >
   A bill of quantities (BOQ) lists every item of work with its description, unit and quantity,
   measured from the drawings before anyone prices it. Contractors fill in the rates, so three
@@ -15,14 +16,18 @@ answer: >
 description: What a BOQ is in interior work, and how it differs from an estimate, a quotation, a BOM, a rate analysis and a schedule of rates.
 domain: [interiors, boq, estimation]
 published: 2026-10-23
-updated: 2026-11-05
-checked: 2026-10-23
+updated: 2026-11-06
+checked: 2026-11-06
 image:
   src: /boq/boq-estimate-and-quotation.webp
   alt: "A ruled bill of quantities on the left and a signed, sealed quotation on the right, with a calculator between them."
   width: 1086
   height: 362
 sources:
+  - title: "General Conditions of Contract, Construction Works, April 2026, clause 27 (copy hosted by IIT Hyderabad)"
+    publisher: Central Public Works Department
+    url: https://www.iith.ac.in/assets/files/tenders/General_Conditions_of_Contract_GCC_for_Works_2026.pdf
+    date: 2026-04-01
   - title: Delhi Schedule of Rates (DSR)
     publisher: Central Public Works Department
     url: https://cpwd.gov.in/Units/dsr.aspx
@@ -31,9 +36,13 @@ sources:
     publisher: Bureau of Indian Standards
     url: https://www.services.bis.gov.in/php/BIS_2.0/bisconnect/knowyourstandards/Indian_standards/
     date: 2026-10-23
+checks:
+  - reg: CPWD GCC 2026, clause 27 (lump sums in estimates)
+    doc: cpwd-gcc-2026
+    quote: When the estimate on which a tender is made includes lump sum in respect of parts of the work, the contractor shall be entitled to payment in respect of the items of work involved or the part of the work in question at the same rates as are payable under this contract for such items
 ---
 
-## What a BOQ is
+## What is a BOQ?
 
 A [BOQ](/systems/bill-of-quantities) is the list of work, not the price of it ([what one looks like in Excel](/boq/template)). Each line names one item (a wardrobe, a ceiling, a wiring point), says what it is made of, gives the unit it is measured in and the quantity measured from the drawings. The rate and amount columns stay empty until someone prices them.
 
@@ -50,20 +59,22 @@ Its job is to make prices comparable. When three contractors price the same line
 
 The BOM and the BOQ meet in a workshop. The client's BOQ has one line for a wardrobe priced by area; the workshop's BOM for that wardrobe lists the sheets of plywood, the laminate, the edge band and each hinge.
 
-## Rate analysis and schedules of rates
+## What are a rate analysis and a schedule of rates?
 
 A rate analysis breaks one item's rate into material, labour, wastage, overheads and profit. It is how a contractor arrives at the rate in a BOQ line, and how a designer checks one that looks too low.
 
 A schedule of rates is a published list of item rates. For central government works, the Central Public Works Department publishes the Delhi Schedule of Rates (DSR). It is a reference for how items are described and priced in government work, not a price list for private interiors in another city.
 
-## Lump sums, provisional sums and PC sums
+## What are lump sums, provisional sums and PC sums?
 
-- **Lump sum**: one price for a defined scope ("bathroom CP fittings, LS"). Quick to write, but it hides what's inside; split it into named items wherever you can.
+Three ways to price work that isn't measured line by line:
+
+- **Lump sum**: one price for a defined scope ("bathroom CP fittings, LS"). Quick to write, but it hides what's inside; split it into named items wherever you can. CPWD's contract conditions do the same in clause 27: where an estimate includes a lump sum for part of the work, the contractor is paid for the items involved at the contract's own rates.
 - **Provisional sum**: an allowance for work not yet defined, adjusted when it is.
 - **Prime cost (PC) sum**: an allowance for something the client will choose later, such as tiles at a stated rate per sq ft, adjusted to the actual price.
 
 When a provisional or PC sum is settled, or anything else changes after the BOQ is agreed, it is recorded as a [variation order](/boq/variation-orders).
 
-## Boundary
+## Does this page give rates?
 
-This page explains the documents; it does not give rates. How each interior item is measured and specified is in the [item library](/boq/items), and the [checker](/boq/check) reads a BOQ from Excel and shows what each line leaves open.
+No. This page explains the documents; it does not give rates. How each interior item is measured and specified is in the [item library](/boq/items), and the [checker](/boq/check) reads a BOQ from Excel and shows what each line leaves open.
