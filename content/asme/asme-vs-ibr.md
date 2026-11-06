@@ -4,8 +4,10 @@ slug: asme-vs-ibr
 group: bridge
 title: "ASME vs IBR 2026: how the two boiler codes fit together"
 related:
+  - /asme/buying-from-india
   - /ibr/2026-changes
   - /ibr/small-industrial-boilers
+  - /notes/ibr-statutory-folder-from-bom
   - /industries/boiler-pressure-vessel-manufacturing
 question: "Does IBR accept ASME boilers and materials?"
 answer: >
@@ -16,8 +18,8 @@ answer: >
 description: "ASME BPVC vs IBR 2026 side by side: who approves, inspects and stamps, the forms, and every place IBR 2026 accepts ASME, quoted from the Gazette."
 domain: [asme, ibr, boilers, india]
 published: 2026-11-01
-updated: 2026-11-05
-checked: 2026-11-01
+updated: 2026-11-06
+checked: 2026-11-06
 sources:
   - title: Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)
     publisher: Central Boilers Board, Department for Promotion of Industry and Internal Trade
@@ -51,7 +53,11 @@ checks:
     quote: "The tubes of boilers and heat exchangers made of titanium and other exotic metals may be approved as per international codes, including American Society of Mechanical Engineers (ASME)"
 ---
 
-## Side by side
+## How do ASME and IBR 2026 compare?
+
+ASME is a private standard given legal force by the US states and Canadian provinces that adopt it; IBR 2026 is
+India's statutory regulation for boilers, under the Boilers Act, 2025. They overlap on the same boilers but differ in
+who approves, inspects and records:
 
 | | ASME BPVC | IBR 2026 |
 |---|---|---|
@@ -62,13 +68,11 @@ checks:
 | Independent inspection | [Authorized Inspector](/asme/authorized-inspector) from an accredited agency | Inspecting Authority, Competent Person |
 | Record of the item | [Manufacturer's Data Report](/asme/data-reports) (P-2, P-3, U-1) | Forms: Inspecting Authority's certificate (Form I), maker's certificate (Form IV), material certificates (Form V) |
 | Welders | Section IX qualification ([WPQ](/asme/wps-pqr-wpq)) | IBR welder certificate |
-| In service | NBIC and the jurisdiction | IBR registration, periodic inspection and certificate for use |
+| In service | NBIC and the jurisdiction ([state rules](/asme/state-boiler-laws)) | IBR registration, periodic inspection and certificate for use |
 
-The biggest practical difference: in India IBR applies to **boilers and steam pipes**, while unfired pressure vessels are not regulated by IBR at all (vessels for compressed gases fall under PESO's Static and Mobile Pressure Vessels (Unfired) Rules instead); in the US, a pressure vessel is usually regulated by the state and built to [Section VIII](/asme/section-viii).
+## Does IBR accept ASME boilers and materials?
 
-## Where IBR 2026 accepts ASME
-
-Quoted from the Gazette below:
+Yes, in defined ways, all quoted from the Gazette:
 
 - **Parts IBR doesn't cover** may be designed, made, inspected and certified to the ASME Code (among others), with the Inspecting Authority's permission (regulation 3(4)).
 - **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).
@@ -78,6 +82,37 @@ Quoted from the Gazette below:
 - **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).
 - **NDT personnel** with ASNT certificates are accepted alongside ISNT (regulation 7). See [Section V](/asme/section-v).
 
-## What a shop working to both needs
+## Is an ASME-stamped boiler legal to run in India?
 
-An Indian boiler maker building to ASME for export and to IBR at home keeps two sets of approvals, two sets of welder qualifications and two report formats over the same welds and materials. The records underneath are the same: [heat numbers](/asme/mtr), welders, procedures, NDE, tests. That's the case for keeping them once and printing either set of forms; the IBR side is covered in the [IBR 2026 guide](/ibr) and [boiler registration documents](/ibr/registration-documents).
+Only once it is registered under IBR 2026: in India a boiler is registered under the Indian Boiler Regulations
+whatever code it was designed to. An ASME stamp doesn't replace IBR registration, and the regulation 5 exemption for
+boilers built to an international code applies only on its conditions. See
+[boiler registration documents](/ibr/registration-documents).
+
+## Are pressure vessels covered by IBR?
+
+No. IBR applies to boilers and steam pipes; unfired pressure vessels are outside it (vessels for compressed gases fall
+under PESO's Static and Mobile Pressure Vessels (Unfired) Rules instead). In the US, by contrast, a pressure vessel is
+usually regulated by the state and built to [Section VIII](/asme/section-viii).
+
+## Who inspects a boiler under each?
+
+Under ASME, an [Authorized Inspector](/asme/authorized-inspector) employed by an ASME-accredited inspection agency;
+under IBR 2026, the Inspecting Authority and Competent Persons it recognizes. A boiler built in India for export to the
+US can have both: the Authorized Inspector for the ASME stamp and the Indian Inspecting Authority's Form I Part A under
+regulation 4.
+
+## Does an IBR welder certificate count for ASME work?
+
+No: ASME work needs a Section IX qualification ([WPQ](/asme/wps-pqr-wpq)), and IBR boiler work needs an IBR welder
+certificate. A welder working on both needs both, and each has its own renewal rules; see
+[welder continuity](/asme/welder-continuity) for the ASME side.
+
+## What does a shop working to both codes need?
+
+Two sets of approvals, two sets of welder qualifications and two report formats over the same welds and materials. The
+records underneath are the same: [heat numbers](/asme/mtr), welders, procedures, NDE, tests. That is the case for
+keeping them once and printing either set of forms. Our boiler software does this both ways: the India build, which a
+boiler maker runs today, assembles the IBR statutory folder from the certificate bank (see
+[the IBR statutory folder](/notes/ibr-statutory-folder-from-bom)), and the US demo prints the ASME record package. The
+IBR side is covered in the [IBR 2026 guide](/ibr).

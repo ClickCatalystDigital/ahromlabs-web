@@ -3815,8 +3815,10 @@
     "group": "bridge",
     "title": "ASME vs IBR 2026: how the two boiler codes fit together",
     "related": [
+      "/asme/buying-from-india",
       "/ibr/2026-changes",
       "/ibr/small-industrial-boilers",
+      "/notes/ibr-statutory-folder-from-bom",
       "/industries/boiler-pressure-vessel-manufacturing"
     ],
     "question": "Does IBR accept ASME boilers and materials?",
@@ -3829,8 +3831,8 @@
       "india"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-05",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
         "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
@@ -3882,7 +3884,7 @@
         "quote": "The tubes of boilers and heat exchangers made of titanium and other exotic metals may be approved as per international codes, including American Society of Mechanical Engineers (ASME)"
       }
     ],
-    "body": "## Side by side\n\n| | ASME BPVC | IBR 2026 |\n|---|---|---|\n| What it is | A private standard, given legal force by US states and Canadian provinces that adopt it | Statutory regulations under the Boilers Act, 2025, in force across India |\n| Written by | ASME committees | The Central Boilers Board |\n| Covers | Boilers, pressure vessels, nuclear, transport tanks | Boilers, steam pipes and their parts (pressure vessels are outside IBR) |\n| Shop approval | ASME certificate, after a joint review ([U and S stamps](/asme/u-stamp)) | Recognition as a manufacturer by class, under IBR 2026 |\n| Independent inspection | [Authorized Inspector](/asme/authorized-inspector) from an accredited agency | Inspecting Authority, Competent Person |\n| Record of the item | [Manufacturer's Data Report](/asme/data-reports) (P-2, P-3, U-1) | Forms: Inspecting Authority's certificate (Form I), maker's certificate (Form IV), material certificates (Form V) |\n| Welders | Section IX qualification ([WPQ](/asme/wps-pqr-wpq)) | IBR welder certificate |\n| In service | NBIC and the jurisdiction | IBR registration, periodic inspection and certificate for use |\n\nThe biggest practical difference: in India IBR applies to **boilers and steam pipes**, while unfired pressure vessels are not regulated by IBR at all (vessels for compressed gases fall under PESO's Static and Mobile Pressure Vessels (Unfired) Rules instead); in the US, a pressure vessel is usually regulated by the state and built to [Section VIII](/asme/section-viii).\n\n## Where IBR 2026 accepts ASME\n\nQuoted from the Gazette below:\n\n- **Parts IBR doesn't cover** may be designed, made, inspected and certified to the ASME Code (among others), with the Inspecting Authority's permission (regulation 3(4)).\n- **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).\n- **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms#form-i-part-a).\n- **Exemption** of a boiler or component built to an international code, ASME included, on conditions (regulation 5).\n- **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30); the [materials list](/asme/items) shows which common ones it names. See [Section II](/asme/section-ii).\n- **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).\n- **NDT personnel** with ASNT certificates are accepted alongside ISNT (regulation 7). See [Section V](/asme/section-v).\n\n## What a shop working to both needs\n\nAn Indian boiler maker building to ASME for export and to IBR at home keeps two sets of approvals, two sets of welder qualifications and two report formats over the same welds and materials. The records underneath are the same: [heat numbers](/asme/mtr), welders, procedures, NDE, tests. That's the case for keeping them once and printing either set of forms; the IBR side is covered in the [IBR 2026 guide](/ibr) and [boiler registration documents](/ibr/registration-documents)."
+    "body": "## How do ASME and IBR 2026 compare?\n\nASME is a private standard given legal force by the US states and Canadian provinces that adopt it; IBR 2026 is\nIndia's statutory regulation for boilers, under the Boilers Act, 2025. They overlap on the same boilers but differ in\nwho approves, inspects and records:\n\n| | ASME BPVC | IBR 2026 |\n|---|---|---|\n| What it is | A private standard, given legal force by US states and Canadian provinces that adopt it | Statutory regulations under the Boilers Act, 2025, in force across India |\n| Written by | ASME committees | The Central Boilers Board |\n| Covers | Boilers, pressure vessels, nuclear, transport tanks | Boilers, steam pipes and their parts (pressure vessels are outside IBR) |\n| Shop approval | ASME certificate, after a joint review ([U and S stamps](/asme/u-stamp)) | Recognition as a manufacturer by class, under IBR 2026 |\n| Independent inspection | [Authorized Inspector](/asme/authorized-inspector) from an accredited agency | Inspecting Authority, Competent Person |\n| Record of the item | [Manufacturer's Data Report](/asme/data-reports) (P-2, P-3, U-1) | Forms: Inspecting Authority's certificate (Form I), maker's certificate (Form IV), material certificates (Form V) |\n| Welders | Section IX qualification ([WPQ](/asme/wps-pqr-wpq)) | IBR welder certificate |\n| In service | NBIC and the jurisdiction ([state rules](/asme/state-boiler-laws)) | IBR registration, periodic inspection and certificate for use |\n\n## Does IBR accept ASME boilers and materials?\n\nYes, in defined ways, all quoted from the Gazette:\n\n- **Parts IBR doesn't cover** may be designed, made, inspected and certified to the ASME Code (among others), with the Inspecting Authority's permission (regulation 3(4)).\n- **Exotic tubes** (titanium and the like) may be approved to ASME and other international codes (regulation 3(5)).\n- **Export boilers** may be inspected by an Indian Inspecting Authority to a foreign code and certified in Form I Part A (regulation 4). See [buying from India](/asme/buying-from-india) and [IBR Form I Part A](/ibr/forms#form-i-part-a).\n- **Exemption** of a boiler or component built to an international code, ASME included, on conditions (regulation 5).\n- **Materials** to ASME (and IS, BS, EN, DIN, JIS) may be used; IBR's own material table lists ASME SA and SB specifications by name (regulation 30); the [materials list](/asme/items) shows which common ones it names. See [Section II](/asme/section-ii).\n- **Electrodes** are classified to ASME Section II Part C (SFA) or AWS specifications (regulation 71).\n- **NDT personnel** with ASNT certificates are accepted alongside ISNT (regulation 7). See [Section V](/asme/section-v).\n\n## Is an ASME-stamped boiler legal to run in India?\n\nOnly once it is registered under IBR 2026: in India a boiler is registered under the Indian Boiler Regulations\nwhatever code it was designed to. An ASME stamp doesn't replace IBR registration, and the regulation 5 exemption for\nboilers built to an international code applies only on its conditions. See\n[boiler registration documents](/ibr/registration-documents).\n\n## Are pressure vessels covered by IBR?\n\nNo. IBR applies to boilers and steam pipes; unfired pressure vessels are outside it (vessels for compressed gases fall\nunder PESO's Static and Mobile Pressure Vessels (Unfired) Rules instead). In the US, by contrast, a pressure vessel is\nusually regulated by the state and built to [Section VIII](/asme/section-viii).\n\n## Who inspects a boiler under each?\n\nUnder ASME, an [Authorized Inspector](/asme/authorized-inspector) employed by an ASME-accredited inspection agency;\nunder IBR 2026, the Inspecting Authority and Competent Persons it recognizes. A boiler built in India for export to the\nUS can have both: the Authorized Inspector for the ASME stamp and the Indian Inspecting Authority's Form I Part A under\nregulation 4.\n\n## Does an IBR welder certificate count for ASME work?\n\nNo: ASME work needs a Section IX qualification ([WPQ](/asme/wps-pqr-wpq)), and IBR boiler work needs an IBR welder\ncertificate. A welder working on both needs both, and each has its own renewal rules; see\n[welder continuity](/asme/welder-continuity) for the ASME side.\n\n## What does a shop working to both codes need?\n\nTwo sets of approvals, two sets of welder qualifications and two report formats over the same welds and materials. The\nrecords underneath are the same: [heat numbers](/asme/mtr), welders, procedures, NDE, tests. That is the case for\nkeeping them once and printing either set of forms. Our boiler software does this both ways: the India build, which a\nboiler maker runs today, assembles the IBR statutory folder from the certificate bank (see\n[the IBR statutory folder](/notes/ibr-statutory-folder-from-bom)), and the US demo prints the ASME record package. The\nIBR side is covered in the [IBR 2026 guide](/ibr)."
   },
   {
     "kind": "asme",
@@ -3999,42 +4001,122 @@
     "slug": "b31-1-vs-b31-3",
     "group": "bridge",
     "title": "ASME B31.1 vs B31.3: power piping and process piping",
+    "related": [
+      "/asme/section-i-vs-iv",
+      "/asme/hydrostatic-test",
+      "/asme/section-ix",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/manufacturing/job-shop-erp"
+    ],
     "question": "What is the difference between ASME B31.1 and B31.3?",
-    "answer": "B31.1 is the Power Piping code, for steam and water systems in power plants and boiler external piping. B31.3 is the Process Piping code, for refineries, chemical, pharmaceutical and similar plants, with fluid service categories that scale the rules to the hazard. Neither is part of the Boiler and Pressure Vessel Code, but both use Section IX for welding.",
-    "description": "ASME B31.1 power piping vs B31.3 process piping: scope, boiler external piping, fluid service categories, examination, hydrotest pressure and welding.",
+    "answer": "B31.1 is the Power Piping code, for power stations, industrial and heating plants and boiler external piping. B31.3 is the Process Piping code, for refineries, chemical, pharmaceutical, hydrogen and similar plants, with fluid service categories that scale the rules to the hazard. Neither is part of the Boiler and Pressure Vessel Code, but both use Section IX for welding. The current editions are B31.1-2026 and B31.3-2024.",
+    "description": "ASME B31.1 power piping vs B31.3 process piping: 2026 and 2024 editions, boiler external piping, fluid categories, hydro test, CC-1 forms and welding.",
     "domain": [
       "asme",
       "piping"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "B31.1 Power Piping",
+        "title": "B31.1 Power Piping (2026)",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/find-codes-standards/b31-1-power-piping",
-        "date": "2026-11-01"
+        "date": "2026-11-06"
+      },
+      {
+        "title": "B31.3 Process Piping (2024)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/b31-3-process-piping",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "ASME Data Report Forms (B31.1 certificates of compliance)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "16 Tex. Admin. Code § 65.2, Definitions (boiler external piping)",
+        "publisher": "Texas Department of Licensing and Regulation (via Cornell LII)",
+        "url": "https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-65-2",
+        "date": "2024-12-01"
       }
     ],
-    "body": "## Side by side\n\n| | B31.1 Power Piping | B31.3 Process Piping |\n|---|---|---|\n| Typical plants | Power stations, central heating and cooling plants, industrial steam systems | Refineries, chemical, petrochemical, pharmaceutical, food, gas processing |\n| Special scope | Boiler external piping (BEP) | Fluid service categories: Normal, Category D, Category M, High Pressure, High Purity |\n| Hazard approach | One set of rules, conservative | Rules scale with the fluid's hazard |\n| Hydrostatic test | 1.5 × design pressure | 1.5 × design pressure, adjusted by the stress ratio at temperature |\n| Welding qualification | Section IX | Section IX (with B31.3's own additions) |\n| Stamp | BEP by a Section I certificate holder; otherwise none | None |\n\n## Boiler external piping\n\nThe piping from a power boiler out to the first stop valve and beyond, as Section I defines it, is **boiler external piping**. It is designed to B31.1 but is part of the Section I boiler: built by a holder of a Section I certificate (S, A or PP) and inspected by the [Authorized Inspector](/asme/authorized-inspector). See [Section I vs Section IV](/asme/section-i-vs-iv).\n\n## B31.3 fluid service categories\n\n- **Normal**: most services.\n- **Category D**: non-flammable, non-toxic fluids at low pressure and moderate temperature; lighter rules.\n- **Category M**: fluids where a single small exposure can cause serious harm; stricter rules.\n- **High Pressure** and **High Purity**: chapters of their own.\n\nThe owner is responsible for assigning the category.\n\n## What carries over from the BPVC\n\n- Welding procedures and welders are qualified to [Section IX](/asme/section-ix); a shop's [WPS and PQR](/asme/wps-pqr-wpq) can serve both its vessel and piping work where the variables fit.\n- NDE methods come from [Section V](/asme/section-v); the piping code sets how much and the acceptance criteria.\n- Materials are mostly ASME or ASTM specifications; see [Section II](/asme/section-ii).\n\nPiping test pressures follow the same logic as vessels: see the [hydrostatic test](/asme/hydrostatic-test) guide."
+    "checks": [
+      {
+        "reg": "ASME B31.1 product page, description",
+        "doc": "asme-b311",
+        "quote": "ASME B31.1 covers piping systems typically found in electric power generating stations, industrial plants, geothermal heating systems, and heating and cooling systems."
+      },
+      {
+        "reg": "ASME B31.1 product page, edition",
+        "doc": "asme-b311",
+        "quote": "B31.1 - 2026"
+      },
+      {
+        "reg": "ASME B31.3 product page, description",
+        "doc": "asme-b313",
+        "quote": "B31.3 sets process piping requirements typically found in petroleum, chemical, pharmaceutical, hydrogen, paper & pulp, and power generation industries."
+      },
+      {
+        "reg": "ASME B31.3 product page, edition",
+        "doc": "asme-b313",
+        "quote": "B31.3 - 2024"
+      },
+      {
+        "reg": "ASME Data Report Forms, B31.1",
+        "doc": "asme-forms",
+        "quote": "Certificate of Compliance for the Complete Piping System"
+      },
+      {
+        "reg": "ASME Data Report Forms, B31.1",
+        "doc": "asme-forms",
+        "quote": "Certificate of Compliance for Fabricated Components, Subassemblies, and Assemblies"
+      },
+      {
+        "reg": "ASME Required Code Books, PP and S certificates",
+        "doc": "asme-books",
+        "quote": "B31.1 Power Piping"
+      },
+      {
+        "reg": "16 Tex. Admin. Code § 65.2, boiler external piping",
+        "doc": "tx-65-2",
+        "quote": "and which extends up to and including the valve or valves required by ASME."
+      }
+    ],
+    "body": "## What is the difference between ASME B31.1 and B31.3?\n\nB31.1 is for power piping and B31.3 for process piping. ASME describes B31.1 as covering \"piping systems typically\nfound in electric power generating stations, industrial plants, geothermal heating systems, and heating and cooling\nsystems\", and B31.3 as setting \"process piping requirements typically found in petroleum, chemical, pharmaceutical,\nhydrogen, paper & pulp, and power generation industries\". Both are ASME standards outside the Boiler and Pressure\nVessel Code, and both are paid; this guide cites their paragraphs.\n\n| | B31.1 Power Piping | B31.3 Process Piping |\n|---|---|---|\n| Current edition | 2026 | 2024 |\n| Typical plants | Power stations, industrial steam, district heating and cooling | Refineries, chemical, petrochemical, pharmaceutical, hydrogen, food |\n| Special scope | Boiler external piping (BEP) | Fluid service categories: Normal, Category D, Category M, High Pressure, High Purity |\n| Hazard approach | One set of rules, conservative | Rules scale with the fluid's hazard |\n| Hydrostatic test | 1.5 × design pressure | 1.5 × design pressure, adjusted by the stress ratio at temperature |\n| Welding qualification | Section IX | Section IX, with B31.3's own additions |\n| Certification | BEP by a Section I certificate holder; CC-1 and CC-2 certificates of compliance | None |\n\n## What are the current editions of B31.1 and B31.3?\n\nB31.1-2026 and B31.3-2024, the latest editions ASME lists on its store as of 6 November 2026. Piping codes have their\nown cycles, separate from the BPVC's two-year cycle, so check which edition your contract or jurisdiction names; Ohio's\nrule, for example, adopts B31.1 at 2022 and Michigan's at 2018.\n\n## What is boiler external piping?\n\nThe piping from a power boiler out to and including the valves Section I requires. Texas's boiler rules define it as\nstarting where the Section I or Section VIII boiler proper ends (at the first circumferential joint, flange face or\nthreaded joint) \"and which extends up to and including the valve or valves required by ASME\". It is designed to B31.1\nbut is part of the Section I boiler: built by a holder of a Section I certificate (S, A or PP) and inspected by the\n[Authorized Inspector](/asme/authorized-inspector). That is why ASME lists B31.1 among the required books for the S and\nPP certificates. See [Section I vs Section IV](/asme/section-i-vs-iv).\n\n## Is there an ASME form for B31.1 piping?\n\nYes: ASME publishes two certificates of compliance for B31.1, CC-1 for the complete piping system and CC-2 for\nfabricated components, subassemblies and assemblies, free on its [data report forms page](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms). B31.3 has no\nequivalent ASME form; the owner's records and the examination and test reports carry the evidence.\n\n## What are B31.3 fluid service categories?\n\n- **Normal**: most services.\n- **Category D**: non-flammable, non-toxic fluids at low pressure and moderate temperature; lighter rules.\n- **Category M**: fluids where a single small exposure can cause serious harm; stricter rules.\n- **High Pressure** and **High Purity**: chapters of their own.\n\nThe owner assigns the category, and with it the examination, testing and design rules that apply.\n\n## What hydrostatic test does each require?\n\nB31.1: at least 1.5 × design pressure (paragraph 137). B31.3: at least 1.5 × design pressure, multiplied by the ratio\nof allowable stress at test temperature to that at design temperature (paragraph 345.4.2), the same logic as a\nDivision 1 vessel's stress ratio. See the [hydrostatic test guide](/asme/hydrostatic-test).\n\n## Do B31.1 and B31.3 use Section IX?\n\nYes. Welding procedures and welders are qualified to [Section IX](/asme/section-ix), so a shop's\n[WPSs and PQRs](/asme/wps-pqr-wpq) can serve its vessel and piping work where the variables fit both codes, and the\nsame continuity rule (QW-322) applies to its welders.\n\n## Where do piping NDE and materials come from?\n\nNDE methods from [Section V](/asme/section-v), with the piping code setting how much and the acceptance criteria;\nmaterials are mostly ASME or ASTM specifications, see [Section II](/asme/section-ii).\n\n## What does our software keep for piping jobs?\n\nOur US boiler demo keeps the weld map (shell seams and nozzles), WPS and PQR, welder continuity, MTR and NDE records\nfor each boiler or vessel inside the job's ASME record package; the same records serve piping welds made under\nSection IX. It has no piping module, no B31.3 categories and no CC-1 form. See\n[job shop ERP](/manufacturing/job-shop-erp) and [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "bpvc-sections",
     "group": "code",
     "title": "ASME BPVC sections I to XIII explained",
+    "related": [
+      "/asme/section-viii",
+      "/asme/editions",
+      "/asme/stamps",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/custom-erp-crm"
+    ],
     "question": "What are the sections of the ASME Boiler and Pressure Vessel Code?",
-    "answer": "The ASME Boiler and Pressure Vessel Code has thirteen sections. Construction sections set the rules for a product: I for power boilers, IV for heating boilers, VIII for pressure vessels, X and XII for plastic vessels and transport tanks, III for nuclear. Reference sections serve them all: II for materials, V for testing, IX for welding, XIII for relief devices.",
-    "description": "The 13 sections of the ASME Boiler and Pressure Vessel Code: what each covers, which ones a boiler or pressure vessel shop needs, and how they fit together.",
+    "answer": "The ASME Boiler and Pressure Vessel Code has thirteen sections. Construction sections set the rules for a product: I for power boilers, IV for heating boilers, VIII for pressure vessels, X and XII for plastic vessels and transport tanks, III for nuclear. Reference sections serve them all: II for materials, V for NDE, IX for welding, XIII for relief devices. VI and VII are recommendations and XI covers nuclear in-service inspection.",
+    "description": "The 13 sections of the ASME Boiler and Pressure Vessel Code: what each covers, which books a boiler or vessel shop must own, and how paragraphs are numbered.",
     "domain": [
       "asme",
       "boilers",
       "pressure-vessels"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
         "title": "2025 ASME Boiler and Pressure Vessel Code",
@@ -4043,10 +4125,22 @@
         "date": "2025-07-01"
       },
       {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
         "publisher": "ASME",
         "url": "https://www.asme.org/getmedia/cb8f63c5-3aa2-45ee-a2d1-b999d37733f7/bpv-gui-03-informational-handbook_1.pdf",
         "date": "2023-05-12"
+      },
+      {
+        "title": "Boiler and Pressure Vessel Certification",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/Boiler-and-Pressure-Vessel-Certification",
+        "date": "2026-11-05"
       }
     ],
     "checks": [
@@ -4054,26 +4148,63 @@
         "reg": "ASME BPV-GUI-03, section 1",
         "doc": "asme-handbook",
         "quote": "Subscription to the indicated sections of the ASME Boiler and Pressure Vessel Code is required for certification to assure that Code users have the latest applicable Code rules."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 1",
+        "doc": "asme-handbook",
+        "quote": "Reproduced/unauthorized documents from any source are not accepted for ASME Certification"
+      },
+      {
+        "reg": "ASME Required Code Books",
+        "doc": "asme-books",
+        "quote": "Later editions of referenced standards will be required if and when referenced as \"Latest Edition\"."
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "CA-1 Conformity Assessment Requirements"
+      },
+      {
+        "reg": "ASME certification page",
+        "doc": "asme-bpv-cert",
+        "quote": "Today there are more than 6,800 Certificate Holders in the ASME BPVC Certification Program."
+      },
+      {
+        "reg": "ASME Section IX product page, description",
+        "doc": "asme-ix",
+        "quote": "Section IX of the BPVC contains rules relating to the qualification of welding, brazing, and fusing procedures as required by other BPVC sections."
+      },
+      {
+        "reg": "ASME Section XIII product page, description",
+        "doc": "asme-xiii",
+        "quote": "BPVC Section XIII sets requirements for design, materials, inspection, testing, and marking of pressure relief valves, rupture disks, and related devices."
       }
     ],
-    "body": "## Construction sections and reference sections\n\nThe Code is easiest to read as two kinds of book. A **construction section** is the rulebook for one kind of equipment: what it may be made of, how it is designed, welded, examined, tested and stamped. A **reference section** holds rules that several construction sections point to, so they aren't written out again in each.\n\nA pressure vessel shop working to Section VIII Division 1 therefore also works to Section II (materials), Section V (nondestructive examination), Section IX (welding) and Section XIII (relief devices), because Division 1 sends it there.\n\n## The thirteen sections\n\n| Section | Title, in short | Kind |\n|---|---|---|\n| I | Power boilers | Construction |\n| II | Materials (Parts A to D) | Reference |\n| III | Nuclear facility components | Construction |\n| IV | Heating boilers | Construction |\n| V | Nondestructive examination | Reference |\n| VI | Care and operation of heating boilers | Recommended practice |\n| VII | Care of power boilers | Recommended practice |\n| VIII | Pressure vessels (Divisions 1, 2 and 3) | Construction |\n| IX | Welding, brazing and fusing qualifications | Reference |\n| X | Fiber-reinforced plastic pressure vessels | Construction |\n| XI | Inservice inspection of nuclear plants | Inspection |\n| XII | Transport tanks | Construction |\n| XIII | Overpressure protection | Reference |\n\nSections VI and VII are recommendations for owners, not construction rules, and nothing is stamped to them. Section XI applies to nuclear plants in service.\n\n## Which sections a shop needs\n\n- **Pressure vessels**: [Section VIII](/asme/section-viii) (usually Division 1), plus II Part A or B for the material, II Part C if it buys filler metal to an SFA specification, II Part D for allowable stresses, V, [IX](/asme/section-ix) and XIII.\n- **Power boilers** (steam above 15 psi (1 bar), hot water above 160 psi (11 bar) or 250 °F (121 °C)): Section I with the same reference sections. Below those limits, a heating boiler is built to Section IV; see [Section I vs Section IV](/asme/section-i-vs-iv).\n- **Relief valves and rupture disks**: [Section XIII](/asme/section-xiii).\n\nTo hold an ASME certificate, a shop must own current copies of the sections its scope uses (ASME lists them per certificate as its \"required code books\"); photocopies are not accepted at the joint review.\n\n## How the sections are numbered inside\n\nEach construction section uses letter prefixes for its parts, which is why paragraph numbers look the way they do. In Section VIII Division 1, UG paragraphs are general requirements for every vessel, UW is welded construction, UCS is carbon and low-alloy steel and UHA is high-alloy steel. Section I uses PG for general requirements and PW for welding; Section IX uses QW for welding. A reference such as UG-27 therefore reads \"Section VIII Division 1, general requirements, paragraph 27\": the [shell thickness rules](/asme/shell-thickness).\n\n## Editions\n\nThe whole Code is republished every two years; the current one is the 2025 Edition. How editions, code cases and interpretations work is in [ASME Code editions](/asme/editions)."
+    "body": "## What are the sections of the ASME Boiler and Pressure Vessel Code?\n\nThirteen, numbered I to XIII, and easiest to read as two kinds of book. A **construction section** is the rulebook\nfor one kind of equipment: what it may be made of, how it is designed, welded, examined, tested and stamped. A\n**reference section** holds rules several construction sections point to, so they aren't written out in each.\n\n| Section | Title, in short | Kind |\n|---|---|---|\n| I | Power boilers | Construction |\n| II | Materials (Parts A to D) | Reference |\n| III | Nuclear facility components | Construction |\n| IV | Heating boilers | Construction |\n| V | Nondestructive examination | Reference |\n| VI | Care and operation of heating boilers | Recommended practice |\n| VII | Care of power boilers | Recommended practice |\n| VIII | Pressure vessels (Divisions 1, 2 and 3) | Construction |\n| IX | Welding, brazing and fusing qualifications | Reference |\n| X | Fiber-reinforced plastic pressure vessels | Construction |\n| XI | In-service inspection of nuclear plants | Inspection |\n| XII | Construction and continued service of transport tanks | Construction |\n| XIII | Overpressure protection | Reference |\n\nThe whole Code is republished every two years; the current one is the [2025 Edition](https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025).\n\n## What is the difference between a construction and a reference section?\n\nA construction section is what a product is built and stamped to; a reference section is what it points to for one\ntopic. Section IX, for example, \"contains rules relating to the qualification of welding, brazing, and fusing\nprocedures as required by other BPVC sections\", in ASME's words, and Section XIII \"sets requirements for design,\nmaterials, inspection, testing, and marking of pressure relief valves, rupture disks, and related devices\". A shop\nworking to Section VIII Division 1 therefore also works to Sections II, V, IX and XIII.\n\n## Which books does a pressure vessel shop need?\n\nFor the U certificate, ASME's [required list](https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books) is Section II Parts A, B, C and D, Section V,\nSection VIII Division 1, Section IX and CA-1, ASME's Conformity Assessment Requirements. Section II Part C and Sections\nV and IX may be left out only if welding, brazing and fusing aren't in the shop's scope. Division 2 work (U2) needs\nDivision 2 instead. See [Section VIII](/asme/section-viii).\n\n## Which books does a boiler shop need?\n\nFor the S certificate: Section I, Section II Parts A to D, Section V, Section IX, B31.1 Power Piping and CA-1. For an H\nheating boiler certificate (except cast iron): Section II Parts A, B and C, Section IV, Section IX and CA-1; for cast\niron H, Section IV and CA-1. B31.1 is on the S list because boiler external piping is part of the Section I boiler.\nSee [Section I vs Section IV](/asme/section-i-vs-iv).\n\n## Can a shop use photocopies or older books?\n\nNo. ASME's handbook says subscription to the required sections \"is required for certification to assure that Code\nusers have the latest applicable Code rules\", and that \"Reproduced/unauthorized documents from any source are not\naccepted for ASME Certification\". Electronic editions from a licensed reseller are accepted. Each new edition becomes\nmandatory six months after publication; see [ASME Code editions](/asme/editions).\n\n## Which sections are not construction rules?\n\nSections VI and VII are recommended practice for owners caring for heating and power boilers: nothing is built or\nstamped to them. Section XI is for in-service inspection of nuclear plants. In-service rules for other boilers and\nvessels are in the National Board Inspection Code, not the BPVC; see [National Board registration](/asme/national-board-registration).\n\n## How are ASME paragraph numbers read?\n\nEach construction section uses letter prefixes for its parts. In Section VIII Division 1, UG paragraphs are general\nrequirements for every vessel, UW is welded construction, UCS is carbon and low-alloy steel and UHA is high-alloy\nsteel. Section I uses PG for general requirements and PW for welding; Section IX uses QW for welding. A reference such\nas UG-27 therefore reads \"Section VIII Division 1, general requirements, paragraph 27\": the\n[shell thickness rules](/asme/shell-thickness).\n\n## How many shops hold ASME certificates?\n\nASME's certification page says \"Today there are more than 6,800 Certificate Holders in the ASME BPVC Certification\nProgram\", across power boilers, heating boilers, pressure vessels, plastic vessels, transport tanks and valves. Its\nCertificate Holder Search lists them; see [ASME stamps](/asme/stamps).\n\n## What does our software keep for the Code?\n\nOur US boiler demo files each job to a named Code section and edition (Section I with Form P-2 for boilers, Section\nVIII Division 1 with Form U-1A for vessels) and prints the job's ASME record package from its own records. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "buying-from-india",
     "group": "bridge",
     "title": "Buying ASME-stamped vessels and boilers from India",
+    "related": [
+      "/asme/state-boiler-laws",
+      "/asme/national-board-registration",
+      "/asme/asme-vs-ibr",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/notes/customer-portal-one-order-every-department"
+    ],
     "question": "Can an Indian manufacturer build an ASME U-stamped pressure vessel?",
-    "answer": "Yes. An Indian fabricator holding an ASME U certificate builds and stamps Section VIII vessels to the same rules and with the same Authorized Inspector involvement as a US shop. For a US installation, also check National Board registration and the state's rules. For boilers, IBR 2026 lets an Indian Inspecting Authority certify an export boiler to a foreign code.",
-    "description": "Sourcing ASME-stamped vessels and boilers from India: certificate checks, the AI, NB registration, IBR 2026 export inspection and what to ask.",
+    "answer": "Yes. An Indian fabricator holding an ASME U certificate builds and stamps Section VIII vessels to the same rules, with the same Authorized Inspector involvement, as a US shop; ASME certifies companies in 74 countries. For a US installation, also check the state's edition and National Board registration rules. For boilers, IBR 2026 lets an Indian Inspecting Authority certify an export boiler to a foreign code.",
+    "description": "Sourcing ASME-stamped vessels and boilers from India: certificate checks, the AI, NB registration, state rules, IBR 2026 export inspection and what to ask.",
     "domain": [
       "asme",
       "sourcing",
       "india"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-05",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
         "title": "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)",
@@ -4082,10 +4213,28 @@
         "date": "2023-05-12"
       },
       {
-        "title": "Registration",
+        "title": "Frequently Asked Questions (Certification and Accreditation)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Certified Companies (Certificate Holder Search)",
+        "publisher": "ASME",
+        "url": "https://access.asme.org/caconnect/certified-companies",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Manufacturer's Data Report Registration",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "NB-264, Criteria for ASME Registration (Revision 19)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Registration/NB-264.pdf",
+        "date": "2025-05-10"
       },
       {
         "title": "Indian Boiler Regulations, 2026 (Gazette of India, Extraordinary, No. 596)",
@@ -4099,9 +4248,39 @@
         "reg": "IBR 2026, regulation 4",
         "doc": "ibr-2026",
         "quote": "the inspecting authority may inspect any boiler meant for export during the various stages of its construction to comply with the requirements of any foreign code and may grant a certificate in Part-A of Form-I."
+      },
+      {
+        "reg": "ASME FAQ, Single Certification Mark",
+        "doc": "asme-faq-full",
+        "quote": "there are now 74 countries in which companies have been certified"
+      },
+      {
+        "reg": "ASME FAQ, Boiler and Pressure Vessel Certification",
+        "doc": "asme-faq-full",
+        "quote": "Most AIAs operate worldwide."
+      },
+      {
+        "reg": "ASME FAQ, General",
+        "doc": "asme-faq-full",
+        "quote": "Visit the ASME Certificate Holder Search which will provide a list of ASME certified companies."
+      },
+      {
+        "reg": "ASME BPV-GUI-03, section 3",
+        "doc": "asme-handbook",
+        "quote": "The written description and documentation which support understanding of the program must be in English."
+      },
+      {
+        "reg": "NBBI Data Report Registration",
+        "doc": "nb-registration",
+        "quote": "Any manufacturer meeting the requirements of NB-264, Criteria for ASME Registration may become authorized to register."
+      },
+      {
+        "reg": "NB-264 Revision 19, submitting registration forms",
+        "doc": "nb-264",
+        "quote": "The timeframe in which registration forms will be submitted to NBBI following certification by the Inspector or CI shall not exceed 30 days."
       }
     ],
-    "body": "## Why buyers look at India\n\nIndia has a large base of fabricators building boilers, pressure vessels and heat exchangers for refineries, power and process plants, many with ASME certificates for export work, and engineering and fabrication rates below US levels. The Code is the same wherever the shop is: a U stamp from a shop in Gujarat means what one from Texas does.\n\n## What to check before ordering\n\n| Check | How |\n|---|---|\n| The certificate covers the work | Designator (U, U2, S, PP), scope (shop or field), and that it is current; ask for a copy and confirm on ASME's certificate holder listing. See [ASME stamps](/asme/stamps) |\n| Who the Authorized Inspection Agency is | The AIA named on their agreement; the [Authorized Inspector](/asme/authorized-inspector) signs your [data report](/asme/data-reports) |\n| National Board registration | If your state requires NB registration (most do), the shop must be authorized to register. See [National Board registration](/asme/national-board-registration) |\n| The edition | Name the Code edition in the order; see [editions](/asme/editions) |\n| Your jurisdiction's own rules | Some states and every Canadian province add requirements; see [US and Canadian boiler laws](/asme/state-boiler-laws) |\n| Materials | SA specifications with MTRs, and where the mill is. See [MTRs](/asme/mtr) |\n| Documents | The full package in English: calculations, drawings, MTRs, WPS/PQR, welder records, NDE, PWHT charts, test record, data report |\n\n## Boilers: the IBR side\n\nFor a boiler, the Indian Boiler Regulations add a step at home. Regulation 4 of IBR 2026 lets an Indian Inspecting Authority inspect a boiler meant for export, through its stages of construction, against a foreign code such as ASME, and certify it in Form I Part A. That certificate is for India's records; it doesn't replace the ASME stamp or the Authorized Inspector. See [ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form I Part A](/ibr/forms#form-i-part-a).\n\n## Managing the order\n\n- **Inspection and test plan**: agree hold points (material review, fit-up, NDE, PWHT, hydrostatic test) and who witnesses each, yours and the AI's.\n- **Document review before shipping**: get the data report package as a draft before the vessel ships, not with it.\n- **Logistics**: oversized vessels need shipping planned early; the data report and nameplate must match what arrives.\n\n## Records that travel well\n\nA buyer overseas sees a shop through its documents. Shops that keep heat numbers, welders and NDE in one system send a complete package on the day the vessel is ready; that is the system we build."
+    "body": "## Can an Indian manufacturer build an ASME U-stamped pressure vessel?\n\nYes. The Code and the certificate are the same wherever the shop is: an Indian fabricator with a U certificate builds\nSection VIII Division 1 vessels to the same rules, under the same quality control system review and with an\nAuthorized Inspector from an ASME-accredited agency, as a shop in Texas. ASME's FAQ notes there are now 74 countries\nin which companies have been certified, and many Indian fabricators hold U, U2 and S certificates for export work.\n\n## How do I check an Indian shop's ASME certificate?\n\nOn ASME's [Certificate Holder Search](https://access.asme.org/caconnect/certified-companies), which ASME's FAQ points to for exactly this and which filters by\ncountry and certificate. Ask the supplier for a copy of the certificate too, and confirm:\n\n- the designator covers the work (U for Division 1, U2 for Division 2, S for power boilers, PP for boiler external piping);\n- the scope (shop only, or field work too) and any limits;\n- the expiry date is after your job finishes, or that renewal is in hand.\n\nSee [ASME stamps](/asme/stamps).\n\n## Who is the Authorized Inspector for a shop in India?\n\nAn inspector employed by the ASME-accredited inspection agency the shop has its agreement with; ASME's FAQ says most\nagencies operate worldwide. Ask which agency it is: their [Authorized Inspector](/asme/authorized-inspector) witnesses\nthe hydro test and signs your [data report](/asme/data-reports).\n\n## Can an Indian shop register the vessel with the National Board?\n\nYes, if it is authorized to register. The National Board says any manufacturer meeting NB-264 may become authorized,\nand NB-264 then requires registration forms to be sent within 30 days of the Inspector's certification. If your state\nrequires National Board registration, make authorization a condition of the order. See\n[National Board registration](/asme/national-board-registration).\n\n## Which US rules apply to an imported vessel?\n\nThe rules of the state, and sometimes the city, where it will be installed: the Code edition the jurisdiction names,\nwhether it regulates unfired vessels at all, National Board registration, and inspection before first use.\nPennsylvania, for example, requires the ASME stamp, the National Board number and its own keystone serial number on\nevery new boiler and unfired vessel. Put the jurisdiction's answers in the purchase order; see\n[US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## What should I check before ordering?\n\n| Check | How |\n|---|---|\n| The certificate covers the work | Designator, scope and expiry, on ASME's Certificate Holder Search and a copy from the shop |\n| Who the inspection agency is | The agency named on their agreement; its Inspector signs your data report |\n| National Board registration | Required by your state? Then the shop must be authorized to register (NB-264) |\n| The Code edition | Name it in the order; see [editions](/asme/editions) |\n| Your jurisdiction's own rules | Edition, scope, stamping and registration; see [state boiler laws](/asme/state-boiler-laws) |\n| Materials | SA specifications with mill test reports by heat number; see [MTRs](/asme/mtr) |\n| Documents | The full package in English: calculations, drawings, MTRs, WPS/PQR/WPQ, welder continuity, NDE, PWHT charts, test record, data report |\n\n## Will the documents be in English?\n\nThey must be, for the ASME side. ASME's handbook requires a certificate holder's quality control documentation to be\nin English, and the data report, calculations and records the Inspector reviews follow it. Ask for the data report\npackage as a draft before the vessel ships, not with it.\n\n## What does IBR add for a boiler built in India?\n\nA step at home. Regulation 4 of IBR 2026 lets an Indian Inspecting Authority inspect a boiler meant for export,\nthrough its stages of construction, against a foreign code such as ASME, and certify it in Form I Part A. That\ncertificate is for India's records: it doesn't replace the ASME stamp or the Authorized Inspector. See\n[ASME vs IBR 2026](/asme/asme-vs-ibr) and [IBR Form I Part A](/ibr/forms#form-i-part-a).\n\n## How should I manage the order?\n\n- **Inspection and test plan**: agree the hold points (material review, fit-up, NDE, PWHT, hydrostatic test) and who witnesses each, yours and the Inspector's.\n- **Document review before shipping**: get the data report package as a draft before the vessel ships.\n- **Logistics**: plan oversized vessels' shipping early; the data report and nameplate must match what arrives.\n\n## What do records that travel well look like?\n\nA buyer overseas sees a shop through its documents. Shops that keep heat numbers, welders and NDE in one system send\na complete package the day the vessel is ready. Our boiler software does this for an Indian boiler maker today (the\nIndia build, with its IBR folder), and the US demo shows the same records printed as an ASME record package; a\ncustomer portal can show the order's progress live. See\n[one order, every department](/notes/customer-portal-one-order-every-department) and\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",

@@ -7,7 +7,7 @@ import { asmePageGraph } from "@/lib/schema";
 import { asmeArt } from "@/lib/asme-images";
 
 const title = "ASME Boiler and Pressure Vessel Code, in plain English";
-const lead = `The ASME Boiler and Pressure Vessel Code (BPVC) sets how boilers and pressure vessels are designed, built, welded, inspected and stamped. These guides explain the sections, the certification stamps, Section IX welding qualifications and the core Section VIII design rules, with free calculators, written to the ${ASME_EDITION.name} for shops in the US, Canada and India.`;
+const lead = `The ASME Boiler and Pressure Vessel Code (BPVC) sets how boilers and pressure vessels are designed, built, welded, inspected and stamped. These guides explain the sections, the certification stamps, Section IX welding qualifications, the core Section VIII design rules and the state laws that adopt them, with free calculators, written to the ${ASME_EDITION.name} for shops in the US, Canada and India.`;
 
 export const metadata: Metadata = {
   // Absolute: with the " | Ahrom Labs" suffix it would run past what results show.
@@ -40,6 +40,17 @@ export default function AsmeHub() {
       art={art?.src}
       artAlt={art?.alt}
     >
+      <GuideH2>What is the ASME Boiler and Pressure Vessel Code?</GuideH2>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        It is ASME&apos;s standard for boilers and pressure vessels in thirteen sections: construction sections such as I (power boilers),
+        IV (heating boilers) and VIII (pressure vessels), and reference sections for materials (II), examination (V), welding (IX) and
+        relief devices (XIII). It is republished every two years; the {ASME_EDITION.name} became mandatory on 1 January 2026 and the next
+        is due in 2027. It becomes law where a state, city or province adopts it, often at an older edition: see{" "}
+        <Link href="/asme/bpvc-sections" className="text-link focus-ring">the sections</Link>,{" "}
+        <Link href="/asme/editions" className="text-link focus-ring">editions</Link> and{" "}
+        <Link href="/asme/state-boiler-laws" className="text-link focus-ring">state boiler laws</Link>.
+      </p>
+
       <GuideH2>Free tools</GuideH2>
       <ul className="mt-6 divide-y divide-line border-y border-line">
         {TOOLS.map((t) => (
@@ -75,6 +86,15 @@ export default function AsmeHub() {
           </div>
         );
       })}
+
+      <GuideH2>What do we build for boiler and pressure vessel shops?</GuideH2>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        The operations system a Code shop runs on, from inquiry to shipping, with the records these guides describe kept once per job:
+        MTRs by heat number, the weld map with WPS, PQR and welder continuity, NDE, PWHT and hydro test, printed as the job&apos;s record
+        package. A boiler maker in India runs it with its IBR folder; the US demo prints the ASME record package. See{" "}
+        <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">ERP for boiler and pressure vessel shops</Link>{" "}
+        and <Link href="/services/material-traceability" className="text-link focus-ring">material traceability</Link>.
+      </p>
     </AsmePage>
   );
 }
