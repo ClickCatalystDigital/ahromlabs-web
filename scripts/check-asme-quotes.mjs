@@ -27,6 +27,8 @@ const DOCS = {
     "nb-commission": "NBBI - Commissioned Inspectors page 2026-11-05",
     "nb-264": "NBBI - NB-264 Criteria for ASME Registration Rev 19",
     "nb-stamping": "NBBI - Synopsis Stamping Requirements by Jurisdiction 2024",
+    "asme-ix": "ASME - BPVC Section IX product page 2026-11-05",
+    "aws-sperko-2025": "AWS - Welding Journal July 2025 Sperko Section IX changes (free lead) 2026-11-05",
   }).map(([k, f]) => [k, path.join(ASME, `${f}.txt`)])),
 };
 

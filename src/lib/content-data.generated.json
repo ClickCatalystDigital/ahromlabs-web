@@ -4537,26 +4537,57 @@
     "slug": "p-numbers",
     "group": "welding",
     "title": "P-numbers, F-numbers and A-numbers in ASME Section IX",
+    "related": [
+      "/asme/section-ii",
+      "/asme/essential-variables",
+      "/systems/heat-number",
+      "/notes/plate-remnants-back-into-stock",
+      "/services/material-traceability"
+    ],
     "question": "What is a P-number in welding?",
     "answer": "A P-number groups base metals with similar welding behaviour, so a procedure or welder test on one covers the others in the group: P-No. 1 is carbon steel, P-No. 8 austenitic stainless. F-numbers group filler metals by usability, such as F-4 for low-hydrogen electrodes like E7018, and A-numbers group steel weld metal by chemistry.",
-    "description": "ASME Section IX P-numbers, Group numbers, F-numbers and A-numbers explained, with common materials and electrodes in each.",
+    "description": "ASME Section IX P-numbers, Group numbers, F-numbers and A-numbers explained, with common materials and electrodes in each and what they mean for a PQR or WPQ.",
     "domain": [
       "asme",
       "welding",
       "materials"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
+      },
+      {
+        "title": "Required Code Books (Section II Part C for welding)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
       }
     ],
-    "body": "## Why groups exist\n\nThere are thousands of material specifications. Without grouping, every pairing would need its own procedure test. Section IX assigns each base metal a **P-number** (and, for ferrous metals where toughness matters, a **Group number**), so a PQR on one material qualifies the others in its P-number. The full assignments are in Section IX (QW/QB-422) and Section II Part D; the common ones are below.\n\n## Common P-numbers\n\n| P-No. | Materials | Examples |\n|---|---|---|\n| 1 | Carbon and carbon-manganese steels | SA-516 Gr 70, SA-106 Gr B, SA-105 |\n| 3 | C–½Mo and low-chromium steels | SA-204, SA-335 P1 |\n| 4 | 1–1¼Cr–½Mo steels | SA-387 Gr 11, SA-335 P11 |\n| 5A | 2¼Cr–1Mo steels | SA-387 Gr 22, SA-335 P22 |\n| 5B | 5Cr to 9Cr steels | SA-335 P5, P9 |\n| 7 | Ferritic stainless | SA-240 Type 405, 409, 430 |\n| 8 | Austenitic stainless | SA-240 Type 304, 316, 321 |\n| 10H | Duplex stainless | SA-240 S31803, S32205 |\n| 15E | Creep-strength enhanced ferritic steels | SA-335 P91 |\n| 21–26 | Aluminum alloys | SB-209 5083 |\n| 31–35 | Copper alloys | SB-171 |\n| 41–49 | Nickel alloys | SB-168 Alloy 600, SB-443 Alloy 625 |\n| 51–53 | Titanium | SB-265 Grade 2 |\n\nWelding a P-No. 1 to a P-No. 8 is a dissimilar-metal joint and needs a procedure qualified for that combination.\n\nThe [materials list](/asme/items) gives the P-number of each common boiler and vessel material.\n\n## F-numbers: filler metal usability\n\n| F-No. | Filler | Example |\n|---|---|---|\n| 1 | Heavy iron-powder steel electrodes | E7024 |\n| 2 | Rutile steel electrodes | E6013 |\n| 3 | Cellulosic steel electrodes | E6010, E6011 |\n| 4 | Low-hydrogen steel electrodes | E7018 |\n| 5 | Stainless steel electrodes | E308L-16 |\n| 6 | Solid and metal-cored steel wires and rods (GTAW, GMAW, SAW) | ER70S-6 |\n| 43 | Nickel alloy filler | ERNiCrMo-3 |\n\nF-numbers matter most for **welders**: they reflect how hard the electrode is to handle, so a welder qualified with F-4 is generally also qualified for F-1 to F-3 in the same process, but not the other way round. Section IX's QW-433 table has the exact pairings, including the effect of welding with or without backing.\n\n## A-numbers: weld metal chemistry\n\nA-numbers classify the deposited weld metal of steels by composition (A-1 carbon steel, A-2 carbon–molybdenum, up to A-8 austenitic chromium–nickel and others). A change of A-number is a procedure [essential variable](/asme/essential-variables) for most processes.\n\n## Using them well\n\n- Write the P-number, Group number, F-number and A-number on every WPS and PQR; reviewers check them first.\n- Check the material's P-number in the current edition: new materials are added and occasionally regrouped.\n- The base metal's specification and grade come from its [MTR](/asme/mtr); see [Section II](/asme/section-ii) for SA vs A.\n\nThe documents these numbers appear on are explained in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
+    "checks": [
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "BPVC Section II-Materials Part C-Specifications for Welding Rods Electrodes and Filler Metals"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-483",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Procedure Qualification Records (PQR)"
+      }
+    ],
+    "body": "## What is a P-number in welding?\n\nA P-number is Section IX's group for base metals that weld alike, so that a procedure qualified on one material\ncovers the others in its group. There are thousands of material specifications; without grouping, every pairing\nwould need its own procedure test. Section IX lists the assignments in QW/QB-422, by specification and grade.\nSection IX is ASME's paid Code; this guide gives common cases, and the 2025 tables are the authority.\n\n## What are the common P-numbers?\n\n| P-No. | Materials | Examples |\n|---|---|---|\n| 1 | Carbon and carbon-manganese steels | SA-516 Gr 70, SA-106 Gr B, SA-105 |\n| 3 | C–½Mo and low-chromium steels | SA-204, SA-335 P1 |\n| 4 | 1–1¼Cr–½Mo steels | SA-387 Gr 11, SA-335 P11 |\n| 5A | 2¼Cr–1Mo steels | SA-387 Gr 22, SA-335 P22 |\n| 5B | 5Cr to 9Cr steels | SA-335 P5, P9 |\n| 7 | Ferritic stainless | SA-240 Type 405, 409, 430 |\n| 8 | Austenitic stainless | SA-240 Type 304, 316, 321 |\n| 10H | Duplex stainless | SA-240 S31803, S32205 |\n| 15E | Creep-strength enhanced ferritic steels | SA-335 P91 |\n| 21–26 | Aluminum alloys | SB-209 5083 |\n| 31–35 | Copper alloys | SB-171 |\n| 41–49 | Nickel alloys | SB-168 Alloy 600, SB-443 Alloy 625 |\n| 51–53 | Titanium | SB-265 Grade 2 |\n\nThe base metal's specification and grade come from its [MTR](/asme/mtr); see [Section II](/asme/section-ii) for SA\nversus ASTM A specifications.\n\n## What P-number is SA-516 Grade 70?\n\nP-No. 1, Group 2. SA-516 is the carbon steel plate most pressure vessel and boiler shops buy, and Grade 70 sits in\nGroup 2 of P-No. 1 with other carbon steels of its strength. Check the grade's line in QW/QB-422 of the edition\nyou're working to before writing it on a WPS.\n\n## What is a Group number for?\n\nGroup numbers split a ferrous P-number by toughness behaviour. They matter only when the construction code requires\nimpact testing: a change of Group number is then a supplementary essential variable, so a PQR on P-No. 1 Group 1\nmay not cover Group 2 for impact-tested work. See [essential variables](/asme/essential-variables) and\n[impact testing](/asme/impact-testing).\n\n## Do I need a new PQR to weld P-No. 1 to P-No. 8?\n\nYes. A joint between two different P-numbers is a dissimilar-metal joint and needs a procedure qualified for that\ncombination (or one the rules let it cover), usually with a nickel alloy or austenitic filler. A PQR for P-No. 1 to\nP-No. 1 does not cover it.\n\n## What is an F-number?\n\nAn F-number groups filler metals by usability, meaning how hard they are to weld with (QW-432):\n\n| F-No. | Filler | Example |\n|---|---|---|\n| 1 | Heavy iron-powder steel electrodes | E7024 |\n| 2 | Rutile steel electrodes | E6013 |\n| 3 | Cellulosic steel electrodes | E6010, E6011 |\n| 4 | Low-hydrogen steel electrodes | E7018 |\n| 5 | Stainless steel electrodes | E308L-16 |\n| 6 | Solid and metal-cored steel wires and rods (GTAW, GMAW, SAW) | ER70S-6 |\n| 43 | Nickel alloy filler | ERNiCrMo-3 |\n\nThe filler metal specifications themselves (SFA-5.1 for carbon steel covered electrodes, SFA-5.18 for wires and rods)\nare in Section II Part C, which ASME lists among the required code books for certificate holders that weld.\n\n## Does an F-4 welder qualify for E6010?\n\nGenerally yes within the same process: F-numbers matter most for welders, and a welder qualified with an F-4\nelectrode is generally also qualified for F-1 to F-3, but not the other way round. Section IX's QW-433 table sets the\nexact pairings, including the effect of welding with or without backing, so check it before assigning a welder.\n\n## What is an A-number?\n\nAn A-number classifies the chemistry of deposited steel weld metal (QW-442): A-1 carbon steel, A-2 carbon–molybdenum,\nup to A-8 austenitic chromium–nickel and others. A change of A-number is a procedure essential variable for most\nprocesses, so a PQR made with a carbon steel filler doesn't cover a chromium–molybdenum one.\n\n## Where should P-, F- and A-numbers be recorded?\n\nOn every WPS and PQR: ASME's suggested PQR format (QW-483) has fields for them, and reviewers check them first. Check\na material's P-number in the current edition, since new materials are added and occasionally regrouped. The\ndocuments themselves are explained in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq).\n\n## How does this connect to material traceability?\n\nThe P-number on a WPS is only as good as the record that says which plate is in which seam. A shop that keeps each\npiece's heat number when plate is cut can show which specification, grade and P-number went into every weld; see\n[MTRs and heat numbers](/asme/mtr). Our US boiler demo prints each WPS with its P-number range (for example P-No. 1\nto P-No. 1) next to MTRs by heat number in the job's ASME record package."
   },
   {
     "kind": "asme",
@@ -4750,31 +4781,83 @@
     "slug": "section-ix",
     "group": "code",
     "title": "ASME Section IX: welding, brazing and fusing qualifications",
+    "metaTitle": "ASME Section IX: welding qualifications explained",
+    "related": [
+      "/asme/wps-pqr-wpq",
+      "/asme/welder-qualification",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability",
+      "/manufacturing/job-shop-erp"
+    ],
     "question": "What is ASME Section IX?",
-    "answer": "ASME Section IX sets how a shop qualifies its welding procedures and its welders. A procedure is qualified by welding a test coupon and testing it (the PQR), then written up as a WPS; each welder is qualified by a test of their own (the WPQ). Section IX doesn't decide where welds go or how they're examined: the construction section does.",
-    "description": "ASME Section IX explained: what it covers, its parts (QG, QW, QB, QF), WPS, PQR and WPQ, and how it works with Sections I and VIII and the B31 piping codes.",
+    "answer": "ASME Section IX sets how a shop qualifies its welding, brazing and fusing procedures and the people who use them. A procedure is qualified by welding a test coupon and testing it (the PQR), then written up as a WPS; each welder is qualified by a test of their own (the WPQ). Section IX doesn't decide where welds go or how they're examined: the construction code does.",
+    "description": "ASME Section IX explained: what it covers and doesn't, Parts QG, QW, QB and QF, WPS, PQR and WPQ, ASME's free QW forms, and the 2025 Edition dates.",
     "domain": [
       "asme",
       "welding"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
       },
       {
         "title": "Summary of Changes to ASME Boiler and Pressure Vessel Code Section IX (Welding Journal, July 2025)",
         "publisher": "American Welding Society",
-        "url": "https://uatsitecore.aws.org/magazines-and-media/welding-journal/wj-july-25-feature-05-sperko/",
+        "url": "https://www.aws.org/magazines-and-media/welding-journal/2025/july/wj-july-25-feature-05-sperko/",
         "date": "2025-07-01"
       }
     ],
-    "body": "## What Section IX does, and what it doesn't\n\nSection IX answers two questions: **can this procedure make a sound weld**, and **can this person make it**. It does that with test coupons and mechanical or volumetric tests, and with rules for how far a passed test stretches (which materials, thicknesses, positions and processes it covers).\n\nIt does not say which joints need welding, what type of joint, which welds are radiographed or when heat treatment is needed. That is the construction section's job: [Section VIII](/asme/section-viii), Section I, or a B31 piping code, which then sends you to Section IX for qualification.\n\n## Its parts\n\n| Part | Covers |\n|---|---|\n| QG | General requirements shared by all processes |\n| QW | Welding: procedure qualification (QW-200), performance qualification (QW-300), the variables (QW-400) and standard welding procedure specifications (QW-500) |\n| QB | Brazing |\n| QF | Plastic fusing (polyethylene pipe) |\n\n## The three documents\n\n- **WPS** (welding procedure specification): the written instructions a welder follows, with ranges for each variable.\n- **PQR** (procedure qualification record): the record of the test coupon that proves the WPS works: what was actually used, and the test results.\n- **WPQ** (welder or welding operator performance qualification): the record that a person passed their test, and what it qualifies them for.\n\nHow the three link, and what goes in each, is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq). Which changes need a new PQR is in [essential variables](/asme/essential-variables); which positions a welder's test covers is in [welder qualification](/asme/welder-qualification); and how a welder keeps their qualification alive is the [continuity rule](/asme/welder-continuity).\n\n## Material grouping\n\nSection IX groups base metals by **P-number** and filler metals by **F-number** and **A-number**, so one test covers a family of materials instead of one specification. See [P-numbers, F-numbers and A-numbers](/asme/p-numbers).\n\n## The 2025 Edition\n\nThe Section IX changes in the 2025 Edition became mandatory for new qualifications on 1 January 2026, as the Welding Journal's summary of changes notes. Existing qualifications made to earlier editions stay valid; the [editions guide](/asme/editions) explains how that works."
+    "checks": [
+      {
+        "reg": "ASME Section IX product page, description",
+        "doc": "asme-ix",
+        "quote": "Section IX of the BPVC contains rules relating to the qualification of welding, brazing, and fusing procedures as required by other BPVC sections."
+      },
+      {
+        "reg": "AWS Welding Journal, July 2025 (Sperko)",
+        "doc": "aws-sperko-2025",
+        "quote": "These changes will become mandatory for new qualifications on January 1, 2026."
+      },
+      {
+        "reg": "AWS Welding Journal, July 2025 (Sperko)",
+        "doc": "aws-sperko-2025",
+        "quote": "All changes can be readily identified in the “Summary of Changes” found at the front of Section IX."
+      },
+      {
+        "reg": "ASME Data Report Forms, Section IX",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Welding Procedure Specifications (WPS)"
+      },
+      {
+        "reg": "ASME Data Report Forms, Section IX",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Demonstration of Standard Welding Procedure Specifications (SWPS)"
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "Section II, Part C, and Sections V and IX are not required for manufacturers if welding, brazing and fusing are not within the scope of their work."
+      }
+    ],
+    "body": "## What is ASME Section IX?\n\nASME Section IX is the Code section that qualifies welding, brazing and fusing: the procedures a shop uses and the\npeople who use them. ASME's own description is that it \"contains rules relating to the qualification of welding,\nbrazing, and fusing procedures as required by other BPVC sections\". It answers two questions with test coupons: can\nthis procedure make a sound weld, and can this person make it. The Code text is ASME's and paid; this guide cites\nparagraphs and explains them, and your copy of the [2025 Section IX](https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications) is the authority.\n\n## What does Section IX not cover?\n\nIt doesn't say which joints are welded, the joint design, how much NDE a weld gets or when heat treatment is\nneeded. Those come from the construction code: [Section VIII](/asme/section-viii), [Section I](/asme/section-i-vs-iv)\nor a [B31 piping code](/asme/b31-1-vs-b31-3), which then sends you to Section IX for qualification. That is why a\nWPS cites Section IX for its qualification and the vessel's data report cites Section VIII for everything else.\n\n## What are the parts of Section IX?\n\nSection IX has four parts:\n\n| Part | Covers |\n|---|---|\n| QG | General requirements shared by all processes, including the organization's responsibility for its qualifications |\n| QW | Welding: procedure qualification (QW-200), performance qualification (QW-300), welding data and variables (QW-400) and standard welding procedure specifications (QW-500) |\n| QB | Brazing |\n| QF | Plastic fusing (polyethylene pipe) |\n\n## What are a WPS, a PQR and a WPQ?\n\nThey are the three documents Section IX qualification produces:\n\n- **WPS** (welding procedure specification): the written instruction a welder follows, with a range for each variable.\n- **PQR** (procedure qualification record): the record of the test coupon that proves the WPS works: what was actually used, and the test results.\n- **WPQ** (welder or welding operator performance qualification): the record that a person passed their test, and what it qualifies them for.\n\nHow they link and what goes in each is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq); which changes need a new PQR is in\n[essential variables](/asme/essential-variables); what a welder's test covers is in\n[welder qualification](/asme/welder-qualification); and how a welder keeps a qualification alive is the\n[continuity rule](/asme/welder-continuity).\n\n## Where do I get Section IX forms?\n\nASME publishes suggested formats free on its [data report forms page](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms): QW-482 for a WPS, QW-483 for a PQR,\nQW-484A for a welder's WPQ, QW-484B for a welding operator's, and QW-485 for demonstrating a standard welding\nprocedure specification, with QB and QF equivalents for brazing and fusing. They are suggested formats: a shop may use\nits own layout if it records everything Section IX requires.\n\n## How does Section IX group materials and filler metals?\n\nIt groups base metals by **P-number** (with Group numbers where toughness matters) and filler metals by **F-number**\nand, for steel weld metal, **A-number**, so one test covers a family of materials instead of one specification. See\n[P-numbers, F-numbers and A-numbers](/asme/p-numbers).\n\n## Can a shop use another company's PQR?\n\nNo: each organization qualifies its own procedures and welders and takes responsibility for them (Part QG). The\nexception is the standard welding procedure specifications published by AWS that Section IX accepts in Article V\n(QW-500): a shop may use one after demonstrating it, recorded on the QW-485 format.\n\n## Does a shop need Section IX for an ASME certificate?\n\nYes, if it welds. ASME's [required code books](https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books) list Section IX for the U, S, H and other certificates, and note\nthat Section II Part C and Sections V and IX are not required \"if welding, brazing and fusing are not within the\nscope of their work\".\n\n## Do B31.1 and B31.3 use Section IX?\n\nYes. Both piping codes send welding procedure and welder qualification to Section IX, and B31.3 adds some\nrequirements of its own. A shop's WPSs and PQRs can serve its vessel and its piping work where the variables fit\nboth codes; see [B31.1 vs B31.3](/asme/b31-1-vs-b31-3).\n\n## What changed in the 2025 Edition of Section IX?\n\nThe changes are listed in the \"Summary of Changes\" at the front of the book, and they apply to new qualifications from\n1 January 2026: the American Welding Society's [Welding Journal summary](https://www.aws.org/magazines-and-media/welding-journal/2025/july/wj-july-25-feature-05-sperko/) says the changes \"will become\nmandatory for new qualifications on January 1, 2026\" (the article's detail is for AWS members). Procedures and\nwelders qualified under an earlier edition stay qualified; a new qualification follows the edition in force when it\nis made. See [ASME Code editions](/asme/editions).\n\n## What does our software keep for Section IX?\n\nOur US boiler demo keeps the Section IX side of each job with the job: a weld map with each seam's WPS and welder\nstamps, the WPS list with each PQR, P-numbers, thickness range and PWHT basis, and each welder's QW-322 continuity\nper process, all printed in the job's ASME record package. It doesn't write or qualify procedures. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -5335,77 +5418,172 @@
     "slug": "welder-continuity",
     "group": "welding",
     "title": "Welder continuity (QW-322): six-month rule and checker",
+    "related": [
+      "/asme/welder-qualification",
+      "/asme/wps-pqr-wpq",
+      "/services/material-traceability",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/manufacturing/wip-tracking"
+    ],
     "question": "How long is an ASME welder qualification valid?",
-    "answer": "An ASME Section IX welder qualification has no fixed expiry date. Under QW-322 it lapses when the welder hasn't welded with that process for six months or more, and it can be revoked sooner if there's a reason to doubt their work. Each welding job resets the clock for that process, so a shop needs a record of every welder's last weld per process.",
-    "description": "ASME welder continuity under QW-322: the six-month rule, renewing a lapsed qualification, the record to keep, and a free checker.",
+    "answer": "An ASME Section IX welder qualification has no fixed expiry date. Under QW-322 it lapses when the welder hasn't welded with that process for six months or more, and it can be revoked sooner if there's a specific reason to doubt their work. Each weld with the process restarts the six months for that process, so a shop needs a record of every welder's last weld per process.",
+    "description": "ASME welder continuity under QW-322: the six-month rule per process, renewing with one coupon, revocation, the record an Inspector checks, and a free checker.",
     "domain": [
       "asme",
       "welding",
       "records"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "tool": "continuity",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
       }
     ],
-    "body": "## The rule\n\nSection IX's QW-322 sets two ways a welder's (or welding operator's) qualification ends:\n\n1. **Six months without the process.** If the welder hasn't welded with a process for six months or more, their qualifications for that process lapse.\n2. **Specific reason to question.** If there's a reason to doubt their ability to make welds that meet the specification, the qualifications supporting that work are revoked; the rest stay.\n\nThe clock is **per process**, not per WPS or per position. A welder qualified for SMAW and GTAW who only welds SMAW for seven months keeps SMAW and loses GTAW.\n\n## What keeps it alive\n\nWelding with the process, recorded. The record has to show the welder, the process and the date. Most shops log continuity from production weld maps or from a monthly sign-off sheet.\n\nThe checker above takes that log (welder, process, last weld date, one line each) and lists who lapses when, soonest first, with anyone within 30 days flagged. To keep the log itself, download the free [welder continuity log for Excel](/asme/welder-continuity-log.xlsx): one row per welder and process, with the lapse date, days left and status worked out for you, and lapsed or nearly lapsed rows coloured.\n\n## Renewing a lapsed qualification\n\nA lapsed qualification is renewed with a single test coupon in the process (QW-322.2), of any thickness, position and diameter, tested by bend tests or volumetric examination. Passing renews the welder's earlier qualifications for that process, with their original ranges. A revoked qualification is a different case: the welder retests for the work that was in question.\n\n## The record an Inspector expects\n\n| Field | Why |\n|---|---|\n| Welder ID (their stamp) | Links to their WPQ and to welds on the weld map |\n| Process | Continuity is per process |\n| Date welded | Sets the next lapse date |\n| Job or weld number | Evidence that it was real welding |\n| Signed off by | Who confirmed it |\n\nKeep it next to the WPQs; the [Authorized Inspector](/asme/authorized-inspector) checks continuity on every welder whose stamp appears on a job. A lapse found after welding means those welds were made by an unqualified welder. In a system that records who welded what and when, the lapse date is simply computed, which is what the checker does.\n\n## Related\n\nWhat the welder's test covers is in [welder qualification](/asme/welder-qualification); how the WPQ relates to the WPS and PQR is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq)."
+    "checks": [
+      {
+        "reg": "ASME Data Report Forms, QW-484A",
+        "doc": "asme-forms",
+        "quote": "Suggested Format A for Welder Performance Qualifications (WPQ)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-484B",
+        "doc": "asme-forms",
+        "quote": "Suggested Format B for Welding Operator Performance Qualifications (WOPQ)"
+      }
+    ],
+    "body": "## How long is an ASME welder qualification valid?\n\nAn ASME welder qualification has no expiry date: it stays valid as long as the welder keeps welding with the process,\nand lapses after six months or more without it (QW-322.1(a) in the 2025 Section IX). The same rule applies to welding\noperators. Section IX is ASME's paid Code; this guide cites its paragraphs, and your copy of the 2025 Edition is the\nauthority.\n\n## What are the two ways a qualification ends?\n\nSection IX's QW-322 ends a welder's or welding operator's qualification in two ways:\n\n1. **Six months without the process** (QW-322.1(a)). If the welder hasn't welded with a process for six months or more, their qualifications for that process expire.\n2. **A specific reason to question their ability** (QW-322.1(b)). If there is a reason to doubt their ability to make welds that meet the specification, the qualifications supporting the welding in question are revoked; the others stay.\n\n## Is continuity per process or per WPS?\n\nPer process. The clock runs separately for SMAW, GTAW, GMAW, SAW and so on, not per WPS, position, thickness or\nmaterial. A welder qualified for SMAW and GTAW who only welds SMAW for seven months keeps SMAW and loses GTAW, and any\nweld with a process, to any WPS, keeps all of that welder's qualifications in that process alive.\n\n## How do I work out a welder's lapse date?\n\nAdd six months to the date of their last weld with the process; on that date the qualification has lapsed. Some\nexamples:\n\n| Welder | Process | Last weld | Lapses on | Status on 6 Nov 2026 |\n|---|---|---|---|---|\n| W-12 | SMAW | 2 May 2026 | 2 Nov 2026 | Lapsed: requalify |\n| W-12 | GTAW | 15 Jan 2026 | 15 Jul 2026 | Lapsed: requalify |\n| W-31 | GMAW | 28 Sep 2026 | 28 Mar 2027 | Current |\n| W-07 | SAW | 31 Aug 2026 | 28 Feb 2027 | Current |\n\nWhere the month six months on is shorter, the lapse date is its last day: 31 August plus six months is 28 February\n(29 in a leap year), not 3 March. The checker above and the Excel log both work this way.\n\n## How does the free checker work?\n\nPaste one line per welder and process (stamp, process, last weld date) and the checker lists who lapses when,\nsoonest first. A row reads \"Lapsed: requalify\" from the lapse date on, and anyone within 30 days is flagged with how\nmany days are left to weld. It runs in your browser and sends nothing anywhere. To keep the log itself, download the\nfree [welder continuity log for Excel](/asme/welder-continuity-log.xlsx): one row per welder and process, with the\nlapse date (EDATE, six months after the last weld), days left and status worked out, and lapsed or nearly lapsed\nrows coloured.\n\n## What counts as welding with the process?\n\nAny recorded weld with that process: production welds, repair welds or another test, on any WPS. The record must show\nthe welder, the process and the date, and should point to the job or weld number so it is evidence of real welding.\nMost shops log continuity from production weld maps or a monthly sign-off sheet.\n\n## How do you renew a lapsed qualification?\n\nWith one test coupon in the process (QW-322.2), of any thickness, position and diameter, tested by bend tests or by\nvolumetric examination. Passing it restores the welder's earlier qualifications for that process with their original\nranges, so a welder who held 6G pipe doesn't need to retest 6G. A revoked qualification is different: the welder\nrequalifies for the work that was in question.\n\n## What record does an Authorized Inspector expect?\n\n| Field | Why |\n|---|---|\n| Welder ID (their stamp) | Links to their WPQ and to welds on the weld map |\n| Process | Continuity is per process |\n| Date welded | Sets the next lapse date |\n| Job or weld number | Evidence that it was real welding |\n| Signed off by | Who confirmed it |\n\nKeep it next to the WPQs (ASME's suggested formats are QW-484A for welders and QW-484B for welding operators). The\n[Authorized Inspector](/asme/authorized-inspector) checks continuity for every welder whose stamp appears on a job.\n\n## What happens if a lapse is found after welding?\n\nThose welds were made by an unqualified welder. It is a nonconformity: the shop records it, and the welds are\nremoved and rewelded, or dispositioned as the construction code and the Inspector allow, after the welder\nrequalifies. Checking the lapse date before assigning a welder to a seam is much cheaper.\n\n## Does B31.3 piping use the same rule?\n\nYes: the B31 piping codes qualify welders to Section IX, so QW-322 applies, and an owner's specification may add\nstricter rules. See [B31.1 vs B31.3](/asme/b31-1-vs-b31-3).\n\n## What does our software keep for continuity?\n\nOur US boiler demo keeps each welder's qualified processes with their last weld date per process and prints a QW-322\ncontinuity table (welder, WPQ, process, last weld, lapse date, current or lapsed) in each job's ASME record package,\nbeside the weld map that shows whose stamp is on each seam. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "welder-qualification",
     "group": "welding",
     "title": "Welder qualification positions 1G to 6G explained",
+    "related": [
+      "/asme/welder-continuity",
+      "/asme/wps-pqr-wpq",
+      "/manufacturing/job-shop-erp",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What does a 6G welding test qualify for?",
-    "answer": "An ASME Section IX welder test qualifies a person for a process, a range of positions, thicknesses and pipe diameters, and a filler F-number. Positions go from 1G (flat) to 6G (pipe fixed at 45°). A 6G pipe test qualifies groove welds in all positions; plate tests qualify less on pipe. The test is checked by bend tests or by radiography.",
-    "description": "ASME welder qualification (WPQ): 1G, 2G, 3G, 4G, 5G and 6G positions, what each qualifies, diameter and thickness limits, and bend vs radiography testing.",
+    "answer": "An ASME Section IX welder test qualifies a person for a process, a range of positions, thicknesses and pipe diameters, and a filler F-number. Positions go from 1G (flat) to 6G (pipe fixed at 45°). A 6G pipe test qualifies groove welds in all positions on plate and pipe; plate tests qualify less on pipe. The test is judged by bend tests or by radiography.",
+    "description": "ASME welder qualification: what 1G to 6G tests qualify, plate vs pipe, diameter limits, bend vs radiography, welding operators, and whether a WPQ transfers.",
     "domain": [
       "asme",
       "welding"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
       }
     ],
-    "body": "## The test positions\n\n| Position | Plate | Pipe |\n|---|---|---|\n| 1G | Flat | Pipe horizontal, rolled while welding |\n| 2G | Horizontal (vertical plate, horizontal weld) | Pipe vertical, weld runs horizontally around it |\n| 3G | Vertical | (plate only) |\n| 4G | Overhead | (plate only) |\n| 5G | – | Pipe horizontal and fixed: the welder goes flat, vertical and overhead round it |\n| 6G | – | Pipe fixed at 45°: every position in one weld |\n\nF (1F to 5F) positions are the fillet weld equivalents.\n\n## What a test qualifies\n\nSection IX's position table (QW-461.9) sets what each test covers. The headline cases:\n\n- **6G pipe**: groove welds in all positions, plate and pipe, and fillets in all positions.\n- **2G plus 5G pipe** (two tests): the same as 6G.\n- **3G and 4G plate**: plate in all positions, but pipe only above a large diameter, which is why pipe shops test on pipe.\n- **1G**: flat only.\n\nDiameter limits also apply (QW-452.3): a small-bore test coupon qualifies down to roughly its own size, and a coupon of 2⅞ in (73 mm) outside diameter or more qualifies that diameter and up. Thickness limits come from the deposited weld metal on the coupon.\n\n## How the test is judged\n\n- **Bend tests** (QW-302): coupons cut from the test weld and bent; cracks or openings beyond the limit fail.\n- **Radiography or ultrasonic examination** (QW-302, QW-304): allowed instead of bends for most processes and materials, and much faster, but not for short-circuiting GMAW, which can hide lack of fusion.\n\n## Welders and welding operators\n\nA **welder** holds and guides the torch or electrode. A **welding operator** runs machine or automatic welding equipment, and has a separate, simpler qualification. The WPQ form records which.\n\n## Keeping it\n\nA welder's qualification doesn't expire on a calendar date: it lapses after six months without welding in the process. See [welder continuity](/asme/welder-continuity), and for the variables that force a retest, [essential variables](/asme/essential-variables).\n\nIn India, a boiler welder needs an IBR welder certificate as well; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME Data Report Forms, QW-484A",
+        "doc": "asme-forms",
+        "quote": "Suggested Format A for Welder Performance Qualifications (WPQ)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-484B",
+        "doc": "asme-forms",
+        "quote": "Suggested Format B for Welding Operator Performance Qualifications (WOPQ)"
+      },
+      {
+        "reg": "ASME Section IX product page, description",
+        "doc": "asme-ix",
+        "quote": "Section IX of the BPVC contains rules relating to the qualification of welding, brazing, and fusing procedures as required by other BPVC sections."
+      }
+    ],
+    "body": "## What does a 6G welding test qualify for?\n\nA 6G test, on pipe fixed at 45°, qualifies the welder for groove welds in all positions on both plate and pipe, and\nfor fillet welds in all positions, within the diameter and thickness ranges the test coupon earns. Section IX's\nposition table (QW-461.9) sets what each test position covers. It is the test pipe shops use, because one coupon\ncovers every position. Section IX is ASME's paid Code; this guide cites its paragraphs, and your copy of the\n[2025 Edition](https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications) is the authority.\n\n## What do 1G to 6G mean?\n\nThey are the test positions for groove welds; the F positions (1F to 5F) are the fillet weld equivalents.\n\n| Position | Plate | Pipe |\n|---|---|---|\n| 1G | Flat | Pipe horizontal, rolled while welding |\n| 2G | Horizontal (vertical plate, horizontal weld) | Pipe vertical, weld runs horizontally around it |\n| 3G | Vertical | (plate only) |\n| 4G | Overhead | (plate only) |\n| 5G | – | Pipe horizontal and fixed: the welder goes flat, vertical and overhead round it |\n| 6G | – | Pipe fixed at 45°: every position in one weld |\n\n## Does 2G plus 5G equal 6G?\n\nYes. Passing both a 2G and a 5G pipe test qualifies the same positions as a single 6G test, which is how some shops\nqualify welders who find 6G hard to pass in one go.\n\n## Do plate tests qualify a welder for pipe?\n\nOnly in part. A plate test qualifies plate in the positions tested, but on pipe it qualifies only large diameters\n(over 24 in, 610 mm, outside diameter) in those positions, with smaller pipe limited as QW-461.9 sets out. That is why\npipe shops test on pipe.\n\n## What pipe diameter does my test qualify?\n\nThe coupon's outside diameter sets the smallest pipe a welder may weld (QW-452.3): a coupon under 1 in (25 mm)\nqualifies its own size and up; 1 in to under 2⅞ in (73 mm) qualifies 1 in and up; 2⅞ in and over qualifies 2⅞ in and\nup. Thickness limits come from the deposited weld metal thickness on the coupon (QW-452.1).\n\n## How is a welder's test judged?\n\nEither by bend tests or by volumetric examination (QW-302):\n\n- **Bend tests**: coupons cut from the test weld and bent around a mandrel; cracks or open defects beyond the limit fail.\n- **Radiography or ultrasonic examination** (QW-304): allowed instead of bends for most processes and materials, and much faster, but not for gas metal arc welding in short-circuit transfer (GMAW-S), which can hide lack of fusion; those welders are bend-tested.\n\n## What is the difference between a welder and a welding operator?\n\nA welder holds and guides the electrode or torch; a welding operator sets up and runs machine or automatic welding\nequipment. They have separate qualifications with their own essential variables (QW-350 for welders, QW-360 for\noperators), and ASME's suggested forms are separate: QW-484A for a welder's WPQ and QW-484B for a welding operator's.\n\n## What changes force a welder to retest?\n\nA change in one of the welder's essential variables beyond the WPQ: the process, a position not covered, backing\n(welding without backing when qualified only with it), the filler F-number outside what QW-433 allows, or diameter\nand thickness outside the earned range. See [essential variables](/asme/essential-variables) and\n[P-numbers and F-numbers](/asme/p-numbers).\n\n## Does an ASME welder qualification expire?\n\nNot on a calendar date. It lapses when the welder hasn't welded with that process for six months (QW-322.1(a)), and\ncan be revoked sooner if there is a specific reason to question their work. See\n[welder continuity](/asme/welder-continuity), which has a free checker.\n\n## Is a WPQ valid at another employer?\n\nNot automatically. Section IX makes each organization responsible for the qualifications it uses (Part QG), so a new\nemployer either qualifies the welder again or accepts the earlier qualification only as Section IX allows. Ask for the\nwelder's WPQ and continuity record, and check them with your Authorized Inspector.\n\n## Does a boiler welder in India need anything else?\n\nYes: in India a welder on boilers under the Indian Boiler Regulations also needs an IBR welder certificate. See\n[ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## What does our software keep for welders?\n\nOur US boiler demo keeps each welder's stamp, WPQ and qualified processes with the date of their last weld per\nprocess, shows their stamp against each seam on the weld map, and prints QW-322 continuity (lapse date, current or lapsed) in each job's ASME record package. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "wps-pqr-wpq",
     "group": "welding",
     "title": "WPS vs PQR vs WPQ: what each proves and how they link",
+    "related": [
+      "/asme/essential-variables",
+      "/asme/welder-continuity",
+      "/services/material-traceability",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/systems/heat-number"
+    ],
     "question": "What is the difference between a WPS and a PQR?",
     "answer": "A PQR records a test weld: the actual materials, settings and test results that prove a procedure makes sound welds. A WPS is the instruction a welder follows, written with ranges the PQR supports. A WPQ records that one welder passed their own test. In ASME Section IX the PQR comes first, the WPS cites it, and each welder needs a WPQ.",
-    "description": "WPS, PQR and WPQ in ASME Section IX: what each document is, what goes in it, the tests behind it, and how a weld traces back through all three.",
+    "description": "WPS, PQR and WPQ in ASME Section IX: what each proves, the tests behind a PQR, the free QW-482 to QW-485 forms, AWS standard WPSs, and tracing a weld back.",
     "domain": [
       "asme",
       "welding"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
       }
     ],
-    "body": "## The three documents\n\n| | PQR | WPS | WPQ |\n|---|---|---|---|\n| Full name | Procedure Qualification Record | Welding Procedure Specification | Welder (or Welding Operator) Performance Qualification |\n| Proves | The procedure makes welds with the required strength and ductility | Nothing by itself; it's the instruction | This person can make a sound weld |\n| Records | What was actually used on one test coupon, and the test results | Ranges for every variable, within what the PQR(s) support | The welder's test, results and what they're qualified for |\n| Written | Once per test | From one or more PQRs | Once per welder per test |\n| Signed by | The manufacturer, certifying the record is correct | The manufacturer | The manufacturer |\n\n## The order a shop builds them\n\n1. **Draft a WPS** for the job you want to weld (often called a pWPS until it's qualified).\n2. **Weld a test coupon** to it and record every variable actually used.\n3. **Test the coupon.** For a groove weld procedure, Section IX requires tension tests (for strength) and guided bend tests (for ductility): typically two tension and four bends, side bends for thicker coupons. Toughness tests are added when the construction code requires impact testing.\n4. **Write the PQR** from the coupon record and the test results.\n5. **Issue the WPS**, citing the PQR, with each variable's range set by what the PQR qualifies: thickness, materials, filler, position, preheat, heat treatment.\n6. **Qualify each welder** on the WPS (or a test of their own), and record it on a WPQ.\n\nSection IX doesn't allow a shop to use another company's PQR. The exception is AWS's Standard Welding Procedure Specifications, which Section IX accepts under conditions (in its QW-500 rules), with the shop demonstrating them first.\n\n## Which changes need a new PQR\n\nEvery variable in Section IX is classified. Change an **essential** variable beyond what the PQR covers and you need a new PQR; change a **nonessential** one and you only revise the WPS. See [essential variables](/asme/essential-variables).\n\n## Following one weld back\n\nOn a [data report](/asme/data-reports) package, any weld should trace like this: weld number on the weld map → welder's stamp → that welder's WPQ and [continuity](/asme/welder-continuity) → the WPS used → the PQR behind it → the filler metal's certificate and the base metal's [MTR](/asme/mtr). An Authorized Inspector will pick a weld and walk it. When those links live in different binders, this is where audits stall.\n\n## Further reading\n\nWhat a welder's test covers is in [welder qualification](/asme/welder-qualification); how materials are grouped so one test covers many is in [P-numbers](/asme/p-numbers); the whole of Section IX in outline is in [the Section IX guide](/asme/section-ix)."
+    "checks": [
+      {
+        "reg": "ASME Data Report Forms, QW-482",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Welding Procedure Specifications (WPS)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-483",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Procedure Qualification Records (PQR)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-484A",
+        "doc": "asme-forms",
+        "quote": "Suggested Format A for Welder Performance Qualifications (WPQ)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-484B",
+        "doc": "asme-forms",
+        "quote": "Suggested Format B for Welding Operator Performance Qualifications (WOPQ)"
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-485",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Demonstration of Standard Welding Procedure Specifications (SWPS)"
+      }
+    ],
+    "body": "## What is the difference between a WPS and a PQR?\n\nA PQR is the record of a test weld that proves a procedure works; a WPS is the instruction written from it. The PQR\nrecords what was actually used on one coupon (materials, filler, settings, preheat, heat treatment) and the test\nresults; the WPS gives the welder a range for each variable, within what the PQR supports. A PQR is never edited to\nfit a job: if a job needs something the PQR doesn't support, a new coupon is welded.\n\n| | PQR | WPS | WPQ |\n|---|---|---|---|\n| Full name | Procedure Qualification Record | Welding Procedure Specification | Welder (or Welding Operator) Performance Qualification |\n| Proves | The procedure makes welds with the required strength and ductility | Nothing by itself; it's the instruction | This person can make a sound weld |\n| Records | What was used on one test coupon, and the test results | Ranges for every variable, within what the PQR(s) support | The welder's test, results and what they're qualified for |\n| Written | Once per test | From one or more PQRs | Once per welder per test |\n| ASME's suggested form | QW-483 | QW-482 | QW-484A (welder), QW-484B (operator) |\n\n## What is a WPQ?\n\nA WPQ is the record that one welder (or welding operator) passed a performance test, and of the process, positions,\nthicknesses, diameters and filler it qualifies them for. It belongs to the person, not the procedure: a welder\nqualified on one WPS may weld to other WPSs within their qualified ranges. What a test covers is in\n[welder qualification](/asme/welder-qualification).\n\n## In what order does a shop build them?\n\n1. **Draft a WPS** for the job (often called a pWPS until it's qualified).\n2. **Weld a test coupon** to it and record every variable actually used.\n3. **Test the coupon.** For a groove-weld procedure, Section IX requires tension tests for strength and guided bend tests for ductility (QW-451 sets how many; side bends replace face and root bends on thicker coupons). Toughness tests are added when the construction code requires impact testing.\n4. **Write the PQR** from the coupon record and the test results, and certify it.\n5. **Issue the WPS**, citing the PQR, with each variable's range set by what the PQR qualifies.\n6. **Qualify each welder** and record it on a WPQ.\n\n## What tests does a PQR need?\n\nFor a groove weld, tension tests and guided bend tests cut from the coupon, in the numbers Section IX's QW-451 tables\ngive for the coupon's thickness; for fillet welds, fillet weld tests. Charpy impact tests are added when the\nconstruction code requires toughness, which also brings in Section IX's supplementary essential variables. The\nresults go on the PQR with the laboratory's report.\n\n## Which changes need a new PQR?\n\nEvery variable in Section IX is classified. Change an **essential** variable beyond what the PQR covers (base metal\nP-number, filler F-number, thickness range, post-weld heat treatment and others) and you need a new PQR; change a\n**nonessential** one and you only revise the WPS. See [essential variables](/asme/essential-variables).\n\n## Can one WPS cite more than one PQR?\n\nYes, as long as every essential variable on the WPS is covered by at least one of the PQRs: for example, two PQRs\nthat between them cover a wider thickness range. A PQR register with each PQR's qualified ranges worked out once\nprevents most WPS errors, which are usually ranges copied wrong.\n\n## Who signs the WPS and PQR?\n\nThe manufacturer or contractor that did the qualification certifies the PQR, and issues the WPS. The organization is\nresponsible for its own qualifications, so a shop can't use another company's PQR. The\n[Authorized Inspector](/asme/authorized-inspector) reviews them before the procedure is used on Code work.\n\n## Can I use an AWS prequalified WPS on ASME work?\n\nNot an AWS D1.1 prequalified procedure: ASME work needs Section IX qualification. Section IX does accept AWS's\nstandard welding procedure specifications (SWPSs) listed in its Article V (QW-500), after the shop demonstrates one\nwith a test weld, recorded on ASME's QW-485 format.\n\n## Where do I get the forms?\n\nASME publishes the suggested formats free on its [data report forms page](https://www.asme.org/codes-standards/publications-information/asme-data-report-forms): QW-482 (WPS), QW-483 (PQR),\nQW-484A (welder WPQ), QW-484B (welding operator) and QW-485 (SWPS demonstration). A shop may use its own layout if it\nrecords everything Section IX requires.\n\n## How does a weld trace back through all three?\n\nOn a job's file, any weld should trace like this: weld number on the weld map → the welder's stamp → that welder's\nWPQ and [continuity](/asme/welder-continuity) → the WPS used → the PQR behind it → the filler metal's certificate and\nthe base metal's [MTR](/asme/mtr) by heat number. An Authorized Inspector will pick a weld and walk it, and when the\nlinks live in different binders this is where audits stall.\n\n## What does our software keep for it?\n\nOur US boiler demo keeps those links per job and prints them in the ASME record package: the weld map lists each\nseam's joint category and type, WPS, welder stamps and NDE report; the welding page lists each WPS with its PQR,\nP-numbers, thickness range and PWHT basis; welder continuity under QW-322 sits next to it. It records procedures the\nshop has qualified; it doesn't write or qualify them. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "manufacturing",
