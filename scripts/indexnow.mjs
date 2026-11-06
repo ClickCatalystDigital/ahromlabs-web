@@ -15,9 +15,12 @@ const STATE = new URL("../.indexnow-last", import.meta.url);
 
 const last = fs.existsSync(STATE) ? new Date(fs.readFileSync(STATE, "utf-8").trim()) : new Date(0);
 const xml = await (await fetch(`https://${HOST}/sitemap.xml`)).text();
-const changed = [...xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)]
-  .filter(([, , lastmod]) => new Date(lastmod) > last)
-  .map(([, loc]) => loc);
+// Each <url> block whole: a page with a picture has <image:image> between its <loc> and <lastmod>, and a pattern
+// expecting them side by side skipped every such page.
+const changed = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
+  .map(([, block]) => [block.match(/<loc>([^<]+)<\/loc>/)?.[1], block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]])
+  .filter(([loc, lastmod]) => loc && lastmod && new Date(lastmod) > last)
+  .map(([loc]) => loc);
 
 if (changed.length === 0) {
   console.log("indexnow: nothing changed since", last.toISOString());
