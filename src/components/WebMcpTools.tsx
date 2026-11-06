@@ -101,16 +101,17 @@ export function WebMcpTools() {
               designPressure: { type: "number" },
               insideRadius: { type: "number", description: "New (uncorroded) inside radius" },
               allowableStress: { type: "number", description: "At design temperature, from Section II Part D" },
-              jointEfficiency: { type: "number", description: "UW-12, e.g. 1.0, 0.85 or 0.70" },
+              jointEfficiency: { type: "number", description: "UW-12, e.g. 1.0, 0.85 or 0.70; for a cylinder, the longitudinal joints'" },
+              circumferentialJointEfficiency: { type: "number", description: "Optional, cylinder: the circumferential joints' UW-12 efficiency for the longitudinal-stress check; defaults to jointEfficiency" },
               corrosionAllowance: { type: "number" },
               checkThickness: { type: "number", description: "Optional: nominal thickness to work the MAWP back from (cylinder)" },
             },
             required: ["shape", "designPressure", "insideRadius", "allowableStress", "jointEfficiency", "corrosionAllowance"],
           },
           annotations: { readOnlyHint: true },
-          execute: async (a: { shape: "cylinder" | "sphere"; designPressure: number; insideRadius: number; allowableStress: number; jointEfficiency: number; corrosionAllowance: number; checkThickness?: number }) => {
+          execute: async (a: { shape: "cylinder" | "sphere"; designPressure: number; insideRadius: number; allowableStress: number; jointEfficiency: number; circumferentialJointEfficiency?: number; corrosionAllowance: number; checkThickness?: number }) => {
             track("webmcp_tool", { tool: "asme-shell-thickness" });
-            const p = { P: num(a.designPressure), R: num(a.insideRadius), S: num(a.allowableStress), E: num(a.jointEfficiency), CA: num(a.corrosionAllowance) };
+            const p = { P: num(a.designPressure), R: num(a.insideRadius), S: num(a.allowableStress), E: num(a.jointEfficiency), Ec: a.circumferentialJointEfficiency == null ? undefined : num(a.circumferentialJointEfficiency), CA: num(a.corrosionAllowance) };
             const r = shellThickness({ ...p, shape: a.shape === "sphere" ? "sphere" : "cylinder" });
             const mawp = a.checkThickness ? shellMawp({ t: num(a.checkThickness), ...p }) : undefined;
             return text({ requiredThickness: r.required, pressureThickness: r.required - p.CA, governs: r.governs, withinThinShellLimits: r.inRange, mawpForCheckThickness: mawp, note: "Shells only: heads, openings, external pressure and other loads need their own checks. Not engineering advice." });

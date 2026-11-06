@@ -4231,16 +4231,23 @@
     "slug": "editions",
     "group": "code",
     "title": "ASME 2025 Edition: dates, code cases and interpretations",
+    "related": [
+      "/asme/state-boiler-laws",
+      "/asme/data-reports",
+      "/asme/bpvc-sections",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/custom-erp-crm"
+    ],
     "question": "When does the ASME 2025 Edition become mandatory?",
-    "answer": "ASME publishes the whole Boiler and Pressure Vessel Code every two years and each edition becomes mandatory six months after publication. The 2025 Edition was published on 1 July 2025 and applied from 1 January 2026; the next is due in 2027. Code cases add approved alternatives between editions, and interpretations answer questions on the wording.",
-    "description": "How ASME Code editions work: the two-year cycle, the 2025 Edition dates, which edition applies to a vessel, code cases, interpretations and data report forms.",
+    "answer": "ASME publishes the whole Boiler and Pressure Vessel Code every two years and each edition becomes mandatory six months after publication. The 2025 Edition was published on 1 July 2025 and became mandatory on 1 January 2026; the next is due in 2027. Code cases add approved alternatives between editions, and interpretations answer questions on the wording. States may name their own edition.",
+    "description": "How ASME Code editions work: 2025 dates, the 2027 cycle, which edition a job uses, state edition rules, code cases, interpretations and buying new books.",
     "domain": [
       "asme",
       "editions"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
         "title": "2025 ASME Boiler and Pressure Vessel Code",
@@ -4255,10 +4262,46 @@
         "date": "2023-05-12"
       },
       {
-        "title": "Registration (data report forms for the 2025 Code)",
+        "title": "Frequently Asked Questions (Certification and Accreditation)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/resources-and-events/frequently-asked-questions",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Code Cases of the ASME Boiler and Pressure Vessel Code",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/code-cases",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "Manufacturer's Data Report Registration (form revisions)",
         "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
         "url": "https://www.nationalboard.org/Index.aspx?pageID=9",
-        "date": "2026-11-01"
+        "date": "2026-11-05"
+      },
+      {
+        "title": "National Board Inspection Code (NBIC)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/Index.aspx?pageID=4",
+        "date": "2026-11-06"
+      },
+      {
+        "title": "NB-370 Synopsis: NBIC and ASME Code Editions by Jurisdiction (2026)",
+        "publisher": "The National Board of Boiler and Pressure Vessel Inspectors",
+        "url": "https://www.nationalboard.org/SiteDocuments/Synopsis/code_edition.pdf",
+        "date": "2026-01-13"
+      },
+      {
+        "title": "Ohio Admin. Code 4101:4-3-01, Accepted engineering practice and approved standards (eff. 1 Jul 2024)",
+        "publisher": "Ohio Board of Building Standards (via Cornell LII)",
+        "url": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-4101-4-3-01",
+        "date": "2024-07-01"
+      },
+      {
+        "title": "34 Pa. Code Chapter 3a, Boiler and Unfired Pressure Vessel Regulations",
+        "publisher": "Pennsylvania Department of Labor and Industry",
+        "url": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/034/chapter3a/chap3atoc.html",
+        "date": "2026-11-06"
       }
     ],
     "checks": [
@@ -4271,163 +4314,361 @@
         "reg": "ASME BPV-GUI-03, section 1",
         "doc": "asme-handbook",
         "quote": "Reproduced/unauthorized documents from any source are not accepted for ASME Certification"
+      },
+      {
+        "reg": "ASME FAQ, General",
+        "doc": "asme-faq-full",
+        "quote": "Yes, the latest edition/addenda becomes mandatory six months after publication."
+      },
+      {
+        "reg": "ASME Code Cases page",
+        "doc": "asme-code-cases",
+        "quote": "Code cases are effective immediately upon ASME approval and do not expire."
+      },
+      {
+        "reg": "ASME Code Cases page",
+        "doc": "asme-code-cases",
+        "quote": "Approved code cases are published in two categories: Boiler and Pressure Vessels (CC-BPV) and Nuclear (CC-NUC)."
+      },
+      {
+        "reg": "NBBI Data Report Registration, form revisions",
+        "doc": "nb-registration",
+        "quote": "The 2025 revisions to the ASME BPV Code and NBIC report forms became mandatory on January 1, 2026."
+      },
+      {
+        "reg": "NBBI NBIC page",
+        "doc": "nb-nbic",
+        "quote": "The NBIC is published as a new edition in July of odd numbered years (2021, 2023, 2025, 2027)."
+      },
+      {
+        "reg": "NB-370 Synopsis, editions table",
+        "doc": "nb-editions",
+        "quote": "2026 National Board Synopsis of Boiler and Pressure Vessel Laws, Rules and Regulations"
+      },
+      {
+        "reg": "Ohio Admin. Code 4101:4-3-01(B)",
+        "doc": "oh-4101-4-3-01",
+        "quote": "The board of building standards adopts existing published standards by year of issue as shown in \"Table 4-3-01\" of the Administrative Code as well as amendments, supplements, and addenda subsequently published prior to issuance of the next edition by the same authority"
+      },
+      {
+        "reg": "34 Pa. Code § 3a.1, definition of ASME Code",
+        "doc": "pa-3a",
+        "quote": "2004 edition and its published cases and interpretations issued by ASME."
       }
     ],
-    "body": "## The two-year cycle\n\nASME revises the Code continuously in committee and publishes all the changes together every two years, in odd years. There are no addenda between editions any more: the cycle replaced them. Each edition becomes mandatory six months after it's published, which gives shops time to update procedures and their QC manual.\n\n| Edition | Published | Mandatory |\n|---|---|---|\n| 2023 | 1 July 2023 | 1 January 2024 |\n| 2025 | 1 July 2025 | 1 January 2026 |\n| 2027 | Due July 2027 | Six months after |\n\nThe National Board applied the same date to data report forms: items built to the 2025 Code must use the 2025 forms, and reports on outdated forms are sent back. See [data reports](/asme/data-reports).\n\n## Which edition applies to a vessel\n\nThe edition is fixed per job, not per day. In general, a vessel is built to the edition agreed for it (usually the one mandatory when the contract was signed), and the jurisdiction where it will be installed may require a particular one. Write the edition into the purchase order and the design basis, and make sure the QC manual tells staff how a job's edition is recorded.\n\nWelding qualifications don't expire with an edition: a PQR or WPQ qualified under an earlier edition stays valid, and new qualifications follow the edition in force when they are made. The [Section IX guide](/asme/section-ix) covers the 2025 changes.\n\n## Code cases\n\nA **code case** is an approved alternative or addition published between editions: a new material, a new method, a relaxation in a defined situation. Using one is optional, needs the jurisdiction's acceptance, and must be recorded on the data report. Many are later written into the Code itself; some are annulled.\n\n## Interpretations\n\nAn **interpretation** is ASME's written answer to a question about what the Code says. It isn't a change to the Code, and it doesn't approve a design; it tells you how the committee reads a paragraph. Interpretations are published by ASME and searchable online.\n\n## Owning the Code\n\nA certificate holder must own current editions of the sections its scope uses, bought from ASME or a licensed reseller. That's also why these guides cite paragraph numbers instead of reprinting them; see [ASME stamps](/asme/stamps) and [how to get the U stamp](/asme/u-stamp)."
+    "body": "## When does the ASME 2025 Edition become mandatory?\n\nIt became mandatory on 1 January 2026, six months after it was published on 1 July 2025. ASME's handbook states the\nrule: \"The edition becomes mandatory six months after the date of publication.\" The six months give shops time to\nbuy the new books and update procedures and their quality control manual.\n\n## How often is the ASME Code published?\n\nEvery two years, in odd years, with all the changes made in committee since the last edition. There are no addenda\nbetween editions any more; the two-year cycle replaced them.\n\n| Edition | Published | Mandatory |\n|---|---|---|\n| 2023 | 1 July 2023 | 1 January 2024 |\n| 2025 | 1 July 2025 | 1 January 2026 |\n| 2027 | Due July 2027 | Six months after |\n\nThe National Board's inspection code (NBIC) follows the same rhythm: a new edition each July of an odd year.\n\n## Do data report forms change with the edition?\n\nYes. The National Board says the 2025 revisions to the ASME and NBIC report forms became mandatory on 1 January\n2026; items built to the 2025 Code must be documented on the current forms, and reports on outdated forms are sent\nback. See [data reports](/asme/data-reports).\n\n## Which edition applies to my vessel?\n\nThe edition agreed for the job, normally the one mandatory when the contract was signed, unless the jurisdiction where\nit will be installed fixes another. The edition is fixed per job, not per day: write it into the purchase order and\nthe design basis, and make sure the quality control manual says how a job's edition is recorded.\n\n## Do states require a specific edition?\n\nMany do, and they lag. The National Board's 2026 Synopsis table of editions lists, for example: Ohio 2023, Illinois\n2023, Michigan 2019, Pennsylvania 2010, Texas \"Current\" and Minnesota \"Current\". The rules themselves say:\n\n- **Ohio** (OAC 4101:4-3-01, effective 1 July 2024) adopts the Code sections at the 2023 edition, \"as well as\n  amendments, supplements, and addenda subsequently published prior to issuance of the next edition\".\n- **Michigan** (R 339.5204, effective 3 May 2023) requires boilers, blowdown vessels and expansion tanks to be built to\n  the 2019 edition.\n- **Texas** (16 TAC §65.2) defines the ASME Code without a year, as the Code, code cases and interpretations adopted by\n  ASME.\n- **Pennsylvania** (34 Pa. Code §3a.1) still defines the ASME Code as the 2004 edition with its published cases and\n  interpretations, older than the Synopsis entry.\n\nAsk the jurisdiction's chief inspector before building to an edition newer than its rule names. See\n[US and Canadian boiler laws](/asme/state-boiler-laws).\n\n## Do I have to buy new books each edition?\n\nYes, if you hold an ASME certificate. ASME's FAQ answers \"Yes, the latest edition/addenda becomes mandatory six months\nafter publication\", and its handbook says reproduced or unauthorized copies aren't accepted. Electronic editions from\na licensed reseller are accepted. See [BPVC sections](/asme/bpvc-sections).\n\n## Do welding qualifications expire with an edition?\n\nNo. A PQR or WPQ qualified under an earlier edition stays valid; new qualifications follow the edition in force when\nthey are made. The [Section IX guide](/asme/section-ix) covers the 2025 changes.\n\n## What is a code case?\n\nAn approved alternative or addition published between editions: a new material, a new method, a relaxation in a\ndefined situation. ASME's [code cases page](https://www.asme.org/codes-standards/publications-information/code-cases) says code cases \"are effective immediately upon ASME approval and do not\nexpire\", and are published in two books, Boiler and Pressure Vessels (CC-BPV) and Nuclear (CC-NUC), with seven\nsupplements through each two-year cycle. Using one is optional, must be recorded on the data report, and in many\nstates needs the jurisdiction's acceptance: the National Board's Synopsis has a code case column for each state.\n\n## What is an interpretation?\n\nASME's written answer to a question about what the Code says. It isn't a change to the Code and doesn't approve a\ndesign; it tells you how the committee reads a paragraph. Interpretations are published by ASME and searchable\nonline.\n\n## What does our software keep for editions?\n\nOur US boiler demo records the Code edition on each job's ASME record package and data report layout, so every job\nsays which edition it was built to. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "essential-variables",
     "group": "welding",
     "title": "Essential and nonessential variables in ASME Section IX",
+    "related": [
+      "/asme/wps-pqr-wpq",
+      "/asme/p-numbers",
+      "/asme/pwht",
+      "/services/material-traceability",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "What are essential variables in ASME welding?",
-    "answer": "ASME Section IX classifies each welding variable. Changing an essential variable, such as the base metal P-number, filler F-number, thickness range or heat treatment, needs a new PQR. Supplementary essential variables count only when impact testing is required. Nonessential variables, such as groove design, can change by revising the WPS.",
-    "description": "ASME Section IX essential, supplementary essential and nonessential variables explained, with common examples for procedures and for welders.",
+    "answer": "ASME Section IX classifies each welding variable. Changing an essential variable, such as the base metal P-number, filler F-number, thickness range or post-weld heat treatment, needs a new PQR. Supplementary essential variables count only when impact testing is required. Nonessential variables, such as groove design, can change by revising the WPS.",
+    "description": "ASME Section IX essential, supplementary essential and nonessential variables explained, with common examples for procedures and for welders, and a worked case.",
     "domain": [
       "asme",
       "welding"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section IX: Welding, Brazing, and Fusing Qualifications)",
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "ASME Data Report Forms (Section IX suggested formats)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/publications-information/asme-data-report-forms",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "Summary of Changes to ASME Boiler and Pressure Vessel Code Section IX (Welding Journal, July 2025)",
+        "publisher": "American Welding Society",
+        "url": "https://www.aws.org/magazines-and-media/welding-journal/2025/july/wj-july-25-feature-05-sperko/",
         "date": "2025-07-01"
       }
     ],
-    "body": "## Why variables are classified\n\nA procedure test proves one set of conditions. Section IX's variable tables (QW-250 onwards, one per process) say which conditions matter to the weld's mechanical properties and how far you can move from the test before you have to test again.\n\n## The three kinds, for procedures\n\n| Kind | If you change it beyond the PQR | Typical examples |\n|---|---|---|\n| Essential | Qualify a new PQR | Base metal P-number; filler metal F-number and A-number; thickness beyond the qualified range; adding or removing post-weld heat treatment; a drop in preheat of more than 100 °F (56 °C); a change of process; adding or removing shielding gas or a backing gas in some processes |\n| Supplementary essential | New PQR only if the construction code requires impact testing | Group number within a P-number; heat input increase; single to multi-pass changes in some processes |\n| Nonessential | Revise the WPS; no new test | Groove design, backing type, technique details, cleaning methods |\n\nThe exact list differs for each process (SMAW, GTAW, GMAW, SAW, FCAW), so always read the table for the process on your WPS.\n\n## Thickness ranges\n\nA groove weld PQR qualifies a range of base metal thickness and of weld metal thickness based on the coupon's thickness. As a general picture, a coupon of moderate thickness qualifies from a minimum up to twice its thickness, with thicker coupons qualifying up to the maximum allowed. Where impact testing applies, the lower limit changes too. Section IX's thickness table (QW-451) gives the numbers.\n\n## For welders\n\nWelders have their own essential variables (QW-350 onwards): process, position, backing, the F-number of the filler, and diameter and thickness ranges. Changing one beyond the WPQ means a new welder test. See [welder qualification](/asme/welder-qualification).\n\n## Practical rules\n\n- Keep a **PQR register** with each PQR's qualified ranges worked out once. Most WPS errors are ranges copied wrong.\n- When a WPS cites two PQRs (for example to cover two thickness ranges), make sure every essential variable is covered by at least one.\n- Impact-tested work is where supplementary essentials catch shops out. See [MDMT and impact testing](/asme/impact-testing).\n\nThe documents themselves are explained in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq), and the material grouping in [P-numbers, F-numbers and A-numbers](/asme/p-numbers)."
+    "checks": [
+      {
+        "reg": "ASME Section IX product page, description",
+        "doc": "asme-ix",
+        "quote": "Section IX of the BPVC contains rules relating to the qualification of welding, brazing, and fusing procedures as required by other BPVC sections."
+      },
+      {
+        "reg": "ASME Data Report Forms, QW-483",
+        "doc": "asme-forms",
+        "quote": "Suggested Format for Procedure Qualification Records (PQR)"
+      },
+      {
+        "reg": "AWS Welding Journal, July 2025 (Sperko)",
+        "doc": "aws-sperko-2025",
+        "quote": "These changes will become mandatory for new qualifications on January 1, 2026."
+      }
+    ],
+    "body": "## What are essential variables in ASME welding?\n\nEssential variables are the welding conditions that affect a weld's mechanical properties, so changing one beyond\nwhat a PQR covers needs a new PQR. Section IX classifies every variable for every process in its variable tables\n(QW-250 onwards for procedures, QW-350 onwards for welders) as essential, supplementary essential or nonessential. A\nprocedure test proves one set of conditions; the tables say how far you can move from it before you test again.\nThe Code text is ASME's and paid; this guide gives common examples, and your 2025 tables are the authority.\n\n## What are the three kinds of procedure variable?\n\n| Kind | If you change it beyond the PQR | Typical examples |\n|---|---|---|\n| Essential | Qualify a new PQR | Base metal P-number; filler F-number and A-number; thickness beyond the qualified range; adding or removing post-weld heat treatment; a decrease in preheat of more than 100 °F (56 °C); a change of process; adding or removing shielding or backing gas in some processes |\n| Supplementary essential | New PQR only if the construction code requires impact testing | Group number within a P-number; an increase in heat input; single to multi-pass in some processes |\n| Nonessential | Revise the WPS; no new test | Groove design, backing type, technique details, cleaning methods |\n\nThe exact list differs by process (SMAW, GTAW, GMAW, SAW, FCAW), so read the table for the process on your WPS.\n\n## When do supplementary essential variables apply?\n\nOnly when the construction code requires toughness (impact) testing of the weld. Then a change in, for example, the\nbase metal Group number or an increase in heat input needs a PQR with impact tests in that condition. Impact-tested\nwork is where supplementary essentials catch shops out; see [MDMT and impact testing](/asme/impact-testing).\n\n## What thickness range does a PQR qualify?\n\nA groove-weld PQR qualifies a range of base metal thickness and of deposited weld metal thickness from the coupon's\nthickness (QW-451). As a general picture, a coupon of moderate thickness qualifies from a minimum up to twice its\nthickness, and a coupon 1½ in (38 mm) or thicker qualifies up to 8 in (203 mm); impact-tested work changes the lower\nlimit. Check QW-451 for the coupon you weld.\n\n## Can you show a worked example?\n\nA shop holds a PQR on ¾ in (19 mm) P-No. 1 plate, SMAW with E7018 (F-4, A-1), no PWHT. It can write a WPS for P-No. 1\nfrom about 3/16 in up to 1½ in, as-welded. A new job needs a 2 in shell with PWHT: that is outside the thickness range\nand adds PWHT, two essential variables, so the shop welds a new coupon (for example 1½ in thick, heat treated) before\nissuing the WPS. Changing the groove angle on the same job needs only a WPS revision.\n\n## What are a welder's essential variables?\n\nQW-350 onwards: the process, position, backing (welding without backing when qualified only with it), the filler\nF-number, and the diameter and deposited thickness ranges. Changing one beyond the WPQ means a new welder test. See\n[welder qualification](/asme/welder-qualification).\n\n## Does PWHT count as an essential variable?\n\nYes. Adding or removing post-weld heat treatment, or changing its temperature and time range, is a procedure\nessential variable (QW-407), so the PQR must have been heat treated the way the job will be. See [PWHT](/asme/pwht).\n\n## Can one WPS cite two PQRs?\n\nYes, for example to cover two thickness ranges, provided every essential variable on the WPS is covered by at least\none of the PQRs. Keep a PQR register with each PQR's qualified ranges worked out once: most WPS errors are ranges\ncopied wrong. ASME's suggested PQR format (QW-483) lays the variables out in the order of the tables.\n\n## Did the 2025 Edition change the variables?\n\nSection IX changes in every edition, and the 2025 changes apply to new qualifications from 1 January 2026, as the\nAmerican Welding Society's summary notes. Check the \"Summary of Changes\" at the front of your 2025 Section IX before\nrelying on any list here, including this one.\n\n## What does our software keep for it?\n\nOur US boiler demo prints each WPS with its PQR, P-numbers, thickness range and PWHT condition in the job's ASME record\npackage, next to the weld map that shows which WPS each seam used, so a reviewer can see each seam's thickness against\nthe WPS range. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "heads",
     "group": "design",
     "title": "Pressure vessel heads (UG-32): ellipsoidal vs torispherical",
+    "metaTitle": "Pressure vessel heads (UG-32): 2:1, F&D and hemi",
+    "related": [
+      "/asme/shell-thickness",
+      "/asme/joint-efficiency",
+      "/notes/plate-remnants-back-into-stock",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What is a 2:1 ellipsoidal head?",
-    "answer": "A 2:1 ellipsoidal head is half an ellipse in section, its depth a quarter of its diameter, and it needs about the same thickness as the shell it closes. Torispherical (flanged and dished) heads are shallower and cheaper but thicker; hemispherical heads are the deepest and need about half the shell thickness. ASME UG-32 gives a formula for each.",
-    "description": "ASME UG-32 formed heads compared: 2:1 ellipsoidal, torispherical (F&D, ASME 80-10) and hemispherical, with their thickness formulas and when to use each.",
+    "answer": "A 2:1 ellipsoidal head is half an ellipse in section, its depth a quarter of its diameter, and it needs about the same thickness as the shell it closes. Torispherical (flanged and dished) heads are shallower and cheaper to form but thicker; hemispherical heads are the deepest and need about half the shell thickness. ASME UG-32 gives a formula for each, and Mandatory Appendix 1-4 covers other proportions such as 80:10.",
+    "description": "ASME UG-32 heads compared: 2:1 ellipsoidal, F&D and 80:10 torispherical, hemispherical, with formulas, a worked 48 in example and how to order them.",
     "domain": [
       "asme",
       "design"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
         "date": "2025-07-01"
       }
     ],
-    "body": "## The three common formed heads\n\n| Head | Shape | Thickness (UG-32), internal pressure | Relative thickness | Typical use |\n|---|---|---|---|---|\n| 2:1 ellipsoidal | Depth = D/4 | t = PD / (2SE − 0.2P) | About the shell's | The default for most vessels |\n| Torispherical (standard \"ASME F&D\": crown radius about equal to the diameter, knuckle radius 6% of the crown radius) | Shallower, a spherical crown with a knuckle | t = 0.885PL / (SE − 0.1P) | Thicker than the shell | Low pressure, storage, where height matters |\n| Hemispherical | Half a sphere | t = PL / (2SE − 0.2P) | About half the shell's | High pressure, large diameters |\n\nD is the inside diameter, L the inside crown (or sphere) radius, and P, S and E are as in the [shell thickness](/asme/shell-thickness) guide. Each formula has validity limits, and other proportions (other ellipses, other crown and knuckle radii) use the general rules in Mandatory Appendix 1-4.\n\n## Choosing\n\n- **Cost**: a hemispherical head is the thinnest but the hardest to form and the deepest; torispherical heads are the cheapest to form but the thickest. The 2:1 ellipsoidal sits between and is the usual answer.\n- **Height and volume**: torispherical heads save height; hemispherical heads add the most volume.\n- **Joint efficiency**: a seamless head's E depends on the radiography of the weld that joins it to the shell; see [joint efficiency and radiography](/asme/joint-efficiency).\n\n## Heads are formed thin\n\nForming thins the plate, most at the knuckle. Order the head with a **minimum thickness after forming** equal to or above the required thickness plus corrosion; the head maker adds their own thinning allowance. The minimum thickness after forming goes on the [data report](/asme/data-reports).\n\n## Flat heads and covers\n\nFlat heads, blind flanges and bolted covers are designed under UG-34 instead, with a factor for how the head is attached. They are far thicker than a formed head for the same pressure, which is why formed heads are used wherever they fit.\n\nThe finished vessel is proved by the [hydrostatic test](/asme/hydrostatic-test), at a pressure set from its [MAWP](/asme/mawp)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      }
+    ],
+    "body": "## What is a 2:1 ellipsoidal head?\n\nA formed head that is half an ellipse in section, with a depth of a quarter of its inside diameter (a 2:1 ratio of\ndiameter to twice the depth). Under UG-32 of Section VIII Division 1 its required thickness for internal pressure is\nt = PD / (2SE − 0.2P), about the same as the cylinder it closes, which is why it is the default head for most vessels.\nThe Code text is ASME's and paid; formulas are written out here to check against your 2025 book.\n\n## What are the three common formed heads?\n\n| Head | Shape | Thickness (UG-32), internal pressure | Relative thickness | Typical use |\n|---|---|---|---|---|\n| 2:1 ellipsoidal | Depth = D/4 | t = PD / (2SE − 0.2P) | About the shell's | The default for most vessels |\n| Torispherical, standard \"ASME F&D\" (crown radius L about equal to the diameter, knuckle radius 6% of L) | Shallower: a spherical crown with a knuckle | t = 0.885PL / (SE − 0.1P) | Thicker than the shell | Low pressure, storage, where height matters |\n| Hemispherical | Half a sphere | t = PL / (2SE − 0.2P) | About half the shell's | High pressure, large diameters |\n\nD is the inside diameter, L the inside crown (or sphere) radius, and P, S and E are as in the\n[shell thickness](/asme/shell-thickness) guide. Each formula has validity limits.\n\n## What is an 80:10 torispherical head?\n\nA torispherical head with a crown radius of 80% of the diameter and a knuckle radius of 10%: deeper and thinner than\na standard F&D. Its proportions aren't those of the 0.885 formula, so it is designed with Mandatory Appendix 1-4's\ngeneral torispherical formula, t = PLM / (2SE − 0.2P), where M = ¼ (3 + √(L/r)) and r is the knuckle radius. For\nL/r = 8, M = 1.457.\n\n## Can you show a worked example?\n\nA 48 in inside diameter vessel at 150 psi, S = 20,000 psi, seamless heads with E = 1.0, before corrosion allowance:\n\n| Head | Working | Thickness |\n|---|---|---|\n| 2:1 ellipsoidal | 150 × 48 / (40,000 − 30) = 7,200 / 39,970 | **0.180 in** |\n| Standard F&D (L = 48 in) | 0.885 × 150 × 48 / (20,000 − 15) = 6,372 / 19,985 | **0.319 in** |\n| 80:10 (L = 38.4 in, r = 4.8 in, M = 1.457) | 150 × 38.4 × 1.457 / 39,970 | **0.210 in** |\n| Hemispherical (L = 24 in) | 150 × 24 / 39,970 | **0.090 in** |\n\nAdd the corrosion allowance to each (0.125 in gives 0.305, 0.444, 0.335 and 0.215 in), then order the head with a\nminimum thickness after forming at least that.\n\n## Which head is cheapest?\n\nUsually the 2:1 ellipsoidal overall. A hemispherical head is the thinnest but the hardest to form and the deepest; a\nstandard F&D head is the cheapest to form but the thickest, so it wins at low pressure, where thickness is set by\nminimums anyway. Torispherical heads also save height; hemispherical heads add the most volume.\n\n## What thickness should I order a head at?\n\nA minimum thickness after forming equal to or above the required thickness plus corrosion allowance. Forming thins\nthe plate, most at the knuckle, and the head maker adds their own thinning allowance to the starting plate. The\nminimum thickness after forming goes on the [data report](/asme/data-reports).\n\n## What joint efficiency does a seamless head use?\n\nIt depends on the radiography of the weld joining it to the shell: 1.0 with that joint spot radiographed to the rule\nfor this case, otherwise 0.85. See [joint efficiency and radiography](/asme/joint-efficiency).\n\n## How are flat heads designed?\n\nUnder UG-34, with a factor for how the head or cover is attached. Flat heads, blind flanges and bolted covers are far\nthicker than a formed head for the same pressure, which is why formed heads are used wherever they fit.\n\n## Do heads need checking for vacuum?\n\nYes: external pressure is a separate check (UG-33), often governing for thin heads on vessels that see vacuum.\n\n## When does UG-32 apply?\n\nTo heads of Section VIII Division 1 vessels, the Division ASME describes as covering \"pressure vessels operating over\n15 psig, fired/unfired\". Boilers under Section I have their own head rules in Part PG.\n\n## What does our software keep for heads?\n\nOur US boiler demo records head material and thickness on the job's data report layout and files the head plate's MTR\nby heat number in the ASME record package. How offcuts from head and shell plate go back into stock with their heat\nnumber is in [plate remnants back into stock](/notes/plate-remnants-back-into-stock)."
   },
   {
     "kind": "asme",
     "slug": "hydrostatic-test",
     "group": "design",
     "title": "ASME hydrostatic test pressure calculator (UG-99)",
+    "related": [
+      "/asme/mawp",
+      "/asme/section-i-vs-iv",
+      "/ibr/registration-documents",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "What is the ASME hydrostatic test pressure for a pressure vessel?",
     "answer": "For a Section VIII Division 1 vessel, the minimum hydrostatic test pressure is 1.3 times the MAWP, multiplied by the lowest ratio of allowable stress at test temperature to allowable stress at design temperature (UG-99(b)). A pneumatic test uses 1.1 instead (UG-100). A Section I boiler is tested to at least 1.5 times its MAWP (PG-99).",
-    "description": "ASME hydrostatic test pressure with a free calculator: UG-99 (1.3 × MAWP × stress ratio), pneumatic UG-100 (1.1), Section I PG-99 (1.5), procedure and gauges.",
+    "description": "ASME hydrostatic test pressure with a free calculator: UG-99 (1.3 × MAWP × stress ratio), pneumatic UG-100 (1.1), Section I PG-99 (1.5), gauges and holds.",
     "domain": [
       "asme",
       "design",
       "testing"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "tool": "hydrotest",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section I and Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code (Section I)",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
         "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section II Part D: Properties (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iid-bpvc-section-ii-materials-part-d-properties",
+        "date": "2025-07-01"
       }
     ],
-    "body": "## The rules\n\n| Equipment | Test | Minimum test pressure |\n|---|---|---|\n| Section VIII Div. 1 vessel | Hydrostatic, UG-99(b) | 1.3 × MAWP × stress ratio |\n| Section VIII Div. 1 vessel | Pneumatic, UG-100 | 1.1 × MAWP × stress ratio |\n| Section I boiler | Hydrostatic, PG-99 | 1.5 × MAWP |\n\nThe **stress ratio** is the allowable stress at the test temperature divided by the allowable stress at the design temperature, taken for the material where that ratio is lowest. At ordinary temperatures the two are often equal and the ratio is 1, so the test is simply 1.3 × MAWP. For a hot vessel, whose allowable stress falls with temperature, the ratio is above 1 and the test pressure rises.\n\nThe test pressure is at the **top** of the vessel. If the gauge is at the bottom, add the static head of the water column.\n\n## Example\n\nA vessel with MAWP 100 psi at 650 °F, where the material's allowable stress is 20,000 psi at test temperature and 16,000 psi at 650 °F: 1.3 × 100 × (20,000 ÷ 16,000) = **162.5 psi**. In metric units it reads the same: MAWP 10 bar with the same materials gives 1.3 × 10 × 1.25 = **16.25 bar**. The calculator above does this for any rule and unit.\n\n## How the test is done (Division 1)\n\n- **Water temperature**: the metal should be at least 30 °F (17 °C) above the [MDMT](/asme/impact-testing) to avoid brittle fracture, and Division 1 recommends not above 120 °F (49 °C) so the vessel can be approached safely.\n- **Inspection**: after reaching test pressure, it is reduced to at least the test pressure divided by 1.3 and held while every joint and connection is examined, normally with the [Authorized Inspector](/asme/authorized-inspector) present.\n- **Gauges**: the dial should read about twice the test pressure, and never less than 1.5 or more than 4 times it (UG-102). Calibrate before the test.\n- **Vents**: vent the high points so no air is trapped.\n\n## Pneumatic tests\n\nA gas stores far more energy than water at the same pressure, so a pneumatic test is used only where water can't be: vessels that can't be supported full, or that must not see any water. Division 1 adds conditions (examination of certain welds first, raising pressure in steps from half the test pressure), and the inspection pressure is the test pressure divided by 1.1.\n\n## On the paperwork\n\nThe test pressure goes on the [data report](/asme/data-reports) and the nameplate record. How MAWP is set is in [MAWP and design pressure](/asme/mawp); the Indian practice for boilers is in [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      },
+      {
+        "reg": "ASME Section II Part D product page, description",
+        "doc": "asme-ii-d",
+        "quote": "provides material properties, allowable stress values, and design data for pressure equipment."
+      }
+    ],
+    "body": "## What is the ASME hydrostatic test pressure?\n\nFor a Section VIII Division 1 vessel it is at least 1.3 × MAWP × the lowest stress ratio (UG-99(b)); for a Section I\nboiler, at least 1.5 × MAWP (PG-99). The calculator above works out either, and the pneumatic test, for any unit.\nThe Code text is ASME's and paid; this guide cites the 2025 Edition's paragraphs.\n\n| Equipment | Test | Minimum test pressure |\n|---|---|---|\n| Section VIII Div. 1 vessel | Hydrostatic, UG-99(b) | 1.3 × MAWP × stress ratio |\n| Section VIII Div. 1 vessel | Pneumatic, UG-100 | 1.1 × MAWP × stress ratio |\n| Section I boiler | Hydrostatic, PG-99 | 1.5 × MAWP |\n\n## What is the stress ratio in UG-99?\n\nIt is the allowable stress at the test temperature divided by the allowable stress at the design temperature, taken\nfor the pressure-part material where that ratio is lowest; bolting is left out. Both values come from Section II\nPart D. At ordinary temperatures they are often equal and the ratio is 1, so the test is 1.3 × MAWP; for a hot\nvessel, whose allowable stress falls with temperature, the ratio is above 1 and the test pressure rises.\n\n## Can you show worked examples?\n\n- **Room-temperature vessel**: MAWP 100 psi, ratio 1 → 1.3 × 100 = **130 psi**.\n- **Hot vessel**: MAWP 100 psi at 650 °F, allowable 20,000 psi at test temperature and 16,000 psi at 650 °F → 1.3 × 100 × 1.25 = **162.5 psi**. In metric, MAWP 10 bar with the same materials → **16.25 bar**.\n- **Section I boiler**: MAWP 150 psi → 1.5 × 150 = **225 psi**.\n\n## Is the test pressure measured at the top or the bottom?\n\nAt the top of the vessel. If the gauge is at the bottom, add the static head of the water column: a vessel 10 ft\ntall adds 10 × 0.433 = 4.3 psi, so a 130 psi test reads about 134.3 psi on a bottom gauge.\n\n## At what pressure is the vessel inspected?\n\nAfter reaching the test pressure, it is reduced to not less than the test pressure divided by 1.3 and held while\nevery joint and connection is examined (UG-99(g)), normally with the [Authorized Inspector](/asme/authorized-inspector)\npresent. For the 130 psi test above, that is at least 100 psi.\n\n## What gauge range do I need for a hydro test?\n\nA dial about twice the test pressure, never less than 1.5 times or more than 4 times it (UG-102), calibrated before\nthe test. For a 130 psi test that means a range between 195 and 520 psi, ideally about 260 psi, so a 0–300 psi gauge;\na 0–600 psi gauge is too coarse. For a 225 psi boiler test, 0–600 psi is within range.\n\n## How warm should the test water be?\n\nWarm enough that the metal is at least 30 °F (17 °C) above the vessel's [MDMT](/asme/impact-testing), to avoid\nbrittle fracture, and Division 1 recommends not above 120 °F (49 °C) so the vessel can be approached safely during\nthe examination (UG-99(h)).\n\n## When is a pneumatic test used instead?\n\nOnly where water can't be: vessels that can't be supported full of water, or that must not see any water. A gas\nstores far more energy than water at the same pressure, so Division 1 adds conditions (examination of certain welds\nfirst, raising pressure in steps), the test pressure is 1.1 × MAWP × the stress ratio (UG-100), and the examination\npressure is the test pressure divided by 1.1.\n\n## Does the Authorized Inspector have to witness it?\n\nYes. The pressure test is one of the Inspector's hold points on every stamped vessel and boiler, and the test pressure\ngoes on the [data report](/asme/data-reports) they sign.\n\n## What should the hydro test record show?\n\nThe date, test pressure and where it was measured, water temperature, hold time, the gauge used and its calibration\ndate, the examination pressure, the result, and who witnessed it. How MAWP is set is in\n[MAWP and design pressure](/asme/mawp); how a vessel needs Section VIII at all is in\n[Section VIII](/asme/section-viii), which ASME says covers \"pressure vessels operating over 15 psig\".\n\n## How does this work under IBR in India?\n\nIBR 2026 sets its own hydraulic test rules and asks for the test record among the registration documents; see\n[boiler registration documents](/ibr/registration-documents) and [ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## What does our software keep for the hydro test?\n\nOur US boiler demo records each job's hydro test (pressure, temperature, hold, gauge and its calibration date,\nwitness) and prints it in the ASME record package next to the data report layout: 130 psi for its Division 1 vessel\nand 225 psi for its boilers. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "impact-testing",
     "group": "design",
     "title": "MDMT and impact test exemptions (UCS-66)",
+    "related": [
+      "/asme/mawp",
+      "/asme/pwht",
+      "/asme/section-ii",
+      "/systems/heat-number",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "When is impact testing required for an ASME pressure vessel?",
-    "answer": "Carbon and low-alloy steels can turn brittle when cold, so ASME Section VIII Division 1 requires Charpy impact tests unless an exemption applies. UCS-66 gives exemption curves (A to D) by material and thickness against the vessel's MDMT; thin parts and lower stresses earn more exemption. Below about −55 °F (−48 °C) most parts need testing.",
-    "description": "ASME impact testing and MDMT explained: UCS-66 exemption curves A to D, governing thickness, the stress-ratio reduction, UG-20(f), and what testing involves.",
+    "answer": "Carbon and low-alloy steels can turn brittle when cold, so ASME Section VIII Division 1 requires Charpy impact tests unless an exemption applies. UCS-66 gives exemption curves (A to D) by material and thickness against the vessel's MDMT; thin parts and lower stresses earn more exemption. Below −55 °F (−48 °C) most parts need testing.",
+    "description": "ASME impact testing and MDMT: UCS-66 exemption curves A to D, governing thickness, the stress-ratio credit, the UG-20(f) exemption and Charpy tests.",
     "domain": [
       "asme",
       "design",
       "materials"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section II Part A: Ferrous Material Specifications (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iia-bpvc-section-ii-materials-part-ferrous-materials-specifications",
         "date": "2025-07-01"
       }
     ],
-    "body": "## Why it matters\n\nSteel that is tough at room temperature can fracture like glass when cold. The **MDMT** (minimum design metal temperature) is the coldest the metal may be while the vessel is at pressure; impact testing proves the steel, welds and heat-affected zones are tough at that temperature. See [MAWP and MDMT](/asme/mawp).\n\n## How the exemption works\n\nFor carbon and low-alloy steels (Part UCS), Division 1 works it out part by part:\n\n1. **Assign the material to a curve.** Figure UCS-66 has curves A to D. Curve A is for materials with the least toughness assurance; Curve D for the best (for example, normalized fine-grain plate). The curve assignments are listed in the Code.\n2. **Find the governing thickness** of each part: for a butt joint, the thicker of the two members, with rules for other joints.\n3. **Read the curve.** It gives the coldest MDMT allowed without impact testing at that thickness. If the vessel's MDMT is warmer, the part is exempt.\n4. **Take credit for low stress.** When the part is less stressed than its full allowable (thicker than needed, or at lower pressure), Figure UCS-66.1 allows a further reduction in the exemption temperature.\n\nThere's also a blanket exemption for simple cases (UG-20(f)): P-No. 1 materials of limited thickness, hydrostatically tested to UG-99(b), with design temperatures between −20 °F (−29 °C) and 650 °F (343 °C) and no unusual shock or cyclic loading.\n\nBelow −55 °F (−48 °C), impact testing is generally required unless the part is very lightly stressed.\n\n## What impact testing involves\n\nCharpy V-notch specimens are cut from the material, or from a test weld for welds and heat-affected zones, and broken at the test temperature. The energy absorbed must meet a minimum that depends on the material's strength and thickness (UG-84). When impact testing applies, the welding procedure must also be qualified with impact tests, which brings in Section IX's supplementary [essential variables](/asme/essential-variables).\n\n## Practical points\n\n- Specify MDMT honestly: too warm is unsafe; too cold forces testing you didn't need.\n- Buy plate to a specification and heat treatment on the better curves (normalized SA-516, for example) when the MDMT is cold.\n- The MDMT and any impact test results go on the [data report](/asme/data-reports), and the steel's own test results come on its [MTR](/asme/mtr)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      }
+    ],
+    "body": "## When is impact testing required for an ASME pressure vessel?\n\nWhen a carbon or low-alloy steel part's minimum design metal temperature (MDMT) is colder than the exemption\nDivision 1 allows for its material and thickness (UCS-66, 2025 Edition), and no other exemption applies. Steel that\nis tough at room temperature can fracture like glass when cold; impact testing proves the steel, welds and\nheat-affected zones are tough at the MDMT. The Code text and its curves are ASME's and paid; this guide outlines the\nmethod, and your 2025 book is the authority.\n\n## What is MDMT?\n\nThe coldest metal temperature at which the vessel may be at its MAWP: a cold winter start-up, an autorefrigerating\nflash, a cold fluid. It goes on the nameplate and the [data report](/asme/data-reports) with its coincident pressure.\nSee [MAWP and MDMT](/asme/mawp).\n\n## How does the UCS-66 exemption work?\n\nDivision 1 works it out part by part:\n\n1. **Assign the material to a curve.** Figure UCS-66 has curves A to D. Curve A is for materials with the least toughness assurance; Curve D for the best (for example, normalized fine-grain plate). The Code lists which specification and heat treatment goes on which curve.\n2. **Find the governing thickness** of each part: for a butt joint, the thicker of the two members, with rules for corner, fillet and lap joints and for flat heads.\n3. **Read the curve.** It gives the coldest MDMT allowed without impact testing at that thickness. If the vessel's MDMT is warmer than that, the part is exempt.\n4. **Take credit for low stress.** When the part is stressed below its full allowable (thicker than needed, or at lower pressure), Figure UCS-66.1 lowers the exemption temperature further.\n\n## What are curves A to D?\n\nFour material groups by toughness: A the least assured, D the best. Plate on a better curve is exempt to a colder\ntemperature at the same thickness, so when the MDMT is cold, buying plate to a specification and heat treatment on\nthe better curves (normalized SA-516, for example) can avoid impact testing altogether. The curve assignments are in\nthe Code; check the note for your specification and heat treatment.\n\n## Is there a simple exemption for ordinary vessels?\n\nYes: UG-20(f) exempts P-No. 1 materials of limited thickness from impact testing when the vessel is hydrostatically\ntested to UG-99(b) or (c), has a design temperature between −20 °F (−29 °C) and 650 °F (343 °C), and has no unusual\nthermal or mechanical shock or cyclic loading. Most small carbon steel vessels in mild climates use it.\n\n## Is impact testing always required below a certain temperature?\n\nGenerally below −55 °F (−48 °C): at such low MDMTs Division 1 requires impact testing unless the part is very lightly\nstressed.\n\n## What does impact testing involve?\n\nCharpy V-notch specimens are cut from the material, or from a test weld for weld metal and heat-affected zones, and\nbroken at the test temperature. The energy absorbed must meet a minimum that depends on the material's strength and\nthickness (UG-84). When impact testing applies, the welding procedure must also be qualified with impact tests,\nwhich brings in Section IX's supplementary [essential variables](/asme/essential-variables).\n\n## Can PWHT reduce the need for impact testing?\n\nIt can: Division 1 gives a temperature credit for post-weld heat treatment that the Code doesn't otherwise require\n(UCS-68). See [PWHT](/asme/pwht).\n\n## Who supplies the impact test results?\n\nThe mill, for the base metal: the results come on the [MTR](/asme/mtr) for the heat, tested at the temperature you\nordered. The shop supplies weld and heat-affected zone results from its PQR or production test plates. Order plate\nwith the impact test temperature on the purchase order, because adding it later means retesting.\n\n## How do I specify MDMT?\n\nHonestly: too warm is unsafe, too cold forces testing you didn't need. Set it from the coldest metal temperature at\npressure the vessel will really see, including start-up and upset cases, and write it on the purchase order with its\ncoincident pressure.\n\n## When does UCS-66 apply?\n\nTo carbon and low-alloy steel parts (Part UCS) of Section VIII Division 1 vessels, the Division ASME describes as\ncovering \"pressure vessels operating over 15 psig, fired/unfired\". Other materials have their own toughness rules.\n\n## What does our software keep for MDMT?\n\nOur US boiler demo prints MDMT on the job's data report layout and files the plates' MTRs by heat number in the ASME\nrecord package. It has no separate impact test records. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "joint-efficiency",
     "group": "design",
     "title": "Joint efficiency and radiography (UW-11, UW-12)",
+    "related": [
+      "/asme/shell-thickness",
+      "/asme/section-v",
+      "/asme/heads",
+      "/services/material-traceability",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "What is joint efficiency in ASME Section VIII?",
-    "answer": "Joint efficiency (E) is the factor ASME Section VIII Division 1 applies to a welded joint in the thickness formulas. It depends on the joint type and how much it is radiographed: a double-welded butt joint is 1.0 with full radiography, 0.85 with spot radiography and 0.70 with none (UW-12). Less radiography means a thicker shell.",
-    "description": "ASME UW-12 joint efficiency values by joint type and radiography, joint categories A to D, when full radiography is mandatory (UW-11), and the cost trade-off.",
+    "answer": "Joint efficiency (E) is the factor ASME Section VIII Division 1 applies to a welded joint in the thickness formulas. It depends on the joint type and how much it is radiographed: a double-welded butt joint is 1.0 with full radiography, 0.85 with spot radiography and 0.70 with none (Table UW-12). Less radiography means a thicker shell.",
+    "description": "ASME UW-12 joint efficiency by joint type and radiography, joint categories A to D, when full RT is mandatory (UW-11), seamless parts, and the cost trade-off.",
     "domain": [
       "asme",
       "design",
       "nde"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section V: Nondestructive Examination (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-v-bpvc-section-v-nondestructive-examination",
         "date": "2025-07-01"
       }
     ],
-    "body": "## Joint efficiency by type and examination\n\nSection VIII Division 1, Table UW-12, for the common butt joints:\n\n| Joint type | Description | Full radiography | Spot radiography | None |\n|---|---|---|---|---|\n| 1 | Double-welded butt joint, or equivalent full penetration | 1.00 | 0.85 | 0.70 |\n| 2 | Single-welded butt joint with a backing strip left in | 0.90 | 0.80 | 0.65 |\n| 3 | Single-welded butt joint without backing | – | – | 0.60 |\n\nLap and fillet joints have lower values again and are limited in where they may be used.\n\n## Joint categories\n\nDivision 1 names joints by **location**, because location decides how much stress they carry:\n\n- **Category A**: longitudinal welds in shells and nozzles, and the welds joining a hemispherical head to the shell. They carry the higher (hoop) stress.\n- **Category B**: circumferential welds between shell courses and between shell and most formed heads.\n- **Category C**: welds attaching flanges, tubesheets and flat heads.\n- **Category D**: welds attaching nozzles and communicating chambers.\n\nType is what the joint is; category is where it is. Both go on the [data report](/asme/data-reports).\n\n## When full radiography is required\n\nUW-11 makes full radiography of butt welds mandatory in several cases, among them:\n\n- vessels in **lethal service**;\n- butt welds thicker than a limit set by the material (for carbon steel, 1¼ in, 32 mm);\n- **unfired steam boilers** above 50 psi (3.4 bar);\n- where the designer has used E = 1.0.\n\nOtherwise the designer chooses, and the choice is commercial: full radiography costs more in examination and saves steel by allowing E = 1.0.\n\n## Seamless parts\n\nA seamless shell or head has no longitudinal joint, but its efficiency still depends on the circumferential welds joining it: with those spot radiographed to the rule for this case, a seamless part uses E = 1.0; without, 0.85.\n\n## Where it is used\n\nE goes straight into the [shell thickness](/asme/shell-thickness) and [head](/asme/heads) formulas. The method and acceptance standards for the radiographs come from [Section V](/asme/section-v) and UW-51 (full) or UW-52 (spot)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      }
+    ],
+    "body": "## What is joint efficiency in ASME Section VIII?\n\nJoint efficiency (E) is the factor Division 1 applies to a welded joint in the thickness formulas, set by the joint\ntype and how much of it is radiographed (Table UW-12, 2025 Edition). It goes straight into the\n[shell thickness](/asme/shell-thickness) and [head](/asme/heads) formulas, so a lower E means a thicker wall. The\nCode text is ASME's and paid; this guide cites paragraphs.\n\n## What are the joint efficiency values?\n\nFor the common butt joints, from Table UW-12:\n\n| Joint type | Description | Full radiography | Spot radiography | None |\n|---|---|---|---|---|\n| 1 | Double-welded butt joint, or equivalent full penetration | 1.00 | 0.85 | 0.70 |\n| 2 | Single-welded butt joint with a backing strip left in | 0.90 | 0.80 | 0.65 |\n| 3 | Single-welded butt joint without backing | – | – | 0.60 |\n\nLap and fillet joints (Types 4 to 6 and others) have lower values again and are limited in where they may be used.\n\n## What is the difference between joint type and joint category?\n\nType is what the joint is (its form, Types 1 to 8); category is where it sits (A to D), because location decides how\nmuch stress it carries:\n\n- **Category A**: longitudinal welds in shells and nozzles, and the weld joining a hemispherical head to the shell. They carry the hoop stress, the higher one.\n- **Category B**: circumferential welds between shell courses and between the shell and most formed heads.\n- **Category C**: welds attaching flanges, tubesheets and flat heads.\n- **Category D**: welds attaching nozzles and communicating chambers.\n\nBoth go on the [data report](/asme/data-reports).\n\n## When is full radiography mandatory?\n\nUW-11(a) makes full radiography of butt welds mandatory in several cases, among them:\n\n- vessels in **lethal service**;\n- butt welds thicker than the limit for the material (for P-No. 1 carbon steel, 1¼ in, 32 mm);\n- **unfired steam boilers** with a design pressure above 50 psi (3.4 bar);\n- wherever the designer has taken the full-radiography efficiency (E = 1.0 for a Type 1 joint).\n\nOtherwise the choice is the designer's, and it is commercial: full radiography costs more in examination and saves\nsteel.\n\n## How much thicker does a shell get with less radiography?\n\nTake a 48 in inside diameter shell at 150 psi, S = 20,000 psi, corrosion allowance 0.125 in, Type 1 longitudinal\njoints:\n\n| Radiography | E | Hoop thickness | With corrosion | Plate |\n|---|---|---|---|---|\n| Full | 1.00 | 3,618.75 / 19,910 = 0.182 in | 0.307 in | 5/16 in or ⅜ in |\n| Spot | 0.85 | 3,618.75 / 16,910 = 0.214 in | 0.339 in | ⅜ in |\n| None | 0.70 | 3,618.75 / 13,910 = 0.260 in | 0.385 in | 7/16 in |\n\nThe [shell calculator](/asme/shell-thickness) takes a separate E for the circumferential joints, which govern the\nlongitudinal-stress check.\n\n## What joint efficiency does a seamless shell or head get?\n\nA seamless part has no longitudinal joint, but its E still depends on the circumferential welds joining it: with\nthose spot radiographed to the rule for this case (UW-11(a)(5)(b)), a seamless part uses E = 1.0; without, 0.85\n(UW-12(d)).\n\n## Does full radiography of the long seams need anything else?\n\nYes: to take E = 1.0 on Category A joints, the Category B and C butt joints that intersect them must at least be spot\nradiographed (UW-11(a)(5)(b)). That is why designers often specify \"full RT of Category A, spot of Category B\".\n\n## Who sets the radiography method and acceptance?\n\nThe method comes from [Section V](/asme/section-v), which ASME describes as its NDE standards; acceptance comes from\nDivision 1: UW-51 for full radiography and UW-52 for spot. Division 1 also allows ultrasonic examination in place of\nradiography in defined cases; check your 2025 book for the conditions.\n\n## When does joint efficiency apply at all?\n\nTo Section VIII Division 1 vessels, which ASME describes as covering \"pressure vessels operating over 15 psig,\nfired/unfired\". Section I boilers have their own weld rules in Part PW.\n\n## What does our software keep for joint efficiency?\n\nOur US boiler demo's weld map records each seam's category (A, B or D), joint type, WPS, welder stamps, NDE method\n(RT spot or full, UT, MT) and report, and prints it in the job's ASME record package, so the E on the calculation and\nthe radiography actually done can be compared. See\n[ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
     "slug": "mawp",
     "group": "design",
     "title": "MAWP, design pressure, operating pressure and MDMT",
+    "related": [
+      "/asme/shell-thickness",
+      "/asme/section-xiii",
+      "/asme/hydrostatic-test",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/manufacturing/job-shop-erp"
+    ],
     "question": "What is the difference between MAWP and design pressure?",
-    "answer": "Design pressure is the pressure the vessel is designed for, set from the process with a margin. MAWP is the highest pressure the finished vessel can take at the top, at its design temperature, worked out from the thicknesses actually used; it is at least the design pressure. Operating pressure sits below both, and the relief valve is set at or below MAWP.",
-    "description": "MAWP vs design pressure vs operating pressure in ASME Section VIII, how they relate to the relief valve set pressure, and what MDMT means on a nameplate.",
+    "answer": "Design pressure is the pressure a vessel is designed for, set from the process with a margin. MAWP (maximum allowable working pressure) is the highest pressure the finished vessel can take at its top, at the design temperature, worked out from the thicknesses actually used, so it is at least the design pressure. Operating pressure sits below both, and the relief device is normally set at or below MAWP.",
+    "description": "MAWP vs design pressure vs operating pressure in ASME Section VIII, worked from plate thickness, with static head, relief set pressure and MDMT.",
     "domain": [
       "asme",
       "design"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section XIII: Rules for Overpressure Protection (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-xiii-bpvc-section-xiii-rules-overpressure-protection",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section II Part D: Properties (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iid-bpvc-section-ii-materials-part-d-properties",
         "date": "2025-07-01"
       }
     ],
-    "body": "## Four pressures, in order\n\n| Pressure | What it is | Who sets it |\n|---|---|---|\n| Operating pressure | What the process normally runs at | The process |\n| Relief set pressure | Where the relief device opens; at or below MAWP | The designer, within Code limits |\n| Design pressure | What the vessel is designed for, at the top, with the coincident temperature | The owner or designer (UG-21) |\n| MAWP | The most the completed vessel can take at the top, at the design temperature, from its actual thicknesses | Calculated (UG-98) |\n\nA common margin is design pressure about 10% above the maximum operating pressure, or 25 psi (1.7 bar) above it for low pressures, so normal swings don't lift the relief valve. That margin is practice, not a Code rule.\n\n## Why MAWP can be higher than design pressure\n\nPlates come in standard thicknesses. If the [shell thickness](/asme/shell-thickness) needed for the design pressure is 0.30 in (7.6 mm) and you use 0.375 in (9.5 mm) plate, the shell can take more. MAWP is worked out back from each part's thickness, less corrosion allowance, and the weakest part sets it. Many owners simply set MAWP equal to design pressure to keep the relief valve and nameplate simple; that's allowed.\n\nMAWP is stated at the **top** of the vessel in its operating position. Parts lower down see the static head of the liquid too, and are designed for it.\n\n## Hot and corroded, new and cold\n\nThe thickness used for MAWP is the **corroded** thickness at the **design temperature**. Some owners also ask for MAP (maximum allowable pressure, new and cold), which is higher. The [hydrostatic test](/asme/hydrostatic-test) is set from MAWP.\n\n## MDMT\n\nThe **minimum design metal temperature** is the coldest metal temperature the vessel may see at its MAWP: a cold winter start-up, an autorefrigerating flash, a cold fluid. It decides whether materials need impact testing; see [MDMT and impact testing](/asme/impact-testing). Both MAWP at its temperature and MDMT go on the nameplate and the [data report](/asme/data-reports).\n\n## Overpressure\n\nWhile a relief device is discharging, pressure may rise above MAWP by a set amount: in Division 1, generally 10% or 3 psi (0.2 bar) for a single device, 16% with several, 21% for fire exposure. See [Section XIII](/asme/section-xiii)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      },
+      {
+        "reg": "ASME Section XIII product page, description",
+        "doc": "asme-xiii",
+        "quote": "BPVC Section XIII sets requirements for design, materials, inspection, testing, and marking of pressure relief valves, rupture disks, and related devices."
+      },
+      {
+        "reg": "ASME Section II Part D product page, description",
+        "doc": "asme-ii-d",
+        "quote": "provides material properties, allowable stress values, and design data for pressure equipment."
+      }
+    ],
+    "body": "## What is the difference between MAWP and design pressure?\n\nDesign pressure is what the vessel is designed for; MAWP is what the finished vessel can actually take. The owner\nor designer sets the design pressure, with its coincident temperature, from the process (UG-21 in Section VIII\nDivision 1, 2025 Edition). MAWP is calculated afterwards from the thicknesses actually used, less corrosion\nallowance, for every part, and the weakest part sets it (UG-98 and Mandatory Appendix 3). It is therefore at least\nthe design pressure. The Code text is ASME's and paid; this guide cites paragraphs and works examples.\n\n| Pressure | What it is | Who sets it |\n|---|---|---|\n| Operating pressure | What the process normally runs at | The process |\n| Relief set pressure | Where the relief device opens; normally at or below MAWP | The designer, within Code limits |\n| Design pressure | What the vessel is designed for, at the top, with the coincident temperature | The owner or designer (UG-21) |\n| MAWP | The most the completed vessel can take at the top, at the design temperature, from its actual thicknesses | Calculated (UG-98) |\n\n## How do you calculate MAWP from a plate thickness?\n\nRearrange the thickness formula for pressure, using the corroded thickness and radius. For a cylindrical shell under\nUG-27(c)(1), MAWP = SEt / (R + 0.6t). Worked example, the same shell as the [shell thickness guide](/asme/shell-thickness):\n⅜ in plate, corrosion allowance 0.125 in, inside radius 24 in, S = 20,000 psi, E = 0.85.\n\n1. Corroded thickness t = 0.375 − 0.125 = 0.250 in; corroded radius R = 24 + 0.125 = 24.125 in.\n2. Hoop stress: MAWP = 20,000 × 0.85 × 0.25 / (24.125 + 0.6 × 0.25) = 4,250 / 24.275 = **175.1 psi**.\n3. Longitudinal stress (UG-27(c)(2)): 2SEt / (R − 0.4t) = 8,500 / 24.025 = 353.8 psi, so the hoop case governs.\n4. If the plate may arrive 0.01 in thin (the under-tolerance UG-16(c) allows for plate), t = 0.240 in and MAWP = 4,080 / 24.269 = **168.1 psi**.\n\nThe shell calculator on that page does the same, taking the lower of the two cases. The heads, nozzles and flanges\nhave their own MAWPs, and the vessel's MAWP is the lowest of all of them.\n\n## Can MAWP be higher than design pressure?\n\nYes. Plate comes in standard thicknesses, so the shell above, designed for 150 psi, can take 168 psi as built. Many\nowners still stamp MAWP equal to the design pressure to keep the relief valve and the nameplate simple; that is\nallowed. A higher MAWP leaves room for a later rerate.\n\n## Where is MAWP measured?\n\nAt the top of the vessel in its normal operating position, at the stated temperature. Parts lower down also see the\nstatic head of the liquid and are designed for it: 20 ft of water adds 20 × 0.433 = 8.7 psi, so with an MAWP of 150 psi\nat the top the bottom course is checked for 158.7 psi.\n\n## Does MAWP use new or corroded thickness?\n\nCorroded: the thickness left at the end of the corrosion allowance, at the design temperature, where the allowable\nstress from Section II Part D is lowest. Some owners also ask for a \"new and cold\" pressure, which is higher; it is an\nowner's term, not a Division 1 one. The [hydrostatic test](/asme/hydrostatic-test) is set from MAWP.\n\n## What design pressure margin should I use?\n\nA common practice is design pressure about 10% above the maximum operating pressure, or 25 psi (1.7 bar) above it at\nlow pressures, so normal swings don't lift the relief valve. That margin is practice, not a Code rule: the Code only\nrequires that the vessel is protected and the relief device set within its limits.\n\n## Where should the relief valve be set?\n\nNormally at or below MAWP for a single device. Division 1's overpressure protection rules (the UG-150 series since the\n2021 Edition) say when a vessel needs protection and how much pressure may rise while it relieves; the device itself\nis built to [Section XIII](/asme/section-xiii), which ASME describes as setting \"requirements for design, materials,\ninspection, testing, and marking of pressure relief valves, rupture disks, and related devices\".\n\n## How far can pressure rise above MAWP while a valve relieves?\n\nIn Division 1, generally by 10% or 3 psi (whichever is greater) with one device, 16% or 4 psi with several, and 21%\nfor fire exposure. Worked example: MAWP 150 psi, one valve set at 150 psi → pressure may reach 165 psi while\nrelieving; under fire, 181.5 psi. Check the overpressure paragraphs of your 2025 Division 1 for the exact conditions.\n\n## What is MDMT?\n\nThe minimum design metal temperature: the coldest the metal may be while the vessel is at its MAWP, from a winter\nstart-up, an autorefrigerating flash or a cold fluid. It decides whether materials need impact testing; see\n[MDMT and impact testing](/asme/impact-testing). MAWP at its temperature and MDMT at its pressure both go on the\nnameplate and the [data report](/asme/data-reports).\n\n## When does a vessel have to be designed to Section VIII at all?\n\nASME describes Division 1 as providing rules \"for pressure vessels operating over 15 psig, fired/unfired\"; at 15 psi\nor less a vessel is outside its scope, though the law where it is installed may still regulate it. See\n[Section VIII](/asme/section-viii) and [US boiler laws](/asme/state-boiler-laws).\n\n## What does our software keep for MAWP?\n\nOur US boiler demo keeps each job's calculation sheet (UG-27(c)(1) for vessel shells, PG-27 for boiler shells) and\nprints MAWP at temperature and MDMT on the job's data report layout in the ASME record package, with the hydro test\nrecord set from it. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4594,26 +4835,51 @@
     "slug": "pwht",
     "group": "design",
     "title": "Post-weld heat treatment requirements (UCS-56)",
+    "related": [
+      "/asme/essential-variables",
+      "/asme/impact-testing",
+      "/ibr/registration-documents",
+      "/industries/boiler-pressure-vessel-manufacturing",
+      "/services/material-traceability"
+    ],
     "question": "When is post-weld heat treatment required by ASME?",
-    "answer": "ASME Section VIII Division 1 requires post-weld heat treatment (PWHT) by material and thickness: Table UCS-56 sets, for each P-number, the holding temperature, the time per inch of thickness and when it can be skipped. For P-No. 1 carbon steel, PWHT is generally required above 1½ in (38 mm), held at 1,100 °F (595 °C) or more, and some services need it at any thickness.",
-    "description": "ASME PWHT requirements under UCS-56: holding temperature and time for P-No. 1, thickness exemptions, service-driven PWHT, heating and cooling rates and records.",
+    "answer": "ASME Section VIII Division 1 requires post-weld heat treatment (PWHT) by material and thickness: Table UCS-56-1 sets, for each P-number, the minimum holding temperature, the time per inch of thickness and when it can be skipped. For P-No. 1 carbon steel, PWHT is generally required above 1½ in (38 mm), held at 1,100 °F (595 °C) or more, and some services need it at any thickness.",
+    "description": "ASME PWHT under UCS-56-1: P-No. 1 temperature, hold time and thickness exemption, service-driven PWHT, heating and cooling rates, and the WPS effect.",
     "domain": [
       "asme",
       "design",
       "welding"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications",
         "date": "2025-07-01"
       }
     ],
-    "body": "## Why heat treat after welding\n\nWelding leaves high residual stresses and hard zones next to the weld. PWHT (stress relieving) heats the part below its transformation temperature and holds it, which relaxes the stresses and tempers the hard zones. It improves toughness and resistance to some kinds of cracking, at the cost of furnace time and, sometimes, strength.\n\n## The table, for P-No. 1 carbon steel\n\nTable UCS-56-1 sets requirements by P-number. For P-No. 1 (carbon steel, the commonest case), in outline:\n\n| Item | Requirement |\n|---|---|\n| Minimum holding temperature | 1,100 °F (595 °C) |\n| Holding time, up to 2 in (50 mm) thick | 1 hour per inch, at least 15 minutes |\n| Holding time, over 2 in (50 mm) | Longer, on a sliding scale in the table |\n| Exemption by thickness | PWHT is not mandatory up to 1¼ in (32 mm), and up to 1½ in (38 mm) with a minimum preheat, subject to the table's notes |\n\nOther P-numbers have their own temperatures and much narrower exemptions; chromium–molybdenum steels (P-No. 4, 5A) nearly always need it. Check the current edition's table for your material: the notes carry most of the detail.\n\n## When service decides, not thickness\n\nPWHT can be required whatever the thickness:\n\n- **Lethal service** (UW-2): Division 1 requires PWHT of carbon and low-alloy steel vessels.\n- **Low temperature**: some impact test exemptions depend on it; see [impact testing](/asme/impact-testing).\n- **The owner's specification**: caustic, amine, wet H₂S and similar services often call for PWHT to resist stress-corrosion cracking, beyond the Code's minimum.\n\n## Doing it\n\n- Heating and cooling rates above 800 °F (425 °C) are limited by thickness (UCS-56(d)), so a thick vessel takes a long cycle.\n- Temperatures are recorded by thermocouples on the part, and the chart is part of the record.\n- PWHT is a procedure [essential variable](/asme/essential-variables): adding or removing it needs a PQR qualified that way.\n\n## On the paperwork\n\nThe PWHT chart goes in the [data report](/asme/data-reports) package and PWHT is declared on the report itself. In India, IBR asks for heat treatment charts of welded drums with the registration documents; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      },
+      {
+        "reg": "ASME Section IX product page, description",
+        "doc": "asme-ix",
+        "quote": "Section IX of the BPVC contains rules relating to the qualification of welding, brazing, and fusing procedures as required by other BPVC sections."
+      }
+    ],
+    "body": "## When is post-weld heat treatment required by ASME?\n\nFor Section VIII Division 1 carbon and low-alloy steel vessels, PWHT is required by P-number and thickness under\nTable UCS-56-1, and by service whatever the thickness in some cases. The table gives, for each P-number, the minimum\nholding temperature, the minimum time at temperature by thickness, and the conditions under which PWHT may be\nomitted; its notes carry most of the detail. The Code text is ASME's and paid; this guide outlines the 2025 rules and\nyour copy of UCS-56 is the authority.\n\n## Why heat treat after welding?\n\nWelding leaves high residual stresses and hard zones beside the weld. PWHT (stress relieving) heats the part below\nits transformation temperature and holds it there, which relaxes the stresses and tempers the hard zones. It improves\ntoughness and resistance to some kinds of cracking, at the cost of furnace time and, sometimes, strength.\n\n## What are the PWHT requirements for carbon steel?\n\nFor P-No. 1, the commonest case, Table UCS-56-1 sets in outline:\n\n| Item | Requirement |\n|---|---|\n| Minimum holding temperature | 1,100 °F (595 °C) |\n| Holding time, up to 2 in (50 mm) thick | 1 hour per inch, at least 15 minutes |\n| Holding time, over 2 in (50 mm) | 2 hours plus 15 minutes for each inch over 2 in |\n| Exemption by thickness | Not mandatory up to 1¼ in (32 mm) nominal thickness, and up to 1½ in (38 mm) with a minimum preheat of 200 °F (95 °C), subject to the table's notes |\n\nOther P-numbers have their own temperatures and much narrower exemptions; chromium–molybdenum steels (P-No. 4, 5A)\nnearly always need it.\n\n## When is PWHT required whatever the thickness?\n\n- **Lethal service**: Division 1 requires PWHT of carbon and low-alloy steel vessels in lethal service (UW-2).\n- **Low temperature**: some impact-test exemptions depend on it; see [impact testing](/asme/impact-testing).\n- **The owner's specification**: caustic, amine, wet H₂S and similar services often call for PWHT to resist stress-corrosion cracking, beyond the Code minimum.\n\n## Can you show a worked example?\n\nA 1½ in (38 mm) P-No. 1 shell that needs PWHT (no preheat credit taken): hold at no less than 1,100 °F for\n1.5 hours. Above 800 °F (425 °C), UCS-56(d) limits the heating rate to 400 °F per hour divided by the thickness in\ninches, so 400 / 1.5 = 267 °F/h at most, and the cooling rate to 500 °F per hour divided by the thickness, so\n500 / 1.5 = 333 °F/h, each with an overall cap. A 3 in shell holds for 2 h 15 min, with heating at no more than 133 °F/h.\n\n## How is PWHT done and recorded?\n\nIn a furnace (whole vessel or in sections) or locally around a weld band, under UW-40's rules. Temperatures are\nrecorded by thermocouples on the part, and the chart showing heating rate, hold temperature and time, and cooling\nrate is part of the vessel's record. PWHT is declared on the [data report](/asme/data-reports).\n\n## Does PWHT change the welding procedure?\n\nYes. Adding or removing PWHT, or changing its temperature and time range, is a procedure essential variable in\nSection IX (QW-407), so the WPS must be supported by a PQR heat treated the same way. Section IX is the Code's section\nthat ASME says \"contains rules relating to the qualification of welding, brazing, and fusing procedures as required\nby other BPVC sections\". See [essential variables](/asme/essential-variables).\n\n## What about Section I boilers?\n\nSection I has its own PWHT table (PW-39) with its own thickness exemptions. A boiler shop and a vessel shop working\nthe same steel can therefore have different PWHT triggers on the same day.\n\n## When does UCS-56 apply?\n\nTo carbon and low-alloy steel parts of Section VIII Division 1 vessels, the Division ASME describes as covering\n\"pressure vessels operating over 15 psig, fired/unfired\". High-alloy steels follow Part UHA.\n\n## How does this work under IBR in India?\n\nIBR 2026 asks for heat treatment charts of welded drums with a boiler's registration documents; see\n[boiler registration documents](/ibr/registration-documents) and [ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## What does our software keep for PWHT?\n\nOur US boiler demo records each job's PWHT decision with its basis (for example \"P-No. 1 at ½ in nominal thickness,\nbelow 1½ in\"), and the temperature, hold, rate and chart where it is done, and prints it in the ASME record package\nnext to each WPS's PWHT condition. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",
@@ -4756,25 +5022,72 @@
     "slug": "section-ii",
     "group": "code",
     "title": "ASME Section II materials and SA vs A specifications",
+    "related": [
+      "/asme/mtr",
+      "/asme/p-numbers",
+      "/systems/heat-number",
+      "/notes/plate-remnants-back-into-stock",
+      "/services/material-traceability"
+    ],
     "question": "What is the difference between SA-516 and A516?",
     "answer": "ASME Section II holds the material specifications the Code allows: Part A ferrous, Part B nonferrous, Part C filler metals, Part D properties and allowable stresses. An SA specification is ASME's adoption of an ASTM one, sometimes with changes; SA-516 is ASME's version of ASTM A516. Code pressure parts must be certified to the SA specification, often on a dual-marked MTR.",
-    "description": "ASME Section II explained: Parts A, B, C and D, SA vs A (SA-516 vs A516), dual certification, and where the allowable stress values come from.",
+    "description": "ASME Section II explained: Parts A to D, SA vs A (SA-516 vs A516), dual certification, which Parts a shop must own, and where allowable stresses come from.",
     "domain": [
       "asme",
       "materials"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section II, Parts A to D)",
+        "title": "BPVC Section II Part A: Ferrous Material Specifications (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iia-bpvc-section-ii-materials-part-ferrous-materials-specifications",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section II Part D: Properties (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iid-bpvc-section-ii-materials-part-d-properties",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "Required Code Books",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books",
+        "date": "2026-11-05"
+      },
+      {
+        "title": "2025 ASME Boiler and Pressure Vessel Code",
         "publisher": "ASME",
         "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
         "date": "2025-07-01"
       }
     ],
-    "body": "## The four Parts\n\n| Part | Contents | Typical specifications |\n|---|---|---|\n| A | Ferrous material specifications | SA-516 plate, SA-106 pipe, SA-105 forgings, SA-240 stainless plate |\n| B | Nonferrous material specifications | SB-168 nickel alloy plate, SB-209 aluminum plate |\n| C | Welding rods, electrodes and filler metals | SFA-5.1 (carbon steel electrodes such as E7018), SFA-5.18 (GMAW and GTAW wires) |\n| D | Properties | Allowable stresses, tensile and yield strength at temperature, external pressure charts, physical properties |\n\nPart D comes in customary (psi, °F) and metric volumes. The [shell thickness](/asme/shell-thickness) and [hydrostatic test](/asme/hydrostatic-test) calculators both need its allowable stress values, which is why those tools ask you for them rather than supply them: the tables are ASME's, and they change between editions.\n\nThe specifications a boiler or vessel shop buys most, with P-numbers and their IBR 2026 status, are in the [materials list](/asme/items).\n\n## SA vs A\n\nASTM writes most of the material standards; ASME adopts them into Section II, adds an \"S\" (SA, SB) and sometimes adds requirements. Section II prints each adopted specification with a note of which ASTM edition it matches and any differences.\n\nWhat that means in practice:\n\n- A pressure part must be certified to the SA specification (or to an ASTM edition the Code accepts as identical), not just \"A516\".\n- Mills therefore often **dual-certify**: the MTR reads \"SA-516/A516 Grade 70\", stating it meets both.\n- If an MTR shows only the ASTM number, the [MTR guide](/asme/mtr) explains what the Code lets you do about it, and the Inspector decides whether it is acceptable.\n\n## Allowable stress in Part D\n\nSection VIII Division 1 and Section I take their maximum allowable stresses from Part D tables (Table 1A for ferrous materials, Table 1B for nonferrous), by specification, grade and temperature. Division 2 has its own, higher, values because of its smaller design margin; see [Section VIII Division 1 vs 2](/asme/section-viii).\n\n## Welding consumables\n\nPart C's SFA specifications classify filler metals; Section IX then groups them by F-number and A-number for qualification. See [P-numbers, F-numbers and A-numbers](/asme/p-numbers). In India, IBR 2026 classifies covered electrodes by these same SFA specifications or AWS ones; see [ASME vs IBR 2026](/asme/asme-vs-ibr)."
+    "checks": [
+      {
+        "reg": "ASME Section II Part A product page, description",
+        "doc": "asme-ii-a",
+        "quote": "BPVC Section II-A provides material specifications for ferrous materials adequate for safety in the field of pressure equipment."
+      },
+      {
+        "reg": "ASME Section II Part D product page, description",
+        "doc": "asme-ii-d",
+        "quote": "provides material properties, allowable stress values, and design data for pressure equipment."
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "BPVC Section II-Materials-Part D-Properties-(Customary or Metric)"
+      },
+      {
+        "reg": "ASME Required Code Books, U and UM certificates",
+        "doc": "asme-books",
+        "quote": "BPVC Section II-Materials Part C-Specifications for Welding Rods Electrodes and Filler Metals"
+      }
+    ],
+    "body": "## What is the difference between SA-516 and A516?\n\nSA-516 is ASME's adopted version of ASTM A516, printed in Section II Part A; a Code pressure part must be certified to\nthe SA specification, or to an ASTM edition the Code accepts as identical. ASTM writes most material standards; ASME\nadopts them into Section II, adds an \"S\" (SA for ferrous, SB for nonferrous) and sometimes adds requirements. Each\nadopted specification in Section II notes the ASTM edition it matches and any differences.\n\n## What are the four Parts of Section II?\n\n| Part | Contents | Typical specifications |\n|---|---|---|\n| A | Ferrous material specifications (two volumes) | SA-516 plate, SA-106 pipe, SA-105 forgings, SA-240 stainless plate |\n| B | Nonferrous material specifications | SB-168 nickel alloy plate, SB-209 aluminum plate |\n| C | Welding rods, electrodes and filler metals | SFA-5.1 (carbon steel covered electrodes such as E7018), SFA-5.18 (carbon steel wires and rods) |\n| D | Properties | Allowable stresses, tensile and yield strength at temperature, external pressure charts, physical properties |\n\nASME describes Part A as providing \"material specifications for ferrous materials adequate for safety in the field\nof pressure equipment\", and Part D as providing \"material properties, allowable stress values, and design data\".\n\n## What is a dual-certified MTR?\n\nA mill test report that certifies the material to both specifications at once, reading for example \"SA-516/A516\nGrade 70\". Mills dual-certify so the same plate can go into Code and non-Code work; for a pressure part the SA\ncertification is the one that matters. See [MTRs and heat numbers](/asme/mtr).\n\n## What if the MTR shows only the ASTM number?\n\nThen the material isn't certified to the SA specification on its face. Division 1 has routes for accepting or\nrecertifying material that wasn't produced to the SA specification (UG-10), and the\n[Authorized Inspector](/asme/authorized-inspector) decides whether the documentation is acceptable. The\n[MTR guide](/asme/mtr) explains the options.\n\n## Where do allowable stresses come from?\n\nFrom Part D. Section VIII Division 1 and Section I take their maximum allowable stresses from Table 1A (ferrous) and\nTable 1B (nonferrous), by specification, grade and temperature; Division 2 uses its own tables (5A and 5B), with\nhigher values because of its smaller design margin. The [shell thickness](/asme/shell-thickness) and\n[hydrostatic test](/asme/hydrostatic-test) calculators ask you to enter these values rather than supply them,\nbecause the tables are ASME's and change between editions.\n\n## Which Part D volume should I buy?\n\nCustomary (psi, °F) or Metric (MPa, °C): ASME sells both, and its required code book list for the U and S\ncertificates names \"Part D-Properties-(Customary or Metric)\", so one is enough. Use the volume that matches the units\nof your calculations.\n\n## Which Parts does a shop need for an ASME certificate?\n\nFor a U or S certificate, ASME's [required list](https://www.asme.org/certification-accreditation/ASME-Certification-Process/Required-Code-Books) is Parts A, B, C and D. Part C (filler metals) can\nbe left out only if welding, brazing and fusing aren't in the shop's scope. See [BPVC sections](/asme/bpvc-sections).\n\n## How do filler metals connect to Section IX?\n\nPart C's SFA specifications classify filler metals; Section IX then groups them by F-number and A-number for\nqualification. See [P-numbers, F-numbers and A-numbers](/asme/p-numbers).\n\n## Does IBR in India accept SA materials?\n\nYes. IBR 2026's material rules allow materials to ASME and other international codes, and its own table names ASME SA\nand SB specifications; covered electrodes are classified to ASME Section II Part C (SFA) or AWS specifications. See\n[ASME vs IBR 2026](/asme/asme-vs-ibr).\n\n## What does our software keep for Section II materials?\n\nOur US boiler demo files each plate, tube and pipe's MTR by heat number and prints them in the job's ASME record\npackage, so every part on the data report points back to a certified specification and grade. The calculation sheets\nuse an illustrative SA-516 Grade 70 stress excerpt, not ASME's table. See\n[material traceability](/services/material-traceability)."
   },
   {
     "kind": "asme",
@@ -5022,26 +5335,51 @@
     "slug": "shell-thickness",
     "group": "design",
     "title": "Shell thickness and MAWP (UG-27), with a calculator",
+    "related": [
+      "/asme/joint-efficiency",
+      "/asme/mawp",
+      "/asme/heads",
+      "/notes/plate-remnants-back-into-stock",
+      "/industries/boiler-pressure-vessel-manufacturing"
+    ],
     "question": "How do you calculate pressure vessel shell thickness to ASME?",
-    "answer": "For a cylindrical shell under internal pressure, ASME Section VIII Division 1 (UG-27) gives the required thickness as t = PR / (SE − 0.6P), where P is design pressure, R the inside radius, S the allowable stress and E the joint efficiency. Add the corrosion allowance, check the longitudinal-stress formula too, and take the larger.",
-    "description": "ASME UG-27 shell thickness for cylinders and spheres, with a free calculator: formulas, corrosion allowance, joint efficiency and MAWP.",
+    "answer": "For a cylindrical shell under internal pressure, ASME Section VIII Division 1 (UG-27) gives the required thickness as t = PR / (SE − 0.6P), where P is design pressure, R the inside radius, S the allowable stress and E the longitudinal joints' efficiency. Check the longitudinal-stress formula PR / (2SE + 0.4P) with the circumferential joints' efficiency too, take the larger, and add the corrosion allowance.",
+    "description": "ASME UG-27 shell thickness for cylinders and spheres with a free calculator: formulas, which joint efficiency goes where, corrosion allowance and MAWP.",
     "domain": [
       "asme",
       "design"
     ],
     "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "checked": "2026-11-01",
+    "updated": "2026-11-06",
+    "checked": "2026-11-06",
     "tool": "shell",
     "sources": [
       {
-        "title": "2025 ASME Boiler and Pressure Vessel Code (Section VIII, Division 1)",
+        "title": "BPVC Section VIII Division 1 (2025)",
         "publisher": "ASME",
-        "url": "https://www.asme.org/codes-standards/bpvc-standards/bpvc-2025",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1",
+        "date": "2025-07-01"
+      },
+      {
+        "title": "BPVC Section II Part D: Properties (2025)",
+        "publisher": "ASME",
+        "url": "https://www.asme.org/codes-standards/find-codes-standards/bpvc-iid-bpvc-section-ii-materials-part-d-properties",
         "date": "2025-07-01"
       }
     ],
-    "body": "## The formulas\n\nSection VIII Division 1, UG-27, for internal pressure, using the **inside radius in the corroded condition**:\n\n| Shell | Required thickness | Valid while |\n|---|---|---|\n| Cylinder, circumferential stress (governs the longitudinal joints) | t = PR / (SE − 0.6P) | P ≤ 0.385SE and t ≤ R/2 |\n| Cylinder, longitudinal stress (governs the circumferential joints) | t = PR / (2SE + 0.4P) | P ≤ 1.25SE and t ≤ R/2 |\n| Sphere | t = PR / (2SE − 0.2P) | P ≤ 0.665SE and t ≤ 0.356R |\n\n- **P**: design pressure, plus any static head at that point.\n- **R**: inside radius, increased by the corrosion allowance.\n- **S**: maximum allowable stress at the design temperature, from [Section II Part D](/asme/section-ii).\n- **E**: [joint efficiency](/asme/joint-efficiency) of the relevant joint.\n\nOutside the limits, use the thick-shell formulas in Mandatory Appendix 1-2. Each formula can also be rearranged to give the **MAWP** a known thickness allows; for a cylinder, P = SEt / (R + 0.6t).\n\n## A worked example\n\nA carbon steel shell, 48 in inside diameter, design pressure 150 psi, allowable stress 20,000 psi, spot radiographed Type 1 joints (E = 0.85), corrosion allowance 0.125 in:\n\n1. Corroded radius: 24 + 0.125 = 24.125 in.\n2. Circumferential: t = 150 × 24.125 / (20,000 × 0.85 − 0.6 × 150) = 3,618.75 / 16,910 = **0.214 in**.\n3. Longitudinal: t = 150 × 24.125 / (2 × 20,000 × 0.85 + 0.4 × 150) = 0.106 in. Circumferential governs.\n4. Add corrosion: 0.214 + 0.125 = **0.339 in** minimum.\n5. Choose plate: ⅜ in (0.375) covers it, after allowing for any mill undertolerance and forming thin-out.\n\nThe same shell in metric: 1,220 mm inside diameter, design pressure 1.03 MPa (10.3 bar), allowable stress 138 MPa, E = 0.85, corrosion allowance 3 mm. Corroded radius 613 mm; t = 1.03 × 613 / (138 × 0.85 − 0.6 × 1.03) = **5.4 mm**, plus 3 mm corrosion = **8.4 mm**, so a 10 mm plate. Use MPa with mm, or psi with inches, and never mix them.\n\nThe calculator above repeats these steps for your numbers and works the MAWP back from a chosen thickness. The allowable stress is yours to enter: it comes from ASME's tables for your material, grade and temperature, which change between editions and aren't reproduced here.\n\n## What the formula doesn't cover\n\n- **Heads**: their own formulas; see [heads](/asme/heads).\n- **Openings**: every nozzle needs reinforcement checked (UG-37 and onwards).\n- **External pressure and vacuum**: a separate check (UG-28) with charts from Section II Part D; often thicker than internal pressure needs.\n- **Other loads**: wind, seismic, supports, lifting and piping loads (UG-22).\n- **Minimum thickness**: Division 1 sets a floor for shells and heads regardless of pressure (UG-16).\n\nRelated: [MAWP and design pressure](/asme/mawp), and the [hydrostatic test](/asme/hydrostatic-test) that proves the result."
+    "checks": [
+      {
+        "reg": "ASME Section VIII Division 1 product page, description",
+        "doc": "asme-viii1",
+        "quote": "ASME BPVC Section VIII Division 1 provides design, fabrication, inspection, testing & certification rules for pressure vessels operating over 15 psig, fired/unfired."
+      },
+      {
+        "reg": "ASME Section II Part D product page, description",
+        "doc": "asme-ii-d",
+        "quote": "provides material properties, allowable stress values, and design data for pressure equipment."
+      }
+    ],
+    "body": "## How do you calculate pressure vessel shell thickness to ASME?\n\nUse UG-27 of Section VIII Division 1 with the inside radius in the corroded condition, then add the corrosion\nallowance. The formulas for internal pressure (2025 Edition):\n\n| Shell | Required thickness | Valid while |\n|---|---|---|\n| Cylinder, circumferential (hoop) stress, governs the longitudinal joints | t = PR / (SE − 0.6P) | P ≤ 0.385SE and t ≤ R/2 |\n| Cylinder, longitudinal stress, governs the circumferential joints | t = PR / (2SE + 0.4P) | P ≤ 1.25SE and t ≤ R/2 |\n| Sphere | t = PR / (2SE − 0.2P) | P ≤ 0.665SE and t ≤ 0.356R |\n\n- **P**: design pressure, plus any static head at that point.\n- **R**: inside radius, increased by the corrosion allowance.\n- **S**: maximum allowable stress at the design temperature, from [Section II Part D](/asme/section-ii).\n- **E**: [joint efficiency](/asme/joint-efficiency) of the joint the formula governs.\n\nThe Code text is ASME's and paid; formulas are written out here so they can be checked against your 2025 book.\n\n## Which joint efficiency goes in which formula?\n\nThe hoop-stress formula uses the efficiency of the **longitudinal** (Category A) joints, because hoop stress pulls\nthem apart; the longitudinal-stress formula uses the efficiency of the **circumferential** (Category B) joints. They\ndiffer when the seams are radiographed differently, for example full radiography of the long seams and spot of the\ngirth seams. The calculator above takes both; leave the second blank when they are the same.\n\n## Why use the corroded radius?\n\nBecause the shell has to hold the pressure at the end of its life, when the corrosion allowance has gone: the\ninside wall has moved out and the wall is thinner. Using the corroded radius in the formula, then adding the\nallowance to the result, gives the thickness to order.\n\n## Can you show a worked example?\n\nA carbon steel shell, 48 in inside diameter, design pressure 150 psi, allowable stress 20,000 psi, spot-radiographed\nType 1 joints (E = 0.85 for both), corrosion allowance 0.125 in:\n\n1. Corroded radius: 24 + 0.125 = 24.125 in.\n2. Hoop: t = 150 × 24.125 / (20,000 × 0.85 − 0.6 × 150) = 3,618.75 / 16,910 = **0.214 in**.\n3. Longitudinal: t = 3,618.75 / (2 × 20,000 × 0.85 + 0.4 × 150) = 3,618.75 / 34,060 = 0.106 in. Hoop governs.\n4. Add corrosion: 0.214 + 0.125 = **0.339 in** minimum.\n5. Choose plate: ⅜ in (0.375) covers it, after allowing for mill under-tolerance and any forming thin-out.\n\nWith the long seams fully radiographed (E = 1.0) and the girth seams spot (0.85), hoop becomes 3,618.75 / 19,910 =\n0.182 in and the longitudinal check is still 0.106 in, so the minimum falls to **0.307 in**. In metric: 1,220 mm\ninside diameter, 1.03 MPa, 138 MPa, E = 0.85, 3 mm corrosion → corroded radius 613 mm, t = 1.03 × 613 / (138 × 0.85 −\n0.6 × 1.03) = **5.4 mm**, plus 3 mm = 8.4 mm, so a 10 mm plate. Use MPa with mm or psi with inches; never mix them.\n\n## How do you get the MAWP of a chosen thickness?\n\nRearrange each formula for pressure and take the lower: P = SEt / (R + 0.6t) for hoop stress and\nP = 2SEt / (R − 0.4t) for longitudinal stress, with t and R corroded. The ⅜ in plate above allows 175.1 psi; see\n[MAWP and design pressure](/asme/mawp) for the full working.\n\n## Where does the allowable stress come from?\n\nFrom Section II Part D, which ASME describes as providing \"material properties, allowable stress values, and design\ndata for pressure equipment\": Table 1A for ferrous materials, by specification, grade and temperature. The calculator\nasks you to enter it rather than supplying it, because the values are ASME's and change between editions; read them\nfrom your copy of the 2025 tables.\n\n## What if the shell is thick or the pressure high?\n\nBeyond the limits in the table (t > R/2, or P above 0.385SE for the hoop formula), the thin-shell formulas no longer\napply: use the thick-shell formulas in Mandatory Appendix 1-2. The calculator warns when you are outside the range.\nMandatory Appendix 1-1 gives formulas in terms of the outside radius, used for pipe ordered by outside diameter.\n\n## What does the formula not cover?\n\n- **Heads**: their own formulas; see [heads](/asme/heads).\n- **Openings**: every nozzle needs reinforcement checked (UG-37 onwards).\n- **External pressure and vacuum**: a separate check (UG-28) with Section II Part D charts, often thicker than internal pressure needs.\n- **Other loads**: wind, seismic, supports, lifting and piping loads (UG-22).\n- **Minimum thickness**: Division 1 sets a floor for shells and heads regardless of pressure (UG-16).\n\n## When does a vessel need Section VIII at all?\n\nASME describes Division 1 as covering \"pressure vessels operating over 15 psig, fired/unfired\"; see\n[Section VIII Division 1 vs 2](/asme/section-viii).\n\n## What does our software keep for shell design?\n\nOur US boiler demo keeps each job's calculation sheet with the UG-27(c)(1) shell formula (PG-27 for boiler shells)\nand its inputs, then the plate actually issued with its heat number, so the [MTR](/asme/mtr) and the calculation\npoint at the same plate. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing)."
   },
   {
     "kind": "asme",

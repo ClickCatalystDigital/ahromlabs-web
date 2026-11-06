@@ -45,7 +45,7 @@ export function HydrotestCalculator() {
       <Field label="MAWP" value={mawp} onChange={setMawp} hint="Any unit: psi, bar or MPa. The answer comes out in the same one." />
       {k.ratio && (
         <>
-          <Field label="Allowable stress at test temperature" value={sTest} onChange={setSTest} hint="From Section II Part D, for the material with the lowest ratio." />
+          <Field label="Allowable stress at test temperature" value={sTest} onChange={setSTest} hint="From Section II Part D, for the pressure-part material with the lowest ratio (bolting excluded)." />
           <Field label="Allowable stress at design temperature" value={sDesign} onChange={setSDesign} />
         </>
       )}
@@ -62,11 +62,11 @@ export function HydrotestCalculator() {
 
 export function ShellCalculator() {
   const [shape, setShape] = useState<"cylinder" | "sphere">("cylinder");
-  const [v, setV] = useState({ P: "150", R: "24", S: "20000", E: "0.85", CA: "0.125", t: "0.375" });
+  const [v, setV] = useState({ P: "150", R: "24", S: "20000", E: "0.85", Ec: "", CA: "0.125", t: "0.375" });
   const set = (k: keyof typeof v) => (x: string) => setV({ ...v, [k]: x });
-  const p = { P: num(v.P), R: num(v.R), S: num(v.S), E: num(v.E), CA: num(v.CA) };
+  const p = { P: num(v.P), R: num(v.R), S: num(v.S), E: num(v.E), Ec: v.Ec.trim() === "" ? undefined : num(v.Ec), CA: num(v.CA) };
   const r = shellThickness({ ...p, shape });
-  const mawp = shellMawp({ t: num(v.t), R: p.R, S: p.S, E: p.E, CA: p.CA });
+  const mawp = shellMawp({ t: num(v.t), ...p });
   return (
     <Box title="Shell thickness and MAWP calculator">
       <div className="mt-4 subscribe-field">
@@ -79,7 +79,10 @@ export function ShellCalculator() {
       <Field label="Design pressure P" value={v.P} onChange={set("P")} hint="psi with inches, or MPa with mm." />
       <Field label="Inside radius R (new)" value={v.R} onChange={set("R")} />
       <Field label="Allowable stress S at design temperature" value={v.S} onChange={set("S")} hint="From Section II Part D." />
-      <Field label="Joint efficiency E" value={v.E} onChange={set("E")} hint="From UW-12: 1.0, 0.85 or 0.70 for a double-welded butt joint." />
+      <Field label={shape === "cylinder" ? "Joint efficiency E, longitudinal joints" : "Joint efficiency E"} value={v.E} onChange={set("E")} hint="From Table UW-12: a double-welded butt joint is 1.0 with full radiography, 0.85 spot, 0.70 none." />
+      {shape === "cylinder" && (
+        <Field label="Joint efficiency, circumferential joints (optional)" value={v.Ec} onChange={set("Ec")} hint="Used for the longitudinal-stress check. Leave blank to use the same E." />
+      )}
       <Field label="Corrosion allowance" value={v.CA} onChange={set("CA")} />
       <div className="mt-6 space-y-1 text-foreground" aria-live="polite">
         <p>

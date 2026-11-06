@@ -76,6 +76,16 @@ assert.ok(close(shell.circumferential, 0.214), `circumferential ${shell.circumfe
 assert.equal(shell.governs, "circumferential");
 assert.ok(close(shell.required, 0.339));
 assert.ok(close(shellMawp({ t: 0.339, R: 24, S: 20000, E: 0.85, CA: 0.125 }), 150.0) || Math.abs(shellMawp({ t: 0.339, R: 24, S: 20000, E: 0.85, CA: 0.125 }) - 150) < 0.2);
+// The shell-thickness and mawp guides' worked numbers: ⅜ in plate → 17,000 × 0.25 / 24.275 = 175.08 psi.
+assert.ok(Math.abs(shellMawp({ t: 0.375, R: 24, S: 20000, E: 0.85, CA: 0.125 }) - 175.08) < 0.01);
+// Cat A full RT (E 1.0), Cat B spot (0.85): hoop 3,618.75 / 19,910 = 0.18176; longitudinal 3,618.75 / 34,060 = 0.10625.
+const twoE = shellThickness({ P: 150, R: 24, S: 20000, E: 1, Ec: 0.85, CA: 0.125, shape: "cylinder" });
+assert.ok(close(twoE.circumferential, 0.18176) && close(twoE.longitudinal, 0.10625) && close(twoE.required, 0.30676));
+// A weak circumferential joint makes the longitudinal check govern the MAWP: 2 × 20,000 × 0.3 × 0.25 / (24.125 − 0.1) = 124.86 psi.
+assert.ok(Math.abs(shellMawp({ t: 0.375, R: 24, S: 20000, E: 1, Ec: 0.3, CA: 0.125 }) - 124.86) < 0.01);
+// Sphere thin-shell limits (P ≤ 0.665SE, t ≤ 0.356R): 13,000 psi is within, 14,000 psi is not.
+assert.equal(shellThickness({ P: 13000, R: 24, S: 20000, E: 1, CA: 0, shape: "sphere" }).inRange, true);
+assert.equal(shellThickness({ P: 14000, R: 24, S: 20000, E: 1, CA: 0, shape: "sphere" }).inRange, false);
 assert.equal(continuityLapse("2026-05-02"), "2026-11-02");
 assert.equal(continuityLapse("2026-08-31"), "2027-02-28");
 
