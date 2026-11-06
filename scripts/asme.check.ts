@@ -8,6 +8,7 @@ import { ASME_GROUPS, asmeGuides, continuityLapse, shellMawp, shellThickness, te
 import { getContent } from "../src/lib/content";
 import { asmeArt } from "../src/lib/asme-images";
 import { MATERIALS } from "../src/lib/asme-items";
+import { markdownQuestions } from "../src/lib/headings";
 import { services } from "../src/lib/services";
 
 const fail: string[] = [];
@@ -86,6 +87,12 @@ assert.ok(Math.abs(shellMawp({ t: 0.375, R: 24, S: 20000, E: 1, Ec: 0.3, CA: 0.1
 // Sphere thin-shell limits (P ≤ 0.665SE, t ≤ 0.356R): 13,000 psi is within, 14,000 psi is not.
 assert.equal(shellThickness({ P: 13000, R: 24, S: 20000, E: 1, CA: 0, shape: "sphere" }).inRange, true);
 assert.equal(shellThickness({ P: 14000, R: 24, S: 20000, E: 1, CA: 0, shape: "sphere" }).inRange, false);
+// Question headings → structured data: the answering paragraph, as plain text; sections opening with a table are skipped.
+assert.deepEqual(markdownQuestions("## What is X?\n\nX is a [thing](/a) with **bold**.\nSecond line.\n\nMore.\n\n## Table?\n\n| a |\n\n## Last?\n\nEnds."), [
+  { q: "What is X?", a: "X is a thing with bold. Second line." },
+  { q: "Last?", a: "Ends." },
+]);
+for (const g of guides) if ((g.body.match(/^## .+\?\s*$/gm) ?? []).length > 0 && markdownQuestions(g.body).length === 0) fail.push(`${g.slug}: no question heading has an answering paragraph`);
 assert.equal(continuityLapse("2026-05-02"), "2026-11-02");
 assert.equal(continuityLapse("2026-08-31"), "2027-02-28");
 

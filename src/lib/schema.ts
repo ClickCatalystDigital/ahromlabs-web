@@ -5,6 +5,7 @@ import pageDates from "./page-dates.generated.json";
 import { IBR_2026_URL } from "./ibr-forms";
 import { AI_VERSION, AI_CHECKED } from "./ai-assistant";
 import { MARKETS, countriesFor, coverage } from "./markets";
+import { headingId } from "./headings";
 
 export { IBR_2026_URL };
 
@@ -691,7 +692,13 @@ const qa = (question: string | undefined, answer: string) =>
 type Cited = { title: string; publisher: string; url: string; date: string };
 const citations = (sources: Cited[] | undefined) =>
   sources?.length ? { citation: sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: { "@type": "Organization", name: s.publisher } })) } : {};
-export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string; sources?: Cited[] }) {
+// The guide's other question headings, each with the paragraph that answers it, as parts of the article (not an
+// FAQPage: Google no longer shows those for most sites; answer engines read the questions either way).
+const sectionQuestions = (url: string, questions: { q: string; a: string }[] | undefined) =>
+  questions?.length
+    ? { hasPart: questions.map(({ q, a }) => ({ "@type": "Question", name: q, url: `${url}#${headingId(q)}`, acceptedAnswer: { "@type": "Answer", text: a } })) }
+    : {};
+export function asmePageGraph(page: { path: string; title: string; description: string; published: string; updated: string; trail: { name: string; path: string }[]; app?: string; image?: { src: string; alt: string; width: number; height: number } | null; question?: string; sources?: Cited[]; questions?: { q: string; a: string }[] }) {
   const url = `${siteUrl}${page.path}`;
   const crumbs = [{ name: "Home", path: "" }, ...page.trail];
   return {
@@ -713,6 +720,7 @@ export function asmePageGraph(page: { path: string; title: string; description: 
         mainEntityOfPage: url,
         ...coverage(page.path),
         ...qa(page.question, page.description),
+        ...sectionQuestions(url, page.questions),
         ...citations(page.sources),
         ...(page.image && {
           image: { "@type": "ImageObject", url: `${siteUrl}${page.image.src}`, width: page.image.width, height: page.image.height, caption: page.image.alt },

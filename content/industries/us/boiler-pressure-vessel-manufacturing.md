@@ -104,6 +104,15 @@ After startup each boiler stays in the system as the equipment its service calls
 4. **Does it work beside QuickBooks Online**, sending invoices and bills without double entry, or does it ask you to replace your books?
 5. **Does job costing use real purchase orders and logged hours**, or estimates someone types in?
 
+## Where can I read up on the ASME rules behind these records?
+
+In our [ASME guides](/asme), each written to the 2025 Edition from ASME's and the National Board's own pages. The
+ones Code shops ask about most: [Section VIII Division 1 vs 2](/asme/section-viii) and
+[Section I vs Section IV](/asme/section-i-vs-iv) for which book a job is built to; [Section IX](/asme/section-ix) for
+welding qualification; [ASME stamps](/asme/stamps) and [Section XIII relief devices](/asme/section-xiii) for the
+certificates; [which ASME edition each state requires](/asme/state-boiler-laws) and [how Code editions work](/asme/editions);
+[B31.1 vs B31.3](/asme/b31-1-vs-b31-3) for piping; and [buying ASME equipment from India](/asme/buying-from-india).
+
 ## Boundary
 
 The system was first built for a boiler and pressure vessel manufacturer in India and runs that business every day; this North American version is the same code with ASME records, US units, sales tax, an estimate of US payroll withholding and QuickBooks Online, shown here on a sample company. It has not yet been used by a US or Canadian shop. QuickBooks sending covers invoices, payments, vendor bills and bill payments; credit and debit notes are not sent yet, and a document edited after it was sent is not sent again. The system records the shop's code work; it does not replace the shop's [quality control manual](/asme/quality-control-manual) or the Authorized Inspector.

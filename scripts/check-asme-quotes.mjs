@@ -47,12 +47,12 @@ const DOCS = {
     "nb-tabulation": "NBBI - Synopsis Tabulation of ASME Codes by Jurisdiction 2025",
     "absa-crn": "ABSA - CRN application form multiple jurisdictions 2026-11-06",
     "tssa-fittings": "TSSA - Fittings registration guidelines Jan 2026 2026-11-06",
-    // State rules (Ohio, Michigan, Texas from Cornell LII: the official sites refused automated reads).
+    // State rules (Ohio and Texas from Cornell LII: the official sites refuse automated reads; Michigan from LARA ARS).
     "pa-3a": "Pennsylvania - 34 Pa Code ch 3a contents and definitions 2026-11-06",
     "pa-3a-4": "Pennsylvania - 34 Pa Code 3a.4 Adoption of National standards 2026-11-06",
     "pa-3a-21": "Pennsylvania - 34 Pa Code 3a.21 Stamping 2026-11-06",
     "oh-4101-4-3-01": "Ohio - OAC 4101-4-3-01 (LII copy) 2026-11-06",
-    "mi-339-5204": "Michigan - Mich Admin Code R 339.5204 (LII copy) 2026-11-06",
+    "mi-339-5204": "Michigan - Admin Code R 339.5101 to R 339.5412 official ARS 2026-11-06",
     "tx-65-2": "Texas - 16 TAC 65.2 Definitions (LII copy) 2026-11-06",
     "ca-453": "California - 8 CCR 453 Definitions 2026-11-06",
     "ca-454": "California - 8 CCR 454 Air tanks 2026-11-06",

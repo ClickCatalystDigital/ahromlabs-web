@@ -2,8 +2,11 @@
 
 **Status, 6 Nov 2026: all done, not deployed.** Batches 4 (c87588c), 5 (a78d819), 6–7 with the calculator fixes
 (27cb2d3), 8 (20a6576) and 9 with the hub (f353cbd). 197/197 ASME quotes checked against 42 saved source texts in
-`FOLDER SAMPLE - FOR APP/ASME/sources`. Still open: the Deferred list at the end (Code paragraph checks against the 2025
-books; official Ohio, Michigan and Texas text, read here from Cornell LII), and the SB Ops US demo fixes in
+`FOLDER SAMPLE - FOR APP/ASME/sources`. Gap pass (6 Nov): Michigan now cited from LARA's official rules system; every
+question heading's answering paragraph is in each guide's structured data (`hasPart` Questions, 300 of 317); both boiler
+industry pages link into the ASME guides. Still open: Code paragraph checks against the 2025 books (needs the books or
+the named reviewer); Ohio and Texas official text (codes.ohio.gov refuses connections from here and the Texas register
+renders only in a script portal, so both are read from Cornell LII); and the SB Ops US demo fixes in
 `sb-ops-us-demo-issues.md`.
 
 Written 5 Nov 2026 for batches 4–9 of `docs/content-roadmap.md`: the 29 ASME guides other than `u-stamp` and `mtr`

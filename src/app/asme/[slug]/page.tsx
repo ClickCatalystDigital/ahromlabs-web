@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 import { AsmePage, AsmeQuotes } from "@/components/AsmePage";
 import { ContinuityChecker, HydrotestCalculator, ShellCalculator } from "@/components/AsmeTools";
 import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
-import { markdownHeadings } from "@/lib/headings";
+import { markdownHeadings, markdownQuestions } from "@/lib/headings";
 import { asmeGuide, asmeGuides } from "@/lib/asme";
 import { asmeArt } from "@/lib/asme-images";
 import { asmePageGraph } from "@/lib/schema";
@@ -45,7 +45,7 @@ export default async function AsmeGuidePage(props: PageProps<"/asme/[slug]">) {
   return (
     <AsmePage
       group={g.group}
-      graph={asmePageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: tool?.name, image: art, sources: g.sources })}
+      graph={asmePageGraph({ path, title: g.title, description: g.answer, question: g.question, questions: markdownQuestions(g.body).filter((x) => x.q !== g.question), published: g.published, updated: g.updated, trail, app: tool?.name, image: art, sources: g.sources })}
       trail={trail}
       title={g.title}
       lead={g.answer}

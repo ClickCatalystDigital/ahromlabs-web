@@ -46,9 +46,9 @@ sources:
     publisher: Ohio Board of Building Standards (via Cornell LII)
     url: https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-4101-4-3-01
     date: 2024-07-01
-  - title: "Mich. Admin. Code R. 339.5204, ASME code adoption by reference (eff. 3 May 2023)"
-    publisher: Michigan Department of Licensing and Regulatory Affairs (via Cornell LII)
-    url: https://www.law.cornell.edu/regulations/michigan/Mich-Admin-Code-R-339-5204
+  - title: "Mich. Admin. Code R 339.5204, ASME code adoption by reference (Skilled Trades Regulation Rules, eff. 3 May 2023)"
+    publisher: Michigan Department of Licensing and Regulatory Affairs (Administrative Rules System)
+    url: https://ars.apps.lara.state.mi.us/AdminCode/DownloadAdminCodeFile?FileName=R%20339.5101%20to%20R%20339.5412.pdf
     date: 2023-05-03
   - title: "16 Tex. Admin. Code § 65.2, Definitions"
     publisher: Texas Department of Licensing and Regulation (via Cornell LII)

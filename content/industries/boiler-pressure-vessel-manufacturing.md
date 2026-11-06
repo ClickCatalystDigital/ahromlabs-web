@@ -96,7 +96,7 @@ Each test certificate is identified by certificate, cast and plate number togeth
 
 The heat number and certificate are captured once, when a plate is received, and every piece cut from it inherits them automatically — nobody re-types them at the cutting table. A non-conformance can be dispositioned as rework, repair, scrap or use-as-is: rework and repair open a new job card that carries the lineage of the original, and scrap or use-as-is can't be saved without a written justification. Hold points come from the work order's own route — a step marked as a quality checkpoint holds the job until QC releases it — so there is no separate inspection plan to keep in step with production.
 
-Shops that also build to the ASME Code need the same trail for its material rules: see [material test reports and heat numbers](/asme/mtr), and [ASME vs IBR 2026](/asme/asme-vs-ibr) for where the two codes meet.
+Shops that also build to the ASME Code need the same trail for its material rules: see [material test reports and heat numbers](/asme/mtr), and [ASME vs IBR 2026](/asme/asme-vs-ibr) for where the two codes meet. Exporters to the US can start with what a buyer there checks ([buying ASME equipment from India](/asme/buying-from-india)), the [sections of the ASME Code](/asme/bpvc-sections) and [Section IX welder qualification](/asme/section-ix).
 
 ## How does work move between departments without chasing people?
 
