@@ -44,4 +44,16 @@ linked, since a new page needs its own sources.
 
 ## Status
 
-Filled in after each batch: batch, commit, what is unverified.
+Done, 7 Nov 2026, not deployed:
+
+| Group | Commit | Unverified |
+|---|---|---|
+| ERP, 11 pages (batch 15) | f23519e | Vendor-product facts in the selection matrix are as each vendor's documentation said on 25 Oct |
+| BOQ and IBR, 9 pages (16–17) | 76eff81 | IS 1200 figures are from older public editions (the page says so) |
+| AI assistant, 7 pages (18) | a79903a | Datum AI corrected to "not yet live at the contractor" |
+| Glossary, 15 pressure terms (19) | 214c817 | Code paragraph values, see `asme-code-check.md` |
+| Glossary, 15 billing and tax terms (20) | 652ba6d | US state figures as in the construction guides |
+| Glossary, 10 ERP and AI terms (21) | (this commit) | none |
+
+Terms with no body (bill-of-materials, work-order, job-traveler, finite-capacity-scheduling, pattern vocabulary) are
+left without pages, as planned.
