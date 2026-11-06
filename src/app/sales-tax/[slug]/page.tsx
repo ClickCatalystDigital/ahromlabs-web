@@ -78,7 +78,7 @@ function ThresholdTable() {
               <td className="py-2 pr-4 whitespace-nowrap text-foreground-secondary">
                 {s.sales === null ? "No statewide sales tax" : `${usd(s.sales)}${s.orders ? ` ${s.join} ${s.orders} transactions` : ""}`}
               </td>
-              <td className="py-2 text-foreground-secondary">{s.rule || "No threshold listed"}</td>
+              <td className="py-2 text-foreground-secondary">{s.rule ? (s.source ? `${s.source.label}: "${s.rule}"` : s.rule) : "No threshold listed"}</td>
             </tr>
           ))}
         </tbody>

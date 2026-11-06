@@ -3,6 +3,12 @@ kind: sales-tax
 slug: sales-tax-in-erp
 group: systems
 title: "How an ERP should handle US sales tax"
+related:
+  - /manufacturing/quickbooks-integration
+  - /services/custom-erp-crm
+  - /industries/boiler-pressure-vessel-manufacturing
+  - /manufacturing/erp-requirements-checklist
+  - /sales-tax/use-tax
 question: "What should an ERP or order system do about sales tax?"
 answer: >
   It should work out the tax from the ship-to address and each item's taxability, hold every customer's exemption
@@ -12,9 +18,13 @@ answer: >
 description: "What an ERP or order system must record for US sales tax: ship-to sourcing, item taxability, certificates, sales by state for nexus, use tax and returns."
 domain: [sales-tax, erp]
 published: 2026-11-03
-updated: 2026-11-03
-checked: 2026-11-03
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
+  - title: Sales and Use Tax
+    publisher: Texas Comptroller of Public Accounts
+    url: https://comptroller.texas.gov/taxes/sales/
+    date: "2026-11-07"
   - title: Remote Sellers
     publisher: Texas Comptroller of Public Accounts
     url: https://comptroller.texas.gov/taxes/sales/remote-sellers.php
@@ -28,6 +38,15 @@ sources:
     url: https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs
     date: "2026-11-03"
 checks:
+  - reg: Texas Comptroller, Remote Sellers (single local use tax rate)
+    doc: tx-remote
+    quote: "Businesses located in Texas are not remote sellers and cannot use the single local use tax rate"
+  - reg: Texas Comptroller, Sales and Use Tax
+    doc: tx-sales
+    quote: "Texas imposes a 6.25 percent state sales and use tax on all retail sales, leases and rentals of most goods, as well as taxable services"
+  - reg: Texas Comptroller, Sales and Use Tax
+    doc: tx-sales
+    quote: "Local taxing jurisdictions (cities, counties, special purpose districts and transit authorities) can also impose up to 2 percent"
   - reg: Texas Comptroller, Remote Sellers
     doc: tx-remote
     quote: "Local use tax is due at the location in Texas where the order is shipped or delivered when the order is not received or fulfilled from a Texas place of business."
@@ -69,7 +88,17 @@ amount to a rate service and store the answer on the invoice line: the jurisdict
 certified service providers in the [Streamlined Sales Tax](/sales-tax/streamlined-sales-tax) program do exactly
 this, free in member states for remote sellers who qualify; commercial rate services do it everywhere.
 
+## Can a remote seller use one Texas rate instead of every local rate?
+
+Yes: Texas lets remote sellers collect a single local use tax rate, 1.75% when checked, instead of each
+destination's local tax, on top of the 6.25% state rate. Texas local taxes can reach 2%, so the choice matters per
+shipment. A worked example with a made-up $10,000 shipment into a Texas city whose local taxes total 2%: at the
+destination's own rate, 6.25% + 2% = 8.25%, or $825; at the single local rate, 6.25% + 1.75% = 8.00%, or $800. A
+business located in Texas can't use the single rate, and the system has to know which rate the seller has chosen.
+
 ## What has to be on the customer record?
+
+The customer's certificates, its ship-to addresses, and a rule that taxes any order with no certificate behind it:
 
 - Each [resale or exemption certificate](/sales-tax/resale-certificates): the states it covers, the exemption, the
   date received and any renewal date, and the file itself.
@@ -103,9 +132,14 @@ tax itself from the ship-to address, and charges none for a state it isn't set u
 system did charge it. Set up the same states in both, and compare the two totals on every invoice. Details, from our
 own sandbox tests: [connecting QuickBooks Online](/manufacturing/quickbooks-integration).
 
-## How to test a vendor's system
+That is how our US demos work today: the [boiler demo](/industries/boiler-pressure-vessel-manufacturing) and the
+electronics distribution demo send each invoice line as taxable or not with the ship-to address, and QuickBooks
+works out the tax, against an Intuit sandbox company. Neither demo holds customers' exemption certificates, reports
+sales by state or accrues use tax yet; those are the parts we'd build for a client that collects in several states.
 
-Ask for these on your own data, in the demo:
+## How do you test a vendor's sales tax handling?
+
+With six checks on your own data, in the demo:
 
 1. An invoice to a ship-to address in a city with a district tax: are the jurisdictions shown?
 2. The same customer shipping to a state where you hold their certificate, and one where you don't.

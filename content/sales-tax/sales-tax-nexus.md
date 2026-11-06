@@ -3,17 +3,35 @@ kind: sales-tax
 slug: sales-tax-nexus
 group: nexus
 title: "What is sales tax nexus? Physical and economic nexus"
+related:
+  - /sales-tax/economic-nexus-thresholds
+  - /sales-tax/streamlined-sales-tax
+  - /services/custom-erp-crm
+  - /industries/interior-design-and-furniture
+  - /manufacturing/distributor-inventory-control
 question: "What is sales tax nexus, and when do I have it in another state?"
 answer: >
   Sales tax nexus is the link with a state that obliges you to register there, collect its sales tax and file
   returns. You have it through physical presence, such as an office, warehouse, staff or inventory in the state,
   or, since South Dakota v. Wayfair in 2018, through economic nexus: sales into the state above its threshold.
-description: "What sales tax nexus is: physical presence, economic nexus after South Dakota v. Wayfair, when a remote seller must register, and marketplace sales."
+description: "What sales tax nexus is: physical presence, economic nexus after South Dakota v. Wayfair (2018), when a remote seller must register, and marketplace sales."
 domain: [sales-tax, nexus]
 published: 2026-11-03
-updated: 2026-11-03
-checked: 2026-11-03
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
+  - title: "South Dakota v. Wayfair, Inc., 585 U.S. 162 (2018), opinion text"
+    publisher: Legal Information Institute, Cornell Law School
+    url: https://www.law.cornell.edu/supremecourt/text/17-494
+    date: "2026-11-07"
+  - title: Docket for No. 17-494
+    publisher: Supreme Court of the United States
+    url: https://www.supremecourt.gov/docket/docketfiles/html/public/17-494.html
+    date: "2026-11-05"
+  - title: "Acts of the General Assembly 2026, Chapter 161 (HB 757)"
+    publisher: Kentucky General Assembly
+    url: https://apps.legislature.ky.gov/law/acts/26RS/documents/0161.pdf
+    date: "2026-11-07"
   - title: South Dakota v Wayfair
     publisher: Streamlined Sales Tax Governing Board
     url: https://www.streamlinedsalestax.org/for-businesses/remote-seller-faqs/scotus-ruling---south-dakota-v-wayfair
@@ -35,6 +53,15 @@ sources:
     url: https://cdtfa.ca.gov/industry/wayfair/
     date: "2026-11-03"
 checks:
+  - reg: South Dakota v. Wayfair, syllabus (Cornell LII)
+    doc: wayfair-lii
+    quote: "Because the physical presence rule of Quill is unsound and incorrect"
+  - reg: South Dakota v. Wayfair, syllabus (Cornell LII)
+    doc: wayfair-lii
+    quote: "deliver more than $100,000 of goods or services into the State or engage in 200 or more separate transactions for the delivery of goods or services into the State."
+  - reg: Kentucky Acts 2026, ch. 161, Section 16 (KRS 139.340)
+    doc: ky-ch161
+    quote: "shall register for a sales and use tax permit and collect the tax imposed by KRS 139.310 from the purchaser no later than the first day of the calendar month that is at the most sixty (60) days after the"
   - reg: Streamlined Sales Tax Governing Board, South Dakota v Wayfair
     doc: sst-wayfair
     quote: "that states can require sellers to collect and remit sales or use tax on sales delivered to locations within their state regardless of physical presence."
@@ -91,18 +118,25 @@ Two cases catch manufacturers and distributors out:
 
 A physical presence means registering whatever the amount of sales. The thresholds only apply to remote sellers.
 
-## What changed with South Dakota v. Wayfair?
+## What did the Supreme Court decide in South Dakota v. Wayfair?
 
-Before 2018, a state could only make a seller collect if it had a physical presence there. In South Dakota v.
-Wayfair the Supreme Court ruled that a state can require collection on sales delivered into it regardless of
-physical presence. Every state with a sales tax now has an economic nexus rule: most at $100,000 of sales a year,
+That a state can make a seller collect its tax on sales delivered into it even with no physical presence there. The
+Court decided the case on June 21, 2018, overruling its earlier physical-presence rule (Quill, 1992, and National
+Bellas Hess, 1967), which it called "unsound and incorrect" in the
+[opinion](https://www.law.cornell.edu/supremecourt/text/17-494) ([docket](https://www.supremecourt.gov/docket/docketfiles/html/public/17-494.html)).
+The South Dakota law it upheld covered sellers that each year deliver more than $100,000 of goods or services into the
+state or make 200 or more separate sales into it, and the Court pointed to the state's membership of the Streamlined
+Sales and Use Tax Agreement as one reason the law didn't burden small sellers unduly. Every state with a sales tax now has an economic nexus rule: most at $100,000 of sales a year,
 some with a transaction count as well. See [every state's threshold, with a checker](/sales-tax/economic-nexus-thresholds).
 
 ## When do you have to start collecting?
 
 Each state sets its own start. Texas gives an example: a remote seller whose Texas revenue passes $500,000 over
 twelve months must get a permit and start collecting no later than the first day of the fourth month after the
-month it passed. Other states expect registration from the day you pass, or from the start of the next month or
+month it passed: a seller whose rolling twelve months pass $500,000 in July 2026 must collect by November 1, 2026.
+Kentucky, since August 1, 2026, wants registration and collection by the first day of the month at most 60 days after
+the threshold is reached, per its [2026 act](https://apps.legislature.ky.gov/law/acts/26RS/documents/0161.pdf).
+Other states expect registration from the day you pass, or from the start of the next month or
 quarter. Look up the state's own page before the threshold is near, not after.
 
 If you are already registered and collecting in a state, keep doing so: the Streamlined Sales Tax Governing Board's
@@ -115,7 +149,9 @@ Texas does not require a permit for a seller that sells only through a marketpla
 marketplace sales count toward your own threshold differs by state; the state's rule says. Keep the marketplace's
 reports either way: Texas asks sellers to keep records of all marketplace sales for at least four years.
 
-## What to do once you know where you have nexus
+## What should you do once you have nexus in a state?
+
+Register, collect the paperwork from tax-free buyers, and keep watching your sales by state:
 
 1. List the states where you have a physical presence, including stock held by others and crews working there.
 2. Run your last 12 months of sales by ship-to state through the [nexus checker](/sales-tax/economic-nexus-thresholds).

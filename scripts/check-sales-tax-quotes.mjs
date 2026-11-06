@@ -24,6 +24,13 @@ const DOCS = {
   "ca-pub103": `CDTFA - Publication 103 Sales for Resale ${D}.txt`,
   "tx-3.291": "Texas 34 TAC 3.291 Contractors 2026-11-05.txt",
   "ca-1521": "CDTFA Regulation 1521 Construction contractors 2026-11-05.txt",
+  "tx-sales": "Texas Comptroller - Sales and Use Tax 2026-11-07.txt",
+  "tx-mfg-1107": "Texas Comptroller - Manufacturing Exemptions 2026-11-07.txt",
+  "ca-mfg-buy": "CDTFA - Manufacturing exemption purchasers 2026-11-07.txt",
+  "ny-nexus": "New York - Registration for businesses with no physical presence 2026-11-07.txt",
+  "wayfair-lii": "Cornell LII - South Dakota v Wayfair opinion 2026-11-07.txt",
+  "ky-hb757": "Kentucky General Assembly - 2026 HB 757 2026-11-07.txt",
+  "ky-ch161": "Kentucky Acts 2026 Chapter 161 (HB 757) 2026-11-07.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(DIR, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {
@@ -39,7 +46,8 @@ const quotes = JSON.parse(fs.readFileSync("src/lib/content-data.generated.json",
   .flatMap((e) => (e.checks ?? []).map((c) => ({ where: `${e.slug}, ${c.reg}`, doc: c.doc, quote: c.quote })));
 // The checker's state rules, read from the source file (this script is plain Node).
 const calc = fs.readFileSync("src/lib/sales-tax-calc.ts", "utf-8");
-for (const [, code, rule] of calc.matchAll(/code: "([A-Z]{2})"[^\n]*?rule: "((?:[^"\\]|\\.)*)"/g)) if (rule) quotes.push({ where: `nexus checker, ${code}`, doc: "sst-chart", quote: rule.replace(/\\"/g, '"') });
+// A rule that names its own source (`source: { …, doc: "key" }`) is checked against that text instead of the chart.
+for (const [, code, rule, doc] of calc.matchAll(/code: "([A-Z]{2})"[^\n]*?rule: "((?:[^"\\]|\\.)*)"(?:[^\n]*?doc: "([a-z0-9-]+)")?/g)) if (rule) quotes.push({ where: `nexus checker, ${code}`, doc: doc ?? "sst-chart", quote: rule.replace(/\\"/g, '"') });
 
 const missing = [];
 for (const q of quotes) {

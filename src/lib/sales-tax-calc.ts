@@ -1,5 +1,5 @@
 // Economic nexus thresholds for remote sellers, by state, from the Streamlined Sales Tax Governing Board's
-// "Remote Seller State Guidance" chart (streamlinedsalestax.org), read on 3 Nov 2026. `rule` is each state's
+// "Remote Seller State Guidance" chart (streamlinedsalestax.org), read on 5 Nov 2026. `rule` is each state's
 // current line in that chart, quoted word for word (scripts/check-sales-tax-quotes.mjs checks it against the saved
 // text). `sales` and `orders` are the numbers in that line; `join` says whether a seller needs either or both.
 // No imports, so the checker's browser code stays small.
@@ -8,7 +8,7 @@
 // retail or taxable) and which period (previous or current year, last 12 months); the quoted rule says which,
 // and the checker shows it beside every answer instead of modelling each state's period.
 
-export const NEXUS_CHECKED = "2026-11-03";
+export const NEXUS_CHECKED = "2026-11-07";
 
 export type NexusState = {
   code: string;
@@ -17,6 +17,9 @@ export type NexusState = {
   orders?: number;
   join?: "or" | "and";
   rule: string;
+  // Where the chart is out of date, the rule quotes the state's own text instead: who says it, and the saved
+  // text's key in scripts/check-sales-tax-quotes.mjs.
+  source?: { label: string; doc: string };
 };
 
 export const NEXUS_STATES: NexusState[] = [
@@ -37,7 +40,8 @@ export const NEXUS_STATES: NexusState[] = [
   { code: "IN", name: "Indiana", sales: 100000, rule: "Effective 1/1/24 Gross revenue from sales exceeding $100,000 in the previous or current calendar year." },
   { code: "IA", name: "Iowa", sales: 100000, rule: "Gross revenue from sales of $100,000 in previous or current calendar year" },
   { code: "KS", name: "Kansas", sales: 100000, rule: "Cumulative gross receipts in excess of $100,000 in current or preceding calendar year" },
-  { code: "KY", name: "Kentucky", sales: 100000, orders: 200, join: "or", rule: "Gross receipts of $100,000 or more or 200 or more sales based on previous or current calendar year sales" },
+  // HB 757 (2026) dropped Kentucky's 200-transaction test from August 1, 2026; the Board's chart still lists it.
+  { code: "KY", name: "Kentucky", sales: 100000, rule: "provided to a purchaser in this state in the previous calendar year or current calendar year exceeds one hundred thousand dollars ($100,000).", source: { label: "Kentucky Acts 2026, ch. 161 (HB 757), in force August 1, 2026", doc: "ky-ch161" } },
   { code: "LA", name: "Louisiana", sales: 100000, rule: "Deliver more than $100,000 of goods or services into the state." },
   { code: "ME", name: "Maine", sales: 100000, orders: 200, join: "or", rule: "Gross revenues from Maine sales of tangible personal property, products transferred electronically, or taxable services exceeded $100,000 or at least 200 separate transactions during the current or previous calendar year" },
   { code: "MD", name: "Maryland", sales: 100000, orders: 200, join: "or", rule: "Gross revenue exceeds $100,000 or 200 or more separate transactions during the previous or current calendar year" },

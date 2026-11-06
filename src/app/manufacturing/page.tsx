@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description: lead },
 };
 
+// Each hub section heading is the buyer's question its guides answer (the group names stay as labels elsewhere).
+const GROUP_QUESTIONS: Record<string, string> = {
+  choosing: "How do you choose a system for a job shop or distributor?",
+  quickbooks: "How do you make QuickBooks work for a manufacturer?",
+  planning: "How do you plan and track the shop floor?",
+  inventory: "How should a distributor control inventory?",
+};
+
 const TOOLS = [
   { slug: "quickbooks-job-costing", title: "Job cost calculator: estimated vs actual", text: "Material, setup, run time, outside processing, scrap and rework for one job, side by side with the quote, and the hours factor to correct the next quote." },
   { slug: "production-scheduling-software", title: "Finite schedule demo", text: "Five jobs on three machines: switch to two shifts or drop in a rush order and see which jobs go late, and why." },
@@ -39,9 +47,9 @@ export default function ManufacturingHub() {
       art={art?.src}
       artAlt={art?.alt}
     >
-      <GuideH2>What it covers</GuideH2>
+      <GuideH2>What does production management software cover?</GuideH2>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
-        Most small manufacturers start with QuickBooks and spreadsheets, and that works until the same job lives in
+        Everything that happens to a job between the quote and the invoice, on one record. Most small manufacturers start with QuickBooks and spreadsheets, and that works until the same job lives in
         four places: the quote in one file, the schedule on a whiteboard, the hours on paper travelers and the cost
         in QuickBooks weeks later. Production management software puts those on one record per job:
       </p>
@@ -54,7 +62,7 @@ export default function ManufacturingHub() {
         <li><strong className="font-medium text-foreground">Accounting:</strong> invoices, bills and inventory value posted to QuickBooks or another ledger.</li>
       </ul>
 
-      <GuideH2>Free tools</GuideH2>
+      <GuideH2>Which free tools can you use today?</GuideH2>
       <ul className="mt-6 divide-y divide-line border-y border-line">
         {TOOLS.map((t) => (
           <li key={t.slug} className="py-6">
@@ -72,7 +80,7 @@ export default function ManufacturingHub() {
         </li>
       </ul>
 
-      <GuideH2>AI in the shop</GuideH2>
+      <GuideH2>Where does AI help in the shop?</GuideH2>
       <p className="mt-4 leading-relaxed text-foreground-secondary">
         AI helps around these systems when it answers from your own records and leaves decisions to people: what&apos;s
         late, what&apos;s short, what a job cost. See{" "}
@@ -85,7 +93,7 @@ export default function ManufacturingHub() {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (
           <div key={group.slug}>
-            <GuideH2>{group.name}</GuideH2>
+            <GuideH2>{GROUP_QUESTIONS[group.slug] ?? group.name}</GuideH2>
             <p className="mt-4 leading-relaxed text-foreground-secondary">{group.intro}</p>
             <ul className="mt-6 divide-y divide-line border-y border-line">
               {list.map((g) => (
@@ -98,6 +106,18 @@ export default function ManufacturingHub() {
           </div>
         );
       })}
+      <GuideH2>Can you see it working on sample jobs?</GuideH2>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        Yes, in two US demos on sample companies, connected to a QuickBooks Online sandbox company. The{" "}
+        <Link href="/industries/boiler-pressure-vessel-manufacturing" className="text-link focus-ring">boiler and pressure vessel</Link>{" "}
+        demo shows jobs, job cards with logged time, capacity per work center and each job&apos;s cost against its plan; the{" "}
+        <Link href="/industries/electronics-component-trading" className="text-link focus-ring">electronic components</Link>{" "}
+        demo shows reel-level stock in two stores, reserved per customer order and checked against the PO at dispatch. Both
+        are built on our{" "}
+        <Link href="/services/inventory-and-reservations" className="text-link focus-ring">inventory and reservations</Link>{" "}
+        work, and both leave sales tax to QuickBooks: see{" "}
+        <Link href="/sales-tax" className="text-link focus-ring">US sales tax for manufacturers</Link>.
+      </p>
     </ManufacturingPage>
   );
 }

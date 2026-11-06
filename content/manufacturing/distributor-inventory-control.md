@@ -4,6 +4,12 @@ slug: distributor-inventory-control
 group: inventory
 title: "Inventory control for distributors: counts, lots, FIFO, barcodes"
 metaTitle: "Distributor inventory control: counts, lots, FIFO, barcodes"
+related:
+  - /services/inventory-and-reservations
+  - /industries/electronics-component-trading
+  - /notes/reels-boxes-and-two-stores
+  - /systems/material-traceability
+  - /manufacturing/quickbooks-online-inventory
 question: "What inventory control does a small US distributor need?"
 answer: >
   Four things: cycle counts that check a few bins every day instead of one shutdown count a year; lot or serial
@@ -13,9 +19,13 @@ answer: >
 description: "Inventory control for US distributors: cycle counting, lot and serial traceability, FIFO valuation (IRS Publication 538), barcodes and GS1 numbers."
 domain: [manufacturing, inventory, distribution]
 published: 2026-11-03
-updated: 2026-11-05
-checked: 2026-11-03
+updated: 2026-11-07
+checked: 2026-11-07
 sources:
+  - title: Advanced Inventory (QuickBooks Desktop Enterprise)
+    publisher: Intuit QuickBooks
+    url: https://quickbooks.intuit.com/desktop/enterprise/advanced-inventory/
+    date: "2026-11-06"
   - title: "Publication 538, Accounting Periods and Methods"
     publisher: Internal Revenue Service
     url: https://www.irs.gov/publications/p538
@@ -25,6 +35,12 @@ sources:
     url: https://www.gs1us.org/upcs-barcodes-prefixes/how-to-get-a-upc-barcode
     date: "2026-11-03"
 checks:
+  - reg: Intuit, Desktop Enterprise Advanced Inventory
+    doc: intuit-adv-inv
+    quote: "Track inventory your way with three levels of location tracking (e.g., row, shelf, and bin; section, area, pallet)."
+  - reg: Intuit help, serial or lot numbers (QuickBooks Desktop Enterprise)
+    doc: intuit-lots
+    quote: "QuickBooks Desktop Enterprise lets you track inventory with serial numbers, lot numbers, with expiration dates when you turn on Advanced Inventory"
   - reg: IRS Publication 538, inventories (FIFO)
     doc: irs-538
     quote: "The FIFO (first-in first-out) method assumes the items you purchased or produced first are the first items you sold, consumed, or otherwise disposed of."
@@ -36,17 +52,21 @@ checks:
     quote: "Barcodes from GS1 identify your company as the brand owner of that product, which is a valuable piece of information that retailers look for!"
 ---
 
-## Cycle counting instead of one annual count
+## How does cycle counting replace the annual count?
 
-An annual physical count shuts the warehouse for a day or two and is wrong again within a week. Cycle counting
-counts a small set of locations every day, so every item is counted several times a year and errors are found while
-someone still remembers why.
+By counting a small set of locations every day, so every item is counted several times a year and errors are found
+while someone still remembers why. An annual physical count shuts the warehouse for a day or two and is wrong again
+within a week.
 
 | Class | Share of items (typical) | Count | Why |
 |---|---|---|---|
 | A | The few items that are most of the dollar value | Monthly or more | Errors here cost the most |
 | B | The middle | Quarterly | |
 | C | The many cheap items | Once or twice a year | Errors cost little |
+
+How many counts is that? A made-up distributor with 1,200 items: 120 A items counted monthly (1,440 counts a year),
+360 B items quarterly (1,440) and 720 C items twice a year (1,440). That's 4,320 counts over 250 working days, about
+17 bins a day: half an hour for one person, instead of a closed warehouse.
 
 Rules that keep counts honest:
 
@@ -56,9 +76,9 @@ Rules that keep counts honest:
 - **Freeze only the bin, not the warehouse.** Movements into or out of the bin wait until the count is posted.
 - **Every adjustment has a reason** (damaged, miscount, mis-pick, receiving error), so the cause can be fixed.
 
-## Lot and serial traceability
+## How do lot and serial numbers help in a recall?
 
-A lot number ties a quantity to a batch from a supplier or a production run; a serial number ties one unit to its
+They turn "who got that batch?" into a lookup. A lot number ties a quantity to a batch from a supplier or a production run; a serial number ties one unit to its
 own history. Record them at receiving and again at shipping, and a recall, a warranty claim or a customer's quality
 question becomes a lookup: which customers got lot 24-117, and what else came from that supplier's batch.
 
@@ -67,9 +87,9 @@ stock held by lot in each location, picking that records which lot went into eac
 to the same lot. Material reserved for one order should be reserved by lot too; see
 [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory) for where an accounting system stops.
 
-## FIFO and other valuation methods
+## Which valuation method should a distributor use?
 
-The IRS describes FIFO (first-in first-out) as assuming the items you bought or produced first are the first sold
+Usually FIFO, chosen with your accountant and applied the same way every year. The IRS describes FIFO (first-in first-out) as assuming the items you bought or produced first are the first sold
 or used. When prices are rising, FIFO gives a lower cost of goods sold and a higher closing inventory than LIFO.
 Publication 538 also covers average cost, LIFO (which has its own rules and an election) and changing methods,
 which needs IRS consent. Pick a method with your accountant and apply it the same way every year.
@@ -77,9 +97,9 @@ which needs IRS consent. Pick a method with your accountant and apply it the sam
 FIFO as a valuation method is not the same as picking the oldest stock first. A system should do both: value stock
 by the method you chose, and suggest the oldest lot (or the soonest to expire) when picking.
 
-## Barcodes and GS1 numbers
+## Do you need GS1 barcodes?
 
-Barcodes on your own bins and locations need no registration: any internal code works. Barcodes on products you
+Only for products you sell to retailers: barcodes on your own bins and locations need no registration, and any internal code works. Barcodes on products you
 sell to retailers are different: retailers expect GS1 numbers, which identify your company as the brand owner. GS1
 US licenses either a single GTIN for a product or a GS1 Company Prefix that numbers many products, cases and
 pallets; its site gives the current prices.
@@ -88,7 +108,17 @@ Scan at the moments stock moves: receiving against the purchase order, putaway t
 packing, and counting. A scan that doesn't match (wrong item, wrong lot, over the ordered quantity) should stop the
 person there, not show up in next month's count.
 
-## What to look for in a system
+## Can QuickBooks do this, or do you need a stock system?
+
+QuickBooks Online can't: it has no bins, lots or serial numbers. QuickBooks Desktop Enterprise can with
+[Advanced Inventory](https://quickbooks.intuit.com/desktop/enterprise/advanced-inventory/), on its Platinum and Diamond
+plans: three levels of location (such as row, shelf and bin) and serial or lot numbers with expiry dates. Beyond that,
+cycle-count plans, blind counts and scanning at every movement usually mean a stock system beside QuickBooks; see
+[QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory).
+
+## What should you look for in a system?
+
+Five things, each of which you can test in a demo:
 
 - Locations and bins, with stock by lot or serial in each.
 - Cycle count plans by ABC class, blind counts and adjustment reasons.

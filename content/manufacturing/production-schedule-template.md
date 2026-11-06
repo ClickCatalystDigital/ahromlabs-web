@@ -3,6 +3,12 @@ kind: manufacturing
 slug: production-schedule-template
 group: planning
 title: "Free job shop production schedule template (Excel)"
+related:
+  - /manufacturing/production-scheduling-software
+  - /systems/routing
+  - /systems/finite-capacity-scheduling
+  - /construction/wip-schedule
+  - /manufacturing/quickbooks-job-costing
 question: "Is there a free production scheduling template in Excel for a job shop?"
 answer: >
   Yes. This free Excel template plans a job shop by machine: list each job's operations in routing order with
@@ -12,17 +18,28 @@ answer: >
 description: "A free Excel production schedule template for job shops: routings by machine, planned days, due-date checks and daily machine load against shift hours."
 domain: [manufacturing, scheduling, template]
 published: 2026-11-02
-updated: 2026-11-02
-checked: 2026-11-02
+updated: 2026-11-07
+checked: 2026-11-07
+sources:
+  - title: Machine scheduling (forum discussion)
+    publisher: Practical Machinist
+    url: https://www.practicalmachinist.com/forum/threads/machine-scheduling.393367/
+    date: 2026-11-02
+  - title: Machine scheduling software, not quite ERP (forum discussion)
+    publisher: Practical Machinist
+    url: https://www.practicalmachinist.com/forum/threads/machine-scheduling-software-not-quite-erp.386668/
+    date: 2026-11-02
 ---
 
-## Download
+## Is there a free production schedule template for a job shop?
 
-[**Job shop schedule template (Excel)**](/manufacturing/job-shop-schedule-template.xlsx), free under CC BY 4.0. It opens in Excel or Google Sheets and needs no macros.
+Yes, this one: [**Job shop schedule template (Excel)**](/manufacturing/job-shop-schedule-template.xlsx), free under CC BY 4.0. It opens in Excel or Google Sheets and needs no macros.
 
 It is filled in with the six made-up jobs from the [schedule demo](/manufacturing/production-scheduling-software), so you can see it working before you replace them with your own.
 
-## What's in it
+## What's in the template?
+
+Three sheets: machines, jobs and the daily load.
 
 | Sheet | What you enter | What it works out |
 |---|---|---|
@@ -32,7 +49,9 @@ It is filled in with the six made-up jobs from the [schedule demo](/manufacturin
 
 The machine column is a drop-down from the Machines sheet, so a typo can't create a machine that doesn't exist.
 
-## How to use it
+## How do you fill it in?
+
+Machines first, then each job's operations, then a planned day for each:
 
 1. List your machines and their shift hours.
 2. Enter each open job's operations from its [routing](/systems/routing), with the quoted hours. If your quotes are built from operations and times, copy them; that's also what [job costing](/manufacturing/quickbooks-job-costing) compares against.
@@ -42,8 +61,17 @@ The machine column is a drop-down from the Machines sheet, so a typo can't creat
 
 The sample shows the point of step 4. Three days come up red, and the welding cell on Wednesday is the real problem: 13 hours booked on an 8-hour day, which is why frame job J-103 runs late in the demo. The other two (the laser on Monday, the press brake on Tuesday, 9 hours each) are operations that run over into the next day, which the template counts on the day they start.
 
-## Its limits
+## How much can your machines take in a week?
 
+Machines × shifts × hours × days. Three machines on two 8-hour shifts, five days a week, give 3 × 2 × 8 × 5 = 240 hours
+a week, and 80 hours for each machine. The Load sheet does the same sum per machine per day: the sample's welding
+cell on Wednesday, 13 hours booked on an 8-hour day, is 162.5% of its capacity, so it shows red.
+
+## When does a spreadsheet schedule stop being enough?
+
+When more than one person plans, or when you need the later operations to move by themselves. Owners on
+[Practical Machinist](https://www.practicalmachinist.com/forum/threads/machine-scheduling.393367/) describe starting
+with a whiteboard, moving to an Excel grid of machines by day, and finding it works while one person owns it.
 A spreadsheet schedule is honest about what it is:
 
 - **One planner.** Two people editing copies of it will drift apart; owners on forums say this is where spreadsheets break.

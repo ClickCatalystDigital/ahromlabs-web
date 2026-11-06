@@ -63,7 +63,7 @@ export function NexusCheck() {
               {state.sales !== null && (
                 <p className="mt-1 text-sm text-foreground-secondary">
                   Threshold {usd(state.sales)}
-                  {state.orders ? ` ${state.join} ${state.orders} transactions` : ""}. The Board&apos;s chart:{" "}
+                  {state.orders ? ` ${state.join} ${state.orders} transactions` : ""}. {state.source ? `${state.source.label}:` : <>The Board&apos;s chart:</>}{" "}
                   &ldquo;{state.rule}&rdquo;
                 </p>
               )}
