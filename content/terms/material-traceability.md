@@ -7,7 +7,9 @@ answer: >
 domain: [operations]
 order: 6
 published: 2026-10-25
-updated: 2026-11-01
+updated: 2026-11-07
 ---
 
-For pressure parts, traceability is what lets a statutory folder show which certificate covers which part. See the [traceability requirements](/erp/requirements#quality-certificate-bank) and [material traceability, cutting and remnants](/services/material-traceability); for ASME Code work, see [material test reports and heat numbers](/asme/mtr).
+It matters because a certificate is only useful if it can be tied to the part: for ASME and IBR pressure work, an inspector checks material against its certificate by heat number, and a part whose heat number was lost when plate was cut can't be used. It breaks most often at cutting, at offcuts returned to stock, and at parts bought in.
+
+See the [traceability requirements](/erp/requirements#quality-certificate-bank), [material traceability, cutting and remnants](/services/material-traceability) and [plate remnants back into stock](/notes/plate-remnants-back-into-stock); for ASME Code work, [material test reports and heat numbers](/asme/mtr), and for IBR, [record keeping under IBR 2026](/ibr/record-keeping).

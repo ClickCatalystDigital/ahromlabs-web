@@ -9,7 +9,9 @@ answer: >
 domain: [pressure]
 order: 10
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-07
 ---
 
-A calculator and the procedure are in [the hydrostatic test guide](/asme/hydrostatic-test).
+It is the last hold point before a stamped vessel or boiler ships: the Authorized Inspector witnesses it, and the test pressure goes on the data report. Getting it wrong is easy: the pressure is measured at the top, a gauge at the bottom reads higher by the water head, and the gauge's dial must be between 1.5 and 4 times the test pressure (UG-102).
+
+A calculator, worked examples and the procedure are in [the hydrostatic test guide](/asme/hydrostatic-test). Under IBR in India the hydraulic test record goes with the [registration documents](/ibr/registration-documents).

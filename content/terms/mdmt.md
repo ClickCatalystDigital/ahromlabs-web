@@ -8,7 +8,9 @@ answer: >
 domain: [pressure]
 order: 2
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-07
 ---
 
-It is stamped on the nameplate with the MAWP. The exemption curves and when testing is needed are in [MDMT and impact testing](/asme/impact-testing).
+It matters to a buyer because setting it too warm is unsafe and setting it too cold forces impact testing nobody needed. It goes on the nameplate and the data report with its coincident pressure, and it decides which plate to buy: steel on a better toughness curve, such as normalized plate, is exempt to colder temperatures under UCS-66.
+
+The exemption curves and when testing is needed are in [MDMT and impact testing](/asme/impact-testing); how it sits beside MAWP is in [MAWP and design pressure](/asme/mawp).

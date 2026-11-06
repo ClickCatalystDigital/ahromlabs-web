@@ -8,7 +8,9 @@ answer: >
 domain: [pressure]
 order: 5
 published: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-07
 ---
 
-Which changes need a new PQR is in [essential variables](/asme/essential-variables).
+It matters because an Authorized Inspector traces every weld back to one: weld number, welder, WPS, then the PQR behind it. A shop can't borrow another company's PQR, and changing an essential variable (P-number, F-number, thickness range, post-weld heat treatment) beyond what it covers means welding and testing a new coupon. ASME publishes a free suggested format, QW-483.
+
+Which changes need a new PQR is in [essential variables](/asme/essential-variables); how it links to the WPS and the welder's WPQ is in [WPS vs PQR vs WPQ](/asme/wps-pqr-wpq). Keeping those links per job is part of [material traceability](/services/material-traceability).
