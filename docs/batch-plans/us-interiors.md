@@ -11,15 +11,15 @@ Designer, Houzz Pro, Programa or DesignFiles. Secondary: custom furniture and mi
 
 **Demo facts** come only from `savistar-ops` branch `us-demo` as it is on 7 Nov 2026 (SYSTEM.md, `lib/db.js`,
 `scripts/demo/seed-data-us.mjs`, `lib/quickbooks*.js`). What it has: quotes from an item library with rooms, optional
-lines, revisions and payment stages (percent of the quote) that become draft invoices on acceptance; invoices with a
+revisions and payment stages (percent of the quote) that become draft invoices on acceptance; invoices with a
 sales tax rate per line (Texas 8.25% on furniture and materials, none on design fees and labor in the seed); vendor
 POs (one item, qty, rate, project link) with partial deliveries and returns (outstanding = ordered − delivered +
 returned) and bulk mark delivered; a freight rate card per route with overcharge flags; project profit (billed −
 materials − estimated labor) in Atelier AI; QuickBooks Online: invoices, client payments (unapplied) and completed POs
 as bills. What it **lacks**, so every page says "we'd build it": a markup or cost-vs-sell field on a line, vendor
 acknowledgements and expected ship dates, vendor deposits, back-order status, a receiving-warehouse step, a client
-deposit tied to a PO, a product budget per room, client approval of individual items, and vendor payments to
-QuickBooks.
+deposit tied to a PO, a product budget per room, client approval of individual items, optional and variation lines (release 2 in
+`QUOTATIONS-PLAN.md`, not built), and vendor payments to QuickBooks.
 
 ---
 
@@ -73,6 +73,18 @@ Score = volume (1–5) × intent (1–5) × answer from the demo (1–3).
 
 All six are written. Order of writing: 3, 4, 2, 6, 1, then 5.
 
+**Added on Pujan's ask (7 Nov), to round out the knowledge base:** trade accounts and designer discounts (#7, from
+Arhaus's published trade terms, the only retailer whose terms could be read in full), the interior design contract
+(`/interiors/interior-design-contract`, from ASID's 2018 contract forms guide; autocomplete: "interior design contract
+template", "retainer agreement") and GST/HST for Canadian design firms (`/interiors/canada-gst-hst-for-interior-designers`,
+from the CRA; the ICP includes Canada). Two glossary terms: `/systems/cost-plus`, `/systems/cutting-for-approval`.
+
+**Next candidates** (not written): 1099s for installers and workrooms (IRS Form 1099-NEC instructions), white-glove
+delivery and receiving-warehouse terms (needs a warehouse's published terms), custom furniture and millwork shop
+drawings and approvals (New York TSB-A-08(30)S taxes millwork shop drawings), provincial PST on design services
+(British Columbia, Saskatchewan, Manitoba, Quebec), and per-state pages for the most-searched sales tax states
+("interior design sales tax new york / california").
+
 ## Where the pages go
 
 A new **`/interiors`** section (kind `interiors`), North America only (`NA_ONLY`), wired like `/sales-tax`: hub
@@ -101,6 +113,9 @@ repeating it. The US interiors industry page and `/sales-tax/sales-tax-in-erp`, 
 | `houzz-po` | Houzz Pro help, Turn on purchase orders in QuickBooks Online | https://pro.houzz.com/pro-help/r/how-to-turn-on-purchase-orders-in-your-quickbooks-online | QuickBooks |
 | `ny-tb-st-400` | New York Tax Bulletin ST-400, Interior decorating and design services | https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/inte_deco_and_design_serv.htm | sales tax |
 | `ca-pub35-fees` | CDTFA Publication 35, Designer fees and charges related to the sale of merchandise | https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm | sales tax, charge |
+| `sd-accounting` | Studio Designer, Accounting software for interior designers | https://www.studiodesigner.com/accounting/ | QuickBooks |
+| `arhaus-terms`, `arhaus-faq` | Arhaus, Trade program terms and conditions; Trade program FAQs | https://www.arhaus.com/pages/arhaus-trade-program-terms-conditions , https://arhaus.com/pages/trade-program-faq | trade |
+| `cra-charge`, `cra-rates`, `cra-place`, `cra-register` | CRA: Charge and collect the GST/HST; GST/HST calculator and rates; Memoranda 3-3-3 and 3-3-6; When to register | canada.ca (URLs in the page's sources) | Canada |
 | `ca-pub35-buy` | CDTFA Publication 35, Purchases, resale certificates and use tax | https://cdtfa.ca.gov/formspubs/pub35/purchases-resale-certificates-and-use-tax.htm | sales tax |
 | `tx-96-259` | Texas Comptroller, Taxable Services (Pub 96-259) | https://comptroller.texas.gov/taxes/publications/96-259.php | sales tax |
 | `tx-94-143` | Texas Comptroller, Draftsmen and Designers (Pub 94-143) | https://comptroller.texas.gov/taxes/publications/94-143.php | sales tax |
