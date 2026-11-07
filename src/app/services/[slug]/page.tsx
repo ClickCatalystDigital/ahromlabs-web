@@ -11,6 +11,7 @@ import { ServiceDetail } from "@/components/ServiceDetail";
 import { families, services, servicesIn, serviceUrl, familyUrl, type Family, type Service, artAlt } from "@/lib/services";
 import { servicePageGraph, serviceFaqGraph, jsonLd } from "@/lib/schema";
 import { getContent } from "@/lib/content";
+import { relatedLinks } from "@/lib/related";
 import { seoTitle, metaDescription } from "@/lib/seo";
 import { MarketPricing } from "@/components/MarketPricing";
 import { marketsFor, only, say, type MarketCode } from "@/lib/markets";
@@ -71,13 +72,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
   const siblings = family ? servicesIn(family) : [];
   const next = found.kind === "service" ? siblings[siblings.indexOf(found.service) + 1] : undefined;
   // Deeper guides for this service; a missing one fails the build here rather than shipping a dead link.
-  const guides = (found.kind === "service" ? found.service.guides ?? [] : []).map((href) => {
-    const [, hub, slug] = href.split("/");
-    const kind = ({ manufacturing: "manufacturing", "ai-assistant": "ai-assistant", asme: "asme", "sales-tax": "sales-tax" } as const)[hub as "manufacturing"];
-    const entry = getContent(kind).find((e) => e.slug === slug);
-    if (!entry) throw new Error(`services.ts: ${found.kind === "service" ? found.service.slug : ""} lists guide ${href}, which doesn't exist`);
-    return { href, title: entry.title };
-  });
+  const guides = relatedLinks(found.kind === "service" ? found.service.guides : [], `services.ts: ${slug}`);
   const crumbs = [
     { name: "Services", path: "/services" },
     ...(family ? [{ name: family.name, path: familyUrl(family) }] : []),
@@ -187,7 +182,7 @@ export default async function ServiceOrFamilyPage(props: PageProps<"/services/[s
                     built for, and (for the whole system) its parts. */}
                 <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
                   {guides.length > 0 && (
-                    <div {...only(guides.every((g) => marketsFor(g.href)?.join() === "NA") ? ["NA"] : undefined)}>
+                    <div {...only(guides.some((g) => !marketsFor(g.href)) ? undefined : [...new Set(guides.flatMap((g) => marketsFor(g.href)!))])}>
                       <p className="text-sm font-medium text-foreground-secondary">Guides</p>
                       <ul className="mt-3 space-y-2">
                         {guides.map((g) => (

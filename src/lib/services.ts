@@ -142,7 +142,7 @@ export const layers: Layer[] = [
 export const services: Service[] = [
   {
     slug: "custom-erp-crm",
-    guides: ["/manufacturing/job-shop-erp", "/manufacturing/quickbooks-for-manufacturing", "/manufacturing/custom-vs-off-the-shelf-erp", "/sales-tax/sales-tax-in-erp"],
+    guides: ["/manufacturing/job-shop-erp", "/manufacturing/quickbooks-for-manufacturing", "/manufacturing/custom-vs-off-the-shelf-erp", "/sales-tax/sales-tax-in-erp", "/erp/selection-matrix", "/erp/tally-vs-custom-erp", "/erp/implementation-plan"],
     name: "Custom ERP, CRM and operations systems",
     plainName: "One system for the whole business, from enquiry to dispatch",
     shortName: "Custom ERP",
@@ -184,6 +184,7 @@ export const services: Service[] = [
   },
   {
     slug: "compliance-accounting",
+    guides: ["/erp/compliance", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts", "/systems/e-invoice", "/systems/reverse-charge"],
     name: "GST, TDS and statutory compliance, built in",
     plainName: "GST returns and TDS, prepared from the work you already enter",
     shortName: "GST and TDS",
@@ -226,6 +227,7 @@ export const services: Service[] = [
   },
   {
     slug: "tally-integration",
+    guides: ["/erp/tally-migration", "/erp/tally-vs-custom-erp", "/systems/data-migration"],
     name: "TallyPrime integration for cloud apps",
     plainName: "Your software and Tally in sync, with no double entry",
     shortName: "Tally sync",
@@ -265,6 +267,7 @@ export const services: Service[] = [
   },
   {
     slug: "multi-company-finance",
+    guides: ["/erp/compliance", "/systems/role-based-access", "/systems/audit-trail", "/manufacturing/quickbooks-vs-erp"],
     name: "Multi-company finance and role-scoped access",
     plainName: "Sister concerns, one set of books, and staff see only their part",
     shortName: "Group companies",
@@ -301,7 +304,7 @@ export const services: Service[] = [
   },
   {
     slug: "custom-ai-assistant",
-    guides: ["/ai-assistant/ai-in-erp"],
+    guides: ["/ai-assistant/ai-in-erp", "/ai-assistant/how-it-works", "/ai-assistant/data-safety", "/ai-assistant/construction-contractors", "/systems/grounding-check"],
     name: "Custom AI assistant over your business data",
     plainName: "An assistant built on your own records that never invents a number",
     shortName: "AI assistant",
@@ -337,7 +340,7 @@ export const services: Service[] = [
   },
   {
     slug: "operational-intelligence",
-    guides: ["/manufacturing/production-scheduling-software", "/manufacturing/wip-tracking"],
+    guides: ["/manufacturing/production-scheduling-software", "/manufacturing/wip-tracking", "/construction/wip-schedule", "/construction/job-cost-per-site", "/systems/oee"],
     name: "Analytics and operational intelligence",
     plainName: "Your numbers, without anyone building an Excel sheet first",
     shortName: "Analytics",
@@ -379,6 +382,7 @@ export const services: Service[] = [
   },
   {
     slug: "document-extraction",
+    guides: ["/ai-assistant/how-it-works", "/asme/mtr", "/systems/three-way-match", "/systems/ai-hallucination"],
     name: "AI document extraction with human review",
     plainName: "Purchase bills read by AI, checked by your accountant before posting",
     shortName: "AI document reading",
@@ -417,6 +421,7 @@ export const services: Service[] = [
   },
   {
     slug: "rag-knowledge-graphs",
+    guides: ["/ai-assistant/how-it-works", "/systems/grounding-check", "/systems/text-to-sql"],
     name: "RAG and knowledge graphs over your business",
     plainName: "Search your documents and past decisions, with the source shown",
     shortName: "Document search",
@@ -455,6 +460,7 @@ export const services: Service[] = [
   },
   {
     slug: "sales-crm",
+    guides: ["/erp/selection-matrix", "/manufacturing/erp-requirements-checklist", "/boq/how-to-make-an-interior-boq", "/systems/rfq"],
     name: "Sales CRM, enquiries and quotations",
     plainName: "Every enquiry followed up, every quotation findable",
     shortName: "Sales CRM",
@@ -492,6 +498,7 @@ export const services: Service[] = [
   },
   {
     slug: "customer-portal",
+    guides: ["/manufacturing/wip-tracking", "/systems/stock-reservation", "/systems/role-based-access"],
     name: "Customer portal and online quote requests",
     plainName: "Customers follow their order and ask for quotes, without calling you",
     shortName: "Customer portal",
@@ -528,6 +535,7 @@ export const services: Service[] = [
   },
   {
     slug: "supplier-portal",
+    guides: ["/manufacturing/distributor-inventory-control", "/systems/rfq", "/systems/three-way-match"],
     name: "Supplier RFQ portal and purchase orders",
     plainName: "Suppliers quote on a link and see their PO when you accept",
     shortName: "Supplier link",
@@ -568,7 +576,7 @@ export const services: Service[] = [
       name: "Manufacturing inventory management software",
       description: "Inventory management software for manufacturers and distributors: every unit QR-labelled, scanned across locations, reserved per order, beside QuickBooks.",
     },
-    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/distributor-inventory-control", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing", "/sales-tax/economic-nexus-thresholds"],
+    guides: ["/manufacturing/quickbooks-online-inventory", "/manufacturing/distributor-inventory-control", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing", "/sales-tax/economic-nexus-thresholds", "/erp/trading-distribution", "/systems/stock-reservation"],
     family: "buying-and-stores",
     layer: "operations",
     answer:
@@ -604,6 +612,7 @@ export const services: Service[] = [
   },
   {
     slug: "material-traceability",
+    guides: ["/asme/mtr", "/asme/data-reports", "/ibr/record-keeping", "/systems/heat-number", "/systems/material-traceability"],
     name: "Material traceability, cutting and remnant management",
     plainName: "Every plate, cut and offcut accounted for",
     shortName: "Offcuts and traceability",
@@ -640,6 +649,7 @@ export const services: Service[] = [
   },
   {
     slug: "bom-from-excel",
+    guides: ["/manufacturing/job-shop-erp", "/boq/what-is-a-boq", "/systems/mrp", "/systems/routing"],
     name: "BOM import and multi-level bill of materials",
     plainName: "A BOM built from your own Excel sheets that learns your categories",
     shortName: "BOM from Excel",
@@ -672,6 +682,7 @@ export const services: Service[] = [
   },
   {
     slug: "receivables-from-tally",
+    guides: ["/erp/tally-migration", "/construction/ra-bills", "/systems/msme-payment-rule"],
     name: "Receivables, payables and financial position from TallyPrime",
     plainName: "Who owes you and who you owe, always current, straight from Tally",
     shortName: "Receivables",
@@ -705,6 +716,7 @@ export const services: Service[] = [
   },
   {
     slug: "daily-wage-payroll",
+    guides: ["/construction/contract-labour-compliance", "/construction/labour-cess", "/construction/daily-progress-reports", "/construction/certified-payroll"],
     name: "Attendance, work logs and daily-wage payroll",
     plainName: "Daily-wage attendance and payroll without a register",
     shortName: "Daily-wage payroll",

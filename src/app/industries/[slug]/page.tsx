@@ -5,6 +5,8 @@ import Markdown from "react-markdown";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
+import { RelatedNav } from "@/components/RelatedNav";
+import { relatedFor } from "@/lib/related";
 import { getContent, formatDate } from "@/lib/content";
 import { resolveIndustryEdges, industryFor } from "@/lib/industries";
 import { serviceUrl } from "@/lib/services";
@@ -308,6 +310,12 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
                 </ul>
               </div>
             )}
+
+            <RelatedNav
+              links={relatedFor(market === "NA" && industry.na ? `/us/industries/${industry.slug}` : `/industries/${industry.slug}`)}
+              title="Guides for this business"
+              className="mt-12 border-t border-line pt-8"
+            />
           </div>
           </div>
         </section>

@@ -5,6 +5,8 @@ import Markdown from "react-markdown";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ClosingCta } from "@/components/ClosingCta";
+import { RelatedNav } from "@/components/RelatedNav";
+import { relatedFor } from "@/lib/related";
 import { getContent, formatDate, termHasPage } from "@/lib/content";
 import { jsonLd, termGraph } from "@/lib/schema";
 import { seoTitle, metaDescription } from "@/lib/seo";
@@ -99,6 +101,8 @@ export default async function TermPage(props: PageProps<"/systems/[slug]">) {
         <section className="section border-t border-line">
           <div className="rail prose-measure">
             <Markdown components={markdownComponents}>{term.body}</Markdown>
+
+            <RelatedNav links={relatedFor(`/systems/${term.slug}`)} className="mt-12 border-t border-line pt-8" />
 
             <div className="mt-12 border-t border-line pt-8">
               <Link href="/systems" className="text-link focus-ring">
