@@ -13,12 +13,12 @@ question: "What is the difference between a conditional and an unconditional lie
 answer: >
   A conditional lien waiver gives up lien rights only once the payment actually reaches the signer; an unconditional
   waiver is effective when signed, paid or not. Each comes in a progress and a final version. Several states,
-  including Arizona, California, Florida, Texas and Wyoming, set the wording by statute, and a waiver that doesn't
+  including Arizona, California, Florida, Massachusetts, Michigan, Texas and Wyoming, set the wording by statute, and a waiver that doesn't
   follow the statutory form can be unenforceable.
-description: "US lien waivers: the four types, states with statutory forms (AZ, CA, FL, TX, WY), joint checks, signing the wrong one, progress vs final, preliminary notices."
+description: "US lien waivers: the four types, statutory-form states (AZ, CA, FL, MA, MI, TX, WY), joint checks, signing the wrong one, progress vs final."
 domain: [construction, liens]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-07
 checked: 2026-11-05
 sources:
   - title: "Arizona Revised Statutes 33-1008, Waiver of lien"
@@ -53,6 +53,14 @@ sources:
     publisher: Wyoming State Legislature
     url: https://wyoleg.gov/statutes/compress/title29.pdf
     date: "2026-11-05"
+  - title: "Massachusetts General Laws c.254 §32, Void and unenforceable covenants; partial waiver form"
+    publisher: The General Court of the Commonwealth of Massachusetts
+    url: https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleIV/Chapter254/Section32
+    date: "2026-11-07"
+  - title: "Michigan Compiled Laws 570.1115, Waiver of construction lien"
+    publisher: Michigan Legislature
+    url: https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-570-1115
+    date: "2026-11-07"
 checks:
   - reg: Arizona ARS 33-1008(D)
     doc: az-33-1008
@@ -117,6 +125,21 @@ checks:
   - reg: Wyoming Statutes 29-10-101(b), the waiver form
     doc: wy-29-10-101
     quote: "the undersigned reserves all claims and/or rights of lien as to monies withheld as retainage"
+  - reg: Massachusetts G.L. c.254 §32(4)
+    doc: ma-254-32
+    quote: "partial waivers and subordinations of liens given by persons who have filed or recorded notices of contract under section two substantially in the following form with no material deviation therefrom:"
+  - reg: Massachusetts G.L. c.254 §32, the partial waiver form
+    doc: ma-254-32
+    quote: "except for retainage, unpaid agreed or pending change orders, and disputed claims as stated above"
+  - reg: Michigan MCL 570.1115(1)
+    doc: mi-570-1115
+    quote: "A person shall not require, as part of any contract for an improvement, that the right to a construction lien be waived in advance of work performed."
+  - reg: Michigan MCL 570.1115(4)
+    doc: mi-570-1115
+    quote: "A partial conditional waiver of lien or a full conditional waiver of lien shall be effective upon payment of the amount indicated in the waiver."
+  - reg: Michigan MCL 570.1115(9)
+    doc: mi-570-1115
+    quote: "The following forms shall be used in substantially the following format to execute waivers of construction liens:"
 ---
 
 ## Why do lien waivers exist?
@@ -143,8 +166,8 @@ use a conditional form. California and Texas use the same four forms, with a sim
 
 ## Which states have statutory lien waiver forms?
 
-Arizona, California, Florida, Texas and Wyoming are among the states whose statutes set the wording of lien
-waivers; in each, a waiver on the wrong form can fail to release the lien. Several other states also prescribe forms by statute,
+Arizona, California, Florida, Massachusetts, Michigan, Texas and Wyoming are among the states whose statutes set
+the wording of lien waivers; in each, a waiver on the wrong form can fail to release the lien. Several other states also prescribe forms by statute,
 and most states set none, leaving the wording to the contract. Before using any form, check the statute in the state
 where the project is.
 
@@ -153,6 +176,8 @@ where the project is.
 | Arizona | [ARS 33-1008](https://www.azleg.gov/ars/33/01008.htm) | Four forms; a waiver is unenforceable unless it substantially follows them |
 | California | [Civil Code 8132–8138](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=8132), with [8124](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=8124) and [8126](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=8126) | Four forms; a waiver given before payment, or for a single or joint payee check, is void unless it is in substantially the statutory form. Any other statement waiving lien rights is void unless it follows the statute or the claimant has been paid in full |
 | Florida | [713.20](https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0713/Sections/0713.20.html) | Progress and final forms; lien rights can't be waived in advance, and nobody may require a waiver different from the statutory forms |
+| Massachusetts | [G.L. c.254 §32](https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleIV/Chapter254/Section32) | A contract term barring a lien or a notice of contract is void, except listed waivers. One statutory form, a partial waiver and subordination given against a payment application, "with no material deviation"; it carves out retainage, unpaid or pending change orders and disputed claims, and is signed under the penalties of perjury, not notarized |
+| Michigan | [MCL 570.1115](https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-570-1115) | Four forms (partial and full, conditional and unconditional), used "in substantially the following format"; a conditional waiver takes effect on payment. Requiring a waiver in advance of work is void except to the extent of payment actually made. No notary block |
 | Texas | [Property Code 53.281–53.287](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.53.htm) | Four forms; a waiver is unenforceable unless it substantially complies with 53.284. The current forms have no notary block |
 | Wyoming | [29-10-101](https://wyoleg.gov/statutes/compress/title29.pdf) | One waiver form, completed in substantially the statutory wording; it reserves retainage and amounts still unpaid, and ends with a notary's acknowledgment. The same section sets the preliminary notice to the owner, which attaches a waiver form |
 

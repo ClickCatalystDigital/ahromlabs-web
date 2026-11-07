@@ -18,6 +18,8 @@ const DOCS = {
   "ca-8124-8204": "Construction/sources/California Civil Code 8124-8138 and 8204 waiver forms and preliminary notice 2026-11-05.txt",
   "tx-53": "Construction/sources/Texas Property Code 53.056 and 53.281-53.287 waiver and release 2026-11-05.txt",
   "wy-29-10-101": "Construction/sources/Wyoming WS 29-10-101 Preliminary notice and lien waiver forms 2026-11-05.txt",
+  "ma-254-32": "Construction/sources/Massachusetts GL c254 s32 Void covenants and partial waiver form 2026-11-07.txt",
+  "mi-570-1115": "Construction/sources/Michigan MCL 570.1115 Waiver of construction lien 2026-11-07.txt",
   cpwd: `Construction/sources/CPWD Works Manual 2022 ${D}.txt`,
   "gst-wc": `Construction/sources/GST Council - Works Contracts in GST flyer ${D}.txt`,
   "it-act-2025": "ERP/sources/it-act-2025.txt",

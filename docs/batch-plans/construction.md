@@ -829,3 +829,36 @@ rest is folded into existing pages. That makes one batch of 5:
 
 No US daily report page: no US statute governs daily reports, and the US industry page already describes them.
 Images for pages 1–3 go into `docs/construction-image-prompts.md`; each page shows its image once the file exists.
+
+## Lien-waiver states: source verification (7 Nov 2026)
+
+Source verification only, not legal advice and not legal approval. Any waiver form or workflow built from these
+statutes (in the demo, a client system or a template) needs a lawyer licensed in that state before use.
+
+Batch 1 named Arizona, California, Florida, Texas and Wyoming from their official texts and left seven commonly listed
+states unread (official sites refused automated reads). This pass read two of the seven from the legislature's own
+site; the saved texts are in `FOLDER SAMPLE - FOR APP/Construction/sources` and wired into
+`scripts/check-construction-quotes.mjs` (`ma-254-32`, `mi-570-1115`; construction quotes 265/265).
+
+| State | Source (official) | Provision | Checked | Statutory form | Conditional vs unconditional | Progress vs final | Notary | Advance waivers | Page change |
+|---|---|---|---|---|---|---|---|---|---|
+| Massachusetts | [malegislature.gov](https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleIV/Chapter254/Section32) | G.L. c.254 §32 | 2026-11-07 | One: "Partial Waiver and Subordination of Lien", "substantially in the following form with no material deviation" | Form is given "upon receipt of" a stated payment; no separate conditional form | Partial (per payment application) only; no statutory final form | No: "Signed under the penalties of perjury" | A contract term barring a notice of contract or lien enforcement is "void and unenforceable", except the listed waivers | Added to the table, answer, description and glossary term |
+| Michigan | [legislature.mi.gov](https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-570-1115) | MCL 570.1115 | 2026-11-07 | Four: partial unconditional, partial conditional, full unconditional, full conditional, "in substantially the following format" | Conditional waivers are "effective upon payment of the amount indicated" (4) | Partial and full; full unconditional due on full payment (2), partial unconditional on request (3) | No notary block in the forms | Requiring a waiver "in advance of work performed" is invalid except to the extent payment was made (1) | Added as above |
+| Georgia | Not read | O.C.G.A. 44-14-366 | Open | — | — | — | — | — | None |
+| Mississippi | Not read | Miss. Code 85-7-433 | Open | — | — | — | — | — | None |
+| Missouri | Not read | RSMo ch. 429 | Open | Not known whether ch. 429 has a statutory waiver form at all | — | — | — | — | None |
+| Nevada | Not read | NRS 108.2457 | Open | — | — | — | — | — | None |
+| Utah | Not read | Utah Code 38-1a-802 | Open | — | — | — | — | — | None |
+
+Open questions:
+- **Georgia, Mississippi, Missouri, Nevada, Utah:** the official hosts refused every automated read on 7 Nov 2026
+  (connection refused or HTTP 403 from the shell, the fetch tool and the browser pane; Utah's page loads its text by
+  script; Georgia's and Mississippi's codes are published through LexisNexis, not the legislature). A proxy scraper
+  was not used for them, on purpose. To finish: open each official page in a normal browser, save the section text as
+  a .txt in `FOLDER SAMPLE - FOR APP/Construction/sources` (same naming as the others), and Claude adds the row,
+  quote checks and the page change. Georgia changed its forms from 1 Jan 2021 (2020 HB 153); check the current
+  section, not an older copy.
+- **Massachusetts:** the statute's form exists only for persons who have filed a notice of contract; whether owners
+  commonly accept other waiver wording from those who haven't is a practice question for a lawyer.
+- **Michigan:** subsection (7) on residential jobs (verify a waiver not received from the claimant) matters to any
+  software that collects waivers from subs; flagged for a lawyer before building it into a workflow.
