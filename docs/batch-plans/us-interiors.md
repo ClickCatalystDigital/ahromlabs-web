@@ -79,7 +79,13 @@ Arhaus's published trade terms, the only retailer whose terms could be read in f
 template", "retainer agreement") and GST/HST for Canadian design firms (`/interiors/canada-gst-hst-for-interior-designers`,
 from the CRA; the ICP includes Canada). Two glossary terms: `/systems/cost-plus`, `/systems/cutting-for-approval`.
 
-**Next candidates** (not written): 1099s for installers and workrooms (IRS Form 1099-NEC instructions), white-glove
+**Batch 2 (7 Nov, written):** 1099s for installers and workrooms (IRS 1099-MISC/NEC instructions, `irs-1099`), freight
+damage claims (49 U.S.C. 14706, 49 CFR 370.3/.5/.9 via Cornell LII), job costing for custom furniture and millwork shops
+(Intuit projects, CDTFA, NY TSB-A-08(30)S, BC PST 139), New York and California interior design sales tax pages
+(TB-ST-400; Publication 35 incl. improvements to real property and reporting), and BC PST on the Canada page (PST 139,
+PST 301). Still open from the list below: white-glove and receiving-warehouse terms, Manitoba/Saskatchewan/Quebec.
+
+**Earlier candidates:** 1099s for installers and workrooms (IRS Form 1099-NEC instructions), white-glove
 delivery and receiving-warehouse terms (needs a warehouse's published terms), custom furniture and millwork shop
 drawings and approvals (New York TSB-A-08(30)S taxes millwork shop drawings), provincial PST on design services
 (British Columbia, Saskatchewan, Manitoba, Quebec), and per-state pages for the most-searched sales tax states
