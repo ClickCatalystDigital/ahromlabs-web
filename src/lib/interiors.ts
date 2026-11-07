@@ -18,14 +18,14 @@ export const INT_GROUPS: { slug: string; name: string; intro: string; order: str
   {
     slug: "projects",
     name: "Buying and tracking product",
-    intro: "Trade accounts, purchase orders from deposit to delivery, and the project budget against what the client approved.",
-    order: ["purchase-orders-and-procurement", "trade-accounts-and-designer-discounts", "project-budget-tracking"],
+    intro: "Trade accounts, purchase orders from deposit to delivery, freight claims, the project budget against approval, and job costing in the furniture shop.",
+    order: ["purchase-orders-and-procurement", "trade-accounts-and-designer-discounts", "freight-damage-claims", "project-budget-tracking", "custom-furniture-job-costing"],
   },
   {
     slug: "systems",
     name: "Books and software",
-    intro: "What QuickBooks Online does for a design firm, and what the design platforms add on top of it.",
-    order: ["quickbooks-for-interior-designers"],
+    intro: "What QuickBooks Online does for a design firm, what the design platforms add on top of it, and 1099s for the people you pay.",
+    order: ["quickbooks-for-interior-designers", "1099s-for-installers-and-workrooms"],
   },
 ];
 

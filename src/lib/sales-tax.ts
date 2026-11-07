@@ -19,7 +19,7 @@ export const ST_GROUPS: { slug: string; name: string; intro: string; order: stri
     slug: "exemptions",
     name: "Exemptions and certificates",
     intro: "Resale and exemption certificates, the manufacturing exemption, and the use tax you owe when a supplier didn't charge.",
-    order: ["resale-certificates", "manufacturing-sales-tax-exemption", "use-tax", "contractors-sales-tax", "interior-designers-sales-tax"],
+    order: ["resale-certificates", "manufacturing-sales-tax-exemption", "use-tax", "contractors-sales-tax", "interior-designers-sales-tax", "new-york-interior-design-sales-tax", "california-interior-design-sales-tax"],
   },
   {
     slug: "systems",

@@ -143,7 +143,9 @@ is checked against it. Before the vendor's bill is paid, it is matched to the PO
 
 A receiving warehouse takes deliveries for the firm, inspects them, reports damage while the freight claim can still
 be made, stores pieces until the whole room is ready, then delivers and places them in one trip. It adds a storage
-and handling charge and a second freight leg; in return the client's home sees one delivery, not thirty.
+and handling charge and a second freight leg; in return the client's home sees one delivery, not thirty. When a piece
+arrives damaged, [freight damage claims](/interiors/freight-damage-claims) sets out the deadlines and what a claim
+must say.
 
 Freight changes the sales tax, so bill it on its own line. In California, CDTFA says delivery charges on a taxable sale
 are generally not taxable when a carrier delivers directly to the client and your charge does not exceed what you paid

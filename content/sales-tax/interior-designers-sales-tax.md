@@ -155,6 +155,9 @@ A Manhattan apartment: a $12,000 design fee and $54,000 of furniture, delivered 
 Writing the fee as its own contracted, reasonable charge saves the client $540 on this job, and it is the client's
 money the firm is collecting, so getting it wrong in either direction is a problem.
 
+More on New York, including where a service counts as delivered and design-build work:
+[New York sales tax on interior design services](/sales-tax/new-york-interior-design-sales-tax).
+
 ## How does California tax design fees?
 
 By what the fee is for. CDTFA's Publication 35 says a designer who sells merchandise, including samples or finished
@@ -167,6 +170,7 @@ Labor is split too: tax generally applies to fabrication labor (making draperies
 not to repair or installation labor, which should be itemized. Billing product at cost with a separate fee for
 overhead and profit makes the whole fee taxable unless you can show part of it is for nontaxable professional
 services; [how to charge for interior design](/interiors/how-to-charge-for-interior-design) works the markup through.
+Deposits, reupholstery and built-ins are in [California sales tax for interior designers](/sales-tax/california-interior-design-sales-tax).
 
 ## How does Texas tax interior design?
 

@@ -191,6 +191,7 @@ When comparing systems, check that it can:
 - Say **which system owns each record**, and show what was sent, when, and what failed with a Retry.
 - Work with **QuickBooks Online Plus**, the plan a reselling firm needs anyway.
 - Keep the **design data**: proposals, approvals, POs and receipts, which QuickBooks can't hold, in your own export.
+- Mark **1099 vendors** and total what you paid each one: see [1099s for installers and workrooms](/interiors/1099s-for-installers-and-workrooms).
 
 ## Does your demo work with QuickBooks?
 

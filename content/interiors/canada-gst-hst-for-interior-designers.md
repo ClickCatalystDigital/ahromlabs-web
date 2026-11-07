@@ -42,6 +42,14 @@ sources:
     publisher: Canada Revenue Agency
     url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html
     date: "2026-11-07"
+  - title: "Bulletin PST 139, Interior Designers and Home Stagers"
+    publisher: British Columbia Ministry of Finance
+    url: https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-139-interior-designers-home-stagers.pdf
+    date: "2026-11-07"
+  - title: "Bulletin PST 301, Related Services"
+    publisher: British Columbia Ministry of Finance
+    url: https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-301-related-services.pdf
+    date: "2026-11-07"
 checks:
   - reg: CRA, which rate
     doc: cra-charge
@@ -82,6 +90,24 @@ checks:
   - reg: CRA, exceeding in one quarter
     doc: cra-register
     quote: "You have to start charging GST/HST on the supply that made you exceed $30,000."
+  - reg: BC PST 139, design services
+    doc: bc-pst-139
+    quote: "If you consult with a customer or create a design concept, you are providing a non-taxable service."
+  - reg: BC PST 139, goods sold
+    doc: bc-pst-139
+    quote: "If you sell goods (e.g. furniture and accessories) to your customer, you must charge PST on the total purchase price."
+  - reg: BC PST 139, separate charges
+    doc: bc-pst-139
+    quote: "If the charge for the goods is separate from the charge for the design services, you charge PST on the charge for the goods you sell or lease and not to the charge for the design services."
+  - reg: BC PST 139, real property contracts
+    doc: bc-pst-139
+    quote: "As a contractor, you do not charge your customer PST on your real property contracts"
+  - reg: BC PST 139, related services
+    doc: bc-pst-139
+    quote: "Re-upholstering, refinishing and repairing furniture"
+  - reg: BC PST 301, office furniture
+    doc: bc-pst-301
+    quote: "Assemble, disassemble or install office furniture and modular workstations (cubicles)"
 ---
 
 ## Which GST/HST rate does a Canadian design firm charge?
@@ -101,7 +127,8 @@ is in. The CRA's rate table, read on 7 November 2026:
 | Quebec | 5% GST | 9.975% QST |
 
 Where a provincial tax applies, the CRA says GST is calculated on the price without it. Provincial sales taxes have
-their own rules on what is taxable, including design services; this page covers the federal GST/HST only.
+their own rules on what is taxable, including design services; British Columbia's are below, and the other provinces'
+are not covered here.
 
 ## Where is furniture supplied for GST/HST?
 
@@ -147,6 +174,25 @@ invoice; the CRA treats deposits and conditional sales as a special case, with i
 When its taxable sales pass $30,000. The CRA says you are a small supplier if you don't exceed $30,000 over four
 consecutive calendar quarters, and can register voluntarily; if you exceed $30,000 in a single quarter, you must start
 charging GST/HST on the sale that took you over. A firm reselling furniture passes that quickly.
+
+## How does British Columbia's PST apply to designers?
+
+Separately from GST, and BC has published a bulletin for designers. Bulletin PST 139 says consulting with a customer or
+creating a design concept is a non-taxable service; selling furniture and accessories is taxable on the total purchase
+price, generally including delivery and setup; and when the goods are charged separately from the design fee, PST
+applies only to the goods. Re-upholstering, refinishing and repairing furniture are taxable related services, and BC's
+PST 301 lists assembling or installing office furniture and workstations among them. A designer who supplies and
+installs things that become part of the building (wall-to-wall carpet, light fixtures) is a real property contractor:
+it charges the client no PST on the contract and pays PST on the goods itself. Designing custom furniture you make is
+the exception that taxes the design: see [job costing for custom furniture shops](/interiors/custom-furniture-job-costing).
+
+| On one BC invoice, delivered in Vancouver | GST 5% | PST 7% |
+|---|---|---|
+| Design fee $12,000, charged separately | $600 | $0 |
+| Furniture $54,000 | $2,700 | $3,780 |
+| **Tax on the invoice** | **$3,300** | **$3,780** |
+
+Manitoba, Saskatchewan and Quebec have their own provincial taxes and rules; this page doesn't cover them yet.
 
 ## How is this different from US sales tax?
 

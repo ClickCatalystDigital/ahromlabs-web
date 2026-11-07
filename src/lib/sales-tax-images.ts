@@ -14,6 +14,8 @@ const ALT: Record<string, string> = {
   "use-tax": "An opened shipping box with packing paper and a packing slip that shows no tax line: a purchase on which the supplier charged no tax.",
   "contractors-sales-tax": "An open navy toolbox with a hammer, a wrench and a tape measure, a receipt tucked under the handle and coins on the lid: sales tax on a contractor's materials and work.",
   "interior-designers-sales-tax": "A table lamp with a pleated cream shade beside a printed receipt and a few coins: sales tax on furnishings a designer sells.",
+  "new-york-interior-design-sales-tax": "A rolled set of interior plans tied with string beside a fabric swatch and a few coins: a design service taxed where it is delivered.",
+  "california-interior-design-sales-tax": "A drapery panel on a sewing table with pins and shears, a receipt and a few coins beside it: fabrication labor that is taxed.",
   "sales-tax-in-erp": "An order form on a clipboard with address lines, item rows and a total, beside a small stack of filed certificates: sales tax recorded in an order system.",
 };
 

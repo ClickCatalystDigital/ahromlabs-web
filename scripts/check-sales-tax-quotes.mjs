@@ -37,6 +37,9 @@ const DOCS = {
   "ca-pub35-buy": "CDTFA - Pub 35 Purchases resale certificates use tax 2026-11-07.txt",
   "tx-96-259": "Texas Comptroller - Taxable services 96-259 2026-11-07.txt",
   "tx-94-143": "Texas Comptroller - Draftsmen and designers 94-143 2026-11-07.txt",
+  "ny-tsb-a-08-30": "New York - TSB-A-08(30)S millwork shop drawings 2026-11-07.txt",
+  "ca-pub35-realprop": "CDTFA - Pub 35 Improvements to real property 2026-11-07.txt",
+  "ca-pub35-report": "CDTFA - Pub 35 Reporting tax and keeping records 2026-11-07.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(DIR, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

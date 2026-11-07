@@ -121,7 +121,8 @@ and design hours at their cost. The budget tells the client what they spend; [jo
 the firm what it earned. On the example above, if the $59,700 of product was priced at a 35% markup, its net cost is
 $59,700 ÷ 1.35 = $44,222, and the $15,478 difference has to pay for the purchasing work and the freight the firm
 didn't charge. [How to charge for interior design](/interiors/how-to-charge-for-interior-design) works markup and
-margin through.
+margin through, and [job costing for custom furniture shops](/interiors/custom-furniture-job-costing) does the same for
+pieces a firm makes itself.
 
 QuickBooks Online Plus lists budgets and project profitability among its features, at the level of the books. It has no
 rooms, no approval, and no idea which proposal line a bill belongs to, so the budget-against-approval view lives in

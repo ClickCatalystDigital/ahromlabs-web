@@ -13,6 +13,9 @@ const ALT: Record<string, string> = {
   "quickbooks-for-interior-designers": "A closed laptop with a ledger on its lid, joined by a paper clip chain to a fabric swatch: the design side linked to the books.",
   "interior-design-contract": "A signed letter of agreement on a clipboard with a pen and a fabric swatch clipped to its corner: the terms of a design engagement.",
   "trade-accounts-and-designer-discounts": "A brass ring of trade account cards beside a fabric sample book and a price tag with a line through its figure: buying at the trade price.",
+  "1099s-for-installers-and-workrooms": "A cordless drill and a folded drapery panel beside a blank tax form on a clipboard: paying installers and workrooms.",
+  "freight-damage-claims": "A furniture carton with a crushed corner on a pallet, a claim form on a clipboard leaning against it: a damaged delivery.",
+  "custom-furniture-job-costing": "A half-finished walnut table leg in a bench vise with a pencil-marked work ticket beside it: one order's labor and materials.",
   "canada-gst-hst-for-interior-designers": "A wooden side table with a blank receipt and a few coins on it, beside a parcel with a delivery label: tax set by where the goods are delivered.",
 };
 
