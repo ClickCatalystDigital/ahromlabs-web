@@ -13,6 +13,8 @@ import { stGuides, ST_CHECKED } from "@/lib/sales-tax";
 import { stArt } from "@/lib/sales-tax-images";
 import { conGuides, CON_CHECKED } from "@/lib/construction";
 import { conArt } from "@/lib/construction-images";
+import { intGuides, INT_CHECKED } from "@/lib/interiors";
+import { intArt } from "@/lib/interiors-images";
 import { ERP_CHECKED } from "@/lib/erp";
 import { AI_CHECKED } from "@/lib/ai-assistant";
 import { families, services } from "@/lib/services";
@@ -282,7 +284,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes, ...stRoutes, ...conRoutes];
+  // The interiors hub (src/lib/interiors.ts).
+  const intImages = (name: string) => {
+    const a = intArt(name);
+    return a ? { images: [`${siteUrl}${a.src}`] } : {};
+  };
+  const ints = intGuides();
+  const intUpdated = [INT_CHECKED, ...ints.map((g) => g.updated)].sort().at(-1)!;
+  const intRoutes: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/interiors`, lastModified: changed("interiors", intUpdated), changeFrequency: "monthly", priority: 0.8, ...intImages("interiors-hub") },
+    ...ints.map((g) => ({
+      url: `${siteUrl}/interiors/${g.slug}`,
+      lastModified: changed(`interiors/${g.slug}`, g.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      ...intImages(g.slug),
+    })),
+  ];
+
+  const all = [...staticRoutes, ...contentRoutes, ...ibrRoutes, ...boqRoutes, ...erpRoutes, ...aiRoutes, ...asmeRoutes, ...mfgRoutes, ...stRoutes, ...conRoutes, ...intRoutes];
   // Pages with a North American version: both URLs listed, each naming the other (hreflang), as in their metadata.
   const abs = (langs: Record<string, string>) => Object.fromEntries(Object.entries(langs).map(([k, v]) => [k, `${siteUrl}${v === "/" ? "" : v}`]));
   const withAlt = all.map((e) => {

@@ -136,6 +136,9 @@ That is how our US demos work today: the [boiler demo](/industries/boiler-pressu
 electronics distribution demo send each invoice line as taxable or not with the ship-to address, and QuickBooks
 works out the tax, against an Intuit sandbox company. Neither demo holds customers' exemption certificates, reports
 sales by state or accrues use tax yet; those are the parts we'd build for a client that collects in several states.
+The [design studio demo](/industries/interior-design-and-furniture) instead carries a tax rate on each invoice line,
+so design fees and furniture can be taxed differently, as [sales tax for interior designers](/sales-tax/interior-designers-sales-tax)
+explains state by state.
 
 ## How do you test a vendor's sales tax handling?
 

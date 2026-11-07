@@ -7,6 +7,7 @@ import { asmeGuides, ASME_EDITION } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
 import { stGuides } from "@/lib/sales-tax";
 import { conGuides } from "@/lib/construction";
+import { intGuides } from "@/lib/interiors";
 import { DICT, MARKETS, marketsFor, appliesIn } from "@/lib/markets";
 import { services, families, servicesIn, serviceUrl, familyUrl } from "@/lib/services";
 import { engagements, serviceStatus, NOT_LIVE } from "@/lib/work";
@@ -111,7 +112,7 @@ const line = (segment: string) => (entry: ContentEntry) =>
 
 // The guide hubs and which markets each applies to: the same split the menus and /knowledge.json use. Each hub's
 // pages are also one Markdown file at /llms/<hub>.txt (scripts/build-markdown.mjs), smaller than /llms-full.txt.
-const HUBS = ["/ibr", "/boq", "/erp", "/asme", "/manufacturing", "/sales-tax", "/construction", "/ai-assistant", "/industries", "/services", "/notes", "/patterns", "/systems"];
+const HUBS = ["/ibr", "/boq", "/erp", "/asme", "/manufacturing", "/sales-tax", "/construction", "/interiors", "/ai-assistant", "/industries", "/services", "/notes", "/patterns", "/systems"];
 function whereEachApplies() {
   const group = (label: string, test: (h: string) => boolean) =>
     `- ${label}: ${HUBS.filter(test).map((h) => `${h} (https://ahromlabs.com/llms${h}.txt)`).join(", ")}`;
@@ -217,6 +218,10 @@ export function GET() {
     `- [Construction billing and job cost: guides for contractors](https://ahromlabs.com/construction): US pay applications, retainage, lien waivers, change orders and the WIP schedule; India's running account bills, measurement book, TDS on payments to contractors and GST on works contracts, quoted from the laws and official manuals.\n` +
     conGuides().map(line("construction")).join("\n");
 
+  const interiors =
+    `- [Running an interior design firm that sells product](https://ahromlabs.com/interiors): Guides for US and Canadian design firms that resell furniture, lighting and fabric: fee structures and markup, the letter of agreement, invoices, deposits and retainers, purchase orders from vendor deposit to delivery, trade accounts, project budgets and QuickBooks Online, quoted from ASID, Intuit, the design-software vendors and tax agencies.${onlyTag("/interiors")}\n` +
+    intGuides().map(line("interiors")).join("\n");
+
   const body =
     HEADER +
     whereEachApplies() +
@@ -233,6 +238,7 @@ export function GET() {
     `\n## Manufacturing software (US job shops and small manufacturers)\n\n${mfg}\n` +
     `\n## US sales tax\n\n${salesTax}\n` +
     `\n## Construction billing (US and India)\n\n${construction}\n` +
+    `\n## Interior design firms (US and Canada)\n\n${interiors}\n` +
     section("Engineering notes", "note", "notes") +
     section("Patterns", "pattern", "patterns") +
     `\n## Vocabulary\n\n${vocabulary}\n` +

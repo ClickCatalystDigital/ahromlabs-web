@@ -23,6 +23,7 @@ const RULES: Record<ContentKind, { allowed: (l: Lean, e?: { group?: string }) =>
   asme: { allowed: notIN, want: "North American (or common)" },
   manufacturing: { allowed: notIN, want: "North American (or common)" },
   "sales-tax": { allowed: notIN, want: "North American (or common)" },
+  interiors: { allowed: notIN, want: "North American (or common)" },
   // Both markets: each page leans its own group's way (us: not Indian, india: not North American).
   construction: { allowed: (l, e) => (e?.group === "india" ? notNA(l) : notIN(l)), want: "its group's market (us or india)" },
   guide: { allowed: notNA, want: "Indian (IBR)" },

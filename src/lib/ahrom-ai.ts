@@ -96,8 +96,8 @@ export function buildEntries(): Entry[] {
     sourceTitle: "Industries",
     core: true,
   });
-  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction" } as const;
-  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant", "asme", "manufacturing", "sales-tax", "construction"] as const) {
+  const segment = { note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction", interiors: "interiors" } as const;
+  for (const kind of ["industry", "note", "pattern", "guide", "boq", "erp", "ai-assistant", "asme", "manufacturing", "sales-tax", "construction", "interiors"] as const) {
     for (const c of getContent(kind)) {
       out.push({
         id: `${kind}/${c.slug}`, title: c.title, answer: c.answer, url: `${site}/${segment[kind]}/${c.slug}`, sourceTitle: c.title,

@@ -70,7 +70,7 @@ const IN_ONLY = [
 ];
 // North America only: US and Canadian law.
 const NA_ONLY = [
-  "/asme/state-boiler-laws", "/manufacturing", "/sales-tax",
+  "/asme/state-boiler-laws", "/manufacturing", "/sales-tax", "/interiors",
   // The construction hub's US group.
   "/construction/pay-applications", "/construction/retainage", "/construction/lien-waivers", "/construction/change-orders", "/construction/wip-schedule",
   "/construction/mechanics-lien-deadlines", "/construction/prompt-payment-acts", "/construction/certified-payroll",

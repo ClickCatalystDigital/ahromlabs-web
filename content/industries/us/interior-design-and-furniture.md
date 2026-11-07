@@ -44,7 +44,7 @@ evidence:
   - metric: Freight charges
     value: Checked against each route's rate; overcharges flagged
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-07
 ---
 
 ## Can I try it before talking to anyone?
@@ -61,15 +61,15 @@ Yes, without the weight of a multi-company ERP. Both companies share one client 
 
 ## Does it work with QuickBooks Online?
 
-Yes. QuickBooks Online stays the books. The studio connects its QuickBooks company once, in Settings → Integrations, and maps its accounts, with suggested matches to review. After that, an invoice goes to QuickBooks with its client when it leaves draft, each company's lines on its own income item ("Design studio sales" or "Furniture workshop sales"); a client payment goes when it is recorded, for the accountant to apply to an invoice in QuickBooks; and a vendor order goes as a bill once it is complete. Sending happens in the background, so saving never waits on QuickBooks, and a failure shows on the invoice with its reason and a Retry button. In the demo it is connected to an Intuit sandbox company. See [connecting QuickBooks Online to a shop system](/manufacturing/quickbooks-integration).
+Yes. QuickBooks Online stays the books. The studio connects its QuickBooks company once, in Settings → Integrations, and maps its accounts, with suggested matches to review. After that, an invoice goes to QuickBooks with its client when it leaves draft, each company's lines on its own income item ("Design studio sales" or "Furniture workshop sales"); a client payment goes when it is recorded, for the accountant to apply to an invoice in QuickBooks; and a vendor order goes as a bill once it is complete. Sending happens in the background, so saving never waits on QuickBooks, and a failure shows on the invoice with its reason and a Retry button. In the demo it is connected to an Intuit sandbox company. See [connecting QuickBooks Online to a shop system](/manufacturing/quickbooks-integration), and [QuickBooks for interior designers](/interiors/quickbooks-for-interior-designers) for which plan a design firm needs and what it can't track.
 
 ## How does sales tax work for design fees and furniture?
 
-Each invoice line carries its own sales tax rate, and a line without one is not taxed. In the demo, Texas sales tax (8.25%) is charged on materials and furniture, while design fees and labor are not taxed. QuickBooks' automated sales tax works out its own figure from the address, and its total is shown beside ours. [How an ERP should handle US sales tax](/sales-tax/sales-tax-in-erp) covers nexus, resale certificates and what to check in any system.
+Each invoice line carries its own sales tax rate, and a line without one is not taxed. In the demo, Texas sales tax (8.25%) is charged on materials and furniture, while design fees and labor are not taxed. QuickBooks' automated sales tax works out its own figure from the address, and its total is shown beside ours. Whether a design fee is taxable depends on the state: [sales tax for interior designers](/sales-tax/interior-designers-sales-tax) compares New York, California and Texas, and [how an ERP should handle US sales tax](/sales-tax/sales-tax-in-erp) covers nexus, resale certificates and what to check in any system.
 
 ## Can a quote start from an item library?
 
-Yes. Each studio keeps its own item library, and a quote is built room by room from it, with quantities worked out from site dimensions. Payment stages printed on the quote become draft invoices once the client accepts.
+Yes. Each studio keeps its own item library, and a quote is built room by room from it, with quantities worked out from site dimensions. Payment stages printed on the quote become draft invoices once the client accepts. Lines carry the sell price; a net cost and markup per line is what we'd add for a firm that resells product. [How to charge for interior design](/interiors/how-to-charge-for-interior-design) and [invoices, deposits and retainers](/interiors/invoices-deposits-and-retainers) work the numbers through.
 
 ## How is a design project tracked from brief to handover?
 
@@ -81,7 +81,7 @@ A shop order can come from a design project or straight from a walk-in client, a
 
 ## How are freight overcharges caught?
 
-Each carrier has a rate card per route, from one location to another, with the amount expected. A delivery billed above its route's rate is flagged the moment it is entered, and each carrier shows its count of overcharges. It catches overcharges as long as the rates are kept current.
+Each carrier has a rate card per route, from one location to another, with the amount expected. A delivery billed above its route's rate is flagged the moment it is entered, and each carrier shows its count of overcharges. It catches overcharges as long as the rates are kept current. [Purchase orders and procurement](/interiors/purchase-orders-and-procurement) covers the rest of the vendor side, from deposit to receiving.
 
 ## How do you stop staff seeing the whole cash book?
 
@@ -94,6 +94,8 @@ By filtering at the point the data is fetched, not by hiding buttons. Staff log 
 3. **Can it tax furniture and materials but not design fees** on the same invoice?
 4. **If you run two companies, does each invoice carry the right company's name** from one system?
 5. **Who can see the money?** Staff logging petty cash shouldn't see the bank account, enforced by the server, not by hiding a menu.
+
+The [interior design firm guides](/interiors) cover each of these in depth, from trade accounts to the client agreement.
 
 ## Boundary
 

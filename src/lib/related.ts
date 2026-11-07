@@ -8,11 +8,11 @@ import { engagements } from "./work";
 
 const ROUTE: Partial<Record<ContentKind, string>> = {
   note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp",
-  "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction",
+  "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction", interiors: "interiors",
 };
 const HUBS: Record<string, string> = {
   "/asme": "ASME guides", "/manufacturing": "Production software for job shops", "/construction": "Construction billing guides",
-  "/sales-tax": "US sales tax guide", "/erp": "ERP requirements guides", "/boq": "Interior BOQ guide", "/ibr": "IBR 2026 guide",
+  "/sales-tax": "US sales tax guide", "/interiors": "Interior design firm guides", "/erp": "ERP requirements guides", "/boq": "Interior BOQ guide", "/ibr": "IBR 2026 guide",
   "/ai-assistant": "AI assistant guides", "/services": "What we build", "/industries": "Industries", "/work": "Work",
   "/notes": "Engineering notes", "/patterns": "Patterns", "/systems": "Systems glossary", "/engagement": "Pricing and how an engagement works",
 };
@@ -50,7 +50,7 @@ export const RELATED: Record<string, string[]> = {
   "/industries/electronics-component-trading": ["/systems/stock-reservation", "/erp/tally-migration", "/systems/e-way-bill", "/systems/three-way-match"],
   "/us/industries/electronics-component-trading": ["/manufacturing/distributor-inventory-control", "/manufacturing/quickbooks-online-inventory", "/sales-tax/resale-certificates", "/sales-tax/economic-nexus-thresholds"],
   "/industries/interior-design-and-furniture": ["/boq/what-is-a-boq", "/boq/how-to-make-an-interior-boq", "/boq/measurement-rules", "/boq/variation-orders"],
-  "/us/industries/interior-design-and-furniture": ["/systems/change-order", "/sales-tax/resale-certificates", "/manufacturing/small-business-erp-options", "/systems/job-costing"],
+  "/us/industries/interior-design-and-furniture": ["/interiors/how-to-charge-for-interior-design", "/interiors/purchase-orders-and-procurement", "/interiors/quickbooks-for-interior-designers", "/sales-tax/interior-designers-sales-tax", "/interiors/invoices-deposits-and-retainers"],
 
   "/systems/ai-hallucination": ["/systems/grounding-check", "/ai-assistant/how-it-works", "/services/custom-ai-assistant"],
   "/systems/asme-certification-mark": ["/asme/stamps", "/asme/u-stamp", "/asme/national-board-registration", "/systems/authorized-inspector"],
@@ -67,6 +67,8 @@ export const RELATED: Record<string, string[]> = {
   "/systems/heat-number": ["/systems/material-test-certificate", "/asme/mtr", "/services/material-traceability"],
   "/systems/hydrostatic-test": ["/asme/hydrostatic-test", "/systems/mawp", "/systems/authorized-inspector"],
   "/systems/ibr-statutory-folder": ["/ibr/record-keeping", "/ibr/registration-documents", "/notes/ibr-statutory-folder-from-bom"],
+  "/systems/cost-plus": ["/interiors/how-to-charge-for-interior-design", "/interiors/trade-accounts-and-designer-discounts", "/sales-tax/interior-designers-sales-tax"],
+  "/systems/cutting-for-approval": ["/interiors/purchase-orders-and-procurement", "/interiors/project-budget-tracking", "/systems/three-way-match"],
   "/systems/job-costing": ["/manufacturing/quickbooks-job-costing", "/construction/job-cost-per-site", "/systems/work-in-progress", "/systems/over-under-billing"],
   "/systems/joint-efficiency": ["/asme/joint-efficiency", "/asme/shell-thickness", "/systems/mawp"],
   "/systems/lien-waiver": ["/construction/lien-waivers", "/construction/mechanics-lien-deadlines", "/systems/pay-application"],

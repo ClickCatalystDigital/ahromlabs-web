@@ -1,6 +1,6 @@
 import contentData from "./content-data.generated.json";
 
-export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant" | "asme" | "manufacturing" | "sales-tax" | "construction";
+export type ContentKind = "term" | "note" | "pattern" | "industry" | "guide" | "boq" | "erp" | "ai-assistant" | "asme" | "manufacturing" | "sales-tax" | "construction" | "interiors";
 
 export type ContentEntry = {
   kind: ContentKind;

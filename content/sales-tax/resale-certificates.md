@@ -138,6 +138,11 @@ Streamlined states, a drop shipper that receives a completed certificate from yo
 it delivers to your customer, and the ID number you give may be one issued by another state. Outside Streamlined,
 check the delivery state's own rule for drop shipments.
 
+Design firms meet the same rules from the buying side: every trade account wants the firm's certificate, often one for
+each state the furniture is delivered to. [Trade accounts and designer discounts](/interiors/trade-accounts-and-designer-discounts)
+shows one vendor's terms, and [sales tax for interior designers](/sales-tax/interior-designers-sales-tax) what the firm
+then charges its client.
+
 ## What happens if a customer's certificate doesn't cover a state you ship to?
 
 The sale into that state is taxable to you, and an auditor bills the tax you didn't charge plus interest. A worked

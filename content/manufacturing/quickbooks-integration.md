@@ -199,3 +199,8 @@ Try it in the [boiler](https://boiler-erp-us.ahromlabs.com/demo) or
 [electronics distribution](https://electronics-erp-us.ahromlabs.com/demo) demo. See also
 [QuickBooks vs ERP](/manufacturing/quickbooks-vs-erp) and
 [QuickBooks Online inventory](/manufacturing/quickbooks-online-inventory).
+
+The [design studio demo](https://interiors-erp-us.ahromlabs.com/demo) uses the same approach for an interior design
+firm: invoices when they leave draft, client payments unapplied, and completed vendor purchase orders as bills; it
+doesn't send vendor payments yet. [QuickBooks for interior designers](/interiors/quickbooks-for-interior-designers)
+covers what a design firm needs on top of QuickBooks.

@@ -7,6 +7,7 @@ import { questions } from "@/lib/ai-assistant";
 import { asmeGuides } from "@/lib/asme";
 import { mfgGuides } from "@/lib/manufacturing";
 import { stGuides } from "@/lib/sales-tax";
+import { intGuides } from "@/lib/interiors";
 import { conGuides } from "@/lib/construction";
 import { marketsFor, only, shownIn, type MarketCode } from "@/lib/markets";
 
@@ -20,6 +21,7 @@ const GUIDES = [
   { href: "/manufacturing", title: "Manufacturing software guide", text: `For US job shops and small manufacturers: ${mfgGuides().length} guides on choosing an ERP, QuickBooks for manufacturing, job costing and scheduling, with a job cost calculator and a schedule demo.` },
   { href: "/sales-tax", title: "US sales tax guide", text: `When you must collect in another state, every state's economic nexus threshold with a checker, resale and exemption certificates, the manufacturing exemption and use tax: ${stGuides().length} guides.` },
   { href: "/construction", title: "Construction billing guide", text: `${conGuides().length} guides for contractors: pay applications, retainage, lien waivers and the WIP schedule in the US; RA bills, the measurement book, TDS and GST on works contracts in India.` },
+  { href: "/interiors", title: "Interior design firm guide", text: `For design firms that resell furniture and lighting: ${intGuides().length} guides on fees and markup, deposits, purchase orders, trade accounts, budgets and QuickBooks Online.` },
   { href: "/ai-assistant", title: "AI assistants guide", text: `How an assistant on your records should answer, a check for made-up numbers, ${questions.length} questions to ask it and a vendor test.` },
 ];
 

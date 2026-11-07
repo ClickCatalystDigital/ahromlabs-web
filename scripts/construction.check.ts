@@ -19,7 +19,7 @@ for (const p of CON_US) if (marketsFor(p)?.join() !== "NA") fail.push(`${p}: add
 for (const p of CON_IN) if (marketsFor(p)?.join() !== "IN") fail.push(`${p}: add it to IN_ONLY in markets.ts`);
 
 const appRoute = (p: string) => fs.existsSync(path.join("src/app", p, "page.tsx"));
-const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction", systems: "term" };
+const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", interiors: "interiors", construction: "construction", systems: "term" };
 const exists = (href: string) => {
   const [p] = href.split(/[#?]/);
   if (/\.[a-z0-9]+$/i.test(p)) return fs.existsSync(path.join("public", p));

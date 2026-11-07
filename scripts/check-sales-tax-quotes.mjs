@@ -32,6 +32,11 @@ const DOCS = {
   "ky-hb757": "Kentucky General Assembly - 2026 HB 757 2026-11-07.txt",
   "ky-ch161": "Kentucky Acts 2026 Chapter 161 (HB 757) 2026-11-07.txt",
   "sst-f0003": "SST - Certificate of Exemption F0003 2026-11-05.txt",
+  "ny-tb-st-400": "New York - TB-ST-400 Interior decorating and design services 2026-11-07.txt",
+  "ca-pub35-fees": "CDTFA - Pub 35 Designer fees and merchandise 2026-11-07.txt",
+  "ca-pub35-buy": "CDTFA - Pub 35 Purchases resale certificates use tax 2026-11-07.txt",
+  "tx-96-259": "Texas Comptroller - Taxable services 96-259 2026-11-07.txt",
+  "tx-94-143": "Texas Comptroller - Draftsmen and designers 94-143 2026-11-07.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(DIR, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

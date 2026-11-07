@@ -17,7 +17,7 @@ for (const group of ST_GROUPS) for (const s of group.order) if (!slugs.has(s)) f
 for (const g of guides) if (!ST_GROUPS.find((x) => x.slug === g.group)?.order.includes(g.slug)) fail.push(`${g.slug}: not in its group's order in sales-tax.ts`);
 
 const appRoute = (p: string) => fs.existsSync(path.join("src/app", p, "page.tsx"));
-const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", systems: "term" };
+const kinds: Record<string, Parameters<typeof getContent>[0]> = { notes: "note", patterns: "pattern", ibr: "guide", industries: "industry", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", interiors: "interiors", systems: "term" };
 const exists = (href: string) => {
   const [p] = href.split(/[#?]/);
   if (/\.[a-z0-9]+$/i.test(p)) return fs.existsSync(path.join("public", p));
