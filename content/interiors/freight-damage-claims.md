@@ -82,7 +82,7 @@ checks:
 
 Write the damage on the delivery receipt before the driver leaves, photograph it, keep the packaging, and then file a
 written claim with the carrier. The note on the receipt matters as evidence, but the federal claims regulation is clear
-that it isn't a claim: 49 CFR 370.3(c) says notations of shortage or damage on freight bills, delivery receipts or other
+that it isn't a claim: [49 CFR 370.3(c)](https://www.law.cornell.edu/cfr/text/49/370.3) says notations of shortage or damage on freight bills, delivery receipts or other
 documents do not, standing alone, meet the filing requirements.
 
 | Step | When | Who |
@@ -103,15 +103,15 @@ carrier may pay until a firm amount is given.
 
 ## How long do you have to file a freight claim?
 
-At least 9 months, and at least 2 years to sue. Federal law (49 U.S.C. 14706(e)) says a carrier may not set a period of
+At least 9 months, and at least 2 years to sue. [Federal law (49 U.S.C. 14706(e))](https://www.law.cornell.edu/uscode/text/49/14706) says a carrier may not set a period of
 less than 9 months for filing a claim, or less than 2 years for bringing a lawsuit; the 2 years run from the date the
 carrier gives written notice that it has disallowed part of the claim. The bill of lading or the carrier's tariff sets
 the actual period, which can be longer but not shorter, so read it for each carrier you use regularly.
 
 ## How long does the carrier have to answer?
 
-30 days to acknowledge and 120 days to decide. Under 49 CFR 370.5 the carrier must acknowledge a proper claim in
-writing within 30 days of receiving it (unless it has paid or declined within that time), and under 370.9 it must pay,
+30 days to acknowledge and 120 days to decide. Under [49 CFR 370.5](https://www.law.cornell.edu/cfr/text/49/370.5) the carrier must acknowledge a proper claim in
+writing within 30 days of receiving it (unless it has paid or declined within that time), and under [370.9](https://www.law.cornell.edu/cfr/text/49/370.9) it must pay,
 decline or make a firm compromise offer in writing within 120 days, and if it can't, tell you the status in writing
 then and every 60 days after.
 

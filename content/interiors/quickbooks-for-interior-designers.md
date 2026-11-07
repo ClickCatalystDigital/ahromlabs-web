@@ -121,9 +121,9 @@ with a spreadsheet beside it, and the spreadsheet becomes the real system.
 
 ## Which QuickBooks Online plan does a design firm need?
 
-Plus, if you buy product for clients. Intuit's help puts purchase orders and billable expenses (with an optional
+Plus, if you buy product for clients. [Intuit's help](https://quickbooks.intuit.com/learn-support/en-us/help-article/purchase-orders/create-send-purchase-orders-quickbooks-online/L2mVpjOoq_US_en_US) puts purchase orders and billable expenses (with an optional
 markup rate) in QuickBooks Online Plus and Advanced only, and those are the two features a reselling firm uses most.
-Intuit's pricing page lists Plus with 5 users and features including budgets, project profitability, inventory and
+[Intuit's pricing page](https://quickbooks.intuit.com/pricing/) lists Plus with 5 users and features including budgets, project profitability, inventory and
 classes and locations.
 
 | Plan (list price a month, 6 Nov 2026) | Users | What matters for a design firm |
@@ -150,17 +150,17 @@ The product side of a project, before and after the bill:
 | A client deposit tied to the items it pays for | A deposit on an estimate, held as a liability until invoiced |
 | Budget per room against approved, on order and invoiced | Budgets (Plus and up) in the books, not tied to proposal lines |
 
-Studio Designer makes the same point from its side: each item needs an accounting of the designer's actual cost, the
+[Studio Designer](https://www.studiodesigner.com/accounting/) makes the same point from its side: each item needs an accounting of the designer's actual cost, the
 client markup and the room it goes in. That is a project record, not a ledger line.
 
 ## How do design platforms work with QuickBooks?
 
 Some replace it, some sync to it. Studio Designer describes itself as integrated project management, time billing,
-product sourcing and accounting, and Design Manager as a project management and accounting package: both can be the
-books themselves. Houzz Pro syncs to QuickBooks Online: its help says proposals, estimates, invoices, retainers,
+product sourcing and accounting, and [Design Manager](https://manuals.designmanager.com/manuals/dmpro/an_interior_design_business_model.htm) as a project management and accounting package: both can be the
+books themselves. [Houzz Pro](https://pro.houzz.com/pro-help/r/syncing-houzz-pro-to-quickbooks-online-faqs) syncs to QuickBooks Online: its help says proposals, estimates, invoices, retainers,
 change orders and payments sync as soon as they're approved, sent or marked paid, purchase orders sync if you have
 Plus or above, and the sync is one way, from Houzz Pro to QuickBooks, so a change made in QuickBooks isn't sent back.
-Programa builds purchase orders from a project's schedules.
+[Programa](https://programa.design/features/purchase-orders-for-interior-designers) builds purchase orders from a project's schedules.
 
 | Product | Where the books live | Purchase orders | What its own pages say about QuickBooks |
 |---|---|---|---|

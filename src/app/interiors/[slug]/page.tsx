@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Markdown from "react-markdown";
 import { InteriorsPage, IntQuotes } from "@/components/InteriorsPage";
 import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
-import { markdownHeadings } from "@/lib/headings";
+import { markdownHeadings, markdownQuestions } from "@/lib/headings";
 import { intGuide, intGuides } from "@/lib/interiors";
 import { intArt } from "@/lib/interiors-images";
 import { mfgPageGraph } from "@/lib/schema";
@@ -37,7 +37,7 @@ export default async function InteriorsGuidePage(props: PageProps<"/interiors/[s
   return (
     <InteriorsPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, image: art, sources: g.sources })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, questions: markdownQuestions(g.body).filter((x) => x.q !== g.question), published: g.published, updated: g.updated, trail, image: art, sources: g.sources })}
       trail={trail}
       title={g.title}
       lead={g.answer}

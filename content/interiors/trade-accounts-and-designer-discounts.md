@@ -84,8 +84,8 @@ terms, so the same firm can hold forty accounts with forty sets of rules about d
 
 ## Who qualifies for a trade program?
 
-Credentialed design businesses, and the vendor decides what counts. Arhaus's terms open its program to individual
-design professionals and related businesses only, and its FAQ asks for two forms of documentation from two different
+Credentialed design businesses, and the vendor decides what counts. [Arhaus's terms](https://www.arhaus.com/pages/arhaus-trade-program-terms-conditions) open its program to individual
+design professionals and related businesses only, and [its FAQ](https://arhaus.com/pages/trade-program-faq) asks for two forms of documentation from two different
 categories, one of them a business license or a membership card from an approved professional organization. Expect
 most programs to ask for some combination of a business license, a resale certificate, a design association
 membership and proof of a working practice, and to check them again later.
@@ -100,7 +100,7 @@ terms, restocking fees and whether the discount applies to sale items before bui
 
 ## How do you buy tax-free on a trade account?
 
-With a resale certificate, filed with each vendor. CDTFA puts the rule simply: when you are the retailer of an item,
+With a resale certificate, filed with each vendor. [CDTFA](https://cdtfa.ca.gov/formspubs/pub35/purchases-resale-certificates-and-use-tax.htm) puts the rule simply: when you are the retailer of an item,
 you may buy it for resale without paying sales tax to the vendor, and you collect it from the client instead. Vendors
 add their own paperwork. Arhaus wants a resale certificate for each state where items are delivered, provided with each
 order, and its FAQ says that if the order's billing information doesn't match the certificate, the tax can't be removed.

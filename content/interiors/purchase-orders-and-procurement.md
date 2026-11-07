@@ -101,7 +101,7 @@ pays for that work.
 | 8 Delivery and install | Scheduled with the client, white-glove crew places and unpacks | Delivered on | Project manager |
 | 9 Vendor bill | Matched to the PO and the receipt before payment | Bill date, amount | Bookkeeper |
 
-Design software records the same steps. Design Manager's manual describes recording acknowledgements, receiving
+Design software records the same steps. [Design Manager's manual](https://manuals.designmanager.com/manuals/dmpro/acknowledging_purchase_orders_and_receiving_merchandise.htm) describes recording acknowledgements, receiving
 merchandise and tracking back-ordered products, with an acknowledgement date (when the vendor receives and accepts
 the PO), an expected ship date, a cut for approval date, and a received date and quantity per item.
 
@@ -115,7 +115,7 @@ thing to chase.
 
 ## How do vendor deposits work?
 
-A vendor deposit is paid with the order so the vendor starts work. Design Manager's manual defines it that way and
+A vendor deposit is paid with the order so the vendor starts work. [Design Manager's manual](https://manuals.designmanager.com/manuals/dmpro/deposit_on_project_po.htm) defines it that way and
 notes deposits are normally less than 100% of the cost of the merchandise; where a vendor wants full payment, it
 suggests recording a vendor invoice instead. Track each deposit against its PO, so the vendor's final bill is reduced
 by it and the deposit isn't forgotten if an order is cancelled. Deposits paid to vendors and deposits taken from the
@@ -147,7 +147,7 @@ and handling charge and a second freight leg; in return the client's home sees o
 arrives damaged, [freight damage claims](/interiors/freight-damage-claims) sets out the deadlines and what a claim
 must say.
 
-Freight changes the sales tax, so bill it on its own line. In California, CDTFA says delivery charges on a taxable sale
+Freight changes the sales tax, so bill it on its own line. In California, [CDTFA](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says delivery charges on a taxable sale
 are generally not taxable when a carrier delivers directly to the client and your charge does not exceed what you paid
 the carrier; delivery from the factory or dealer to your place of business or another intermediate point, such as a
 receiving warehouse, is generally taxable. Other states have their own rules:
@@ -155,11 +155,11 @@ receiving warehouse, is generally taxable. Other states have their own rules:
 
 ## Can QuickBooks Online handle interior design purchase orders?
 
-It can hold them, on Plus or Advanced. Intuit's help says purchase orders are only available in QuickBooks Online Plus
+It can hold them, on Plus or Advanced. [Intuit's help](https://quickbooks.intuit.com/learn-support/en-us/help-article/purchase-orders/create-send-purchase-orders-quickbooks-online/L2mVpjOoq_US_en_US) says purchase orders are only available in QuickBooks Online Plus
 and Advanced; a PO tells the vendor what you intend to buy, can ship straight to a customer, stays open until it is
 added to a bill or expense, and then closes. Open POs can be listed in reports. What it doesn't hold is the design
 firm's part: the acknowledgement, the ship date, the CFA, partial receipts against the line, damage and returns, and
-which client approval the PO came from. Design platforms add those; Programa, for example, creates purchase orders
+which client approval the PO came from. Design platforms add those; [Programa](https://programa.design/features/purchase-orders-for-interior-designers), for example, creates purchase orders
 from a project's schedule data. More in [QuickBooks for interior designers](/interiors/quickbooks-for-interior-designers).
 
 ## What should procurement software do for a design firm?

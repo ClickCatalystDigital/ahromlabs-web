@@ -113,7 +113,7 @@ checks:
 ## Which GST/HST rate does a Canadian design firm charge?
 
 The rate of the province where the supply is made, which the CRA calls the place of supply, not the province the studio
-is in. The CRA's rate table, read on 7 November 2026:
+is in. [The CRA's rate table](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html), read on 7 November 2026:
 
 | Province or territory | GST/HST | Provincial tax administered separately |
 |---|---|---|
@@ -132,14 +132,14 @@ are not covered here.
 
 ## Where is furniture supplied for GST/HST?
 
-Generally in the province where it is delivered to the client. GST/HST Memorandum 3-3-3 bases the place of supply of
+Generally in the province where it is delivered to the client. [GST/HST Memorandum 3-3-3](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/3-3-3/place-supply-province-tangible-personal-property.html) bases the place of supply of
 goods on the province in which legal delivery to the recipient occurs, with deeming rules in section 3 of that Part that can override it. Its plainest example: a good delivered to the purchaser in New Brunswick is supplied in New Brunswick and taxed at 15% HST. For a
 design firm, the delivery address on the [purchase order](/interiors/purchase-orders-and-procurement) and the
 invoice sets the rate on the product.
 
 ## Where is a design fee supplied?
 
-Generally where the client's Canadian address is, but check the special rules. Memorandum 3-3-6 sets three general
+Generally where the client's Canadian address is, but check the special rules. [Memorandum 3-3-6](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/3-3-6/plc-spply-prvnc-gnrl-rls-fr-srvcs.html) sets three general
 rules for services: the first uses an address in Canada of the recipient that the supplier obtains in the ordinary
 course of business; the second, where no address is obtained, uses where the service is performed. The same memorandum
 says there are specific rules for services in relation to real property and most services in relation to tangible
@@ -164,24 +164,24 @@ separate.
 ## What must a Canadian invoice show?
 
 Whether GST/HST applies and whether it is included or added, the rate, and the tax amount as its own line or a clear
-statement that the total includes it. For HST, the CRA says to show the total HST rate and not split it into federal and
+statement that the total includes it. For HST, [the CRA](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html) says to show the total HST rate and not split it into federal and
 provincial parts. Invoices to clients who are GST/HST registrants need more detail, which the CRA lists on the same
 page. [Invoices, deposits and retainers](/interiors/invoices-deposits-and-retainers) covers the rest of a design
 invoice; the CRA treats deposits and conditional sales as a special case, with its own page.
 
 ## When does a design firm have to register?
 
-When its taxable sales pass $30,000. The CRA says you are a small supplier if you don't exceed $30,000 over four
+When its taxable sales pass $30,000. [The CRA](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html) says you are a small supplier if you don't exceed $30,000 over four
 consecutive calendar quarters, and can register voluntarily; if you exceed $30,000 in a single quarter, you must start
 charging GST/HST on the sale that took you over. A firm reselling furniture passes that quickly.
 
 ## How does British Columbia's PST apply to designers?
 
-Separately from GST, and BC has published a bulletin for designers. Bulletin PST 139 says consulting with a customer or
+Separately from GST, and BC has published a bulletin for designers. [Bulletin PST 139](https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-139-interior-designers-home-stagers.pdf) says consulting with a customer or
 creating a design concept is a non-taxable service; selling furniture and accessories is taxable on the total purchase
 price, generally including delivery and setup; and when the goods are charged separately from the design fee, PST
 applies only to the goods. Re-upholstering, refinishing and repairing furniture are taxable related services, and BC's
-PST 301 lists assembling or installing office furniture and workstations among them. A designer who supplies and
+[PST 301](https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-301-related-services.pdf) lists assembling or installing office furniture and workstations among them. A designer who supplies and
 installs things that become part of the building (wall-to-wall carpet, light fixtures) is a real property contractor:
 it charges the client no PST on the contract and pays PST on the goods itself. Designing custom furniture you make is
 the exception that taxes the design: see [job costing for custom furniture shops](/interiors/custom-furniture-job-costing).

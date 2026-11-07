@@ -43,7 +43,14 @@ sources:
     publisher: California Department of Tax and Fee Administration
     url: https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm
     date: "2026-11-07"
+  - title: "Publication 35, Reporting Tax and Keeping Records"
+    publisher: California Department of Tax and Fee Administration
+    url: https://cdtfa.ca.gov/formspubs/pub35/reporting-tax-and-keeping-records.htm
+    date: "2026-11-07"
 checks:
+  - reg: CDTFA Publication 35, deposits for future delivery
+    doc: ca-pub35-report
+    quote: "if you take a deposit for future delivery of merchandise, you should not report that amount on your tax return until the delivery is actually made or you transfer ownership to your client."
   - reg: ASID, retainer
     doc: asid-mn
     quote: "A retainer is an amount of money paid by the client to the designer and applied to the balance due at the termination of the project."
@@ -82,10 +89,10 @@ for tax (in several states design fees and product are taxed differently).
 
 ## What is a retainer, and how is it different from a deposit?
 
-A retainer pays for design work before it starts; a deposit pays for product before you order it. ASID's Minnesota
-chapter defines the retainer as money paid by the client to the designer and applied to the balance due at the end
+A retainer pays for design work before it starts; a deposit pays for product before you order it. [ASID's Minnesota
+chapter](https://mn.asid.org/costs) defines the retainer as money paid by the client to the designer and applied to the balance due at the end
 of the project, customarily paid when the agreement is signed. A product deposit is collected later, when the client
-approves what to buy; Studio Designer calls the proposal the point where the first merchandise deposit is often
+approves what to buy; [Studio Designer](https://www.studiodesigner.com/blog/proposal-confidence-vs-confusion-how-interior-designers-can-get-it-right/) calls the proposal the point where the first merchandise deposit is often
 collected.
 
 | | Retainer | Product deposit |
@@ -114,10 +121,10 @@ vendor deposits.
 
 At least the client and project, the invoice number and date, the terms and due date, each line with its description,
 quantity and price, sales tax by line, the deposits and retainer applied, and the balance due. Design manuals put the
-deposit step in the same place: Design Manager's model workflow is approval and a deposit, then purchase orders, then
+deposit step in the same place: [Design Manager's model workflow](https://manuals.designmanager.com/manuals/dmpro/an_interior_design_business_model.htm) is approval and a deposit, then purchase orders, then
 receiving, then a final invoice that applies the deposit.
 
-Show nontaxable charges as their own lines. In California, CDTFA says tax does not apply to professional fees that are
+Show nontaxable charges as their own lines. In California, [CDTFA](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says tax does not apply to professional fees that are
 not directly related to a sale of merchandise, and tells designers to list those charges separately on the invoice;
 [sales tax for interior designers](/sales-tax/interior-designers-sales-tax) has each state's rule.
 
@@ -140,11 +147,12 @@ Check: $12,000 design + $54,000 product + $1,200 freight = $67,200 paid over fiv
 
 ## How does QuickBooks Online record a client deposit?
 
-As a liability until the work is invoiced. Intuit's help says QuickBooks Online can request a deposit on an estimate
+As a liability until the work is invoiced. [Intuit's help](https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-deposits/request-customer-deposit-estimate-quickbooks/L81Kln0bN_US_en_US) says QuickBooks Online can request a deposit on an estimate
 as a dollar amount or a percentage, records the money in a liability account rather than accounts receivable, and
 applies it as a partial payment when the estimate becomes an invoice. Intuit adds that you should check your state for
 any further rules on customer deposits, which matters both for when sales tax is due and for refunds if a project is
-cancelled.
+cancelled. In California, for example, CDTFA says a deposit for future delivery isn't reported until the goods are
+delivered or ownership passes: see [California sales tax for interior designers](/sales-tax/california-interior-design-sales-tax).
 
 If your design system sends invoices to QuickBooks but not the deposit's link to them, the accountant applies the
 payment by hand. That is what our demo does today (below), and it is a question to ask of any system:

@@ -79,12 +79,12 @@ spend and how much has been spent without the client's sign-off.
 
 ## Is the proposal the budget?
 
-The proposal is the first working budget, and it should be kept as one. Studio Designer says that for most firms the
+The proposal is the first working budget, and it should be kept as one. [Studio Designer](https://www.studiodesigner.com/blog/proposal-confidence-vs-confusion-how-interior-designers-can-get-it-right/) says that for most firms the
 proposal doubles as the project's first working budget, and that it can be scoped to a whole project, a single room
 or a phase. From then on, every change is a new version of it, never an edit over the old one, so the client and the
 firm can both see what was agreed and when.
 
-ASID's chapter, writing for clients, puts the budget in the client's hands (only the client can decide what is
+[ASID's chapter](https://mn.asid.org/costs), writing for clients, puts the budget in the client's hands (only the client can decide what is
 reasonable) and names what pushes it up: custom furniture, structural changes, and changes requested mid-project. It
 also tells clients worried about the quoted cost of furnishings to ask the designer for a list of options. A budget
 that records options and their effect on the total answers that request in minutes.
@@ -111,7 +111,7 @@ As a change to the approved figure, signed off before anything is ordered. A cli
 is approving a new line; a vendor price increase between proposal and order is a revised line the client should see.
 Both should go through the same approval as the original proposal, and the budget table should show the approved
 figure moving with a date and a reason. In construction, the same discipline is called a
-[change order](/systems/change-order). Platforms that let the client accept or reject products online, as Programa
+[change order](/systems/change-order). Platforms that let the client accept or reject products online, as [Programa](https://programa.design/features/purchase-orders-for-interior-designers)
 describes, make the approval a record instead of an email.
 
 ## How do you know if the project made money?
@@ -124,7 +124,7 @@ didn't charge. [How to charge for interior design](/interiors/how-to-charge-for-
 margin through, and [job costing for custom furniture shops](/interiors/custom-furniture-job-costing) does the same for
 pieces a firm makes itself.
 
-QuickBooks Online Plus lists budgets and project profitability among its features, at the level of the books. It has no
+[QuickBooks Online Plus](https://quickbooks.intuit.com/pricing/) lists budgets and project profitability among its features, at the level of the books. It has no
 rooms, no approval, and no idea which proposal line a bill belongs to, so the budget-against-approval view lives in
 the design system.
 

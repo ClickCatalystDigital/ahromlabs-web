@@ -29,6 +29,7 @@ const DOCS = {
   "cfr-370.9": `Cornell LII - 49 CFR 370.9 ${D}.txt`,
   "bc-pst-139": `BC - PST 139 Interior designers and home stagers raw ${D}.txt`,
   "bc-pst-301": `BC - PST 301 Related services raw ${D}.txt`,
+  "ca-pub35-report": `CDTFA - Pub 35 Reporting tax and keeping records ${D}.txt`,
   "ca-pub35-realprop": `CDTFA - Pub 35 Improvements to real property ${D}.txt`,
   "qbo-projects": "Intuit - QuickBooks Online inventory, costing and projects 2026-11-02.txt",
   "ny-tsb-a-08-30": `New York - TSB-A-08(30)S millwork shop drawings ${D}.txt`,

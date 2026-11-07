@@ -8,7 +8,7 @@ import { intArt } from "@/lib/interiors-images";
 
 const title = "Running an interior design firm that sells product";
 const lead =
-  "A design firm that resells furniture, lighting and fabric runs two businesses at once: design time, and a small trading company buying on trade accounts. These guides cover how to charge and mark up product, the letter of agreement, invoices, deposits and retainers, purchase orders from vendor deposit to delivery, trade accounts, the project budget against what the client approved, QuickBooks Online and sales tax, with worked numbers and the sources quoted.";
+  "A design firm that resells furniture, lighting and fabric runs two businesses at once: design time, and a small trading company buying on trade accounts. These guides cover how to charge and mark up product, the letter of agreement, invoices, deposits and retainers, purchase orders from vendor deposit to delivery, freight damage claims, trade accounts, the project budget against what the client approved, job costing in a furniture shop, QuickBooks Online, 1099s, and sales tax in the US and GST/HST in Canada, with worked numbers and the sources quoted.";
 
 export const metadata: Metadata = {
   title: { absolute: "Interior design business guides: pricing, POs, QuickBooks" },
@@ -65,7 +65,9 @@ export default function InteriorsHub() {
         and on how the invoice is written. New York taxes design services, California taxes fees tied to the sale of
         merchandise, and Texas doesn&apos;t list interior design as a taxable service:{" "}
         <Link href="/sales-tax/interior-designers-sales-tax" className="text-link focus-ring">sales tax for interior designers</Link>{" "}
-        quotes each state, and{" "}
+        quotes each state, with more detail for{" "}
+        <Link href="/sales-tax/new-york-interior-design-sales-tax" className="text-link focus-ring">New York</Link> and{" "}
+        <Link href="/sales-tax/california-interior-design-sales-tax" className="text-link focus-ring">California</Link>, and{" "}
         <Link href="/sales-tax/resale-certificates" className="text-link focus-ring">resale certificates</Link>{" "}
         covers buying from vendors without tax.
       </p>

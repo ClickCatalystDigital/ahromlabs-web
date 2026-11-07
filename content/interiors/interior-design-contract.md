@@ -69,7 +69,7 @@ checks:
 
 Scope, money and product, in writing before work starts. A workable agreement names the services (concept, selections,
 purchasing, project administration), how each is paid, the retainer and deposits, who buys the furniture and on what
-terms, what happens to orders if the project stops, and how disputes are settled. ASID's 2018 residential forms are a
+terms, what happens to orders if the project stops, and how disputes are settled. [ASID's 2018 residential forms](https://www.asid.org/lib24watch/files/download/5012) are a
 useful map even if you don't buy them: a letter of agreement with nine schedules, some in several versions, and a blank
 schedule for your own terms. ASID says the package should be used with an attorney licensed in your state, and that
 the law on design contracts varies from state to state; this page explains the parts, not the wording.
@@ -110,10 +110,10 @@ them through on a $40,000 order.
 ## How should fees, the retainer and deposits be written?
 
 As amounts and triggers, not as intentions. Write the design fee (flat, hourly with the rate per role, or per square
-foot), what it includes and what is extra; the retainer and what it is applied to (ASID's chapter says it is customarily
+foot), what it includes and what is extra; the retainer and what it is applied to ([ASID's chapter](https://mn.asid.org/costs) says it is customarily
 paid on signing); the product deposit as a percentage of each approved item, due before the order is placed; when the
 balance is due; and the payment terms for each
-invoice. Intuit's help on deposits adds a reminder worth putting in the contract review: check your state for any
+invoice. [Intuit's help on deposits](https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-deposits/request-customer-deposit-estimate-quickbooks/L81Kln0bN_US_en_US) adds a reminder worth putting in the contract review: check your state for any
 further rules on customer deposits. [Invoices, deposits and retainers](/interiors/invoices-deposits-and-retainers) has a
 worked payment schedule.
 

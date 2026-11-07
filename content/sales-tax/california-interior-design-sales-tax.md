@@ -91,7 +91,7 @@ checks:
 
 ## Do California interior designers charge sales tax?
 
-On merchandise, yes, and on some fees and labor. CDTFA's Publication 35 says a designer who sells any merchandise to
+On merchandise, yes, and on some fees and labor. [CDTFA's Publication 35](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says a designer who sells any merchandise to
 clients, including samples or finished drawings, generally needs a seller's permit and pays tax on taxable sales,
 based on the retail price including markup and related taxable labor and service charges. What decides the rest is
 what each charge is for, which is why every invoice line should say it.
@@ -135,7 +135,7 @@ from subcontractors, because your own invoice can only split what theirs splits.
 
 ## When do you report tax on a client's deposit?
 
-When the goods are delivered or ownership passes, not when the deposit is paid. CDTFA's reporting page says a deposit
+When the goods are delivered or ownership passes, not when the deposit is paid. [CDTFA's reporting page](https://cdtfa.ca.gov/formspubs/pub35/reporting-tax-and-keeping-records.htm) says a deposit
 for future delivery of merchandise should not be reported until the delivery is made or ownership transfers; its
 example is an office furniture order paid partly in June and delivered in July, reported in full in July. That suits
 the deposit practice in [invoices, deposits and retainers](/interiors/invoices-deposits-and-retainers): collect the
@@ -143,7 +143,7 @@ deposit when the client approves, and the tax falls due with delivery.
 
 ## What about built-ins, flooring and work attached to the building?
 
-Those follow construction contractor rules. CDTFA's real property page says items attached to a building, such as
+Those follow construction contractor rules. [CDTFA's real property page](https://cdtfa.ca.gov/formspubs/pub35/improvements-to-real-property.htm) says items attached to a building, such as
 carpeting, shutters, custom cabinets and plumbing fixtures, make the designer who furnishes and installs them (or pays a
 contractor to) a construction contractor for that job; a designer who only supervises a contractor billing the client
 directly is not. Then:
@@ -160,7 +160,7 @@ on that line (at the example's 8.25%).
 
 ## Can a client use your seller's permit?
 
-No. CDTFA says it is not legal to give your permit number to anyone, clients included, so they can buy at retail stores
+No. [CDTFA](https://cdtfa.ca.gov/formspubs/pub35/purchases-resale-certificates-and-use-tax.htm) says it is not legal to give your permit number to anyone, clients included, so they can buy at retail stores
 or furniture marts without paying tax, and that you owe use tax on anything you bought for resale and then used or gave
 away. [Resale certificates](/sales-tax/resale-certificates) covers the certificate itself, and
 [trade accounts and designer discounts](/interiors/trade-accounts-and-designer-discounts) the vendor side.

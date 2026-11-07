@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 import { SalesTaxPage, StQuotes } from "@/components/SalesTaxPage";
 import { NexusCheck } from "@/components/NexusCheck";
 import { guideMarkdown, remarkGfm } from "@/components/GuidePage";
-import { markdownHeadings } from "@/lib/headings";
+import { markdownHeadings, markdownQuestions } from "@/lib/headings";
 import { NEXUS_STATES, stGuide, stGuides } from "@/lib/sales-tax";
 import { stArt } from "@/lib/sales-tax-images";
 import { mfgPageGraph } from "@/lib/schema";
@@ -38,7 +38,7 @@ export default async function SalesTaxGuidePage(props: PageProps<"/sales-tax/[sl
   return (
     <SalesTaxPage
       group={g.group}
-      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art, sources: g.sources })}
+      graph={mfgPageGraph({ path, title: g.title, description: g.answer, question: g.question, questions: markdownQuestions(g.body).filter((x) => x.q !== g.question), published: g.published, updated: g.updated, trail, app: g.tool === "nexus" ? "Economic nexus checker" : undefined, image: art, sources: g.sources })}
       trail={trail}
       title={g.title}
       lead={g.answer}

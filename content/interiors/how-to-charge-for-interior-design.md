@@ -76,7 +76,7 @@ checks:
 
 ## What are the ways to charge for interior design?
 
-There are four common bases, and most firms combine two of them. ASID's Minnesota chapter lists a fixed (flat) fee
+There are four common bases, and most firms combine two of them. [ASID's Minnesota chapter](https://mn.asid.org/costs) lists a fixed (flat) fee
 for the whole range of services, an hourly fee for the time actually spent, cost plus (buying furnishings and
 services at cost and selling them to the client at cost plus an agreed percentage) and, for larger commercial
 projects, a fee per square foot. It is blunt about the number: there is no typical or customary fee.
@@ -95,7 +95,7 @@ Hourly or flat for design, plus a markup or purchasing fee on product. ASID's ch
 most widely used structure for residential designers, and that it is now more common to charge an hourly rate for
 design services and cost plus for the products the designer buys, or a fixed fee for the entire project.
 
-ASID's own residential contract forms are built the same way: its 2018 user guide pairs a schedule for purchasing
+ASID's own residential contract forms are built the same way: [its 2018 user guide](https://www.asid.org/lib24watch/files/download/5012) pairs a schedule for purchasing
 services with a schedule for designer compensation, and the combinations cover a single fixed fee with product at the
 designer's net cost and no markup, and a fixed design fee with a separate purchasing fee as a percentage of the net
 cost of merchandise, among others. Whichever you pick, it belongs in the [letter of agreement](/interiors/interior-design-contract),
@@ -144,14 +144,14 @@ to see the cost use a purchasing fee; firms that don't, price product at a singl
 ## Does the markup change the sales tax?
 
 Yes, where product is taxable: tax is charged on what the client pays for the product, including your markup. In
-California, CDTFA says a decorator's selling price of furnishings should normally be the retail price, cost plus a
+California, [CDTFA](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says a decorator's selling price of furnishings should normally be the retail price, cost plus a
 reasonable markup. If you bill product at cost and add a separate fee for overhead and profit, CDTFA treats the whole
 fee as taxable unless you can clearly show part of it is for nontaxable professional services. State rules differ;
 [sales tax for interior designers](/sales-tax/interior-designers-sales-tax) compares New York, California and Texas.
 
 ## Can QuickBooks Online add a markup?
 
-Partly. QuickBooks Online Plus and Advanced can mark a bill or expense as billable to a customer, with an optional
+Partly. [QuickBooks Online Plus and Advanced](https://quickbooks.intuit.com/learn-support/en-us/help-article/manage-customers/enter-billable-expenses/L37dCZU5O_US_en_US) can mark a bill or expense as billable to a customer, with an optional
 default markup rate that can be checked on each expense, and the billable amount is then added to that client's
 invoice. That covers passing a vendor's bill through at cost plus a percentage after the bill arrives. It is not a
 proposal: the client approves product before you order it, before any bill exists, and a firm wants that approval

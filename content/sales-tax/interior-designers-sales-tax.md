@@ -126,7 +126,7 @@ design firm's invoice should put design fees, product, freight and installation 
 
 ## How does New York tax interior design?
 
-As a taxable service in its own right. Tax Bulletin ST-400 says anyone who sells interior decorating or design services
+As a taxable service in its own right. [Tax Bulletin ST-400](https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/inte_deco_and_design_serv.htm) says anyone who sells interior decorating or design services
 must register if they deliver the services in New York State or have a place of business there, and lists what counts,
 from layout drawings and furniture arranging to the selection, purchase and arrangement of furniture, draperies and
 other decorations. A licensed architect or engineer doing interior design that isn't architecture or engineering is
@@ -160,7 +160,7 @@ More on New York, including where a service counts as delivered and design-build
 
 ## How does California tax design fees?
 
-By what the fee is for. CDTFA's Publication 35 says a designer who sells merchandise, including samples or finished
+By what the fee is for. [CDTFA's Publication 35](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says a designer who sells merchandise, including samples or finished
 drawings, generally needs a seller's permit, and owes tax on the retail selling price including markup and any related
 taxable labor and service charges. Professional fees not directly related to a sale of merchandise are not taxable,
 and CDTFA tells designers to list them separately on the invoice. Fees that are part of a sale are taxable: its example
@@ -174,10 +174,10 @@ Deposits, reupholstery and built-ins are in [California sales tax for interior d
 
 ## How does Texas tax interior design?
 
-Texas taxes goods and a closed list of services. The Comptroller's Publication 96-259 defines taxable services, under
+Texas taxes goods and a closed list of services. The [Comptroller's Publication 96-259](https://comptroller.texas.gov/taxes/publications/96-259.php) defines taxable services, under
 Tax Code section 151.0101, as 16 broad categories; interior design is not one of them, so a consultation or design fee
 billed on its own is not on that list. Two things are: furniture and other goods you sell, at the 6.25% state rate plus
-up to 2% local, a maximum of 8.25%; and drawings, because Publication 94-143 says tax is due when a draftsman or designer
+up to 2% local, a maximum of 8.25%; and drawings, because [Publication 94-143](https://comptroller.texas.gov/taxes/publications/94-143.php) says tax is due when a draftsman or designer
 uses a customer's specifications to create drawings. Nonresidential repair and remodeling is also a taxable service
 category, which matters to a firm that manages fit-outs. Texas rulings are fact-specific, so a firm whose fee includes
 drawings should ask the Comptroller how its invoices are read.

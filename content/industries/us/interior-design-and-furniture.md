@@ -77,11 +77,11 @@ Each project has milestones with due dates, a log of site visits (who went, when
 
 ## How does the shop know who made what, and how is the crew paid?
 
-A shop order can come from a design project or straight from a walk-in client, and moves from pending to in progress, done and delivered. The daily worksheet records each person's attendance and what they worked on: which order, which part, from when to when. Each order's work history then shows who worked on which part, and when. Pay is worked out from the same records: a salaried person's monthly pay, or a day-rate person's days worked times their rate, minus that month's advances, recorded with the gross, the deductions and the net.
+A shop order can come from a design project or straight from a walk-in client, and moves from pending to in progress, done and delivered. The daily worksheet records each person's attendance and what they worked on: which order, which part, from when to when. Each order's work history then shows who worked on which part, and when. Pay is worked out from the same records: a salaried person's monthly pay, or a day-rate person's days worked times their rate, minus that month's advances, recorded with the gross, the deductions and the net. [Job costing for custom furniture and millwork shops](/interiors/custom-furniture-job-costing) works an order's materials and labor through.
 
 ## How are freight overcharges caught?
 
-Each carrier has a rate card per route, from one location to another, with the amount expected. A delivery billed above its route's rate is flagged the moment it is entered, and each carrier shows its count of overcharges. It catches overcharges as long as the rates are kept current. [Purchase orders and procurement](/interiors/purchase-orders-and-procurement) covers the rest of the vendor side, from deposit to receiving.
+Each carrier has a rate card per route, from one location to another, with the amount expected. A delivery billed above its route's rate is flagged the moment it is entered, and each carrier shows its count of overcharges. It catches overcharges as long as the rates are kept current. [Purchase orders and procurement](/interiors/purchase-orders-and-procurement) covers the rest of the vendor side, from deposit to receiving, and [freight damage claims](/interiors/freight-damage-claims) what to do when a piece arrives broken.
 
 ## How do you stop staff seeing the whole cash book?
 

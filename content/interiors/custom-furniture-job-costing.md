@@ -72,8 +72,8 @@ time is recorded on a timesheet for payroll and never against the order.
 
 ## How is labor costed per order?
 
-From a daily record of who worked on which order, for how long, priced at what each person costs. QuickBooks Online,
-with projects (on Plus and up), offers two ways: payroll expenses, which appear after payroll is run, or estimated hourly
+From a daily record of who worked on which order, for how long, priced at what each person costs. [QuickBooks Online,
+with projects](https://quickbooks.intuit.com/learn-support/en-us/help-article/regular-payroll/track-hourly-labor-costs-profitability-project/L9ZxBA4sn_US_en_US) (on Plus and up), offers two ways: payroll expenses, which appear after payroll is run, or estimated hourly
 costs, which multiply the hours worked by a fixed rate per employee and can include overhead. Either way, the hours have
 to be logged against the order at the time, not reconstructed at month-end.
 
@@ -108,11 +108,11 @@ falls by the same amount.
 
 ## How is custom furniture taxed?
 
-As goods, design included, in the states quoted here. CDTFA's Publication 35 says tax applies to fabrication labor,
+As goods, design included, in the states quoted here. [CDTFA's Publication 35](https://cdtfa.ca.gov/formspubs/pub35/designer-fees-and-charges-related-to-the-sale-of-merchandise.htm) says tax applies to fabrication labor,
 whether the materials are yours or the client's, and that when you contract to provide an item custom-made by a
-subcontractor, your charge for the item and the labor to make it is taxable. New York's advisory opinion TSB-A-08(30)S
+subcontractor, your charge for the item and the labor to make it is taxable. New York's [advisory opinion TSB-A-08(30)S](https://www.tax.ny.gov/pdf/advisory_opinions/sales/a08_30s.pdf)
 found that preparing millwork shop drawings, and supervising installation of the millwork, is a taxable interior design
-service. British Columbia's PST 139 says that when you design custom furniture you make to the customer's
+service. [British Columbia's PST 139](https://www2.gov.bc.ca/assets/gov/taxes/sales-taxes/publications/pst-139-interior-designers-home-stagers.pdf) says that when you design custom furniture you make to the customer's
 specifications, the design is taxable because the purpose of the transaction is buying the custom goods. Built-in
 millwork installed in a building can follow real property rules instead: [California's interior design sales tax
 rules](/sales-tax/california-interior-design-sales-tax) cover lump-sum and time-and-materials contracts.

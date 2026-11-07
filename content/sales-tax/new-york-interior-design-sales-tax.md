@@ -81,7 +81,7 @@ checks:
 ## Is interior design taxable in New York?
 
 Yes: New York taxes interior decorating and design services in their own right, not only the furniture sold with
-them. Tax Bulletin ST-400 lists what counts (layout drawings, schedules and specifications,
+them. [Tax Bulletin ST-400](https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/inte_deco_and_design_serv.htm) lists what counts (layout drawings, schedules and specifications,
 furniture arranging, design of furniture, fixtures and cabinetry, staging, lighting and sound design, and the selection,
 purchase and arrangement of furniture, draperies and other decorations) and who provides it, from interior consultants
 and kitchen designers to home decorators and designers, renderers and event decorators. Anyone selling these services
@@ -132,7 +132,7 @@ restaurant example, a full gut renovation managed by the design firm, is a capit
 
 ## Are millwork shop drawings taxable?
 
-Yes, when they are for an interior. In advisory opinion TSB-A-08(30)S, the Department found that preparing millwork
+Yes, when they are for an interior. In [advisory opinion TSB-A-08(30)S](https://www.tax.ny.gov/pdf/advisory_opinions/sales/a08_30s.pdf), the Department found that preparing millwork
 shop drawings (custom staircases, mouldings, built-in cabinetry) and providing a manager to supervise the installation
 in New York are interior decorating and design services, taxable under section 1105(c)(7), when the company isn't
 practising architecture and isn't itself doing the construction. In New York City, those services escape only the

@@ -74,7 +74,7 @@ checks:
 
 ## Do interior designers have to file 1099s?
 
-Yes, for people they pay for services who aren't employees. The IRS says a payment is reported as nonemployee
+Yes, for people they pay for services who aren't employees. [The IRS](https://www.irs.gov/instructions/i1099mec) says a payment is reported as nonemployee
 compensation on Form 1099-NEC when four conditions are met: it went to someone who is not your employee, it was for
 services in the course of your business, it went to an individual, partnership, estate or, in some cases, a
 corporation, and you paid that payee at least $2,000 in the year. A design firm meets all four with the independent
