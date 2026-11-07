@@ -26,7 +26,7 @@ evidence:
   - metric: what staff can ask
     value: only their own tasks and their own cash entries; payroll and bank statements refused
 published: 2026-10-20
-updated: 2026-11-05
+updated: 2026-11-08
 ---
 
 An owner wants to ask "how did this month compare with last month?" and get the real answer, not a confident paragraph that's nearly right. A chatbot that writes SQL, or reads rows and summarises them, will sooner or later give a figure that doesn't match the accounts. In a business system, one wrong number is enough for nobody to trust it again. So the assistants in Ahrom Labs' client systems are built so the model never produces the number, the same rule as [AI document reading](/notes/ai-extraction-human-in-the-loop), where a person approves every document before it reaches the books.

@@ -16,7 +16,7 @@ answer: >
 description: "How the design works, for buyers: the model picks the question, code runs a fixed look-up, and sentences with numbers not in the data are dropped."
 domain: [ai, design, selection]
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 image:
   src: /ai/ai-how-it-works.webp

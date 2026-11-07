@@ -16,7 +16,7 @@ answer: >
 description: "What an AI assistant sends to the AI provider with each question, and what India's DPDP Act and US privacy rules expect of the business."
 domain: [ai, data-safety, dpdp, selection]
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 image:
   src: /ai/ai-data-safety.webp

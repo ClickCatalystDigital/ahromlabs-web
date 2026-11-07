@@ -15,7 +15,7 @@ answer: >
 description: "An AI assistant for interior designers and furniture workshops: the questions it should answer from your own projects, invoices and orders, and how to check it."
 domain: [ai, interiors, selection]
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 image:
   src: /ai/ai-interior-design-firms.webp
