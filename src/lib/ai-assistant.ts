@@ -23,7 +23,7 @@ export const AI_VERSION = "1.0";
 
 export type System = Demo["client"] | "construction-company";
 export const DEMO_URL: Record<System, string> = { ...ERP_DEMO_URL, "construction-company": "https://construction-erp.ahromlabs.com/demo" };
-export type Kind = "data" | "how-to" | "reminder" | "refuse";
+export type Kind = "data" | "how-to" | "reminder" | "action" | "refuse";
 export type Status = "live" | "off" | "not-built";
 
 // One assistant per system, built on that system's own records and words.
@@ -40,6 +40,7 @@ export const KIND_LABEL: Record<Kind, string> = {
   data: "A figure or a list from your records",
   "how-to": "How to do something in the system",
   reminder: "Draft a task or a note",
+  action: "Make a change you confirm",
   refuse: "Should be refused",
 };
 export const STATUS_LABEL: Record<Status, string> = {
@@ -98,7 +99,20 @@ export const questions: Question[] = [
   { id: "projects.my-notes", industry: "projects", role: "sales", question: "What did I note about a client?", kind: "data", answer: "The notes this person asked the assistant to keep, optionally about one client.", check: "The notes list.", alsoAsked: ["What did I note about [client]?"], status: "live" },
   { id: "projects.note", industry: "projects", role: "sales", question: "Note that a client prefers WhatsApp.", kind: "reminder", answer: "A drafted private note; saved only when the person presses Save.", check: "The notes list before and after pressing Save.", status: "live" },
   { id: "projects.how-site-visit", industry: "projects", role: "operations", question: "How do I log a site visit?", kind: "how-to", answer: "The steps from the system's own guide.", check: "Follow the steps; they work.", status: "live" },
-  { id: "projects.mark-paid", industry: "projects", role: "accounts", question: "Mark an invoice paid.", kind: "refuse", answer: "Not done: the assistant only reads. It says where in the app to record the payment.", check: "The invoice is unchanged.", status: "live" },
+  // Confirmed changes (savistar-ops 773f42e, 6fcd8cd; 37 in all): each is a card that sends the same request as the
+  // screen, with the screen's own checks on who may do it, and is saved only when the person presses Save.
+  { id: "projects.mark-paid", industry: "projects", role: "accounts", question: "Mark an invoice paid.", kind: "action", answer: "A card naming the invoice; it is marked paid only when the person presses Save.", check: "The invoice before and after pressing Save.", status: "live" },
+  { id: "projects.add-client", industry: "projects", role: "sales", question: "Add a new client with their phone number.", kind: "action", answer: "A card with the client's name and phone; the client is added only when the person presses Save.", check: "The client list before and after pressing Save.", status: "live" },
+  { id: "projects.log-call", industry: "projects", role: "sales", question: "Log a call with a client: they approved the drawings.", kind: "action", answer: "A card with the client and what was said; it joins the client's conversation log when the person presses Save.", check: "The client's conversation log.", status: "live" },
+  { id: "projects.accept-quote", industry: "projects", role: "sales", question: "A client accepted our quote.", kind: "action", answer: "A card naming the client's quotation; it is marked accepted only when the person presses Save.", check: "The quotations list: the quote shows as accepted.", status: "live" },
+  { id: "projects.stage-invoice", industry: "projects", role: "accounts", question: "Raise the next stage invoice for an accepted quote.", kind: "action", answer: "A card naming the accepted quotation; its next unbilled payment stage (advance, material delivered, handover) becomes a draft invoice when the person presses Save.", check: "The invoices list: one new draft, for that stage.", status: "live" },
+  { id: "projects.mark-attendance", industry: "projects", role: "operations", question: "Mark a workshop person absent today.", kind: "action", answer: "A card with the person, the day and present, half day or absent; saved only when the person presses Save.", check: "The attendance screen for that day.", status: "live" },
+  { id: "projects.give-advance", industry: "projects", role: "accounts", question: "Gave a workshop person an advance.", kind: "action", answer: "A card with the person, the amount and the date; it is recorded as an advance when the person presses Save, so that month's payroll recovers it.", check: "The advances list.", status: "live" },
+  { id: "projects.site-visit", industry: "projects", role: "operations", question: "Log a site visit to a project today.", kind: "action", answer: "A card with the project, the date and the note; it joins the project's site-visit log when the person presses Save.", check: "The project's site-visit log.", status: "live" },
+  { id: "projects.workshop-order", industry: "projects", role: "operations", question: "Add a workshop order for a project.", kind: "action", answer: "A card with the item, quantity, project and due date; the order is added only when the person presses Save.", check: "The workshop orders screen.", status: "live" },
+  { id: "projects.move-task", industry: "projects", role: "sales", question: "Move a task to next Friday.", kind: "action", answer: "A card naming the task and its new date; changed only when the person presses Save.", check: "The task list.", status: "live" },
+  { id: "projects.project-hold", industry: "projects", role: "owner", question: "Put a project on hold.", kind: "action", answer: "A card naming the project and its new status; changed only when the person presses Save.", check: "The projects list, filtered to on hold.", status: "live" },
+  { id: "projects.cash-in", industry: "projects", role: "accounts", question: "Received cash from a client.", kind: "action", answer: "A cash-book entry on a card: in or out, the amount, who from and the date; saved only when the person presses Save.", check: "The cash book for the day.", status: "live" },
   { id: "projects.stock-value", industry: "projects", role: "owner", question: "What is the value of our stock?", kind: "refuse", answer: "\"The data doesn't have that\": the system doesn't keep a stock valuation, so it says so instead of estimating.", check: "The reply gives no figure.", status: "live" },
   { id: "projects.remind", industry: "projects", role: "sales", question: "Remind me to call a client on Friday.", kind: "reminder", answer: "A drafted task for Friday; nothing is saved until the person presses Save.", check: "The task list before and after pressing Save.", alsoAsked: ["remind me to send the revised quote to [client] tomorrow"], status: "live" },
   { id: "projects.staff-payroll", industry: "projects", role: "operations", question: "What is the payroll this month? (asked from a staff login)", kind: "refuse", answer: "Refused: staff see only their own tasks and cash entries, as on the screens.", check: "The same login can't open payroll on the screens either.", status: "live" },

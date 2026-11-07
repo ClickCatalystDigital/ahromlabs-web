@@ -47,7 +47,7 @@ It says so. Questions about advice, or about data the system doesn't hold, get a
 
 ## Can it change anything?
 
-No. Look-ups are read-only. "Remind me to call the Mehtas on Friday" drafts a task and "note that they prefer walnut" drafts a private note, but nothing is saved until the person presses Save. Staff can only ask about their own tasks and their own cash entries; payroll and bank statements are refused to them, the same way the screens refuse them.
+Only when asked, and only after the person confirms. Look-ups are read-only. "Remind me to call the Mehtas on Friday" drafts a task and "note that they prefer walnut" drafts a private note; Atelier AI can also prepare 37 everyday changes, such as adding a client, marking attendance, accepting a quote, raising the next stage invoice or marking an invoice paid. Each one is a card that sends the same request as the screen, with that screen's checks on who may do it, and nothing is saved until the person presses Save. Staff can only ask about their own tasks and their own cash entries; payroll and bank statements are refused to them, the same way the screens refuse them.
 
 ## Is it the same assistant everywhere?
 

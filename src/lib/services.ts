@@ -323,7 +323,7 @@ export const services: Service[] = [
     questions: [
       { q: "Can the assistant get a number wrong?", a: "The model never writes the numbers. Code runs fixed look-ups with the same maths as the screens, and any written line with a number that isn't in the data is dropped." },
       { q: "What can staff ask?", a: "Only about their own tasks and their own cash entries. Payroll and bank statements are refused to them, as they are on the screens." },
-      { q: "Can the assistant change our data?", a: "No. The assistant only reads data: look-ups never write. A reminder or note is drafted, and nothing is saved until the person presses Save." },
+      { q: "Can the assistant change our data?", a: "Not on its own. Look-ups never write. When a person asks for a change (a reminder, a note, or in Atelier AI an everyday change such as marking an invoice paid), it is shown as a card with the screen's own checks, and nothing is saved until the person presses Save." },
     ],
     demos: [
       { client: "savistar-saag", as: "Two free questions to Atelier AI, from any sample login" },

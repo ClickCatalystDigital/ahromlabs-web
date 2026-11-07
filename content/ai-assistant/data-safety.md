@@ -88,7 +88,7 @@ Ember AI's live-data answers are switched on only when the client's approver is 
 
 ## Can the assistant change anything?
 
-It shouldn't be able to. Look-ups should be read-only queries, so the worst a wrong choice can do is show the wrong table. "Remind me to call them on Friday" should draft a task that a person saves. Ask it to mark an invoice paid or delete an order, and check nothing changed: test 6 of the [vendor test](/ai-assistant/vendor-test#read-only).
+It shouldn't be able to. Look-ups should be read-only queries, so the worst a wrong choice can do is show the wrong table. "Remind me to call them on Friday" should draft a task that a person saves; any change it can make should be shown first and saved only when a person confirms it, with the same checks as the screen. Ask it to mark an invoice paid or delete an order, and check nothing changed: test 6 of the [vendor test](/ai-assistant/vendor-test#read-only).
 
 ## Can a junior staff member ask what they can't see?
 
