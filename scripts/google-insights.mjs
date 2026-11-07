@@ -83,6 +83,7 @@ async function accessToken() {
 async function api(url, { method = "GET", body } = {}) {
   const r = await fetch(url, {
     method,
+    signal: AbortSignal.timeout(60_000), // one stuck request used to hang a whole sitemap run
     headers: { authorization: `Bearer ${await accessToken()}`, ...(body && { "content-type": "application/json" }) },
     body: body && JSON.stringify(body),
   });
@@ -128,26 +129,43 @@ async function searchAnalytics(dimension, days, filters) {
 
 async function inspect(paths) {
   if (!paths?.length) {
-    const xml = await (await fetch(SITEMAP)).text();
+    const xml = await (await fetch(SITEMAP, { signal: AbortSignal.timeout(60_000) })).text();
     paths = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   }
-  const out = [];
-  for (const p of paths) {
+  const one = async (p) => {
     const url = toUrl(p);
-    const { inspectionResult: r = {} } = await api("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
-      method: "POST",
-      body: { inspectionUrl: url, siteUrl: await site() },
-    });
-    const idx = r.indexStatusResult ?? {};
-    out.push({
-      url: short(url),
-      verdict: idx.verdict,
-      coverage: idx.coverageState,
-      lastCrawl: idx.lastCrawlTime?.slice(0, 10) ?? "never",
-      googleCanonical: idx.googleCanonical && idx.googleCanonical !== url ? idx.googleCanonical : "",
-    });
-  }
+    try {
+      const { inspectionResult: r = {} } = await api("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
+        method: "POST",
+        body: { inspectionUrl: url, siteUrl: await site() },
+      });
+      const idx = r.indexStatusResult ?? {};
+      return {
+        url: short(url),
+        verdict: idx.verdict,
+        coverage: idx.coverageState,
+        lastCrawl: idx.lastCrawlTime?.slice(0, 10) ?? "never",
+        googleCanonical: idx.googleCanonical && idx.googleCanonical !== url ? idx.googleCanonical : "",
+      };
+    } catch (e) {
+      return { url: short(url), verdict: "ERROR", coverage: String(e.message).slice(0, 120), lastCrawl: "", googleCanonical: "" };
+    }
+  };
+  // ponytail: 5 at a time keeps ~250 URLs to a couple of minutes, well under the API's per-minute limit
+  const out = [];
+  for (let i = 0; i < paths.length; i += 5) out.push(...(await Promise.all(paths.slice(i, i + 5).map(one))));
   return out;
+}
+
+// Pages to request by hand: everything in the sitemap that isn't indexed, with the date we last
+// asked Google (docs/indexing-requests.json, { "/path": "YYYY-MM-DD" }). Never asked first.
+const REQUESTS_FILE = path.join(path.dirname(new URL(import.meta.url).pathname), "../docs/indexing-requests.json");
+async function pending() {
+  const asked = fs.existsSync(REQUESTS_FILE) ? JSON.parse(fs.readFileSync(REQUESTS_FILE, "utf-8")) : {};
+  return (await inspect([]))
+    .filter((r) => r.verdict !== "PASS")
+    .map((r) => ({ url: r.url, coverage: r.coverage, lastCrawl: r.lastCrawl, requested: asked[r.url] ?? "" }))
+    .sort((a, b) => (a.requested || "0").localeCompare(b.requested || "0"));
 }
 
 // ---------- Analytics (GA4 Data API)
@@ -283,6 +301,12 @@ export const TOOLS = {
       "Search Console URL Inspection: is each URL indexed, coverage state, last crawl, and Google's chosen canonical. No paths = every URL in the sitemap (about 65; quota is about 2,000 a day).",
     params: { paths: z.array(z.string()).default([]).describe("Paths or URLs; empty for the whole sitemap") },
     run: ({ paths }) => inspect(paths),
+  },
+  gsc_pending: {
+    description:
+      "Search Console: sitemap pages that aren't indexed yet, never-requested first, with the date indexing was last requested (from docs/indexing-requests.json). The daily to-request list.",
+    params: {},
+    run: () => pending(),
   },
   gsc_sitemaps: {
     description: "Search Console: submitted sitemaps, when Google last read them, and their errors and warnings.",

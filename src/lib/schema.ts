@@ -329,22 +329,9 @@ export function industryGraph(
           },
         }
       : {}),
-    ...(entry.video
-      ? {
-          // The demo's narrated tour, embedded on the page.
-          video: {
-            "@type": "VideoObject",
-            name: entry.video.name,
-            description: entry.video.description,
-            thumbnailUrl: `https://i.ytimg.com/vi/${entry.video.id}/maxresdefault.jpg`,
-            uploadDate: entry.video.uploaded,
-            duration: entry.video.duration,
-            contentUrl: `https://www.youtube.com/watch?v=${entry.video.id}`,
-            embedUrl: `https://www.youtube.com/embed/${entry.video.id}`,
-            publisher: { "@id": `${siteUrl}/#organization` },
-          },
-        }
-      : {}),
+    // The demo's narrated tour has its own watch page (/industries/<slug>/tour, tourGraph): Google only
+    // indexes a video on a page where it is the main content.
+    ...(entry.video ? { subjectOf: { "@id": `${siteUrl}/industries/${entry.slug}/tour#video` } } : {}),
     mentions: edges.clients.filter((c) => !c.anonymous).map((c) => ({
       "@type": "Organization",
       "@id": `${siteUrl}/work#${c.slug}`,
@@ -794,4 +781,31 @@ export function mfgPageGraph(page: { path: string; title: string; description: s
       },
     ],
   };
+}
+
+// The watch page for an industry demo's narrated tour: the video is the page's main content.
+export function tourGraph(entry: { slug: string; title: string; video: NonNullable<ContentEntry["video"]> }) {
+  const url = `${siteUrl}/industries/${entry.slug}/tour`;
+  const v = entry.video;
+  return withBreadcrumb(
+    {
+      "@type": "VideoObject",
+      "@id": `${url}#video`,
+      url,
+      name: v.name,
+      description: v.description,
+      thumbnailUrl: `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
+      uploadDate: v.uploaded,
+      duration: v.duration,
+      contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
+      embedUrl: `https://www.youtube.com/embed/${v.id}`,
+      publisher: { "@id": `${siteUrl}/#organization` },
+      about: { "@id": `${siteUrl}/industries/${entry.slug}` },
+    },
+    [
+      { name: "Industries", path: "/industries" },
+      { name: entry.title, path: `/industries/${entry.slug}` },
+      { name: "Demo tour", path: `/industries/${entry.slug}/tour` },
+    ],
+  );
 }

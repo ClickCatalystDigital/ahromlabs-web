@@ -107,6 +107,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    ...getContent("industry")
+      .filter((industry) => industry.video)
+      .map((industry) => ({
+        url: `${siteUrl}/industries/${industry.slug}/tour`,
+        lastModified: changed(`industries/${industry.slug}/tour`, industry.video!.uploaded),
+        changeFrequency: "yearly" as const,
+        priority: 0.5,
+      })),
     ...getContent("note").map((note) => ({
       url: `${siteUrl}/notes/${note.slug}`,
       lastModified: changed(`notes/${note.slug}`, note.updated),

@@ -148,17 +148,25 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
           )}
         </section>
 
-        {/* The demo's narrated tour; industryGraph describes it as the page's VideoObject. */}
+        {/* The demo's narrated tour lives on its own watch page (Google indexes a video only where it is
+            the main content); here, its thumbnail links there. */}
         {industry.video && (
           <section className="rail pb-12">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${industry.video.id}`}
-              title={industry.video.name}
-              loading="lazy"
-              allow="encrypted-media; picture-in-picture; fullscreen"
-              allowFullScreen
-              className="aspect-video w-full max-w-4xl rounded-lg border border-line"
-            />
+            <Link href={`/industries/${industry.slug}/tour`} className="group relative block w-full max-w-4xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`https://i.ytimg.com/vi/${industry.video.id}/hqdefault.jpg`}
+                alt=""
+                loading="lazy"
+                className="aspect-video w-full rounded-lg border border-line object-cover"
+              />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="rounded-full bg-foreground/80 px-5 py-3 text-sm font-medium text-background group-hover:bg-foreground">
+                  ▶ Watch the demo tour
+                </span>
+              </span>
+              <span className="sr-only">{industry.video.name}</span>
+            </Link>
           </section>
         )}
 
