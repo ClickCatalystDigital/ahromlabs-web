@@ -26,5 +26,9 @@ ASME Digital Collection access; not third-party copies), tick it, or write the c
 | ☐ | quality-control-manual | VIII-1 Mandatory Appendix 10 | Still holds the QC system elements in 2025 (vs CA-1) |
 | ☐ | b31-1-vs-b31-3 | B31.1-2026 para. 137; B31.3-2024 para. 345.4.2 | Hydro 1.5 × design; B31.3 × stress ratio |
 
+**7 Nov 2026:** every row was checked against ASME's free published interpretations and its own pages; results,
+evidence links and three page corrections are in `docs/asme-verification-ledger.md`. Rows still ☐ above still need the
+2025 books; the ledger marks which are already partly supported.
+
 Done: record the date and reviewer here, fix any value in the guide, and put the reviewer's name and role on the
 `/asme` hub (docs/asme-hub-plan.md §2).

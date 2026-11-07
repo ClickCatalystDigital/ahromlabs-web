@@ -18,9 +18,17 @@ answer: >
 description: "ASME welder qualification: what 1G to 6G tests qualify, plate vs pipe, diameter limits, bend vs radiography, welding operators, and whether a WPQ transfers."
 domain: [asme, welding]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-06
 sources:
+  - title: "Interpretation IX-16-28: GMAW-S qualification by ultrasonic examination (2015 Edition)"
+    publisher: ASME
+    url: https://cstools.asme.org/Interpretation/InterpretationDetail.cfm?TrackingNumber=14777
+    date: 2016-05-25
+  - title: "Interpretation IX-04-13: QW-322.2, renewal of a GMAW-S qualification"
+    publisher: ASME
+    url: https://cstools.asme.org/Interpretation/InterpretationDetail.cfm?TrackingNumber=4858
+    date: 2004-12-22
   - title: "BPVC Section IX: Welding, Brazing, and Fusing Qualifications (2025)"
     publisher: ASME
     url: https://www.asme.org/codes-standards/find-codes-standards/bpvc-ix-bpvc-section-ix-welding-brazing-fusing-qualifications
@@ -84,7 +92,7 @@ up. Thickness limits come from the deposited weld metal thickness on the coupon 
 Either by bend tests or by volumetric examination (QW-302):
 
 - **Bend tests**: coupons cut from the test weld and bent around a mandrel; cracks or open defects beyond the limit fail.
-- **Radiography or ultrasonic examination** (QW-304): allowed instead of bends for most processes and materials, and much faster, but not for gas metal arc welding in short-circuit transfer (GMAW-S), which can hide lack of fusion; those welders are bend-tested.
+- **Radiography or ultrasonic examination** (QW-304): allowed instead of bends for most processes and materials, and much faster. Gas metal arc welding in short-circuit transfer (GMAW-S), which can hide lack of fusion, can't be qualified by radiography, but ASME's published interpretation IX-16-28 (2015 Edition) says a GMAW-S test weld may be accepted by ultrasonic examination under QW-304 and QW-191.2. Otherwise those welders are bend-tested, and a lapsed GMAW-S qualification can't be renewed by radiographing a production weld (interpretation IX-04-13). Check both against your 2025 Section IX.
 
 ## What is the difference between a welder and a welding operator?
 

@@ -18,10 +18,18 @@ answer: >
 description: "ASME hydrostatic test pressure with a free calculator: UG-99 (1.3 × MAWP × stress ratio), pneumatic UG-100 (1.1), Section I PG-99 (1.5), gauges and holds."
 domain: [asme, design, testing]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-06
 tool: hydrotest
 sources:
+  - title: "Interpretation VIII-1-16-71: UG-99(b), bolting and the lowest stress ratio (2015 Edition)"
+    publisher: ASME
+    url: https://cstools.asme.org/Interpretation/InterpretationDetail.cfm?TrackingNumber=14706
+    date: 2016-09-01
+  - title: "Interpretation VIII-1-89-211: UG-99(h), metal temperature during the hydrostatic test"
+    publisher: ASME
+    url: https://cstools.asme.org/Interpretation/InterpretationDetail.cfm?TrackingNumber=8212
+    date: 1990-07-09
   - title: "BPVC Section VIII Division 1 (2025)"
     publisher: ASME
     url: https://www.asme.org/codes-standards/find-codes-standards/bpvc-viii-1-bpvc-section-viii-rules-construction-pressure-vessels-division-1
@@ -58,7 +66,9 @@ The Code text is ASME's and paid; this guide cites the 2025 Edition's paragraphs
 ## What is the stress ratio in UG-99?
 
 It is the allowable stress at the test temperature divided by the allowable stress at the design temperature, taken
-for the pressure-part material where that ratio is lowest; bolting is left out. Both values come from Section II
+for the pressure-part material where that ratio is lowest. Bolting can be left out of it as long as 1.3 times the
+ratio doesn't stress the bolts above 90% of their yield strength at test temperature (ASME interpretation
+VIII-1-16-71, 2015 Edition). Both values come from Section II
 Part D. At ordinary temperatures they are often equal and the ratio is 1, so the test is 1.3 × MAWP; for a hot
 vessel, whose allowable stress falls with temperature, the ratio is above 1 and the test pressure rises.
 
@@ -87,9 +97,10 @@ a 0–600 psi gauge is too coarse. For a 225 psi boiler test, 0–600 psi is wit
 
 ## How warm should the test water be?
 
-Warm enough that the metal is at least 30 °F (17 °C) above the vessel's [MDMT](/asme/impact-testing), to avoid
-brittle fracture, and Division 1 recommends not above 120 °F (49 °C) so the vessel can be approached safely during
-the examination (UG-99(h)).
+Division 1 recommends that the metal be at least 30 °F (17 °C) above the vessel's [MDMT](/asme/impact-testing), to
+avoid brittle fracture, and not above 120 °F (49 °C), so the vessel can be approached safely during the examination
+(UG-99(h)). Both are recommendations, not requirements: ASME interpretation VIII-1-89-211 says the 30 °F margin is
+not mandatory. Many shops and owners make it one anyway.
 
 ## When is a pneumatic test used instead?
 

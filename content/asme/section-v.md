@@ -18,7 +18,7 @@ answer: >
 description: "ASME Section V explained: its Articles for RT, UT, MT, PT, VT and leak testing, who sets acceptance, how NDE personnel are qualified, and the NDE report."
 domain: [asme, nde]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-07
 checked: 2026-11-06
 sources:
   - title: "BPVC Section V: Nondestructive Examination (2025)"
@@ -96,7 +96,8 @@ left out only if welding, brazing and fusing aren't in the shop's scope. See [BP
 ## Can a welder be qualified by radiography?
 
 Yes, for most processes: Section IX allows radiography or ultrasonic examination of the test coupon in place of bend
-tests, with Section V setting the method. GMAW short-circuit welders are bend-tested. See
+tests, with Section V setting the method. GMAW short-circuit welders can't be qualified by radiography; ASME
+interpretation IX-16-28 (2015 Edition) allows ultrasonic examination for them. See
 [welder qualification](/asme/welder-qualification).
 
 ## What should an NDE report show?
