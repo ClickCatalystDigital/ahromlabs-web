@@ -60,7 +60,7 @@ Outside the repos: `FOLDER SAMPLE - FOR APP/Construction/sources/` (Massachusett
 | Same, US build (us-local.db, MARKET=NA) | Pass: 66 runs; change orders "$6,504 approved; none pending"; retainage held $24,840 matches the pay applications; turn checks OK |
 | Same, US build with CO_FIXTURES=1 on a copy | Pass: draft, sent, declined and superseded change orders added; "$6,504 approved; $4,601 pending on 2 change orders"; optional lines and the superseded revision not counted |
 | Datum AI in the browser (local US build, model endpoint closed so the keyword router answers) | "pending change orders" → Change orders table; "what is a construction change directive" → answer from the change-orders guide with "Read the full guide" linking https://ahromlabs.com/construction/change-orders |
-| `npm run ask -- --library` (structonova-ops, added after the release) | The 38 construction questions from the site's question library through the real pipeline, model offline: India 38/38, US 38/38 as the library promises, $0. It first found 6–7 misses, all in the keyword router used when the model is down (a records question answered from a TDS guide section; missing look-up keywords), fixed in structonova-ops 11a5da0 (not yet deployed to the demos); a site engineer asking about margin is refused. `--model` runs the same through the real model for a fraction of a cent per question |
+| `npm run ask -- --library` (structonova-ops, added after the release) | The 38 construction questions from the site's question library through the real pipeline, model offline: India 38/38, US 38/38 as the library promises, $0. It first found 6–7 misses, all in the keyword router used when the model is down (a records question answered from a TDS guide section; missing look-up keywords), fixed in structonova-ops 11a5da0 (deployed to both demos 7 Nov); a site engineer asking about margin is refused. `--model` runs the same through the real model for a fraction of a cent per question |
 | structonova-ops lint | Not run: the repo has no ESLint config (`next lint` asks to create one) |
 | Production build and prerender (ahrom-labs) | See section 5 |
 
@@ -73,8 +73,10 @@ times (zsh doesn't split `$e`); each configuration was re-run separately and the
   Worker version 3968a05d-9c21-479d-97c8-4158b1e7c0e0). https://construction-erp-us.ahromlabs.com/demo answers 200;
   the new widget code (guide links) is in the served bundle. The first request after deploy took 68 s, later ones
   1–2 s.
-- **India construction demo**: not redeployed. It has the same assistant code changes (rules answers from the India
-  guides) waiting; deploy with `npm run cf:deploy` when wanted.
+- **Both construction demos, redeployed after the question runner** (structonova-ops 11a5da0, with the keyword-router
+  fixes): US Worker version dc240847-6334-4a48-bffe-c63ba9f6f862, India e60349b9-ec88-42d4-b69f-c0d6a415282c; demo
+  databases migrated (no schema change). Both /demo pages answer 200 and serve the new widget code. The India demo now
+  answers rules questions from the India construction guides.
 - **ahromlabs.com**: deployed from the clean worktree at commit abf2435 with `npm run deploy` (content build, OpenNext
   production build with every page prerendered, so an unknown related path would have failed it; Cloudflare Worker
   version 234f3271-ecaf-4751-bba8-53eda0f132d9). Confirmed live with curl on 7 Nov: `/`, `/systems/retainage`,
@@ -112,8 +114,8 @@ times (zsh doesn't split `$e`); each configuration was re-run separately and the
 
 ## 7. Human inputs still needed
 
-1. **Done 7 Nov:** Datum change orders checked live and flipped to live. Left: deploy the India construction demo
-   (`npm run cf:deploy` in structonova-ops) when you want its guide answers live too, and push structonova-ops.
+1. **Done 7 Nov:** Datum change orders checked live and flipped to live. Both demos redeployed 7 Nov. Left: push
+   structonova-ops (4 local commits).
 2. **Five lien-waiver states**: open each official page in a normal browser and save the section text into
    `FOLDER SAMPLE - FOR APP/Construction/sources`: Georgia O.C.G.A. 44-14-366 (current version, after 2020 HB 153),
    Mississippi Code 85-7-433, Missouri RSMo ch. 429 (only if it has a waiver form), Nevada NRS 108.2457, Utah Code
