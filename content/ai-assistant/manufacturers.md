@@ -15,7 +15,7 @@ answer: >
 description: "An AI assistant for a manufacturing ERP: start with how-to answers from your own help guide, then stock, purchase and approval questions, and how to check it."
 domain: [ai, manufacturing, selection]
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 image:
   src: /ai/ai-manufacturers.webp
@@ -43,7 +43,7 @@ When the owner decides who may see what. Stock on hand, items below minimum, pur
 
 ## How does Ember AI do it?
 
-Ember AI is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.
+Ember AI is the assistant in a boiler manufacturer's system, open to staff. How-to answers are live; the live-data look-ups are built and switched off until the client records its approval. Job-card and work-in-progress questions are not built yet. It can also make everyday changes when asked: add an enquiry, log a follow-up, record a payment against a sale order, close a milestone, log a truck at the gate, issue material, record a QC test, mark attendance, 39 in all. Each change shows as a card and is saved only when the person presses Save, run as that person, so the same department limits and approvals apply as on the screens. On the [boiler demo](https://boiler-erp.ahromlabs.com/demo), with a sample company, live data is on: anyone can ask it two questions. Every question it handles is listed below.
 
 ## How do I check a vendor's assistant?
 

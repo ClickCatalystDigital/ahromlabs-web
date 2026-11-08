@@ -15,7 +15,7 @@ answer: >
 description: "An AI assistant for traders and distributors: the stock, shipment and customer questions it should answer from your own records, and how to check it."
 domain: [ai, trading, selection]
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 image:
   src: /ai/ai-trading-distribution.webp
@@ -36,7 +36,7 @@ Questions about data the system doesn't keep. A stock system that doesn't hold r
 
 ## How does Ohm AI do it?
 
-Ohm AI is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.
+Ohm AI is the assistant in LS Technologies' inventory system, for its own staff; the partner store's logins and customers don't get it. A small model picks one of its fixed read-only look-ups; code resolves item, customer and reel names and runs the query. Questions it couldn't answer, and every thumbs-down, are listed in Settings, so the next look-up comes from what was asked. It can also make everyday changes when asked: receive reels, ship to a customer, move a box between stores, approve a staff request, reserve stock for a purchase order, set an item's rate, 37 in all. Each change shows as a card and is saved only when the person presses Save, with the same checks as the screen, so a staff entry still goes for approval. It runs on LS Technologies' own key with a daily question limit, at about a hundredth of a rupee per question. On the [electronics demo](https://electronics-erp.ahromlabs.com/demo) anyone can ask it two questions about a sample company.
 
 ## How do I check a vendor's assistant?
 

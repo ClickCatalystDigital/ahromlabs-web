@@ -15,7 +15,7 @@ answer: >
 description: "An AI assistant for construction contractors: the site, material, billing and labour questions it should answer from your own records, and how to check it."
 domain: [ai, construction, selection]
 published: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-08
 checked: 2026-11-07
 ---
 
@@ -27,11 +27,11 @@ Every question Datum AI answers is listed below, with the screen to check each a
 
 ## What should it refuse?
 
-Advice, changes to records, and anything a login can't see on the screens. A site engineer asking whether a site is making money should get a refusal, not a margin; "mark the bill paid" should get a pointer to the Billing tab, not a changed bill.
+Advice, changes nobody confirmed, and anything a login can't see on the screens. A site engineer asking whether a site is making money should get a refusal, not a margin; "mark the bill paid" should get a card to confirm, not a bill changed behind the person's back.
 
 ## How does Datum AI do it?
 
-Datum AI is the assistant in the system built for a construction contractor, a waterproofing and repair contractor that also trades construction chemicals; it is not yet live there, so today it answers on the demo's sample records. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens, so a site's margin is the Dashboard's margin and an RA bill's amount is the Billing tab's. Site engineers and storekeepers get the site questions but not company money, margins or payroll. "Remind me to call them on Friday" drafts a task that is saved only when the person presses Save. [How it works](/ai-assistant/how-it-works) sets out the design.
+Datum AI is the assistant in the system built for a construction contractor, a waterproofing and repair contractor that also trades construction chemicals; it is not yet live there, so today it answers on the demo's sample records. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens, so a site's margin is the Dashboard's margin and an RA bill's amount is the Billing tab's. Site engineers and storekeepers get the site questions but not company money, margins or payroll. It can also make everyday changes when asked: add the day's work, labour or an issue to a site's daily report, mark site attendance, record a measurement, raise the next RA bill and move it to certified or paid, log site cash, receive material, move a machine, 45 in all. Each change shows as a card and is saved only when the person presses Save, with the screen's own checks, so a site engineer still can't approve a report. [How it works](/ai-assistant/how-it-works) sets out the design.
 
 You can ask it two questions yourself on the [construction demo](https://construction-erp.ahromlabs.com/demo), from any sample login, with sample sites, workers and bills.
 

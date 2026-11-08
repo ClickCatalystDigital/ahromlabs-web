@@ -35,7 +35,7 @@ It only chooses. A small AI model reads the question and picks from fixed option
 
 From code running a fixed look-up, not from the model. Each question type has a [fixed look-up](/systems/fixed-look-up): a read-only query written in advance, with only the values filled in. It uses the same maths as the app's own screens, so "who owes us money?" counts the same invoices, the same way, as the unpaid-invoices screen. The answer is shown as a table, with a link to that screen.
 
-Because the look-ups only read, a question can't change anything. A change has to be asked for, and even then it is only a card: "remind me to call them on Friday" drafts a task, and Atelier AI can also prepare everyday changes such as marking attendance, accepting a quote or marking an invoice paid. Each card sends the same request as the screen, with the screen's own checks on who may do it, and nothing is saved until the person presses Save.
+Because the look-ups only read, a question can't change anything. A change has to be asked for, and even then it is only a card: "remind me to call them on Friday" drafts a task, and each assistant can also prepare everyday changes, such as marking attendance, accepting a quote, receiving stock or moving a running-account bill to paid. Each card sends the same request as the screen, with the screen's own checks on who may do it, and nothing is saved until the person presses Save.
 
 ## How are invented numbers kept out of the answer?
 
