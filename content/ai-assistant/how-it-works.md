@@ -16,7 +16,7 @@ answer: >
 description: "How the design works, for buyers: the model picks the question, code runs a fixed look-up, and sentences with numbers not in the data are dropped."
 domain: [ai, design, selection]
 published: 2026-10-25
-updated: 2026-11-08
+updated: 2026-11-09
 checked: 2026-11-07
 image:
   src: /ai/ai-how-it-works.webp
@@ -35,7 +35,7 @@ It only chooses. A small AI model reads the question and picks from fixed option
 
 From code running a fixed look-up, not from the model. Each question type has a [fixed look-up](/systems/fixed-look-up): a read-only query written in advance, with only the values filled in. It uses the same maths as the app's own screens, so "who owes us money?" counts the same invoices, the same way, as the unpaid-invoices screen. The answer is shown as a table, with a link to that screen.
 
-Because the look-ups only read, a question can't change anything. A change has to be asked for, and even then it is only a card: "remind me to call them on Friday" drafts a task, and each assistant can also prepare everyday changes, such as marking attendance, accepting a quote, receiving stock or moving a running-account bill to paid. Each card sends the same request as the screen, with the screen's own checks on who may do it, and nothing is saved until the person presses Save.
+Because the look-ups only read, a question can't change anything. A change has to be asked for, and even then it is only a card: "remind me to call them on Friday" drafts a task, and each assistant can also prepare everyday changes, such as marking attendance, accepting a quote, receiving stock or moving a running-account bill to paid. Each card sends the same request as the screen, with the screen's own checks on who may do it, and nothing is saved until the person presses Save. An owner can let chosen roles switch the chat to Auto: adds and edits then save at once with an Undo, while deletes, payments and approvals always show the card. Claude or ChatGPT connected to the system always previews a change and asks to confirm it.
 
 ## How are invented numbers kept out of the answer?
 

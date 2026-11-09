@@ -15,7 +15,7 @@ answer: >
 description: "An AI assistant for interior designers and furniture workshops: the questions it should answer from your own projects, invoices and orders, and how to check it."
 domain: [ai, interiors, selection]
 published: 2026-10-25
-updated: 2026-11-08
+updated: 2026-11-09
 checked: 2026-11-07
 image:
   src: /ai/ai-interior-design-firms.webp
@@ -36,7 +36,7 @@ Advice ("should we raise our design fee?") and anything a login can't see on the
 
 ## How does Atelier AI do it?
 
-[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. It can also make everyday changes when asked: add a client, log a call, mark attendance, accept a quote, raise the next stage invoice, mark an invoice paid, 37 in all. Each change shows as a card and is saved only when the person presses Save, with the same checks on who may do it as the screen.
+[Atelier AI](/notes/assistant-that-answers-from-your-ledger) is the assistant in Savistar & Saag, an interior design studio and a furniture workshop sharing one system. A small model picks one of its [fixed look-ups](/systems/fixed-look-up); code runs it with the same maths as the screens. It routed 55 of 55 test questions and 57 unseen real phrasings correctly, including Hinglish. Each person can pick a voice for it, and a written line with a number not in the table is dropped. It can also make everyday changes when asked: add a client, log a call, mark attendance, accept a quote, raise the next stage invoice, mark an invoice paid, 59 in all. Each change shows as a card and is saved when the person presses Save; where the owner has allowed Auto for that role, adds and edits save at once with an Undo, and deletes, payments and approvals still ask first, with the same checks on who may do it as the screen.
 
 You can ask it two questions yourself on the [interiors demo](https://interiors-erp.ahromlabs.com/demo), from any sample login.
 

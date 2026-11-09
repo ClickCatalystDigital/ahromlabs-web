@@ -26,7 +26,7 @@ evidence:
   - metric: what staff can ask
     value: only their own tasks and their own cash entries; payroll and bank statements refused
 published: 2026-10-20
-updated: 2026-11-08
+updated: 2026-11-09
 ---
 
 An owner wants to ask "how did this month compare with last month?" and get the real answer, not a confident paragraph that's nearly right. A chatbot that writes SQL, or reads rows and summarises them, will sooner or later give a figure that doesn't match the accounts. In a business system, one wrong number is enough for nobody to trust it again. So the assistants in Ahrom Labs' client systems are built so the model never produces the number, the same rule as [AI document reading](/notes/ai-extraction-human-in-the-loop), where a person approves every document before it reaches the books.
@@ -47,7 +47,7 @@ It says so. Questions about advice, or about data the system doesn't hold, get a
 
 ## Can it change anything?
 
-Only when asked, and only after the person confirms. Look-ups are read-only. "Remind me to call the Mehtas on Friday" drafts a task and "note that they prefer walnut" drafts a private note; Atelier AI can also prepare 37 everyday changes (the assistants in the other systems do the same, with 37 to 45 of their own), such as adding a client, marking attendance, accepting a quote, raising the next stage invoice or marking an invoice paid. Each one is a card that sends the same request as the screen, with that screen's checks on who may do it, and nothing is saved until the person presses Save. Staff can only ask about their own tasks and their own cash entries; payroll and bank statements are refused to them, the same way the screens refuse them.
+Only when asked, and only after the person confirms. Look-ups are read-only. "Remind me to call the Mehtas on Friday" drafts a task and "note that they prefer walnut" drafts a private note; Atelier AI can also prepare 59 everyday changes (the assistants in the other systems do the same, with 47 to 99 of their own), such as adding a client, marking attendance, accepting a quote, raising the next stage invoice or marking an invoice paid. Each one is a card that sends the same request as the screen, with that screen's checks on who may do it, and nothing is saved until the person presses Save, unless the owner has allowed Auto for that role: then adds and edits save at once with an Undo, and deletes, payments and approvals still ask first. Staff can only ask about their own tasks and their own cash entries; payroll and bank statements are refused to them, the same way the screens refuse them.
 
 ## Is it the same assistant everywhere?
 
