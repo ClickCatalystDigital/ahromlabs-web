@@ -138,7 +138,7 @@ const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map
 // Sites that turn scripts away (403, a 404, or no answer at all) though the page opens in a browser, each checked
 // by hand on 5 Nov 2026 (the two state legislatures on 7 Nov, read through a cloud browser): a refusal from these is
 // reported, not counted. A 200 or a 5xx from them still counts.
-const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.ftc.gov", "www.meity.gov.in", "leginfo.legislature.ca.gov",
+const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.arhaus.com", "arhaus.com", "www.ftc.gov", "www.meity.gov.in", "leginfo.legislature.ca.gov",
   "malegislature.gov", "www.legislature.mi.gov"]);
 // curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
 // certificate, which macOS curl fetches and Node does not. One byte is enough.
@@ -158,7 +158,7 @@ for (const url of urls) {
     Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10_000);
     status = statusOf(url);
   }
-  if ([0, 403, 404].includes(status) && BLOCKS_SCRIPTS.has(new URL(url).hostname)) {
+  if ([0, 403, 404, 430].includes(status) && BLOCKS_SCRIPTS.has(new URL(url).hostname)) {
     console.log(`skip  ${url} (${status || "no answer"}: this site blocks scripts; check it in a browser)`);
     continue;
   }
