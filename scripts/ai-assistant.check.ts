@@ -4,6 +4,7 @@
 // be published. The client apps (AI_APPS, default ~/Developer) give the real look-up lists. Without either, those
 // checks are skipped with a warning, so a machine without them can still build.
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
 import { questions, vendorTests, ASSISTANT, aiQuestionsJson } from "../src/lib/ai-assistant";
@@ -67,6 +68,33 @@ if (counts["savistar-saag"]) {
   const typed = [...note.matchAll(/there are (\d+) of these look-ups|look-ups \(Savistar & Saag\)\s*\n\s*value: (\d+)/g)].map((m) => Number(m[1] ?? m[2]));
   if (!typed.length) fail.push("note: Savistar's look-up count not found; keep it in a form this check reads");
   for (const n of typed) if (n !== counts["savistar-saag"]) fail.push(`note says ${n} look-ups at Savistar; the app has ${counts["savistar-saag"]}`);
+}
+
+// ── Ember's steel purchase what-if: the website and the app say the same thing ──
+// The app's Cue Cards (SB Ops lib/cue-cards-intel.mjs) are the source of the question texts. The status follows deployment:
+// a push to SB Ops main deploys (its .github/workflows/deploy.yml), so the feature is live once origin/main has
+// lib/order-whatif.mjs, and "built-not-live" until then. origin/main is as of the last `git fetch` in that repo.
+{
+  const sbops = path.join(APPS, "shanti-ops");
+  const intel = read(path.join(sbops, "lib/cue-cards-intel.mjs"));
+  const site = questions.filter((q) => q.industry === "manufacturing" && q.kind === "calculate");
+  if (!intel) warn.push(`${sbops}/lib/cue-cards-intel.mjs not found; the what-if questions are not checked against the app`);
+  else {
+    const block = intel.slice(intel.indexOf("WHATIF_CARDS"), intel.indexOf("];", intel.indexOf("WHATIF_CARDS")));
+    const cards = [...block.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+    for (const q of site) if (!cards.includes(q.question)) fail.push(`${q.id}: "${q.question}" is not one of the app's what-if Cue Cards`);
+    for (const c of cards) if (!site.some((q) => q.question === c)) fail.push(`the app's what-if Cue Card "${c}" has no question in the library`);
+    let deployed: boolean | null = null;
+    try {
+      execFileSync("git", ["-C", sbops, "cat-file", "-e", "origin/main:lib/order-whatif.mjs"], { stdio: "ignore" });
+      deployed = true;
+    } catch (e) {
+      deployed = (e as { status?: number }).status === 128 ? false : null; // 128: not in origin/main; anything else: git unusable
+    }
+    if (deployed === null) warn.push("git could not read SB Ops origin/main; the what-if status is not checked");
+    const want = deployed ? "live" : "built-not-live";
+    if (deployed !== null) for (const q of site) if (q.status !== want) fail.push(`${q.id}: status "${q.status}", but SB Ops origin/main ${deployed ? "has" : "does not have"} the what-if: should be "${want}"`);
+  }
 }
 
 // ── One search question per page: no two hub pages share a title or description opening ──

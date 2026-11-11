@@ -5,7 +5,10 @@
 // What makes a line worth publishing (the rule for adding one):
 //   - `check` names something a buyer can compare the answer with (a screen, a report, a register).
 //   - `status` is the truth about Ahrom Labs' assistants today: "live" only where the assistant named in
-//     ASSISTANT answers it now; "off" where it is built but switched off at the client; "not-built" otherwise.
+//     ASSISTANT answers it now; "off" where it is built but switched off at the client; "built-not-live" where it is
+//     built and tested but not yet on any deployment (the same words as the ERP list's status); "not-built" otherwise.
+//     scripts/ai-assistant.check.ts reads the app repos to keep "built-not-live" honest (see the what-if check there).
+//   - `kind: "calculate"` is fixed arithmetic on figures the person enters, never the AI's own working.
 //   - No marketing figures here; the guides quote only figures already published on the site.
 //   - The boiler manufacturer and the construction contractor are never named.
 
@@ -23,8 +26,8 @@ export const AI_VERSION = "1.0";
 
 export type System = Demo["client"] | "construction-company";
 export const DEMO_URL: Record<System, string> = { ...ERP_DEMO_URL, "construction-company": "https://construction-erp.ahromlabs.com/demo" };
-export type Kind = "data" | "how-to" | "reminder" | "action" | "refuse";
-export type Status = "live" | "off" | "not-built";
+export type Kind = "data" | "how-to" | "reminder" | "action" | "refuse" | "calculate";
+export type Status = "live" | "off" | "built-not-live" | "not-built";
 
 // One assistant per system, built on that system's own records and words.
 // `demo`: what a visitor can ask on the public demo, which caps each visitor at two questions on the server.
@@ -42,10 +45,12 @@ export const KIND_LABEL: Record<Kind, string> = {
   reminder: "Draft a task or a note",
   action: "Make a change you confirm",
   refuse: "Should be refused",
+  calculate: "A calculation on figures you enter",
 };
 export const STATUS_LABEL: Record<Status, string> = {
   live: "Answered today",
   off: "Built, switched off at the client",
+  "built-not-live": "Built by Ahrom Labs, not yet live",
   "not-built": "Not yet built by Ahrom Labs",
 };
 
@@ -158,7 +163,8 @@ export const questions: Question[] = [
   { id: "trading.owes", industry: "trading", role: "accounts", question: "How much does a customer owe us?", kind: "refuse", answer: "\"The data doesn't have that\": this system keeps stock, not the money, so it says so instead of guessing.", check: "The reply gives no figure.", alsoAsked: ["how much revenue did we make from [customer] shipments"], status: "live" },
   { id: "trading.how-approve", industry: "trading", role: "owner", question: "How do I approve an inward request?", kind: "how-to", answer: "The steps from the system's own guide, with a link to the screen.", check: "Follow the steps; they work.", alsoAsked: ["how does the partner store's daily approval work"], status: "live" },
 
-  // ── Manufacturing (Ember AI: how-to answers live; live data built, switched off) ──
+  // ── Manufacturing (Ember AI: how-to answers and confirmed changes live; live data built, switched off at the client; the
+  // steel purchase what-if built, not yet live; operational intelligence planned) ──
   { id: "manufacturing.purchase-request", industry: "manufacturing", role: "operations", question: "How do I raise a purchase request?", kind: "how-to", answer: "The steps from the system's help guide for the person's own department, with a link to the screen.", check: "Follow the steps; they work.", alsoAsked: ["how do i rais a purchse reqest"], status: "live" },
   { id: "manufacturing.pre-dispatch", industry: "manufacturing", role: "operations", question: "How do I send a packing list for approval before dispatch?", kind: "how-to", answer: "The dispatch guide's approval-before-dispatch section.", check: "Follow the steps; they work.", alsoAsked: ["where is pakcing list aproval"], status: "live" },
   { id: "manufacturing.certificates", industry: "manufacturing", role: "operations", question: "How do I assign test certificates to units?", kind: "how-to", answer: "The quality guide's section on assigning certificates to units.", check: "Follow the steps; they work.", alsoAsked: ["how to add test certifcate"], status: "live" },
@@ -193,6 +199,18 @@ export const questions: Question[] = [
   { id: "manufacturing.project-status", industry: "manufacturing", role: "owner", question: "Is a project delayed?", kind: "data", answer: "The project's stage and dates against plan.", check: "The project's page.", alsoAsked: ["how far along is [project]"], status: "off" },
   { id: "manufacturing.who-owes", industry: "manufacturing", role: "accounts", question: "Which customers owe us the most?", kind: "data", answer: "Outstanding by customer, for those whose department may see money.", check: "The receivables screen.", alsoAsked: ["who has not paid us yet", "hw much does [customer] ow us"], status: "off" },
   { id: "manufacturing.job-cards", industry: "manufacturing", role: "owner", question: "Which job cards are behind schedule?", kind: "data", answer: "Job cards past their planned date, by work centre.", check: "The shop floor's job cards.", status: "not-built" },
+  // The steel purchase what-if (SB Ops 37b42ed, 652bd9e; merged into the app's main branch, not yet deployed): a card on the project
+  // page for PM, Sales and Marketing logins. Ember answers these with a fixed pointer to the card and never calculates them itself.
+  // The question texts are the app's own Cue Cards (lib/cue-cards-intel.mjs); scripts/ai-assistant.check.ts keeps them identical.
+  { id: "manufacturing.whatif-buy-now", industry: "manufacturing", role: "owner", question: "What changes if we purchase steel now rather than later?", kind: "calculate", answer: "The extra steel cost above the quoted rate if you buy now or wait, at the rates you enter (low, expected and high), and the financing cost of each timing at your own borrowing rate, shown as separate amounts and never added together. No percentage of margin.", check: "Work one line by hand: quantity still to buy × (rate paid − quoted rate) gives the same amount as the card.", status: "built-not-live" },
+  { id: "manufacturing.whatif-financing", industry: "manufacturing", role: "accounts", question: "How does an earlier steel purchase affect our financing cost?", kind: "calculate", answer: "Interest on the order's cash gap, month by month from your payment terms, when the steel is paid now versus when fabrication starts, with delivery and collection unchanged.", check: "The month-end cash balance from your terms: interest is the negative balances × your monthly rate.", status: "built-not-live" },
+  { id: "manufacturing.whatif-scenarios", industry: "manufacturing", role: "owner", question: "Can we compare different steel-price scenarios?", kind: "calculate", answer: "Three later rates you enter, low, expected and high, each with its steel cost against buying now. They are your figures, not a forecast.", check: "Each scenario's amount equals quantity × (that rate − today's rate).", status: "built-not-live" },
+  { id: "manufacturing.whatif-assumptions", industry: "manufacturing", role: "owner", question: "What assumptions does the steel purchase estimate depend on?", kind: "calculate", answer: "Shown with every result: cash in hand earns nothing; the steel is valued at the quoted rate in the cash timeline; supplier credit, storage costs and the value of securing supply are left out; later rates are what you typed. Where each input came from is listed too.", check: "The card's \"Limits of this calculation\" box and its list of inputs.", status: "built-not-live" },
+  // Operational intelligence from the system's own records: planned, not built. Calculations would stay fixed arithmetic, data in the system.
+  { id: "manufacturing.steel-exposure", industry: "manufacturing", role: "owner", question: "Which open orders are exposed if steel prices rise before we buy?", kind: "data", answer: "Each open order's steel at the quoted rate, the quantity still unbought and when it is planned to be bought, with the records it comes from.", check: "The order's quotation, BOM and purchase orders.", status: "not-built" },
+  { id: "manufacturing.order-cash-gap", industry: "manufacturing", role: "accounts", question: "What will the cash gap on an order cost us?", kind: "data", answer: "The order's own payment terms, milestones and payments turned into a monthly cash balance and its interest at the company's rate.", check: "The order's payments and milestone dates.", status: "not-built" },
+  { id: "manufacturing.delay-impact", industry: "manufacturing", role: "operations", question: "Which delayed milestones will hold up dispatch?", kind: "data", answer: "Milestones past their date and the later steps that wait on them, by project.", check: "Each project's milestone tracker.", status: "not-built" },
+  { id: "manufacturing.priorities", industry: "manufacturing", role: "owner", question: "What should we deal with first this week, and why?", kind: "data", answer: "Open issues from the questions above, ordered by their measured amount and due date, each with the records and assumptions behind it. No advice beyond what the records show.", check: "Each item's own records.", status: "not-built" },
   // ── Construction (Datum AI: a waterproofing and repair contractor with a construction-chemicals trading desk; the
   // system runs on the public demo with sample data. The US build drops the GST and TDS look-up.) ──
   { id: "construction.one-site", industry: "construction", role: "owner", question: "How is a named site going?", kind: "data", answer: "That site's work done against the BOQ, milestones done and overdue, the last daily report, running bills and payments, cash at site, supplier orders and project manager visits.", check: "The site's page: BOQ progress, Billing tab and milestones match.", status: "live" },
@@ -289,8 +307,9 @@ export function aiQuestionNodes() {
       ahromLabsStatus: STATUS_LABEL[q.status],
       ...(q.alsoAsked?.length && { alsoAsked: q.alsoAsked }),
       // Typed edges: who answers it, where to try it, what delivers it, what explains it. Never the app's look-up key.
-      ...(q.status !== "not-built" && { answeredBy: { assistant: ASSISTANT[sys].name, system: ASSISTANT[sys].system } }),
-      ...(q.status !== "not-built" && { provenBy: { url: DEMO_URL[sys], note: ASSISTANT[sys].demo } }),
+      // Only what an assistant answers somewhere today ("built-not-live" is on no deployment yet, so no demo can prove it).
+      ...((q.status === "live" || q.status === "off") && { answeredBy: { assistant: ASSISTANT[sys].name, system: ASSISTANT[sys].system } }),
+      ...((q.status === "live" || q.status === "off") && { provenBy: { url: DEMO_URL[sys], note: ASSISTANT[sys].demo } }),
       satisfiedBy: { name: "Custom AI assistant over your business data", url: `${site}/services/custom-ai-assistant` },
       explainedBy: `${site}/ai-assistant/how-it-works`,
       url: `${site}/ai-assistant/questions#${questionAnchor(q.id)}`,
