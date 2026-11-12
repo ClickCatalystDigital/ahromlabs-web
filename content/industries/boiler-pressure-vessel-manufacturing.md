@@ -1,7 +1,8 @@
 ---
 kind: industry
 slug: boiler-pressure-vessel-manufacturing
-title: ERP software for boiler and pressure-vessel manufacturers
+title: Boiler manufacturing ERP and AI assistant for Indian boiler and pressure-vessel makers
+metaTitle: Boiler ERP and AI Assistant for Indian Boiler Makers
 audience: Boiler and pressure-vessel manufacturers
 answer: >
   Ahrom Labs built the operations system a boiler and pressure-vessel manufacturer runs
@@ -11,9 +12,7 @@ answer: >
   boiler's IBR folder takes a few minutes instead of being typed up by hand: the
   form set follows the boiler model, certificates come from a bank of material
   test certificates, and a person adds the parts.
-description: >
-  Custom ERP for boiler makers: BOM, plate traceability, IBR folders built
-  from a bank of test certificates, job costing, QC, GST and after-sales service.
+description: "Boiler ERP for Indian makers: IBR folders, plate traceability, BOM, job costing, GST, and an AI assistant that checks steel price exposure."
 domain: [manufacturing, compliance, quality-control]
 clients: [boiler-manufacturer]
 services: [custom-erp-crm, compliance-accounting, operational-intelligence, document-extraction, sales-crm, customer-portal, supplier-portal, material-traceability, bom-from-excel]
@@ -75,7 +74,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-11-06
+updated: 2026-11-12
 ---
 
 ## Can I try it before talking to anyone?
@@ -122,6 +121,22 @@ Each department has its own reports, and the management reports reuse those numb
 - **Sales** — leads, conversion rate and follow-up completion per salesperson.
 
 The management reports export to PDF from the same computation the screen shows. Machine downtime and OEE are deliberately left out: no machine data is collected, so there would be nothing honest to report.
+
+## What can an AI assistant do for an Indian boiler manufacturer?
+
+Ember AI is the assistant inside this boiler ERP. What it does today, and what is still being built, kept apart:
+
+- **Live on the [boiler demo](https://boiler-erp.ahromlabs.com/demo):** how-to answers from the system's own help guide ("how do I raise a purchase request?", "how do I assign test certificates to units?"); 99 everyday changes a person confirms, such as logging a follow-up, recording a payment against a sale order, closing a milestone or issuing material; and live-data questions on stock, purchase orders, order value and payments. In a client's system the live-data answers stay off until the owner approves them.
+- **Built and tested, not yet live:** a steel purchase what-if. Should you buy boiler-quality plate now or wait? It shows the steel cost against the quoted rate and the interest on the order's cash gap at your own borrowing rate, as two separate amounts. The AI never does this arithmetic; it points to the calculator.
+- **Built by Ahrom Labs on sample boiler orders, not in Ember yet:** a daily review of up to three issues worth checking, each with the records behind it and what to check next:
+  - **Steel and material price exposure** for each material still to buy (plates, pipes, fittings), from the BOM, reserved stock, fixed-price purchase orders and the rate in your quotation. A price index is treated as a proxy, not your supplier's price, and is used only where a person has approved the mapping.
+  - **Milestone delays** that hold up dispatch and the milestone payments waiting on them, never called a loss.
+  - **Unpaid milestone payments** after the work was completed.
+  - **Financing cost** of buying material early, only when you have entered your own borrowing rate.
+
+  When the records are not enough, it says what is missing instead of guessing, and "nothing to review today" is a valid answer.
+
+More on how it handles money, data and approvals: [AI assistant for manufacturers](/ai-assistant/manufacturers).
 
 ## Which installed boilers are due for service, and are contracts being renewed?
 
