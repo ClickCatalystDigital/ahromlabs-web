@@ -11,12 +11,12 @@ answer: >
   For a manufacturer, start with how-to answers from the system's own help guide and everyday changes a person
   confirms, then add live-data questions once the owner has decided what may be sent to the AI provider. Keep the
   money arithmetic out of the AI's hands: Ember AI, the assistant in a boiler manufacturer's system, points to a fixed
-  steel purchase calculation instead of working one out, and that calculation is built and tested but not yet live.
+  steel purchase calculation instead of working one out, and that calculation is live on the boiler demo.
 description: "An AI assistant for a manufacturing ERP: how-to answers from your help guide, changes you confirm, live data once approved, and no AI arithmetic on money."
 domain: [ai, manufacturing, selection]
 published: 2026-10-25
-updated: 2026-11-11
-checked: 2026-11-11
+updated: 2026-11-12
+checked: 2026-11-12
 image:
   src: /ai/ai-manufacturers.webp
   alt: "A round steel pressure gauge on a short pipe stub."
@@ -49,7 +49,7 @@ Ember AI is the assistant in a boiler manufacturer's system, open to staff. How-
 
 It doesn't do the arithmetic. A question like "should we buy the steel now or wait?" is a calculation, and a language model is the wrong tool for one: it can't be relied on to get the same figure twice, and nobody can check how it got there. So Ember answers that kind of question with a fixed reply that points to a calculator on the project page, and the calculator does the sums.
 
-That calculator, the steel purchase what-if, is **built and tested, not yet live** on the demo or at any client. What it does:
+That calculator, the steel purchase what-if, is **live on the [boiler demo](https://boiler-erp.ahromlabs.com/demo)** for the owner, sales and marketing roles; it is not yet in a client's system. What it does:
 
 - You enter the steel still to buy, the rate assumed in the quotation, today's rate, three later rates you think possible (low, expected, high), the order's payment terms and your own borrowing rate.
 - It shows two things, separately: the **steel cost** above the quoted rate for buying now or waiting, and the **financing cost** of the order's cash gap for each timing.
