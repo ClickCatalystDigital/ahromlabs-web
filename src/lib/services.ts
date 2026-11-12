@@ -334,7 +334,7 @@ export const services: Service[] = [
       { metric: "Routing test (Savistar & Saag)", value: "55 of 55 test questions and 57 unseen real phrasings, including Hinglish" },
       { metric: "Who writes the numbers", value: "Code — fixed look-ups, never the model" },
       { metric: "Written answers with a number not in the data", value: "Dropped" },
-      { metric: "Running at", value: "Atelier AI at Savistar & Saag, Ohm AI at LS Technologies; Ember AI, with how-to answers, at a boiler manufacturer" },
+      { metric: "Running at", value: "Atelier AI at Savistar & Saag, Ohm AI at LS Technologies; Ember AI on the public boiler ERP demo" },
     ],
     proof: [{ kind: "note", slug: "assistant-that-answers-from-your-ledger" }],
   },
@@ -505,7 +505,7 @@ export const services: Service[] = [
     family: "selling-and-customers",
     layer: "operations",
     answer:
-      "We give each customer a login to track their order status online, as plain-language stages worked out from the records each department already keeps. Customers approve drawings, upload their own, download QC certificates, packing lists and invoices, and request quotes from the product range. Running at a boiler manufacturer and at LS Technologies.",
+      "We give each customer a login to track their order status online, as plain-language stages worked out from the records each department already keeps. Customers approve drawings, upload their own, download QC certificates, packing lists and invoices, and request quotes from the product range. Built for a boiler manufacturer; running at LS Technologies.",
     forWhom:
       "Manufacturers and traders whose sales team spends its day answering \"where is my order?\" on the phone, with the answer already sitting in the factory's own records.",
     steps: [

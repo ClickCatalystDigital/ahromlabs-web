@@ -79,7 +79,7 @@ There are three designs, and they send very different amounts:
 | Design | What goes to the AI provider | Ahrom Labs' assistants |
 |---|---|---|
 | The model only chooses | The question, and the one before it for follow-ups | Atelier AI and Ohm AI by default; Ember AI for how-to answers (the question and the help-guide sections picked) |
-| The model writes the answer | The question and the rows of the answer | Atelier AI when a person picks a voice for it; Ohm AI in its "write" answer mode; Ember AI's live-data answers, built and switched off at the client |
+| The model writes the answer | The question and the rows of the answer | Atelier AI when a person picks a voice for it; Ohm AI in its "write" answer mode; Ember AI's live-data answers: on in the public demo, off in a client's system until approved |
 | The model reads your records | Documents or tables, loaded so it can "understand the business" | None |
 
 In the first design the ledger never leaves: the model picks a look-up and a period, and your own system runs it and builds the table. [How it works](/ai-assistant/how-it-works) explains the design. The second design sends a few rows per answer: not the database, but your data, so you should be able to switch it off. The third sends the most: ask what, how often, and where it is kept.
