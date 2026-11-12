@@ -71,7 +71,7 @@ const CHECKS = [
   ["Can customers see other customers' orders?", /Other customers' orders/],
   ["Can our customers track their order status online?", /track their order status online/],
   ["Can the AI assistant get a number wrong?", /never writes (the numbers|a number)/],
-  ["Can the AI assistant change our data?", /only reads data/],
+  ["Can the AI assistant change our data?", /presses Save|confirms?|asks first/i],
   ["Do operators weigh every cut piece?", /dimensions and density/],
   ["Can we reuse plate offcuts instead of buying new plate?", /least waste first/],
   // IBR 2026 (/ibr): old and new form names, formal and blunt
