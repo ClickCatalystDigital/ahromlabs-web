@@ -9,6 +9,7 @@ related:
   - /boq/how-to-make-an-interior-boq
   - /erp/interior-design-firms
   - /industries/interior-design-and-furniture
+  - /erp/architecture-firms
 answer: >
   An interior design agreement in India should fix the scope and the drawings it is based on, the BOQ and rates, the
   design fee, a stage-wise payment schedule tied to work the client can see, how changes are priced and approved, the

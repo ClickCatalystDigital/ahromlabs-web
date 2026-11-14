@@ -9,6 +9,7 @@ related:
   - /systems/reverse-charge
   - /notes/statutory-rates-across-systems
   - /services/compliance-accounting
+  - /construction/rera-for-builders
 question: "How is GST applied to a works contract in India?"
 answer: >
   Under GST, a works contract is a contract for building, construction, repair or similar work on immovable property
@@ -18,7 +19,7 @@ answer: >
 description: "GST on works contracts in India: the 2(119) definition, the 18% rate and the September 2025 change, ITC under 17(5), GST TDS under section 51, and RA bills."
 domain: [construction, gst, india]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: Works Contracts in GST

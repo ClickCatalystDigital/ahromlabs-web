@@ -41,8 +41,12 @@ const artFor = (slug: string) => {
   return existsSync(join(process.cwd(), "public", src)) ? src : null;
 };
 
-// The first sentence of an answer, for the meta description.
-const lead = (text: string) => text.match(/^.*?\.(\s|$)/)?.[0].trim() ?? text;
+// The first sentence of an answer, for the meta description; a short first sentence (under 100 characters) takes
+// the sentences after it too, up to metaDescription's limit.
+const lead = (text: string) => {
+  const first = text.match(/^.*?\.(\s|$)/)?.[0].trim() ?? text;
+  return first.length >= 100 ? first : text;
+};
 
 export async function generateMetadata(props: PageProps<"/services/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;

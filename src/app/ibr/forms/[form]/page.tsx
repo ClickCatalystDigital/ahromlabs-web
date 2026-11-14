@@ -27,7 +27,7 @@ export async function generateMetadata(props: PageProps<"/ibr/forms/[form]">): P
   const description = metaDescription(`${f.summary}${f.old ? ` It was ${f.old.form} under IBR 1950.` : ""} Prescribed by regulation ${f.regulation} of the Indian Boiler Regulations, 2026.`);
   return {
     // The full title reads past 60 characters for every form: the search result gets the form and its old name.
-    title: seoTitle(title.length <= 60 ? title : f.old ? `IBR ${formName(f)} (formerly ${f.old.form})` : `IBR ${formName(f)}`),
+    title: seoTitle(title.length <= 60 ? title : f.old ? `IBR ${formName(f)} (formerly ${f.old.form}), IBR 2026` : `IBR ${formName(f)} (IBR 2026): what it is, who issues it`),
     description,
     alternates: { canonical: `/ibr/forms/${f.slug}` },
     openGraph: { type: "article", url: `https://ahromlabs.com/ibr/forms/${f.slug}`, siteName: "Ahrom Labs", title, description },
@@ -70,6 +70,12 @@ export default async function IbrFormPage(props: PageProps<"/ibr/forms/[form]">)
         {name} of the Indian Boiler Regulations, 2026 is the {f.title.charAt(0).toLowerCase() + f.title.slice(1)}, prescribed
         under regulation {f.regulation}.
         {f.old && ` Under the Indian Boiler Regulations, 1950 it was ${f.old.form} (${f.old.title.toLowerCase()}).`}
+      </p>
+      <p className="mt-4 leading-relaxed text-foreground-secondary">
+        <a href={`/ibr/pdf/ibr-2026-${f.slug}.pdf`} className="text-link focus-ring">
+          Download {name} as a PDF
+        </a>
+        : the form as notified, cut from the Gazette of India (No. 596, 1 October 2026) with nothing changed.
       </p>
 
       <IbrH2>{headings[1]}</IbrH2>

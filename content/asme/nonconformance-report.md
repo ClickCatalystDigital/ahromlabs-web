@@ -121,6 +121,12 @@ When the item meets the requirement again and someone other than the person who 
 repair done as dispositioned, re-inspection passed, records attached. An NCR that is closed before the
 re-inspection passes is a gap an auditor will find. The ITP steps it held only open again after the close.
 
+## Is there a free NCR form?
+
+Yes: a one-page nonconformance report as [Word](/asme/ncr-form.docx), [PDF](/asme/ncr-form.pdf), free under CC BY 4.0. It carries the fields in the
+table above: the requirement, what was found, the disposition and its approvals, the repair procedure, re-inspection,
+and cause and corrective action. Put your own NCR numbering and approval rules from the quality manual on it.
+
 ## What should NCR software do?
 
 - Raise an NCR from the failed inspection itself, carrying the job, part, weld and heat number.

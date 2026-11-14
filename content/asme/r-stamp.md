@@ -10,6 +10,7 @@ related:
   - /systems/nbic
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/pp-stamp
 question: "What is the R stamp and how does a shop get it?"
 answer: >
   The R stamp is the National Board's Certificate of Authorization for repairs and alterations to boilers, pressure

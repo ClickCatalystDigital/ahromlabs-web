@@ -8,6 +8,7 @@ related:
   - /construction/price-escalation-clause
   - /systems/variation-order
   - /industries/interior-design-and-furniture
+  - /boq/interior-design-agreement
 answer: >
   A variation order records a change after the BOQ is agreed: what was added, omitted or substituted,
   at what rate, and its effect on time and payment, signed before the work is done. CPWD's contract
@@ -16,7 +17,7 @@ answer: >
 description: "How to record and price changes after an interior BOQ is agreed, using the CPWD contract's clause 12 as the model: rates, new items, time."
 domain: [interiors, boq, contracts]
 published: 2026-10-24
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /boq/variation-order-marked-up.webp

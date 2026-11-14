@@ -10,6 +10,7 @@ related:
   - /construction/pay-applications
   - /systems/retainage
   - /industries/construction-company
+  - /construction/submittals-and-rfis
 question: "What is a punch list and how does it lead to final payment?"
 answer: >
   A punch list is the list of work still incomplete or not to standard when the job is substantially complete. Once
@@ -118,6 +119,11 @@ the money.
 10. Job cost closed and reviewed: what went over, and what to change in the next estimate.
 
 The last step is the one most often skipped, and it is the one that makes the next bid better.
+
+## Is there a free punch list template?
+
+Yes: a punch list as [Excel](/construction/punch-list-template.xlsx), [Word](/construction/punch-list-template.docx), [PDF](/construction/punch-list-template.pdf), free under CC BY 4.0. One line per item with its
+location, trade, who found it, due date, status and who closed it; the Excel sheet counts the items still open.
 
 ## How does software help?
 

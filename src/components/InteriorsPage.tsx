@@ -21,6 +21,7 @@ function intHub(group?: string): Hub {
         .filter((g) => !group || g.group === group)
         .map((g) => ({ href: `/interiors/${g.slug}`, title: g.title })),
       { href: "/interiors", title: "All interior design firm guides" },
+      { href: "/interiors/questions", title: "Interior design business questions, answered" },
     ],
     byline: (checked) => (
       <>

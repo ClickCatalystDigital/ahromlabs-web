@@ -9,6 +9,8 @@ related:
   - /boq/variation-orders
   - /systems/variation-order
   - /industries/construction-company
+  - /construction/cost-codes
+  - /construction/submittals-and-rfis
 question: "How should a contractor handle change orders?"
 answer: >
   A change order is a written agreement changing a construction contract's work, price or time, signed by owner and
@@ -18,7 +20,7 @@ answer: >
 description: "Change orders: getting them in writing, change directives, pricing with backup, federal and Texas rules, and billing approved changes on the pay app."
 domain: [construction, change-orders]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "FAR 52.243-4, Changes"

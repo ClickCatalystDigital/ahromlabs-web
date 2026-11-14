@@ -177,42 +177,7 @@ print("daily-progress-report: written")
 
 
 # ---------- Self-check: evaluate the saved formulas and compare with the Python figures above.
-# ponytail: a tiny evaluator for the formulas these sheets use (+ - * /, SUM, SUMIF, IF); a real engine if it grows.
-import re
-from openpyxl import load_workbook
-
-
-def evaluate(path):
-    ws = load_workbook(path).active
-    cache = {}
-
-    def val(ref):
-        if ref in cache:
-            return cache[ref]
-        v = ws[ref].value
-        if isinstance(v, str) and v.startswith("="):
-            v = calc(v[1:])
-        cache[ref] = v if v is not None else 0
-        return cache[ref]
-
-    def rng(a, b):
-        (ca, ra), (cb, rb) = re.match(r"([A-Z]+)(\d+)", a).groups(), re.match(r"([A-Z]+)(\d+)", b).groups()
-        return [f"{c}{r}" for c in (chr(x) for x in range(ord(ca), ord(cb) + 1)) for r in range(int(ra), int(rb) + 1)]
-
-    def calc(f):
-        m = re.fullmatch(r'SUMIF\((\w+):(\w+),"([^"]*)",(\w+):(\w+)\)', f)
-        if m:
-            keys, vals = rng(m[1], m[2]), rng(m[4], m[5])
-            return sum(val(v) for k, v in zip(keys, vals) if str(ws[k].value) == m[3])
-        m = re.fullmatch(r'IF\((\w+)=0,"",(\w+)/(\w+)\)', f)
-        if m:
-            return "" if val(m[1]) == 0 else val(m[2]) / val(m[3])
-        f = re.sub(r"SUM\((\w+):(\w+)\)", lambda m: "(" + "+".join(f"val('{r}')" for r in rng(m[1], m[2])) + ")", f)
-        f = re.sub(r"(?<!')\b([A-Z]{1,2}\d+)\b(?!')", r"val('\1')", f)
-        return eval(f)
-
-    return ws, val
-
+from xlsx_values import evaluate, store_values
 
 ws, val = evaluate(outdir / "ra-bill-format.xlsx")
 got = val(f"K{net}")
@@ -221,27 +186,6 @@ ws, val = evaluate(outdir / "measurement-book-format.xlsx")
 for k, item in enumerate(sorted({m[1] for m in MB})):
     want = sum(n * l * b * h for (_, it, _, n, l, b, h) in MB if it == item)
     assert abs(val(f"H{s + 1 + k}") - want) < 1e-6, (item, val(f"H{s + 1 + k}"), want)
-
-
-def store_values(path):
-    """openpyxl writes formulas with empty cached values; fill them so viewers that don't recalculate show figures."""
-    import zipfile
-    ws, val = evaluate(path)
-    name = "xl/worksheets/sheet1.xml"
-    with zipfile.ZipFile(path) as z:
-        files = {n: z.read(n) for n in z.namelist()}
-    xml = files[name].decode()
-
-    def fill(m):
-        v = val(m[1])
-        if v == "":
-            return m[0].replace("<v></v>", "").replace("<v />", "")
-        return m[0].replace("<v></v>", f"<v>{v!r}</v>").replace("<v />", f"<v>{v!r}</v>")
-    xml = re.sub(r'<c r="([A-Z]+\d+)"[^>]*><f>[^<]*</f><v ?/?>(?:</v>)?', fill, xml)
-    files[name] = xml.encode()
-    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
-        for n, b in files.items():
-            z.writestr(n, b)
 
 
 for f in ("ra-bill-format.xlsx", "measurement-book-format.xlsx", "daily-progress-report-format.xlsx"):

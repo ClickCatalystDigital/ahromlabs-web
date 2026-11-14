@@ -8,6 +8,7 @@ related:
   - /industries/electronics-component-trading
   - /systems/e-invoice
   - /services/compliance-accounting
+  - /erp/bis-registration-electronics
 answer: >
   Most electronic components sit in chapter 85 of the tariff: capacitors 8532, resistors 8533, printed circuits 8534,
   switches, relays, fuses and connectors 8536, diodes, transistors and LEDs 8541, integrated circuits 8542,

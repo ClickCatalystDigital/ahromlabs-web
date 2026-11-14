@@ -126,3 +126,10 @@ Same style block. Save as PNG with the file name below (any size), in Downloads,
 | `erp-architecture-firms.webp` | /erp/architecture-firms | A rolled building drawing, a stack of blank invoices and a calculator on a desk. |
 | `erp-bis-registration.webp` | /erp/bis-registration-electronics | A power adapter and a power bank on a test bench beside a blank certificate with a round seal. |
 | `interior-design-agreement.webp` | /boq/interior-design-agreement | A two-page blank agreement with a fountain pen lying across it, a laminate sample chip and a small house key beside it. |
+| `pp-stamp.webp` | /asme/pp-stamp | A pipe spool with two welded elbows and a flange resting on pipe stands, a small blank nameplate tag wired to it. |
+| `ibr-2026-changes.webp` (IBR, front matter) | /ibr/2026-changes | Two bound regulation books side by side, one worn with a faded cover and one new, a ribbon bookmark in the new one. |
+| `erp-tally-vs-custom.webp` (ERP, front matter) | /erp/tally-vs-custom-erp | A ledger book and a small stack of index-card trays side by side on a desk, joined by a single brass paper clip chain. |
+| `ai-construction-contractors.webp` (AI assistant) | /ai-assistant/construction-contractors | A white hard hat beside a small desk speaker-shaped device and a blank site diary on a desk. |
+| `daily-progress-reports.webp` | /construction/daily-progress-reports | A site diary open to a blank ruled page with a pencil, beside a white hard hat and a small stack of bricks. |
+| `job-cost-per-site.webp` | /construction/job-cost-per-site | Three small site models on a table, each with its own stack of coins and a blank tag in front of it. |
+| `material-consumption-vs-boq.webp` | /construction/material-consumption-vs-boq | A stack of cement bags and a bundle of steel bars beside a clipboard with a blank two-column sheet. |

@@ -10,6 +10,7 @@ related:
   - /asme/stamps
   - /services/document-extraction
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/crn-canada
 question: "What is National Board registration for a pressure vessel?"
 answer: >
   National Board registration files a stamped boiler's or vessel's data report with the National Board of Boiler

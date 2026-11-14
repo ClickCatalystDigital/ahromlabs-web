@@ -9,6 +9,8 @@ related:
   - /asme/stamps
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/heat-exchangers
+  - /asme/pp-stamp
 question: "How do you get an ASME U stamp?"
 answer: >
   To get the U stamp a shop buys the Code books, signs an inspection agreement with an ASME-accredited Authorized
@@ -18,7 +20,7 @@ answer: >
 description: "Getting the ASME U stamp: Code books, inspection agency contract, QC manual, CA Connect, ASME fees, joint review, demonstration item, timeline and renewal."
 domain: [asme, certification]
 published: 2026-11-01
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)"

@@ -8,6 +8,7 @@ related:
   - /systems/work-in-progress
   - /construction/wip-schedule
   - /manufacturing/quickbooks-job-costing
+  - /manufacturing/production-schedule-template
 question: "How do you track work in progress on a shop floor?"
 answer: >
   Give every job a traveler with a barcode, list its operations in order, and have operators scan the job at
@@ -17,7 +18,7 @@ answer: >
 description: "How to track work in progress in a job shop: travelers, scan points, a work order and its WIP value, scan stations vs tablets, and getting operators to scan."
 domain: [manufacturing, wip, shop-floor]
 published: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Paperless (or less paper) job tracking and routing, job shop specific (forum discussion)

@@ -9,6 +9,7 @@ related:
   - /systems/hold-point
   - /manufacturing/wip-tracking
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/hardness-and-pmi
 question: "What is an inspection and test plan (ITP) for a pressure vessel?"
 answer: >
   An inspection and test plan (ITP) lists every inspection and test on a job in the order the work happens, with
@@ -143,6 +144,12 @@ Because on paper a hold point is a box on a sheet, and the schedule is louder. T
 An auditor or joint review team will pick a weld and ask to see its step on the ITP, its NDE, the welder and the
 release. ASME's handbook expects the shop to show its program working: "It is expected that fabrication functions be
 demonstrated using typical Code work."
+
+## Is there a free ITP template?
+
+Yes: an inspection and test plan as [Excel](/asme/itp-template.xlsx), [Word](/asme/itp-template.docx), [PDF](/asme/itp-template.pdf), free under CC BY 4.0, with the columns above
+and eight sample steps from drawing review to the data report. The hold, witness and review points in the sample are
+an example only: the Inspector, the customer's specification and your quality manual set the real ones.
 
 ## How can software enforce an ITP?
 

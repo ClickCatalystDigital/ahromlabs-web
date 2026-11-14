@@ -9,6 +9,7 @@ related:
   - /asme/asme-vs-ibr
   - /industries/boiler-pressure-vessel-manufacturing
   - /notes/ibr-statutory-folder-from-bom
+  - /ibr/stage-inspection
 answer: >
   The Indian Boiler Regulations, 2026 replaced the Indian Boiler Regulations, 1950 on
   1 October 2026, under the Boilers Act, 2025. The folder's forms were renumbered — the

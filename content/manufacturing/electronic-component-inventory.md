@@ -9,6 +9,7 @@ related:
   - /notes/reels-boxes-and-two-stores
   - /systems/stock-reservation
   - /manufacturing/distributor-inventory-control
+  - /manufacturing/excess-and-obsolete-inventory
 question: "How should a distributor or contract manufacturer track electronic component inventory?"
 answer: >
   By the package it ships in, not just a part number and a count: each reel, tray, tube or cut tape with its own
@@ -22,8 +23,8 @@ updated: 2026-11-14
 checked: 2026-11-14
 sources:
   - title: "IPC/JEDEC J-STD-033, Handling, Packing, Shipping and Use of Moisture/Reflow Sensitive Surface Mount Devices"
-    publisher: IPC and JEDEC
-    url: https://www.jedec.org/standards-documents/docs/j-std-033e
+    publisher: IPC and JEDEC (JEDEC's announcement of the standard; the standard itself is a free download with a JEDEC login)
+    url: https://www.jedec.org/news/pressreleases/non-ic-electronic-components-covered-latest-update-jedec-and-ipc-quality-and-reli
     date: 2026-11-14
   - title: "DFARS 252.246-7008, Sources of Electronic Parts"
     publisher: eCFR, Title 48

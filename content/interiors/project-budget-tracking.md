@@ -10,6 +10,8 @@ related:
   - /systems/job-costing
   - /systems/change-order
   - /services/operational-intelligence
+  - /interiors/architecture-firm-fees-and-phases
+  - /interiors/interior-design-software
 question: "How do interior designers track a project budget against what the client approved?"
 answer: >
   Keep four numbers per room: the client's budget, what the client has approved, what is on order, and what has been
@@ -20,7 +22,7 @@ answer: >
 description: "Track an interior design budget room by room: client budget, approved, on order, invoiced, worked on a $60,000 budget, with what to check in any software."
 domain: [interiors, procurement]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: "Proposal Confidence vs. Confusion: How Interior Designers Can Get It Right"

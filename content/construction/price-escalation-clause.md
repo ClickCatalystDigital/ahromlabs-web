@@ -10,6 +10,7 @@ related:
   - /boq/what-is-a-boq
   - /services/compliance-accounting
   - /industries/construction-company
+  - /construction/rate-analysis
 question: "How does the price escalation clause (10CC) work in a CPWD contract, and how is escalation calculated?"
 answer: >
   Clause 10CC of CPWD's General Conditions of Contract 2023 adjusts the contract price each quarter for rises and
@@ -19,7 +20,7 @@ answer: >
 description: "Price escalation in CPWD contracts: the clause 10CC formula, base date, quarterly bills, Schedule F components, indices, downward adjustment, clause 10C."
 domain: [construction, billing, india]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)"

@@ -10,6 +10,8 @@ related:
   - /sales-tax/interior-designers-sales-tax
   - /industries/interior-design-and-furniture
   - /services/custom-erp-crm
+  - /interiors/architecture-firm-fees-and-phases
+  - /interiors/canada-gst-hst-for-interior-designers
 question: "How should an interior designer charge: flat fee, hourly, cost plus or markup?"
 answer: >
   Most firms combine two prices: one for design time (a flat fee, an hourly rate, or a fee per square foot on
@@ -19,7 +21,7 @@ answer: >
 description: "Interior design fees compared: flat fee, hourly, cost plus and purchasing fees, markup vs margin on a $40,000 order, what software needs."
 domain: [interiors, billing]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Costs and Fees

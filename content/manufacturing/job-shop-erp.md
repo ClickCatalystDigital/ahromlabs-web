@@ -10,6 +10,7 @@ related:
   - /systems/routing
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/custom-erp-crm
+  - /manufacturing/production-schedule-template
 question: "What should a job shop look for in ERP software?"
 answer: >
   A job shop ERP should carry each job from quote to invoice on one record: the quoted routing becomes the job,
@@ -20,7 +21,7 @@ answer: >
 description: "Job shop ERP for small manufacturers: the quote-to-invoice flow, what to buy first, ten tests to run in a vendor demo, and what shop owners warn about."
 domain: [manufacturing, erp, job-shop]
 published: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Machine shop ERP recommendations (forum discussion)

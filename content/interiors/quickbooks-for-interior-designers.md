@@ -10,6 +10,7 @@ related:
   - /manufacturing/quickbooks-integration
   - /manufacturing/quickbooks-online-vs-desktop
   - /services/custom-erp-crm
+  - /interiors/interior-design-software
 question: "Is QuickBooks enough for an interior design firm, and which plan does it need?"
 answer: >
   QuickBooks Online is a good set of books for a design firm, and a firm that resells product needs at least Plus:
@@ -20,7 +21,7 @@ answer: >
 description: "What QuickBooks Online does for interior designers, which plan you need, what it can't track, and how design platforms sync with it."
 domain: [interiors, accounting]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: QuickBooks Online pricing

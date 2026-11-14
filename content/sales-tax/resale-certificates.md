@@ -9,6 +9,7 @@ related:
   - /services/sales-crm
   - /manufacturing/erp-requirements-checklist
   - /sales-tax/sales-tax-in-erp
+  - /sales-tax/contractors-sales-tax
 question: "How do resale and exemption certificates work for a US seller?"
 answer: >
   A resale or exemption certificate is the buyer's signed statement that a purchase isn't taxable: bought to resell,
@@ -18,7 +19,7 @@ answer: >
 description: "Resale and exemption certificates for US sellers: when to accept one, what it must say, the Streamlined form F0003, drop shipments, and keeping them on file."
 domain: [sales-tax, exemptions]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: "Streamlined Sales Tax Certificate of Exemption (form F0003)"

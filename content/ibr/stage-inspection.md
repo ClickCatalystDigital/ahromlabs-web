@@ -8,6 +8,7 @@ related:
   - /asme/inspection-and-test-plan
   - /asme/asme-vs-ibr
   - /industries/boiler-pressure-vessel-manufacturing
+  - /ibr/steam-pipes
 answer: >
   Appendix A of IBR 2026 lists the stages at which the Inspecting Authority or its Competent Person must inspect a
   boiler during manufacture: material identification, forming and edge preparation, completed shell welding, NDE

@@ -9,6 +9,7 @@ related:
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/custom-erp-crm
   - /ai-assistant/ai-in-erp
+  - /manufacturing/quickbooks-desktop-end-of-support
 question: "When has a manufacturer or distributor outgrown QuickBooks?"
 answer: >
   When the work happens outside it: quotes and job travelers in spreadsheets, stock counted by hand because
@@ -18,7 +19,7 @@ answer: >
 description: "Signs a manufacturer or distributor has outgrown QuickBooks, what to keep in it, when an ERP should replace it, and what double entry really costs."
 domain: [manufacturing, quickbooks, erp]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: Get started with manufacturing orders and assemblies

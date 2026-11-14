@@ -9,6 +9,9 @@ related:
   - /notes/reels-boxes-and-two-stores
   - /services/inventory-and-reservations
   - /ai-assistant/trading-distribution
+  - /erp/bis-registration-electronics
+  - /erp/hsn-codes-electronic-components
+  - /erp/small-manufacturers
 answer: >
   A trading or distribution business needs stock tracked by the unit it picks and ships, reserved against each
   customer order so nothing is sold twice, moved by scanning across stores, purchase documents read in without
@@ -17,7 +20,7 @@ answer: >
 description: "ERP requirements for trading and distribution in India: unit-level stock, reservations, scanning, AI-read bills, Tally posting, e-invoice, TDS."
 domain: [erp, trading, requirements]
 published: 2026-10-25
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /erp/erp-trading-distribution.webp

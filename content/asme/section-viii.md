@@ -9,6 +9,7 @@ related:
   - /asme/state-boiler-laws
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/heat-exchangers
 question: "What is the difference between ASME Section VIII Division 1 and Division 2?"
 answer: >
   Section VIII sets the rules for pressure vessels in three Divisions. Division 1 designs by rule with a design
@@ -18,7 +19,7 @@ answer: >
 description: "ASME Section VIII Divisions 1, 2 and 3 compared: design factor, analysis, U vs U2 stamps, data reports, and when a vessel needs the U stamp at all."
 domain: [asme, pressure-vessels, design]
 published: 2026-11-01
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Boiler and Pressure Vessel Certification (certificates offered)"

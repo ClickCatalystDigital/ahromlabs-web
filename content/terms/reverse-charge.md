@@ -4,10 +4,11 @@ slug: reverse-charge
 title: "Reverse charge"
 answer: >
   A GST arrangement where the buyer, not the supplier, pays the tax on certain purchases.
+description: "Reverse charge under GST in India: the buyer, not the supplier, pays the tax on certain purchases, shows it in the return and claims credit where eligible."
 domain: [operations]
 order: 9
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-14
 ---
 
 It matters because no supplier invoice shows the tax, so a purchase that falls under it is easily missed: the ERP must mark these purchases and compute the buyer's liability for the GST return. Which purchases fall under it is set by GST notifications and changes over time, so confirm your list with your CA.

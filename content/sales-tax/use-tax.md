@@ -9,6 +9,7 @@ related:
   - /services/custom-erp-crm
   - /manufacturing/distributor-inventory-control
   - /sales-tax/sales-tax-in-erp
+  - /sales-tax/contractors-sales-tax
 question: "When does a business owe use tax on its purchases?"
 answer: >
   Use tax is the other half of sales tax: when you buy something taxable for your own use and the seller doesn't
@@ -18,7 +19,7 @@ answer: >
 description: "Use tax for US businesses: what it is, when you owe it on purchases, goods bought exempt and then used, how it's reported, and credit for tax paid elsewhere."
 domain: [sales-tax, use-tax]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Sales and Use Tax

@@ -9,6 +9,8 @@ related:
   - /manufacturing/quickbooks-integration
   - /industries/construction-company
   - /services/custom-erp-crm
+  - /construction/ontario-holdback
+  - /construction/punch-list-closeout
 question: "What is retainage in construction, how much can be held, and when is it released?"
 answer: >
   Retainage is a share of each progress payment, often 5% or 10%, that the owner holds back until the work is
@@ -18,7 +20,7 @@ answer: >
 description: "Retainage explained: typical rates, federal rules, state caps in California, New York, Texas and Florida, release deadlines, and tracking it per job."
 domain: [construction, billing]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "FAR 52.232-5, Payments Under Fixed-Price Construction Contracts"

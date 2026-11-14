@@ -20,6 +20,7 @@ function conHub(group?: string): Hub {
         .filter((g) => !group || g.group === group)
         .map((g) => ({ href: `/construction/${g.slug}`, title: g.title })),
       { href: "/construction", title: "All construction guides" },
+      { href: "/construction/questions", title: "Construction billing questions, answered" },
     ],
     byline: (checked) => (
       <>

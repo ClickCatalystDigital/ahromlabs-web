@@ -29,9 +29,9 @@ sources:
     publisher: American Petroleum Institute
     url: https://www.api.org/products-and-services/standards
     date: 2026-11-14
-  - title: "ANSI/NACE MR0175/ISO 15156, materials for use in H2S-containing environments"
-    publisher: AMPP / ISO
-    url: https://www.iso.org/standard/71646.html
+  - title: "ISO 15156-1:2020 (NACE MR0175), materials for use in H2S-containing environments, Part 1; hardness limits for carbon steels are in Part 2"
+    publisher: ISO
+    url: https://www.iso.org/standard/79658.html
     date: 2026-11-14
 ---
 

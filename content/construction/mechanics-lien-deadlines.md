@@ -10,6 +10,7 @@ related:
   - /construction/prompt-payment-acts
   - /industries/construction-company
   - /services/custom-erp-crm
+  - /construction/ontario-holdback
 question: "When must a contractor send a preliminary notice and file a mechanics lien?"
 answer: >
   It depends on the state and your place in the chain. In California a sub sends a preliminary notice within 20 days

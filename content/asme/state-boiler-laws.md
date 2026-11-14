@@ -10,6 +10,7 @@ related:
   - /asme/buying-from-india
   - /industries/boiler-pressure-vessel-manufacturing
   - /manufacturing/erp-requirements-checklist
+  - /asme/crn-canada
 question: "Is the ASME Code required by law in the US?"
 answer: >
   The ASME Code isn't a federal law in the US. States, some cities and Canadian provinces make it law by adopting it
@@ -19,7 +20,7 @@ answer: >
 description: "Which US states and Canadian provinces require the ASME Code, which edition each names (2026 NB Synopsis), stamps, NB registration, CRNs and joint reviews."
 domain: [asme, law, north-america]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "NB-370 Synopsis of Boiler and Pressure Vessel Laws, Rules and Regulations"

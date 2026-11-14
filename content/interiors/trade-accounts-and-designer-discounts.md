@@ -10,6 +10,7 @@ related:
   - /sales-tax/resale-certificates
   - /sales-tax/interior-designers-sales-tax
   - /services/custom-erp-crm
+  - /interiors/ffe-specifications
 question: "How do interior designer trade discounts work, and should you pass them on to clients?"
 answer: >
   A trade account lets a credentialed design firm buy below retail and, with a resale certificate, without paying
@@ -20,7 +21,7 @@ answer: >
 description: "How designer trade programs work: eligibility, discounts, exclusions, tax-free buying with resale certificates, and passing the discount on."
 domain: [interiors, procurement]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Arhaus Trade Program Terms & Conditions

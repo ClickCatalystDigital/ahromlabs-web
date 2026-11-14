@@ -9,6 +9,8 @@ related:
   - /systems/bill-of-quantities
   - /systems/measurement-basis
   - /industries/construction-company
+  - /construction/rate-analysis
+  - /construction/daily-progress-reports
 question: "What is a measurement book in construction, and how is it kept?"
 answer: >
   The measurement book (MB) is the record of every quantity of work done, measured on site item by item, from which
@@ -134,7 +136,8 @@ not yet measured, adjusted once the measurements are recorded; see [RA bills](/c
 
 ## Is there a free measurement book format in Excel?
 
-Yes: the [measurement book format](/construction/measurement-book-format.xlsx) (Excel, free under CC BY 4.0). Each row
+Yes: the [measurement book format](/construction/measurement-book-format.xlsx) (Excel, free under CC BY 4.0; also as a blank
+[Word file](/construction/measurement-book-format.docx) and [PDF](/construction/measurement-book-format.pdf) to print). Each row
 is one measurement: date, BOQ item, location, numbers, length, breadth and depth, with deductions as negative numbers,
 the quantity worked out, and who measured and checked it; totals by BOQ item feed the
 [RA bill format](/construction/ra-bill-format.xlsx).

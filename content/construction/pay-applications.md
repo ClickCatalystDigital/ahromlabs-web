@@ -9,6 +9,10 @@ related:
   - /construction/change-orders
   - /manufacturing/quickbooks-integration
   - /services/custom-erp-crm
+  - /construction/certified-payroll
+  - /construction/cost-codes
+  - /construction/punch-list-closeout
+  - /sales-tax/contractors-sales-tax
 question: "How does a construction pay application work?"
 answer: >
   A pay application is a contractor's monthly bill on a construction job: each line of the schedule of values with
@@ -18,7 +22,7 @@ answer: >
 description: "How a construction pay application works: schedule of values, G702 vs G703, stored materials, retainage line by line, notarization, approval and rejections."
 domain: [construction, billing]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Instructions: G702–1992, Application and Certificate for Payment"

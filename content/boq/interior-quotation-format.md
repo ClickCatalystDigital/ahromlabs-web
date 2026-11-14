@@ -8,6 +8,8 @@ related:
   - /boq/variation-orders
   - /erp/interior-design-firms
   - /industries/interior-design-and-furniture
+  - /erp/architecture-firms
+  - /boq/interior-design-agreement
 answer: >
   An interior quotation should carry the BOQ (every item with its specification, unit, quantity, rate and amount,
   room by room), the design fee and how it is charged, GST shown separately, a payment schedule tied to stages, what
@@ -100,6 +102,12 @@ whole job, or separate supplies), so confirm the treatment with your CA before y
 - No measurement rule, so the final bill's areas don't match the quote's.
 - Changes agreed on the phone with no price, settled at the last payment.
 - Validity not stated, so a quote accepted four months later is expected at the old rates.
+
+## Is there a free interior quotation format to download?
+
+Yes: a quotation as [Excel](/boq/interior-quotation-format.xlsx), [Word](/boq/interior-quotation-format.docx), [PDF](/boq/interior-quotation-format.pdf), free under CC BY 4.0. It has the room-by-room
+lines with specifications, the design fee, GST shown separately and the stage-wise payment schedule above, with
+the percentages as typed cells. The sample lines and rates are made up; replace them with your own.
 
 ## How can a quotation be built faster?
 

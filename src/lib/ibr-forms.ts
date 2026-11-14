@@ -948,6 +948,46 @@ export const ibrForms: IbrForm[] = [
     },
   },
   {
+    slug: "form-xiv",
+    form: "Form XIV",
+    title: "Steam pipes and connected fittings: Memorandum of Inspection Book",
+    quote: "Steam Pipes and Connected Fittings",
+    regulation: "322(3)",
+    group: "registration",
+    old: { form: "Form XIV", title: "Steam pipes and connecting fittings", quote: "Steam Pipes and Connecting Fittings" },
+    summary: "The inspection record of a steam pipeline and its fittings: particulars, dimensions, calculations, hydraulic tests and inspection notes.",
+    page: {
+      issuedBy: "Prepared by the Inspector; later entries by the Competent Person at each inspection.",
+      filedWith: "Submitted to the Chief Inspector, who checks the particulars and calculations and approves the pressure and temperature for the pipeline (regulation 322(3)(e)).",
+      records: [
+        "District, owner, address and the registration numbers of the boilers the pipes are connected to",
+        "The plan of the steam pipes and fittings: drawing number, total length, connected vessels, fee and approval",
+        "Particulars and dimensions: pipe material, outside diameter, thickness, make, flanges, elbows and tees, supports, flexibility and drainage",
+        "Calculations for the steam pipes, and the approved pressure and temperature",
+        "Dates and notes of each inspection and hydraulic test, repairs, alterations and accidents"
+      ],
+      changed: "The number is unchanged from IBR 1950: Form XIV was, and is, the steam pipe form. The 2026 heading reads \"Steam Pipes and Connected Fittings\".",
+      facts: [
+        {
+          reg: "322(3)(a)",
+          quote: "A memorandum of Inspection Book shall be prepared in respect of steam pipe and fittings in Form-XIV."
+        },
+        {
+          reg: "322(3)(a)",
+          quote: "the Inspector shall enter in ink, all particulars and dimensions of the steam pipe and fitting with calculations for the various parts in detail, particulars of hydraulic test and his inspection notes"
+        },
+        {
+          reg: "322(3)(e)",
+          quote: "The pressure and temperature once approved for the particular steam pipe line shall not be altered except on a written authority from the Chief Inspector."
+        },
+        {
+          reg: "Form XIV",
+          quote: "PLAN OF STEAM PIPES & THEIR CONNECTED FITTINGS"
+        }
+      ]
+    },
+  },
+  {
     slug: "form-xv",
     form: "Form XV",
     title: "Inspecting Authority's certificate of inspection under construction (economisers)",
@@ -1244,6 +1284,5 @@ export function ibrFormPages(): IbrForm[] {
 // IBR 1950 forms with no 2026 counterpart found by title: listed on /ibr/forms so
 // nobody assumes we forgot them.
 export const unmatched1950 = [
-  { form: "Form XIV", title: "Steam pipes and connecting fittings" },
   { form: "Form III-D, III-E", title: "Already deleted under IBR 1950" },
 ];

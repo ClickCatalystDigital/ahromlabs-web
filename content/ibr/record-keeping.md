@@ -8,6 +8,8 @@ related:
   - /systems/ibr-statutory-folder
   - /systems/material-test-certificate
   - /industries/boiler-pressure-vessel-manufacturing
+  - /ibr/renewal-inspection
+  - /ibr/stage-inspection
 answer: >
   Regulation 308 of IBR 2026 sets three retention periods for a boiler's certificates
   and approved drawings: the Inspecting Authority keeps them at least 3 years after
@@ -16,7 +18,7 @@ answer: >
 description: Who keeps a boiler's IBR certificates and drawings, and for how long, under regulation 308 of IBR 2026 — 3 years, 5 years, or the boiler's life.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /ibr/ibr-record-keeping.webp

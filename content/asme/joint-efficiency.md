@@ -9,6 +9,7 @@ related:
   - /asme/heads
   - /services/material-traceability
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/heat-exchangers
 question: "What is joint efficiency in ASME Section VIII?"
 answer: >
   Joint efficiency (E) is the factor ASME Section VIII Division 1 applies to a welded joint in the thickness
@@ -18,7 +19,7 @@ answer: >
 description: "ASME UW-12 joint efficiency by joint type and radiography, joint categories A to D, when full RT is mandatory (UW-11), seamless parts, and the cost trade-off."
 domain: [asme, design, nde]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "BPVC Section VIII Division 1 (2025)"

@@ -9,6 +9,7 @@ related:
   - /systems/manufacturers-data-book
   - /services/document-extraction
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/crn-canada
 question: "What goes in a pressure vessel manufacturer's data book?"
 answer: >
   A manufacturer's data book (MDB, also data dossier, final documentation or turnover package) is the bound set of

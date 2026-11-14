@@ -9,6 +9,7 @@ related:
   - /interiors/invoices-deposits-and-retainers
   - /interiors/purchase-orders-and-procurement
   - /industries/interior-design-and-furniture
+  - /interiors/canada-gst-hst-for-interior-designers
 question: "Do interior designers charge sales tax on design fees and furniture?"
 answer: >
   On furniture and other goods you resell, yes, in every state with a sales tax, on the price including your markup.
@@ -19,7 +20,7 @@ answer: >
 description: "Sales tax on interior design fees and furniture in New York, California and Texas, a worked NYC invoice, resale certificates and freight."
 domain: [sales-tax, interiors]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: "Tax Bulletin ST-400, Interior Decorating and Design Services"

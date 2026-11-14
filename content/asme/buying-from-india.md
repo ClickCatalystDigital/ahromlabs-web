@@ -9,6 +9,7 @@ related:
   - /asme/asme-vs-ibr
   - /industries/boiler-pressure-vessel-manufacturing
   - /notes/customer-portal-one-order-every-department
+  - /asme/crn-canada
 question: "Can an Indian manufacturer build an ASME U-stamped pressure vessel?"
 answer: >
   Yes. An Indian fabricator holding an ASME U certificate builds and stamps Section VIII vessels to the same rules,
@@ -18,7 +19,7 @@ answer: >
 description: "Sourcing ASME-stamped vessels and boilers from India: certificate checks, the AI, NB registration, state rules, IBR 2026 export inspection and what to ask."
 domain: [asme, sourcing, india]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)"

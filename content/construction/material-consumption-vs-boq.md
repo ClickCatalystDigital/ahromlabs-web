@@ -10,6 +10,8 @@ related:
   - /boq/material-specifications
   - /systems/bill-of-quantities
   - /industries/construction-company
+  - /construction/rate-analysis
+  - /construction/daily-progress-reports
 question: "How does a contractor check material used on site against the BOQ, and what wastage does CPWD allow?"
 answer: >
   Work out the theoretical quantity each BOQ item should have used, from its consumption norm and the work done,
@@ -19,7 +21,7 @@ answer: >
 description: "Material consumption against BOQ norms: CPWD Clause 38 theoretical quantities, wastage for steel, pipes and sheets, worked examples, reconciliation."
 domain: [construction, materials, india]
 published: 2026-11-06
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)"

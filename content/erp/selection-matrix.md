@@ -9,6 +9,7 @@ related:
   - /notes/tally-vs-erpnext-vs-custom-erp
   - /notes/outgrown-tally-signs
   - /services/custom-erp-crm
+  - /erp/readiness
 answer: >
   TallyPrime, ERPNext, Odoo and SAP Business One all handle Indian e-invoicing in some form; they differ in how
   they're licensed, where they run, and how far they bend to your process. A custom system fits the process
@@ -17,7 +18,7 @@ answer: >
 description: "ERP selection criteria for India: TallyPrime, ERPNext, Odoo, SAP Business One and custom, compared on licence, hosting, e-invoice and fit."
 domain: [erp, selection, comparison]
 published: 2026-10-25
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /erp/erp-selection-matrix.webp

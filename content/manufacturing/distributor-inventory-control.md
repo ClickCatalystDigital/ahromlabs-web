@@ -10,6 +10,10 @@ related:
   - /notes/reels-boxes-and-two-stores
   - /systems/material-traceability
   - /manufacturing/quickbooks-online-inventory
+  - /manufacturing/excess-and-obsolete-inventory
+  - /manufacturing/counterfeit-electronic-parts
+  - /manufacturing/electronic-component-inventory
+  - /manufacturing/reorder-point-safety-stock
 question: "What inventory control does a small US distributor need?"
 answer: >
   Four things: cycle counts that check a few bins every day instead of one shutdown count a year; lot or serial
@@ -19,7 +23,7 @@ answer: >
 description: "Inventory control for US distributors: cycle counting, lot and serial traceability, FIFO valuation (IRS Publication 538), barcodes and GS1 numbers."
 domain: [manufacturing, inventory, distribution]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Advanced Inventory (QuickBooks Desktop Enterprise)

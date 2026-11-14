@@ -10,6 +10,7 @@ related:
   - /services/daily-wage-payroll
   - /construction/measurement-book
   - /industries/construction-company
+  - /construction/daily-progress-reports
 question: "What contract labour, PF and ESIC rules does a construction contractor in India have to follow?"
 answer: >
   Contract labour now falls under the Occupational Safety, Health and Working Conditions Code, 2020, which repeals
@@ -19,7 +20,7 @@ answer: >
 description: "Contract labour compliance in India under the OSH Code: who needs a licence, wages and the principal employer's duty, core work, returns, PF and ESIC."
 domain: [construction, labour, india]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "The Occupational Safety, Health and Working Conditions Code, 2020 (37 of 2020)"

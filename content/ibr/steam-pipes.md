@@ -13,7 +13,7 @@ answer: >
   construction and to the Chief Inspector at the boiler's registration (regulation 323). Pipes are inspected and
   hydraulically tested before use, which a Form IV Part B certificate can show; the Chief Inspector then approves the
   line's pressure and temperature, which can't be changed without written authority.
-description: "Steam pipe approval under IBR 2026: plans (regulation 323), inspection and hydraulic test (322), the memorandum book, and the missing Form XIV."
+description: "Steam pipe approval under IBR 2026: plans (regulation 323), inspection and hydraulic test (322), and the Form XIV memorandum book."
 domain: [compliance, boilers, regulation]
 published: 2026-11-14
 updated: 2026-11-14
@@ -75,10 +75,12 @@ not be altered except on a written authority from the Chief Inspector."
 
 ## Is there a Form XIV in IBR 2026?
 
-Regulation 322(3)(a) says "A memorandum of Inspection Book shall be prepared in respect of steam pipe and fittings in
-Form-XIV", but the forms printed in the 2026 Gazette run from Form XIII to Form XV with no Form XIV. Under IBR 1950,
-Form XIV was the steam pipe form. Until a correction is notified, ask your Inspecting Authority or Chief Inspector
-which format they accept. See the [IBR 2026 forms list](/ibr/forms).
+Yes. Regulation 322(3)(a) says "A memorandum of Inspection Book shall be prepared in respect of steam pipe and fittings in
+Form-XIV", and the Gazette prints it after Form XIII, headed "Steam Pipes and Connected Fittings". It was Form XIV
+under IBR 1950 too, so the number hasn't changed. The book carries the owner and the connected boilers' registration
+numbers, the plan and its approval, the pipes' material, diameter, thickness and fittings, the calculations, and the
+notes of each inspection and hydraulic test. See [Form XIV](/ibr/forms/form-xiv) and the
+[IBR 2026 forms list](/ibr/forms).
 
 ## How are steam pipes inspected later?
 

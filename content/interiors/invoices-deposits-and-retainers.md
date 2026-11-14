@@ -10,6 +10,8 @@ related:
   - /manufacturing/quickbooks-integration
   - /sales-tax/interior-designers-sales-tax
   - /services/multi-company-finance
+  - /interiors/canada-gst-hst-for-interior-designers
+  - /interiors/interior-design-contract
 question: "How should an interior designer invoice, and how much deposit should a client pay for product?"
 answer: >
   A design firm usually sends two kinds of bill: design fees (a retainer at signing, then hourly or flat-fee
@@ -20,7 +22,7 @@ answer: >
 description: "How design firms invoice: retainers, product deposits, payment schedules, what each invoice shows and how QuickBooks books a deposit."
 domain: [interiors, billing]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Costs and Fees

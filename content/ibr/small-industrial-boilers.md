@@ -7,6 +7,8 @@ related:
   - /ibr/2026-changes
   - /asme/section-i-vs-iv
   - /industries/boiler-pressure-vessel-manufacturing
+  - /ibr/steam-pipes
+  - /ibr/renewal-inspection
 answer: >
   Under IBR 2026 a small industrial boiler is a shell boiler up to 7 kg/cm² (g) holding
   more than 25 and up to 500 litres, or a coil, once-through or water tube boiler up to
@@ -15,7 +17,7 @@ answer: >
 description: What counts as a small industrial boiler under IBR 2026 (Chapter 14), its inspection stages, hydraulic test, Form XXII certificate and registry number.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /ibr/ibr-small-industrial-boiler.webp

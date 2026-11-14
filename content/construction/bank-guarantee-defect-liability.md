@@ -10,6 +10,7 @@ related:
   - /services/compliance-accounting
   - /systems/msme-payment-rule
   - /industries/construction-company
+  - /construction/rera-for-builders
 question: "What performance guarantee and security deposit does a contractor give on a CPWD work, and when are they returned?"
 answer: >
   On a CPWD work the contractor gives a performance guarantee, usually 5% of the tendered amount as a bank guarantee
@@ -19,7 +20,7 @@ answer: >
 description: "Performance guarantee, security deposit and defect liability on CPWD works: amounts, forms, validity, release against a bank guarantee and refund."
 domain: [construction, billing, india]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)"

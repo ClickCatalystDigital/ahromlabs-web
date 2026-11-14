@@ -9,6 +9,7 @@ related:
   - /construction/mechanics-lien-deadlines
   - /manufacturing/quickbooks-integration
   - /industries/construction-company
+  - /construction/ontario-holdback
 question: "How quickly must an owner pay a contractor, and a contractor pay its subs, under prompt payment laws?"
 answer: >
   Prompt payment laws set how fast each tier must pay and what it owes if it's late. On federal jobs a progress
@@ -18,7 +19,7 @@ answer: >
 description: "Prompt payment acts in construction: federal, Texas, California, New York and Florida deadlines for owners and subs, interest on late pay, an example."
 domain: [construction, billing]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "FAR 52.232-27, Prompt Payment for Construction Contracts"

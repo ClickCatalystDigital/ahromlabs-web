@@ -33,7 +33,8 @@ export async function generateMetadata(props: PageProps<"/systems/[slug]">): Pro
   const url = `https://ahromlabs.com/systems/${term.slug}`;
 
   return {
-    title: seoTitle(term.metaTitle ?? term.title),
+    // "labour cess meaning", "pp stamp meaning": people add the word, so short term names carry it.
+    title: seoTitle(term.metaTitle ?? (term.title.length <= 34 ? `${term.title}: meaning and definition` : term.title)),
     description,
     alternates: { canonical: `/systems/${term.slug}` },
     openGraph: {

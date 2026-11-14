@@ -8,6 +8,7 @@ related:
   - /systems/fixed-look-up
   - /systems/grounding-check
   - /notes/assistant-that-answers-from-your-ledger
+  - /ai-assistant/construction-contractors
 answer: >
   The design that keeps figures right has four parts: a small AI model only chooses which question is being
   asked; code runs a fixed, read-only look-up with the same maths as the app's screens; any written sentence with
@@ -16,7 +17,7 @@ answer: >
 description: "How the design works, for buyers: the model picks the question, code runs a fixed look-up, and sentences with numbers not in the data are dropped."
 domain: [ai, design, selection]
 published: 2026-10-25
-updated: 2026-11-09
+updated: 2026-11-14
 checked: 2026-11-07
 image:
   src: /ai/ai-how-it-works.webp

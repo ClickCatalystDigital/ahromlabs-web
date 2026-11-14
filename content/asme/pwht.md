@@ -9,6 +9,7 @@ related:
   - /ibr/registration-documents
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/hardness-and-pmi
 question: "When is post-weld heat treatment required by ASME?"
 answer: >
   ASME Section VIII Division 1 requires post-weld heat treatment (PWHT) by material and thickness: Table UCS-56-1
@@ -18,7 +19,7 @@ answer: >
 description: "ASME PWHT under UCS-56-1: P-No. 1 temperature, hold time and thickness exemption, service-driven PWHT, heating and cooling rates, and the WPS effect."
 domain: [asme, design, welding]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "BPVC Section VIII Division 1 (2025)"

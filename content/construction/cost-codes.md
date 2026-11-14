@@ -10,6 +10,8 @@ related:
   - /construction/change-orders
   - /systems/job-costing
   - /systems/schedule-of-values
+  - /construction/certified-payroll
+  - /construction/submittals-and-rfis
 question: "How should a contractor set up cost codes?"
 answer: >
   Use a short list of cost codes for the work you actually do, each split by cost type (labor, material, equipment,

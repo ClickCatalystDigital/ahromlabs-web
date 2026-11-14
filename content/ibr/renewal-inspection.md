@@ -9,6 +9,7 @@ related:
   - /ibr/record-keeping
   - /asme/hydrostatic-test
   - /industries/boiler-pressure-vessel-manufacturing
+  - /ibr/steam-pipes
 answer: >
   To renew a boiler's certificate under IBR 2026, the owner applies with the fee, prepares the boiler for inspection
   (emptied, cleaned, doors and fittings opened, valves taken apart) and the Competent Person inspects it inside and

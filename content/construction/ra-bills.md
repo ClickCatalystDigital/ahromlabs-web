@@ -9,6 +9,9 @@ related:
   - /systems/msme-payment-rule
   - /services/compliance-accounting
   - /industries/construction-company
+  - /construction/rate-analysis
+  - /construction/rera-for-builders
+  - /construction/bank-guarantee-defect-liability
 question: "What is an RA bill in construction, what is deducted from it, and how are advances and the final bill handled?"
 answer: >
   A running account (RA) bill is a contractor's interim bill for work measured so far, paid as an advance against
@@ -228,7 +231,8 @@ detailed measurement, adjusted in the next bill.
 
 ## Is there a free RA bill format in Excel?
 
-Yes: the [RA bill format](/construction/ra-bill-format.xlsx) (Excel, free under CC BY 4.0). One sheet per bill, with
+Yes: the [RA bill format](/construction/ra-bill-format.xlsx) (Excel, free under CC BY 4.0; also as a blank
+[Word file](/construction/ra-bill-format.docx) and [PDF](/construction/ra-bill-format.pdf) to print). One sheet per bill, with
 each BOQ item's quantity up to the previous bill, this bill and up to date, the amounts for each, and this bill's GST,
 security deposit, TDS, labour cess and mobilisation advance recovery down to the net payable. The rates are typed in,
 so set them to your contract; the worked example is made up. Pair it with the

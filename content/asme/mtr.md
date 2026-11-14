@@ -9,6 +9,7 @@ related:
   - /notes/plate-remnants-back-into-stock
   - /services/material-traceability
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/hardness-and-pmi
 question: "What does an MTR need to show for ASME pressure vessel material?"
 answer: >
   A material test report (MTR, or mill test certificate) certifies one heat of material: its specification and

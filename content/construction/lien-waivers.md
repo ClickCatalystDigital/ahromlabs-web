@@ -9,6 +9,7 @@ related:
   - /construction/change-orders
   - /manufacturing/quickbooks-integration
   - /services/custom-erp-crm
+  - /construction/ontario-holdback
 question: "What is the difference between a conditional and an unconditional lien waiver?"
 answer: >
   A conditional lien waiver gives up lien rights only once the payment actually reaches the signer; an unconditional
@@ -18,7 +19,7 @@ answer: >
 description: "US lien waivers: the four types, statutory-form states (AZ, CA, FL, MA, MI, TX, WY), joint checks, signing the wrong one, progress vs final."
 domain: [construction, liens]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Arizona Revised Statutes 33-1008, Waiver of lien"

@@ -9,6 +9,7 @@ related:
   - /services/daily-wage-payroll
   - /ai-assistant/construction-contractors
   - /industries/construction-company
+  - /construction/contract-labour-compliance
 question: "What should a daily progress report record, and which site records do CPWD works require?"
 answer: >
   A daily progress report (DPR) records, for one site and one day, the work done against each BOQ item, the labour
@@ -116,7 +117,8 @@ norms in [material consumption](/construction/material-consumption-vs-boq).
 
 ## Is there a free DPR format in Excel?
 
-Yes: the [daily progress report format](/construction/daily-progress-report-format.xlsx) (Excel, free under CC BY 4.0):
+Yes: the [daily progress report format](/construction/daily-progress-report-format.xlsx) (Excel, free under CC BY 4.0; also as a blank
+[Word file](/construction/daily-progress-report-format.docx) and [PDF](/construction/daily-progress-report-format.pdf) to print):
 work done against BOQ items, labour by trade and contractor, materials received and issued, and issues and
 instructions, one sheet per site per day. A phone app does the same with less typing; see below.
 

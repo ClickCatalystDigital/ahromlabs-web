@@ -10,6 +10,7 @@ related:
   - /manufacturing/quickbooks-integration
   - /services/custom-erp-crm
   - /industries/electronics-component-trading
+  - /sales-tax/sales-tax-nexus
 question: "What is the Streamlined Sales Tax Agreement, and who can use its free services?"
 answer: >
   The Streamlined Sales and Use Tax Agreement is a set of uniform sales tax rules that 24 states follow: 23 full
@@ -19,7 +20,7 @@ answer: >
 description: "Streamlined Sales Tax: the 24 member states, one free registration, one exemption certificate, and free certified-provider filing for remote sellers."
 domain: [sales-tax, streamlined]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: State Information

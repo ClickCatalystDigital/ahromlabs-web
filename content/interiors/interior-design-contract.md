@@ -10,6 +10,7 @@ related:
   - /sales-tax/interior-designers-sales-tax
   - /sales-tax/resale-certificates
   - /services/custom-erp-crm
+  - /interiors/architecture-firm-fees-and-phases
 question: "What should an interior design contract include?"
 answer: >
   An interior design agreement should say what the firm will do, how each part is paid, and who buys the product:
@@ -20,7 +21,7 @@ answer: >
 description: "What an interior design contract covers: scope, fees, buying as reseller or agent, retainer, terms of sale and termination, as in ASID's forms."
 domain: [interiors, billing]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: 2018 ASID Residential Contract Form Agreements, User Guide

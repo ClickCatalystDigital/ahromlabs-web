@@ -8,6 +8,7 @@ related:
   - /ai-assistant/how-it-works
   - /industries/electronics-component-trading
   - /services/custom-erp-crm
+  - /erp/implementation-plan
 answer: >
   Don't let an ERP vendor run their own demo. Bring your own data, give them a list of tests, and watch them do
   each one: change an entry and show the audit trail, reserve stock and try to ship it elsewhere, post an
@@ -15,7 +16,7 @@ answer: >
 description: "ERP vendor demo script for Indian manufacturers and traders: the tests to make every vendor do in front of you, by department, and red flags."
 domain: [erp, selection, demo]
 published: 2026-10-25
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /erp/erp-vendor-demo.webp

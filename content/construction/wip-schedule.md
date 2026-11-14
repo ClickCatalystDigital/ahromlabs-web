@@ -9,6 +9,7 @@ related:
   - /systems/work-in-progress
   - /construction/change-orders
   - /industries/construction-company
+  - /construction/cost-codes
 question: "What is a WIP schedule in construction, and how is over or under billing worked out?"
 answer: >
   A WIP (work-in-progress) schedule lists every open job with its contract value, estimated total cost, cost to
@@ -18,7 +19,7 @@ answer: >
 description: "The construction WIP schedule: cost-to-cost percent complete, earned revenue, over and under billing, profit fade, the tax rule, and what sureties check."
 domain: [construction, job-cost]
 published: 2026-11-03
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "26 U.S.C. 460, Special rules for long-term contracts"

@@ -9,6 +9,7 @@ related:
   - /services/inventory-and-reservations
   - /systems/mrp
   - /systems/stock-reservation
+  - /manufacturing/excess-and-obsolete-inventory
 question: "How do you calculate a reorder point and safety stock?"
 answer: >
   Reorder point = average daily usage × lead time in days + safety stock. A simple safety stock is (maximum daily

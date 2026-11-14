@@ -21,7 +21,7 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]/tour
   const industry = withVideo().find((i) => i.slug === slug)!;
   const video = industry.video!;
   return {
-    title: seoTitle(video.name),
+    title: seoTitle(video.name.split(" (")[0]),
     description: metaDescription(video.description),
     alternates: { canonical: `/industries/${slug}/tour` },
     openGraph: {

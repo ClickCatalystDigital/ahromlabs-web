@@ -8,6 +8,7 @@ related:
   - /notes/tally-voucher-posting
   - /services/tally-integration
   - /services/custom-erp-crm
+  - /erp/small-manufacturers
 answer: >
   Keep TallyPrime for accounts, GST and TDS if that is where your work happens. When sales, stores, production or
   projects run in Excel beside it, the usual answer is not to replace Tally but to build the operations system next
@@ -16,7 +17,7 @@ answer: >
 description: "Tally vs a custom ERP for Indian businesses: when TallyPrime is enough, when to build beside it and post vouchers, when to replace it, and the audit-trail rule."
 domain: [erp, tally]
 published: 2026-11-03
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: Buy TallyPrime Silver & Gold

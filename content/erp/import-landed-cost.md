@@ -9,6 +9,8 @@ related:
   - /services/tally-integration
   - /services/document-extraction
   - /systems/three-way-match
+  - /erp/bis-registration-electronics
+  - /erp/hsn-codes-electronic-components
 answer: >
   Landed cost is what an imported item really costs in your store: the assessable value (CIF, converted at the CBIC
   exchange rate on the bill of entry), plus basic customs duty, the social welfare surcharge (10% of the duty for

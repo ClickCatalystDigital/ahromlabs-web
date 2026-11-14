@@ -9,6 +9,7 @@ related:
   - /interiors/invoices-deposits-and-retainers
   - /interiors/custom-furniture-job-costing
   - /industries/interior-design-and-furniture
+  - /sales-tax/new-york-interior-design-sales-tax
 question: "Do California interior designers charge sales tax on design fees, labor and deposits?"
 answer: >
   On merchandise, yes, on the retail price including markup. On fees, only when they relate to a sale of merchandise:
@@ -19,7 +20,7 @@ answer: >
 description: "California sales tax for interior designers from CDTFA Publication 35: fees, fabrication vs installation labor, deposits, freight and built-ins."
 domain: [sales-tax, interiors]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: "Publication 35, Designer Fees and Charges Related to the Sale of Merchandise"

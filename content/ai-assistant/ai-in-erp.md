@@ -8,6 +8,7 @@ related:
   - /erp/vendor-demo-script
   - /services/custom-ai-assistant
   - /notes/same-confidence-different-autonomy
+  - /ai-assistant/construction-contractors
 answer: >
   AI in an ERP is safe and useful today in three jobs: answering questions from your own records through fixed,
   read-only look-ups; reading documents such as invoices and purchase orders into drafts a person checks; and
@@ -17,7 +18,7 @@ answer: >
 description: "AI in ERP explained for owners: the three safe uses today, what not to let it do alone, AI-native claims, and how to test any ERP's AI before buying."
 domain: [ai, erp, selection]
 published: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 image:
   src: /ai/ai-in-erp.webp

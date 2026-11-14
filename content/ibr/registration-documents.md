@@ -9,6 +9,9 @@ related:
   - /notes/ibr-statutory-folder-from-bom
   - /asme/data-reports
   - /industries/boiler-pressure-vessel-manufacturing
+  - /ibr/steam-pipes
+  - /ibr/renewal-inspection
+  - /ibr/stage-inspection
 answer: >
   Under regulation 8 of IBR 2026, a boiler's registration application goes to the Chief
   Inspector with four sets of documents: the Inspecting Authority's certificate (Form I

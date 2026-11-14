@@ -142,6 +142,12 @@ difference, which is why productivity belongs in the analysis rather than a sing
 Keep the analysis in a sheet where the material and labour rates sit in one place and every item refers to them, so
 updating the price of cement updates every rate that uses it.
 
+## Is there a free rate analysis format?
+
+Yes: a rate analysis sheet as [Excel](/construction/rate-analysis-format.xlsx), [Word](/construction/rate-analysis-format.docx), [PDF](/construction/rate-analysis-format.pdf), free under CC BY 4.0. The Excel file
+carries the concrete example above and reaches the same ₹9,672 per m³; the water and overheads percentages are typed
+cells, so set them to your contract or schedule of rates.
+
 ## How does rate analysis connect to the site?
 
 The analysis says how much cement, sand and steel each unit should take. Comparing it with what the site actually

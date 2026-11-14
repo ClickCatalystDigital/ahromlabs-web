@@ -10,6 +10,7 @@ related:
   - /ibr/registration-documents
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/heat-exchangers
 question: "What is the ASME hydrostatic test pressure for a pressure vessel?"
 answer: >
   For a Section VIII Division 1 vessel, the minimum hydrostatic test pressure is 1.3 times the MAWP, multiplied by

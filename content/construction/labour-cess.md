@@ -10,6 +10,7 @@ related:
   - /services/compliance-accounting
   - /services/daily-wage-payroll
   - /industries/construction-company
+  - /construction/rera-for-builders
 question: "What is labour cess on construction in India, who pays it and how is it collected?"
 answer: >
   Labour cess (the building and other construction workers' cess) is 1% of the cost of construction, excluding land,

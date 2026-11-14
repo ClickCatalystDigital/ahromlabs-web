@@ -122,6 +122,12 @@ acknowledgement or receiving record changes, not when someone remembers to updat
 - **The client changes their mind after ordering**: the spec should show the vendor's cancellation and restocking
   terms before approval, so the cost of a change is clear.
 
+## Is there a free FF&E schedule template?
+
+Yes: an [FF&E schedule in Excel](/interiors/ffe-schedule-template.xlsx), free under CC BY 4.0, with the example above:
+tag, room, item, vendor, finish, quantity, cost, markup, sell price, lead time, purchase order and status, and totals
+for cost and sell. The markup is a typed cell per line.
+
 ## What should FF&E software do?
 
 Keep one record per item from selection to installation: the spec fields above, images, approvals, the proposal line,

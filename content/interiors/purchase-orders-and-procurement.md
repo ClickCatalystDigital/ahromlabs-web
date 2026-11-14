@@ -10,6 +10,8 @@ related:
   - /systems/three-way-match
   - /sales-tax/resale-certificates
   - /industries/interior-design-and-furniture
+  - /interiors/1099s-for-installers-and-workrooms
+  - /interiors/ffe-specifications
 question: "How do interior designers track purchase orders from vendor deposit to delivery?"
 answer: >
   Procurement is the part of a design project between the client's approval and installation: a purchase order to
@@ -20,7 +22,7 @@ answer: >
 description: "Interior design procurement step by step: POs, vendor deposits, acknowledgements, CFAs, back-orders, freight, receiving and QuickBooks."
 domain: [interiors, procurement]
 published: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-07
 sources:
   - title: Acknowledging Purchase and Work Orders and Receiving Merchandise (Design Manager Professional manual)

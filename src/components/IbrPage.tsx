@@ -22,6 +22,7 @@ export const IBR_HUB: Hub = {
   links: () => [
     ...ibrGuides().map((g) => ({ href: `/ibr/${g.slug}`, title: g.title })),
     { href: "/ibr/forms", title: "IBR 2026 forms list, and their IBR 1950 names" },
+    { href: "/ibr/questions", title: "IBR 2026 questions, answered" },
   ],
   byline: (checked) => (
     <>

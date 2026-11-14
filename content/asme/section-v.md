@@ -9,6 +9,7 @@ related:
   - /services/document-extraction
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/material-traceability
+  - /asme/hardness-and-pmi
 question: "What is ASME Section V?"
 answer: >
   ASME Section V sets how nondestructive examinations are done: radiography, ultrasonic, magnetic particle,
@@ -18,7 +19,7 @@ answer: >
 description: "ASME Section V explained: its Articles for RT, UT, MT, PT, VT and leak testing, who sets acceptance, how NDE personnel are qualified, and the NDE report."
 domain: [asme, nde]
 published: 2026-11-01
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "BPVC Section V: Nondestructive Examination (2025)"

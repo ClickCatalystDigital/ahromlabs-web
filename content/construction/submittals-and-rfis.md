@@ -9,6 +9,8 @@ related:
   - /systems/change-order
   - /industries/construction-company
   - /construction/wip-schedule
+  - /construction/cost-codes
+  - /construction/punch-list-closeout
 question: "What is the difference between a submittal and an RFI in construction?"
 answer: >
   A submittal is something the contractor sends for the design team's review before building or buying: shop
@@ -120,6 +122,12 @@ Usually the contractor. Review stamps typically say the review is for general co
 doesn't relieve the contractor of responsibility for dimensions, quantities, coordination and compliance with the
 contract documents. If you submit a product that deviates from the specification, say so clearly in the submittal;
 a deviation buried in a cut sheet and approved without comment is still your deviation.
+
+## Is there a free submittal log and RFI log?
+
+Yes, both in Excel, free under CC BY 4.0: a [submittal log](/construction/submittal-log.xlsx) and an
+[RFI log](/construction/rfi-log.xlsx). Each has the columns above and works out the days in review or days open from
+the dates, which is the figure a delay claim rests on. The sample rows are made up.
 
 ## Does our construction software handle submittals and RFIs?
 
