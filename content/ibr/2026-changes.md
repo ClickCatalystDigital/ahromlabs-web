@@ -17,7 +17,7 @@ answer: >
 description: IBR 2026 replaced IBR 1950 on 1 October 2026. What changed for boiler makers — renumbered forms, electronic filing, record keeping, recognition.
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: The Boilers Act, 2025 (No. 12 of 2025)

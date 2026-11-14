@@ -19,7 +19,7 @@ answer: >
 description: "ASME stamps explained: U, U2, U3, S, A, PP, H, HLW, PRT and the Section XIII valve letters, plus the National Board's NB, R, VR, NR and T/O marks."
 domain: [asme, certification]
 published: 2026-11-01
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Boiler and Pressure Vessel Certification (certificates offered)"

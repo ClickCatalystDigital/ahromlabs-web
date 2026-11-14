@@ -17,7 +17,7 @@ answer: >
 description: "Checklist for a boiler registration application under IBR 2026: the four document sets, Forms I Part B or C, IV Part A and V Part A, and what follows."
 domain: [compliance, boilers, regulation]
 published: 2026-10-17
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 image:
   src: /ibr/ibr-registration-steps.webp

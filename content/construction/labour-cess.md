@@ -19,7 +19,7 @@ answer: >
 description: "Labour cess (BOCW cess) in India: 1% of construction cost under the Code on Social Security, who pays, advance payment, deduction from bills and penalties."
 domain: [construction, labour, india]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Notification S.O. 2322(E), 8 May 2026 (cess at one per cent under section 100(1))"

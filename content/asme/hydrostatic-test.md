@@ -19,7 +19,7 @@ answer: >
 description: "ASME hydrostatic test pressure with a free calculator: UG-99 (1.3 × MAWP × stress ratio), pneumatic UG-100 (1.1), Section I PG-99 (1.5), gauges and holds."
 domain: [asme, design, testing]
 published: 2026-11-01
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-06
 tool: hydrotest
 sources:

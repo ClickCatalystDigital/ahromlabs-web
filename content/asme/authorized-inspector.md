@@ -18,7 +18,7 @@ answer: >
 description: "The ASME Authorized Inspector and Inspection Agency: QAI-1 accreditation, the National Board AI commission, what they check and sign, and hold points."
 domain: [asme, certification, inspection]
 published: 2026-11-01
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "Authorized Inspection Agency Accreditation"

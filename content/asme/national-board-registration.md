@@ -19,7 +19,7 @@ answer: >
 description: "National Board registration and the NB mark: NB-264, the 30-day rule, EDT, 2025 forms, the NBIC's four Parts, and the R, VR, NR and T/O programs."
 domain: [asme, certification, national-board]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "Manufacturer's Data Report Registration"

@@ -18,7 +18,7 @@ answer: >
 description: "ASME impact testing and MDMT: UCS-66 exemption curves A to D, governing thickness, the stress-ratio credit, the UG-20(f) exemption and Charpy tests."
 domain: [asme, design, materials]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "BPVC Section VIII Division 1 (2025)"

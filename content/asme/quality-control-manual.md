@@ -18,7 +18,7 @@ answer: >
 description: "What an ASME quality control manual must cover for a U or S certificate, ASME's review checklist, the English rule, CA-1, and how the joint review tests it."
 domain: [asme, certification, quality]
 published: 2026-11-01
-updated: 2026-11-06
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: "Boiler and Pressure Vessel Certificates of Authorization and the Certification Mark: Informational Handbook (BPV-GUI-03)"
