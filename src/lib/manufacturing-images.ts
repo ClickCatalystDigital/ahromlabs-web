@@ -7,6 +7,10 @@ import { join } from "node:path";
 //
 // Alt text describes the picture and what it stands for. Re-check it against each delivered image.
 const ALT: Record<string, string> = {
+  "electronic-component-inventory": "A reel of surface-mount components in its moisture barrier bag beside a cut strip of carrier tape: electronic component inventory.",
+  "counterfeit-electronic-parts": "A microchip under a magnifying glass on an inspection mat beside an empty tray: inspecting a part for counterfeit marks.",
+  "reorder-point-safety-stock": "A warehouse bin of identical boxes with a coloured line marking a refill level on the bin wall: a reorder point.",
+  "excess-and-obsolete-inventory": "Dusty cartons stacked at the back of a shelf with a blank tag tied to one: excess and obsolete stock.",
   "manufacturing-hub": "A CNC vertical machining center with a part clamped in the vise, beside a small cart of finished parts: production in a machine shop.",
   "job-shop-erp": "A workbench with a bench vise, a tray of machined brackets and flanges, a closed laptop, drawers and parts bins: running a job shop with software.",
   "quickbooks-for-manufacturing": "A closed ledger book with a pen, next to a machined flange, bracket and shaft: accounting software and the parts a manufacturer makes.",

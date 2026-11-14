@@ -56,7 +56,7 @@ export const ibrGroups: { id: IbrGroup; name: string }[] = [
 ];
 
 // When the form pages were last checked against the Gazette, and first published.
-export const IBR_FORMS_CHECKED = "2026-10-17";
+export const IBR_FORMS_CHECKED = "2026-11-14";
 export const IBR_FORMS_PUBLISHED = "2026-10-17";
 
 // The official copy on eGazette (ID CG-DL-E-06102026-276813), checked to match
@@ -85,6 +85,28 @@ export const ibrForms: IbrForm[] = [
       quote: "Inspecting Authority Certificate of Inspection during",
     },
     summary: "The Inspecting Authority's certificate of inspection during construction for a boiler made to a foreign code for export.",
+    page: {
+      issuedBy: "The Inspecting Authority that supervised construction of a boiler built in India to a foreign code for export.",
+      filedWith: "Sent with the boiler and the maker's certificate required by the foreign code, which the Inspecting Authority countersigns.",
+      records: [
+        "Type, length, diameter and design pressure of the boiler, the maker and shop number",
+        "That it was built under the Inspecting Authority's supervision and inspected at stages by the Competent Person",
+        "How the boiler is stamped",
+        "The test pressure and date, with details of tests and inspections attached",
+        "That the design matches the maker's drawing approved and signed by the Inspecting Authority"
+      ],
+      changed: "New in IBR 2026: a certificate for boilers made in India to a foreign code (ASME, for example) for export. See ASME vs IBR 2026.",
+      facts: [
+        {
+          reg: "4",
+          quote: "INSPECTING AUTHORITIES CERTIFICATE OF INSPECTION DURING CONSTRUCTION IN RESPECT OF A BOILER MADE TO FOREIGN CODE FOR EXPORT"
+        },
+        {
+          reg: "Form I Part A",
+          quote: "was constructed under our supervision and inspected at various stages at construction by the Competent Person"
+        }
+      ]
+    },
   },
   {
     slug: "form-i-part-b",
@@ -254,6 +276,27 @@ export const ibrForms: IbrForm[] = [
     old: { form: "Form XIII", title: "Qualified boiler welder's certificate", quote: "Qualified Boiler Welder's Certificate" },
     summary:
       "The certificate a welder must hold to weld boilers, boiler components, economisers, feed pipes, steam pipes and superheaters (regulation 7(1)(b)(iii)).",
+    page: {
+      issuedBy: "The Competent Authority, after the welder passes the qualification test under regulation 541.",
+      filedWith: "Held by the welder; the employer keeps a copy, and the Inspecting Authority checks it before welding on IBR work.",
+      records: [
+        "Certificate number, the welder's photo, name, date of birth, identification marks, signature and address",
+        "Employment particulars",
+        "Qualification details: date of test, type and position, material type and grouping (M and group number), process, backing, electrode grouping (U number) or filler wire, whether the test piece was X-rayed",
+        "Period of validity and the basis of each renewal (continuous engagement or fresh tests)"
+      ],
+      changed: "Under IBR 1950 the welder's certificate was Form XIII; it is now Form II. Continuity is proved on Form XX, and the test itself is recorded on Form XXI.",
+      facts: [
+        {
+          reg: "7(1)(b)(iii)",
+          quote: "shall possess certificate in Form-II"
+        },
+        {
+          reg: "Form II",
+          quote: "has been examined and tested in the prescribed manner"
+        }
+      ]
+    },
   },
   {
     slug: "form-iii",
@@ -264,6 +307,32 @@ export const ibrForms: IbrForm[] = [
     group: "recognition",
     summary:
       "The questionnaire a firm answers to be recognised as a manufacturer of boilers or boiler components. New in 2026; recognition lasts three years.",
+    page: {
+      issuedBy: "The firm applying for recognition as a boiler or boiler component manufacturer.",
+      filedWith: "An Inspecting Authority operating in the State where recognition is sought, with the fee for the class applied for.",
+      records: [
+        "Registered name, permanent and works addresses, year of establishment",
+        "Class applied for: Special Class, Class I to Class IV, or components manufacturer",
+        "Covered area; design, manufacturing, testing and R&D facilities",
+        "Numbers of qualified NDT personnel and welders, technical manpower",
+        "Internal quality control systems"
+      ],
+      changed: "New in IBR 2026: manufacturers are recognised by class. Recognition lasts three years; apply for renewal at least three months before it expires.",
+      facts: [
+        {
+          reg: "7(1)(b)(v)",
+          quote: "any firm seeking recognition shall apply to an Inspecting Authority operating in the State in which"
+        },
+        {
+          reg: "Form III, note 1",
+          quote: "The recognition of the firm as a manufacturer shall be for a period of three years"
+        },
+        {
+          reg: "Form III",
+          quote: "A higher class boiler manufacturer shall be eligible to manufacture lower class boilers."
+        }
+      ]
+    },
   },
   {
     slug: "form-iv-part-a",
@@ -382,6 +451,34 @@ export const ibrForms: IbrForm[] = [
     group: "manufacture",
     old: { form: "Form III-C", title: "Certificate of manufacture and test of boiler mountings and fittings", quote: "Certificate of Manufacture and Test of Boiler mounting" },
     summary: "The certificate for boiler mountings and fittings such as valves.",
+    page: {
+      issuedBy: "The maker of the mounting or fitting and the Inspecting Authority. Valve chests from well-known foundries or forges recognised by the Central Boilers Board carry the material particulars from their own certificates.",
+      filedWith: "Supplied with the mountings and fittings to the boiler maker or owner, and kept with the boiler's records (regulation 308).",
+      records: [
+        "Name of part, quantity, serial numbers, drawing number, maker and customer",
+        "Maximum allowable working pressure in kg/cm² (g), design temperature and hydraulic test pressure",
+        "Main dimensions, specification and the Inspecting Authority's identification marks",
+        "Chemical composition and physical tests: tensile strength, transverse bend test, elongation, other tests",
+        "Raw material: process of manufacture, fully killed or rimmed, specification, heat number, size, test certificate number and date, maker",
+        "The maker's certificate of the hydraulic test, and the Inspecting Authority's countersignature with the Competent Person who witnessed it",
+        "For safety valves, the details and test results of item 8 of Form IV Part A"
+      ],
+      changed: "Under IBR 1950 this was Form III-C, the name many valve makers and folders still use. For stock and sale, one form now covers at most fifty mountings and fittings.",
+      facts: [
+        {
+          reg: "12",
+          quote: "A certificate of manufacture and test in Form-IV(Part-D), signed by the maker and the Inspecting Authority in respect of boiler mountings and steam-pipe fittings during manufacture, shall be furnished."
+        },
+        {
+          reg: "12, note",
+          quote: "A Photocopy of certificate in Form-IV(Part-D) shall be accepted provided it is endorsed by the manufacturer or the Inspecting Authority who has signed the original certificate."
+        },
+        {
+          reg: "Form IV Part D, note 3",
+          quote: "For Stock and sale purpose, one Form shall be issued for not more than fifty mountings and fittings."
+        }
+      ]
+    },
   },
   {
     slug: "form-iv-part-e",
@@ -393,6 +490,33 @@ export const ibrForms: IbrForm[] = [
     group: "manufacture",
     old: { form: "Form III-F", title: "Certificate of manufacture and test of castings", quote: "Certificate of Manufacture and Test of castings" },
     summary: "The certificate for castings used in a boiler.",
+    page: {
+      issuedBy: "The foundry and the Inspecting Authority. Castings from well-known foundries recognised by the Central Boilers Board need no Inspecting Authority signature.",
+      filedWith: "Supplied with the castings to the buyer and kept with the boiler's records (regulation 308).",
+      records: [
+        "Certificate number and date, heat number and date of pouring",
+        "Maker and customer, drawing numbers, description, quantity and serial numbers",
+        "Foundry identification",
+        "Chemical composition and heat treatment",
+        "Physical tests: tensile strength, transverse bend test, elongation, other tests",
+        "Signatures of the maker, the Competent Person, and the Inspecting Authority or well-known foundry"
+      ],
+      changed: "Under IBR 1950 this was Form III-F. Castings larger than 100 mm must carry the heat number as cast, except investment castings.",
+      facts: [
+        {
+          reg: "13",
+          quote: "A certificate of manufacture and test in Form-IV(Part-E), signed by the maker and the Inspecting Authority shall be furnished."
+        },
+        {
+          reg: "13",
+          quote: "in the case of castings manufactured by well known foundries recognised by the Central Boilers Board, signature of Inspecting Authority shall not be required."
+        },
+        {
+          reg: "Form IV Part E",
+          quote: "for castings of size more than 100mm Heat number must be as Cast except for Investment castings."
+        }
+      ]
+    },
   },
   {
     slug: "form-iv-part-f",
@@ -404,6 +528,29 @@ export const ibrForms: IbrForm[] = [
     group: "manufacture",
     old: { form: "Form III-G", title: "Certificate of manufacture and test of forgings", quote: "Certificate of Manufacture and Test of Forgings" },
     summary: "The certificate for forgings used in a boiler.",
+    page: {
+      issuedBy: "The forge and the Inspecting Authority. Forgings from well-known forges recognised by the Central Boilers Board need no Inspecting Authority signature.",
+      filedWith: "Supplied with the forgings to the buyer and kept with the boiler's records (regulation 308).",
+      records: [
+        "Certificate number and date, heat number and details of the raw material",
+        "Maker and customer, drawing numbers, description, quantity and serial numbers",
+        "Forge shop identification",
+        "Chemical composition and heat treatment",
+        "Physical tests: tensile strength, transverse bend test, elongation, other tests",
+        "Signatures of the maker, the Competent Person, and the Inspecting Authority or well-known forge"
+      ],
+      changed: "Under IBR 1950 this was Form III-G.",
+      facts: [
+        {
+          reg: "14",
+          quote: "A certificate of manufacture and test in Form-IV(Part-F), signed by the maker and the Inspecting Authority shall be furnished."
+        },
+        {
+          reg: "14",
+          quote: "in the case of forgings manufactured by well known forges recognised by the Central Boilers Board, signature of Inspecting Authority shall not be required."
+        }
+      ]
+    },
   },
   {
     slug: "form-iv-part-g",
@@ -419,6 +566,28 @@ export const ibrForms: IbrForm[] = [
       quote: "Certificate of Manufacture and Test for Headers, Desuperheaters/",
     },
     summary: "The certificate for headers and similar standalone pressure parts, such as a steam header.",
+    page: {
+      issuedBy: "The maker of the part and the Inspecting Authority.",
+      filedWith: "Supplied with the part to the boiler maker or owner, and kept with the boiler's records (regulation 308).",
+      records: [
+        "Name of the part, maker, customer and drawing number",
+        "Maximum allowable working pressure, design temperature, heat treatment, hydraulic test pressure and non-destructive testing",
+        "Raw material: refers to the enclosed material test certificates, or Form V Part B in lieu",
+        "A table of items (pipe, end cover, stubs, branch pipes) with material, size, quantity and melt number",
+        "The maker's certificate of the water test, the final inspection date, and the Competent Person's and Inspecting Authority's signatures"
+      ],
+      changed: "New as a separate certificate in IBR 2026: headers, desuperheaters or attemperators, blowdown tanks, feedwater tanks, accumulators and deaerators each have one form.",
+      facts: [
+        {
+          reg: "15",
+          quote: "Certificate of inspection during manufacture of Headers, Desuperheaters or Attemperators, Blowdown Tanks, Feedwater Tanks, Accumulators and Dearators."
+        },
+        {
+          reg: "15",
+          quote: "signed by the maker and the Inspecting Authority, shall be furnished."
+        }
+      ]
+    },
   },
   {
     slug: "form-iv-part-h",
@@ -430,6 +599,28 @@ export const ibrForms: IbrForm[] = [
     group: "manufacture",
     old: { form: "Form III-I", title: "Certificate of manufacture and test for dished ends/end covers", quote: "Certificate of Manufacture and Test for Dished Ends/End Covers" },
     summary: "The certificate for dished ends and end covers.",
+    page: {
+      issuedBy: "The maker of the dished end or end cover and the Inspecting Authority.",
+      filedWith: "Supplied with the dished ends to the boiler maker, and kept with the boiler's records (regulation 308).",
+      records: [
+        "Name of the part, maker, customer and drawing number",
+        "Maximum allowable working pressure, design temperature, heat treatment, hydraulic test pressure and non-destructive testing",
+        "Raw material test certificates enclosed, or Form V Part B in lieu",
+        "For each plate or forging: material specification, size, quantity, melt number or plate number, and test certificate number and date",
+        "The final inspection date and the Competent Person's and Inspecting Authority's signatures"
+      ],
+      changed: "Under IBR 1950 this was Form III-I. Dished ends bought from a pressing shop come with this form and the plate's own certificate.",
+      facts: [
+        {
+          reg: "16",
+          quote: "Certificate of inspection during manufacture of dished ends or end covers."
+        },
+        {
+          reg: "16",
+          quote: "and test in Form-IV(Part-H), signed by the maker and the Inspecting Authority shall be furnished."
+        }
+      ]
+    },
   },
   {
     slug: "form-v-part-a",
@@ -517,6 +708,24 @@ export const ibrForms: IbrForm[] = [
     old: { form: "Form XV-A to XV-G", title: "Questionnaires for Inspecting Authority, Competent Authority and well-known makers", quote: "Questionnaire Inspecting Authority" },
     summary:
       "Questionnaires for firms seeking recognition as an Inspecting Authority, Competent Authority, well-known steel maker, foundry or forge, tube or pipe maker, material testing laboratory or remnant life assessment organisation.",
+    page: {
+      issuedBy: "A firm seeking recognition by the Central Boilers Board: Part A for an Inspecting Authority, the other parts for the other recognised categories.",
+      filedWith: "The Secretary, Central Boilers Board, with the fee (regulation 17).",
+      records: [
+        "Name, addresses, year of establishment and branch offices",
+        "Proposed countries or areas of operation",
+        "Experience as an inspecting body under Indian or international codes",
+        "For renewal, inspections done in the last five years",
+        "Other commercial activity, and the types, sizes and pressures of boilers already inspected"
+      ],
+      changed: "Under IBR 1950 these were Forms XV-A to XV-G.",
+      facts: [
+        {
+          reg: "17(2)",
+          quote: "QUESTIONNAIRE TO BE ANSWERED BY FIRMS/COMPANIES SEEKING RECOGNITION BY THE CENTRAL BOILERS BOARD"
+        }
+      ]
+    },
   },
   {
     slug: "form-vii",
@@ -527,6 +736,27 @@ export const ibrForms: IbrForm[] = [
     group: "recognition",
     old: { form: "Form XVI-A to XVI-I", title: "Certificates of approval", quote: "Certificate of Approval for Well Known Steel Maker" },
     summary: "The Central Boilers Board's certificates of approval for the bodies and makers recognised under Form VI.",
+    page: {
+      issuedBy: "The Central Boilers Board, signed by its Secretary.",
+      filedWith: "Held by the recognised firm; recognised bodies are listed by the Board.",
+      records: [
+        "The firm, and the category it is recognised in (Part A for an Inspecting Authority)",
+        "The area of operation",
+        "Validity: five years for an Inspecting Authority",
+        "The condition that it adheres to the quality control prescribed under the regulations"
+      ],
+      changed: "Under IBR 1950 these were Forms XVI-A to XVI-I.",
+      facts: [
+        {
+          reg: "19",
+          quote: "CERTIFICATE OF APPROVAL FOR INSPECTING AUTHORITY"
+        },
+        {
+          reg: "Form VII Part A",
+          quote: "This certificate is valid for five years"
+        }
+      ]
+    },
   },
   {
     slug: "form-viii",
@@ -537,6 +767,26 @@ export const ibrForms: IbrForm[] = [
     group: "inspection",
     summary:
       "The maker's final inspection report for boiler components, approved by the Competent Person; components are erected at site on its strength. New in 2026.",
+    page: {
+      issuedBy: "The maker of the boiler components, approved by the Competent Person.",
+      filedWith: "Goes to site with the components; erection is based on it.",
+      records: [
+        "Report number and date, the maker and the boiler number",
+        "For each item: product identification number, drawing number, description, quantity and the Competent Person's identification mark",
+        "Signatures of the maker's representative and the Competent Person"
+      ],
+      changed: "New in IBR 2026. Components erected on the basis of an approved Form VIII need no further ground inspection, manufacturing drawings or design calculations at site.",
+      facts: [
+        {
+          reg: "293(2)",
+          quote: "The boiler components shall be erected at site based on the final inspection report as per Form-VIII approved by Competent Person"
+        },
+        {
+          reg: "293(2)",
+          quote: "there is no need for any ground inspection or submission of any other document like manufacturing drawings, design calculations."
+        }
+      ]
+    },
   },
   {
     slug: "form-ix",
@@ -552,6 +802,29 @@ export const ibrForms: IbrForm[] = [
     },
     summary:
       "The details furnished with an application to inspect a boiler used for electric power generation (Appendix H) or a waste heat boiler in a continuous process plant (Appendix I), twelve or thirty-six months after certification.",
+    page: {
+      issuedBy: "The boiler owner.",
+      filedWith: "The Chief Inspector, with the application for inspection after twelve or thirty-six months of certification (regulation 295).",
+      records: [
+        "Owner, registry number, pressure and temperature, steam generation, heating surface, year of make and construction",
+        "Past exemptions, last annual inspection, expiry of the current certificate and its pressure",
+        "Past repairs year by year and remarks on the last certificate",
+        "Feed water quality, feed pumps, safety valves, soot blowers, water level alarms, stop, check and blowdown valves",
+        "Calibration dates of the master pressure gauge and temperature instruments; protection device tests",
+        "Stoppages in the last twelve months, leaks, present operating pressure, water testing and cleaning intervals"
+      ],
+      changed: "New in IBR 2026, with the longer inspection intervals of regulations 295 and 311.",
+      facts: [
+        {
+          reg: "295",
+          quote: "DETAILS TO BE FURNISHED ALONGWITH APPLICATION FOR INSPECTION OF BOILER AFTER TWELVE/THIRTY SIX MONTHS OF THE CERTIFICATION UNDER REGULATION 311"
+        },
+        {
+          reg: "Form IX",
+          quote: "Details of past repairs (year-wise)"
+        }
+      ]
+    },
   },
   {
     slug: "form-x",
@@ -647,6 +920,32 @@ export const ibrForms: IbrForm[] = [
     group: "in-service",
     old: { form: "Form XVIII", title: "Questionnaire form for repairer of boilers/economizer/steam line/feed water lines", quote: "Questionnaire form for repairer of boilers/ economizer/ steam line/" },
     summary: "The questionnaire a firm sends to the state's Chief Inspector of Boilers to be recognised as a boiler repairer (regulation 316(2)).",
+    page: {
+      issuedBy: "The firm applying for recognition as a repairer of boilers, economisers, steam lines and feed water lines.",
+      filedWith: "The Chief Inspector of Boilers of the State where the firm wants recognition.",
+      records: [
+        "Name, workshop address and year of establishment",
+        "Class applied for: Special Class (any pressure), Class I (up to 125 kg/cm²), Class II (up to 40 kg/cm²), Class III (up to 17.5 kg/cm²)",
+        "Jobs done before, with pressures, temperatures and materials",
+        "Tools: rectifier or generator, grinder, dye penetrant kit, expander and measuring instruments",
+        "Technical staff, welders with current IBR certificates, and the internal quality control system"
+      ],
+      changed: "Under IBR 1950 this was Form XVIII. Recognition lasts two years; a repairer found violating the Act or Regulations is blacklisted and not renewed.",
+      facts: [
+        {
+          reg: "316(2)",
+          quote: "Any firm seeking recognition shall apply in 'Form-XIII' to the Chief Inspector of Boilers of the State"
+        },
+        {
+          reg: "Form XIII",
+          quote: "Class I (For Boiler Pressure upto 125 kg/cm2)"
+        },
+        {
+          reg: "Form XIII, note 1",
+          quote: "The recognition of the firm as a repairer shall be for a period of two years"
+        }
+      ]
+    },
   },
   {
     slug: "form-xv",
@@ -657,6 +956,28 @@ export const ibrForms: IbrForm[] = [
     group: "economisers",
     old: { form: "Form VII", title: "Inspecting Authority's certificate of inspection under construction", quote: "Inspecting Authority's Certificate of Inspection under" },
     summary: "The Inspecting Authority's construction certificate for an economiser.",
+    page: {
+      issuedBy: "The Inspecting Authority that supervised the economiser's construction.",
+      filedWith: "Goes with the economiser's registration papers to the Chief Inspector, and is kept with its records (regulation 308).",
+      records: [
+        "Type of economiser, number of sections and tubes per section, design pressure and maker",
+        "That it was built under supervision and inspected at stages by the Competent Person, to Chapter 11",
+        "Identification mark on each section, branch pipes and their position",
+        "The water pressure test of the sections for ten minutes, witnessed by the Competent Person",
+        "Material tests witnessed, and the maker's drawing signed by the Inspecting Authority"
+      ],
+      changed: "Under IBR 1950 this was Form VII.",
+      facts: [
+        {
+          reg: "358(3)",
+          quote: "INSPECTING AUTHORITY'S CERTIFICATE OF INSPECTION UNDER CONSTRUCTION"
+        },
+        {
+          reg: "Form XV",
+          quote: "were subjected to a water pressure of"
+        }
+      ]
+    },
   },
   {
     slug: "form-xvi",
@@ -667,6 +988,24 @@ export const ibrForms: IbrForm[] = [
     group: "economisers",
     old: { form: "Form VIII", title: "Constructor's certificate of manufacture and test", quote: "Constructor's Certificate of Manufacture and Test" },
     summary: "The economiser maker's certificate of manufacture and test.",
+    page: {
+      issuedBy: "The economiser's constructor (maker).",
+      filedWith: "With the Inspecting Authority's Form XV, for registration of the economiser.",
+      records: [
+        "Type, number of tubes and sections, intended working pressure, heating surface, year of manufacture",
+        "The Inspecting Authority, and the hydraulic test of the sections",
+        "Construction and workmanship statements on castings, threads and interchangeable parts",
+        "Materials of headers, tubes or pipes, valve chests and bolts, with makers",
+        "Thickness and tensile test limits for headers, tubes and bolts"
+      ],
+      changed: "Under IBR 1950 this was Form VIII.",
+      facts: [
+        {
+          reg: "358(4)",
+          quote: "Constructor's Certificate of Manufacture and Test"
+        }
+      ]
+    },
   },
   {
     slug: "form-xvii",
@@ -678,6 +1017,27 @@ export const ibrForms: IbrForm[] = [
     old: { form: "Form X", title: "Provisional order under the Boilers Act, 1923", quote: "Provisional Order under the Boilers Act,1923" },
     summary:
       "The provisional order for an economiser. Not the small industrial boiler certificate, which was Form XVII under IBR 1950 and is now Form XXII.",
+    page: {
+      issuedBy: "The Inspector, after inspecting an economiser for registration.",
+      filedWith: "Given to the owner; the counterfoil stays with the Inspector.",
+      records: [
+        "The person or firm permitted to use the economiser, its registry number, maker and maker's number",
+        "Description and rating",
+        "The design pressure and maximum temperature permitted",
+        "Validity: void after six months from its date, pending the certificate"
+      ],
+      changed: "Under IBR 1950 this was Form X. It now refers to the Boilers Act, 2025.",
+      facts: [
+        {
+          reg: "381(5)",
+          quote: "Provisional Order under the Boilers Act, 2025"
+        },
+        {
+          reg: "Form XVII",
+          quote: "within six months from the date thereof after which period this order"
+        }
+      ]
+    },
   },
   {
     slug: "form-xviii",
@@ -688,6 +1048,24 @@ export const ibrForms: IbrForm[] = [
     group: "economisers",
     old: { form: "Form IX", title: "Memorandum of inspections of registration book (economisers)", quote: "Memorandum of Inspections of Registration Book(Economisers)" },
     summary: "The economiser's inspection and registration book.",
+    page: {
+      issuedBy: "The boilers inspection department of the State.",
+      filedWith: "Kept by the department, with a copy as the economiser's registration book.",
+      records: [
+        "District, owner, factory address, registry number and design pressure",
+        "The record of provisional orders and certificates: fees, inspection dates, periods and remarks",
+        "Description: type, maker, tubes, headers, branch pipes and cap openings",
+        "Mountings: relief valve, stop valve, blow down, thermometers, pressure gauge",
+        "The maker's certificate: hydraulic test pressure, drawing number, Inspecting Authority and material maker"
+      ],
+      changed: "Under IBR 1950 this was Form IX.",
+      facts: [
+        {
+          reg: "385",
+          quote: "MEMORANDUM OF INSPECTION"
+        }
+      ]
+    },
   },
   {
     slug: "form-xix",
@@ -698,6 +1076,28 @@ export const ibrForms: IbrForm[] = [
     group: "economisers",
     old: { form: "Form XI", title: "Certificate for the use of an economiser", quote: "Certificate for the use of an Economiser" },
     summary: "The certificate that authorises an economiser's use.",
+    page: {
+      issuedBy: "The Competent Person or Chief Inspector, under the Boilers Act, 2025.",
+      filedWith: "Held by the owner; the economiser may only be worked within it.",
+      records: [
+        "Registry number, type, tubes, headers, rating, place and year of manufacture",
+        "Owner, situation of the economiser, repairs and remarks",
+        "Hydraulic test date and pressure",
+        "The maximum pressure and temperature permitted, the period, and the safety relief valve loading",
+        "Conditions on the reverse: no structural alteration without the Chief Inspector's written permission, and when the certificate ceases to be in force"
+      ],
+      changed: "Under IBR 1950 this was Form XI.",
+      facts: [
+        {
+          reg: "387",
+          quote: "A certificate for the use of an economiser shall be granted in Form-XIX."
+        },
+        {
+          reg: "Form XIX",
+          quote: "No structural alteration, addition or renewal shall be made to the Economiser without a written permission"
+        }
+      ]
+    },
   },
   {
     slug: "form-xx",
@@ -707,6 +1107,27 @@ export const ibrForms: IbrForm[] = [
     regulation: "517 and 527(3)",
     group: "welders",
     summary: "The continuity form submitted with a qualified boiler welder's request to renew their certificate. New in 2026.",
+    page: {
+      issuedBy: "The welder's employer, approved by the Competent Authority.",
+      filedWith: "The Competent Authority, with the request to renew the welder's Form II certificate.",
+      records: [
+        "The welder's name, date of birth and employer",
+        "IBR certificate number and validity, materials and M-number grouping, process, consumable U number",
+        "A welded part and date at 6, 12, 18 and 24 months",
+        "The employer's signature and the Competent Authority's extension"
+      ],
+      changed: "New in IBR 2026: continuity is proved by work done every six months, much like ASME QW-322. See welder continuity under ASME.",
+      facts: [
+        {
+          reg: "517, 527(3)",
+          quote: "Qualified Boiler Welder's Certification Continuity Form"
+        },
+        {
+          reg: "Form XX",
+          quote: "to be submitted along with renewal request"
+        }
+      ]
+    },
   },
   {
     slug: "form-xxi",
@@ -717,6 +1138,27 @@ export const ibrForms: IbrForm[] = [
     group: "welders",
     old: { form: "Form XII", title: "Record of welder's qualification/requalification tests", quote: "Record of Welder's Qualification/Requalification Tests" },
     summary: "The record of a welder's qualification or requalification test.",
+    page: {
+      issuedBy: "The Competent Authority that conducts the welder's qualification or requalification test.",
+      filedWith: "Kept by the Competent Authority; the result leads to the welder's Form II certificate.",
+      records: [
+        "Place and date, the welder's particulars, experience and training",
+        "What was tested: plate, pipe or tube; gas or electric arc; groove, fillet or branch; position; thicknesses and diameters; base and filler material",
+        "Marks out of 100: procedure, visual inspection, face and root bend tests, etch test, fractured surface",
+        "Radiographic observations if done, oral or written examination, remarks, type and class qualified, validity"
+      ],
+      changed: "Under IBR 1950 this was Form XII.",
+      facts: [
+        {
+          reg: "540",
+          quote: "Record of Welder's Qualifications/Requalification Tests"
+        },
+        {
+          reg: "Form XXI",
+          quote: "TYPE AND CLASS OF WELDING QUALIFIED"
+        }
+      ]
+    },
   },
   {
     slug: "form-xxii",
@@ -766,6 +1208,28 @@ export const ibrForms: IbrForm[] = [
       quote: "Boilers including Small Industrial Solar Boilers",
     },
     summary: "The certificate of manufacture and test for a small solar boiler. Split out of the old Form XVII in 2026.",
+    page: {
+      issuedBy: "The manufacturer, with the Competent Person and the Inspecting Authority.",
+      filedWith: "Kept with the small solar boiler's records.",
+      records: [
+        "Maker, year of make, purchaser and location of installation",
+        "Boiler identification and the Competent Person's stamp, drawing and alteration numbers",
+        "Design pressure, heating surface, material specification, volumetric capacity in litres",
+        "Safety valves, hydro test pressure and date",
+        "Certification that it was inspected at the stages in chapter 17"
+      ],
+      changed: "New in IBR 2026, for small solar boilers under chapter 17.",
+      facts: [
+        {
+          reg: "596(3)",
+          quote: "CERTIFICATE OF MANUFACTURE AND TEST FOR SMALL SOLAR BOILERS"
+        },
+        {
+          reg: "Form XXIII",
+          quote: "inspected at various stages of construction as specified in chapter-17 by the Competent Person"
+        }
+      ]
+    },
   },
 ];
 

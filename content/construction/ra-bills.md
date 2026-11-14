@@ -18,7 +18,7 @@ answer: >
 description: "RA bills in Indian construction: drawn from the MB, security deposit, mobilisation and secured advance, TDS, GST, payment deadlines and the final bill."
 domain: [construction, billing, india]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "General Conditions of Contract 2023, Construction Works (with DG CPWD's office memorandum of 22.09.2023)"
@@ -225,6 +225,14 @@ Sometimes. The CPWD manual allows advance payments on a running bill for work me
 but not yet measured, on conditions, adjusted when the measurements are recorded. GCC Clause 7 also lets the
 Engineer-in-Charge pay 75% of the assessed value of a building floor's work up to lintel or slab level without
 detailed measurement, adjusted in the next bill.
+
+## Is there a free RA bill format in Excel?
+
+Yes: the [RA bill format](/construction/ra-bill-format.xlsx) (Excel, free under CC BY 4.0). One sheet per bill, with
+each BOQ item's quantity up to the previous bill, this bill and up to date, the amounts for each, and this bill's GST,
+security deposit, TDS, labour cess and mobilisation advance recovery down to the net payable. The rates are typed in,
+so set them to your contract; the worked example is made up. Pair it with the
+[measurement book format](/construction/measurement-book-format.xlsx).
 
 ## What should a contractor's system track on RA bills?
 

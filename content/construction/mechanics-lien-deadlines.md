@@ -16,10 +16,10 @@ answer: >
   of starting and records a lien within 90 days of completion (30 days after a notice of completion); in Florida the
   notice to owner is due within 45 days and the lien within 90 days of last work; Texas counts to the 15th day of a
   later month; New York allows 8 months. On federal jobs you claim against the payment bond instead.
-description: "Mechanics lien and preliminary notice deadlines in California, Texas, Florida and New York, the Miller Act on federal jobs, worked dates and how to track them."
+description: "Mechanics lien and preliminary notice deadlines in California, Texas, Florida, New York, Washington and Arizona, the Miller Act, and tracking them."
 domain: [construction, liens]
 published: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: "California Civil Code 8204, 8412, 8414 and 8460"
@@ -88,6 +88,21 @@ checks:
   - reg: 40 U.S.C. 3133(b)(2)
     doc: usc-40-3133
     quote: "may bring a civil action on the payment bond on giving written notice to the contractor within 90 days from the date on"
+  - reg: Washington RCW 60.04.091
+    doc: wa-60.04.091
+    quote: "a notice of claim of lien not later than ninety days after the person has ceased to furnish labor, professional services, materials, or equipment"
+  - reg: Washington RCW 60.04.031
+    doc: wa-60.04.031
+    quote: "only protects the right to claim a lien for professional services, materials, or equipment supplied after the date which is sixty days before"
+  - reg: Arizona ARS 33-993(A)
+    doc: az-33-993
+    quote: "within one hundred twenty days after completion of a building, structure or improvement"
+  - reg: Arizona ARS 33-993(A)
+    doc: az-33-993
+    quote: "if a notice of completion has been recorded, within sixty days after recordation of such notice"
+  - reg: Arizona ARS 33-992.01(C)
+    doc: az-33-992.01
+    quote: "shall be given not later than twenty days after the claimant has first furnished labor, professional services, materials, machinery, fixtures or tools to the jobsite"
   - reg: 40 U.S.C. 3133(b)(4)
     doc: usc-40-3133
     quote: "An action brought under this subsection must be brought no later than one year after the day on which the last of the labor was performed or material was supplied by the person bringing the action."
@@ -107,7 +122,7 @@ project and may claim a lien if you aren't paid. Subcontractors and suppliers us
 contractor with a contract directly with the owner often doesn't. It isn't a lien and it isn't a
 [lien waiver](/construction/lien-waivers); it only keeps the right open.
 
-## What are the deadlines in California, Texas, Florida and New York?
+## What are the deadlines in California, Texas, Florida, New York, Washington and Arizona?
 
 | State | Preliminary notice | Lien deadline | Suit to enforce |
 |---|---|---|---|
@@ -115,6 +130,8 @@ contractor with a contract directly with the owner often doesn't. It isn't a lie
 | Texas | Subs and suppliers: notice of claim by the 15th day of the third month after the month the work or materials were provided (2nd month on residential projects) (Property Code 53.056) | Lien affidavit by the 15th day of the fourth month after the month work was completed (third month on residential projects) (53.052) | Within one year of the last day to file the affidavit (53.158) |
 | Florida | Notice to owner before starting or within 45 days of starting, for those not in contract with the owner (Statutes 713.06) | Within 90 days after final furnishing of labor, services or materials (713.08) | As the statute sets |
 | New York | Not required by Lien Law 10 | Within 8 months after completion or final furnishing; 4 months for a single-family home; 90 days after retainage was due for a retainage lien (Lien Law 10) | As the statute sets |
+| Washington | Notice of right to claim a lien for those not contracting with the owner; it protects only what was supplied from 60 days before it is given (10 days on a new single-family residence) (RCW 60.04.031) | Record the claim of lien within 90 days after you stop furnishing (RCW 60.04.091) | As the statute sets |
+| Arizona | Preliminary twenty day notice within 20 days of first furnishing to the jobsite (ARS 33-992.01) | Record within 120 days after completion, or within 60 days after a recorded notice of completion (ARS 33-993) | As the statute sets |
 
 These are the main deadlines only. Each statute has its own form, service rules and exceptions, so read the state's
 text, or ask a construction lawyer, before relying on a date.

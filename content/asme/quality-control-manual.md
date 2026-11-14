@@ -75,8 +75,8 @@ other construction sections have equivalents. In outline:
 | Organization | An org chart showing the quality function's independence |
 | Drawings, calculations and specifications | How they are prepared or received, checked, approved, revised and issued |
 | Material control | Receiving, checking against the [MTR](/asme/mtr), marking and traceability through cutting |
-| Examination and inspection program | What is checked, when, and the Inspector's hold points |
-| Correction of nonconformities | How a nonconformity is recorded, decided and closed |
+| Examination and inspection program | What is checked, when, and the Inspector's hold points; each job's [ITP](/asme/inspection-and-test-plan) applies it |
+| Correction of nonconformities | How a nonconformity is recorded, decided and closed; see [NCRs](/asme/nonconformance-report) |
 | Welding | [WPS, PQR and WPQ](/asme/wps-pqr-wpq) control, welder identification, [continuity](/asme/welder-continuity) |
 | Nondestructive examination | Procedures to [Section V](/asme/section-v), personnel qualification |
 | Heat treatment | Procedures and records, including [PWHT](/asme/pwht) charts |

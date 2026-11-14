@@ -61,6 +61,10 @@ export default function ConstructionHub() {
         </p>
       </section>
 
+      <p className="mt-6 leading-relaxed text-foreground-secondary">
+        Short answers to every guide on one page: <Link href="/construction/questions" className="text-link focus-ring">Construction billing questions, answered</Link>.
+      </p>
+
       {CON_GROUPS.map((group) => {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (

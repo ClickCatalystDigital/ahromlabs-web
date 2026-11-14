@@ -6,7 +6,9 @@ import { languages, marketOf, marketFromParam, leadCountry, adaptedPath, shownIn
 assert.equal(marketOf("US"), "NA");
 assert.equal(marketOf("ca"), "NA");
 assert.equal(marketOf("IN"), "IN");
-assert.equal(marketOf("GB"), "IN", "UK is off: its visitors get today's site");
+assert.equal(marketOf("GB"), "NA", "outside India: North America's site");
+assert.equal(marketOf("AE"), "NA");
+assert.equal(marketOf("XX"), "IN");
 assert.equal(marketOf(null), "IN");
 assert.equal(marketFromParam("us"), "NA");
 assert.equal(marketFromParam("IN"), "IN");

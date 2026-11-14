@@ -146,6 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const ibrRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/ibr`, lastModified: changed("ibr", ibrUpdated.toISOString()), changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/ibr/forms`, lastModified: changed("ibr/forms", IBR_FORMS_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/ibr/questions`, lastModified: changed("ibr/questions", ibrUpdated.toISOString()), changeFrequency: "monthly", priority: 0.7 },
     ...guides.map((g) => ({
       url: `${siteUrl}/ibr/${g.slug}`,
       lastModified: changed(`ibr/${g.slug}`, g.updated),
@@ -283,6 +284,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const conUpdated = [CON_CHECKED, ...con.map((g) => g.updated)].sort().at(-1)!;
   const conRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/construction`, lastModified: changed("construction", conUpdated), changeFrequency: "monthly", priority: 0.8, ...conImages("construction-hub") },
+    { url: `${siteUrl}/construction/questions`, lastModified: changed("construction/questions", conUpdated), changeFrequency: "monthly", priority: 0.7 },
     ...con.map((g) => ({
       url: `${siteUrl}/construction/${g.slug}`,
       lastModified: changed(`construction/${g.slug}`, g.updated),
@@ -301,6 +303,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const intUpdated = [INT_CHECKED, ...ints.map((g) => g.updated)].sort().at(-1)!;
   const intRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/interiors`, lastModified: changed("interiors", intUpdated), changeFrequency: "monthly", priority: 0.8, ...intImages("interiors-hub") },
+    { url: `${siteUrl}/interiors/questions`, lastModified: changed("interiors/questions", intUpdated), changeFrequency: "monthly", priority: 0.7 },
     ...ints.map((g) => ({
       url: `${siteUrl}/interiors/${g.slug}`,
       lastModified: changed(`interiors/${g.slug}`, g.updated),

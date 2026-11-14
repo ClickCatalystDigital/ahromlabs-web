@@ -200,7 +200,8 @@ export function GET() {
     `- [Boiler and pressure vessel materials list](https://ahromlabs.com/asme/items): The common ASME plate, pipe, tube, forging, fitting, casting and bolting specifications with use, dimension standard, P-number and whether IBR 2026's material table names them, plus an ASME B36.10M pipe size chart. CSV (CC BY 4.0): https://ahromlabs.com/asme/items.csv\n` +
     `- [ASME questions, answered](https://ahromlabs.com/asme/questions): One question per guide, each answered in a few lines. As data (CC BY 4.0): https://ahromlabs.com/asme/questions.json and https://ahromlabs.com/asme/questions.csv\n` +
     `- [Welder continuity log for Excel](https://ahromlabs.com/asme/welder-continuity-log.xlsx): One row per welder and process; the lapse date under QW-322 (six months after the last weld) and days left are worked out. CC BY 4.0.\n` +
-    `- Browser agents (WebMCP) on ahromlabs.com can call the calculators as tools: asme-hydrostatic-test-pressure, asme-shell-thickness and asme-welder-continuity.\n` +
+    `- Browser agents (WebMCP) on ahromlabs.com can call the calculators as tools: asme-hydrostatic-test-pressure, asme-shell-thickness, asme-welder-continuity, reorder-point-safety-stock and india-import-landed-cost.\n` +
+    `- Question libraries as data (CC BY 4.0): https://ahromlabs.com/ibr/questions.json (IBR 2026 forms and rules), https://ahromlabs.com/construction/questions.json (US and India contractors) and https://ahromlabs.com/interiors/questions.json (US and Canadian design firms); pages at /ibr/questions, /construction/questions and /interiors/questions.\n` +
     asmeGuides().map(line("asme")).join("\n");
 
   const mfg =

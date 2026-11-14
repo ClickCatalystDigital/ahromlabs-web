@@ -18,7 +18,7 @@ answer: >
 description: "Daily progress reports for Indian contractors: what a DPR records, CPWD's site order book, cement register and hindrances, approval, photos and weekly reports."
 domain: [construction, site-operations, india]
 published: 2026-11-06
-updated: 2026-11-07
+updated: 2026-11-14
 checked: 2026-11-06
 sources:
   - title: CPWD Works Manual 2022
@@ -113,6 +113,12 @@ By adding them up rather than rewriting them. The week's approved reports give w
 man-days by trade, material used, machine hours, issues and photos for the client's weekly progress report; the
 same approved work feeds the [measurement book](/construction/measurement-book) and the material check against BOQ
 norms in [material consumption](/construction/material-consumption-vs-boq).
+
+## Is there a free DPR format in Excel?
+
+Yes: the [daily progress report format](/construction/daily-progress-report-format.xlsx) (Excel, free under CC BY 4.0):
+work done against BOQ items, labour by trade and contractor, materials received and issued, and issues and
+instructions, one sheet per site per day. A phone app does the same with less typing; see below.
 
 ## What does the construction demo do?
 

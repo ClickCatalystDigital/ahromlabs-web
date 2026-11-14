@@ -27,6 +27,8 @@ const DOCS = {
   "intuit-adv-inv": path.join(DIR, "Intuit - Desktop Enterprise Advanced Inventory 2026-11-06.txt"),
   "intuit-ent-pricing": path.join(DIR, "Intuit - Desktop Enterprise pricing 2026-11-06.txt"),
   "intuit-pricing-1106": path.join(DIR, "Intuit - QuickBooks Online pricing 2026-11-06.txt"),
+  "dfars-7007": path.join(DIR, "eCFR - DFARS 252.246-7007 Counterfeit Electronic Part Detection 2026-11-14.txt"),
+  "dfars-7008": path.join(DIR, "eCFR - DFARS 252.246-7008 Sources of Electronic Parts 2026-11-14.txt"),
   // Sales tax texts quoted from the requirements checklist, read from the sales tax sources folder.
   "sst-exemptions": path.join(DIR, "..", "..", "Sales tax", "sources", "SST - Exemptions 2026-11-03.txt"),
   "tx-remote": path.join(DIR, "..", "..", "Sales tax", "sources", "Texas Comptroller - Remote Sellers 2026-11-03.txt"),

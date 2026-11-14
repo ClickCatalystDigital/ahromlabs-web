@@ -1,6 +1,7 @@
 import { getContent, termHasPage, type ContentKind } from "./content";
 import { services, families, serviceUrl, familyUrl } from "./services";
 import { engagements } from "./work";
+import { formName, ibrFormPages } from "./ibr-forms";
 
 // A guide's `related:` front matter (paths on this site, at least two outside its own section) resolved to titled
 // links. Every path must be a page that exists: an unknown one throws, so a typo or a removed page fails the build
@@ -28,6 +29,8 @@ function titleMap() {
   for (const s of services) titles.set(serviceUrl(s), s.name);
   for (const f of families) titles.set(familyUrl(f), f.name);
   for (const e of engagements) titles.set(`/work#${e.slug}`, e.client);
+  for (const f of ibrFormPages()) titles.set(`/ibr/forms/${f.slug}`, `IBR ${formName(f)}: ${f.title}`);
+  titles.set("/ibr/forms", "IBR 2026 forms list");
   return titles;
 }
 
@@ -44,11 +47,11 @@ export function relatedLinks(paths: string[] | undefined, from: string) {
 // services.ts `guides`. Links to one market's pages are hidden from the other (RelatedNav).
 export const RELATED: Record<string, string[]> = {
   "/industries/boiler-pressure-vessel-manufacturing": ["/ibr/small-industrial-boilers", "/ibr/registration-documents", "/asme/asme-vs-ibr", "/asme/u-stamp", "/systems/material-traceability"],
-  "/us/industries/boiler-pressure-vessel-manufacturing": ["/asme/u-stamp", "/asme/state-boiler-laws", "/asme/welder-continuity", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing"],
+  "/us/industries/boiler-pressure-vessel-manufacturing": ["/asme/inspection-and-test-plan", "/asme/nonconformance-report", "/asme/data-book", "/asme/u-stamp", "/asme/state-boiler-laws", "/asme/welder-continuity", "/manufacturing/job-shop-erp", "/manufacturing/quickbooks-job-costing"],
   "/industries/construction-company": ["/construction/ra-bills", "/construction/measurement-book", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts", "/ai-assistant/construction-contractors"],
   "/us/industries/construction-company": ["/construction/pay-applications", "/construction/retainage", "/construction/change-orders", "/construction/lien-waivers", "/construction/wip-schedule", "/ai-assistant/construction-contractors"],
-  "/industries/electronics-component-trading": ["/systems/stock-reservation", "/erp/tally-migration", "/systems/e-way-bill", "/systems/three-way-match"],
-  "/us/industries/electronics-component-trading": ["/manufacturing/distributor-inventory-control", "/manufacturing/quickbooks-online-inventory", "/sales-tax/resale-certificates", "/sales-tax/economic-nexus-thresholds"],
+  "/industries/electronics-component-trading": ["/erp/import-landed-cost", "/erp/hsn-codes-electronic-components", "/systems/stock-reservation", "/erp/tally-migration", "/systems/e-way-bill", "/systems/three-way-match"],
+  "/us/industries/electronics-component-trading": ["/manufacturing/electronic-component-inventory", "/manufacturing/counterfeit-electronic-parts", "/manufacturing/reorder-point-safety-stock", "/manufacturing/distributor-inventory-control", "/manufacturing/quickbooks-online-inventory", "/sales-tax/resale-certificates", "/sales-tax/economic-nexus-thresholds"],
   "/industries/interior-design-and-furniture": ["/boq/what-is-a-boq", "/boq/how-to-make-an-interior-boq", "/boq/measurement-rules", "/boq/variation-orders"],
   "/us/industries/interior-design-and-furniture": ["/interiors/how-to-charge-for-interior-design", "/interiors/purchase-orders-and-procurement", "/interiors/quickbooks-for-interior-designers", "/sales-tax/interior-designers-sales-tax", "/interiors/invoices-deposits-and-retainers"],
 
@@ -64,6 +67,9 @@ export const RELATED: Record<string, string[]> = {
   "/systems/fixed-asset-register": ["/erp/compliance", "/systems/audit-trail", "/services/compliance-accounting"],
   "/systems/fixed-look-up": ["/ai-assistant/how-it-works", "/systems/text-to-sql", "/systems/grounding-check"],
   "/systems/grounding-check": ["/systems/ai-hallucination", "/ai-assistant/how-it-works", "/systems/fixed-look-up"],
+  "/systems/hold-point": ["/asme/inspection-and-test-plan", "/asme/authorized-inspector", "/systems/nonconformance-report"],
+  "/systems/nonconformance-report": ["/asme/nonconformance-report", "/asme/inspection-and-test-plan", "/systems/hold-point"],
+  "/systems/manufacturers-data-book": ["/asme/data-book", "/asme/data-reports", "/systems/manufacturers-data-report"],
   "/systems/heat-number": ["/systems/material-test-certificate", "/asme/mtr", "/services/material-traceability"],
   "/systems/hydrostatic-test": ["/asme/hydrostatic-test", "/systems/mawp", "/systems/authorized-inspector"],
   "/systems/ibr-statutory-folder": ["/ibr/record-keeping", "/ibr/registration-documents", "/notes/ibr-statutory-folder-from-bom"],

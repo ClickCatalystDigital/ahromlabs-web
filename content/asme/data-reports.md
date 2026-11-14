@@ -169,7 +169,8 @@ the item. Many US jurisdictions require registration before installation; see
 
 The file the Inspector checked: calculations, drawings, [MTRs](/asme/mtr), weld map,
 [WPS, PQR and welder qualifications](/asme/wps-pqr-wpq), NDE reports, heat treatment charts and the test record.
-Assembling that file at the end of a job is where most shops lose days. Our US boiler demo builds it as the job runs
+Assembling that file at the end of a job is where most shops lose days; purchasers usually want it bound as a
+[data book](/asme/data-book). Our US boiler demo builds it as the job runs
 and prints it as one record package: a Form U-1A or P-2 layout (our own, carrying the form's fields, not ASME's form;
 file the official form or use EDT), the weld map with welder stamps, WPS and PQR, QW-322 continuity, MTRs by heat
 number, NDE, PWHT and the hydro test. See [ERP for boiler and pressure vessel shops](/industries/boiler-pressure-vessel-manufacturing).

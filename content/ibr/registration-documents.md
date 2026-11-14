@@ -2,6 +2,7 @@
 kind: guide
 slug: registration-documents
 title: "Boiler registration under IBR 2026: documents checklist"
+metaTitle: "IBR registration documents 2026: boiler registration list"
 related:
   - /ibr/record-keeping
   - /ibr/small-industrial-boilers

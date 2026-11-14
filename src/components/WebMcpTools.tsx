@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { track } from "@/lib/analytics";
+import { SERVICE_Z, landedCostIndia, reorderPoint } from "@/lib/inventory-calc";
 import { HYDRO_CASES, continuityLapse, shellMawp, shellThickness, testPressure, type HydroCase } from "@/lib/asme-calc";
 
 // WebMCP (docs/knowledge-layer-plan.md Phase 6): read-only tools for browser agents.
@@ -63,6 +64,58 @@ export function WebMcpTools() {
       );
       // The ASME hub's calculators (/asme), the same maths as the pages. Pure functions: nothing is sent anywhere.
       const num = (v: unknown) => Number(v);
+      mc.registerTool(
+        {
+          name: "reorder-point-safety-stock",
+          description:
+            "Reorder point and safety stock for one item: lead-time demand plus safety stock, by the max-minus-average method (give maxDaily and maxLeadDays) and/or the service-level method (give sdDaily and serviceLevel 90, 95, 98 or 99). Compare the result with available stock (on hand + on order - reserved). Explained at https://ahromlabs.com/manufacturing/reorder-point-safety-stock",
+          inputSchema: {
+            type: "object",
+            properties: {
+              avgDaily: { type: "number" },
+              leadDays: { type: "number" },
+              maxDaily: { type: "number" },
+              maxLeadDays: { type: "number" },
+              sdDaily: { type: "number", description: "Standard deviation of daily demand" },
+              serviceLevel: { type: "string", enum: Object.keys(SERVICE_Z) },
+            },
+            required: ["avgDaily", "leadDays"],
+          },
+          annotations: { readOnlyHint: true },
+          execute: async (a: { avgDaily: number; leadDays: number; maxDaily?: number; maxLeadDays?: number; sdDaily?: number; serviceLevel?: string }) => {
+            track("webmcp_tool", { tool: "reorder-point-safety-stock" });
+            return text(reorderPoint({ ...a, avgDaily: num(a.avgDaily), leadDays: num(a.leadDays) }));
+          },
+        },
+        { signal: ac.signal },
+      );
+      mc.registerTool(
+        {
+          name: "india-import-landed-cost",
+          description:
+            "Landed cost of an import into India: assessable value (CIF x CBIC exchange rate), basic customs duty, social welfare surcharge (10% of BCD unless given), IGST on value plus duties, plus clearing charges; IGST counts as credit unless igstCredit is false. Rates are the caller's: look up the tariff item. Explained at https://ahromlabs.com/erp/import-landed-cost",
+          inputSchema: {
+            type: "object",
+            properties: {
+              cif: { type: "number", description: "CIF value in the invoice currency" },
+              rate: { type: "number", description: "CBIC import exchange rate, rupees per unit of currency" },
+              bcdPct: { type: "number" },
+              swsPct: { type: "number" },
+              igstPct: { type: "number" },
+              charges: { type: "number", description: "Clearing, port and transport in rupees" },
+              quantity: { type: "number" },
+              igstCredit: { type: "boolean" },
+            },
+            required: ["cif", "rate", "bcdPct", "igstPct"],
+          },
+          annotations: { readOnlyHint: true },
+          execute: async (a: { cif: number; rate: number; bcdPct: number; swsPct?: number; igstPct: number; charges?: number; quantity?: number; igstCredit?: boolean }) => {
+            track("webmcp_tool", { tool: "india-import-landed-cost" });
+            return text({ ...landedCostIndia(a), note: "Illustrative; confirm duty rates and exemptions for the tariff item. Not tax advice." });
+          },
+        },
+        { signal: ac.signal },
+      );
       mc.registerTool(
         {
           name: "asme-hydrostatic-test-pressure",

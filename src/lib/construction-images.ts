@@ -5,6 +5,12 @@ import { join } from "node:path";
 // src/assets/og-art/construction/<name>.jpg, made with scripts/asme-images.py from docs/construction-image-prompts.md.
 // A page shows its image once the file exists. Server-only. Re-check the alt text against each delivered image.
 const ALT: Record<string, string> = {
+  "ontario-holdback": "A stack of coins with one tenth set apart under a small glass dome beside an invoice: the 10% holdback.",
+  "cost-codes": "A row of labelled file folders with coloured tabs beside a calculator and a hard hat: costs sorted by code.",
+  "rera-for-builders": "A model of a residential tower beside a bank passbook and a stamped certificate: a RERA project account.",
+  "submittals-and-rfis": "Rolled shop drawings tied with string beside a stamped transmittal sheet and a hard hat: construction submittals.",
+  "punch-list-closeout": "A strip of blue painter's tape marking a spot on a freshly painted wall, a clipboard checklist leaning below it: a punch list.",
+  "rate-analysis": "Bags of cement, a heap of sand and aggregate and a calculator on a measurement sheet: building up a rate for concrete.",
   "construction-hub": "A hard hat resting on a rolled set of drawings beside a clipboard with a payment schedule: getting paid on a construction job.",
   "pay-applications": "A clipboard holding a schedule of values with columns of blank figures, a pencil and a calculator: a progress payment application.",
   "retainage": "A glass jar part filled with coins on a site office desk beside a clipboard: retainage held back from each payment.",

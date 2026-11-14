@@ -13,16 +13,16 @@ export const CON_GROUPS: { slug: string; name: string; intro: string; market: "N
   {
     slug: "us",
     name: "Contractors in the US",
-    intro: "Getting paid on a US job: pay applications, retainage, lien waivers, change orders and the WIP schedule, and what each state allows.",
+    intro: "Getting paid on a US or Ontario job: pay applications, retainage, lien waivers, change orders and the WIP schedule, and what each state allows.",
     market: "NA",
-    order: ["pay-applications", "retainage", "lien-waivers", "mechanics-lien-deadlines", "prompt-payment-acts", "change-orders", "wip-schedule", "certified-payroll"],
+    order: ["pay-applications", "retainage", "lien-waivers", "mechanics-lien-deadlines", "prompt-payment-acts", "change-orders", "wip-schedule", "certified-payroll", "submittals-and-rfis", "punch-list-closeout", "cost-codes", "ontario-holdback"],
   },
   {
     slug: "india",
     name: "Contractors in India",
     intro: "Running bills against the measurement book, with security deposit, advances and the final bill, TDS on payments to contractors and GST on works contracts.",
     market: "IN",
-    order: ["ra-bills", "measurement-book", "price-escalation-clause", "bank-guarantee-defect-liability", "tds-on-contractor-payments", "gst-on-works-contracts", "labour-cess", "contract-labour-compliance", "daily-progress-reports", "material-consumption-vs-boq", "job-cost-per-site"],
+    order: ["ra-bills", "measurement-book", "price-escalation-clause", "bank-guarantee-defect-liability", "tds-on-contractor-payments", "gst-on-works-contracts", "labour-cess", "contract-labour-compliance", "daily-progress-reports", "material-consumption-vs-boq", "job-cost-per-site", "rate-analysis", "rera-for-builders"],
   },
 ];
 export const CON_US = CON_GROUPS[0].order.map((s) => `/construction/${s}`);

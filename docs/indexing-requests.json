@@ -11,5 +11,15 @@
   "/sales-tax/economic-nexus-thresholds": "2026-11-03",
   "/sales-tax/sales-tax-nexus": "2026-11-03",
   "/manufacturing/quickbooks-desktop-end-of-support": "2026-11-03",
-  "/erp/contract-checklist": "2026-10-25"
+  "/erp/contract-checklist": "2026-10-25",
+  "/construction/pay-applications": "2026-11-14",
+  "/construction/retainage": "2026-11-14",
+  "/sales-tax/manufacturing-sales-tax-exemption": "2026-11-14",
+  "/interiors/purchase-orders-and-procurement": "2026-11-14",
+  "/construction/tds-on-contractor-payments": "2026-11-14",
+  "/construction/lien-waivers": "2026-11-14",
+  "/construction/change-orders": "2026-11-14",
+  "/construction/wip-schedule": "2026-11-14",
+  "/interiors/project-budget-tracking": "2026-11-14",
+  "/construction/measurement-book": "2026-11-14"
 }

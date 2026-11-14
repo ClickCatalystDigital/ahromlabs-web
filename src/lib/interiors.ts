@@ -13,19 +13,19 @@ export const INT_GROUPS: { slug: string; name: string; intro: string; order: str
     slug: "pricing",
     name: "Charging and billing clients",
     intro: "Fee structures and markup on product, the letter of agreement, invoices, deposits and retainers, and Canada's GST/HST.",
-    order: ["how-to-charge-for-interior-design", "interior-design-contract", "invoices-deposits-and-retainers", "canada-gst-hst-for-interior-designers"],
+    order: ["how-to-charge-for-interior-design", "interior-design-contract", "invoices-deposits-and-retainers", "canada-gst-hst-for-interior-designers", "architecture-firm-fees-and-phases"],
   },
   {
     slug: "projects",
     name: "Buying and tracking product",
     intro: "Trade accounts, purchase orders from deposit to delivery, freight claims, the project budget against approval, and job costing in the furniture shop.",
-    order: ["purchase-orders-and-procurement", "trade-accounts-and-designer-discounts", "freight-damage-claims", "project-budget-tracking", "custom-furniture-job-costing"],
+    order: ["purchase-orders-and-procurement", "trade-accounts-and-designer-discounts", "freight-damage-claims", "project-budget-tracking", "custom-furniture-job-costing", "ffe-specifications"],
   },
   {
     slug: "systems",
     name: "Books and software",
     intro: "What QuickBooks Online does for a design firm, what the design platforms add on top of it, and 1099s for the people you pay.",
-    order: ["quickbooks-for-interior-designers", "1099s-for-installers-and-workrooms"],
+    order: ["quickbooks-for-interior-designers", "interior-design-software", "1099s-for-installers-and-workrooms"],
   },
 ];
 

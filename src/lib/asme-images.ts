@@ -41,6 +41,13 @@ const ALT: Record<string, string> = {
   mtr: "A steel plate with a heat-marking patch, a material test certificate clipped to it and a paint marker: material traceability.",
   "buying-from-india": "A horizontal pressure vessel strapped to a flatbed trailer bed on transport cradles, ready to ship.",
   "state-boiler-laws": "A framed certificate on a wall board beside a boiler gauge glass and valve: a boiler's operating certificate.",
+  "inspection-and-test-plan": "A clipboard with a blank checklist and a red hold tag tied to the clip: a job's inspection and test plan with its hold points.",
+  "nonconformance-report": "A welded steel plate with a section of weld circled in paint, a red tag wired to it and an angle grinder beside it: a weld held on a nonconformance report.",
+  "data-book": "A thick binder with coloured index tabs, loose certificates and a steel nameplate: a pressure vessel's data book.",
+  "crn-canada": "A pressure vessel nameplate beside a stamped registration tag and a rolled drawing tied with string: registering a pressure vessel design in Canada.",
+  "heat-exchangers": "A shell-and-tube heat exchanger with its tube bundle partly drawn out of the shell, showing the tubesheet and baffles.",
+  "hardness-and-pmi": "A portable hardness tester and a handheld alloy analyser resting on a welded steel coupon: hardness testing and positive material identification.",
+  "r-stamp": "A repaired steel pipe section with a fresh weld band and a small blank metal tag wired beside it: a repair under the R stamp.",
   "b31-1-vs-b31-3": "Two pipe spools meeting at a flanged tee, one insulated, one bare stainless with a valve: power and process piping.",
 };
 

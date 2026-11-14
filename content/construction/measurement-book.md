@@ -18,7 +18,7 @@ answer: >
 description: "The measurement book in Indian construction: what an entry records, test checks, e-MB, extra and deviated items under GCC Clause 12, and how it feeds RA bills."
 domain: [construction, measurement, india]
 published: 2026-11-03
-updated: 2026-11-05
+updated: 2026-11-14
 checked: 2026-11-05
 sources:
   - title: CPWD Works Manual 2022
@@ -131,6 +131,13 @@ payment, so the quantity is on record if the claim is accepted later.
 
 On conditions. CPWD's rules allow an advance on a running bill for work measured but not yet checked, or done but
 not yet measured, adjusted once the measurements are recorded; see [RA bills](/construction/ra-bills).
+
+## Is there a free measurement book format in Excel?
+
+Yes: the [measurement book format](/construction/measurement-book-format.xlsx) (Excel, free under CC BY 4.0). Each row
+is one measurement: date, BOQ item, location, numbers, length, breadth and depth, with deductions as negative numbers,
+the quantity worked out, and who measured and checked it; totals by BOQ item feed the
+[RA bill format](/construction/ra-bill-format.xlsx).
 
 ## What should a contractor's system keep for measurements?
 

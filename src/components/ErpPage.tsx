@@ -19,7 +19,11 @@ const GUIDE_ORDER = [
   "implementation-plan",
   "small-manufacturers",
   "trading-distribution",
+  "import-landed-cost",
+  "hsn-codes-electronic-components",
+  "bis-registration-electronics",
   "interior-design-firms",
+  "architecture-firms",
 ];
 export function erpGuides() {
   const rank = (s: string) => GUIDE_ORDER.indexOf(s) + 1 || GUIDE_ORDER.length + 1;

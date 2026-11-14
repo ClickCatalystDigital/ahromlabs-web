@@ -17,7 +17,7 @@ const OUTPUT_PATH = path.join(process.cwd(), "src/lib/content-data.generated.jso
 const KIND_DIRS = { term: "terms", note: "notes", pattern: "patterns", industry: "industries", guide: "ibr", boq: "boq", erp: "erp", "ai-assistant": "ai-assistant", asme: "asme", manufacturing: "manufacturing", "sales-tax": "sales-tax", construction: "construction", interiors: "interiors" };
 
 // ASME guide groups (src/lib/asme.ts ASME_SECTIONS) and the tools a guide can carry.
-const ASME_GROUPS = ["code", "certification", "welding", "design", "materials", "bridge"];
+const ASME_GROUPS = ["code", "certification", "quality", "welding", "design", "materials", "bridge"];
 const ASME_TOOLS = ["hydrotest", "shell", "continuity"];
 // Manufacturing guide groups (src/lib/manufacturing.ts MFG_GROUPS) and their tools.
 const MFG_GROUPS = ["choosing", "quickbooks", "planning", "inventory"];
@@ -161,7 +161,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"], manufacturing: [], "sales-tax": [], construction: [], interiors: [] }[kind];
+      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"], manufacturing: [], "sales-tax": [], construction: ["questions"], interiors: ["questions"] }[kind];
       if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     // ASME guides: a group for the hub, the question people search (the question library), an optional tool.
@@ -205,7 +205,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      if (slug === "forms") throw new Error(`content/${relPath}: "forms" is taken by /ibr/forms`);
+      if (slug === "forms" || slug === "questions") throw new Error(`content/${relPath}: "${slug}" is taken by /ibr/${slug}`);
     }
 
     // `updated` drives the sitemap lastmod, and AI Search re-reads only pages

@@ -66,7 +66,11 @@ Four things a generic ERP treats as edge cases are the core of this business. Ev
 
 ## Can the ASME data report package come out of the system?
 
-Yes. The job's QC folder prints the ASME record package from the records kept while the job was built: the data report ([Form P-2](/asme/data-reports) for a Section I firetube boiler, Form U-1A for a Section VIII vessel), the weld map with each welder's stamp, the [WPS and PQR](/asme/wps-pqr-wpq) behind each weld, [welder continuity under QW-322](/asme/welder-continuity) (six months per process), the MTRs by heat number, NDE, [post-weld heat treatment](/asme/pwht) and the [hydrostatic test](/asme/hydrostatic-test). Nobody retypes heat numbers or welder stamps into a separate document; the package is a view of what QC and the shop floor already recorded.
+Yes. The job's QC folder prints the ASME record package from the records kept while the job was built: the data report ([Form P-2](/asme/data-reports) for a Section I firetube boiler, Form U-1A for a Section VIII vessel), the weld map with each welder's stamp, the [WPS and PQR](/asme/wps-pqr-wpq) behind each weld, [welder continuity under QW-322](/asme/welder-continuity) (six months per process), the MTRs by heat number, NDE, [post-weld heat treatment](/asme/pwht) and the [hydrostatic test](/asme/hydrostatic-test). Nobody retypes heat numbers or welder stamps into a separate document; the package is a view of what QC and the shop floor already recorded. The customer's [data book](/asme/data-book) is built the same way: a template per customer, each line filled from the records as the job runs, missing lines shown, and a released revision stored with a fingerprint so it never changes.
+
+## Does a failed inspection really stop the job?
+
+Yes. The job's [inspection and test plan](/asme/inspection-and-test-plan) carries hold, witness and review points and the points each depends on; when an inspection fails, the server refuses to start the steps that depend on it until the [NCR](/asme/nonconformance-report) is dispositioned, the repair re-inspected and passed, and the NCR closed. The failed result stays on record, and shipping is refused while any point or NCR is open.
 
 ## How is material traced from mill test report to finished boiler?
 

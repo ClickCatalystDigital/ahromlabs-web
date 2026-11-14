@@ -73,3 +73,56 @@ Notes:
 | `b31-1-vs-b31-3.webp` | /asme/b31-1-vs-b31-3 | Two pipe spools crossing at a flanged tee, one insulated in navy cladding, one bare stainless with a valve. |
 
 Glossary pages (/systems/…) don't use images.
+
+## Quality control on the job (added 14 Nov 2026)
+
+| File | Page | Prompt |
+|---|---|---|
+| `inspection-and-test-plan.webp` | /asme/inspection-and-test-plan | A clipboard holding a blank ruled checklist sheet with empty tick boxes, a small red hold tag on a string tied to the clip, and a pen beside it. |
+| `nonconformance-report.webp` | /asme/nonconformance-report | A short welded steel plate with a circled section of weld seam marked in white paint, a blank red tag wired to the plate, and a small angle grinder resting beside it. |
+| `data-book.webp` | /asme/data-book | A thick ring binder standing upright with many coloured index tabs along its edge, a small stack of loose blank certificates and a steel nameplate leaning against it. |
+| `crn-canada.webp` | /asme/crn-canada | A blank stainless steel nameplate lying beside a small blank metal registration tag on a ring and a rolled engineering drawing tied with string. |
+| `heat-exchangers.webp` | /asme/heat-exchangers | A shell-and-tube heat exchanger on two saddles with its tube bundle partly pulled out of the shell, showing the round tubesheet full of tube ends and a few baffle plates. |
+| `hardness-and-pmi.webp` | /asme/hardness-and-pmi | A portable hardness tester with a probe on a cable and a handheld pistol-shaped alloy analyser, both resting on a short welded steel test coupon. |
+
+## Content gap batch (14 Nov 2026), all hubs
+
+Same style block. For the IBR, ERP and BOQ pages the image goes in the page's front matter once delivered; Claude
+does that.
+
+| File | Page | Prompt |
+|---|---|---|
+| `electronic-component-inventory.webp` | /manufacturing/electronic-component-inventory | A reel of surface-mount components half out of a silvery moisture barrier bag, with a short cut strip of carrier tape lying beside it. |
+| `counterfeit-electronic-parts.webp` | /manufacturing/counterfeit-electronic-parts | A single black microchip on an anti-static mat seen through a round magnifying glass on a stand, an empty component tray beside it. |
+| `reorder-point-safety-stock.webp` | /manufacturing/reorder-point-safety-stock | A warehouse bin of identical small boxes, with a red horizontal line painted on the inside wall of the bin marking the refill level. |
+| `excess-and-obsolete-inventory.webp` | /manufacturing/excess-and-obsolete-inventory | Several dusty cardboard cartons stacked at the back of a steel shelf, one with a blank paper tag tied to it, cobweb in one corner. |
+| `submittals-and-rfis.webp` | /construction/submittals-and-rfis | Two rolled shop drawings tied with string, a single sheet with a blank rectangular review stamp mark, and a white hard hat beside them. |
+| `punch-list-closeout.webp` | /construction/punch-list-closeout | A section of freshly painted wall with a small strip of blue painter's tape marking a spot, and a clipboard with a blank checklist leaning against the wall below it. |
+| `rate-analysis.webp` | /construction/rate-analysis | A bag of cement, a small heap of sand and a small heap of stone aggregate beside a calculator on a blank measurement sheet. |
+| `ffe-specifications.webp` | /interiors/ffe-specifications | A fabric swatch, a small wood finish sample chip and a line drawing of an armchair clipped to a blank specification sheet. |
+| `crn-canada.webp` | /asme/crn-canada | A blank stainless steel nameplate lying beside a small blank metal registration tag on a ring and a rolled engineering drawing tied with string. |
+| `heat-exchangers.webp` | /asme/heat-exchangers | A shell-and-tube heat exchanger on two saddles with its tube bundle partly pulled out of the shell, showing the round tubesheet full of tube ends and a few baffle plates. |
+| `hardness-and-pmi.webp` | /asme/hardness-and-pmi | A portable hardness tester with a probe on a cable and a handheld pistol-shaped alloy analyser, both resting on a short welded steel test coupon. |
+| `ibr-stage-inspection.webp` | /ibr/stage-inspection | A boiler shell on a fabrication shop floor with a clipboard of blank stage sheets and a measuring tape resting on top of it. |
+| `erp-import-landed-cost.webp` | /erp/import-landed-cost | A shipping carton on a pallet with a blank customs document envelope and a calculator resting on top. |
+| `erp-hsn-codes.webp` | /erp/hsn-codes-electronic-components | Small electronic components laid out in a neat row on a tray: a capacitor, a resistor, a connector, a diode and a chip, each with a blank tag. |
+| `interior-quotation-format.webp` | /boq/interior-quotation-format | A clipboard with a blank ruled quotation sheet, a laminate sample chip and a pen beside it on a desk. |
+
+## Second gap batch (14 Nov 2026)
+
+Same style block. Save as PNG with the file name below (any size), in Downloads, and tell Claude.
+
+| File | Page | Prompt |
+|---|---|---|
+| `punch-list-closeout.webp` | /construction/punch-list-closeout | A section of freshly painted wall with a small strip of blue painter's tape marking a spot, and a clipboard with a blank checklist leaning against the wall below it. |
+| `ontario-holdback.webp` | /construction/ontario-holdback | A small stack of coins with one tenth of them set apart under a glass dome, beside a blank invoice sheet. |
+| `cost-codes.webp` | /construction/cost-codes | A row of file folders with coloured index tabs standing in a desk organiser, a calculator and a white hard hat beside them. |
+| `rera-for-builders.webp` | /construction/rera-for-builders | A small architectural model of a residential tower beside a closed bank passbook and a blank certificate with a round seal. |
+| `interior-design-software.webp` | /interiors/interior-design-software | An open laptop with a blank grid on the screen, fabric swatches and a miniature armchair on the desk beside it. |
+| `architecture-firm-fees-and-phases.webp` | /interiors/architecture-firm-fees-and-phases | Rolled drawings, a triangular scale ruler and an open notebook with a blank ruled timesheet on a drafting table. |
+| `r-stamp.webp` | /asme/r-stamp | A short section of steel pipe with a fresh weld band around its middle and a small blank metal tag wired beside the weld. |
+| `ibr-renewal-inspection.webp` | /ibr/renewal-inspection | A small shell boiler with its manhole door open and a flashlight resting on top beside a clipboard with blank pages. |
+| `ibr-steam-pipes.webp` | /ibr/steam-pipes | An insulated steam pipe with one flange bare, a pressure gauge on a short branch and a small valve. |
+| `erp-architecture-firms.webp` | /erp/architecture-firms | A rolled building drawing, a stack of blank invoices and a calculator on a desk. |
+| `erp-bis-registration.webp` | /erp/bis-registration-electronics | A power adapter and a power bank on a test bench beside a blank certificate with a round seal. |
+| `interior-design-agreement.webp` | /boq/interior-design-agreement | A two-page blank agreement with a fountain pen lying across it, a laminate sample chip and a small house key beside it. |

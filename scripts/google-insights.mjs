@@ -293,7 +293,12 @@ export const TOOLS = {
       };
       add(us, "us");
       add(ind, "in");
-      return [...hubs.values()].sort((a, b) => b.us_impressions + b.in_impressions - (a.us_impressions + a.in_impressions));
+      // ponytail: Google drops most rows when a country filter meets the page dimension (Nov 2026: India showed 9
+      // clicks by page against 131 by country), so the per-hub numbers are a sample. The first row is the true total.
+      const totals = await searchAnalytics("country", days);
+      const t = (c) => totals.find((r) => r.country === c) ?? { clicks: 0, impressions: 0 };
+      const total = { hub: "(all pages: true total; hub rows are a sample)", us_impressions: t("usa").impressions, us_clicks: t("usa").clicks, in_impressions: t("ind").impressions, in_clicks: t("ind").clicks };
+      return [total, ...[...hubs.values()].sort((a, b) => b.us_impressions + b.in_impressions - (a.us_impressions + a.in_impressions))];
     },
   },
   gsc_inspect: {

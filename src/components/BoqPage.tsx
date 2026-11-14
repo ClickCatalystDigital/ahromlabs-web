@@ -7,7 +7,7 @@ import { formatDate, getContent } from "@/lib/content";
 // and its boundary, on the shared frame in GuidePage.
 
 // Guides in reading order; any guide not listed here still shows, after these.
-const GUIDE_ORDER = ["what-is-a-boq", "how-to-make-an-interior-boq", "measurement-rules", "material-specifications", "variation-orders", "gst-on-interior-work"];
+const GUIDE_ORDER = ["what-is-a-boq", "how-to-make-an-interior-boq", "measurement-rules", "material-specifications", "variation-orders", "interior-quotation-format", "interior-design-agreement", "gst-on-interior-work"];
 export function boqGuides() {
   const rank = (s: string) => GUIDE_ORDER.indexOf(s) + 1 || GUIDE_ORDER.length + 1;
   return [...getContent("boq")].sort((a, b) => rank(a.slug) - rank(b.slug));

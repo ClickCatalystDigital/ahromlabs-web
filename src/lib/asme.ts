@@ -24,7 +24,13 @@ export const ASME_GROUPS: { slug: AsmeGroup; name: string; intro: string; order:
     slug: "certification",
     name: "Stamps, inspectors and paperwork",
     intro: "Getting and keeping an ASME certificate, who inspects, and the reports that go with every stamped item.",
-    order: ["stamps", "u-stamp", "quality-control-manual", "authorized-inspector", "data-reports", "national-board-registration"],
+    order: ["stamps", "u-stamp", "quality-control-manual", "authorized-inspector", "data-reports", "national-board-registration", "r-stamp"],
+  },
+  {
+    slug: "quality",
+    name: "Quality control on the job",
+    intro: "The inspection plan a job is built to, what happens when something fails, and the data book it ships with.",
+    order: ["inspection-and-test-plan", "nonconformance-report", "hardness-and-pmi", "data-book"],
   },
   {
     slug: "welding",
@@ -36,7 +42,7 @@ export const ASME_GROUPS: { slug: AsmeGroup; name: string; intro: string; order:
     slug: "design",
     name: "Design basics, with calculators",
     intro: "The pressures, thicknesses, joints and tests every Division 1 vessel is designed around.",
-    order: ["mawp", "shell-thickness", "heads", "joint-efficiency", "hydrostatic-test", "impact-testing", "pwht"],
+    order: ["mawp", "shell-thickness", "heads", "joint-efficiency", "hydrostatic-test", "impact-testing", "pwht", "heat-exchangers"],
   },
   {
     slug: "materials",
@@ -48,7 +54,7 @@ export const ASME_GROUPS: { slug: AsmeGroup; name: string; intro: string; order:
     slug: "bridge",
     name: "India, the US and related codes",
     intro: "Where ASME meets the Indian Boiler Regulations, US and Canadian law, and the piping codes.",
-    order: ["asme-vs-ibr", "buying-from-india", "state-boiler-laws", "b31-1-vs-b31-3"],
+    order: ["asme-vs-ibr", "buying-from-india", "state-boiler-laws", "crn-canada", "b31-1-vs-b31-3"],
   },
 ];
 

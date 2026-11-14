@@ -3,6 +3,7 @@ kind: asme
 slug: hydrostatic-test
 group: design
 title: "ASME hydrostatic test pressure calculator (UG-99)"
+metaTitle: "UG-99 hydrostatic test pressure calculator (ASME VIII-1)"
 related:
   - /asme/mawp
   - /asme/section-i-vs-iv

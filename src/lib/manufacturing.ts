@@ -32,9 +32,9 @@ export const MFG_GROUPS: { slug: MfgGroup; name: string; intro: string; order: s
   },
   {
     slug: "inventory",
-    name: "Inventory for distributors",
+    name: "Inventory for distributors and electronics",
     intro: "Counting, tracing and valuing stock when you buy and resell, or make and ship from a warehouse.",
-    order: ["distributor-inventory-control"],
+    order: ["distributor-inventory-control", "electronic-component-inventory", "counterfeit-electronic-parts", "reorder-point-safety-stock", "excess-and-obsolete-inventory"],
   },
 ];
 

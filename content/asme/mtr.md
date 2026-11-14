@@ -2,7 +2,7 @@
 kind: asme
 slug: mtr
 group: materials
-title: "Material test reports (MTR) and heat number traceability"
+title: "Mill test reports (MTR): how to read one, heat traceability"
 related:
   - /asme/section-ii
   - /systems/heat-number
@@ -15,11 +15,11 @@ answer: >
   grade, heat number, chemical analysis, mechanical test results and heat treatment. For ASME Section VIII work the
   shop checks plate against its MTR on receipt (UG-93), keeps the heat number on every piece when it is cut (UG-77),
   and records it against every part of the vessel.
-description: "ASME MTRs: what they show, UG-93 receipt checks, UG-77 heat number transfer, EN 10204 3.1 vs 3.2, mill vs distributor certs, and records an Inspector checks"
+description: "How to read a mill test report (MTR), UG-93 receipt checks, heat number marking and transfer (UG-77), EN 10204 3.1 vs 3.2, and MTRs in software."
 domain: [asme, materials, traceability]
 published: 2026-11-01
-updated: 2026-11-05
-checked: 2026-11-05
+updated: 2026-11-14
+checked: 2026-11-14
 sources:
   - title: "2025 ASME Boiler and Pressure Vessel Code (Section II Part A; Section VIII, Division 1, UG-10, UG-77, UG-93, UG-94)"
     publisher: ASME
@@ -64,6 +64,41 @@ Grade 70.
 
 India and Europe usually call it a [material test certificate](/systems/material-test-certificate) and order it to
 EN 10204 type 3.1; the US says MTR or CMTR. What the Code needs from it is the same.
+
+## How do you read a mill test report?
+
+Read it top to bottom against the purchase order, then against the material in front of you. A typical plate MTR, in
+the order it is laid out:
+
+1. **Header**: the mill, the certificate number and date, the purchaser and purchase order. Check the order number
+   is yours (or your distributor's, for a passed-on copy).
+2. **Specification line**: e.g. "ASTM A516/ASME SA-516 Grade 70", sometimes with an edition year and dual
+   certifications. For Code work the SA designation, or a statement that the material meets it, must be there; see
+   [Section II](/asme/section-ii).
+3. **Item lines**: one per heat (and often per plate or slab): heat number, size, thickness, quantity or weight. One
+   certificate can cover several heats; match each piece to its own line.
+4. **Chemistry**: carbon, manganese, phosphorus, sulfur, silicon and the rest, as weight %, usually the heat analysis
+   and sometimes a product analysis. Compare each to the specification's limits, and the carbon equivalent if your
+   order set a maximum.
+5. **Mechanical tests**: tensile strength, yield strength (ksi or MPa, as printed; don't convert in your head),
+   elongation %, and the test direction. Each must meet the specification's minimum.
+6. **Heat treatment**: as-rolled, normalized, or quenched and tempered, with temperatures. It decides the
+   [impact test](/asme/impact-testing) exemption curve.
+7. **Impact tests**, if ordered: Charpy energy at the stated temperature, per specimen.
+8. **Supplementary requirements**: ultrasonic examination, simulated PWHT and others, as ordered.
+9. **Certification**: the statement that the material was made and tested to the specification, and who certified
+   it.
+
+Common catches: the heat number on the plate doesn't match the line you are reading; the grade is right but the class
+isn't; the certificate is a distributor's conformance letter with no test results; or the strength is printed in
+MPa and checked against a ksi minimum.
+
+## How are heat numbers marked on material?
+
+The mill marks each plate with the specification, grade, heat number and usually the plate or slab number, by
+stencil, paint or low-stress stamp, in the location its specification requires. The marking is what links the
+plate on the rack to its MTR, which is why it has to be transferred before cutting (below) and why a plate with an
+illegible marking is held until it can be identified.
 
 ## What does ASME Section VIII require for material certification?
 
@@ -161,9 +196,14 @@ When comparing systems, check that it can:
 - Split a plate into cut pieces and remnants that each inherit the heat number.
 - Show, for any vessel part, its heat and MTR; and for any heat, every part and job it went into.
 - Link welds to the WPS and welder, so the data report package comes from one record.
+- Read MTR PDFs in bulk, one line per heat, with a person checking each line against the PDF before it is saved.
 
 That is [material traceability](/systems/material-traceability): recording the heat number at receipt and carrying
-it to every cut piece, remnant and weld removes the search at the end.
+it to every cut piece, remnant and weld removes the search at the end. Our US boiler demo reads a batch of MTR PDFs into one line per heat (flagging files that
+aren't MTRs and duplicates), keeps the units as printed, saves nothing until a person accepts it, and traces any heat
+number to the BOM line and every weld it went into; the [data book](/asme/data-book) then pulls the MTRs in. Try it at
+the [live demo](https://boiler-erp-us.ahromlabs.com/demo) (sample data). It doesn't yet check MTR values against the
+specification's limits.
 
 ## What does India's IBR require?
 

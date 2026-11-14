@@ -1,3 +1,4 @@
+import { landedCostIndia, reorderPoint } from "../src/lib/inventory-calc";
 // Checks the manufacturing hub (src/lib/manufacturing.ts, content/manufacturing/): every guide is in a hub group,
 // every internal link resolves, each guide links at least two other manufacturing guides, page art has alt text,
 // the QuickBooks connector is never described as live, and the tools give the worked answers the pages quote.
@@ -76,6 +77,14 @@ assert.deepEqual(late(BASE, 8), []);
 assert.deepEqual(late([...BASE, RUSH], 8), ["J-103 frames:1"]);
 assert.deepEqual(late([...BASE, RUSH], 16), []);
 
+// Inventory maths against the pages' worked examples.
+{
+  const r = reorderPoint({ avgDaily: 40, leadDays: 10, maxDaily: 60, maxLeadDays: 14, sdDaily: 12, serviceLevel: "95" });
+  if (r.maxMinusAvg?.safetyStock !== 440 || r.maxMinusAvg.reorderPoint !== 840) fail.push(`reorderPoint max-minus-average: ${JSON.stringify(r.maxMinusAvg)}`);
+  if (r.serviceLevel?.safetyStock !== 63 || r.serviceLevel.reorderPoint !== 463) fail.push(`reorderPoint service level: ${JSON.stringify(r.serviceLevel)}`);
+  const l = landedCostIndia({ cif: 10400, rate: 85, bcdPct: 10, igstPct: 18, charges: 22000, quantity: 5000 });
+  if (l.assessable !== 884000 || l.bcd !== 88400 || l.sws !== 8840 || Math.round(l.igst) !== 176623 || l.landedCost !== 1003240 || l.perUnit !== 200.65) fail.push(`landedCostIndia: ${JSON.stringify(l)}`);
+}
 if (fail.length) {
   console.error(`manufacturing: ${fail.length} problem(s):\n${fail.join("\n")}`);
   process.exit(1);

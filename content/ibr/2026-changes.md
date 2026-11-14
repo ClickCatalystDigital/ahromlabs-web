@@ -2,6 +2,7 @@
 kind: guide
 slug: 2026-changes
 title: What changed with the Boilers Act 2025 and IBR 2026
+metaTitle: "IBR 2026 vs IBR 1950: what changed for boiler makers"
 related:
   - /ibr/registration-documents
   - /ibr/record-keeping

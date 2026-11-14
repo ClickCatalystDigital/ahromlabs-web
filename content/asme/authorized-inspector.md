@@ -138,7 +138,8 @@ qualification and continuity, the WPS, the PQR behind it, and the filler and bas
 
 Hold points are the steps in the shop's [quality control manual](/asme/quality-control-manual) where work stops until
 the Inspector has seen it: typically material review, fit-up of critical joints, NDE review, the PWHT chart and the
-hydro test. The manual and the inspection plan for the job name them, and the Inspector signs each one off.
+hydro test. The manual and the [inspection and test plan](/asme/inspection-and-test-plan) for the job name them, and the
+Inspector signs each one off.
 
 ## Is the Authorized Inspector the shop's quality control?
 

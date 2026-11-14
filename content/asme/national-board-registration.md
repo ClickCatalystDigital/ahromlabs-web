@@ -3,6 +3,7 @@ kind: asme
 slug: national-board-registration
 group: certification
 title: "National Board registration, the NB mark and the R stamp"
+metaTitle: "National Board registration and the NB mark (NB-264)"
 related:
   - /asme/data-reports
   - /asme/state-boiler-laws
@@ -166,6 +167,8 @@ repairs and alterations (Supplement 11). Check the (25) markers in your copy for
 | T/O | In-service testing of pressure relief valves |
 
 ## How does a company get the R stamp, and what does it cost?
+
+In short below; the full process is in [the R stamp guide](/asme/r-stamp).
 
 By having an inspection agreement with an Authorized Inspection Agency, a written quality system that meets the
 current NBIC and NB-415, the current NBIC itself and the construction code for its scope, then passing an on-site

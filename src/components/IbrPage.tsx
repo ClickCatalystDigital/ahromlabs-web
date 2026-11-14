@@ -8,7 +8,7 @@ import { IBR_2026_URL } from "@/lib/schema";
 // GuidePage. Each page quotes the Gazette; scripts/check-ibr-quotes.mjs checks it.
 
 // Guides in reading order; any guide not listed here still shows, after these.
-const GUIDE_ORDER = ["2026-changes", "registration-documents", "record-keeping", "small-industrial-boilers"];
+const GUIDE_ORDER = ["2026-changes", "registration-documents", "stage-inspection", "renewal-inspection", "steam-pipes", "record-keeping", "small-industrial-boilers"];
 export function ibrGuides() {
   const rank = (s: string) => GUIDE_ORDER.indexOf(s) + 1 || GUIDE_ORDER.length + 1;
   return [...getContent("guide")].sort((a, b) => rank(a.slug) - rank(b.slug));

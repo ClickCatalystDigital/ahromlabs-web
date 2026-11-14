@@ -5,6 +5,9 @@ import { join } from "node:path";
 // src/assets/og-art/interiors/<name>.jpg, made with scripts/asme-images.py from docs/interiors-image-prompts.md.
 // A page shows its image once the file exists. Server-only. Re-check the alt text against each delivered image.
 const ALT: Record<string, string> = {
+  "interior-design-software": "A laptop showing a blank grid, with fabric swatches and a small chair on the desk beside it: design firm software.",
+  "architecture-firm-fees-and-phases": "Rolled drawings, a scale ruler and an open timesheet notebook on a drafting table: architecture fees by phase.",
+  "ffe-specifications": "A fabric swatch, a finish sample chip and a small chair drawing clipped to a specification sheet: an FF&E specification.",
   "interiors-hub": "A navy upholstered armchair with a fabric swatch card and a blank price tag on its seat: furniture a design firm specifies and sells.",
   "how-to-charge-for-interior-design": "A brass desk calculator beside three fanned fabric swatches with a price tag on the top one: pricing design time and product.",
   "invoices-deposits-and-retainers": "A clipboard holding a blank invoice with a fountain pen across it and a small stack of coins: billing a client and taking a deposit.",

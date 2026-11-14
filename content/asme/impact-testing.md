@@ -3,6 +3,7 @@ kind: asme
 slug: impact-testing
 group: design
 title: "MDMT and impact test exemptions (UCS-66)"
+metaTitle: "UCS-66 impact test exemptions and MDMT, curves A to D"
 related:
   - /asme/mawp
   - /asme/pwht

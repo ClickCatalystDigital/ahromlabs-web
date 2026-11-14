@@ -3,6 +3,7 @@ kind: construction
 slug: labour-cess
 group: india
 title: "Labour cess on construction: the 1% BOCW cess explained"
+metaTitle: "Labour cess meaning: 1% BOCW cess, who pays, on which amount"
 related:
   - /construction/ra-bills
   - /construction/contract-labour-compliance

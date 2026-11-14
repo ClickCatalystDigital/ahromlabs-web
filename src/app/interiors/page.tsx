@@ -41,6 +41,10 @@ export default function InteriorsHub() {
       art={art?.src}
       artAlt={art?.alt}
     >
+      <p className="mt-6 leading-relaxed text-foreground-secondary">
+        Short answers to every guide on one page: <Link href="/interiors/questions" className="text-link focus-ring">Interior design business questions, answered</Link>.
+      </p>
+
       {INT_GROUPS.map((group) => {
         const list = guides.filter((g) => g.group === group.slug);
         return list.length === 0 ? null : (

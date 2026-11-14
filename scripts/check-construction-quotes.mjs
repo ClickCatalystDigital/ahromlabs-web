@@ -72,6 +72,11 @@ const DOCS = {
   }).map(([k, name]) => [k, `Construction/sources/${name} 2026-11-05.txt`])),
   msmed: "ERP/sources/msmed-act-2006.txt",
   "icai-as7": "Construction/sources/ICAI AS 7 Construction Contracts 2026-11-06.txt",
+  "wa-60.04.031": "Construction/sources/Washington RCW 60.04.031 Notices 2026-11-14.txt",
+  "wa-60.04.091": "Construction/sources/Washington RCW 60.04.091 Recording time 2026-11-14.txt",
+  "az-33-993": "Construction/sources/Arizona ARS 33-993 Notice and claim of lien 2026-11-14.txt",
+  "az-33-992.01": "Construction/sources/Arizona ARS 33-992.01 Preliminary twenty day notice 2026-11-14.txt",
+  "on-construction-act": "Construction/sources/Ontario Construction Act RSO 1990 c C30 excerpts 2026-11-14.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(ROOT, f)]));
 if (!Object.values(files).every((f) => fs.existsSync(f))) {

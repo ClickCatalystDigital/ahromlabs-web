@@ -15,10 +15,14 @@ export const MARKETS: Record<MarketCode, Market> = {
   EU: { code: "EU", label: "Europe", countries: ["DE", "NL", "FR", "BE", "SE", "DK", "NO", "FI", "AT", "CH", "ES", "IT", "PL", "PT"], timeZone: "Europe/Berlin", currency: "EUR", hoursText: "Mon–Fri 9:00–17:00 Central European time", active: false },
 };
 
-/** The market a country belongs to; unknown countries and markets that are off get today's (India) site. */
+/** The market a country belongs to. Every country outside India gets North America's site (decided 14 Nov 2026: the
+ *  ASME, manufacturing and sales tax pages draw searchers from the UK, Australia and the Gulf, who shouldn't see
+ *  rupees and Tally). No country, or Cloudflare's unknown (XX) and Tor (T1), keeps India's: local dev and unknowns. */
 export function marketOf(country: string | null | undefined): MarketCode {
-  const m = Object.values(MARKETS).find((x) => x.countries.includes((country ?? "").toUpperCase()));
-  return m?.active ? m.code : "IN";
+  const c = (country ?? "").toUpperCase();
+  if (!/^[A-Z]{2}$/.test(c) || c === "XX" || c === "T1") return "IN";
+  const m = Object.values(MARKETS).find((x) => x.countries.includes(c));
+  return m?.active ? m.code : "NA";
 }
 
 /** `?market=` values people type or links carry: in, us, ca, na. Anything else is ignored. */
@@ -66,7 +70,7 @@ const IN_ONLY = [
   // The construction hub's India group (src/lib/construction.ts CON_GROUPS; scripts/construction.check.ts keeps these in step).
   "/construction/ra-bills", "/construction/measurement-book", "/construction/tds-on-contractor-payments", "/construction/gst-on-works-contracts",
   "/construction/labour-cess", "/construction/contract-labour-compliance", "/construction/price-escalation-clause", "/construction/bank-guarantee-defect-liability",
-  "/construction/daily-progress-reports", "/construction/material-consumption-vs-boq", "/construction/job-cost-per-site",
+  "/construction/daily-progress-reports", "/construction/material-consumption-vs-boq", "/construction/job-cost-per-site", "/construction/rate-analysis", "/construction/rera-for-builders",
 ];
 // North America only: US and Canadian law.
 const NA_ONLY = [
@@ -74,6 +78,7 @@ const NA_ONLY = [
   // The construction hub's US group.
   "/construction/pay-applications", "/construction/retainage", "/construction/lien-waivers", "/construction/change-orders", "/construction/wip-schedule",
   "/construction/mechanics-lien-deadlines", "/construction/prompt-payment-acts", "/construction/certified-payroll",
+  "/construction/submittals-and-rfis", "/construction/punch-list-closeout", "/construction/cost-codes", "/construction/ontario-holdback",
 ];
 const under = (list: string[], href: string) => list.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}#`));
 export const marketsFor = (href: string): MarketCode[] | undefined =>

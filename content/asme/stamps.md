@@ -3,6 +3,7 @@ kind: asme
 slug: stamps
 group: certification
 title: "ASME stamps list: U, U2, S, H, PP, UV and R explained"
+metaTitle: "ASME certification stamps: U, U2, S, H, PP and R explained"
 related:
   - /asme/u-stamp
   - /asme/national-board-registration
@@ -147,6 +148,14 @@ U is for vessels built to Section VIII Division 1 and U2 for Division 2, the alt
 margin and more analysis. They are separate certificates with separate joint reviews, and a U holder can't stamp a
 Division 2 vessel. See [Section VIII Division 1 vs 2](/asme/section-viii).
 
+## What do the S and PP stamps mean?
+
+Both are Section I (power boiler) certificates. **S** is for the manufacture of power boilers, and for their parts and
+assembly. **PP** is for fabricating pressure piping: the boiler external piping between the boiler and its first stop
+valves, which Section I governs and whose technical rules come from [B31.1](/asme/b31-1-vs-b31-3). A shop that builds
+boilers and their external piping usually holds both; a piping fabricator may hold PP alone. See
+[Section I vs Section IV](/asme/section-i-vs-iv).
+
 ## What is a PRT certificate?
 
 PRT is for a maker of parts who builds to someone else's design: in the handbook's words, for "Manufacturers of parts
@@ -163,7 +172,7 @@ capacities certified by test; see [Section XIII](/asme/section-xiii).
 
 ## What is the R stamp?
 
-The R stamp is not ASME's: it is the National Board's certificate for repairs and alterations to boilers, pressure
+See the full [R stamp guide](/asme/r-stamp) for repairs, alterations and how to get it. The R stamp is not ASME's: it is the National Board's certificate for repairs and alterations to boilers, pressure
 vessels and other pressure-retaining items already in service, done under the National Board Inspection Code (NBIC).
 The National Board's [R certificate page](https://www.nationalboard.org/Index.aspx?pageID=115&ID=160) says a holder must keep an inspection agreement with an Authorized
 Inspection Agency, a written quality system to the NBIC and the current NBIC, and that the certificate costs $1,150
