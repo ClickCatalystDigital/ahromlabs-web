@@ -64,7 +64,7 @@ more than once. We haven't certified any voice setup. Before relying on it, try 
 
 ## Why do numbers stay right when you speak?
 
-Because the design keeps the model away from the figures. The in-app assistant only chooses which fixed look-up
+Because the AI model never writes the numbers: the design keeps it away from the figures. The in-app assistant only chooses which fixed look-up
 answers the question; code runs it with the same maths as the screens; a sentence with a number that isn't in the
 result is dropped. The AI app on top reads the rows it is given. The risk that remains is mishearing: "order fifteen"
 heard as "order fifty". Name the customer or site as well as the number, and glance at the screen before acting on a

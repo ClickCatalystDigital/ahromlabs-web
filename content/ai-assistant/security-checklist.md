@@ -34,6 +34,8 @@ See [role-based access](/systems/role-based-access).
 
 ## Figures
 
+The AI model never writes a number into an answer; code reads it from the records. Check that:
+
 - [ ] Figures come from fixed, read-only look-ups, not from the model writing database queries.
 - [ ] Each answer names the look-up or screen it came from.
 - [ ] A sentence with a number that isn't in the result is dropped before it is shown.

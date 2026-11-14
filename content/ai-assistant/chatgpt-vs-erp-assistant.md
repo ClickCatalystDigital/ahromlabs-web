@@ -40,6 +40,8 @@ one. See [AI hallucination](/systems/ai-hallucination), and test any answer with
 
 ## What does an assistant inside the ERP do differently?
 
+Its AI model never writes a number; every figure is read from the records by code.
+
 - **Live records**, read at the moment of the question.
 - **Fixed look-ups** for figures: code written and tested for each kind of question, with the same maths as the
   screens. The model only chooses which look-up answers the question. See [how it works](/ai-assistant/how-it-works).
