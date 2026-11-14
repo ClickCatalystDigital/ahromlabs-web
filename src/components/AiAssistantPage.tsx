@@ -33,19 +33,28 @@ export const AI_HUB: Hub = {
   cta: (
     <>
       <p className="text-lg text-foreground">
-        Paste an assistant&apos;s answer and the report it should come from, and see every number that isn&apos;t in the report.
+        Ask an assistant about a sample company&apos;s stock, dues, delays and margins, then ask us to put one on your own
+        records, usable from ChatGPT and Claude too.
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-4">
-        <Link href="/ai-assistant/number-check" className="subscribe-submit focus-ring inline-block">
-          Check an answer
+        <Link href="/ai-assistant/episodes" className="subscribe-submit focus-ring inline-block">
+          Watch and try the assistants
         </Link>{" "}
-        <span className="text-sm text-foreground-secondary">Free. Runs in your browser; nothing is sent anywhere.</span>
+        <a href="https://calendar.app.google/CuiiSRtJbheEV2U4A" className="text-link focus-ring" rel="noopener">
+          Book a 30-minute call
+        </a>
       </div>
       <p className="mt-4 text-sm text-foreground-secondary">
-        Ask {ASSISTANT["savistar-saag"].name} two questions on the{" "}
-        <a href={DEMO_URL["savistar-saag"]} className="text-link focus-ring">interiors demo</a>
+        Try one now:{" "}
+        <a href={DEMO_URL["boiler-manufacturer"]} className="text-link focus-ring">{ASSISTANT["boiler-manufacturer"].name}</a>
         {" · "}
-        <Link href="/services/custom-ai-assistant" className="text-link focus-ring">how Ahrom Labs builds assistants</Link>
+        <a href={DEMO_URL["ls-technologies"]} className="text-link focus-ring">{ASSISTANT["ls-technologies"].name}</a>
+        {" · "}
+        <a href={DEMO_URL["savistar-saag"]} className="text-link focus-ring">{ASSISTANT["savistar-saag"].name}</a>
+        {" · "}
+        <a href={DEMO_URL["construction-company"]} className="text-link focus-ring">{ASSISTANT["construction-company"].name}</a>
+        {" · "}
+        <Link href="/ai-assistant/number-check" className="text-link focus-ring">check any assistant&apos;s answer for made-up numbers</Link>
       </p>
     </>
   ),

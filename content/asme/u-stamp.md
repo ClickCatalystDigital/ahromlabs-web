@@ -11,6 +11,7 @@ related:
   - /services/material-traceability
   - /asme/heat-exchangers
   - /asme/pp-stamp
+  - /asme/s-stamp
 question: "How do you get an ASME U stamp?"
 answer: >
   To get the U stamp a shop buys the Code books, signs an inspection agreement with an ASME-accredited Authorized

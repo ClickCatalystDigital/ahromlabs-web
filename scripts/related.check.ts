@@ -7,6 +7,9 @@ import { existsSync } from "node:fs";
 
 for (const [from, paths] of Object.entries(RELATED)) relatedLinks(paths, from);
 for (const s of services) relatedLinks(s.guides, `services.ts ${s.slug}`);
+// Every content page's own "related" list, which otherwise only fails when that page is rendered.
+for (const kind of ["term", "note", "pattern", "industry", "guide", "boq", "erp", "ai-assistant", "asme", "manufacturing", "sales-tax", "construction", "interiors"] as const)
+  for (const e of getContent(kind)) relatedLinks((e as { related?: string[] }).related, `content/${kind} ${e.slug}`);
 const missing: string[] = [
   ...getContent("term").filter(termHasPage).map((t) => `/systems/${t.slug}`),
   ...getContent("industry").flatMap((i) => [`/industries/${i.slug}`, ...(i.na ? [`/us/industries/${i.slug}`] : [])]),

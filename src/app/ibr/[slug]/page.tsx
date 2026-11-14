@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlertSignup } from "@/components/AlertSignup";
 import Markdown from "react-markdown";
 import { IbrPage, IbrQuotes, ibrMarkdown } from "@/components/IbrPage";
 import { markdownHeadings } from "@/lib/headings";
@@ -67,6 +68,7 @@ export default async function IbrGuidePage(props: PageProps<"/ibr/[slug]">) {
     >
       <Markdown components={ibrMarkdown}>{linkTerms(g.body)}</Markdown>
       <IbrQuotes quotes={g.checks!} />
+      <AlertSignup topic="ibr" text="Email me when IBR 2026 is amended." />
     </IbrPage>
   );
 }

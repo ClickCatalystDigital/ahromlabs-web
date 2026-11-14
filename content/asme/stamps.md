@@ -154,7 +154,7 @@ Both are Section I (power boiler) certificates. **S** is for the manufacture of 
 assembly. **PP** is for fabricating pressure piping: the boiler external piping between the boiler and its first stop
 valves, which Section I governs and whose technical rules come from [B31.1](/asme/b31-1-vs-b31-3). A shop that builds
 boilers and their external piping usually holds both; a piping fabricator may hold PP alone. See the
-[PP stamp guide](/asme/pp-stamp) for its scope, cost and data reports, and
+[S stamp guide](/asme/s-stamp) and the [PP stamp guide](/asme/pp-stamp) for scope, cost and data reports, and
 [Section I vs Section IV](/asme/section-i-vs-iv).
 
 ## What is a PRT certificate?

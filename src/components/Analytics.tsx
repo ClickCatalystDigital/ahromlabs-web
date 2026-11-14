@@ -58,6 +58,13 @@ export function Analytics() {
       const a = (e.target as Element | null)?.closest?.("a");
       // A download or other link named for GA in its markup: <a data-track="ai_questions_download">.
       if (a?.dataset.track) track(a.dataset.track, { from: location.pathname });
+      // Any free file (a format, a form PDF, a data file): one event, named by the file.
+      else if (a && a.hostname === location.hostname && /\.(pdf|docx|xlsx|csv)$/i.test(a.pathname)) {
+        track("file_download_click", { from: location.pathname, file: a.pathname, kind: a.pathname.split(".").pop()!.toLowerCase() });
+      }
+      // Calendar booking and WhatsApp: the two ways to talk to us that skip the contact form.
+      if (a && /calendar\.app\.google|calendar\.google\.com/.test(a.hostname)) track("booking_click", { from: location.pathname });
+      if (a && /(^|\.)wa\.me$|api\.whatsapp\.com/.test(a.hostname)) track("whatsapp_click", { from: location.pathname });
       if (a && /\.ahromlabs\.com$/.test(a.hostname) && a.hostname !== "ahromlabs.com") {
         // One event per demo: boiler-erp.ahromlabs.com -> boiler_demo_click (docs/analytics-strategy.md).
         track(`${a.hostname.split(".")[0].replace(/-erp$/, "").replace(/\W/g, "_")}_demo_click`, { from: location.pathname });

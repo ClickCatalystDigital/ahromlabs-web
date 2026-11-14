@@ -7,6 +7,7 @@ related:
   - /erp/interior-design-firms
   - /industries/interior-design-and-furniture
   - /notes/assistant-that-answers-from-your-ledger
+  - /ai-assistant/atelier-ai
 answer: >
   An interior design firm's assistant should answer how each project is going, who owes money, which workshop
   orders are late, what material is still to come and whether a project made money, all from the firm's own
@@ -15,7 +16,7 @@ answer: >
 description: "An AI assistant for interior designers and furniture workshops: the questions it should answer from your own projects, invoices and orders, and how to check it."
 domain: [ai, interiors, selection]
 published: 2026-10-25
-updated: 2026-11-09
+updated: 2026-11-14
 checked: 2026-11-07
 image:
   src: /ai/ai-interior-design-firms.webp

@@ -15,6 +15,14 @@ const INDUSTRIES: { slug: string; industry: Industry }[] = [
   { slug: "interior-design-firms", industry: "projects" },
   { slug: "construction-contractors", industry: "construction" },
 ];
+// Guides by what the reader wants to do. A guide in no group is listed under "More guides", so none goes missing.
+const GROUPED = [
+  { name: "Use it from ChatGPT or Claude", slugs: ["mcp-for-erp", "connect-claude-to-erp", "connect-chatgpt-to-erp", "voice"] },
+  { name: "From reports to recommendations", slugs: ["analytics-levels", "predictions-and-recommendations", "market-signals"] },
+  { name: "The assistants", slugs: ["ember-ai", "ohm-ai", "atelier-ai", "datum-ai"] },
+  { name: "How it works, and staying safe", slugs: ["how-it-works", "actions-and-approvals", "security-checklist", "data-safety"] },
+  { name: "Choosing and buying", slugs: ["ai-in-erp", "chatgpt-vs-erp-assistant", "ai-assistant-cost"] },
+];
 const lead = "An AI assistant on your ERP or books is only useful if its numbers match the reports. The way to get that is to keep the model away from the numbers: it picks which fixed look-up answers the question, and code does the maths. Here is how to tell whether an assistant works that way, a free check for made-up numbers, the questions to ask it and the tests to run on any vendor.";
 
 const image = { src: "/ai/ai-assistants-hub.webp", alt: "A polished brass service bell.", width: 1086, height: 362 };
@@ -29,11 +37,14 @@ export const metadata: Metadata = {
 
 export default function AiAssistantHub() {
   const guides = aiGuides().filter((g) => !INDUSTRIES.some((i) => i.slug === g.slug)); // industry guides are under By business
+  const grouped = new Set(GROUPED.flatMap((g) => g.slugs));
+  const GROUPS = [...GROUPED, { name: "More guides", slugs: guides.map((g) => g.slug).filter((slug) => !grouped.has(slug)) }];
   const updated = [AI_CHECKED, ...guides.map((g) => g.updated)].sort().at(-1)!;
   const trail = [{ name: "AI assistants", path: "/ai-assistant" }];
   const tools = [
     { href: "/ai-assistant/number-check", title: "Check an AI answer for made-up numbers", text: "Paste what the assistant said and the report it should have used. Every number that isn't in the report is marked. Nothing leaves your browser." },
     { href: "/ai-assistant/questions", title: "Questions to ask an AI assistant", text: `${questions.length} questions by industry and role, each with what should answer it and what to check it against, including the ones a good assistant refuses. Free under CC BY 4.0, also as JSON.` },
+    { href: "/ai-assistant/episodes", title: "Watch the assistants answer", text: "Forty short episodes, ten per assistant, each one question a business asks every week, answered on a public demo. Ask each one yourself." },
     { href: "/ai-assistant/vendor-test", title: "How to test an AI assistant before you buy it", text: `${vendorTests.length} tests for any vendor's demo, with pass and fail for each and a test sheet for Excel.` },
   ];
 
@@ -98,19 +109,22 @@ export default function AiAssistantHub() {
         })}
       </ul>
 
-      {guides.length > 0 && (
-        <>
-          <GuideH2>Guides</GuideH2>
-          <ul className="mt-6 divide-y divide-line border-y border-line">
-            {guides.map((g) => (
-              <li key={g.slug} className="py-6">
-                <Link href={`/ai-assistant/${g.slug}`} className="text-link focus-ring text-xl font-medium">{g.title}</Link>
-                <p className="mt-2 leading-relaxed text-foreground-secondary">{g.answer}</p>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+      {GROUPS.map(({ name, slugs }) => {
+        const list = slugs.map((slug) => guides.find((g) => g.slug === slug)).filter((g) => g !== undefined);
+        return list.length > 0 && (
+          <div key={name}>
+            <GuideH2>{name}</GuideH2>
+            <ul className="mt-6 divide-y divide-line border-y border-line">
+              {list.map((g) => (
+                <li key={g.slug} className="py-6">
+                  <Link href={`/ai-assistant/${g.slug}`} className="text-link focus-ring text-xl font-medium">{g.title}</Link>
+                  <p className="mt-2 leading-relaxed text-foreground-secondary">{g.answer}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </AiAssistantPage>
   );
 }

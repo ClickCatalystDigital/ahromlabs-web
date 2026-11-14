@@ -7,6 +7,7 @@ related:
   - /erp/small-manufacturers
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/custom-ai-assistant
+  - /ai-assistant/ember-ai
 answer: >
   For a manufacturer, start with how-to answers from the system's own help guide and everyday changes a person
   confirms, then add live-data questions once the owner has decided what may be sent to the AI provider. Keep the
@@ -15,7 +16,7 @@ answer: >
 description: "An AI assistant for a manufacturing ERP: how-to answers from your help guide, changes you confirm, live data once approved, and no AI arithmetic on money."
 domain: [ai, manufacturing, selection]
 published: 2026-10-25
-updated: 2026-11-12
+updated: 2026-11-14
 checked: 2026-11-12
 image:
   src: /ai/ai-manufacturers.webp

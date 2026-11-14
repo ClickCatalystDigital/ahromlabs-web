@@ -27,6 +27,7 @@ def title(ws, text, note, cols):
     ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.merge_cells(f"A2:{cols}2")
     ws.row_dimensions[2].height = 48
+    ws.oddFooter.right.text = "Ahrom Labs · ahromlabs.com"
 
 
 def header(ws, row, names, widths):

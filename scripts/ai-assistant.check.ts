@@ -10,6 +10,7 @@ import path from "node:path";
 import { questions, vendorTests, ASSISTANT, aiQuestionsJson } from "../src/lib/ai-assistant";
 import { checkNumbers } from "../src/lib/number-check";
 import { getContent } from "../src/lib/content";
+import { episodes, EPISODE_PAGE } from "../src/lib/episodes";
 
 const fail: string[] = [];
 const warn: string[] = [];
@@ -127,6 +128,22 @@ expect("125000300 in total", ["125000300"]);
 // US formats: dollars, US grouping, million.
 expect("$1.25 million billed, $1,250,000 in all", []);
 expect("about $1.2 million billed", ["1.2 million"]);
+
+// ── Episodes: each asks a library question the demo answers (live, or "off": switched off at the client, answered on
+// the demo), ten per assistant, numbered 1-10, each assistant's page exists, and a published episode has a date. ──
+for (const sys of Object.keys(EPISODE_PAGE) as (keyof typeof EPISODE_PAGE)[]) {
+  const list = episodes.filter((x) => x.system === sys);
+  if (list.map((x) => x.n).join() !== "1,2,3,4,5,6,7,8,9,10") fail.push(`${ASSISTANT[sys].name}: episodes are not numbered 1 to 10`);
+  if (!getContent("ai-assistant").some((g) => g.slug === EPISODE_PAGE[sys])) fail.push(`no guide /ai-assistant/${EPISODE_PAGE[sys]} for ${ASSISTANT[sys].name}'s episodes`);
+}
+for (const x of episodes) {
+  const q = questions.find((y) => y.id === x.question);
+  const where = `${ASSISTANT[x.system].name} episode ${x.n}`;
+  if (!q) fail.push(`${where}: no question "${x.question}"`);
+  else if (q.status !== "live" && q.status !== "off") fail.push(`${where}: "${q.question}" is ${q.status}, not answered on the demo`);
+  else if (ASSISTANT[x.system].industry !== q.industry) fail.push(`${where}: question "${x.question}" belongs to another assistant`);
+  if (x.youtube && !/^\d{4}-\d{2}-\d{2}$/.test(x.published ?? "")) fail.push(`${where}: has a video but no published date`);
+}
 
 for (const w of warn) console.warn(`ai-assistant.check: ${w}`);
 if (fail.length) {

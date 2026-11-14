@@ -31,6 +31,10 @@ function titleMap() {
   for (const e of engagements) titles.set(`/work#${e.slug}`, e.client);
   for (const f of ibrFormPages()) titles.set(`/ibr/forms/${f.slug}`, `IBR ${formName(f)}: ${f.title}`);
   titles.set("/ibr/forms", "IBR 2026 forms list");
+  titles.set("/ai-assistant/questions", "Questions to ask an AI assistant");
+  titles.set("/ai-assistant/vendor-test", "How to test an AI assistant before you buy it");
+  titles.set("/ai-assistant/number-check", "Check an AI answer for made-up numbers");
+  titles.set("/ai-assistant/episodes", "AI assistant episodes");
   return titles;
 }
 
@@ -102,6 +106,14 @@ export const RELATED: Record<string, string[]> = {
   "/systems/schedule-of-values": ["/construction/pay-applications", "/systems/pay-application", "/systems/change-order"],
   "/systems/stock-reservation": ["/services/inventory-and-reservations", "/manufacturing/distributor-inventory-control", "/notes/reels-boxes-and-two-stores"],
   "/systems/tds-on-purchases": ["/construction/tds-on-contractor-payments", "/erp/compliance", "/services/compliance-accounting"],
+  "/systems/model-context-protocol": ["/ai-assistant/mcp-for-erp", "/ai-assistant/connect-claude-to-erp", "/ai-assistant/connect-chatgpt-to-erp"],
+  "/systems/tool-calling": ["/systems/fixed-look-up", "/systems/model-context-protocol", "/ai-assistant/how-it-works"],
+  "/systems/human-in-the-loop": ["/ai-assistant/actions-and-approvals", "/systems/audit-trail", "/ai-assistant/security-checklist"],
+  "/systems/prompt-injection": ["/ai-assistant/security-checklist", "/ai-assistant/data-safety", "/systems/human-in-the-loop"],
+  "/systems/descriptive-analytics": ["/ai-assistant/analytics-levels", "/systems/diagnostic-analytics", "/systems/fixed-look-up"],
+  "/systems/diagnostic-analytics": ["/ai-assistant/analytics-levels", "/systems/descriptive-analytics", "/systems/predictive-analytics"],
+  "/systems/predictive-analytics": ["/ai-assistant/predictions-and-recommendations", "/ai-assistant/analytics-levels", "/systems/prescriptive-analytics"],
+  "/systems/prescriptive-analytics": ["/ai-assistant/predictions-and-recommendations", "/ai-assistant/market-signals", "/ai-assistant/analytics-levels"],
   "/systems/text-to-sql": ["/systems/fixed-look-up", "/ai-assistant/how-it-works", "/systems/ai-hallucination"],
   "/systems/three-way-match": ["/systems/rfq", "/services/supplier-portal", "/services/document-extraction"],
   "/systems/variation-order": ["/boq/variation-orders", "/systems/change-order", "/systems/bill-of-quantities"],

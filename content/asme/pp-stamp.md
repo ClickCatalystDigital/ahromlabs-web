@@ -10,6 +10,7 @@ related:
   - /asme/u-stamp
   - /asme/section-i-vs-iv
   - /industries/boiler-pressure-vessel-manufacturing
+  - /asme/s-stamp
 question: "What does the ASME PP stamp mean?"
 answer: >
   PP stands for Pressure Piping. It is ASME's Section I Certificate of Authorization for fabricating and assembling

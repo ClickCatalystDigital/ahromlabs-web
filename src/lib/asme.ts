@@ -24,7 +24,7 @@ export const ASME_GROUPS: { slug: AsmeGroup; name: string; intro: string; order:
     slug: "certification",
     name: "Stamps, inspectors and paperwork",
     intro: "Getting and keeping an ASME certificate, who inspects, and the reports that go with every stamped item.",
-    order: ["stamps", "u-stamp", "pp-stamp", "quality-control-manual", "authorized-inspector", "data-reports", "national-board-registration", "r-stamp"],
+    order: ["stamps", "u-stamp", "s-stamp", "pp-stamp", "quality-control-manual", "authorized-inspector", "data-reports", "national-board-registration", "r-stamp"],
   },
   {
     slug: "quality",

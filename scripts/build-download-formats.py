@@ -165,10 +165,11 @@ def write_docx(f):
     sec.left_margin = sec.right_margin = sec.top_margin = sec.bottom_margin = Mm(14)
     doc.styles["Normal"].font.size = Pt(9)
     doc.core_properties.title, doc.core_properties.author = f["title"], "Ahrom Labs"
-    head = sec.header.paragraphs[0]
-    head.alignment = 2  # right
-    head.add_run().add_picture(LOGO, height=Mm(6))
-    brand = head.add_run("  Ahrom Labs · ahromlabs.com")
+    # Footer, not header: the top of a form is where the user's own letterhead goes.
+    foot = sec.footer.paragraphs[0]
+    foot.alignment = 2  # right
+    foot.add_run().add_picture(LOGO, height=Mm(5))
+    brand = foot.add_run("  Ahrom Labs · ahromlabs.com")
     brand.font.size = Pt(8)
     doc.add_heading(f["title"], level=1)
     doc.add_paragraph(f["note"])
@@ -246,11 +247,11 @@ def write_pdf(f):
         out += [Table([[""] * n, [P(s + " · name, signature, date") for s in f["sign"]]], colWidths=[usable / n] * n, rowHeights=[12 * mm, None], style=TableStyle(GRID)), Spacer(1, 3 * mm)]
     out.append(Paragraph(CREDIT, ParagraphStyle("c", parent=SMALL, fontName="Helvetica-Oblique")))
     def brand(canvas, _doc):
-        h = 6 * mm
+        h = 5 * mm  # footer, bottom right, inside the bottom margin
         x = size[0] - 14 * mm - h * LOGO_RATIO
-        canvas.drawImage(LOGO, x, size[1] - 10 * mm - h + 2 * mm, width=h * LOGO_RATIO, height=h)
+        canvas.drawImage(LOGO, x, 4 * mm, width=h * LOGO_RATIO, height=h)
         canvas.setFont("Helvetica", 7.5)
-        canvas.drawRightString(x - 2 * mm, size[1] - 10 * mm - h + 4 * mm, "Ahrom Labs · ahromlabs.com")
+        canvas.drawRightString(x - 2 * mm, 5.5 * mm, "Ahrom Labs · ahromlabs.com")
     doc.build(out, onFirstPage=brand, onLaterPages=brand)
 
 
@@ -266,6 +267,7 @@ def sheet(f):
     ws["A2"] = f["note"] + " " + CREDIT.replace("A starting format", "Sample rows are made up. A starting format")
     ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.row_dimensions[2].height = 44
+    ws.oddFooter.right.text = "Ahrom Labs · ahromlabs.com"
     return wb, ws
 
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlertSignup } from "@/components/AlertSignup";
 import Link from "next/link";
 import { IbrPage, IbrH2, IbrQuotes } from "@/components/IbrPage";
 import { ibrForms, ibrFormPages, formName, IBR_FORMS_CHECKED, IBR_FORMS_PUBLISHED } from "@/lib/ibr-forms";
@@ -116,6 +117,7 @@ export default async function IbrFormPage(props: PageProps<"/ibr/forms/[form]">)
       )}
 
       <IbrQuotes open quotes={page.facts.map((fact) => ({ quote: fact.quote, reg: `IBR 2026, ${/^\d/.test(fact.reg) ? `regulation ${fact.reg}` : fact.reg}` }))} />
+      <AlertSignup topic="ibr" detail={name} text={`Email me when ${name} or IBR 2026 is amended.`} />
     </IbrPage>
   );
 }

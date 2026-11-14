@@ -141,7 +141,10 @@ const urls = new Set([IBR_2026_URL, ...data.flatMap((e) => (e.sources ?? []).map
 const BLOCKS_SCRIPTS = new Set(["www.practicalmachinist.com", "www.arhaus.com", "arhaus.com", "www.ftc.gov", "www.meity.gov.in", "leginfo.legislature.ca.gov",
   "malegislature.gov", "www.legislature.mi.gov",
   // Opened in a browser on 14 Nov 2026: ISO 15156-1:2020, TEMA's home page, JEDEC's J-STD-033 announcement.
-  "www.iso.org", "tema.org", "www.jedec.org"]);
+  "www.iso.org", "tema.org", "www.jedec.org",
+  // Refuse or time out from this network (14 Nov 2026: Texas refuses the connection, the other two time out); the
+  // official addresses are unchanged. Reported as "skip", so open them in a browser now and then.
+  "statutes.capitol.texas.gov", "www.dir.ca.gov", "www.indiacode.nic.in"]);
 // curl, not fetch: egazette.gov.in never answers HEAD and omits its intermediate
 // certificate, which macOS curl fetches and Node does not. One byte is enough.
 function statusOf(url) {

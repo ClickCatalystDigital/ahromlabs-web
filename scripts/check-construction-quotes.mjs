@@ -76,6 +76,9 @@ const DOCS = {
   "wa-60.04.091": "Construction/sources/Washington RCW 60.04.091 Recording time 2026-11-14.txt",
   "az-33-993": "Construction/sources/Arizona ARS 33-993 Notice and claim of lien 2026-11-14.txt",
   "az-33-992.01": "Construction/sources/Arizona ARS 33-992.01 Preliminary twenty day notice 2026-11-14.txt",
+  "ky-376.010": "Construction/sources/Kentucky KRS 376.010 Mechanics liens and notice 2026-11-14.txt",
+  "ky-376.080": "Construction/sources/Kentucky KRS 376.080 Lien statement filing 2026-11-14.txt",
+  "ky-376.090": "Construction/sources/Kentucky KRS 376.090 Enforcement deadline 2026-11-14.txt",
   "on-construction-act": "Construction/sources/Ontario Construction Act RSO 1990 c C30 excerpts 2026-11-14.txt",
 };
 const files = Object.fromEntries(Object.entries(DOCS).map(([k, f]) => [k, path.join(ROOT, f)]));

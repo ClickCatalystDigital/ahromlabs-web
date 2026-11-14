@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlertSignup } from "@/components/AlertSignup";
 import Link from "next/link";
 import { IbrPage, IbrH2 } from "@/components/IbrPage";
 import { ibrForms, ibrGroups, formName, unmatched1950, IBR_FORMS_CHECKED, IBR_FORMS_PUBLISHED } from "@/lib/ibr-forms";
@@ -139,6 +140,7 @@ export default function IbrFormsPage() {
           </li>
         ))}
       </ul>
+      <AlertSignup topic="ibr" text="Email me when IBR 2026 or any of its forms is amended." />
     </IbrPage>
   );
 }

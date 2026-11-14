@@ -10,6 +10,7 @@ related:
   - /systems/stock-reservation
   - /manufacturing/distributor-inventory-control
   - /manufacturing/excess-and-obsolete-inventory
+  - /ai-assistant/ohm-ai
 question: "How should a distributor or contract manufacturer track electronic component inventory?"
 answer: >
   By the package it ships in, not just a part number and a count: each reel, tray, tube or cut tape with its own

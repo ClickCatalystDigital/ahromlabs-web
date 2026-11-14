@@ -7,6 +7,7 @@ related:
   - /erp/trading-distribution
   - /industries/electronics-component-trading
   - /notes/reels-boxes-and-two-stores
+  - /ai-assistant/ohm-ai
 answer: >
   A trader's assistant should answer stock by item and store, what is running low or not moving, what came in and
   went out, where a particular reel or box is, which purchase orders are waiting, and which customers have stopped
@@ -15,7 +16,7 @@ answer: >
 description: "An AI assistant for traders and distributors: the stock, shipment and customer questions it should answer from your own records, and how to check it."
 domain: [ai, trading, selection]
 published: 2026-10-25
-updated: 2026-11-09
+updated: 2026-11-14
 checked: 2026-11-07
 image:
   src: /ai/ai-trading-distribution.webp

@@ -3,6 +3,9 @@ import Markdown from "react-markdown";
 import { AiAssistantPage } from "@/components/AiAssistantPage";
 import { guideMarkdown, remarkGfm, GuideQuotes, GuideH2 } from "@/components/GuidePage";
 import { QuestionList } from "@/components/QuestionList";
+import { EpisodeList } from "@/components/EpisodeList";
+import { EPISODE_PAGE } from "@/lib/episodes";
+import type { System } from "@/lib/ai-assistant";
 import { AssistantMark } from "@/components/AssistantMark";
 import { ASSISTANT, SYSTEM_OF } from "@/lib/ai-assistant";
 import type { Industry } from "@/lib/ai-assistant";
@@ -23,6 +26,10 @@ export function generateStaticParams() {
 
 // The industry guides list that industry's questions from the library under their text.
 const INDUSTRY_OF_GUIDE: Record<string, Industry> = { "interior-design-firms": "projects", manufacturers: "manufacturing", "trading-distribution": "trading", "construction-contractors": "construction" };
+
+// The assistant pages (ember-ai, ohm-ai, ...) list that assistant's episode series under their text.
+const SYSTEM_OF_PAGE = Object.fromEntries(Object.entries(EPISODE_PAGE).map(([sys, slug]) => [slug, sys as System]));
+const SERIES = "The episode series";
 
 const get = (slug: string) => getContent("ai-assistant").find((g) => g.slug === slug)!;
 
@@ -69,11 +76,17 @@ export default async function AiGuidePage(props: PageProps<"/ai-assistant/[slug]
       updated={g.updated}
       sources={g.sources}
       related={relatedLinks(g.related, path)}
-      headings={[...markdownHeadings(g.body), ...(INDUSTRY_OF_GUIDE[g.slug] ? [`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`] : [])]}
+      headings={[...markdownHeadings(g.body), ...(SYSTEM_OF_PAGE[g.slug] ? [SERIES] : []), ...(INDUSTRY_OF_GUIDE[g.slug] ? [`What ${ASSISTANT[SYSTEM_OF[INDUSTRY_OF_GUIDE[g.slug]]].name} answers`] : [])]}
       art={g.image?.src}
       artAlt={g.image?.alt}
     >
       <Markdown components={guideMarkdown} remarkPlugins={[remarkGfm]}>{linkTerms(g.body)}</Markdown>
+      {SYSTEM_OF_PAGE[g.slug] && (
+        <section>
+          <GuideH2>{SERIES}</GuideH2>
+          <EpisodeList system={SYSTEM_OF_PAGE[g.slug]} />
+        </section>
+      )}
       {INDUSTRY_OF_GUIDE[g.slug] && (
         <section>
           <GuideH2>

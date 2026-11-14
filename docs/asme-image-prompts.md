@@ -133,3 +133,28 @@ Same style block. Save as PNG with the file name below (any size), in Downloads,
 | `daily-progress-reports.webp` | /construction/daily-progress-reports | A site diary open to a blank ruled page with a pencil, beside a white hard hat and a small stack of bricks. |
 | `job-cost-per-site.webp` | /construction/job-cost-per-site | Three small site models on a table, each with its own stack of coins and a blank tag in front of it. |
 | `material-consumption-vs-boq.webp` | /construction/material-consumption-vs-boq | A stack of cement bags and a bundle of steel bars beside a clipboard with a blank two-column sheet. |
+| `s-stamp.webp` | /asme/s-stamp | A small watertube steam boiler drum with a row of tube stubs, a blank nameplate on its end and a pressure gauge on top. |
+
+## AI assistant pages (14 Nov 2026)
+
+Same style block as the rest; save into `public/ai/` as `ai-<slug>.webp` and add `image:` front matter to each guide (as on `content/ai-assistant/how-it-works.md`).
+
+| File | Page | Prompt |
+|---|---|---|
+| `ai-mcp-for-erp.webp` | /ai-assistant/mcp-for-erp | A brass plug and its matching wall socket on a wooden board, a small key tag hanging from the plug. |
+| `ai-connect-claude.webp` | /ai-assistant/connect-claude-to-erp | A laptop with a blank screen beside a single brass key on a ring, resting on a closed ledger. |
+| `ai-connect-chatgpt.webp` | /ai-assistant/connect-chatgpt-to-erp | A phone lying face up with a blank screen, a coiled cable leading to a small brass terminal block. |
+| `ai-voice.webp` | /ai-assistant/voice | A vintage desk microphone beside an open notebook with a blank page and a pencil. |
+| `ai-analytics-levels.webp` | /ai-assistant/analytics-levels | Four stacked wooden steps, each a little higher, with a small brass weight on the top step. |
+| `ai-predictions.webp` | /ai-assistant/predictions-and-recommendations | A brass barometer with a blank dial beside a folded paper chart and a pencil. |
+| `ai-market-signals.webp` | /ai-assistant/market-signals | A small stack of steel plate offcuts beside a brass weighing scale and a blank price tag. |
+| `ai-actions.webp` | /ai-assistant/actions-and-approvals | A rubber stamp lifted above a blank form, with a small brass bell beside it. |
+| `ai-ember.webp` | /ai-assistant/ember-ai | A small boiler drum on stands with a single flame-shaped brass pin on top. |
+| `ai-ohm.webp` | /ai-assistant/ohm-ai | A reel of electronic components on a spindle beside a small brass tag. |
+| `ai-atelier.webp` | /ai-assistant/atelier-ai | A fabric swatch book and a miniature armchair beside a brass butterfly pin. |
+| `ai-datum.webp` | /ai-assistant/datum-ai | A surveyor's level on a tripod beside a white hard hat and a blank site diary. |
+| `ai-chatgpt-vs-erp.webp` | /ai-assistant/chatgpt-vs-erp-assistant | A loose stack of printed sheets beside a neat card index box with one card raised. |
+| `ai-cost.webp` | /ai-assistant/ai-assistant-cost | A brass coin stack beside a small calculator and a blank receipt. |
+| `ai-security.webp` | /ai-assistant/security-checklist | A brass padlock on a closed ledger, a clipboard with a blank checklist beside it. |
+| `ai-episodes.webp` | /ai-assistant/episodes | A row of four small film canisters, one open, beside a phone on a little stand. |
+

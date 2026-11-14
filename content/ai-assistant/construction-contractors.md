@@ -7,6 +7,7 @@ related:
   - /industries/construction-company
   - /construction/ra-bills
   - /construction/measurement-book
+  - /ai-assistant/datum-ai
 answer: >
   A contractor's assistant should answer whether each site is making money, which sites haven't sent today's
   report, what material is in the godown and at each site, which running bills are waiting and who owes money, all
@@ -15,7 +16,7 @@ answer: >
 description: "An AI assistant for construction contractors: the site, material, billing and labour questions it should answer from your own records, and how to check it."
 domain: [ai, construction, selection]
 published: 2026-11-02
-updated: 2026-11-09
+updated: 2026-11-14
 checked: 2026-11-07
 ---
 

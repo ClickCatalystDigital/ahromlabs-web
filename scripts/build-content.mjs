@@ -161,7 +161,7 @@ function loadKind(kind) {
         assertString(c?.quote, `checks[${i}].quote`, relPath);
       }
       assertString(frontmatter.checked, "checked", relPath);
-      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test"], asme: ["questions", "items"], manufacturing: [], "sales-tax": [], construction: ["questions"], interiors: ["questions"] }[kind];
+      const taken = { boq: ["items", "check", "template"], erp: ["requirements", "check", "template"], "ai-assistant": ["questions", "number-check", "vendor-test", "episodes"], asme: ["questions", "items"], manufacturing: [], "sales-tax": [], construction: ["questions"], interiors: ["questions"] }[kind];
       if (taken.includes(slug)) throw new Error(`content/${relPath}: "${slug}" is taken by /${kind}/${slug}`);
     }
     // ASME guides: a group for the hub, the question people search (the question library), an optional tool.
@@ -351,6 +351,7 @@ const AI_FRAME = ["src/components/AiAssistantPage.tsx", "src/components/GuidePag
 PAGE_SOURCES["ai-assistant"] = ["content/ai-assistant", "src/app/ai-assistant/page.tsx", ...AI_FRAME];
 PAGE_SOURCES["ai-assistant/questions"] = ["src/app/ai-assistant/questions", ...AI_FRAME];
 PAGE_SOURCES["ai-assistant/vendor-test"] = ["src/app/ai-assistant/vendor-test", ...AI_FRAME];
+PAGE_SOURCES["ai-assistant/episodes"] = ["src/app/ai-assistant/episodes", "src/components/EpisodeList.tsx", "src/lib/episodes.ts", ...AI_FRAME];
 PAGE_SOURCES["ai-assistant/number-check"] = ["src/app/ai-assistant/number-check", "src/components/NumberCheck.tsx", "src/lib/number-check.ts", ...AI_FRAME];
 const ASME_FRAME = ["src/components/AsmePage.tsx", "src/components/GuidePage.tsx", "src/lib/asme.ts", "src/lib/asme-images.ts", "public/asme"];
 PAGE_SOURCES.asme = ["content/asme", "src/app/asme/page.tsx", ...ASME_FRAME];

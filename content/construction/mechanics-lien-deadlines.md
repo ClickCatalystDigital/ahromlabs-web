@@ -17,7 +17,7 @@ answer: >
   of starting and records a lien within 90 days of completion (30 days after a notice of completion); in Florida the
   notice to owner is due within 45 days and the lien within 90 days of last work; Texas counts to the 15th day of a
   later month; New York allows 8 months. On federal jobs you claim against the payment bond instead.
-description: "Mechanics lien and preliminary notice deadlines in California, Texas, Florida, New York, Washington and Arizona, the Miller Act, and tracking them."
+description: "Mechanics lien and preliminary notice deadlines in California, Texas, Florida, New York, Washington, Arizona and Kentucky, the Miller Act, and tracking them."
 domain: [construction, liens]
 published: 2026-11-05
 updated: 2026-11-14
@@ -39,6 +39,10 @@ sources:
     publisher: New York State Senate
     url: https://www.nysenate.gov/legislation/laws/LIE/10
     date: "2026-11-05"
+  - title: "Kentucky Revised Statutes 376.010, 376.080 and 376.090"
+    publisher: Kentucky Legislative Research Commission
+    url: https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=39141
+    date: 2026-11-14
   - title: "40 U.S.C. 3133 (Miller Act), Rights of persons furnishing labor or material"
     publisher: Legal Information Institute, Cornell Law School
     url: https://www.law.cornell.edu/uscode/text/40/3133
@@ -101,6 +105,18 @@ checks:
   - reg: Arizona ARS 33-993(A)
     doc: az-33-993
     quote: "if a notice of completion has been recorded, within sixty days after recordation of such notice"
+  - reg: Kentucky KRS 376.080(1)
+    doc: ky-376.080
+    quote: "within six (6) months after he ceases to labor or furnish materials, files in the office of the county clerk"
+  - reg: Kentucky KRS 376.080(1)
+    doc: ky-376.080
+    quote: "The claimant shall send by regular mail a copy of the statement to the property owner at his last known address within seven (7) days of filing the statement with the county clerk."
+  - reg: Kentucky KRS 376.010(4)(a)
+    doc: ky-376.010
+    quote: "within seventy-five (75) days on claims amounting to less than one thousand dollars ($1,000) and one hundred twenty (120) days on claims in excess of one thousand dollars ($1,000) after the last item of material or labor is furnished"
+  - reg: Kentucky KRS 376.090(1)
+    doc: ky-376.090
+    quote: "unless an action is brought to enforce the lien within twelve (12) months from the day of filing the statement"
   - reg: Arizona ARS 33-992.01(C)
     doc: az-33-992.01
     quote: "shall be given not later than twenty days after the claimant has first furnished labor, professional services, materials, machinery, fixtures or tools to the jobsite"
@@ -123,7 +139,7 @@ project and may claim a lien if you aren't paid. Subcontractors and suppliers us
 contractor with a contract directly with the owner often doesn't. It isn't a lien and it isn't a
 [lien waiver](/construction/lien-waivers); it only keeps the right open.
 
-## What are the deadlines in California, Texas, Florida, New York, Washington and Arizona?
+## What are the deadlines in California, Texas, Florida, New York, Washington, Arizona and Kentucky?
 
 | State | Preliminary notice | Lien deadline | Suit to enforce |
 |---|---|---|---|
@@ -133,6 +149,7 @@ contractor with a contract directly with the owner often doesn't. It isn't a lie
 | New York | Not required by Lien Law 10 | Within 8 months after completion or final furnishing; 4 months for a single-family home; 90 days after retainage was due for a retainage lien (Lien Law 10) | As the statute sets |
 | Washington | Notice of right to claim a lien for those not contracting with the owner; it protects only what was supplied from 60 days before it is given (10 days on a new single-family residence) (RCW 60.04.031) | Record the claim of lien within 90 days after you stop furnishing (RCW 60.04.091) | As the statute sets |
 | Arizona | Preliminary twenty day notice within 20 days of first furnishing to the jobsite (ARS 33-992.01) | Record within 120 days after completion, or within 60 days after a recorded notice of completion (ARS 33-993) | As the statute sets |
+| Kentucky | Those not in contract with the owner: written notice of intent to hold the property liable within 75 days after last furnishing for claims under $1,000, 120 days for claims over $1,000; 75 days on an owner-occupied one- or two-family home (KRS 376.010(4) and (5)) | File the lien statement with the county clerk within 6 months after you stop furnishing, and mail a copy to the owner within 7 days of filing (KRS 376.080) | Within 12 months of filing the statement (KRS 376.090) |
 
 These are the main deadlines only. Each statute has its own form, service rules and exceptions, so read the state's
 text, or ask a construction lawyer, before relying on a date.
