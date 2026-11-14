@@ -10,7 +10,7 @@ related:
   - /interiors/ffe-specifications
   - /industries/interior-design-and-furniture
   - /erp/interior-design-firms
-  - /ai-assistant/atelier-ai
+  - /ai-assistant/interior-design-firms
 question: "Which project management and accounting software suits an interior design firm?"
 answer: >
   Design firms that sell product need software that carries an item from specification to proposal, purchase order,

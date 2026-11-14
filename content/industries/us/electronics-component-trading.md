@@ -49,7 +49,7 @@ evidence:
     value: Sales invoices, receipts, vendor bills and bill payments
   - metric: Reels moved to the two-store model at the client in India
     value: 5,256, none lost
-updated: 2026-11-07
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -124,6 +124,15 @@ each line marked taxable or not, and QuickBooks' automated sales tax works the t
 bills and bill payments go too. Each row shows whether it is in QuickBooks, failed with a Retry, or not sent. Credit
 notes aren't sent yet, and an invoice edited after sending isn't sent again. More in
 [connecting QuickBooks Online to a shop system](/manufacturing/quickbooks-integration).
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. Inventory Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Ohm AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Ohm AI for your business](/ai-assistant/trading-distribution) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a component distributor ask before choosing inventory software?
 

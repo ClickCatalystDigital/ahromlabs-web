@@ -10,8 +10,8 @@ related:
   - /systems/descriptive-analytics
   - /systems/prescriptive-analytics
   - /services/operational-intelligence
-  - /ai-assistant/ohm-ai
-  - /ai-assistant/atelier-ai
+  - /ai-assistant/trading-distribution
+  - /ai-assistant/interior-design-firms
 question: "What are descriptive, diagnostic, predictive and prescriptive analytics?"
 answer: >
   Four levels of question. Descriptive asks what happened ("what did we bill this month?"); diagnostic asks why
@@ -24,6 +24,11 @@ domain: [ai, analytics, data-science]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-analytics-levels.webp
+  alt: "Four wooden steps rising one above another with a brass weight on the top step: the four levels of analytics."
+  width: 1086
+  height: 362
 ---
 
 ## What are the four levels?

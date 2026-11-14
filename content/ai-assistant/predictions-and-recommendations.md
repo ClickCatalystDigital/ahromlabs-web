@@ -9,7 +9,6 @@ related:
   - /ai-assistant/manufacturers
   - /systems/predictive-analytics
   - /systems/prescriptive-analytics
-  - /ai-assistant/ember-ai
 question: "Can an AI assistant on my ERP make predictions and recommendations?"
 answer: >
   Some, safely, if the arithmetic stays in code and every assumption is shown. Our assistants give projections from
@@ -21,6 +20,11 @@ domain: [ai, analytics, forecasting]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-predictions.webp
+  alt: "A brass barometer beside a folded chart and a pencil: a forecast that shows its working."
+  width: 1086
+  height: 362
 ---
 
 ## Why not let the AI model forecast?

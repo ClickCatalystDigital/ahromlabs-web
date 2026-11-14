@@ -60,7 +60,7 @@ evidence:
   - metric: Datum AI
     value: Answers from the live records with the same figures as the screens
 published: 2026-11-05
-updated: 2026-11-07
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -106,6 +106,15 @@ Datum AI sits in the corner of every screen and answers in plain words, in Engli
 ## What else is in it?
 
 A trading desk for construction chemicals (rate card with backup suppliers, quotes with options, a credit gate before dispatch, part deliveries, GST invoices and an e-way bill task for accounts), machinery with QR labels and idle days, receivables ageing with weekly follow-ups and escalation to the director after 30 days, and a weekly progress report for the client built from the approved daily reports.
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. SiteBook has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Datum AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Datum AI for your business](/ai-assistant/construction-contractors) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a contractor ask any software vendor?
 

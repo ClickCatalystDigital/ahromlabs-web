@@ -74,7 +74,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-11-12
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -183,6 +183,15 @@ Yes, and they were. Bills of materials are imported from the plant's own spreads
 ## Should a boiler maker buy an engineering ERP package or build custom?
 
 Engineering ERP packages exist with hundreds of installations, and if one fits your processes with little customisation, it will be cheaper and faster. The system was scoped against one such package's feature list, item by item — then built custom, because the parts that matter most here (the IBR folder built from a bank of test certificates, piece-level plate traceability, a customer portal filed by boiler stage) aren't what packages are built around. The trade-offs in general are in [Tally, ERPNext, Odoo or a custom ERP](/notes/tally-vs-erpnext-vs-custom-erp).
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. SB Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Ember AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Ember AI for your business](/ai-assistant/manufacturers) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a boiler maker ask any software vendor?
 

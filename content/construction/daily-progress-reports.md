@@ -10,7 +10,6 @@ related:
   - /ai-assistant/construction-contractors
   - /industries/construction-company
   - /construction/contract-labour-compliance
-  - /ai-assistant/datum-ai
 question: "What should a daily progress report record, and which site records do CPWD works require?"
 answer: >
   A daily progress report (DPR) records, for one site and one day, the work done against each BOQ item, the labour

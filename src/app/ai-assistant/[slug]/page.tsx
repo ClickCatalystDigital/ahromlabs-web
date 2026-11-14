@@ -27,7 +27,7 @@ export function generateStaticParams() {
 // The industry guides list that industry's questions from the library under their text.
 const INDUSTRY_OF_GUIDE: Record<string, Industry> = { "interior-design-firms": "projects", manufacturers: "manufacturing", "trading-distribution": "trading", "construction-contractors": "construction" };
 
-// The assistant pages (ember-ai, ohm-ai, ...) list that assistant's episode series under their text.
+// Each assistant's industry guide (manufacturers, trading-distribution, ...) lists its episode series under the text.
 const SYSTEM_OF_PAGE = Object.fromEntries(Object.entries(EPISODE_PAGE).map(([sys, slug]) => [slug, sys as System]));
 const SERIES = "The episode series";
 

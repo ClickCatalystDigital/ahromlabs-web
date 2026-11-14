@@ -20,6 +20,11 @@ domain: [ai, mcp, chatgpt]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-connect-chatgpt.webp
+  alt: "A phone with a cable leading to a small brass terminal block: connecting ChatGPT to the ERP."
+  width: 1086
+  height: 362
 ---
 
 ## What do I need before I start?

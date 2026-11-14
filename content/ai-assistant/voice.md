@@ -9,7 +9,7 @@ related:
   - /ai-assistant/connect-claude-to-erp
   - /ai-assistant/how-it-works
   - /ai-assistant/questions
-  - /ai-assistant/datum-ai
+  - /ai-assistant/construction-contractors
 question: "Can I ask my ERP questions by voice?"
 answer: >
   Yes, through the AI app you already use. Our systems don't have a voice feature of their own; their MCP connector
@@ -21,6 +21,11 @@ domain: [ai, voice, mcp]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-voice.webp
+  alt: "A vintage desk microphone beside an open notebook and a pencil: asking your business out loud."
+  width: 1086
+  height: 362
 ---
 
 ## How does voice reach the ERP?

@@ -100,6 +100,15 @@ An executive view of active jobs, value in progress, cash collected and outstand
 
 After startup each boiler stays in the system as the equipment its service calls and contracts attach to. A service call carries a priority and a response time, and its resolved and closed times are stamped by the system, so response times can't be edited after the fact. Renewing a service contract creates a new contract linked to the old one, so the history of what was covered survives.
 
+## Can we ask it from ChatGPT or Claude?
+
+Yes. SB Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Ember AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Ember AI for your business](/ai-assistant/manufacturers) and [MCP for ERP](/ai-assistant/mcp-for-erp).
+
 ## What should a boiler or vessel shop ask before choosing software?
 
 1. **Does it keep the heat number on every piece cut from a plate**, or only on the plate you received?

@@ -58,7 +58,7 @@ video:
   description: "A tour of DesignerOps with made-up sister companies Acme Interiors and Acme Furniture: clients, projects with photos and milestones, one project on one page, workshop orders, vendors, daily attendance and one combined finance book."
   duration: PT1M7S
   uploaded: "2026-11-04"
-updated: 2026-11-04
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -110,6 +110,15 @@ Outstanding amounts — a partial delivery, an advance against pay — are compu
 A bank statement is uploaded as a PDF, its transactions are read by AI, and an owner or manager reviews them line by line, adding a note or attaching the receipt behind any entry. Cash entries carry their attachments too. Invoices are raised per client, optionally against a project, with HSN codes and a GST rate per line; the CGST and SGST totals are computed from the lines every time rather than stored, and each invoice moves from draft to sent to paid.
 
 Nothing is ever hard-deleted: a removed record stops showing but stays in the database, and deleting at all needs an owner, admin or manager.
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. Designer Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Atelier AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Atelier AI for your business](/ai-assistant/interior-design-firms) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a design studio ask before choosing software?
 

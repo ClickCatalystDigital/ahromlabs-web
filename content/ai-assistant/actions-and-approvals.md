@@ -20,6 +20,11 @@ domain: [ai, actions, controls]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-actions.webp
+  alt: "A rubber stamp above a form beside a brass service bell: a change that waits for approval."
+  width: 1086
+  height: 362
 ---
 
 ## What kinds of changes can the assistant make?

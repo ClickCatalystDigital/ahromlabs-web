@@ -21,6 +21,11 @@ domain: [ai, selection]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-chatgpt-vs-erp.webp
+  alt: "A loose stack of printed sheets beside a neat card index box with one card raised: an export versus answers from the system."
+  width: 1086
+  height: 362
 ---
 
 ## What goes wrong with an export in ChatGPT?

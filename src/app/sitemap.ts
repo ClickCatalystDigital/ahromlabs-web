@@ -209,7 +209,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/ai-assistant`, lastModified: changed("ai-assistant", aiUpdated), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/ai/ai-assistants-hub.webp`] },
     { url: `${siteUrl}/ai-assistant/number-check`, lastModified: changed("ai-assistant/number-check", AI_CHECKED), changeFrequency: "monthly", priority: 0.8, images: [`${siteUrl}/ai/ai-number-check.webp`] },
     { url: `${siteUrl}/ai-assistant/questions`, lastModified: changed("ai-assistant/questions", AI_CHECKED), changeFrequency: "monthly", priority: 0.7, images: [`${siteUrl}/ai/ai-question-library.webp`] },
-    { url: `${siteUrl}/ai-assistant/episodes`, lastModified: changed("ai-assistant/episodes", AI_CHECKED), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${siteUrl}/ai-assistant/episodes`, lastModified: changed("ai-assistant/episodes", AI_CHECKED), changeFrequency: "weekly", priority: 0.7, images: [`${siteUrl}/ai/ai-episodes.webp`] },
     { url: `${siteUrl}/ai-assistant/vendor-test`, lastModified: changed("ai-assistant/vendor-test", AI_CHECKED), changeFrequency: "monthly", priority: 0.7, images: [`${siteUrl}/ai/ai-vendor-test.webp`] },
     ...aiGuides.map((g) => ({
       url: `${siteUrl}/ai-assistant/${g.slug}`,

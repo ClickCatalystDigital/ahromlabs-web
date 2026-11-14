@@ -7,7 +7,9 @@ related:
   - /erp/small-manufacturers
   - /industries/boiler-pressure-vessel-manufacturing
   - /services/custom-ai-assistant
-  - /ai-assistant/ember-ai
+  - /ai-assistant/mcp-for-erp
+  - /ai-assistant/actions-and-approvals
+  - /ai-assistant/ai-assistant-cost
 answer: >
   For a manufacturer, start with how-to answers from the system's own help guide and everyday changes a person
   confirms, then add live-data questions once the owner has decided what may be sent to the AI provider. Keep the
@@ -59,6 +61,42 @@ That calculator, the steel purchase what-if, is **live on the [boiler demo](http
 An invented example, in any currency: an order worth 12,000,000 with 40 tonnes of steel still to buy, quoted at 62,000 a tonne and 66,000 today. Buying now costs 160,000 above the quote. Waiting costs 80,000 less than the quote if the rate falls to 60,000, or 480,000 more if it rises to 74,000. Paying for the steel three months early, with a 5% advance, adds about 56,400 of interest at 12% a year. The calculator shows both sides; the decision stays yours.
 
 Every result carries what the estimate leaves out: cash in hand is treated as earning nothing, the steel is valued at the quoted rate in the cash timeline, and supplier credit, storage costs and the value of securing supply are not included. The later rates are what you typed, not a forecast. The calculation is checked against worked examples on every change, and the same examples are checked in both places it runs.
+
+## What does Ember AI answer, by role?
+
+| Department | Example questions |
+|---|---|
+| Owner and managers | "Is a project delayed?" "What approvals are waiting for me?" |
+| Procurement | "Which purchase orders haven't been received?" |
+| Stores | "Which items are below their minimum?" "How much of a material do we have in stock?" |
+| Accounts | "Which customers owe us the most?" "What is an order worth and how much has been paid?" |
+| Quality and engineering | "How do I assign test certificates to units?" "How do I release the BOM?" |
+| Sales | "How do I convert a quotation into a sale order?" |
+
+How-to questions are answered everywhere. Live-data questions answer on the demo with the sample company; at the
+client they are switched off until the client approves them. The full list, with the screen to check each answer against, is below.
+
+## What can Ember AI change?
+
+It prepares changes as cards: add an enquiry ("a company wants a 2 TPH boiler"), log a meeting and set the follow-up
+("they want the revised offer by Monday"), add tasks and more. The owner can switch on Auto for chosen roles, with a
+30-minute Undo; deletes, payments and approvals always ask. See [actions and approvals](/ai-assistant/actions-and-approvals).
+
+## Can I use Ember AI from ChatGPT or Claude?
+
+Yes, on a client's system where it is switched on: managers and admins add SB Ops as a connector and ask Ember AI from
+the AI app, by text or, where the app supports it, by voice. Changes still need their yes. The connector is off in the
+public demos. See [MCP for ERP](/ai-assistant/mcp-for-erp).
+
+## Which AI model does Ember AI use, and who controls the cost?
+
+Two models, and you control both the choice and the spend. A small decision model, fixed on purpose so answers don't
+change under you, only picks which look-up answers a question. The writing model, which adds a short summary when you
+want one, is yours to choose in SB Ops's Settings from a searchable list of the hundreds of models OpenRouter offers,
+so a newer model can be picked the day it appears there. Both run on your own OpenRouter key: Settings shows the
+credit bought, used and left, and daily question limits, set per department, stop runaway use. Through
+the [MCP connector](/ai-assistant/mcp-for-erp) you can also ask Ember AI from ChatGPT, Claude or any other AI app that
+supports MCP. See [what an AI assistant costs](/ai-assistant/ai-assistant-cost).
 
 ## How do I check what it says and does?
 

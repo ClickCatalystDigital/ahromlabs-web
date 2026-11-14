@@ -12,13 +12,19 @@ question: "How much does an AI assistant for my ERP cost?"
 answer: >
   It depends less on the AI model than on the work around it: how many fixed look-ups and actions it needs, how many
   roles and permission rules, and whether it is part of a new system or added to one you have. The model's usage is
-  small and is billed by the model provider to your own account. For a system we build, the assistant is scoped and
-  priced with the project, and support runs under the annual maintenance contract.
+  small and is billed to your own OpenRouter account, where you choose the model and see the credit used; a daily
+  limit caps spend. For a system we build, the assistant is scoped and priced
+  with the project, and support runs under the annual maintenance contract.
 description: "What drives the cost of an AI assistant on an ERP: look-ups, actions, roles, connectors and model usage, who pays for what, and what to ask a vendor."
 domain: [ai, pricing, selection]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-cost.webp
+  alt: "A stack of coins beside a calculator and a blank receipt: what an AI assistant costs."
+  width: 1086
+  height: 362
 ---
 
 ## What are you actually paying for?
@@ -35,12 +41,22 @@ checked: 2026-11-14
 The model is the cheapest line. The look-ups are where the value and the cost are: each one is written against your
 data and checked against your screens.
 
-## Who pays for the AI model?
+## Who pays for the AI model, and who sees the spend?
 
-You, directly, and at the provider's price. Our assistants use an API key saved (encrypted) in the system's
-settings; the provider bills that account for what is used. A daily question cap in settings keeps spending
-predictable: when the cap is reached, the assistant says so and resets at midnight. The model that recognises
-questions is a small one, so usage per question is low.
+You, directly, at the provider's price, with nothing marked up. Each system we build runs on an OpenRouter key that
+you create and paste into Settings (it is stored encrypted). Settings then shows the credit you have bought, used and
+have left, read live from your account; Designer Ops, Inventory Ops and SiteBook also log what each question cost;
+and a daily question limit, which you set (per department in SB Ops), stops runaway use: when it is reached the assistant says so and resets at midnight. When the credit runs out
+the assistant says that too, with a link to add more, instead of failing silently.
+
+## Can I choose the AI model, including newer ones?
+
+Yes. Each assistant uses two models. The decision model, which only picks which look-up answers a question, is fixed
+on purpose, so a model update can't quietly change which figures you get. The writing model, which adds a short
+summary when you choose that mode, is yours: Settings has a searchable list of the hundreds of models OpenRouter
+offers, so when a new model appears there you can switch to it the same day, or pick a cheaper one if cost matters
+more. And through the [MCP connector](/ai-assistant/mcp-for-erp) you can ask the assistant from ChatGPT, Claude or
+any other AI app that supports MCP, on that app's own subscription.
 
 ## Is it cheaper to add an assistant to an existing ERP?
 

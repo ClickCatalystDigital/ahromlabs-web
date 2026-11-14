@@ -8,7 +8,6 @@ related:
   - /ai-assistant/analytics-levels
   - /ai-assistant/manufacturers
   - /services/operational-intelligence
-  - /ai-assistant/ember-ai
 question: "Can an ERP assistant use market data like steel prices or interest rates?"
 answer: >
   It can, if each outside figure comes from a named, approved source with its date, and the calculation stays in
@@ -20,6 +19,11 @@ domain: [ai, analytics, market-data]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-market-signals.webp
+  alt: "Steel plate offcuts beside a brass weighing scale and a blank price tag: outside prices in a business decision."
+  width: 1086
+  height: 362
 ---
 
 ## Why would an ERP assistant need outside data?

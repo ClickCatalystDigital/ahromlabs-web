@@ -23,12 +23,12 @@ export const LEVEL_LABEL: Record<Level, string> = {
   guardrail: "What it won't do",
 };
 
-// The assistant's own guide page, where its series is listed.
+// The guide for each assistant's industry, where its series is listed under the text.
 export const EPISODE_PAGE: Record<System, string> = {
-  "boiler-manufacturer": "ember-ai",
-  "ls-technologies": "ohm-ai",
-  "savistar-saag": "atelier-ai",
-  "construction-company": "datum-ai",
+  "boiler-manufacturer": "manufacturers",
+  "ls-technologies": "trading-distribution",
+  "savistar-saag": "interior-design-firms",
+  "construction-company": "construction-contractors",
 };
 
 const e = (system: System, list: [string, string, Level][]): Episode[] => list.map(([hook, question, level], i) => ({ system, n: i + 1, hook, question, level }));

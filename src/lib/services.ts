@@ -304,7 +304,7 @@ export const services: Service[] = [
   },
   {
     slug: "custom-ai-assistant",
-    guides: ["/ai-assistant/ai-in-erp", "/ai-assistant/how-it-works", "/ai-assistant/data-safety", "/ai-assistant/construction-contractors", "/systems/grounding-check"],
+    guides: ["/ai-assistant/ai-in-erp", "/ai-assistant/how-it-works", "/ai-assistant/mcp-for-erp", "/ai-assistant/ai-assistant-cost", "/ai-assistant/data-safety", "/ai-assistant/construction-contractors", "/systems/grounding-check"],
     name: "Custom AI assistant over your business data",
     plainName: "An assistant built on your own records that never invents a number",
     shortName: "AI assistant",
@@ -322,6 +322,8 @@ export const services: Service[] = [
     ],
     questions: [
       { q: "Can the assistant get a number wrong?", a: "The model never writes the numbers. Code runs fixed look-ups with the same maths as the screens, and any written line with a number that isn't in the data is dropped." },
+      { q: "Can we use it from ChatGPT or Claude?", a: "Yes. Every system we build has an MCP connector: ChatGPT, Claude or any AI app that supports MCP signs in as the person and asks the assistant, by text or, where the app supports it, by voice. Answers come from the same fixed look-ups and permissions, and changes still need the person's yes. It is switched on for a client once they approve it; it is off in the public demos." },
+      { q: "Which AI model does it use, and who controls the cost?", a: "You do. It runs on your own OpenRouter key: Settings shows the credit bought, used and left, and a daily limit you set caps spend. The writing model is chosen from a searchable list of the hundreds of models OpenRouter offers, so you can move to a newer or cheaper one the day it appears; the small model that picks the look-up is fixed on purpose, so answers don't change under you." },
       { q: "What can staff ask?", a: "Only about their own tasks and their own cash entries. Payroll and bank statements are refused to them, as they are on the screens." },
       { q: "Can the assistant change our data?", a: "Not on its own. Look-ups never write. When a person asks for a change (a reminder, a note, or an everyday change such as marking an invoice paid), it is shown as a card with the screen's own checks, and nothing is saved until the person presses Save. An owner can let chosen roles use Auto for adds and edits, which save at once with an Undo; deletes, payments and approvals always ask first." },
     ],
@@ -329,10 +331,13 @@ export const services: Service[] = [
       { client: "savistar-saag", as: "Two free questions to Atelier AI, from any sample login" },
       { client: "ls-technologies", as: "Two free questions to Ohm AI, from any sample login" },
       { client: "boiler-manufacturer", as: "Two free questions to Ember AI, live data from a sample company" },
+      { client: "construction-company", as: "Two free questions to Datum AI, from any sample login" },
     ],
     evidence: [
       { metric: "Routing test (Savistar & Saag)", value: "55 of 55 test questions and 57 unseen real phrasings, including Hinglish" },
       { metric: "Who writes the numbers", value: "Code — fixed look-ups, never the model" },
+      { metric: "Use from other AI apps", value: "MCP connector for ChatGPT, Claude and other MCP apps, signing in as the person" },
+      { metric: "Model and spend", value: "Your OpenRouter key; you pick the writing model, see credit used and set a daily limit" },
       { metric: "Written answers with a number not in the data", value: "Dropped" },
       { metric: "Running at", value: "Atelier AI at Savistar & Saag, Ohm AI at LS Technologies; Ember AI on the public boiler ERP demo" },
     ],

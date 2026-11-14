@@ -22,6 +22,11 @@ domain: [ai, mcp, integration]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-mcp-for-erp.webp
+  alt: "A brass plug and its wall socket on a wooden board, a key tag on the plug: connecting an AI app to your business system."
+  width: 1086
+  height: 362
 ---
 
 ## What is MCP?
@@ -29,7 +34,8 @@ checked: 2026-11-14
 The [Model Context Protocol](/systems/model-context-protocol) is an open standard for connecting AI apps to other
 software. The software runs an MCP server that lists a few tools, each with a name, a description and the inputs it
 takes; the AI app reads the list and decides which tool to call while it talks to you. Claude, ChatGPT and a growing
-list of other AI apps can add an MCP server as a connector, so one connector works across them.
+list of other AI apps can add an MCP server as a connector, so one connector works across them. You are not tied to one AI
+company: if a better AI app arrives next year and supports MCP, the same connector works with it.
 
 For a business system this means the AI app you already use every day can reach your stock, orders, projects and
 dues, instead of you exporting a spreadsheet and pasting it into a chat.

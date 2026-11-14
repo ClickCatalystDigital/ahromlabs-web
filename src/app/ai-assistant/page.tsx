@@ -19,7 +19,6 @@ const INDUSTRIES: { slug: string; industry: Industry }[] = [
 const GROUPED = [
   { name: "Use it from ChatGPT or Claude", slugs: ["mcp-for-erp", "connect-claude-to-erp", "connect-chatgpt-to-erp", "voice"] },
   { name: "From reports to recommendations", slugs: ["analytics-levels", "predictions-and-recommendations", "market-signals"] },
-  { name: "The assistants", slugs: ["ember-ai", "ohm-ai", "atelier-ai", "datum-ai"] },
   { name: "How it works, and staying safe", slugs: ["how-it-works", "actions-and-approvals", "security-checklist", "data-safety"] },
   { name: "Choosing and buying", slugs: ["ai-in-erp", "chatgpt-vs-erp-assistant", "ai-assistant-cost"] },
 ];

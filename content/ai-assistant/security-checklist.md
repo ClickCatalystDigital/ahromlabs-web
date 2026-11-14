@@ -21,6 +21,11 @@ domain: [ai, security, selection]
 published: 2026-11-14
 updated: 2026-11-14
 checked: 2026-11-14
+image:
+  src: /ai/ai-security.webp
+  alt: "A padlock on a closed ledger beside a clipboard checklist: securing an AI assistant on business records."
+  width: 1086
+  height: 362
 ---
 
 ## Permissions

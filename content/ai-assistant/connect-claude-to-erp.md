@@ -25,6 +25,11 @@ sources:
     publisher: Anthropic
     url: https://claude.com/docs/connectors/custom
     date: 2026-11-14
+image:
+  src: /ai/ai-connect-claude.webp
+  alt: "A laptop beside a brass key on a ring resting on a closed ledger: signing an AI app in to the ERP as yourself."
+  width: 1086
+  height: 362
 ---
 
 ## What do I need before I start?

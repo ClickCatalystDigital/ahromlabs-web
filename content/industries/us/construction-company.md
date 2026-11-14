@@ -44,7 +44,7 @@ evidence:
     value: Ours, our subs' and suppliers', conditional or unconditional, per pay app
   - metric: QuickBooks Online
     value: Invoices, pay applications and payments, against an Intuit sandbox company in the demo
-updated: 2026-11-05
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -90,6 +90,15 @@ Datum AI sits in the corner of every screen and answers with the same figures th
 ## What else is in it?
 
 Yard and job stock with receipts, transfers and a daily stock sheet per location; site cash per job with receipt photos and a weekly claim; equipment with QR labels and idle days; receivables by age with weekly follow-ups and escalation to the director after 30 days; a weekly progress report for the owner built from the approved daily reports; and a supply desk that quotes from a rate card with backup suppliers, holds shipping until terms are met, and invoices with sales tax.
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. SiteBook has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Datum AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Datum AI for your business](/ai-assistant/construction-contractors) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a contractor ask any software vendor?
 

@@ -44,7 +44,7 @@ evidence:
   - metric: Freight charges
     value: Checked against each route's rate; overcharges flagged
 published: 2026-11-05
-updated: 2026-11-07
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -86,6 +86,15 @@ Each carrier has a rate card per route, from one location to another, with the a
 ## How do you stop staff seeing the whole cash book?
 
 By filtering at the point the data is fetched, not by hiding buttons. Staff log day-to-day cash, but their view of the cash book contains only the entries they created. Bank data isn't shown to staff at all: every request for it from a staff account is refused before any query runs. Owners see everything.
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. Designer Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Atelier AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Atelier AI for your business](/ai-assistant/interior-design-firms) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a design studio ask before choosing software?
 

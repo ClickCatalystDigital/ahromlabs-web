@@ -69,7 +69,7 @@ video:
   description: "A tour of Inventory Ops with a made-up component distributor: the master catalog, reels received into boxes with QR labels, scan-cart outward against invoices, transfers between stores, approvals, customers, orders, receivables checked against Tally and the stock summary."
   duration: PT1M36S
   uploaded: "2026-11-04"
-updated: 2026-11-04
+updated: 2026-11-14
 ---
 
 ## Can I try it before talking to anyone?
@@ -126,6 +126,15 @@ Staff record receipts, dispatches and transfers; managers' actions go through im
 - **Daily report**, on screen and as a PDF — the day's receipts and dispatches by item, transfers, dead and low stock, and pending approvals.
 
 A customer can be given a read-only stock view. That account is limited at the server to the stock summary: every other endpoint in the system — about 60 — was tested against it and refused.
+
+## Can we ask it from ChatGPT or Claude?
+
+Yes. Inventory Ops has an MCP connector, so ChatGPT, Claude or any AI app that supports MCP can sign in as one of your
+people and ask Ohm AI what they would ask in the app, by text or, where the AI app supports it, by voice. Answers come
+from the same fixed look-ups and the same permissions as the screens, and any change still needs that person's yes.
+You choose the writing model from the hundreds OpenRouter offers, pay for it on your own key, and see the credit used
+in Settings, with a daily limit you set. The connector is switched on once you approve it; it is off in the public
+demo. See [Ohm AI for your business](/ai-assistant/trading-distribution) and [MCP for ERP](/ai-assistant/mcp-for-erp).
 
 ## What should a component trader ask before choosing inventory software?
 
