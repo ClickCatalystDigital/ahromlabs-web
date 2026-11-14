@@ -55,6 +55,11 @@ checks:
   - reg: Companies (Accounts) Rules, 2014, rule 3(1), proviso
     doc: mca-audit-trail-2021
     quote: has a feature of recording audit trail of each and every transaction, creating an edit log of each change made in books of account along with the date when such changes were made and ensuring that the audit trail cannot be disabled
+image:
+  src: /erp/erp-tally-vs-custom.webp
+  alt: "A ledger book chained by a brass clip to a stack of file trays: Tally's books joined to a custom ERP's records."
+  width: 1086
+  height: 362
 ---
 
 ## What does Tally do well?

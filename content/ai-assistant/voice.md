@@ -38,7 +38,7 @@ text question, and the AI app never works out a figure itself: it reads what the
 | Hop | Who does it | What it handles |
 |---|---|---|
 | Speech to text and back | The AI app (ChatGPT, Claude) | Your words, the spoken reply |
-| Choosing the tool | The AI app | Decides that "who owes us money" is a question for the ERP |
+| Choosing the tool | The AI app ([tool calling](/systems/tool-calling)) | Decides that "who owes us money" is a question for the ERP |
 | The answer | The ERP's assistant, through the connector | A fixed look-up, with your permissions |
 
 ## What works by voice today?

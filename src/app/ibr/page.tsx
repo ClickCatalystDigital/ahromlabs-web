@@ -10,7 +10,7 @@ const lead =
   "What a boiler maker files under the Indian Boiler Regulations, 2026, which replaced IBR 1950 on 1 October 2026: the renumbered forms, the documents for registration, how long records are kept, and the rules for small industrial boilers. Each page quotes the Gazette and links the official text.";
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: "IBR 2026: Indian Boiler Regulations guide, forms and PDF" },
   description: "IBR 2026 (Indian Boiler Regulations 2026) for boiler makers: the official PDF, changes from IBR 1950, every form and its old name, registration and records.",
   alternates: { canonical: "/ibr" },
   openGraph: {

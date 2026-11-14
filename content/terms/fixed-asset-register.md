@@ -4,10 +4,11 @@ slug: fixed-asset-register
 title: "Fixed-asset register"
 answer: >
   The record of a business's fixed assets with their cost, the date each was put to use, and depreciation.
+description: "Fixed asset register: the record of every asset a business owns, with cost, date, location and depreciation, kept for the books, tax and audit."
 domain: [operations]
 order: 10
 published: 2026-10-25
-updated: 2026-11-07
+updated: 2026-11-14
 ---
 
 It matters because depreciation, insurance and the auditor's checks all start from it, and a register kept apart from the books rarely agrees with them. Kept inside the ERP and posted to the ledger, it stays in agreement, and for a company the change history falls under the same audit-trail rule as the rest of the books.

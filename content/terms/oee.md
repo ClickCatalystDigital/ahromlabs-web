@@ -4,10 +4,11 @@ slug: oee
 title: "OEE (overall equipment effectiveness)"
 answer: >
   A measure of how much of a machine's planned time produces good parts: availability × performance × quality.
+description: "OEE (overall equipment effectiveness): availability × performance × quality, the share of planned time a machine makes good parts at full speed."
 domain: [manufacturing]
 order: 8
 published: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 ---
 
 - **Availability**: run time ÷ planned production time (stops and breakdowns count against it).

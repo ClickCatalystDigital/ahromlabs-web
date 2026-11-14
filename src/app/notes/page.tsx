@@ -8,19 +8,19 @@ import { jsonLd, webPageGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Engineering notes",
-  description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
+  description: "Engineering notes from real client work: what we built for manufacturers, traders and design firms, why, and what it actually does in production.",
   alternates: { canonical: "/notes" },
   openGraph: {
     type: "website",
     url: "https://ahromlabs.com/notes",
     siteName: "Ahrom Labs",
     title: "Engineering notes | Ahrom Labs",
-    description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
+    description: "Engineering notes from real client work: what we built for manufacturers, traders and design firms, why, and what it actually does in production.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Engineering notes | Ahrom Labs",
-    description: "Engineering notes from real client work — what we built, why, and what it actually does in production.",
+    description: "Engineering notes from real client work: what we built for manufacturers, traders and design firms, why, and what it actually does in production.",
   },
 };
 

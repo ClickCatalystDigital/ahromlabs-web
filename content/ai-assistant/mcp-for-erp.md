@@ -33,7 +33,8 @@ image:
 
 The [Model Context Protocol](/systems/model-context-protocol) is an open standard for connecting AI apps to other
 software. The software runs an MCP server that lists a few tools, each with a name, a description and the inputs it
-takes; the AI app reads the list and decides which tool to call while it talks to you. Claude, ChatGPT and a growing
+takes; the AI app reads the list and decides which tool to call while it talks to you
+([tool calling](/systems/tool-calling)). Claude, ChatGPT and a growing
 list of other AI apps can add an MCP server as a connector, so one connector works across them. You are not tied to one AI
 company: if a better AI app arrives next year and supports MCP, the same connector works with it.
 
@@ -110,5 +111,7 @@ once the client approves it. To see it on your data, [book a call](/#contact).
 - Whether figures come from fixed look-ups or from the model writing queries.
 - Whether you can revoke the connection, and see when it was last used.
 - What the AI app's provider does with the data it receives; see [data safety](/ai-assistant/data-safety).
+- How it resists [prompt injection](/systems/prompt-injection): text in a document or email must never act as an
+  instruction.
 
 The full list is in the [security checklist](/ai-assistant/security-checklist).

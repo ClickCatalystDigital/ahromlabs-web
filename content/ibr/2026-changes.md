@@ -45,6 +45,11 @@ checks:
     quote: The boiler components shall be erected at site based on the final inspection report as per Form-VIII approved by Competent Person
   - reg: IBR 2026, regulation 300(2)
     quote: a provisional order under section 14 in Form-X shall be issued after the hydraulic test.
+image:
+  src: /ibr/ibr-2026-changes.webp
+  alt: "Two bound books side by side, one worn and one new with a ribbon bookmark: IBR 1950 replaced by IBR 2026."
+  width: 1086
+  height: 362
 ---
 
 ## When did IBR 2026 replace IBR 1950?

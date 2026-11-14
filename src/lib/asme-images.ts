@@ -48,6 +48,8 @@ const ALT: Record<string, string> = {
   "heat-exchangers": "A shell-and-tube heat exchanger with its tube bundle partly drawn out of the shell, showing the tubesheet and baffles.",
   "hardness-and-pmi": "A portable hardness tester and a handheld alloy analyser resting on a welded steel coupon: hardness testing and positive material identification.",
   "r-stamp": "A repaired steel pipe section with a fresh weld band and a small blank metal tag wired beside it: a repair under the R stamp.",
+  "pp-stamp": "A pipe spool with two elbows and a flange on pipe stands, a blank brass tag wired to it: power piping built under the PP stamp.",
+  "s-stamp": "A small steam boiler with tube stubs, a pressure gauge and a blank brass nameplate: a power boiler built under the S stamp.",
   "b31-1-vs-b31-3": "Two pipe spools meeting at a flanged tee, one insulated, one bare stainless with a valve: power and process piping.",
 };
 
