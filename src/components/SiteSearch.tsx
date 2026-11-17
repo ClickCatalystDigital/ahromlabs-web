@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useSyncExternalStore } from "react";
-import { AI_SEARCH_URL } from "@/lib/ai-search";
 
 // Cloudflare's AI Search web components are custom elements; React 19 passes
 // string attributes straight through, it just needs to know the tags exist.
@@ -42,6 +41,8 @@ async function applyCopy() {
   if (modal) modal.translations = MODAL_COPY;
 }
 
+// Queries go through /api/search (capped to AI Search's free tier, src/lib/search-quota.ts); the longer
+// debounce sends fewer queries while someone is still typing.
 // Site search (Cmd/Ctrl+K, and the "Search" item in the nav). The chat is
 // Ahrom AI (AhromChat.tsx). Loaded at browser idle, so it never delays the page; without JS the site is
 // unchanged.
@@ -58,7 +59,8 @@ export function SiteSearch() {
 
   return (
     <search-modal-snippet
-      api-url={AI_SEARCH_URL}
+      api-url="/api/search"
+      debounce-ms="600"
       placeholder="Search notes, industries, services, pricing…"
       theme="light"
       show-url="true"

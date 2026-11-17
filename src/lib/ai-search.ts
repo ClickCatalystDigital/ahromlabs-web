@@ -4,9 +4,10 @@
 // (/.well-known/mcp/server-card.json), the API catalog and llms.txt all read
 // from here.
 //
-// The public endpoint is rate-limited and host-restricted to ahromlabs.com in
-// the Cloudflare dashboard (AI Search → Public endpoint → Security). Those
-// limits, not this file, are what cap cost — keep them set.
+// Cost: the site's own traffic is capped in src/lib/search-quota.ts (monthly free tier). The public endpoint is
+// also limited to 20 requests a minute for the whole instance and host-restricted to ahromlabs.com in the
+// Cloudflare dashboard (AI Search → Public endpoint → Security), which is the only guard on anyone calling
+// AI_SEARCH_URL directly — keep it set.
 export const AI_SEARCH_URL = "https://f4174b88-0589-496b-b82e-864b8a1a4501.search.ai.cloudflare.com";
 
 // The widget code itself is the npm package @cloudflare/ai-search-snippet

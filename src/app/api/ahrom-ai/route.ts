@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { AI_SEARCH_URL } from "@/lib/ai-search";
+import { take } from "@/lib/search-quota";
 import { buildEntries, entriesFor, shortlist, jevQuestions, route, sourcesOf, JEV_MODEL, type Entry, type Route } from "@/lib/ahrom-ai";
 import { CHOICE_COOKIE, marketFromParam, marketOf } from "@/lib/markets";
 
@@ -121,6 +122,7 @@ async function write(key: string, messages: { role: string; content: string }[],
 
 // Jev or OpenRouter unreachable: today's AI Search chat, so the chat never goes silent.
 async function fallback(messages: { role: string; content: string }[]): Promise<Response> {
+  if (!(await take())) return text(CANNED.miss, "miss"); // past the month's free AI Search allowance
   const res = await fetch(`${AI_SEARCH_URL}/chat/completions`, {
     method: "POST",
     headers: { "content-type": "application/json", origin: "https://ahromlabs.com" },

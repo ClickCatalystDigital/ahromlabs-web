@@ -127,8 +127,11 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   `updated:` day if later. (Until 17 Oct 2026 content pages used `updated:` alone, a day: a
   same-day edit never moved it, and the chatbot named the boiler client after the site had
   stopped.) There is no "re-index everything" command; moving `lastmod` is the lever. To check
-  freshness, search the index for the old text (`POST /search`) and look at which pages return it. `npm run deploy` starts a sync
-  (`npm run search:sync`), and the instance also syncs every 6 hours.
+  freshness, search the index for the old text (`POST /search`) and look at which pages return it. Since 18 Nov 2026 nothing syncs on its
+  own: scheduled sync is paused and `npm run deploy` no longer syncs, to stay in AI Search's free tier (5M ingestion
+  tokens a month; daily syncs plus per-deploy syncs came to ~45M). Run `npm run search:sync` by hand, at most a few
+  times a month, after content that the chatbot or search should know about. Queries are capped too:
+  `src/lib/search-quota.ts` (900 a month across /api/search, /mcp and the chat fallback).
 - **Retrieval settings (17 Oct 2026, measured with `npm run search:check`):** hybrid search
   with reranking, keyword match mode `and`, score threshold 0.3, chunk size **256**. Answer cache
   **off** since 20 Oct 2026: at "close enough" it served stale answers to the chat's own suggested

@@ -145,10 +145,28 @@ Two faces, one rule: **Instrument Serif displays, Geist Sans does everything els
   - `wrangler.jsonc` — worker name `ahrom-labs`, entry `.open-next/worker.js`, custom domain `ahromlabs.com`, static assets served via the `ASSETS` binding, `nodejs_compat` + `global_fetch_strictly_public` compat flags, observability enabled. No KV/R2/queue bindings (no incremental cache to back) and no Images binding.
   - `next.config.ts` — `images.unoptimized: true` (avoids a paid Cloudflare Images binding for a handful of small, already-sized static assets; revisit if user-uploaded/variable imagery is added).
   - `public/_headers` — sets `Cache-Control: public,max-age=31536000,immutable` on `/_next/static/*` only. Routes served through the Worker function rather than the `ASSETS` binding (`sitemap.xml`, `robots.txt`, `/knowledge.json` — confirmed by checking where their build output actually lands, `.next/server/app/...` vs `.open-next/assets`) can't be cached via `_headers`; `/knowledge.json` and `/llms.txt` set `Cache-Control: public, max-age=3600` directly on their response instead, which is what actually reaches the client for a Worker-served route.
-- **`npm run deploy`** = content build (+ IBR quote check) → OpenNext build → deploy → AI Search sync → `search:check --wait` (buyer questions, plus every official IBR link). It exits 1 when any check misses even though the site is already live: read the log, don't assume the deploy failed. The content build also fails when a content file was committed after its `updated:` date — bump `updated` on every edited page.
+- **`npm run deploy`** = content build (+ IBR quote check) → OpenNext build → deploy → IndexNow ping. Since 18 Nov 2026 it no longer starts an AI Search sync or runs `search:check` (see **AI Search cost limits**); run those by hand. The content build also fails when a content file was committed after its `updated:` date — bump `updated` on every edited page.
 - **Images in content:** frontmatter `image` needs `src`, `alt`, integer `width` and `height`, and `caption` (the build enforces width/height). A lazy `<img>` without width and height has no height until it loads, so the page jumps and a screenshot shows nothing there.
 - **Scripts** (`package.json`): `content:build` (runs `scripts/build-content.mjs`, see **Knowledge layer**), `dev`/`build`/`preview`/`deploy` all run `content:build` first, `start` (`next start`, unused by the actual Cloudflare deploy path), `lint` (`eslint`), `cf-typegen` (`wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts`).
 - All routes prerender statically except `/api/contact`. Dynamic-segment `opengraph-image.tsx` files (`notes/[slug]/opengraph-image.tsx`, `patterns/[slug]/opengraph-image.tsx`) need their own explicit `generateStaticParams` to actually build static in this pipeline — confirmed empirically (the build output showed `ƒ Dynamic` without it, contradicting what the Next.js docs implied about inheriting params from the sibling `page.tsx` automatically).
+
+## AI Search cost limits (18 Nov 2026)
+
+Cloudflare bills AI Search from 1 Dec 2026. Free each month: 5M ingestion tokens and 1,000 semantic queries. Before these limits the instance `ahromlabs-search` was on course for about $33.63 a month (about 45M ingestion tokens from daily plus per-deploy syncs, and about 5,850 queries).
+
+Combined with the paused indexing, the site should stay inside the free tier. If it hits 900 queries in a month, search stops and says so until the 1st. When you publish new content the chatbot should know about, run this by hand, no more than a few times a month:
+
+```
+npm run search:sync
+```
+
+- **Indexing:** scheduled sync is paused on the instance (`cf ai-search update ahromlabs-search --name default --paused true`; `--paused false` resumes it). Paused still serves search. A full re-index is about 4.8M tokens (18,876 chunks), so about one full sync a month fits.
+- **Queries:** `src/lib/search-quota.ts` counts every query the site sends in D1 `ahrom-crm`, table `ai_search_usage` (one row per UTC month; migration 0028 in `~/Developer/ahrom-crm`), and stops at `CAP` = 900. It fails closed: if the counter can't be read, search is refused. The counted paths:
+  - `/api/search/*`: the site search widget's `api-url` (`SiteSearch.tsx`, `debounce-ms` 600). It proxies to AI Search and counts POST `/search` and `/chat/completions`, with `SEARCH_LIMITER` at 30/min per IP.
+  - `/mcp`: counts each JSON-RPC `tools/call`, with `MCP_LIMITER` at 10/min per IP. `initialize`, `tools/list` and pings are free. Over the cap or the rate, the call gets a tool result with `isError` and a plain reason. The npm server `ahromlabs-mcp` comes through here.
+  - The chat fallback in `api/ahrom-ai` (used only when OpenRouter is down) answers "not covered" once the cap is reached.
+- **Not counted (the 100-query buffer covers them):** `npm run search:check` and `chat:check`, and anyone calling the public endpoint `AI_SEARCH_URL` directly. For those, the only guard is the instance's own limit of 20 requests a minute across the whole instance, set in AI Search → Public endpoint.
+- To see this month's count: `npx wrangler d1 execute ahrom-crm --remote --command "SELECT * FROM ai_search_usage"`.
 
 ## Google insights connector (`scripts/google-insights.mjs`, `.mcp.json`)
 
