@@ -161,11 +161,13 @@ npm run search:sync
 ```
 
 - **Indexing:** scheduled sync is paused on the instance (`cf ai-search update ahromlabs-search --name default --paused true`; `--paused false` resumes it). Paused still serves search. A full re-index is about 4.8M tokens (18,876 chunks), so about one full sync a month fits.
-- **Queries:** `src/lib/search-quota.ts` counts every query the site sends in D1 `ahrom-crm`, table `ai_search_usage` (one row per UTC month; migration 0028 in `~/Developer/ahrom-crm`), and stops at `CAP` = 900. It fails closed: if the counter can't be read, search is refused. The counted paths:
-  - `/api/search/*`: the site search widget's `api-url` (`SiteSearch.tsx`, `debounce-ms` 600). It proxies to AI Search and counts POST `/search` and `/chat/completions`, with `SEARCH_LIMITER` at 30/min per IP.
-  - `/mcp`: counts each JSON-RPC `tools/call`, with `MCP_LIMITER` at 10/min per IP. `initialize`, `tools/list` and pings are free. Over the cap or the rate, the call gets a tool result with `isError` and a plain reason. The npm server `ahromlabs-mcp` comes through here.
-  - The chat fallback in `api/ahrom-ai` (used only when OpenRouter is down) answers "not covered" once the cap is reached.
-- **Not counted (the 100-query buffer covers them):** `npm run search:check` and `chat:check`, and anyone calling the public endpoint `AI_SEARCH_URL` directly. For those, the only guard is the instance's own limit of 20 requests a minute across the whole instance, set in AI Search → Public endpoint.
+- **One way in:** the site reaches AI Search only through the Worker binding `SEARCH` (`wrangler.jsonc`, `ai_search`). The instance's public endpoint (`*.search.ai.cloudflare.com`, including its `/search`, `/chat/completions` and `/mcp`) is **switched off** (`cf ai-search update ahromlabs-search --name default --public-endpoint-params-enabled false`); its old address returns 404. Don't switch it back on: anything calling it would skip the count.
+- **Queries:** `search()` and `chat()` in `src/lib/search-quota.ts` are the only code that calls the binding. Each one counts one query first, in D1 `ahrom-crm`, table `ai_search_usage` (one row per UTC month; migration 0028 in `~/Developer/ahrom-crm`), and refuses at `CAP` = 900. It fails closed: if the counter can't be read, search is refused. Who uses them:
+  - `/api/search/*`: the site search widget's `api-url` (`SiteSearch.tsx`, `debounce-ms` 600). `POST /search` and `/chat/completions` reply in the old public endpoint's shape; `/stats` is accepted and dropped. Limited by `SEARCH_LIMITER`, 30/min per IP.
+  - `/mcp`: the site's own MCP server (stateless streamable HTTP, JSON replies, one `search` tool with the same name and `query` argument as before). Each `tools/call` is one query, limited by `MCP_LIMITER`, 10/min per IP. `initialize`, `tools/list` and pings are free. Over the cap or the rate, the call gets a tool result with `isError` and a plain reason. The npm server `ahromlabs-mcp` comes through here (checked 18 Nov 2026).
+  - The chat fallback in `api/ahrom-ai` (used only when OpenRouter is down) answers "not covered" once the cap is reached. Its answers also use Workers AI (about 73 neurons each; 10,000 a day are free).
+  - `npm run search:check` (one query per check, 2.1 s apart) and `chat:check` go through the live site, so they count too. A full `search:check` uses about 60 of the month's 900.
+- **Outside the count (the 100-query buffer is for these):** searches you run yourself in the Cloudflare dashboard or with `cf ai-search search`.
 - To see this month's count: `npx wrangler d1 execute ahrom-crm --remote --command "SELECT * FROM ai_search_usage"`.
 
 ## Google insights connector (`scripts/google-insights.mjs`, `.mcp.json`)

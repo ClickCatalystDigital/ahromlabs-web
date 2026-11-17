@@ -14,7 +14,8 @@
 // A check is [id, question, must[], mustNot[]]: every `must` pattern has to
 // match, no `mustNot` may. Expected wording comes from src/lib/engagement.ts and
 // the pages, so a wording change there may need a pattern change here.
-import { AI_SEARCH_URL } from "../src/lib/ai-search.ts";
+// Without --url: AI Search's own chat through the live site (its public endpoint is off); one counted query each.
+const SEARCH_URL = process.env.SEARCH_URL ?? "https://ahromlabs.com/api/search";
 
 const NOT_COVERED = /doesn'?t cover|does not cover|not covered|doesn'?t say/i;
 const LEAK = /\bwe need to (search|retrieve|use)|the instructions (say|mention)|let'?s open/i;
@@ -84,9 +85,10 @@ async function ask(question) {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     return r.text();
   }
-  const r = await fetch(`${AI_SEARCH_URL}/chat/completions`, {
+  await new Promise((r) => setTimeout(r, 2100)); // under the site's 30-a-minute limit
+  const r = await fetch(`${SEARCH_URL}/chat/completions`, {
     method: "POST",
-    headers: { "content-type": "application/json", origin: "https://ahromlabs.com" },
+    headers: { "content-type": "application/json" },
     body: JSON.stringify({ messages, stream: false }),
   });
   if (!r.ok) throw new Error(`HTTP ${r.status}`);

@@ -42,6 +42,9 @@
   // The Ahrom CRM Worker (ahrom-crm repo), for the support form: api/support forwards requests to it directly, so
   // they never pass through Cloudflare Access. Secret WEB_SUPPORT_KEY must match the one set on ahrom-crm.
   "services": [{ "binding": "CRM_APP", "service": "ahrom-crm" }],
+  // AI Search instance "ahromlabs-search", reached only through this binding (its public endpoint is off), so every
+  // query passes the monthly free-tier count in src/lib/search-quota.ts. remote: next dev uses the real instance.
+  "ai_search": [{ "binding": "SEARCH", "instance_name": "ahromlabs-search", "remote": true }],
   "d1_databases": [
     { "binding": "CRM", "database_name": "ahrom-crm", "database_id": "cf6df0f6-b74c-45f3-b65c-2608f75fd29e" }
   ],

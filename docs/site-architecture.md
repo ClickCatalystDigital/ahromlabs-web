@@ -131,7 +131,8 @@ chat completions and an MCP server from its public endpoint. All URLs live in
   own: scheduled sync is paused and `npm run deploy` no longer syncs, to stay in AI Search's free tier (5M ingestion
   tokens a month; daily syncs plus per-deploy syncs came to ~45M). Run `npm run search:sync` by hand, at most a few
   times a month, after content that the chatbot or search should know about. Queries are capped too:
-  `src/lib/search-quota.ts` (900 a month across /api/search, /mcp and the chat fallback).
+  `src/lib/search-quota.ts` (900 a month across /api/search, /mcp and the chat fallback; AI Search is reached only
+  through the Worker binding SEARCH, and its public endpoint is off). See SYSTEM.md, AI Search cost limits.
 - **Retrieval settings (17 Oct 2026, measured with `npm run search:check`):** hybrid search
   with reranking, keyword match mode `and`, score threshold 0.3, chunk size **256**. Answer cache
   **off** since 20 Oct 2026: at "close enough" it served stale answers to the chat's own suggested

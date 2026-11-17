@@ -12,7 +12,9 @@
 // with a phrase only the right answer contains. See docs/corpus-playbook.md.
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { AI_SEARCH_URL } from "../src/lib/ai-search.ts";
+// Through the live site, since AI Search's public endpoint is off: each check is one counted query
+// (src/lib/search-quota.ts), so a full run uses CHECKS.length of the month's 900. SEARCH_URL overrides.
+const SEARCH_URL = process.env.SEARCH_URL ?? "https://ahromlabs.com/api/search";
 import { IBR_2026_URL } from "../src/lib/ibr-forms.ts";
 
 const CHECKS = [
@@ -112,9 +114,11 @@ let failed = 0;
 for (const [query, expect] of CHECKS) {
   let chunks = [];
   try {
-    const r = await fetch(`${AI_SEARCH_URL}/search`, {
+    // 2.1 s apart stays under the site's per-visitor limit (30 a minute).
+    await new Promise((r) => setTimeout(r, 2100));
+    const r = await fetch(`${SEARCH_URL}/search`, {
       method: "POST",
-      headers: { "content-type": "application/json", origin: "https://ahromlabs.com" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ query }),
     });
     chunks = (await r.json()).result?.chunks ?? [];

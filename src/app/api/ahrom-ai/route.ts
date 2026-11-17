@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { AI_SEARCH_URL } from "@/lib/ai-search";
-import { take } from "@/lib/search-quota";
+import { chat } from "@/lib/search-quota";
 import { buildEntries, entriesFor, shortlist, jevQuestions, route, sourcesOf, JEV_MODEL, type Entry, type Route } from "@/lib/ahrom-ai";
 import { CHOICE_COOKIE, marketFromParam, marketOf } from "@/lib/markets";
 
@@ -122,14 +121,10 @@ async function write(key: string, messages: { role: string; content: string }[],
 
 // Jev or OpenRouter unreachable: today's AI Search chat, so the chat never goes silent.
 async function fallback(messages: { role: string; content: string }[]): Promise<Response> {
-  if (!(await take())) return text(CANNED.miss, "miss"); // past the month's free AI Search allowance
-  const res = await fetch(`${AI_SEARCH_URL}/chat/completions`, {
-    method: "POST",
-    headers: { "content-type": "application/json", origin: "https://ahromlabs.com" },
-    body: JSON.stringify({ messages, stream: true }),
-  }).catch(() => null);
-  if (!res?.ok || !res.body) return text(CANNED.miss, "miss");
-  return new Response(sseToText(res.body), { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-path": "fallback", "x-sources": sourcesHeader([]) } });
+  // Over the month's free AI Search allowance (OverQuota) or AI Search down: say so plainly.
+  const stream = (await chat(messages, true).catch(() => null)) as ReadableStream<Uint8Array> | null;
+  if (!stream) return text(CANNED.miss, "miss");
+  return new Response(sseToText(stream), { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-path": "fallback", "x-sources": sourcesHeader([]) } });
 }
 
 export async function POST(req: Request) {
