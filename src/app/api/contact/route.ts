@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { captureLead, underRateLimit } from "@/lib/lead-email";
 import { CHOICE_COOKIE, leadCountry, marketFromParam } from "@/lib/markets";
 import { attributionFrom, cookieIn } from "@/lib/analytics";
+import { emailProblem } from "@/lib/email-check";
 
 // Contact form (components/ContactForm.tsx) -> CRM database + email to LEADS_TO (lib/lead-email.ts).
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,6 +33,10 @@ export async function POST(request: Request) {
 
   if (!EMAIL_RE.test(email) || email.length > MAX_EMAIL) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+  }
+  const problem = await emailProblem(email);
+  if (problem) {
+    return NextResponse.json({ error: problem }, { status: 400 });
   }
   if (!message) {
     return NextResponse.json({ error: "Enter a message." }, { status: 400 });

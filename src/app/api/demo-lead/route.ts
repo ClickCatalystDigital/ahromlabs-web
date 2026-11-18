@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { captureLead, underRateLimit } from "@/lib/lead-email";
 import { attributionFrom } from "@/lib/analytics";
+import { emailProblem } from "@/lib/email-check";
 
 // Called by the four live demos (boiler-erp, electronics-erp, interiors-erp, construction-erp .ahromlabs.com) when a visitor
 // fills in the demo entry form, so each lead lands in our CRM and inbox as well as in that demo's leads database.
-// Server to server only: the demos send the shared DEMO_LEAD_KEY (a Worker secret on all four). The demo has
-// already saved the lead, so a failure here is logged by the demo and never blocks the visitor.
+// Server to server only: the demos send the shared DEMO_LEAD_KEY (a Worker secret on all four). The demos ask this
+// before saving: a 422 (made-up email) is shown on their form and the visitor isn't let in; any other failure is
+// only logged by the demo and never blocks the visitor.
 const DEMOS: Record<string, string> = { boiler: "SB Ops (boiler-erp)", electronics: "Inventory Ops (electronics-erp)", interiors: "Designer Ops (interiors-erp)", construction: "SiteBook (construction-erp)" };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clip = (v: unknown, n: number) => String(v ?? "").trim().slice(0, n);
@@ -26,6 +28,9 @@ export async function POST(request: Request) {
   const attribution = attributionFrom((name) => (typeof cookies[name] === "string" ? cookies[name] : undefined));
   const whatsappOk = b.whatsapp_ok === true && lead.phone.replace(/\D/g, "").length >= 10;
   if (!demo || !lead.name || !lead.company || !EMAIL_RE.test(lead.email)) return NextResponse.json({ error: "Bad request" }, { status: 400 });
+  // A made-up email (lib/email-check.ts): 422 with the message, which the demo shows on its form and lets nobody in.
+  const problem = await emailProblem(lead.email);
+  if (problem) return NextResponse.json({ error: problem }, { status: 422 });
   // These requests all come from the demo Workers, so limit per demo and per visitor email, not per IP.
   if (!(await underRateLimit(`demo-lead:${demoKey}`)) || !(await underRateLimit(`demo-lead:${lead.email.toLowerCase()}`))) {
     return NextResponse.json({ error: "Rate limited" }, { status: 429 });
