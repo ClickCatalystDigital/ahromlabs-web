@@ -1,6 +1,6 @@
 import { questions, questionAnchor, DEMO_URL, ASSISTANT, type System } from "@/lib/ai-assistant";
 import { episodesFor, LEVEL_LABEL, youtubeUrl } from "@/lib/episodes";
-import { jsonLd } from "@/lib/schema";
+import { jsonLd, videoDate } from "@/lib/schema";
 import { DemoLink } from "@/components/GuidePage";
 
 // One assistant's short-video series, on its guide page: each episode's hook, the question it asks (linked into the
@@ -55,7 +55,7 @@ export function EpisodeList({ system }: { system: System }) {
                 name: `${a.name}: ${x.hook}`,
                 description: `${a.name} answers "${questions.find((y) => y.id === x.question)!.question}" on the public demo, from a made-up company's records.`,
                 thumbnailUrl: `https://i.ytimg.com/vi/${x.youtube}/hqdefault.jpg`,
-                uploadDate: x.published,
+                uploadDate: videoDate(x.published),
                 contentUrl: youtubeUrl(x.youtube!),
                 embedUrl: `https://www.youtube.com/embed/${x.youtube}`,
                 publisher: { "@id": "https://ahromlabs.com/#organization" },

@@ -795,7 +795,7 @@ export function tourGraph(entry: { slug: string; title: string; video: NonNullab
       name: v.name,
       description: v.description,
       thumbnailUrl: `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
-      uploadDate: v.uploaded,
+      uploadDate: videoDate(v.uploaded),
       duration: v.duration,
       contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
       embedUrl: `https://www.youtube.com/embed/${v.id}`,
@@ -809,3 +809,6 @@ export function tourGraph(entry: { slug: string; title: string; video: NonNullab
     ],
   );
 }
+
+// Google's video report wants a time zone on uploadDate; content stores plain dates (IST).
+export const videoDate = (d?: string) => (d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00+05:30` : d);

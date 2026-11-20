@@ -59,11 +59,11 @@ demo:
   url: https://boiler-erp.ahromlabs.com/demo
   label: Try the live demo
 video:
-  id: ct2xTwQWuQY
-  name: "Boiler Manufacturing ERP: Every Department in 3 Minutes (SB Ops live demo, sample company)"
-  description: "A tour of SB Ops with a made-up company, Acme Boilers: the owner's view, one late boiler and why, sales, design, bill of materials, procurement, stores, test certificates, job cards, dispatch, accounts, HR and the customer portal."
-  duration: PT3M7S
-  uploaded: "2026-11-04"
+  id: jFcN3Pod-KA
+  name: "Boiler Manufacturing ERP: Enquiry to Commissioning (IBR 2026)"
+  description: "One boiler order for a sample company, Acme Boilers, followed through all ten departments: enquiry and quotation, sale order, design and drawing approval, BOM, procurement and RFQs, stores, QC test certificates and the IBR 2026 folder, the job card, dispatch and e-way bill, accounts clearance, delivery and commissioning."
+  duration: PT23M2S
+  uploaded: "2026-11-20"
 evidence:
   - metric: IBR forms produced
     value: Cover letter and IBR 2026 Forms I Part B, IV Part A, IV Part B and V Part B (Forms II(1), III, III A and IV A under IBR 1950)
