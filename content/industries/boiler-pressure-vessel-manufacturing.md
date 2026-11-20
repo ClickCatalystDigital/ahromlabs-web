@@ -74,7 +74,7 @@ evidence:
   - metric: Live plate-cut test
     value: 157.00 kg → 127.17 used + 15.70 remnant + 14.13 scrap
 published: 2026-09-24
-updated: 2026-11-14
+updated: "2026-11-20"
 ---
 
 ## Can I try it before talking to anyone?
